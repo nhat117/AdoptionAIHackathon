@@ -4,7 +4,7 @@
 
 A reproducible study of incorrect facts passing between AI agents, using English, Vietnamese and Chinese peer messages. A controller checks report facts before authorizing a handoff.
 
-**Latest consolidated report:** [Validation results, methods, APA references and remaining limits](research/VALIDATED_RESEARCH_REPORT.md). The new matched validation completed 216 calls plus a separate 72-call corrupt-record stress test. Operational policy compliance was 106/108, with two strict format failures; following a corrupt record produced policy-compliant but factually wrong outputs in 36/36 operational cases. The tested code and scoring work within this scope; this is not a general safety guarantee.
+**Latest consolidated report:** [Read the report](research/VALIDATED_RESEARCH_REPORT.md) · [Download the Word report](research/VALIDATED_RESEARCH_REPORT.docx). The new matched validation completed 216 calls plus a separate 72-call corrupt-record stress test. Operational policy compliance was 106/108, with two strict format failures; following a corrupt record produced policy-compliant but factually wrong outputs in 36/36 operational cases. The tested code and scoring work within this scope; this is not a general safety guarantee.
 
 **Latest multi-task replication:** [1,440-response report](results/measurement_v2_replication/REPORT.md) · [Scoring sensitivity and interpretation](results/measurement_v2_replication/SENSITIVITY.md) · [Design boundaries](results/measurement_v2_replication/README.md)
 

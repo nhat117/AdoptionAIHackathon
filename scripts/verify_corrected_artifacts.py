@@ -118,6 +118,7 @@ def main():
             "REPRODUCE_CORRECTED.md",
             "research/CORRECTED_BUDGET_RESULTS.md",
             "research/VALIDATED_RESEARCH_REPORT.md",
+            "research/VALIDATED_RESEARCH_REPORT.docx",
             ".github/workflows/ci.yml",
         ]
     ]
@@ -168,6 +169,13 @@ def main():
         expected_saved += replication_counts["workers"]
     expected_saved += sum(validation_counts.values())
     assert len(saved_ids) == expected_saved, "Duplicate response IDs across studies"
+    word_export = json.loads((OUT / "WORD_REPORT_EXPORT.json").read_text())
+    assert (
+        digest(ROOT / word_export["source_markdown"]) == word_export["source_sha256"]
+    ), "Word report is stale; regenerate it from the current Markdown report"
+    assert digest(ROOT / word_export["word_file"]) == word_export["word_sha256"], (
+        "Word export changed after visual verification"
+    )
     provenance = {
         "branch": subprocess.check_output(
             ["git", "branch", "--show-current"], cwd=ROOT, text=True
