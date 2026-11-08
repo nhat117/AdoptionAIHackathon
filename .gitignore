@@ -11,3 +11,4 @@ dist/
 work/
 dashboard-snapshot.json
 dashboard/.openai/
+dashboard/.data-app-offline/

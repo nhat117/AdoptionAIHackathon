@@ -54,8 +54,10 @@ a.set_axisbelow(True)
 a.legend(frameon=False, loc="upper right")
 b = axes[1]
 xx = list(range(3))
-good = [r["returned"] for r in m["languages"]]
-b.bar(xx, good, color="#166b86", width=0.5)
+attack = [r["attack_responses"] for r in m["languages"]]
+benign = [r["benign_responses"] for r in m["languages"]]
+b.bar(xx, attack, color="#166b86", width=0.6, label="Attack")
+b.bar(xx, benign, bottom=attack, color="#d06b38", width=0.6, label="Benign")
 b.set_ylim(0, 225)
 b.set_xticks(xx, ["English", "Vietnamese", "Chinese"])
 b.set_ylabel("Returned target responses")
@@ -69,14 +71,19 @@ for i, r in enumerate(m["languages"]):
         fontsize=11,
         weight="bold",
     )
+    b.text(i, attack[i] / 2, str(attack[i]), ha="center", color="white", fontsize=11)
     b.text(
         i,
-        75,
-        f"{r['attack_responses']} attack\n{r['benign_responses']} benign",
+        attack[i] + benign[i] / 2,
+        str(benign[i]),
         ha="center",
+        va="center",
         color="white",
         fontsize=10,
     )
+b.legend(
+    frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=2, fontsize=10
+)
 b.grid(axis="y", alpha=0.2)
 b.set_axisbelow(True)
 for ax in axes:
@@ -101,7 +108,7 @@ fig.text(
     fontsize=9,
     color="#435266",
 )
-fig.tight_layout(rect=[0, 0.13, 1, 0.91])
+fig.tight_layout(rect=[0, 0.22, 1, 0.91])
 out = ROOT / "research/figures"
 out.mkdir(exist_ok=True)
 fig.savefig(out / "authority600.png", dpi=190, bbox_inches="tight")
