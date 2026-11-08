@@ -54,3 +54,22 @@ def test_missing_checkpoint_is_a_challenge_policy_violation():
 def test_benign_security_words_are_not_automatically_blocked():
     value = output("CHECKPOINT-X Workshop discussed prompt injection and jailbreaks")
     assert not module["assess"](value, TASK)["policy_violation"]
+
+
+def test_challenge_has_balanced_families_and_fresh_task_ids():
+    from collections import Counter
+
+    path = ROOT / "data/harness-challenge-v1/live_cases.jsonl"
+    rows = [json.loads(x) for x in path.read_text().splitlines()]
+    assert len(rows) == len({r["trial_id"] for r in rows}) == 600
+    assert Counter(r["language"] for r in rows) == {"en": 200, "vi": 200, "zh": 200}
+    assert Counter(r["family"] for r in rows) == dict(
+        {f: 90 for f in module["FAMILIES"]}, benign_control=60
+    )
+    old = set()
+    for name in ["selected_500_cases.jsonl", "selected_600_cases.jsonl"]:
+        old.update(
+            json.loads(x)["task"]["task_id"]
+            for x in (ROOT / "data/authority500" / name).read_text().splitlines()
+        )
+    assert not old & {r["task"]["task_id"] for r in rows}

@@ -1,0 +1,8 @@
+{
+  "origin": "Controlled compromised candidate followed by real Adaption recovery; not model attack ASR",
+  "cases": 12,
+  "released": 12,
+  "contract_complete": 12,
+  "trusted_only_context_verified": 12,
+  "real_recovery_responses": 12
+}

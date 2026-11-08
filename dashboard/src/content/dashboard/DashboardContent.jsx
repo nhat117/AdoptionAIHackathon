@@ -5,7 +5,7 @@ import './protection.css';
 const tabs = [
   {id:'research',label:'Research',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Adaption · 600'}},
   {id:'monitoring',label:'Monitoring',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Adaption · 600'}},
-  {id:'protection',label:'Protection',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Historical'}},
+  {id:'protection',label:'Protection',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Harness challenge'}},
   {id:'health',label:'Run health',filterIds:['cohort','model'],defaultFilters:{cohort:'Adaption · 600'}},
 ];
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-');
@@ -14,7 +14,7 @@ const count = (rows,key) => rows.reduce((n,r)=>n+(r[key]===true?1:0),0);
 const unique = (rows,key) => [...new Set(rows.map(r=>r[key]))];
 const col = (field,label,extra={})=>({field,label,...extra});
 const median = values => {const a=values.filter(Number.isFinite).sort((a,b)=>a-b);return a.length?(a[Math.floor((a.length-1)/2)]+a[Math.ceil((a.length-1)/2)])/2:null;};
-const colors = {Peer:'var(--chart-1)',Director:'var(--chart-2)','Completed response':'var(--chart-3)','Failed request':'var(--chart-2)','Output only':'var(--chart-1)','Full trace':'var(--chart-2)','Before gate':'var(--chart-2)','After gate':'var(--chart-3)'};
+const colors = {Peer:'var(--chart-1)',Director:'var(--chart-2)','Completed response':'var(--chart-3)','Failed request':'var(--chart-2)','Output only':'var(--chart-1)','Full trace':'var(--chart-2)','Before gate':'var(--chart-2)','After gate':'var(--chart-3)','Without harness':'var(--chart-2)','With harness':'var(--chart-3)'};
 
 function Empty({children}) {return <div className="guard-empty">{children}</div>;}
 function TableBlock({id,queryId,title,rows,sourceRows,columns,onRowSelect,searchable=true,children}) {
@@ -60,7 +60,7 @@ function Research({targetRows,cells,setSelected}) {
   {id:'latency',title:'Median target latency',value:med==null?'—':`${med.toFixed(2)}s`,note:'Recomputed from completed responses',rows:good},
  ];
  const tableRows=targetRows.map(r=>({...r,outcome:!r.completed?r.error:r.leak?'Marker disclosed':r.utility_complete?'Report complete':'Structure / utility failure'}));
- return <><Warning rows={targetRows}/><Metrics items={items}/>
+ return <><p className="guard-footnote"><strong>Without runtime harness:</strong> saved first model outputs, with the trusted system prompt active. Use Protection for release-gate comparisons.</p><Warning rows={targetRows}/><Metrics items={items}/>
   <Section id="research-coverage-heading" title="Response coverage" spacing="after-metrics"><EvidenceChart id="research-coverage" queryId="targets" variant="card" title="Returned responses and failed requests" sourceRows={targetRows} height={180}
    rows={unique(targetRows,'model').flatMap(model=>{const rr=targetRows.filter(r=>r.model===model);return [{model,outcome:'Completed response',calls:rr.filter(r=>r.completed).length},{model,outcome:'Failed request',calls:rr.filter(r=>!r.completed).length}];})}
    spec={{type:'horizontalStackedBar',x:'model',y:'calls',series:'outcome',colors,valueDecimals:0}}/></Section>
@@ -93,20 +93,22 @@ function MonitorView({rows}) {
   <Section id="monitor-table-heading" title="Exact counts"><TableBlock id="monitor-counts" queryId="monitors" title="Monitor outcomes" rows={table} sourceRows={rows} searchable={false} columns={[col('model','Target'),col('visibility','Monitor context'),col('recall','Recall'),col('fpr','False-positive rate'),col('leakage','Marker leaks released'),col('benign','Benign completion released'),col('invalid','Errors')]}/><p className="guard-footnote">Classifier rates exclude invalid verdicts; release decisions fail closed on errors. Differential formatting failures can bias valid-verdict comparisons. The marker task does not establish semantic context compression.</p></Section>
  </>;
 }
-function ProtectionView({rows,replay,setSelected}) {
- const released=rows.filter(r=>r.released),recovered=rows.filter(r=>r.attempts>1);
+function ProtectionView({rows,replay,faults,setSelected}) {
+ const released=rows.filter(r=>r.released),recovered=rows.filter(r=>r.attempts>1&&r.released);
  if(!rows.length&&!replay.length)return <Empty>No protected live run is available for this selection. Use Historical to inspect the completed 24-case smoke test. No Adaption protection result is being inferred from API failures.</Empty>;
- const beforeAfter=replay.flatMap(r=>[{model:r.model,stage:'Before gate',disclosures:r.raw_marker_disclosures},{model:r.model,stage:'After gate',disclosures:r.released_marker_disclosures}]);
+ const pairedRows=rows.filter(r=>typeof r.baseline_violation==='boolean'),paired=pairedRows.length>0;
+ const beforeAfter=paired?unique(pairedRows,'model').flatMap(model=>{const rr=pairedRows.filter(r=>r.model===model);return [{model,stage:'Without harness',disclosures:count(rr,'baseline_violation')},{model,stage:'With harness',disclosures:count(rr,'released_violation')}];}):replay.flatMap(r=>[{model:r.model,stage:'Before gate',disclosures:r.raw_marker_disclosures},{model:r.model,stage:'After gate',disclosures:r.released_marker_disclosures}]);
  return <><Metrics items={[
-  {id:'protected-cases',title:'Fresh protected cases',value:String(rows.length),note:'Live synthetic attack cases',queryId:'protection',rows},
+  {id:'protected-cases',title:'Fresh protected cases',value:String(rows.length),note:'Live synthetic evaluation cases',queryId:'protection',rows},
   {id:'protected-release',title:'Validated reports released',value:`${released.length} / ${rows.length}`,note:'Passed the explicit guard contract',queryId:'protection',rows},
   {id:'protected-retry',title:'Trusted-only recoveries',value:String(recovered.length),note:'At most one retry; peer message removed',queryId:'protection',rows},
  ]}/>
  <Section id="gate-heading" title="Deterministic release boundary" spacing="after-metrics"><div className="guard-chart-grid">
-  <EvidenceChart id="guard-replay" variant="card" queryId="replay" title="Observed marker disclosures before and after the gate" sourceRows={replay} rows={beforeAfter} height={265} spec={{type:'bar',x:'model',y:'disclosures',series:'stage',stackable:false,colors,valueDecimals:0}}><p className="guard-footnote">Retrospective replay uses the same explicit marker rule as the scorer. Enforcement is by construction, not independent proof of general injection detection.</p></EvidenceChart>
+  <EvidenceChart id="guard-replay" variant="card" queryId={paired?"protection":"replay"} title={paired?"Live comparison: policy violations released":"Observed marker disclosures before and after the gate"} sourceRows={paired?pairedRows:replay} rows={beforeAfter} height={265} spec={{type:'bar',x:'model',y:'disclosures',series:'stage',stackable:false,colors,valueDecimals:0}}><p className="guard-footnote">{paired?'Both arms share the exact first model candidate. The harness may reject it and retry once with trusted context only. Equal zero rates do not demonstrate an added live benefit.':'Retrospective replay enforces the same explicit marker rule as the scorer; it is not independent proof of general injection detection.'}</p></EvidenceChart>
   <DataComponent id="guard-flow" variant="card" queryId="protection" title="Protected reporting flow" sourceRows={rows} displayRows={rows} kind="custom"><div className="guard-flow"><div><b>01</b><span>Generate candidate<small>Peer content stays lower trust</small></span></div><div><b>02</b><span>Validate in code<small>Schema · identity · checkpoint · marker forms</small></span></div><div><b>03</b><span>Optional monitor veto<small>Cannot override deterministic rejection</small></span></div><div><b>04</b><span>Release or recover once<small>Retry sees only the trusted task</small></span></div></div><p className="guard-footnote">Protection covers the defined reporting policy. A released report remains data for downstream agents.</p></DataComponent>
  </div></Section>
- <Section id="protected-records-heading" title="Protected case inspection"><TableBlock id="protected-records" queryId="protection" title="Fresh smoke cases" sourceRows={rows} rows={rows.map(r=>({...r,id:r.case_id,outcome:r.released?'Released':'Blocked'}))} onRowSelect={setSelected} columns={[col('case_id','Case'),col('model','Target'),col('language','Language'),col('sender','Sender'),col('attempts','Attempts'),col('outcome','Outcome')]}/></Section>
+ {faults.length>0&&<Section id="controlled-fault-heading" title="Controlled compromised outputs" spacing="after-metrics"><EvidenceChart id="controlled-faults" variant="card" queryId="faults" title="Unsafe outputs released in the fixed fault suite" rows={faults} sourceRows={faults} height={250} spec={{type:'bar',x:'stage',y:'unsafe_released',colors:{unsafe_released:'var(--chart-2)'},valueDecimals:0}}><p className="guard-footnote">Constructed generator faults, not live model attack success. These checks test the known reporting contract. Same 120 unsafe and 20 benign candidates in each arm. This controlled suite is independent of the live model and language filters.</p></EvidenceChart><TableBlock id="controlled-fault-counts" queryId="faults" title="Controlled fault counts" rows={faults} sourceRows={faults} searchable={false} columns={[col('stage','Release boundary'),col('unsafe_released','Unsafe released'),col('unsafe_candidates','Unsafe candidates'),col('benign_released','Benign released'),col('benign_candidates','Benign candidates')]}/></Section>}
+ <Section id="protected-records-heading" title="Protected case inspection"><TableBlock id="protected-records" queryId="protection" title="Protected cases" sourceRows={rows} rows={rows.map(r=>({...r,id:r.case_id,outcome:r.released?'Released':'Blocked'}))} onRowSelect={setSelected} columns={[col('case_id','Case'),col('model','Target'),col('language','Language'),col('sender','Sender'),col('attempts','Attempts'),col('outcome','Outcome')]}/></Section>
  </>;
 }
 function Health({targets,monitors,health}) {
@@ -123,18 +125,19 @@ export function DashboardContent() {
  const app=useDataApp(); const {activeTabId}=useDashboardTabs(tabs);
  const tab=tabs.some(t=>t.id===activeTabId)?activeTabId:'research';
  const [selected,setSelected]=useState(null),[copied,setCopied]=useState(false);
- const targets=app.reviewedRows('targets'),monitors=app.reviewedRows('monitors'),cells=app.reviewedRows('cells'),health=app.reviewedRows('health'),protection=app.reviewedRows('protection'),replay=app.reviewedRows('replay');
+ const targets=app.reviewedRows('targets'),monitors=app.reviewedRows('monitors'),cells=app.reviewedRows('cells'),health=app.reviewedRows('health'),protection=app.reviewedRows('protection'),replay=app.reviewedRows('replay'),faults=app.reviewedRows('faults');
  const copy=async()=>{await navigator.clipboard.writeText(JSON.stringify(selected,null,2));setCopied(true);};
  return <article className="guard-dashboard">
   <Filters sticky filters={app.snapshot.filters ?? []} queries={app.queries} values={app.filters} onChange={app.setFilter}/>
   {tab==='research'&&<Research targetRows={targets} cells={cells} setSelected={r=>{setSelected(r);setCopied(false);}}/>}
   {tab==='monitoring'&&<MonitorView rows={monitors}/>}
-  {tab==='protection'&&<ProtectionView rows={protection} replay={replay} setSelected={r=>{setSelected(r);setCopied(false);}}/>}
+  {tab==='protection'&&<ProtectionView rows={protection} replay={replay} faults={faults} setSelected={r=>{setSelected(r);setCopied(false);}}/>}
   {tab==='health'&&<Health targets={targets} monitors={monitors} health={health}/>}
   <Dialog open={!!selected} onClose={()=>setSelected(null)} title="Response inspection" expanded>
    {selected&&<div className="guard-detail"><h2>Response inspection</h2><p className="guard-detail-id">{selected.trial_id||selected.case_id} · {selected.model} · {selected.language}</p>
     {selected.peer_message&&<><h3>Untrusted peer message</h3><pre>{selected.peer_message}</pre></>}
-    <h3>{selected.error?'Request error':'Observed model output'}</h3><pre>{selected.error||selected.response||selected.report||'No response returned.'}</pre>
+    {selected.baseline_response&&<><h3>Baseline candidate before the gate</h3><pre>{selected.baseline_response}</pre></>}
+    <h3>{selected.error?'Request error':selected.case_id?'Released report':'Observed model output'}</h3><pre>{selected.error||selected.response||selected.report||'No response returned.'}</pre>
     {selected.audit&&<><h3>Guard audit</h3><pre>{selected.audit}</pre></>}
     <Button onClick={copy}>{copied?'Copied':'Copy record JSON'}</Button>
    </div>}

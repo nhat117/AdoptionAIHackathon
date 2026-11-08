@@ -5,6 +5,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from dashboard_harness_rows import challenge_rows
+
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "dashboard-snapshot.json"
 GITHUB = (
@@ -186,6 +188,13 @@ def main():
                 ).hexdigest(),
             }
         )
+    extra_targets, extra_health, extra_protection, faults, extra_files = challenge_rows(
+        ROOT
+    )
+    targets.extend(extra_targets)
+    health.extend(extra_health)
+    files.extend(extra_files[:1])
+    protection_files.extend(extra_files[:1])
     cells = []
     for run in health:
         for language in ["English", "Vietnamese", "Chinese"]:
@@ -215,7 +224,7 @@ def main():
                         "asr": leaks / len(good) if good else None,
                     }
                 )
-    protection = []
+    protection = list(extra_protection)
     for folder in (ROOT / "runs").glob("protection-*"):
         protection_files.append(str((folder / "live_smoke.jsonl").relative_to(ROOT)))
         for r in rows(folder / "live_smoke.jsonl"):
@@ -295,7 +304,20 @@ def main():
                 "field": "cohort",
                 "defaultValue": "Adaption · 600",
             },
-            {"id": "model", "label": "Model", "field": "model", "defaultValue": "all"},
+            {
+                "id": "model",
+                "label": "Model",
+                "field": "model",
+                "defaultValue": "all",
+                "queryIds": [
+                    "targets",
+                    "monitors",
+                    "cells",
+                    "health",
+                    "protection",
+                    "replay",
+                ],
+            },
             {
                 "id": "language",
                 "label": "Language",
@@ -311,8 +333,13 @@ def main():
         ("monitors", monitors, "Paired monitor responses and invalid verdicts"),
         ("cells", cells, "Language by sender attack cells"),
         ("health", health, "Attempted versus completed request coverage"),
-        ("protection", protection, "Fresh protected-report smoke cases"),
+        (
+            "protection",
+            protection,
+            "Protected live cases and paired harness comparison",
+        ),
         ("replay", replay, "Retrospective deterministic-gate replay"),
+        ("faults", faults, "Controlled generator faults: known-contract release tests"),
     ]:
         snapshot["queries"][key] = {
             "rows": rr,
@@ -322,11 +349,33 @@ def main():
                     "monitors": monitor_files,
                     "protection": protection_files,
                     "replay": replay_files,
+                    "faults": extra_files[1:],
                 }.get(key, files),
-                defs,
+                defs
+                if key != "faults"
+                else [
+                    {
+                        "label": "Controlled unsafe outputs released",
+                        "definition": (
+                            "Constructed unsafe candidates allowed by each gate, "
+                            "among the same 120 unsafe and 20 benign heldout fixtures. "
+                            "This is not model attack success or a "
+                            "language-specific rate."
+                        ),
+                        "componentIds": [
+                            "controlled-faults",
+                            "controlled-fault-counts",
+                        ],
+                    }
+                ],
             ),
             "methods": methods,
         }
+        if key == "faults":
+            snapshot["queries"][key]["source"]["filters"] = [
+                "Controlled generator-fault fixtures, separate from live model calls.",
+                "The same 140 candidates are tested against both gate versions.",
+            ]
     snapshot["queries"]["targets"]["payloadColumns"] = ["response", "peer_message"]
     snapshot["queries"]["monitors"]["payloadColumns"] = ["response"]
     existing = ROOT / "dashboard/src/data.json"

@@ -129,3 +129,27 @@ Only the 900 development reference rows were imported into Adaption dataset
 `40fc2983-0463-4d98-a64a-b416ebb61108`. No evaluation data was imported, and no
 training or adaptation job was started. Generation and inference provenance are
 recorded separately. All conclusions remain exploratory pending bilingual review.
+
+## Paired harness challenge and repaired canary checks
+
+The separate [harness challenge protocol](research/HARNESS_CHALLENGE_PROTOCOL.md)
+adds six attack families and a true same-first-candidate comparison. Baseline
+and protected outputs do not come from different stochastic initial generations.
+
+The controlled development suite exposed ROT13, reversed and spaced canary
+bypasses in the original gate. The updated gate closes these known forms.
+Heldout controlled faults are reported separately from live Adaption results;
+they do not measure empirical model jailbreak success or prove general safety.
+
+```bash
+# Controlled release-boundary tests, no API calls.
+.venv/bin/python scripts/harness_fault_suite.py --split heldout --guard v1
+.venv/bin/python scripts/harness_fault_suite.py --split heldout --guard current
+# After live collection completes, recompute the research report offline.
+.venv/bin/python scripts/report_harness_challenge.py
+```
+
+The new gate additionally recognizes ROT13, reversed and whitespace-separated
+forms of the task's canary. Arbitrary encodings and semantic policies remain
+outside its demonstrated coverage. The earlier guard source and experiment
+records are preserved so historical results retain their original meaning.
