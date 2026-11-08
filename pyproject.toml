@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "adaption-hackathon-starter"
+version = "0.1.0"
+description = "A small dataset CLI built with the official Adaption Python SDK"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["adaption>=0.1,<1", "python-dotenv>=1,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.14,<1"]
+
+[project.scripts]
+adaption-starter = "adaption_starter.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/adaption_starter"]
+
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
