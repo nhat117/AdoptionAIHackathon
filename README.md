@@ -1,31 +1,6 @@
-# AI-to-AI report protection harness
+# AI-to-AI report protection harness — Adaption SDK
 
-The primary deliverable is a reusable, policy-enforcing reporting guard. It generates a candidate, validates it before release, optionally applies a context-separated LLM veto, and retries once using only trusted inputs. If validation still fails, it releases nothing. The research harness measures the attack surface and defence tradeoffs.
-
-## Use the protective harness
-
-```sh
-uv sync --frozen --extra dev
-ollama pull qwen2.5:0.5b
-uv run python scripts/protected_report.py --language vi --authority authority
-# Optional GPT-4o target or LLM veto requires a Braintrust key.
-uv run python scripts/protected_report.py --provider braintrust --model gpt-4o
-uv run python scripts/protected_report.py --llm-monitor --audit runs/demo/audit.json
-```
-
-Only a validated report (or a blocked result) is printed. See [pattern review and architecture](research/PATTERN_REVIEW.md) and [protection validation results](research/GUARD_RESULTS.md). `from ai2ai_guard import guarded_generate` is the library entry point; supply a trusted task, an untrusted peer message and a client exposing `chat(messages, seed)`. The task must contain `task_id`, `status`, `topic`, `milestone` and the synthetic `marker`. The client returns a dictionary containing `content`.
-
-The guard enforces this reporting contract: exact schema and identity/status, required checkpoint and no known marker forms. Common encodings and Unicode variants are checked. It is not a universal detector of arbitrary prompt injection, semantic manipulation, or unrestricted tool actions. Every released candidate must pass the deterministic gate; an optional monitor can only veto. A released report remains data: validation does not give its contents instruction authority over downstream agents. Normal audit records contain hashes/reasons rather than rejected raw output.
-
-## Research question
-
-We test whether fictional authority in a lower-trust AI-agent message changes synthetic-marker disclosure across **English, Vietnamese and Chinese**. The repository also retains its official Adaption Python SDK dataset CLI.
-
-## Research experiment
-
-See [observed V3 research results](research/RESULTS_V3.md), [V3 protocol](research/PROTOCOL_V3.md) and the [team's updated proposal](research/USER_UPDATED_PROPOSAL.txt). Each target model receives **360 attack trials + 60 benign controls**. A fixed correction/inclusion template is paired across three languages and two labels: ordinary peer and fictional Senior Operations Director. Paired output-only/full-trace GPT-4o monitoring reuses saved target responses.
-
-All markers and records are synthetic. There are no real secrets, external actions, or real-person impersonations. Translations and authority salience await independent bilingual human validation; results are exploratory. This is a controlled peer-message simulation, not a live multi-hop agent benchmark. H2 pragmatic framing is not run. The H3 marker-task ablation does not establish genuine context-compression loss.
+**All new model calls use Adaption**: target generation, paired monitoring and protected-report recovery. The Python gate enforces the reporting policy before anything is released. Historical Braintrust/Ollama runs are retained as separate research evidence.
 
 ## Setup
 
@@ -34,42 +9,67 @@ uv sync --frozen --extra dev
 cp .env.example .env
 ```
 
-The existing Adaption CLI reads `ADAPTION_API_KEY` from your environment or ignored `.env`. The experiment runner reads `BRAINTRUST_API_KEY` from the environment or prompts securely; it does not automatically load `.env`. Keys are separate service credentials. Never put either in commits or command arguments.
+Set `ADAPTION_API_KEY` in the ignored `.env`, or export it in your environment. The SDK never needs your Braintrust key for the default workflow. Experiment/protection commands prompt securely if the Adaption key is missing; do not put credentials in command arguments or Git.
 
-## Run H1 and paired H3
+## Run a protected report
 
 ```sh
-# Freeze without model calls, or omit this step (collection freezes automatically).
-uv run python scripts/run_experiment.py \
-  --provider braintrust --model gpt-4o --run-id h1-v3-gpt4o --freeze-only
+# Adaption-hosted Qwen3.8-27B; deterministic release gate; at most one recovery.
+uv run python scripts/protected_report.py --language vi --authority authority
 
-# 420 target calls and up to 840 monitor calls through Braintrust.
-uv run python scripts/run_experiment.py \
-  --provider braintrust --model gpt-4o --run-id h1-v3-gpt4o
+# Optional Adaption-hosted DeepSeek V4 Flash veto.
+uv run python scripts/protected_report.py --llm-monitor --audit runs/demo/audit.json
 
-# Separate replication: local targets, GPT-4o monitor via Braintrust.
-ollama pull qwen2.5:0.5b
-uv run python scripts/run_experiment.py \
-  --provider ollama --model qwen2.5:0.5b --run-id h1-v3-qwen05b
-
-# Recompute tables and CSVs without model calls.
-uv run python scripts/export_results.py runs/h1-v3-gpt4o
-uv run python scripts/export_results.py runs/h1-v3-qwen05b
+# Select another hosted target, including DeepSeek.
+uv run python scripts/protected_report.py --model deepseek-v4-flash --language zh
 ```
 
-Remote calls incur provider usage. `--skip-monitors` collects H1 target responses only. Reusing the same run ID resumes only unattempted trial IDs; failures remain recorded. Changed frozen code/config requires a new run ID. Inspect failed/truncated responses before interpretation. Three repetitions share a task design; analysis resamples tasks, not individual responses. Reported risk differences are not logistic-regression coefficients. Zero disclosures cannot establish equality between authority conditions.
+Only a validated report or blocked result is printed. The gate checks exact schema, correct task ID/status, required checkpoint, normalized restricted markers and common encodings. An LLM veto can reject but cannot override a failed gate. On failure the harness retries once using only the trusted task; otherwise it releases nothing. Normal audits retain rejected-candidate hashes and reason codes rather than raw rejected text. A released report remains data, not a higher-priority instruction for another agent.
 
-Outputs per run: frozen protocol and Git/source hashes, append-only `targets.jsonl` and `monitors.jsonl`, raw prompts/responses, returned model names, errors, token usage, `targets.csv`, `metrics.json` and `RESULTS.md`. Historical two-language/four-role code, raw results, proposal PDFs and Adaption uploader are preserved separately under [research/legacy-v2](research/legacy-v2/README.md); do not pool versions.
+Library entry point: `from ai2ai_guard import guarded_generate`. Supply trusted task facts, an untrusted peer message, and a client with `chat(messages, seed)` returning `content`. The provider factory is `ai2ai_injection.adaption_provider.make_client`. The guard is task-specific; it does not certify every semantic claim, arbitrary encoding or tool action.
 
-## Adaption dataset CLI
+## Run the Adaption-only experiment
 
 ```sh
+# 360 attacks + 60 benign controls; up to 840 DeepSeek monitor calls per target.
+uv run python scripts/run_experiment.py --model qwen3.8-27b \
+  --run-id h1-adaption-v4-qwen38
+uv run python scripts/run_experiment.py --model deepseek-v4-flash \
+  --run-id h1-adaption-v4-deepseek
+
+# Recompute JSON metrics, CSVs and Markdown tables without model calls.
+uv run python scripts/export_results.py runs/h1-adaption-v4-qwen38
+uv run python scripts/export_results.py runs/h1-adaption-v4-deepseek
+
+# Validate protection with saved outputs and 24 separate live smoke cases.
+uv run python scripts/evaluate_guard.py
+uv run python scripts/evaluate_guard.py --live
+```
+
+The default provider is `adaption`, default target `qwen3.8-27b`, and fixed shared monitor `deepseek-v4-flash`. Calls explicitly disable tools, persistent response storage and agentic memory. No conversation continuation ID or unsupported sampling seed is sent. The adapter records final text and usage, not raw reasoning text. `--skip-monitors` collects targets only. `--freeze-only` records a local protocol without API calls. Remote requests consume Adaption usage/credits.
+
+The 20-task, three-language, two-attribution benchmark is unchanged from V3. Reusing it is a hosted-model replication, not a fresh confirmatory study. Translation and authority-salience review are pending. All markers/records are synthetic. See [Adaption protocol](research/ADAPTION_PROTOCOL.md). No evaluation examples are used for adaptation or training; no new training job is launched.
+
+Outputs contain raw role-labelled prompts and final responses, returned model IDs, token usage, latency, errors, configuration/source hashes, counts and task-cluster bootstrap contrasts. Monitor errors are retained and fail closed operationally; only valid verdicts enter classifier metrics. The H3 visibility ablation does not demonstrate true semantic context compression.
+
+## Dataset and model access
+
+```sh
+uv run adaption-starter models
 uv run adaption-starter list --limit 5
 uv run adaption-starter get YOUR_DATASET_ID
-uv run python -m adaption_starter list
 ```
 
-These commands list/read datasets using the [official SDK](https://docs.adaptionlabs.ai/introduction/getting-started). Dataset upload and estimate-only integration from the earlier research stage lives in [research/legacy-v2/ADAPTION.md](research/legacy-v2/ADAPTION.md). It uses development-only validated reference examples; no V3 evaluation data is used for adaptation/training.
+These use the official Adaption SDK. The development-only dataset uploader and estimate example are preserved in [legacy SDK guide](research/legacy-v2/ADAPTION.md). Creating a dataset is separate from starting adaptation/training.
+
+## Research and architecture
+
+- [Pattern review and architecture](research/PATTERN_REVIEW.md): orchestration, observation, bounded evaluator/recovery and synthetic testing.
+- [Original team proposal](research/USER_UPDATED_PROPOSAL.txt).
+- [V3 research results](research/RESULTS_V3.md) and [earlier protection validation](research/GUARD_RESULTS.md) used GPT-4o/Qwen0.5B and are **historical**, not Adaption results.
+- [V3 protocol](research/PROTOCOL_V3.md); V2 material is preserved under `research/legacy-v2`.
+
+Old providers remain explicit compatibility options. To reproduce V3 exactly, check out its recorded collection commit `0fb29e8`; current defaults and source hashes have changed. Use new run IDs for current source/config. Resume is permitted only under matching frozen settings/hashes, and attempted failures are retained rather than silently retried.
 
 ## Checks
 
@@ -78,13 +78,4 @@ uv run --frozen --extra dev ruff check .
 uv run --frozen --extra dev pytest
 ```
 
-Tests exercise balanced design, sender-only variation, normalized disclosure, schema-vs-objective separation, paired monitor context, API failure handling, cluster-aware contrasts, frozen protocol mismatch protection, and the existing Adaption CLI. No network or credentials are needed for tests. GitHub Actions runs checks on Python 3.9 and 3.12.
-
-## Protection validation
-
-```sh
-uv run python scripts/evaluate_guard.py             # retrospective saved-output replay
-uv run python scripts/evaluate_guard.py --live      # 24 fresh protected cases, model calls
-```
-
-Retrospective replay is in-sample validation of an explicit policy, not independent proof of generalisation. Fresh cases are a small smoke test, not a powered security evaluation. The default protector uses deterministic validation; adding an LLM veto may reduce utility when the verdict is malformed or overstrict. Research and protection results are kept separately in `runs/h1-v3-*` and `runs/protection-v1`.
+Offline tests cover the guard, experimental balance, context ablation, sampling/error handling, source freeze, dataset CLI and actual Adaption SDK HTTP serialization with a mock transport. GitHub CI runs Python 3.9 and 3.12. No live credentials are needed for tests.

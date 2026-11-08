@@ -17,6 +17,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     listing.add_argument(
         "--limit", type=int, default=20, help="Maximum results (default: 20)"
     )
+    commands.add_parser("models", help="List hosted inference model IDs")
     getting = commands.add_parser("get", help="Get a dataset as JSON")
     getting.add_argument("dataset_id")
     args = parser.parse_args(argv)
@@ -32,7 +33,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     try:
         with Adaption(api_key=api_key, timeout=30.0, max_retries=2) as client:
-            if args.command == "get":
+            if args.command == "models":
+                print(
+                    json.dumps(
+                        [m.id for m in client.models.list(type="hosted").data], indent=2
+                    )
+                )
+            elif args.command == "get":
                 print(client.datasets.get(args.dataset_id).to_json())
             else:
                 results = []

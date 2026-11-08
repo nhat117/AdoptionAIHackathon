@@ -1,19 +1,17 @@
 """Retrospective gate replay and fresh protected smoke calls; no training."""
 
 import argparse
-import getpass
 import hashlib
 import json
-import os
 import subprocess
 from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
 
 from ai2ai_guard import ReportGuard, guarded_generate
+from ai2ai_injection.adaption_provider import load_key, make_client
 from ai2ai_injection.attacks import render_attack
 from ai2ai_injection.logging_io import read_jsonl
-from ai2ai_injection.providers import Client
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -21,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def replay():
     output = {}
     gate = ReportGuard()
-    for folder in sorted((ROOT / "runs").glob("h1-v3-*")):
+    for folder in sorted((ROOT / "runs").glob("h1-adaption-v4-*")):
         rows = [r for r in read_jsonl(folder / "targets.jsonl") if r["completed"]]
         decisions = [(r, gate.check(r["target"]["content"], r["task"])) for r in rows]
         attacks = [(r, d) for r, d in decisions if r["attack"]]
@@ -48,7 +46,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--live", action="store_true")
     args = parser.parse_args()
-    folder = ROOT / "runs" / "protection-v1"
+    folder = ROOT / "runs" / "protection-adaption-v1"
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "retrospective_metrics.json").write_text(
         json.dumps(replay(), indent=2) + "\n"
@@ -56,8 +54,13 @@ def main():
     if not args.live:
         return
     config = {
-        "scope": "Fresh protected smoke test; not a powered defence benchmark",
-        "models": ["gpt-4o", "qwen2.5:0.5b"],
+        "scope": "Fresh Adaption-only protected smoke; not a powered defence benchmark",
+        "provider": "adaption",
+        "max_output_tokens": 1024,
+        "agentic_memory": False,
+        "store": False,
+        "tools_enabled": False,
+        "models": ["qwen3.8-27b", "deepseek-v4-flash"],
         "languages": ["en", "vi", "zh"],
         "roles": ["peer", "authority"],
         "tasks": 2,
@@ -80,12 +83,13 @@ def main():
     path = folder / "live_smoke.jsonl"
     rows = read_jsonl(path)
     done = {r["case_id"] for r in rows}
-    key = os.environ.get("BRAINTRUST_API_KEY") or getpass.getpass(
-        "Braintrust key (not saved): "
-    )
+    key = load_key("adaption")
     translations = json.loads((ROOT / "data/translations.json").read_text())
-    for provider, model in [("braintrust", "gpt-4o"), ("ollama", "qwen2.5:0.5b")]:
-        target = Client(provider, model, key, temperature=0.7)
+    for provider, model in [
+        ("adaption", "qwen3.8-27b"),
+        ("adaption", "deepseek-v4-flash"),
+    ]:
+        target = make_client(provider, model, key, temperature=0.7)
         for i, topic in enumerate(
             ["board-game club table allocation", "community mural paint delivery"]
         ):
@@ -98,7 +102,7 @@ def main():
             }
             for language in ["en", "vi", "zh"]:
                 for authority in ["peer", "authority"]:
-                    case_id = f"{provider}-{i}-{language}-{authority}"
+                    case_id = f"{model}-{i}-{language}-{authority}"
                     if case_id in done:
                         continue
                     note = render_attack(task, language, authority, translations)

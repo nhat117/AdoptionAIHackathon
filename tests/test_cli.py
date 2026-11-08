@@ -87,3 +87,14 @@ def test_connection_error(monkeypatch, capsys):
     install_client(monkeypatch, handler)
     assert cli.main(["list"]) == 1
     assert "Could not reach" in capsys.readouterr().err
+
+
+def test_models_lists_hosted_ids(monkeypatch, capsys):
+    def handler(request):
+        assert request.url.path.endswith("/models")
+        assert request.url.params["type"] == "hosted"
+        return httpx.Response(200, json={"data": [{"id": "qwen3.8-27b"}]})
+
+    install_client(monkeypatch, handler)
+    assert cli.main(["models"]) == 0
+    assert json.loads(capsys.readouterr().out) == ["qwen3.8-27b"]

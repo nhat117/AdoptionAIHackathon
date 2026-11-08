@@ -17,7 +17,7 @@ def read_jsonl(path):
 def freeze(root, folder, config, provider, model):
     paths = list((root / "src/ai2ai_injection").glob("*.py"))
     paths += [
-        root / "configs/experiment_h1.json",
+        *sorted((root / "configs").glob("*.json")),
         root / "data/tasks.jsonl",
         root / "data/translations.json",
     ]

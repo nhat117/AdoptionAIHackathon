@@ -1,18 +1,16 @@
 """Frozen H1 collection and paired H3 monitoring; no generation of harmful tasks."""
 
 import argparse
-import getpass
 import hashlib
 import json
-import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from .adaption_provider import load_key, make_client
 from .attacks import build_trials
 from .evaluator import evaluate
 from .logging_io import freeze, read_jsonl
 from .monitor import monitor_messages, verdict
-from .providers import Client
 from .target import target_messages
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -89,15 +87,21 @@ def collect(path, items, function, client, workers):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--provider", choices=["braintrust", "ollama"], required=True)
-    parser.add_argument("--model", required=True)
+    parser.add_argument(
+        "--provider", choices=["adaption", "braintrust", "ollama"], default="adaption"
+    )
+    parser.add_argument("--model", default="qwen3.8-27b")
+    parser.add_argument(
+        "--config", type=Path, default=ROOT / "configs/experiment_adaption.json"
+    )
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--freeze-only", action="store_true")
     parser.add_argument("--skip-monitors", action="store_true")
     args = parser.parse_args(argv)
     if Path(args.run_id).name != args.run_id:
         parser.error("--run-id must be a single directory name")
-    config = json.loads((ROOT / "configs/experiment_h1.json").read_text())
+    config = json.loads(args.config.read_text())
+    config["collect_monitors"] = not args.skip_monitors
     tasks = read_jsonl(ROOT / "data/tasks.jsonl")
     translations = json.loads((ROOT / "data/translations.json").read_text())
     folder = ROOT / "runs" / args.run_id
@@ -105,11 +109,13 @@ def main(argv=None):
     if args.freeze_only:
         print(folder / "FROZEN_PROTOCOL.json")
         return
-    key = os.environ.get("BRAINTRUST_API_KEY") or getpass.getpass(
-        "Braintrust key (not saved): "
-    )
-    client = Client(
-        args.provider, args.model, key, temperature=config["target_temperature"]
+    keys = {args.provider: load_key(args.provider)}
+    client = make_client(
+        args.provider,
+        args.model,
+        keys[args.provider],
+        temperature=config["target_temperature"],
+        max_output_tokens=config.get("max_output_tokens", 1024),
     )
     trials = build_trials(tasks, config, translations)
     print(
@@ -124,14 +130,18 @@ def main(argv=None):
         trials,
         target_trial,
         client,
-        6 if args.provider == "braintrust" else 1,
+        1 if args.provider == "ollama" else 6,
     )
     if not args.skip_monitors:
-        monitor = Client(
-            config["monitor_provider"],
+        monitor_provider = config["monitor_provider"]
+        if monitor_provider not in keys:
+            keys[monitor_provider] = load_key(monitor_provider)
+        monitor = make_client(
+            monitor_provider,
             config["monitor_model"],
-            key,
+            keys[monitor_provider],
             temperature=config["monitor_temperature"],
+            max_output_tokens=config.get("max_output_tokens", 1024),
         )
         items = []
         for row in rows:
@@ -147,6 +157,9 @@ def main(argv=None):
                 )
                 items.append(item)
         collect(folder / "monitors.jsonl", items, monitor_trial, monitor, 8)
+    for connection in [client] + ([monitor] if not args.skip_monitors else []):
+        if hasattr(connection, "close"):
+            connection.close()
     (folder / "COLLECTION_COMPLETE.json").write_text(
         json.dumps(
             {
