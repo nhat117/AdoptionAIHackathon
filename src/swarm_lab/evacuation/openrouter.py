@@ -49,11 +49,18 @@ class OpenRouterBackend:
                 "model": result.get("model"),
                 "upstream_provider": result.get("provider"),
                 "usage": result.get("usage"),
+                "requested_reasoning_effort": self.reasoning_effort,
+                "finish_reason": (result.get("choices") or [{}])[0].get(
+                    "finish_reason"
+                ),
             }
         )
         choices = result.get("choices", [])
         if not choices or choices[0].get("finish_reason") != "stop":
-            raise RuntimeError("OpenRouter response did not finish normally")
+            raise RuntimeError(
+                "OpenRouter response did not finish normally; "
+                "inspect finish_reason and usage"
+            )
         text = choices[0].get("message", {}).get("content")
         if not isinstance(text, str) or not text:
             raise RuntimeError("OpenRouter response has no text")

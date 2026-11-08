@@ -229,6 +229,7 @@ def test_openrouter_reasoning_payload_is_opt_in(monkeypatch, effort):
         ("adaption", "deepseek-v4-flash"),
         ("openrouter", "anthropic/claude-haiku-4.5"),
         ("openrouter", "unverified/model"),
+        ("openrouter", "deepseek/deepseek-v4-flash"),
     ],
 )
 def test_unverified_live_reasoning_fails_before_network_or_output(
@@ -269,7 +270,7 @@ def test_unverified_live_reasoning_fails_before_network_or_output(
     [
         ("openai/gpt-4.1-mini", None, "not_applicable"),
         ("qwen/qwen3.8-27b", "low", "explicit"),
-        ("deepseek/deepseek-v4-flash", "low", "explicit"),
+        ("mistralai/mistral-small-3.2-24b-instruct", None, "not_applicable"),
     ],
 )
 def test_verified_reasoning_policies(model, effort, status):

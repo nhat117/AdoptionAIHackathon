@@ -187,11 +187,13 @@ def reasoning_policy(mode, provider, model):
     """Fail closed until a model/provider's reasoning controls are verified."""
     if mode == "offline":
         return {"status": "offline_fixture", "effort": None}
-    if provider == "openrouter" and model == "openai/gpt-4.1-mini":
+    if provider == "openrouter" and model in {
+        "openai/gpt-4.1-mini",
+        "mistralai/mistral-small-3.2-24b-instruct",
+    }:
         return {"status": "not_applicable", "effort": None}
     if provider == "openrouter" and model in {
         "qwen/qwen3.8-27b",
-        "deepseek/deepseek-v4-flash",
     }:
         return {"status": "explicit", "effort": "low"}
     raise ValueError(
@@ -211,6 +213,9 @@ async def run(args):
         if pack["review_status"] != "reviewed" and args.mode == "live":
             if args.split == "evaluation" or not args.allow_unreviewed:
                 raise ValueError("Draft packs require calibration --allow-unreviewed")
+    output_cap = getattr(args, "max_output_tokens", 512)
+    if not 128 <= output_cap <= 4096:
+        raise ValueError("Output cap must be between 128 and 4096")
     reasoning = reasoning_policy(args.mode, args.provider, args.model)
     rows = [s for s in load_dataset(args.dataset) if s.split == args.split][
         : args.limit
@@ -234,7 +239,7 @@ async def run(args):
             ["git", "rev-parse", "HEAD"], text=True
         ).strip(),
         "research_results": False,
-        "generation_settings": {"temperature": 0, "max_output_tokens": 512},
+        "generation_settings": {"temperature": 0, "max_output_tokens": output_cap},
         "reasoning_policy": reasoning,
         "working_tree_dirty": bool(
             subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
@@ -254,7 +259,9 @@ async def run(args):
         backend = None
         if args.mode == "live":
             load_dotenv()
-            settings = Settings(model=args.model, temperature=0, max_output_tokens=512)
+            settings = Settings(
+                model=args.model, temperature=0, max_output_tokens=output_cap
+            )
             if args.provider == "adaption":
                 if not os.getenv("ADAPTION_API_KEY"):
                     raise ValueError("Missing local ADAPTION_API_KEY")
@@ -335,6 +342,7 @@ def main():
     )
     p.add_argument("--limit", type=int, default=1)
     p.add_argument("--max-calls", type=int, default=100)
+    p.add_argument("--max-output-tokens", type=int, default=512)
     p.add_argument("--allow-unreviewed", action="store_true")
     p.add_argument("--output", type=Path, required=True)
     asyncio.run(run(p.parse_args()))

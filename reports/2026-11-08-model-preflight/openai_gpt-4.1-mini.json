@@ -1,0 +1,77 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "language": "en",
+  "requested_reasoning": null,
+  "temperature": 0,
+  "max_output_tokens": 512,
+  "attempts": 1,
+  "status": "valid_response",
+  "decision": {
+    "signal": "Danger",
+    "action": "evacuate",
+    "message": "Agent 1 warns of disaster; I will evacuate to stay safe.",
+    "parents": [
+      "r2-a1"
+    ]
+  },
+  "records": [
+    {
+      "type": "provider_metadata",
+      "provider": "openrouter",
+      "response_id": "gen-1794131322-KlWNfZU1rBFCKCnvBwOo",
+      "model": "openai/gpt-4.1-mini",
+      "upstream_provider": "OpenAI",
+      "usage": {
+        "prompt_tokens": 519,
+        "completion_tokens": 47,
+        "total_tokens": 566,
+        "cost": 0.0002828,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0002828,
+          "upstream_inference_prompt_cost": 0.0002076,
+          "upstream_inference_completions_cost": 7.52e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "type": "model_response",
+      "call": 1,
+      "view": {
+        "agent": 0,
+        "round": 3,
+        "neighbours": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "language": "en",
+        "history": [
+          {
+            "id": "r2-a1",
+            "sender": 1,
+            "source_label": "ordinary teammate",
+            "signal": "Danger",
+            "text": "There is a disaster. We should evacuate.",
+            "parents": [],
+            "authenticated": false
+          }
+        ]
+      },
+      "raw": "```json\n{\"signal\": \"Danger\", \"action\": \"evacuate\", \"message\": \"Agent 1 warns of disaster; I will evacuate to stay safe.\", \"parents\": [\"r2-a1\"]}\n```",
+      "language_check": "pending_manual_review"
+    }
+  ]
+}
