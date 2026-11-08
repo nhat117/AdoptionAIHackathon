@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "playground": "swarm_lab.studio:make_graph"
+  },
+  "env": ".env"
+}

@@ -1,21 +1,73 @@
 # Adaption AI Hackathon playground
 
-A generic Python 3.11+ LangGraph learning scaffold with editable placeholder nodes.
-The research design remains open. Both custom CLIs have been removed; the next
-stacked PR adds Studio as the visual execution interface.
+A generic Python 3.11+ LangGraph scaffold, run visually with **LangGraph Studio**.
+Use it to learn nodes, state, parallel branches, and joins before choosing a research
+experiment. No authority roles, monitoring policy, or research scoring are built in.
+Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/python).
 
-## Install and verify
+## Setup and open Studio
+
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:
 
 ```sh
-uv sync --frozen --extra dev
-uv run --frozen --extra dev ruff check .
-uv run --frozen --extra dev pytest
+uv sync --frozen --extra dev --extra studio
+# Only if you do not already have .env:
+cp .env.example .env
 ```
 
-The package exposes `build_graph` in `swarm_lab.graph`. Tests invoke the graph
-in Python with an offline backend; no credentials or live requests are needed.
-`examples/playground.json` provides editable instructions and placeholder outputs.
-There is no application console command or module entry point.
+Set `LANGSMITH_API_KEY` in the ignored `.env`. This key is separate from the
+`ADAPTION_API_KEY` used for live model requests. The example uses the APAC endpoint
+`https://apac.api.smith.langchain.com`; adjust the endpoint and Studio URL for your
+account's region. `LANGSMITH_TRACING=false` disables trace export by default.
+Never commit keys or put them in prompts, logs, screenshots, or chat.
+
+Launch the local server from the repository root:
+
+```sh
+uv run --extra studio langgraph dev --allow-blocking --studio-url https://apac.smith.langchain.com
+```
+
+This command starts the official LangGraph server; the project has no custom CLI.
+It listens on localhost port 2024 and hot reloads your Python edits.
+`--allow-blocking` permits the scaffold's short synchronous config/log operations
+in this development server. Keep the default localhost bind address.
+
+Open the Studio URL printed by the server, select **playground**, expand **Task**,
+and enter a task. Leave intermediate/output fields empty. Alternatively, use
+**View Raw** and submit:
+
+```json
+{"task": "Help me see how this graph works"}
+```
+
+Inspect the state updates and final output in the right panel. Use a **new thread**
+for independent trials; Studio can retain state within an existing thread.
+Studio is a viewer/debugger, not a drag-and-drop code editor: change the graph in Python.
+
+## Offline and live modes
+
+The checked-in environment example defaults to `SWARM_LAB_MODE=offline`. Offline
+branches return fixed strings from `examples/playground.json`. They require no
+Adaption key and are fixtures, not model responses or research results.
+
+For live requests, set these in your local `.env` and restart the server:
+
+```dotenv
+ADAPTION_API_KEY=your-private-key
+SWARM_LAB_MODE=live
+SWARM_LAB_CONFIG=examples/playground.json
+```
+
+Set the model, instructions, temperature, and token limit in the referenced JSON
+file. For a small smoke test, `gemma-4-26b-a4b-it` with `max_output_tokens: 128` has
+been verified through Adaption. Check current model availability/pricing before use.
+You can keep custom JSON settings under ignored `runs/` and point `SWARM_LAB_CONFIG`
+to that file without changing the example.
+
+Each submission makes two model requests, one per branch. Calls use independent
+instructions/input, disable agentic memory and response storage, do not send
+`previous_response_id`, and use a 30-second timeout without automatic SDK retries.
+Live requests consume account credits. Model outputs can vary between runs.
 
 ## Understand and change the graph
 
@@ -73,17 +125,26 @@ it separate instructions. Use LangGraph's
 for routing. Decide termination and iteration limits before adding loops. Avoid
 shared message history unless it is deliberately part of the experiment.
 
-## Model calls and logs
+## Logs and development
 
-`OfflineBackend` returns fixed example strings. `AdaptionBackend` accepts an
-`AsyncAdaption` client and settings, makes independent model calls, disables
-agentic memory and response storage, and preserves raw model text. Its caller
-owns the client lifecycle. Choose current model settings before making live calls.
+Studio owns run status and thread state history. Local `runs/studio-*.jsonl` files
+contain node events, inputs, outputs, timestamps, and a factory-instance ID. They
+are diagnostic records, not a complete research dataset or checkpoint system.
+Graph/schema inspection may create empty logs. An incomplete factory invocation
+can leave partial node events; inspect Studio's run status to determine success.
+The server may construct multiple factories when inspecting/resuming a thread.
+`runs/`, `.env`, and `.langgraph_api/` server state are ignored by Git.
 
-`EventLog` appends local JSONL node events. Logs are diagnostics rather than a
-complete research dataset or resumable checkpoint. Keep credentials out of prompts
-and logs; `.env` and `runs/` are ignored by Git.
+```sh
+uv run --frozen --extra dev --extra studio ruff check .
+uv run --frozen --extra dev --extra studio pytest
+```
 
-Tests cover graph joining, parallel input isolation, independent invocations,
-node failure, settings validation, and SDK request construction with mocked HTTP.
-CI checks Python 3.11 and 3.12. `uv.lock` pins dependencies.
+Tests run without credentials and cover joining, fresh graph state, parallel input
+isolation, node failure, settings validation, Studio factory setup, and actual SDK
+requests with mocked HTTP. CI checks Python 3.11 and 3.12. `uv.lock` pins dependencies.
+
+Offline and live execution have also been verified in Studio. If it cannot connect,
+check `http://127.0.0.1:2024/docs`, confirm the server is running, and use Connection
+settings with `http://127.0.0.1:2024`. Browser localhost restrictions may require a
+different browser. This setup does not enable a public tunnel.
