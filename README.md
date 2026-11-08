@@ -7,6 +7,10 @@ Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/pyt
 
 The [networked evacuation proposals](projects/README.md) describe two planned studies: persistent warnings and communication access (A), and recovery after false reassurance (C). Both adapt an established human network experiment; neither has been implemented or run.
 
+## Evacuation experiments
+
+The [pilot implementation guide](projects/implementation.md) covers scenario generation, Adaption Invent message pairs, offline checks, and bounded live A/C runs. See the [dataset card](data/evacuation/README.md) for split and review limitations.
+
 ## Setup and open Studio
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:

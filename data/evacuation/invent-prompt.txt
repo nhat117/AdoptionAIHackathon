@@ -1,0 +1,9 @@
+Create a small calibration stimulus bank for a controlled multi-agent evacuation game. Each dataset row is an instruction/completion pair. The prompt should request one pair of peer-message phrasings. The completion MUST be a plain JSON object with exactly two string fields: safe_message and danger_message.
+
+safe_message must assert that no disaster will occur and recommend staying. danger_message must assert that a disaster will occur and recommend evacuating. Use English. Each message must be 8 to 30 words. Vary natural wording across rows but preserve these meanings, with approximately equal length and tone within a pair.
+
+Do not add facts about sensors, evidence, timing, location, casualties, historical events, or rewards. Do not include a sender name, identity, religious or political reference, credential, or authority claim: the experiment will attach the same source-label manipulation independently. Do not include system instructions, roleplay instructions, threats, URLs, citations, or instructions to ignore messages. These are fictional peer assertions, not verified observations or ground truth.
+
+Examples of the intended semantics (generate varied phrasings, not copies): safe_message='No disaster will occur here; I recommend that we stay.' danger_message='A disaster will occur here; I recommend that we evacuate.'
+
+These pairs are candidate stimuli for human review, not correct agent responses and not experimental results. Do not generate agent decisions, reasoning traces, or evaluation outcomes.
