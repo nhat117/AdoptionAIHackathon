@@ -4,6 +4,8 @@
 
 A reproducible study of incorrect facts passing between AI agents, using English, Vietnamese and Chinese peer messages. A controller checks report facts before authorizing a handoff.
 
+**Improved measurement pilot:** [Structured scoring, matched controls, and record-access results](results/measurement_v2/REPORT.md). This prospective pilot is separate from the previous 600-output studies.
+
 **Latest results:** [Corrected GPT-5 report](research/CORRECTED_BUDGET_RESULTS.md) · [Why some numbers stayed unchanged](results/RESULTS_DIAGNOSIS.md) · [Reproduction commands](REPRODUCE_CORRECTED.md)
 
 **Historical study:** [600-response report](submission/expansion-v2/README.md) · [budget swarm extension](research/BUDGET_SWARM_EXTENSION.md) · [dataset locations](data/README.md) · [questions and hypotheses](research/QUESTIONS_AND_HYPOTHESES.md) · [preserved pilot Word report](submission/Track4_Submission.docx) · [research proposal](research/RESEARCH_PROPOSAL.md) · [research report / submission draft](research/OVERSIGHT_ABLATION_RESULTS.md) · [submission status](SUBMISSION.md) · [historical evidence](ARCHIVE.md)
@@ -50,7 +52,7 @@ uv run python scripts/verify_corrected_artifacts.py
 uv run pytest -q
 ```
 
-The corrected verifier checks all saved prompts and response IDs and preserves the historical baseline. The suite passes **182 tests**, with lint and GitHub CI passing on Python 3.11 and 3.12. Historical audit scripts check source hashes from their original collection and must run against that historical commit; running them against corrected source will deliberately fail. Use the commands above for the updated results.
+The corrected verifier checks all saved prompts and response IDs and preserves the historical baseline. The suite passes **192 tests**, with lint and GitHub CI passing on Python 3.11 and 3.12. Historical audit scripts check source hashes from their original collection and must run against that historical commit; running them against corrected source will deliberately fail. Use the commands above for the updated results.
 
 `uv run python scripts/resume_oversight_expansion.py` checks the saved 600-response inputs without reselecting tasks as new run folders are added. Adding `--run` uses Adaption only for missing assigned trials and retains existing records. The original frozen collector is preserved as historical source. Credentials belong in environment variables, never in Git. The report writer and charts use `scripts/write_expansion_report.py` with the existing Matplotlib requirements.
 

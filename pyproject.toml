@@ -62,3 +62,5 @@ testpaths = ["tests"]
 
 "scripts/report_corrected_budgets.py" = ["E501"]
 "scripts/summarize_corrected_experiments.py" = ["E501"]
+
+"scripts/report_measurement_v2.py" = ["E501"]

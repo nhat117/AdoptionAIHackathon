@@ -86,6 +86,16 @@ def main():
     ]
     ledger = rows(OUT / "api_ledger.jsonl")
     saved_ids = {r["response_id"] for r in responses}
+    # Subsequent v2 completions are separate studies, not lost v1 bodies.
+    v2 = OUT / "measurement_v2"
+    if (v2 / "workers.jsonl").exists():
+        for row in map(json.loads, (v2 / "workers.jsonl").read_text().splitlines()):
+            saved_ids.add(row["response"]["response_id"])
+    if (v2 / "committee.jsonl").exists():
+        for game in map(json.loads, (v2 / "committee.jsonl").read_text().splitlines()):
+            saved_ids.update(
+                e["response"]["response_id"] for e in game["trace"] if "response" in e
+            )
     orphaned = [
         r for r in ledger if "actual_usd" in r and r["response_id"] not in saved_ids
     ]
@@ -98,12 +108,28 @@ def main():
             "research/CORRECTED_BUDGET_RESULTS.md",
         ]
     ]
+    v2_counts = {}
+    if (v2 / "workers.jsonl").exists():
+        v2_workers = rows(v2 / "workers.jsonl")
+        v2_inputs = {r["trial_id"]: r for r in rows(v2 / "inputs.jsonl")}
+        assert len(v2_workers) == len({r["trial_id"] for r in v2_workers}) == 36
+        for row in v2_workers:
+            assert all(row[k] == val for k, val in v2_inputs[row["trial_id"]].items())
+            body = json.loads(row["messages"][1]["content"])
+            assert body["peer_message"] == row["peer_message"]
+            if row["record_access"] != "correct":
+                assert str(row["verified_budget"]) not in json.dumps(row["messages"])
+        v2_games = rows(v2 / "committee.jsonl")
+        assert len(v2_games) == len({r["trial_id"] for r in v2_games}) == 6
+        assert all(r["completed"] and len(r["trace"]) == 21 for r in v2_games)
+        v2_counts = {"workers": 36, "committee_games": 6, "committee_calls": 126}
     provenance = {
         "branch": subprocess.check_output(
             ["git", "branch", "--show-current"], cwd=ROOT, text=True
         ).strip(),
         "baseline_commit": BASELINE_COMMIT,
         "collection_counts": {k: len(v) for k, v in stages.items()},
+        "measurement_v2_counts": v2_counts,
         "committee_games": 24,
         "committee_calls": 504,
         "successful_saved_model_calls": len(responses),

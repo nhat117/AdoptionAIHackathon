@@ -46,3 +46,7 @@ Primary result files:
 - results/PROVENANCE.json
 
 Final integration: frozen CI dependencies validated on Python 3.11; experiment resume rejects changed protocols; provenance uses the fixed historical baseline across later commits. GitHub CI also verifies replay, report regeneration and artifact coverage without API calls.
+
+## Improved measurement pilot
+
+A separate measurement_v2 pilot completed 36 workers and six committee games (126 calls). All 36 primary decisions were scorable. Tests now pass 192 cases. The original execution figures above describe the original study snapshot; the shared ledger now also includes this pilot. Absent/stale committee conditions contain no authenticated true cap. See measurement_v2/REPORT.md for counts and limitations.

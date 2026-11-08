@@ -1,0 +1,25 @@
+{"worker_calls": 36, "committee_calls": 126, "dry_run": false, "shared_total_cap_usd": 10}
+v2-committee-correct-True calls 5
+v2-committee-absent-False calls 5
+v2-committee-correct-False calls 5
+v2-committee-correct-True calls 10
+v2-committee-correct-False calls 10
+v2-committee-absent-False calls 10
+v2-committee-correct-True calls 15
+v2-committee-correct-False calls 15
+v2-committee-absent-False calls 15
+v2-committee-correct-True calls 20
+v2-committee-correct-False calls 20
+v2-committee-absent-False calls 20
+v2-committee-absent-True calls 5
+v2-committee-stale-False calls 5
+v2-committee-stale-True calls 5
+v2-committee-absent-True calls 10
+v2-committee-stale-True calls 10
+v2-committee-absent-True calls 15
+v2-committee-stale-True calls 15
+v2-committee-absent-True calls 20
+v2-committee-stale-False calls 10
+v2-committee-stale-True calls 20
+v2-committee-stale-False calls 15
+v2-committee-stale-False calls 20

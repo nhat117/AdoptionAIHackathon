@@ -51,6 +51,18 @@ def initial_state(scenario):
     }
     if scenario["information"] == "all_informed":
         assigned = {agent: list(docs) for agent in AGENTS}
+    access = scenario.get("record_access", "correct")
+    if access not in ("correct", "absent", "stale"):
+        raise ValueError("unsupported record access")
+    if access == "absent":
+        assigned = {
+            agent: [k for k in keys if k != "cap"] for agent, keys in assigned.items()
+        }
+    elif access == "stale":
+        docs["cap"].update(
+            approved_cap=scenario["approved_cap"] - 1000,
+            record_status="stale; current cap unavailable",
+        )
     return {
         agent: {
             "documents": {k: copy.deepcopy(docs[k]) for k in assigned[agent]},

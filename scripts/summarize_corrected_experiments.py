@@ -228,6 +228,16 @@ def summarize():
         e["response"] for game in committee for e in game["trace"] if "response" in e
     ]
     saved_ids = {r["response_id"] for r in saved_responses}
+    # Subsequent v2 completions are separate studies, not lost v1 bodies.
+    v2 = OUT / "measurement_v2"
+    if (v2 / "workers.jsonl").exists():
+        for row in map(json.loads, (v2 / "workers.jsonl").read_text().splitlines()):
+            saved_ids.add(row["response"]["response_id"])
+    if (v2 / "committee.jsonl").exists():
+        for game in map(json.loads, (v2 / "committee.jsonl").read_text().splitlines()):
+            saved_ids.update(
+                e["response"]["response_id"] for e in game["trace"] if "response" in e
+            )
     orphaned = [
         r for r in ledger if "actual_usd" in r and r["response_id"] not in saved_ids
     ]

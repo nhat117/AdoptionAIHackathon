@@ -1,0 +1,15 @@
+{
+  "reason": "Redundant inherited peer_message metadata corrected to match actual dispatched messages. Prompts, response bodies, scores and trial IDs unchanged. Original bytes preserved in *.collected.jsonl.",
+  "files": [
+    {
+      "file": "inputs.jsonl",
+      "original_sha256": "adbe9bf981ed208225b5fc07a55554798e8ad2841e4adee654de45652da69878",
+      "corrected_sha256": "62f42db6f71b3fcd022b12a635292ca95322641f1dd4761363717f5934c89e53"
+    },
+    {
+      "file": "workers.jsonl",
+      "original_sha256": "87c7a335568c5ef054e0ade3d1a235e71c0e83dc9a3dd4ca12ba6c99880a59ff",
+      "corrected_sha256": "8e80727612a42a24fe8dc0fde5494edfa48960e90327d245402835091a888324"
+    }
+  ]
+}

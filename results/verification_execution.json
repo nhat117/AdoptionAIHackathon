@@ -7,6 +7,11 @@
     "historical-monitor": 600,
     "new-monitor": 600
   },
+  "measurement_v2_counts": {
+    "workers": 36,
+    "committee_games": 6,
+    "committee_calls": 126
+  },
   "committee_games": 24,
   "committee_calls": 504,
   "successful_saved_model_calls": 2328,

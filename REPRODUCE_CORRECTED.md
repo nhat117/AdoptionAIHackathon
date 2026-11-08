@@ -56,3 +56,7 @@ Deep Research report and the separately named review were not present in the
 provided attachment. The implementation follows the supplied task requirements.
 
 The saved protocol and inputs are immutable on resume. Use a separate results directory for a changed design. GitHub CI runs tests, lint, dry run, replay, report generation and coverage verification without inference credentials. Baseline integrity is checked against the fixed historical commit, including after these changes are committed.
+
+## Improved measurement pilot
+
+`python scripts/run_measurement_v2.py` is a zero-call dry run. Add `--run` to collect 36 worker decisions, or `--committee --run` for six record-access games (126 calls). Both share the original US$10 ledger. Run `python scripts/report_measurement_v2.py` for the saved pilot report. This changes the prospective decision contract; it does not re-label the 591 older ambiguous outputs.
