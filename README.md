@@ -4,7 +4,7 @@
 
 A reproducible study of incorrect facts passing between AI agents, using English, Vietnamese and Chinese peer messages. A controller checks report facts before authorizing a handoff.
 
-**Start here:** [questions and hypotheses](research/QUESTIONS_AND_HYPOTHESES.md) · [filled Word report](submission/Track4_Submission.docx) · [research proposal](research/RESEARCH_PROPOSAL.md) · [research report / submission draft](research/OVERSIGHT_ABLATION_RESULTS.md) · [submission status](SUBMISSION.md) · [historical evidence](ARCHIVE.md)
+**Start here:** [dataset locations](data/README.md) · [questions and hypotheses](research/QUESTIONS_AND_HYPOTHESES.md) · [filled Word report](submission/Track4_Submission.docx) · [research proposal](research/RESEARCH_PROPOSAL.md) · [research report / submission draft](research/OVERSIGHT_ABLATION_RESULTS.md) · [submission status](SUBMISSION.md) · [historical evidence](ARCHIVE.md)
 
 ## Main finding
 
@@ -35,6 +35,15 @@ uv run pytest -q
 The first experiment command checks the frozen plan. Adding `--run` collects only missing trials and consumes Adaption usage. It reads `ADAPTION_API_KEY` or securely prompts without saving it. Existing trials are retained. Never put credentials in code or Git.
 
 **Validation:** the 88-test research suite and 14 existing LangGraph tests pass together (102 total); lint passes; 133 prior run files are verified unchanged. Python 3.11+ matches the existing Studio scaffold.
+
+## Dataset locations
+
+See the [dataset index](data/README.md) for all source and output paths.
+
+- **Current study inputs:** [runs/oversight-ablation-v1/inputs.jsonl](runs/oversight-ablation-v1/inputs.jsonl) — 24 prompts.
+- **Actual responses and scores:** [runs/oversight-ablation-v1/trials.jsonl](runs/oversight-ablation-v1/trials.jsonl) — 24 run records.
+- **Easy-to-read outputs:** [CSV](submission/figures/all-recorded-outputs.csv) or [JSON](submission/figures/all-recorded-outputs.json).
+- **Earlier 600-case dataset:** [data/authority500/selected_600_cases.jsonl](data/authority500/selected_600_cases.jsonl) — 200 cases per language. This is separate from the current controlled study.
 
 ## Inspect the evidence
 

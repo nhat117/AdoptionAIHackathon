@@ -12,6 +12,10 @@ The final rendering is eleven pages, including references and appendices; refere
 
 Five figures comprise a methods diagram, outcome bars, a language heatmap, worker-error bars and an archived-formatting bar comparison. All chart axes show counts and denominators. Formatting and worker-error views use grouped bars rather than scatter or paired-point charts. The charts reuse saved trials and do not add independent observations.
 
+## Dataset locations
+
+[Dataset index](../data/README.md) lists the exact current input and output files and the separate earlier 600-case dataset. The controlled study uses 24 responses, not 600.
+
 ## Actual sample outputs
 
 The report includes the six-language/grounding examples for the first task and clean, poisoned and grounded outputs from the second task. The [24 recorded outputs in JSON](figures/all-recorded-outputs.json) contain expected facts, peer reports, exact parsed model objects, trial IDs and gate decisions. The [flat CSV](figures/all-recorded-outputs.csv) supports quick inspection. These are existing synthetic-task records, not newly generated demonstration outputs.

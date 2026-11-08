@@ -8,6 +8,8 @@
 
 **Report:** [OVERSIGHT_ABLATION_RESULTS.md](research/OVERSIGHT_ABLATION_RESULTS.md)
 
+**Dataset locations:** [Dataset index](data/README.md) · [current inputs](runs/oversight-ablation-v1/inputs.jsonl) · [recorded outputs](submission/figures/all-recorded-outputs.json)
+
 **Proposal and study scope:** [RESEARCH_PROPOSAL.md](research/RESEARCH_PROPOSAL.md)
 
 The implementation, experiments, controlled analysis and evidence-preservation checks are complete. The report includes a 150–250-word abstract, methods, quantitative baselines, discussion, references and a Limitations and Dual-Use / Ethical Considerations appendix.
