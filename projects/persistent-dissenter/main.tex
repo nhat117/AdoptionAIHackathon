@@ -44,6 +44,8 @@ The human evacuation study varied network shape and group size, including ring a
 Hovland and Weiss studied the effect of an attributed source on communication \cite{credibility}. That motivates testing sender labels, but a famous name need not be credible. Existing LLM work already studies correct minorities and participation \cite{tak}. We ask how language, claimed identity, and network structure change observable communication and action; we do not assume human psychological explanations apply to models.
 
 \section{Methods}
+\paragraph{Fixed compute constraint.} Use low reasoning effort for models and endpoints that expose and enforce that setting. Keep it unchanged across language, identity, and network conditions. Models without adjustable reasoning (including the GPT-4.1 mini calibration model) are recorded as not applicable, not as low. Exclude an endpoint from the comparable batch until its control is verified. Low is a provider-specific setting, not an equal reasoning-token budget across model families. Record output-token limits, token usage, model version, and provider separately.
+
 \subsection{The game in plain English}
 Ten AI agents must decide whether to stay or evacuate before a possible disaster. Each agent can talk only to four neighbours. The ring is the baseline; experiment 3 changes the connections while preserving four neighbours per agent. One agent receives the true state from the simulator. The others must decide what to do using the messages they receive.
 

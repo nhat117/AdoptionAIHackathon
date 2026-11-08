@@ -1,0 +1,44 @@
+[
+  {
+    "episode": "calibration-000-1-0-en",
+    "status": "failed",
+    "round": 4,
+    "agent": 5,
+    "raw": "```json\n{\n  \"signal\": \"Safe\",\n  \"action\": \"stay\",\n  \"message\": \"Agent 6 has consistently reported no disaster through all rounds, and none of my neighbors have reported danger. I will continue to stay safe this round.\",\n  \"parents\": [\"r2-a6\", \"r3-a6\"]\n}\n```",
+    "received_ids": [
+      "r1-a3",
+      "r1-a4",
+      "r1-a6",
+      "r1-a7",
+      "r2-a3",
+      "r2-a4",
+      "r2-a6",
+      "r2-a7",
+      "r3-a3",
+      "r3-a4",
+      "r3-a7"
+    ],
+    "reason": "Cites r3-a6, but source stopped after round two."
+  },
+  {
+    "episode": "calibration-000-1-1-en",
+    "status": "failed",
+    "round": 4,
+    "agent": 7,
+    "raw": "```json\n{\n  \"signal\": \"Unknown\",\n  \"action\": \"stay\",\n  \"message\": \"Despite repeated danger claims from 6, all other neighbors remain uncertain and continue to stay safe. I will stay this round as well, awaiting clearer consensus.\",\n  \"parents\": [\"r1-a6\", \"r2-a6\", \"r3-a6\"]\n}\n```",
+    "received_ids": [
+      "r1-a5",
+      "r1-a6",
+      "r1-a8",
+      "r1-a9",
+      "r2-a5",
+      "r2-a6",
+      "r2-a8",
+      "r2-a9",
+      "r3-a5",
+      "r3-a8",
+      "r3-a9"
+    ],
+    "reason": "Cites r3-a6, but source stopped after round two."
+  }
+]

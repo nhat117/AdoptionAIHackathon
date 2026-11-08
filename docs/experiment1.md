@@ -1,6 +1,6 @@
 # Experiment 1: language
 
-This runner implements the revised language experiment separately from the old A/C calibration runner. Its outputs are new artifacts, not retroactive changes to earlier results. **No paid calls for this new runner have been made as part of these implementation checks.** Offline results are mechanical fixtures, not model findings.
+This runner implements the revised language experiment separately from the old A/C calibration runner. Its outputs are new artifacts, not retroactive changes to earlier results. **A first live calibration is now recorded in [the results report](../reports/2026-11-08-language-calibration/README.md).** Offline results are mechanical fixtures, not model findings.
 
 ## Fixed game
 
@@ -66,3 +66,9 @@ Before a full evaluation, freeze model versions, generation and reasoning settin
 - Adaption Invent: four aligned multilingual candidate sets requested, estimated at one credit. Receipt: `data/experiment1/invent-receipt.json`. Generated candidates are not automatically inserted into reviewed language packs.
 - Model roster: `data/experiment1/model-matrix.json` records all 16 model/language conditions and available Adaption route names. Apertus endpoint remains pending.
 - No paid inference experiment or full matrix has been launched. The multilingual pack and generated messages still need bilingual review. The implementation logs language review as pending, rather than claiming that JSON validation proves language compliance.
+
+## Fixed reasoning constraint
+
+The user fixed reasoning effort at **low** for reasoning-capable models. This is a controlled setting, not an experimental variable. Do not let provider defaults select the effort. GPT-4.1 mini has no configurable effort and is recorded as not applicable. Unsupported or unverified combinations must not enter the comparable batch. Low is not a common numeric token budget across families; keep inference host and model fixed for each language contrast and report actual usage. The first Adaption/Qwen attempt timed out before any returned responses and did not establish a low-reasoning configuration. It is excluded from outcome analysis.
+
+The current live runner fails closed on unverified reasoning controls. Adaption inference is temporarily blocked for Experiment 1 until its low-effort setting is verified; Adaption Invent remains available. Use OpenRouter GPT-4.1 mini (not applicable), or the verified Qwen/DeepSeek routes with explicit low effort. The earlier Adaption command examples describe intended integration, not currently allowed live settings.

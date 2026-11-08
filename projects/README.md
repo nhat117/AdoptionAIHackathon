@@ -49,3 +49,5 @@ Local-language comparisons change model and language together. The shared Englis
 ## Experiment 1 implementation
 
 [Runner and Adaption workflow](../docs/experiment1.md) · [Model/language matrix](../data/experiment1/model-matrix.json). The separate `language-v1` runner supports natural-language messages and fixed all-neighbour delivery. Draft translation packs require review before evaluation. Earlier A/C runners remain unchanged.
+
+[First Experiment 1 calibration](../reports/2026-11-08-language-calibration/README.md): six of eight GPT-4.1 mini games completed; two failed provenance validation. Low reasoning is now a fixed constraint for reasoning-capable models; unverified endpoints fail closed.

@@ -183,6 +183,23 @@ def append(path, item):
         f.write(json.dumps(item, ensure_ascii=False, default=str) + "\n")
 
 
+def reasoning_policy(mode, provider, model):
+    """Fail closed until a model/provider's reasoning controls are verified."""
+    if mode == "offline":
+        return {"status": "offline_fixture", "effort": None}
+    if provider == "openrouter" and model == "openai/gpt-4.1-mini":
+        return {"status": "not_applicable", "effort": None}
+    if provider == "openrouter" and model in {
+        "qwen/qwen3.8-27b",
+        "deepseek/deepseek-v4-flash",
+    }:
+        return {"status": "explicit", "effort": "low"}
+    raise ValueError(
+        "Live model/provider reasoning controls are not verified; "
+        "Adaption inference remains blocked until its controls are verified"
+    )
+
+
 async def run(args):
     packs = json.loads(args.packs.read_text())
     if len(set(args.languages)) != len(args.languages):
@@ -194,6 +211,7 @@ async def run(args):
         if pack["review_status"] != "reviewed" and args.mode == "live":
             if args.split == "evaluation" or not args.allow_unreviewed:
                 raise ValueError("Draft packs require calibration --allow-unreviewed")
+    reasoning = reasoning_policy(args.mode, args.provider, args.model)
     rows = [s for s in load_dataset(args.dataset) if s.split == args.split][
         : args.limit
     ]
@@ -217,6 +235,7 @@ async def run(args):
         ).strip(),
         "research_results": False,
         "generation_settings": {"temperature": 0, "max_output_tokens": 512},
+        "reasoning_policy": reasoning,
         "working_tree_dirty": bool(
             subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
         ),
@@ -245,7 +264,9 @@ async def run(args):
                 key = os.getenv("OPENROUTER_API_KEY")
                 if not key:
                     raise ValueError("Missing local OPENROUTER_API_KEY")
-                backend = OpenRouterBackend(key, settings, record)
+                backend = OpenRouterBackend(
+                    key, settings, record, reasoning_effort=reasoning["effort"]
+                )
         for scenario in rows:
             for lang in args.languages:
                 context.update(scenario=scenario.id, language=lang)
@@ -278,18 +299,23 @@ async def run(args):
                 finally:
                     manifest["model_calls"] += policy.calls
         manifest["status"] = "completed"
+    except asyncio.CancelledError:
+        manifest.update(status="cancelled", error_type="CancelledError")
+        raise
     except Exception as exc:
         manifest.update(status="failed", error_type=type(exc).__name__)
         raise RuntimeError(
             f"Experiment failed: {type(exc).__name__}; see manifest"
         ) from None
     finally:
-        if client:
-            await client.close()
-        manifest["finished_at"] = datetime.now(timezone.utc).isoformat()
-        (args.output / "manifest.json").write_text(
-            json.dumps(manifest, indent=2, default=str)
-        )
+        try:
+            if client:
+                await client.close()
+        finally:
+            manifest["finished_at"] = datetime.now(timezone.utc).isoformat()
+            (args.output / "manifest.json").write_text(
+                json.dumps(manifest, indent=2, default=str)
+            )
 
 
 def main():

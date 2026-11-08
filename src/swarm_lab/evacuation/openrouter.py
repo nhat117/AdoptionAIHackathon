@@ -8,8 +8,9 @@ from ..settings import AgentSettings, Settings
 
 
 class OpenRouterBackend:
-    def __init__(self, api_key: str, settings: Settings, record):
+    def __init__(self, api_key: str, settings: Settings, record, reasoning_effort=None):
         self.api_key, self.settings, self.record = api_key, settings, record
+        self.reasoning_effort = reasoning_effort
 
     async def generate(self, agent: AgentSettings, input_text: str) -> str:
         return await asyncio.to_thread(self._generate, agent, input_text)
@@ -28,6 +29,8 @@ class OpenRouterBackend:
             "max_tokens": self.settings.max_output_tokens,
             "provider": {"allow_fallbacks": False, "require_parameters": True},
         }
+        if self.reasoning_effort is not None:
+            payload["reasoning"] = {"effort": self.reasoning_effort}
         request = urllib.request.Request(
             "https://openrouter.ai/api/v1/chat/completions",
             data=json.dumps(payload).encode(),

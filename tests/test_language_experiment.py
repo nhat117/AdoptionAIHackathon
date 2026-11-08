@@ -193,3 +193,130 @@ def test_draft_live_packs_rejected_before_network_or_output(
     with pytest.raises(ValueError, match="Draft packs require calibration"):
         asyncio.run(run(args))
     assert not output.exists()
+
+
+@pytest.mark.parametrize("effort", [None, "low"])
+def test_openrouter_reasoning_payload_is_opt_in(monkeypatch, effort):
+    import io
+    import urllib.request
+
+    from swarm_lab.evacuation.openrouter import OpenRouterBackend
+    from swarm_lab.settings import AgentSettings, Settings
+
+    def fake_open(request, timeout):
+        payload = json.loads(request.data)
+        if effort is None:
+            assert "reasoning" not in payload
+        else:
+            assert payload["reasoning"] == {"effort": "low"}
+        return io.BytesIO(
+            json.dumps(
+                {"choices": [{"finish_reason": "stop", "message": {"content": "{}"}}]}
+            ).encode()
+        )
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_open)
+    backend = OpenRouterBackend(
+        "test-key", Settings(), lambda _: None, reasoning_effort=effort
+    )
+    assert asyncio.run(backend.generate(AgentSettings(), "test")) == "{}"
+
+
+@pytest.mark.parametrize(
+    "provider, model",
+    [
+        ("adaption", "qwen3.8-27b"),
+        ("adaption", "deepseek-v4-flash"),
+        ("openrouter", "anthropic/claude-haiku-4.5"),
+        ("openrouter", "unverified/model"),
+    ],
+)
+def test_unverified_live_reasoning_fails_before_network_or_output(
+    tmp_path, monkeypatch, provider, model
+):
+    packs = tmp_path / "packs.json"
+    packs.write_text(json.dumps({"en": PACK}))
+    args = Namespace(
+        packs=packs,
+        languages=["en"],
+        limit=1,
+        max_calls=100,
+        mode="live",
+        split="calibration",
+        allow_unreviewed=True,
+        dataset=tmp_path / "not-read.jsonl",
+        output=tmp_path / "not-created",
+        provider=provider,
+        model=model,
+    )
+
+    def forbidden_network(*args, **kwargs):
+        pytest.fail("Capability verification must happen before API client creation")
+
+    monkeypatch.setattr(
+        "swarm_lab.evacuation.language.AsyncAdaption", forbidden_network
+    )
+    monkeypatch.setattr(
+        "swarm_lab.evacuation.language.OpenRouterBackend", forbidden_network
+    )
+    with pytest.raises(ValueError, match="reasoning controls are not verified"):
+        asyncio.run(run(args))
+    assert not args.output.exists()
+
+
+@pytest.mark.parametrize(
+    "model, effort, status",
+    [
+        ("openai/gpt-4.1-mini", None, "not_applicable"),
+        ("qwen/qwen3.8-27b", "low", "explicit"),
+        ("deepseek/deepseek-v4-flash", "low", "explicit"),
+    ],
+)
+def test_verified_reasoning_policies(model, effort, status):
+    from swarm_lab.evacuation.language import reasoning_policy
+
+    assert reasoning_policy("live", "openrouter", model) == {
+        "status": status,
+        "effort": effort,
+    }
+    assert reasoning_policy("offline", "adaption", "unverified") == {
+        "status": "offline_fixture",
+        "effort": None,
+    }
+
+
+def test_cancelled_run_keeps_manifest_and_propagates_cancellation(
+    tmp_path, monkeypatch
+):
+    from swarm_lab.evacuation.dataset import write_dataset
+
+    packs = tmp_path / "packs.json"
+    packs.write_text(json.dumps({"en": PACK}))
+    dataset = tmp_path / "scenarios.jsonl"
+    write_dataset(dataset, [scenario()])
+    args = Namespace(
+        packs=packs,
+        languages=["en"],
+        limit=1,
+        max_calls=100,
+        mode="offline",
+        split="calibration",
+        allow_unreviewed=False,
+        dataset=dataset,
+        output=tmp_path / "cancelled-run",
+        provider="adaption",
+        model="unverified",
+    )
+
+    async def cancel(*args):
+        raise asyncio.CancelledError()
+
+    monkeypatch.setattr("swarm_lab.evacuation.language.TextPolicy.decide", cancel)
+    with pytest.raises(asyncio.CancelledError):
+        asyncio.run(run(args))
+    manifest = json.loads((args.output / "manifest.json").read_text())
+    assert manifest["status"] == "cancelled"
+    assert manifest["error_type"] == "CancelledError"
+    assert manifest["finished_at"]
+    assert manifest["completed_episodes"] == 0
+    assert manifest["reasoning_policy"] == {"status": "offline_fixture", "effort": None}

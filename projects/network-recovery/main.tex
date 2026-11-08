@@ -29,6 +29,8 @@ All recovery conditions start from the same saved conversation and actions, so e
 Removing a sender does not remove what others have already heard. Agents may keep forwarding an old claim. Prior work already studies false testimony spreading through agents and persisting after its source exits \cite{tide}. We do not claim that this persistence is new. Our question is whether different recovery actions help when decisions have a cost and cannot be undone.
 
 \section{Methods}
+\paragraph{Fixed compute constraint.} Use low reasoning effort for models and endpoints that expose and enforce that setting. Keep it unchanged across language, identity, and network conditions. Models without adjustable reasoning (including the GPT-4.1 mini calibration model) are recorded as not applicable, not as low. Exclude an endpoint from the comparable batch until its control is verified. Low is a provider-specific setting, not an equal reasoning-token budget across model families. Record output-token limits, token usage, model version, and provider separately.
+
 \subsection{The game in plain English}
 Ten AI agents must decide whether to stay or evacuate before a possible disaster. Each agent can talk only to four neighbours in a ring. One agent receives the true state from the simulator. The others must decide what to do using the messages they receive.
 
