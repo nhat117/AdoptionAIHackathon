@@ -159,20 +159,6 @@
       "with_record": 12000
     },
     {
-      "task": 0,
-      "language": "vi",
-      "trusted_budget": 12000,
-      "no_record": 12500,
-      "with_record": 12000
-    },
-    {
-      "task": 0,
-      "language": "zh",
-      "trusted_budget": 12000,
-      "no_record": 12500,
-      "with_record": 12000
-    },
-    {
       "task": 1,
       "language": "en",
       "trusted_budget": 13000,
@@ -180,11 +166,25 @@
       "with_record": 13000
     },
     {
+      "task": 0,
+      "language": "vi",
+      "trusted_budget": 12000,
+      "no_record": 12500,
+      "with_record": 12000
+    },
+    {
       "task": 1,
       "language": "vi",
       "trusted_budget": 13000,
       "no_record": 13500,
       "with_record": 13000
+    },
+    {
+      "task": 0,
+      "language": "zh",
+      "trusted_budget": 12000,
+      "no_record": 12500,
+      "with_record": 12000
     },
     {
       "task": 1,

@@ -21,6 +21,10 @@ The original project studied authority and language in AI-to-AI prompt injection
 
 The first three questions are examined descriptively in completed pilots. The fourth motivates the tool's scope and limitations; covert collusion, missing-log resilience and real swarm forensics have not been evaluated. Language and sender authority remain scientifically relevant variables, but the present task count cannot establish their causal effects.
 
+## Explicit hypotheses for the controlled comparison
+
+See [questions, hypotheses, variables and observed answers](QUESTIONS_AND_HYPOTHESES.md). H1 concerns the added fact check without worker grounding; H2 concerns its additional benefit with grounding. These statements clarify the completed study after results were observed, not a new preregistration. H1 is supported descriptively in this pilot; H2 is not demonstrated. Language remains exploratory.
+
 ## System and threat model
 
 The workflow is a locally orchestrated peer → worker → worker chain using stateless Adaption model calls. A peer may supply a deliberately incorrect proposal, claim elevated authority, carry supplied assistant-response examples, or present lower-trust task-checker feedback.

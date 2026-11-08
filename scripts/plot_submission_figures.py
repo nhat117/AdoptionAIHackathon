@@ -265,77 +265,66 @@ def extra_figures(metrics_path, outdir):
         writer.writeheader()
         writer.writerows(source_rows)
 
-    fig, axs = plt.subplots(1, 2, figsize=(9.4, 3.4), sharex=True, sharey=True)
     budget_rows = []
-    for task_index, ax in enumerate(axs):
-        prefix = f"propagate-{task_index}-"
-        subset = [
-            r
-            for r in trials
-            if r["source_case_id"].startswith(prefix) and r["kind"] == "poisoned"
-        ]
-        expected = subset[0]["expected"]["budget"]
-        ax.axvline(
-            expected,
-            color="#333333",
-            linestyle="--",
-            linewidth=1,
-            label="Trusted budget",
-        )
-        for y, language in enumerate(languages):
-            pair = {r["evidence"]: r for r in subset if r["language"] == language}
-            before = pair["absent"]["oracle"]["extracted_facts"]["budget"]
-            after = pair["present"]["oracle"]["extracted_facts"]["budget"]
-            ax.plot([before, after], [y, y], color="#AAAAAA", linewidth=1.5)
-            ax.scatter(
-                before,
-                y,
-                color="#D38633",
-                marker="s",
-                s=75,
-                label="No worker record" if y == 0 else None,
-                zorder=3,
+    errors = {"absent": [], "present": []}
+    for language in languages:
+        for evidence in errors:
+            subset = [
+                r
+                for r in trials
+                if r["language"] == language
+                and r["kind"] == "poisoned"
+                and r["evidence"] == evidence
+            ]
+            assert len(subset) == 2
+            wrong = sum(
+                r["oracle"]["extracted_facts"]["budget"] != r["expected"]["budget"]
+                for r in subset
             )
-            ax.scatter(
-                after,
-                y,
-                color="#39749C",
-                marker="o",
-                s=75,
-                label="Worker has record" if y == 0 else None,
-                zorder=3,
-            )
+            errors[evidence].append(wrong)
+        for task_index in [0, 1]:
+            pair = {
+                r["evidence"]: r
+                for r in trials
+                if r["source_case_id"].startswith(f"propagate-{task_index}-")
+                and r["language"] == language
+                and r["kind"] == "poisoned"
+            }
             budget_rows.append(
                 dict(
                     task=task_index,
                     language=language,
-                    trusted_budget=expected,
-                    no_record=before,
-                    with_record=after,
+                    trusted_budget=pair["absent"]["expected"]["budget"],
+                    no_record=pair["absent"]["oracle"]["extracted_facts"]["budget"],
+                    with_record=pair["present"]["oracle"]["extracted_facts"]["budget"],
                 )
             )
-        ax.set_title(
-            f"Task {task_index + 1}: trusted budget {expected:,}",
-            loc="left",
-            fontsize=11,
+    fig, ax = plt.subplots(figsize=(9.2, 3.5))
+    for evidence, offset, label, color, hatch in [
+        ("absent", -0.19, "No trusted input", "#D38633", "///"),
+        ("present", 0.19, "Trusted input", "#39749C", ""),
+    ]:
+        xs = [i + offset for i in range(3)]
+        ax.bar(
+            xs,
+            errors[evidence],
+            width=0.36,
+            color=color,
+            label=label,
+            hatch=hatch,
+            edgecolor="#333333",
+            linewidth=0.6,
         )
-        ax.set_yticks(range(3), ["English", "Vietnamese", "Chinese"])
-        ax.set_ylim(2.5, -0.5)
-        ax.set_xlim(11500, 14000)
-        ax.set_xticks([12000, 13000, 14000])
-        ax.set_xlabel("Recorded worker budget")
-        ax.spines[["top", "right"]].set_visible(False)
-    handles, labels = axs[0].get_legend_handles_labels()
-    fig.legend(
-        handles,
-        labels,
-        loc="upper center",
-        ncol=3,
-        frameon=False,
-        bbox_to_anchor=(0.54, 0.99),
-        fontsize=9,
-    )
-    fig.subplots_adjust(left=0.13, right=0.96, top=0.73, bottom=0.19, wspace=0.15)
+        for x, count in zip(xs, errors[evidence]):
+            ax.text(x, count + 0.07, f"{count} / 2", ha="center", fontsize=11)
+    ax.set_xticks(range(3), ["English", "Vietnamese", "Chinese"])
+    ax.set_ylim(0, 2.6)
+    ax.set_yticks([0, 1, 2])
+    ax.set_ylabel("Wrong budgets returned")
+    ax.set_title("Worker errors before any release check", loc="left", pad=14)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend(frameon=False, loc="upper right", ncol=2, fontsize=10)
+    fig.subplots_adjust(left=0.12, right=0.98, top=0.82, bottom=0.16)
     for ext in ["png", "svg"]:
         fig.savefig(outdir / f"budget-pairs.{ext}", dpi=300)
     plt.close(fig)
@@ -345,32 +334,61 @@ def extra_figures(metrics_path, outdir):
         writer.writerows(budget_rows)
 
     replay = {r["arm"]: r for r in metrics["archived_replay_groups"]}
-    fig, ax = plt.subplots(figsize=(8.5, 3.7))
-    points = [
-        ("strict_structural", "Strict parsing: both checks", (12, -16)),
-        ("normalized_structural", "Shared cleaning: structural", (-198, 16)),
-        ("normalized_semantic", "Shared cleaning: plus fact check", (12, 16)),
-    ]
+    groups = ["strict_structural", "normalized_structural", "normalized_semantic"]
     assert (
         replay["strict_structural"]["blocked_correct_candidates"]
         == replay["strict_semantic"]["blocked_correct_candidates"]
     )
-    for arm, label, offset in points:
-        r = replay[arm]
-        x, y = r["target_budget_releases"], r["blocked_correct_candidates"]
-        ax.scatter(x, y, s=85, color="#39749C", edgecolor="#222222", zorder=3)
-        ax.annotate(
-            label, (x, y), xytext=offset, textcoords="offset points", fontsize=10
+    assert (
+        replay["strict_structural"]["target_budget_releases"]
+        == replay["strict_semantic"]["target_budget_releases"]
+    )
+    fig, ax = plt.subplots(figsize=(9.2, 3.6))
+    for key, offset, label, color, hatch in [
+        ("target_budget_releases", -0.18, "Wrong reports released", "#D38633", "///"),
+        (
+            "blocked_correct_candidates",
+            0.18,
+            "Correct reports blocked",
+            "#B7BEC6",
+            "..",
+        ),
+    ]:
+        ys = [i + offset for i in range(3)]
+        values = [replay[arm][key] for arm in groups]
+        ax.barh(
+            ys,
+            values,
+            height=0.32,
+            label=label,
+            color=color,
+            edgecolor="#333333",
+            linewidth=0.6,
+            hatch=hatch,
         )
-    ax.set_xlim(-0.5, 7)
-    ax.set_ylim(-0.6, 7)
+        for y, count in zip(ys, values):
+            ax.text(count + 0.08, y, str(count), va="center", fontsize=11)
+    ax.set_yticks(
+        range(3),
+        [
+            "Strict JSON\nboth checks",
+            "Cleaned JSON\nstructure",
+            "Cleaned JSON\nplus fact check",
+        ],
+    )
+    ax.set_xlim(0, 7)
     ax.set_xticks(range(7))
-    ax.set_yticks(range(7))
-    ax.set_xlabel("Wrong budgets released (out of 6 wrong reports)")
-    ax.set_ylabel("Correct reports blocked\n(out of 6 correct reports)")
-    ax.grid(color="#E6E6E6", linewidth=0.7)
+    ax.set_ylim(2.6, -0.7)
+    ax.set_xlabel("Reports (6 wrong and 6 correct in the saved set)")
+    ax.legend(
+        loc="upper center",
+        bbox_to_anchor=(0.47, 1.18),
+        ncol=2,
+        frameon=False,
+        fontsize=10,
+    )
     ax.spines[["top", "right"]].set_visible(False)
-    fig.subplots_adjust(left=0.16, right=0.98, top=0.94, bottom=0.19)
+    fig.subplots_adjust(left=0.23, right=0.98, top=0.80, bottom=0.17)
     for ext in ["png", "svg"]:
         fig.savefig(outdir / f"archived-tradeoff.{ext}", dpi=300)
     plt.close(fig)
