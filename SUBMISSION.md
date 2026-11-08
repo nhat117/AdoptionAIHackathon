@@ -6,6 +6,8 @@
 
 **Report:** [OVERSIGHT_ABLATION_RESULTS.md](research/OVERSIGHT_ABLATION_RESULTS.md)
 
+**Proposal and study scope:** [RESEARCH_PROPOSAL.md](research/RESEARCH_PROPOSAL.md)
+
 The implementation, experiments, controlled analysis and evidence-preservation checks are complete. The report includes a 150–250-word abstract, methods, quantitative baselines, discussion, references and a Limitations and Dual-Use / Ethical Considerations appendix.
 
 ## Before uploading
