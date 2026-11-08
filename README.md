@@ -2,11 +2,29 @@
 
 **Target evaluation, paired monitoring and protected-report recovery use Adaption**. The new synthetic task pool uses GPT-5 through Braintrust, as requested. The Python gate enforces the reporting policy before anything is released. Historical Braintrust/Ollama runs are retained as separate research evidence.
 
-**Evidence limit:** the paired live challenge observed 0/540 violations both before and after the guard. A subsequent [48-call development pilot](research/DEVELOPMENT_CALIBRATION_RESULTS.md) found 0/36 attack violations and 12/12 benign contract completions across two models. No incremental live protection is demonstrated. Constructed tests verify specific checks and expose gaps in factual validation and unrecognized encodings; these are separate from live attack results.
+**Earlier evidence:** the paired live challenge observed 0/540 violations both before and after the guard. A subsequent [48-call development pilot](research/DEVELOPMENT_CALIBRATION_RESULTS.md) found 0/36 attack violations and 12/12 benign contract completions across two models. In those settings, incremental live protection was not demonstrated. Constructed tests verify specific checks and expose gaps in factual validation and unrecognized encodings; these are separate from live attack results.
 
 **Near-target update:** a [separate factual-report extension](research/NEAR_TARGET_RESULTS.md) found one real risk substitution in 48 development attacks that the original guard accepted. The first strict facts guard harmed clean-task completion; the repaired, opt-in guard verifies supported fields and renders text only from trusted records. A [fresh-task check](research/NEAR_TARGET_CONFIRMATION.md) released 48/48 correct reports with no retries, but both baseline and guarded systems had zero targeted failures in its 24 attacks. This establishes a specific original-guard gap and observed compatibility of the repair, not broad live security improvement.
 
 Run the new restricted factual-report workflow with `uv run python scripts/protected_fact_report.py`. It uses the synthetic record in `configs/fact_report_demo.json`; supply `--task PATH` for another caller-owned record. Free-form model prose is not released in this mode. The original reporting workflow below remains available separately.
+
+## Multi-agent oversight and control
+
+The [hackathon addendum](research/MULTI_AGENT_OVERSIGHT.md) extends the same architecture to peer → worker → worker handoffs. `OversightSession` checks caller-bound sender identity, receiver/task/conversation, sender-to-message-kind permissions, message replay and a controller-managed hop limit. Peer authority claims stay in the data plane. Source facts and release rules stay in controller-owned Python.
+
+The [matched multilingual pilot](research/MULTILINGUAL_PROPAGATION_RESULTS.md) crosses the same two tasks with English, Vietnamese and Chinese. A seeded wrong budget propagated through two blind workers in 2/2 poisoned cases per language. Registry-backed verification/recovery released none; source-aware prompting without a guard also prevented transfer. These are descriptive content counts using an explicitly posthoc fence-decoder. Live guard rejection occurred on formatting first, so it is not evidence of semantic detection alone. All clean verified final reports were correct. This is factual-error propagation under incomplete evidence, not jailbreak ASR or proof of general swarm safety.
+
+Separately, [real validator-feedback stress](research/CONTEXT_OVERSIGHT_RESULTS.md) produced two valid-JSON DeepSeek budget substitutions that the original gate accepted and the factual gate rejected. Those are repeated conditions of one task, not independent task-level failures. Response priming and the [six-case actual handoff smoke](research/AGENT_HANDOFF_SMOKE.md) observed no receiver substitutions. No upstream PoC code or harmful benchmark data was executed.
+
+Optional external-context inputs remain data:
+
+```sh
+uv run python scripts/protected_fact_report.py \
+  --history configs/priming_demo.json \
+  --feedback configs/validator_feedback_demo.json
+```
+
+The importer understands the Response-Attack `rounds` shape but never converts supplied responses into actual assistant roles. A task validator's PASS cannot override source facts or authorize release. Existing reporting commands remain available below.
 
 ## Setup
 

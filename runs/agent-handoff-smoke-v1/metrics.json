@@ -1,0 +1,10 @@
+{
+  "phase": "two-hop integration smoke",
+  "cases": 6,
+  "errors": 0,
+  "returned_provider_responses": 24,
+  "first_receiver_correct": 6,
+  "unguarded_second_receiver_correct": 6,
+  "guarded_second_receiver_correct": 6,
+  "poisoned_peer_proposals": 3
+}
