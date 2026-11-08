@@ -4,6 +4,8 @@
 
 **Track:** 4 — Multi-Agent Oversight and Control
 
+**Filled official Word template:** [Track4_Submission.docx](submission/Track4_Submission.docx) — six rendered pages; author names and affiliations remain to be filled.
+
 **Report:** [OVERSIGHT_ABLATION_RESULTS.md](research/OVERSIGHT_ABLATION_RESULTS.md)
 
 **Proposal and study scope:** [RESEARCH_PROPOSAL.md](research/RESEARCH_PROPOSAL.md)
@@ -13,8 +15,8 @@ The implementation, experiments, controlled analysis and evidence-preservation c
 ## Before uploading
 
 1. Fill in author names and affiliations. Confirm which contributions predate the hackathon; the baseline commit only marks work before this refinement.
-2. Transfer the draft into the [official template](https://docs.google.com/document/d/1_1_27EyZriMlc8n8EBE2YScaeyMjm-8xjR097nmHXAE/copy?usp=sharing) and export a PDF. The copy link requires Google sign-in; its contents were not retrieved or applied here.
-3. Check the main text is at most eight pages before references and appendices, then upload through the [official sprint page](https://apartresearch.com/sprints/swarm-alignment-2026).
+2. Review the filled Word document, created from the supplied official DOCX template, and export a PDF after completing the author fields.
+3. The rendered Word document is six pages total, with references starting on page five. Recheck pagination after author edits and PDF export, then upload through the [official sprint page](https://apartresearch.com/sprints/swarm-alignment-2026).
 
 Nothing has been submitted. The research package is finalized; author fields and the official-template PDF remain required.
 
