@@ -1,3 +1,5 @@
+Current framing update: both proposals now use general research questions and explicit fixed/variable tables. Claimed source, language, and model comparisons are proposed staged experiments, not literature-established effects. Specific religious or political figures are optional attribution conditions, not evidence about model belief or culture. No new empirical claim or citation was added in this revision.
+
 # Current design verification — evacuation proposals
 
 Selected foundation: [Shirado, Crawford and Christakis (2020)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7277132/), DOI 10.1098/rspa.2019.0685. The indexed primary full text was inspected for game rules, payoffs, informant information, network structure, evacuation-related silence, and supplementary communication conditions. Direct PMC opening intermittently returned a browser check; indexed primary text remained accessible. No data or code reproduction was performed.

@@ -9,10 +9,10 @@
 \author{}\date{Initial proposal C --- November 8, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-Removing a misleading agent may leave its messages circulating among other agents. We propose a controlled recovery study using an established networked evacuation task. Live agents exchange local signals and decide whether to evacuate at a cost before a possible disaster. A controlled peer introduces an incorrect reassurance, after which matched network states receive no intervention, source removal, or source removal plus an authenticated correction. A further comparison tests whether linking the correction to previously relayed claims helps beyond a factual correction alone. Outcomes include missed evacuations, unnecessary evacuations, and the continued forwarding of the corrected claim. The study separates removal of a sender from repair of information already delivered, and compares local correction with direct delivery to all agents. No experiments have been run. The proposed contribution is an action-based evaluation of recovery interventions, with explicit controls for information access, communication disruption, and irreversible decisions.
+How does a network recover after incorrect information spreads, and which interventions improve recovery? We propose a controlled study using an established networked evacuation task, separating message propagation, correction uptake, and state-appropriate action. Live agents exchange local signals and decide whether to evacuate at a cost before a possible disaster. A controlled peer introduces an incorrect reassurance, after which matched network states receive no intervention, source removal, or source removal plus an authenticated correction. A further comparison tests whether linking the correction to previously relayed claims helps beyond a factual correction alone. Outcomes include missed evacuations, unnecessary evacuations, and the continued forwarding of the corrected claim. The study separates removal of a sender from repair of information already delivered, and compares local correction with direct delivery to all agents. No experiments have been run. The proposed contribution is an action-based evaluation of recovery interventions, with explicit controls for information access, communication disruption, and irreversible decisions.
 \end{abstract}
 \section{Introduction}
-The question is: \emph{Once false reassurance has spread, does removing its source restore appropriate evacuation decisions, or must recipients explicitly receive a correction?} This is a collective process because remaining agents can relay earlier claims after the original sender disappears. Success means state-appropriate action, not merely a corrected final explanation.
+The research question is: \emph{How does a network recover after incorrect information spreads, and which interventions improve recovery?} In the evacuation game, we compare source removal and correction policies after false reassurance or false warnings, without assuming that any intervention succeeds. This is a collective process because remaining agents can relay earlier claims after the original sender disappears. Success means state-appropriate action, not merely a corrected final explanation.
 \section{Related work}
 The human evacuation game connects local signals to costly decisions \cite{danger}. ForesightSafety-TIDE already studies false testimony propagating through live agents and persisting after its source exits \cite{tide}. Thus neither persistence after removal nor provenance tracing is a new discovery proposed here. Our candidate extension tests recovery policies against irreversible safety actions in an evacuation task. Its distinctiveness requires further comparison with related methods before publication.
 \section{Proposed methods}
@@ -23,7 +23,43 @@ The proposed simulator has ten live model agents on a fixed degree-four ring, se
 
 For reproducibility, replace real-time play with synchronous rounds and a simulator-selected, undisclosed terminal round. Freeze its distribution and maximum after calibration. Every active agent chooses a signal and stay/evacuate; actions and messages are applied together after all responses. Evacuation is irreversible. Exited agents cannot transmit, while previously delivered messages remain in recipients' histories. Use structured outputs and a fixed message budget. These scheduling and model-interface choices are adaptations, not a direct replication.
 
+\subsection{Research scope: fixed settings and experimental variables}
+The overarching question is: \emph{How do a message's source, repetition, and supporting evidence affect its spread and influence on collective decisions?} The evacuation game is the concrete test environment, not the boundary of the research question. Evidence access is controlled in the initial experiments; any later manipulation of evidence quality requires a separately specified contrast.
+
+\begin{tabularx}{\linewidth}{@{}p{0.23\linewidth}X@{}}
+\toprule
+Factor & Status and proposed conditions\\
+\midrule
+Fixed environment & Ten agents, degree-four ring, payoff rules, separate histories, synchronous delivery, irreversible evacuation.\\
+Fixed within comparison & Message budget, task instructions, evidence access, actual permissions, sampling settings, and timing distribution. Exact budgets and timing are selected during calibration and then frozen.\\
+Balanced task conditions & Disaster/no disaster; correct/incorrect focal claims. Rotate source position and neutral identifiers using a prespecified schedule.\\
+Claimed source & Optional extension: ordinary peer, relevant emergency expert, political authority, or religious authority. Initial pilot uses an ordinary peer.\\
+Language & Optional matched English, Chinese, and Vietnamese conditions. Initial pilot uses English.\\
+Model & Optional replications across documented models from different developers. Initial pilot uses one model/version; its selection remains open.\\
+Study-specific treatment & The intervention table below defines the primary comparison for this proposal.\\
+\bottomrule
+\end{tabularx}
+
+\paragraph{Source attribution.} Change only a peer-visible claimed-source label while holding the focal message, evidence, actual permissions, delivery schedule, and position constant within matched comparisons. A title does not grant access to simulator truth. Distinguish a religious role (such as a monk or pastor), a named figure (such as the Buddha), and a divine-authority claim; do not pool these as equivalent. A named political figure such as Xi Jinping is likewise an optional identity condition, not the definition of political authority. Specific identities and wording must be selected before evaluation. Record refusals and role-play responses, since these may differ from accepting the claim. Attribution effects do not establish religious belief, political allegiance, or human cultural psychology.
+
+\paragraph{Language and model replications.} Use bilingual review to preserve instructions, evidence, and source meaning across translations; keep structured action labels constant. Hold one language throughout each episode initially. Compare homogeneous networks of each selected model before considering mixed-model networks. Record developer, exact model identifier/version, access date, and generation settings. Differences between developers' models cannot be attributed causally to national origin, training culture, or any single model property.
+
+\paragraph{Staged evaluation.} First calibrate task comprehension, then run the study-specific contrast with the ordinary-peer label, one model, and English. Next vary claimed source across correct and incorrect claims; subsequently replicate selected contrasts across languages and models. Do not run an unspecified full factorial crossing every factor. Prespecify hypotheses, contrasts, sample allocation, and multiplicity handling for each stage, separating confirmatory comparisons from exploratory ones. These optional factors are included in the research scope but are not completed experiments or a committed evaluation matrix.
+
 \subsection{Matched exposure and recovery interventions}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Primary variable & Conditions\\
+\midrule
+Recovery policy & No intervention / source removal / removal plus factual correction / removal plus correction linked to claims.\\
+Error direction & False Safe during disaster / false Danger without disaster.\\
+Reference conditions & Honest source, sham removal, and direct-to-all correction; analyzed separately from the primary recovery contrast.\\
+\bottomrule
+\end{tabularx}
+
+The initial false-claim schedule is fixed across recovery arms. Repetition is an optional later factor, not an additional primary variable in this pilot. In the claimed-source extension, vary the initial peer's attribution and keep the correction sender and its authentication fixed. Fork matched recovery arms within each attribution condition; different attribution conditions require separate exposure histories.
+
+
 Assign a separate controlled peer to emit a false Safe claim in disaster trials. Preserve the truthful informant and rotate their positions independently. Honest agents remain free to adopt, question, ignore, or relay the claim. Give claims stable identifiers and log explicit parent identifiers for relays; identifiers track declared lineage, not guaranteed semantic ancestry. Audit a sample of paraphrases before relying on this measure.
 
 After a fixed initial exposure period, snapshot every agent history, delivered message, action, and network state. Fork each snapshot into four recovery arms: (1) no intervention; (2) disable further source transmissions; (3) disable the source and deliver an authenticated factual correction to its neighbours; (4) the same correction recipients and facts, plus explicit identifiers of the false claim and logged relays. Keep the source's past messages in all histories. Source removal changes transmission only; the source is excluded from the primary recipient outcome denominator. Agents are informed of the same removal event in arms 2--4. Never interpret a difference from arm 1 as pure information repair, since removal also changes communication capacity.
@@ -37,7 +73,7 @@ Primary outcome is the fraction of non-source agents remaining when disaster str
 
 Pair recovery arms on each common snapshot, with independent continuation draws and the same simulator schedule. Estimate episode-level paired differences and intervals clustered by the originating episode; forked continuations and agents are not independent samples. Report variation across source positions and retain null and adverse effects. A no-communication baseline and an all-informed baseline help separate network transport from task comprehension. This design does not show that every corrected statement must be removed from context or that agents possess human beliefs.
 \section{Limitations and research status}
-This is an initial proposal, not a completed experiment or demonstrated research gap. The repository currently contains a general agent scaffold, not this simulator. Freeze model version, prompts, round distribution, sampling settings, sample size, invalid-output rules, and stopping criteria after separate calibration. Report invalid outputs and failed runs rather than silently dropping them. No hidden chain-of-thought is required. Use inert simulator actions and no external tools. Language and false-authority factors are deferred to avoid confounding the first pilot; language differences would not establish cultural differences.
+This is an initial proposal, not a completed experiment or demonstrated research gap. The repository currently contains a general agent scaffold, not this simulator. Freeze model version, prompts, round distribution, sampling settings, sample size, invalid-output rules, and stopping criteria after separate calibration. Report invalid outputs and failed runs rather than silently dropping them. No hidden chain-of-thought is required. Use inert simulator actions and no external tools. Claimed-source, language, and model factors are specified as staged extensions rather than simultaneous first-pilot manipulations. They test sensitivity to controlled inputs and model configurations, not cultural or religious traits.
 
 The human task supplies an experimental foundation, not evidence about model behavior. Results would depend on rewards, context management, graph structure, and the changed timing protocol. A ring is a starting condition, not a general account of all networks. No claim of first-of-kind work is made.
 
