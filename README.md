@@ -148,3 +148,61 @@ Tests cover the offline graph, join order, parallel input isolation, independent
 failure logging, settings validation, and the actual Adaption SDK request boundary
 using mocked HTTP. As the research design develops, add experiment configuration,
 scoring, monitor nodes, and statistical analysis separately.
+
+## Visual development with LangGraph Studio
+
+Studio displays the same five-node graph, lets you submit tasks, and inspect node
+state/output in your browser. It is a developer viewer, not a drag-and-drop code
+editor: modify `graph.py` and `nodes.py` to change the workflow.
+
+```sh
+uv sync --frozen --extra dev --extra studio
+# Only if you do not already have .env:
+cp .env.example .env
+```
+
+Create a LangSmith API key in your account settings and set `LANGSMITH_API_KEY`
+in the ignored `.env`. This is separate from `ADAPTION_API_KEY`. The example uses
+APAC (`LANGSMITH_ENDPOINT=https://apac.api.smith.langchain.com`); adjust the endpoint
+and Studio URL for your account's region. Tracing is disabled by default with
+`LANGSMITH_TRACING=false`. Keep the key out of chat, commits, screenshots, and logs.
+
+Start the local server from the repository root:
+
+```sh
+uv run --extra studio langgraph dev --allow-blocking --studio-url https://apac.smith.langchain.com
+```
+
+The server listens on localhost port 2024 and hot reloads your Python edits.
+`--allow-blocking` allows the scaffold's small synchronous local JSON/config and
+log-file operations during development. This is a local playground, not a
+production server configuration. Keep the default localhost bind address.
+
+Open the Studio URL printed by the server, select `playground`, and submit:
+
+```json
+{"task": "Help me see how this graph works"}
+```
+
+Use a new Studio thread for independent trials; the server can retain state within
+an existing thread. The CLI still starts fresh on every invocation. Studio owns its
+thread/run status and state history; our `runs/studio-*.jsonl` records contain node
+events only, not the CLI's run-start/run-complete wrapper. Graph/schema inspection
+may create an empty local event log. Server-local state in `.langgraph_api/` is
+ignored by Git. Neither local state nor JSONL is a substitute for a research dataset.
+
+`studio.py` is a thin async factory around the existing `build_graph`: it selects
+an offline backend by default and closes the Adaption client after live use.
+`langgraph.json` registers that factory as `playground`. Set `SWARM_LAB_CONFIG` to
+another JSON settings file to change instructions. Set `SWARM_LAB_MODE=live` only
+when ready to make the two real model requests, with `ADAPTION_API_KEY` configured.
+Restart the server after changing `.env` settings.
+
+If Studio cannot connect, verify `http://127.0.0.1:2024/docs` loads, check that the
+local server is still running, and use Studio's Connection settings with
+`http://127.0.0.1:2024`. Browser localhost restrictions may require using a different
+browser. A tunnel exposes the server externally; it is not enabled by this setup.
+
+Validation note: the local API graph endpoint and an offline server run have been
+verified. The APAC hosted Studio page loaded in the in-app browser, but its Connect
+button remained disabled; end-to-end visual interaction is not yet verified.
