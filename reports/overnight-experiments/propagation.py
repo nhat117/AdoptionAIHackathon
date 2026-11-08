@@ -47,12 +47,35 @@ def main(root):
             dict(
                 id=m["id"],
                 section=m["section"],
+                scenario=m["scenario"].get("id", m["id"]),
+                seed=m["scenario"].get("seed"),
                 language=m["language"],
                 identity=m["identity"],
                 topology=m["topology"],
                 rounds=rounds,
             )
         )
+    baseline = {(r["scenario"], r["language"]): r for r in rows if r["section"] == 1}
+    pairs = []
+    for r in rows:
+        if r["section"] != 3:
+            continue
+        b = baseline.get((r["scenario"], r["language"]))
+        if b:
+            treatment = next(
+                t["citation_linked_recipients"] for t in r["rounds"] if t["round"] == 2
+            )
+            control = next(
+                t["citation_linked_recipients"] for t in b["rounds"] if t["round"] == 2
+            )
+            pairs.append(
+                dict(
+                    scenario=r["scenario"],
+                    seed=r["seed"],
+                    language=r["language"],
+                    second_round_recipient_difference=treatment - control,
+                )
+            )
     output = Path("reports/overnight-experiments/propagation.json")
     output.write_text(
         json.dumps(
@@ -71,6 +94,7 @@ def main(root):
                     "actionable from the following round."
                 ),
                 games=rows,
+                post_hoc_network_pairs=pairs,
             ),
             indent=2,
         )

@@ -1,0 +1,17 @@
+id,status,scenario,seed,language,identity,topology,disaster,accurate,correct_action_rate,missed_evacuation_rate,unnecessary_evacuation_rate,calls,returned_provider_calls,cost_usd
+3-calibration-000-0-0-en-ordinary_peer-random_regular,completed,calibration-000-0-0,1000,en,ordinary_peer,random_regular,False,False,1.0,,0.0,45,45,0.268224
+3-calibration-000-0-0-vi-ordinary_peer-random_regular,completed,calibration-000-0-0,1000,vi,ordinary_peer,random_regular,False,False,1.0,,0.0,45,45,0.391506
+3-calibration-000-0-1-en-ordinary_peer-random_regular,completed,calibration-000-0-1,1000,en,ordinary_peer,random_regular,False,True,1.0,,0.0,45,45,0.261454
+3-calibration-000-0-1-vi-ordinary_peer-random_regular,completed,calibration-000-0-1,1000,vi,ordinary_peer,random_regular,False,True,1.0,,0.0,45,45,0.392994
+3-calibration-000-1-0-en-ordinary_peer-random_regular,completed,calibration-000-1-0,1000,en,ordinary_peer,random_regular,True,False,0.0,1.0,,45,45,0.2597
+3-calibration-000-1-0-vi-ordinary_peer-random_regular,completed,calibration-000-1-0,1000,vi,ordinary_peer,random_regular,True,False,0.0,1.0,,45,45,0.38893
+3-calibration-000-1-1-en-ordinary_peer-random_regular,completed,calibration-000-1-1,1000,en,ordinary_peer,random_regular,True,True,0.0,1.0,,45,45,0.26731
+3-calibration-000-1-1-vi-ordinary_peer-random_regular,completed,calibration-000-1-1,1000,vi,ordinary_peer,random_regular,True,True,0.0,1.0,,45,45,0.395306
+3-calibration-001-0-0-en-ordinary_peer-random_regular,completed,calibration-001-0-0,1001,en,ordinary_peer,random_regular,False,False,1.0,,0.0,36,36,0.189732
+3-calibration-001-0-0-vi-ordinary_peer-random_regular,completed,calibration-001-0-0,1001,vi,ordinary_peer,random_regular,False,False,1.0,,0.0,36,36,0.278878
+3-calibration-001-0-1-en-ordinary_peer-random_regular,completed,calibration-001-0-1,1001,en,ordinary_peer,random_regular,False,True,1.0,,0.0,36,36,0.181486
+3-calibration-001-0-1-vi-ordinary_peer-random_regular,completed,calibration-001-0-1,1001,vi,ordinary_peer,random_regular,False,True,1.0,,0.0,36,36,0.269222
+3-calibration-001-1-0-en-ordinary_peer-random_regular,completed,calibration-001-1-0,1001,en,ordinary_peer,random_regular,True,False,0.0,1.0,,36,36,0.18041
+3-calibration-001-1-0-vi-ordinary_peer-random_regular,completed,calibration-001-1-0,1001,vi,ordinary_peer,random_regular,True,False,0.0,1.0,,36,36,0.271916
+3-calibration-001-1-1-en-ordinary_peer-random_regular,completed,calibration-001-1-1,1001,en,ordinary_peer,random_regular,True,True,0.0,1.0,,36,36,0.187888
+3-calibration-001-1-1-vi-ordinary_peer-random_regular,completed,calibration-001-1-1,1001,vi,ordinary_peer,random_regular,True,True,0.0,1.0,,36,36,0.266616

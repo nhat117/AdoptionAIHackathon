@@ -1,0 +1,2013 @@
+{
+  "section": 3,
+  "purpose": "exploratory_unreviewed_pilot",
+  "planned": 16,
+  "statuses": {
+    "completed": 16
+  },
+  "calls": 648,
+  "call_count_definition": "Decision attempts; includes pre-request guard denials",
+  "returned_provider_calls": 648,
+  "analysis_sha256": "a8f0f2e8042571ceabf549adf7da723c162112c63fa6b97c7c5648748f4694d6",
+  "budget_audit": {
+    "pending": 0,
+    "ledger_reported_usd": 20.702893999999983,
+    "max_accounted_exposure_usd": 21.32725799999999,
+    "cap_usd": 35
+  },
+  "section_cost_usd": 4.4515720000000005,
+  "cumulative_cost_usd": 20.702894,
+  "audit_errors": [],
+  "paired_contrasts": [
+    {
+      "scenario": "calibration-000-0-0",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-0-0",
+      "language": "vi",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-0-1",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-0-1",
+      "language": "vi",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-1-0",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-1-0",
+      "language": "vi",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-1-1",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-1-1",
+      "language": "vi",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-0-0",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-0-0",
+      "language": "vi",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-0-1",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-0-1",
+      "language": "vi",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-1-0",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-1-0",
+      "language": "vi",
+      "contrast": "random - ring",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-1-1",
+      "language": "en",
+      "contrast": "random - ring",
+      "difference": 0.0
+    }
+  ],
+  "games": [
+    {
+      "id": "3-calibration-000-0-0-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-0-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.268224,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-000-0-0-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-0-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.391506,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-000-0-1-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-0-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.261454,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-000-0-1-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-0-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.392994,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-000-1-0-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-1-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.2597,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-000-1-0-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-1-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.38893,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-000-1-1-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-1-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.26731,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-000-1-1-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-000-1-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.395306,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          6,
+          8
+        ],
+        "1": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "3": [
+          1,
+          6,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          8,
+          9
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          7
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "9": [
+          1,
+          3,
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-0-0-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-0-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.189732,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-0-0-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-0-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.278878,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-0-1-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-0-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.181486,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0.1111111111111111,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-0-1-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-0-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.269222,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-1-0-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-1-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.18041,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-1-0-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-1-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.271916,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-1-1-en-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-1-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.187888,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    },
+    {
+      "id": "3-calibration-001-1-1-vi-ordinary_peer-random_regular",
+      "section": 3,
+      "scenario": "calibration-001-1-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.266616,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          4,
+          5,
+          8,
+          9
+        ],
+        "1": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "2": [
+          1,
+          4,
+          6,
+          7
+        ],
+        "3": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "4": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          7
+        ],
+        "6": [
+          2,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          6
+        ]
+      }
+    }
+  ],
+  "caveats": "One model; draft translations; one draw per cell; descriptive only",
+  "language_review": "pending_manual_review"
+}
