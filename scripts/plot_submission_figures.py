@@ -177,13 +177,254 @@ def main():
         "renderer": "Matplotlib",
         "matplotlib_version": matplotlib.__version__,
         "rows": rows,
-        "notes": ("24 unique responses. Paired checks reuse candidates. "
-                  "Blocked reports are not repaired. No new inference."),
+        "notes": (
+            "24 unique responses. Paired checks reuse candidates. "
+            "Blocked reports are not repaired. No new inference."
+        ),
     }
     (args.outdir / "provenance.json").write_text(
         json.dumps(provenance, indent=2) + "\n"
     )
-    print("Both figures rendered with Matplotlib", matplotlib.__version__)
+    extra_figures(args.metrics, args.outdir)
+    print("Five figures rendered with Matplotlib", matplotlib.__version__)
+
+
+def extra_figures(metrics_path, outdir):
+    """Plot additional views of the same saved trials; never request new outputs."""
+    trials_path = metrics_path.with_name("trials.jsonl")
+    trials = [json.loads(line) for line in trials_path.read_text().splitlines()]
+    metrics = json.loads(metrics_path.read_text())
+    assert len(trials) == metrics["returned_calls"] == 24
+    languages = ["en", "vi", "zh"]
+    conditions = [
+        ("absent", "normalized_structural"),
+        ("absent", "normalized_semantic"),
+        ("present", "normalized_structural"),
+        ("present", "normalized_semantic"),
+    ]
+    cells, source_rows = [], []
+    for language in languages:
+        row = []
+        for evidence, arm in conditions:
+            subset = [
+                r
+                for r in trials
+                if r["language"] == language and r["evidence"] == evidence
+            ]
+            assert len(subset) == 4
+            wrong = sum(
+                r["checks"][arm]["allowed"]
+                and r["oracle"]["extracted_facts"]["budget"] != r["expected"]["budget"]
+                for r in subset
+            )
+            row.append(wrong)
+            source_rows.append(
+                dict(
+                    language=language,
+                    evidence=evidence,
+                    arm=arm,
+                    wrong_releases=wrong,
+                    responses=4,
+                )
+            )
+        cells.append(row)
+    fig, ax = plt.subplots(figsize=(9.2, 3.7))
+    ax.imshow(cells, cmap="YlOrBr", vmin=0, vmax=4, aspect="auto")
+    for y, row in enumerate(cells):
+        for x, count in enumerate(row):
+            ax.text(
+                x,
+                y,
+                f"{count} / 4",
+                ha="center",
+                va="center",
+                fontsize=13,
+                fontweight="bold",
+                color="#202020",
+            )
+    ax.set_xticks(
+        range(4),
+        [
+            "No record\nStructure",
+            "No record\nFact check",
+            "Trusted record\nStructure",
+            "Trusted record\nFact check",
+        ],
+    )
+    ax.set_yticks(range(3), ["English", "Vietnamese", "Chinese"])
+    ax.set_title("Wrong budgets released by message language", loc="left", pad=12)
+    ax.tick_params(length=0, pad=9)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    fig.subplots_adjust(left=0.16, right=0.98, top=0.83, bottom=0.23)
+    for ext in ["png", "svg"]:
+        fig.savefig(outdir / f"language-heatmap.{ext}", dpi=300)
+    plt.close(fig)
+    with (outdir / "language-chart-data.csv").open("w") as f:
+        writer = csv.DictWriter(f, fieldnames=list(source_rows[0]))
+        writer.writeheader()
+        writer.writerows(source_rows)
+
+    fig, axs = plt.subplots(1, 2, figsize=(9.4, 3.4), sharex=True, sharey=True)
+    budget_rows = []
+    for task_index, ax in enumerate(axs):
+        prefix = f"propagate-{task_index}-"
+        subset = [
+            r
+            for r in trials
+            if r["source_case_id"].startswith(prefix) and r["kind"] == "poisoned"
+        ]
+        expected = subset[0]["expected"]["budget"]
+        ax.axvline(
+            expected,
+            color="#333333",
+            linestyle="--",
+            linewidth=1,
+            label="Trusted budget",
+        )
+        for y, language in enumerate(languages):
+            pair = {r["evidence"]: r for r in subset if r["language"] == language}
+            before = pair["absent"]["oracle"]["extracted_facts"]["budget"]
+            after = pair["present"]["oracle"]["extracted_facts"]["budget"]
+            ax.plot([before, after], [y, y], color="#AAAAAA", linewidth=1.5)
+            ax.scatter(
+                before,
+                y,
+                color="#D38633",
+                marker="s",
+                s=75,
+                label="No worker record" if y == 0 else None,
+                zorder=3,
+            )
+            ax.scatter(
+                after,
+                y,
+                color="#39749C",
+                marker="o",
+                s=75,
+                label="Worker has record" if y == 0 else None,
+                zorder=3,
+            )
+            budget_rows.append(
+                dict(
+                    task=task_index,
+                    language=language,
+                    trusted_budget=expected,
+                    no_record=before,
+                    with_record=after,
+                )
+            )
+        ax.set_title(
+            f"Task {task_index + 1}: trusted budget {expected:,}",
+            loc="left",
+            fontsize=11,
+        )
+        ax.set_yticks(range(3), ["English", "Vietnamese", "Chinese"])
+        ax.set_ylim(2.5, -0.5)
+        ax.set_xlim(11500, 14000)
+        ax.set_xticks([12000, 13000, 14000])
+        ax.set_xlabel("Recorded worker budget")
+        ax.spines[["top", "right"]].set_visible(False)
+    handles, labels = axs[0].get_legend_handles_labels()
+    fig.legend(
+        handles,
+        labels,
+        loc="upper center",
+        ncol=3,
+        frameon=False,
+        bbox_to_anchor=(0.54, 0.99),
+        fontsize=9,
+    )
+    fig.subplots_adjust(left=0.13, right=0.96, top=0.73, bottom=0.19, wspace=0.15)
+    for ext in ["png", "svg"]:
+        fig.savefig(outdir / f"budget-pairs.{ext}", dpi=300)
+    plt.close(fig)
+    with (outdir / "budget-chart-data.csv").open("w") as f:
+        writer = csv.DictWriter(f, fieldnames=list(budget_rows[0]))
+        writer.writeheader()
+        writer.writerows(budget_rows)
+
+    replay = {r["arm"]: r for r in metrics["archived_replay_groups"]}
+    fig, ax = plt.subplots(figsize=(8.5, 3.7))
+    points = [
+        ("strict_structural", "Strict parsing: both checks", (12, -16)),
+        ("normalized_structural", "Shared cleaning: structural", (-198, 16)),
+        ("normalized_semantic", "Shared cleaning: plus fact check", (12, 16)),
+    ]
+    assert (
+        replay["strict_structural"]["blocked_correct_candidates"]
+        == replay["strict_semantic"]["blocked_correct_candidates"]
+    )
+    for arm, label, offset in points:
+        r = replay[arm]
+        x, y = r["target_budget_releases"], r["blocked_correct_candidates"]
+        ax.scatter(x, y, s=85, color="#39749C", edgecolor="#222222", zorder=3)
+        ax.annotate(
+            label, (x, y), xytext=offset, textcoords="offset points", fontsize=10
+        )
+    ax.set_xlim(-0.5, 7)
+    ax.set_ylim(-0.6, 7)
+    ax.set_xticks(range(7))
+    ax.set_yticks(range(7))
+    ax.set_xlabel("Wrong budgets released (out of 6 wrong reports)")
+    ax.set_ylabel("Correct reports blocked\n(out of 6 correct reports)")
+    ax.grid(color="#E6E6E6", linewidth=0.7)
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.subplots_adjust(left=0.16, right=0.98, top=0.94, bottom=0.19)
+    for ext in ["png", "svg"]:
+        fig.savefig(outdir / f"archived-tradeoff.{ext}", dpi=300)
+    plt.close(fig)
+    exports = []
+    for r in trials:
+        peer = json.loads(json.loads(r["messages"][1]["content"])["peer_report"])
+        exports.append(
+            dict(
+                trial_id=r["trial_id"],
+                language=r["language"],
+                kind=r["kind"],
+                evidence=r["evidence"],
+                expected=r["expected"],
+                peer_report=peer,
+                worker_response=json.loads(r["response"]["content"]),
+                structural_allowed=r["checks"]["normalized_structural"]["allowed"],
+                semantic_allowed=r["checks"]["normalized_semantic"]["allowed"],
+                semantic_reasons=r["checks"]["normalized_semantic"]["reasons"],
+            )
+        )
+    (outdir / "all-recorded-outputs.json").write_text(
+        json.dumps(exports, ensure_ascii=False, indent=2) + "\n"
+    )
+    flat_fields = [
+        "trial_id",
+        "language",
+        "kind",
+        "evidence",
+        "expected_budget",
+        "worker_budget",
+        "structural_allowed",
+        "semantic_allowed",
+        "public_summary",
+    ]
+    original = {r["trial_id"]: r for r in trials}
+    with (outdir / "all-recorded-outputs.csv").open("w") as handle:
+        writer = csv.DictWriter(handle, fieldnames=flat_fields)
+        writer.writeheader()
+        for row in exports:
+            flat = {key: row[key] for key in flat_fields if key in row}
+            flat["expected_budget"] = row["expected"]["budget"]
+            flat["worker_budget"] = original[row["trial_id"]]["oracle"][
+                "extracted_facts"
+            ]["budget"]
+            flat["public_summary"] = row["worker_response"]["public_summary"]
+            writer.writerow(flat)
+    provenance = json.loads((outdir / "provenance.json").read_text())
+    provenance["trial_source"] = "runs/oversight-ablation-v1/trials.jsonl"
+    provenance["trial_sha256"] = hashlib.sha256(trials_path.read_bytes()).hexdigest()
+    provenance["language_cells"] = source_rows
+    provenance["budget_pairs"] = budget_rows
+    provenance["archived_replay"] = metrics["archived_replay_groups"]
+    (outdir / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n")
+    print("Three additional figures and 24 exact saved output records exported.")
 
 
 if __name__ == "__main__":
