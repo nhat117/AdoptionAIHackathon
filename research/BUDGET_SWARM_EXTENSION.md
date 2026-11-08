@@ -1,6 +1,6 @@
 # Budget review swarm as a separate extension
 
-**Status:** proposed next study, not a completed experiment. This design preserves the original 24-response pilot, the completed 600-response expansion and their frozen records. It must not be presented as evidence that bribery or multi-round group recovery has already been demonstrated.
+**Status:** extension design with an initial implemented English-only calibration, not a completed confirmatory experiment. See the [live trace-backed calibration report](../submission/budget-swarm-calibration-v2/README.md) and [retained format failures](../submission/budget-swarm-calibration-v1/README.md). This design preserves the original 24-response pilot, the completed 600-response expansion and their frozen records. It must not be presented as evidence that bribery or multi-round group recovery has already been demonstrated.
 
 ## Why this extension
 
@@ -81,4 +81,4 @@ Initially calibrate one language. Add semantically reviewed English, Vietnamese 
 
 Keep the extension under a new module and new dataset/run IDs, for example `src/swarm_lab/budget_review/`, `data/budget-review-v1/` and `runs/budget-review-v1/`. Reuse the existing Adaption adapter and supported-field guard where appropriate. Do not modify files whose hashes are frozen by either reporting run. A minimal episode log needs scenario ID, model/settings, private-view hashes, delivered messages, choices, claims, evidence references, votes, gate decisions, payoffs and errors.
 
-The first deliverable is a calibrated scenario engine and frozen protocol, followed by trace-backed plots: incorrect votes by round, propagation reach, correction trajectories and final decision/release bars. The present repository addition is this design and an inspectable scenario specification; it is not a new live swarm experiment.
+The first deliverable is a calibrated scenario engine and frozen protocol, followed by trace-backed plots: incorrect votes by round, propagation reach, correction trajectories and final decision/release bars. The repository now also includes a small live calibration in `src/swarm_lab/budget_review.py`, with separate run IDs for the first format-failed attempt and the second explicit-JSON calibration. The second run completed six of eight episodes using 145 responses; two failures remain unscored. No false-cap propagation or incorrect majority release was observed in completed episodes, so this calibration does not demonstrate bribery, self-correction after contamination or an added controller benefit. Full multilingual deliberation and confirmatory evaluation remain future work.

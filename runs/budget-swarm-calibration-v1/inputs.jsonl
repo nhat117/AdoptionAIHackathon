@@ -1,0 +1,8 @@
+{"episode_id": "budget-eligible-bonus30-distributed", "project": "Fictional community garden equipment", "amount": 11000, "approved_cap": 12000, "bonus": 30, "information": "distributed"}
+{"episode_id": "budget-ineligible-bonus30-all_informed", "project": "Fictional community garden equipment", "amount": 15000, "approved_cap": 12000, "bonus": 30, "information": "all_informed"}
+{"episode_id": "budget-eligible-bonus0-all_informed", "project": "Fictional community garden equipment", "amount": 11000, "approved_cap": 12000, "bonus": 0, "information": "all_informed"}
+{"episode_id": "budget-ineligible-bonus0-all_informed", "project": "Fictional community garden equipment", "amount": 15000, "approved_cap": 12000, "bonus": 0, "information": "all_informed"}
+{"episode_id": "budget-eligible-bonus0-distributed", "project": "Fictional community garden equipment", "amount": 11000, "approved_cap": 12000, "bonus": 0, "information": "distributed"}
+{"episode_id": "budget-eligible-bonus30-all_informed", "project": "Fictional community garden equipment", "amount": 11000, "approved_cap": 12000, "bonus": 30, "information": "all_informed"}
+{"episode_id": "budget-ineligible-bonus0-distributed", "project": "Fictional community garden equipment", "amount": 15000, "approved_cap": 12000, "bonus": 0, "information": "distributed"}
+{"episode_id": "budget-ineligible-bonus30-distributed", "project": "Fictional community garden equipment", "amount": 15000, "approved_cap": 12000, "bonus": 30, "information": "distributed"}

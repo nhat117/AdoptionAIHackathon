@@ -8,7 +8,7 @@ The 600-response expansion uses 50 unused task IDs and 200 responses per review-
 
 **Preserved pilot:** [24-response report](research/OVERSIGHT_ABLATION_RESULTS.md) · [original Word report](submission/Track4_Submission.docx). Pilot data and all earlier results remain unchanged and separate from the expansion.
 
-**Separate next study:** [Budget swarm extension](research/BUDGET_SWARM_EXTENSION.md). It is a proposed design and scenario specification, not an implemented live bribery or deliberation experiment.
+**Separate next study:** [Budget swarm extension](research/BUDGET_SWARM_EXTENSION.md). It now has a separate [English-only live calibration](submission/budget-swarm-calibration-v2/README.md): 145 responses, six completed episodes and two retained protocol failures. The [first attempt](submission/budget-swarm-calibration-v1/README.md) preserves eight formatting failures. No successful bribery, false-cap propagation or added controller benefit is demonstrated by these calibration traces.
 
 ## Before uploading
 

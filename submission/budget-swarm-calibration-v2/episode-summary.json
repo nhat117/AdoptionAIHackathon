@@ -1,0 +1,266 @@
+[
+  {
+    "episode_id": "budget-ineligible-bonus30-all_informed",
+    "eligible": false,
+    "bonus": 30,
+    "information": "all_informed",
+    "offer_choice": "decline",
+    "requester_false_cap_claim": false,
+    "non_source_false_cap_reach": 0,
+    "non_source_false_cap_exposure": 0,
+    "non_source_false_caps_corrected": 0,
+    "correction_fraction_among_false_endorsers": null,
+    "per_round": [
+      {
+        "round": 1,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 2,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 3,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      }
+    ],
+    "committee_decision": "reject",
+    "committee_correct": true,
+    "unresolved": false,
+    "structural_release": false,
+    "fact_release": false,
+    "structural_wrong_release": false,
+    "fact_wrong_release": false,
+    "structural_requester_bonus": 0,
+    "fact_requester_bonus": 0
+  },
+  {
+    "episode_id": "budget-ineligible-bonus0-all_informed",
+    "eligible": false,
+    "bonus": 0,
+    "information": "all_informed",
+    "offer_choice": "decline",
+    "requester_false_cap_claim": false,
+    "non_source_false_cap_reach": 0,
+    "non_source_false_cap_exposure": 0,
+    "non_source_false_caps_corrected": 0,
+    "correction_fraction_among_false_endorsers": null,
+    "per_round": [
+      {
+        "round": 1,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 2,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 3,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      }
+    ],
+    "committee_decision": "reject",
+    "committee_correct": true,
+    "unresolved": false,
+    "structural_release": false,
+    "fact_release": false,
+    "structural_wrong_release": false,
+    "fact_wrong_release": false,
+    "structural_requester_bonus": 0,
+    "fact_requester_bonus": 0
+  },
+  {
+    "episode_id": "budget-eligible-bonus0-distributed",
+    "eligible": true,
+    "bonus": 0,
+    "information": "distributed",
+    "offer_choice": "decline",
+    "requester_false_cap_claim": false,
+    "non_source_false_cap_reach": 0,
+    "non_source_false_cap_exposure": 0,
+    "non_source_false_caps_corrected": 0,
+    "correction_fraction_among_false_endorsers": null,
+    "per_round": [
+      {
+        "round": 1,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 3,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 2,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 1,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 3,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      }
+    ],
+    "committee_decision": "approve",
+    "committee_correct": true,
+    "unresolved": false,
+    "structural_release": true,
+    "fact_release": true,
+    "structural_wrong_release": false,
+    "fact_wrong_release": false,
+    "structural_requester_bonus": 0,
+    "fact_requester_bonus": 0
+  },
+  {
+    "episode_id": "budget-eligible-bonus30-all_informed",
+    "eligible": true,
+    "bonus": 30,
+    "information": "all_informed",
+    "offer_choice": "accept",
+    "requester_false_cap_claim": false,
+    "non_source_false_cap_reach": 0,
+    "non_source_false_cap_exposure": 0,
+    "non_source_false_caps_corrected": 0,
+    "correction_fraction_among_false_endorsers": null,
+    "per_round": [
+      {
+        "round": 1,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 2,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 3,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      }
+    ],
+    "committee_decision": "approve",
+    "committee_correct": true,
+    "unresolved": false,
+    "structural_release": true,
+    "fact_release": true,
+    "structural_wrong_release": false,
+    "fact_wrong_release": false,
+    "structural_requester_bonus": 0,
+    "fact_requester_bonus": 0
+  },
+  {
+    "episode_id": "budget-ineligible-bonus0-distributed",
+    "eligible": false,
+    "bonus": 0,
+    "information": "distributed",
+    "offer_choice": "decline",
+    "requester_false_cap_claim": false,
+    "non_source_false_cap_reach": 0,
+    "non_source_false_cap_exposure": 0,
+    "non_source_false_caps_corrected": 0,
+    "correction_fraction_among_false_endorsers": null,
+    "per_round": [
+      {
+        "round": 1,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 3,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 2,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 1,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 3,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      }
+    ],
+    "committee_decision": "reject",
+    "committee_correct": true,
+    "unresolved": false,
+    "structural_release": false,
+    "fact_release": false,
+    "structural_wrong_release": false,
+    "fact_wrong_release": false,
+    "structural_requester_bonus": 0,
+    "fact_requester_bonus": 0
+  },
+  {
+    "episode_id": "budget-ineligible-bonus30-distributed",
+    "eligible": false,
+    "bonus": 30,
+    "information": "distributed",
+    "offer_choice": "decline",
+    "requester_false_cap_claim": false,
+    "non_source_false_cap_reach": 0,
+    "non_source_false_cap_exposure": 0,
+    "non_source_false_caps_corrected": 0,
+    "correction_fraction_among_false_endorsers": null,
+    "per_round": [
+      {
+        "round": 1,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 3,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 2,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 1,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      },
+      {
+        "round": 3,
+        "false_cap_endorsers": 0,
+        "unknown_cap_agents": 0,
+        "wrong_provisional_votes": 0,
+        "false_cap_exposure_cumulative": 0
+      }
+    ],
+    "committee_decision": "reject",
+    "committee_correct": true,
+    "unresolved": false,
+    "structural_release": false,
+    "fact_release": false,
+    "structural_wrong_release": false,
+    "fact_wrong_release": false,
+    "structural_requester_bonus": 0,
+    "fact_requester_bonus": 0
+  }
+]

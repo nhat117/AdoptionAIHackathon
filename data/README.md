@@ -37,3 +37,9 @@ These are synthetic research tasks. Added navigation does not modify any dataset
 ## Proposed budget committee specification
 
 [budget-review-v1](budget-review-v1/) contains a design example only. It has not been executed and must not be counted as experiment data.
+
+## Separate live budget committee calibration
+
+- [V1 raw traces](../runs/budget-swarm-calibration-v1/episodes.jsonl): eight responses, all stopped at offer-stage formatting; no committee outcomes.
+- [V2 scenarios](../runs/budget-swarm-calibration-v2/inputs.jsonl), [raw traces](../runs/budget-swarm-calibration-v2/episodes.jsonl) and [metrics](../runs/budget-swarm-calibration-v2/metrics.json): eight assigned episodes, 145 actual responses, six complete episodes and two retained protocol failures.
+- [Readable report](../submission/budget-swarm-calibration-v2/README.md), [summary CSV](../submission/budget-swarm-calibration-v2/episode-summary.csv) and [actual sample traces](../submission/budget-swarm-calibration-v2/sample-traces.json). These English-only calibration data are separate from both reporting cohorts.

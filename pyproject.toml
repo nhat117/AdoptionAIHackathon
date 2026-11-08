@@ -56,3 +56,6 @@ testpaths = ["tests"]
 "scripts/run_oversight_ablation.py" = ["E501"]
 "scripts/report_oversight_ablation.py" = ["E501"]
 "src/ai2ai_injection/oversight_eval.py" = ["E501"]
+
+# Generated report paragraphs and Markdown tables.
+"scripts/report_budget_calibration.py" = ["E501"]

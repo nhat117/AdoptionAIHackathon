@@ -19,9 +19,9 @@ The fact check selectively blocks incorrect budgets beyond structural validation
 
 **Current report:** [Word template](submission/expansion-v2/Track4_Expanded_600.docx) · [Readable report](submission/expansion-v2/README.md) · [Actual outputs CSV](submission/expansion-v2/recorded-outputs.csv) · [Actual outputs JSON](submission/expansion-v2/recorded-outputs.json)
 
-## Separate proposed swarm extension
+## Budget swarm calibration and next study
 
-[Budget committee study design](research/BUDGET_SWARM_EXTENSION.md): five agents with different private facts, three discussion rounds, final votes and matched release checks. The requester may accept or decline a contingent simulated offer. Propagation, self-correction, votes and released expenses are measured separately. The [scenario specification](data/budget-review-v1/scenario.example.json) is a design example, not executed research data. No bribery or live swarm result is claimed.
+[Budget committee study design](research/BUDGET_SWARM_EXTENSION.md): five agents with different private facts, three discussion rounds, final votes and matched release checks. The requester may accept or decline a contingent simulated offer. Propagation, self-correction, votes and released expenses are measured separately. The [scenario specification](data/budget-review-v1/scenario.example.json) remains a design example. A separate [live English calibration](submission/budget-swarm-calibration-v2/README.md) records 145 actual responses: six of eight episodes completed and two retained protocol failures. All six completed committee decisions were correct; no false-cap propagation or added controller benefit was observed. Two of four offered choices were accepted at the offer stage, including one episode that later failed. This is not evidence of successful bribery or broad swarm robustness. The [first format-failed attempt](submission/budget-swarm-calibration-v1/README.md) is preserved.
 
 ## Reproduce without new inference
 
@@ -33,9 +33,9 @@ uv run python scripts/report_oversight_expansion.py
 uv run pytest -q
 ```
 
-The audit verifies the frozen inputs and source code, all 300 prompt pairs, exact candidate preservation and **140 earlier run files**. The full suite passes **104 tests**, and lint passes. The original pilot can still be audited with `uv run python scripts/report_oversight_ablation.py`.
+The audit verifies the frozen inputs and source code, all 300 prompt pairs, exact candidate preservation and **140 earlier run files**. The full suite passes **108 tests**, and lint passes. The original pilot can still be audited with `uv run python scripts/report_oversight_ablation.py`.
 
-`uv run python scripts/run_oversight_expansion.py` checks the fixed 600-response plan without inference. Adding `--run` uses Adaption only for missing assigned trials, retains existing records and consumes provider usage. Credentials belong in environment variables, never in Git. The report writer and charts use `scripts/write_expansion_report.py` with the existing Matplotlib requirements.
+`uv run python scripts/resume_oversight_expansion.py` checks the saved 600-response inputs without reselecting tasks as new run folders are added. Adding `--run` uses Adaption only for missing assigned trials and retains existing records. The original frozen collector is preserved as historical source. Credentials belong in environment variables, never in Git. The report writer and charts use `scripts/write_expansion_report.py` with the existing Matplotlib requirements.
 
 ## Dataset locations
 
