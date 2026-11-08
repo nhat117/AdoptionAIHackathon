@@ -2,6 +2,8 @@
 
 **Target evaluation, paired monitoring and protected-report recovery use Adaption**. The new synthetic task pool uses GPT-5 through Braintrust, as requested. The Python gate enforces the reporting policy before anything is released. Historical Braintrust/Ollama runs are retained as separate research evidence.
 
+**Evidence limit:** the paired live challenge observed 0/540 violations both before and after the guard. A subsequent [48-call development pilot](research/DEVELOPMENT_CALIBRATION_RESULTS.md) found 0/36 attack violations and 12/12 benign contract completions across two models. No incremental live protection is demonstrated. Constructed tests verify specific checks and expose gaps in factual validation and unrecognized encodings; these are separate from live attack results.
+
 ## Setup
 
 ```sh
