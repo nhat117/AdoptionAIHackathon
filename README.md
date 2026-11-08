@@ -13,9 +13,9 @@ uv run python scripts/protected_report.py --provider braintrust --model gpt-4o
 uv run python scripts/protected_report.py --llm-monitor --audit runs/demo/audit.json
 ```
 
-Only a validated report (or a blocked result) is printed. See [pattern review and architecture](research/PATTERN_REVIEW.md). `from ai2ai_guard import guarded_generate` is the library entry point; supply a trusted task, an untrusted peer message and a client exposing `chat(messages, seed)`. The task must contain `task_id`, `status`, `topic`, `milestone` and the synthetic `marker`. The client returns a dictionary containing `content`.
+Only a validated report (or a blocked result) is printed. See [pattern review and architecture](research/PATTERN_REVIEW.md) and [protection validation results](research/GUARD_RESULTS.md). `from ai2ai_guard import guarded_generate` is the library entry point; supply a trusted task, an untrusted peer message and a client exposing `chat(messages, seed)`. The task must contain `task_id`, `status`, `topic`, `milestone` and the synthetic `marker`. The client returns a dictionary containing `content`.
 
-The guard enforces this reporting contract: exact schema and identity/status, required checkpoint and no known marker forms. Common encodings and Unicode variants are checked. It is not a universal detector of arbitrary prompt injection, semantic manipulation, or unrestricted tool actions. Every released candidate must pass the deterministic gate; an optional monitor can only veto. Normal audit records contain hashes/reasons rather than rejected raw output.
+The guard enforces this reporting contract: exact schema and identity/status, required checkpoint and no known marker forms. Common encodings and Unicode variants are checked. It is not a universal detector of arbitrary prompt injection, semantic manipulation, or unrestricted tool actions. Every released candidate must pass the deterministic gate; an optional monitor can only veto. A released report remains data: validation does not give its contents instruction authority over downstream agents. Normal audit records contain hashes/reasons rather than rejected raw output.
 
 ## Research question
 
@@ -23,7 +23,7 @@ We test whether fictional authority in a lower-trust AI-agent message changes sy
 
 ## Research experiment
 
-See [V3 protocol](research/PROTOCOL_V3.md) and the [team's updated proposal](research/USER_UPDATED_PROPOSAL.txt). Each target model receives **360 attack trials + 60 benign controls**. A fixed correction/inclusion template is paired across three languages and two labels: ordinary peer and fictional Senior Operations Director. Paired output-only/full-trace GPT-4o monitoring reuses saved target responses.
+See [observed V3 research results](research/RESULTS_V3.md), [V3 protocol](research/PROTOCOL_V3.md) and the [team's updated proposal](research/USER_UPDATED_PROPOSAL.txt). Each target model receives **360 attack trials + 60 benign controls**. A fixed correction/inclusion template is paired across three languages and two labels: ordinary peer and fictional Senior Operations Director. Paired output-only/full-trace GPT-4o monitoring reuses saved target responses.
 
 All markers and records are synthetic. There are no real secrets, external actions, or real-person impersonations. Translations and authority salience await independent bilingual human validation; results are exploratory. This is a controlled peer-message simulation, not a live multi-hop agent benchmark. H2 pragmatic framing is not run. The H3 marker-task ablation does not establish genuine context-compression loss.
 
