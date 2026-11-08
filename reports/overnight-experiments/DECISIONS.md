@@ -1,5 +1,7 @@
 # Overnight decisions for review
 
+**Review entry point:** [SUMMARY.md](SUMMARY.md). Collection is complete: 105/112 live games completed, seven original failures retained, US$25.5456355 reported OpenRouter cost. The independent judge approved narrow exploratory reporting with the caveats and corrections logged below.
+
 The user delegated remaining decisions and requested a written log. Continue on `codex/two-research-proposals`; preserve every earlier result and failure. The original US$35 total API ceiling remains active. This log distinguishes observations, hypotheses and decisions; hypotheses are not findings.
 
 ## What we observed
@@ -70,7 +72,7 @@ Unresolved interpretation limits retained: proof transport bundles authenticated
 
 Terra completed 8/8, 318 calls, US$0.59907325; cumulative US$21.30196725. Recipients ultimately evacuated for Danger claims and stayed for Safe, unlike Sonnet's stay-only behavior. Both aggregate to 50% across the balanced four cases, but their error profiles differ. This is not a safety ranking.
 
-The independent judge then verified a structural limitation: opposite hidden-truth/accuracy worlds sharing a claim produce identical recipient observations and transitions. It reported 96 exact coupled full-trajectory checks across seeds, languages, identities and topologies. With equally weighted paired worlds and a fixed policy, expected action correctness is 50%; truth is unidentifiable to recipients, while correctness remains measurable by the evaluator. Completion imbalance, sampling or side channels can violate the observed50% average. This concerns correctness, not necessarily payoffs or reliability. Preserve this as a design limitation discovered after the original collection. Authenticated independent observations in Exp 4 break the symmetry. Verdict: **proceed**, no additional collection change required.
+The independent judge then verified a structural limitation: opposite hidden-truth/accuracy worlds sharing a claim produce identical recipient observations and transitions. It reported 96 exact coupled full-trajectory checks across seeds, languages, identities and topologies. With equally weighted paired worlds and a fixed policy, expected action correctness is 50%; truth is unidentifiable to recipients, while correctness remains measurable by the evaluator. Completion imbalance, sampling or side channels can violate the observed 50% average. This concerns correctness, not necessarily payoffs or reliability. Preserve this as a design limitation discovered after the original collection. Authenticated independent observations in Exp 4 break the symmetry. Verdict: **proceed**, no additional collection change required.
 
 The structural limitation was also reproduced directly from all 73 completed original/Terra raw trajectories: opposite truth with accuracy flipped preserved the public claim and every recorded input, message and transition under coupled model responses, and final correctness complemented to 1. Reproduction: `check_observability.py`; machine-readable results in `observability.json`. These are deterministic counterfactual replays, not 73 additional paid games or independent experimental replicates.
 
@@ -78,8 +80,26 @@ Implementation detail for Exp 5: only active recipient senders automatically rel
 
 ### Judge checkpoint 2: Experiment 4
 
-Result:16/16 complete,515 returned calls, US$2.06408975; cumulativeUS$23.366057. All eight model-by-seed-by-state positive controls passed:9/9 evacuated with verified Danger in round 1;0/9 evacuated with verified Safe. Fresh no-evidence controls retained Sonnet's stay-only pattern and Terra's sensitivity to unverified Danger. Independent judge replayed 16/16, checked hashes/controls/routes/costs, and gave **proceed with caveats** for Exp 5.
+Result: 16/16 complete, 515 returned calls, US$2.06408975; cumulative US$23.366057. All eight model-by-seed-by-state positive controls passed: 9/9 evacuated with verified Danger in round 1; 0/9 evacuated with verified Safe. Fresh no-evidence controls retained Sonnet's stay-only pattern and Terra's sensitivity to unverified Danger. Independent judge replayed 16/16, checked hashes/controls/routes/costs, and gave **proceed with caveats** for Exp 5.
 
 Required reporting correction accepted: Danger broadcast recipients acted before receiving peer messages, so this is direct-evidence responsiveness, not correction after misleading hearsay. Safe recipients remained active; four source-neighbour recipients per game later had both verified Safe and false Danger signals. Added explicit per-recipient first false-signal decision, first verified-evidence decision, joint exposure and action fields. Reported timing precisely; no generation changes.
 
 Next: compare private text-only and proof-preserving forwarding. Keep witness separate, examine non-witness active opportunities and actions, and preserve the interpretation as automatic transport of truthful content plus authentication. The positive controls demonstrate task responsiveness but are not themselves a novelty claim.
+
+### Judge checkpoint 3: Experiment 5 and synthesis
+
+Result: 16/16 complete, 540 returned calls, US$2.1795785. All 40 extension games complete; combined reported OpenRouter spend US$25.5456355, no pending reservations, maximum accounted spend plus reservations US$26.206198. Original seven failures remain retained. Independent judge replayed 16/16 and gave **proceed with caveats** for final synthesis.
+
+Both seeds: Sonnet non-witness disaster correctness changed 0%→100% with proof transport; Terra was 100% in both arms. Safe outcomes were 100% for both models/arms. Every witness acted correctly. Every proof recipient had an active decision after authenticated receipt and acted correctly then. 24 non-witness trajectories saw an incorrect machine enum before their first authenticated decision; 35 had joint evidence/incorrect-enum exposure and chose correctly at that first joint decision. These are dependent process observations, not independent sample counts. Terra's proof arm advanced 12/16 non-witness disaster evacuations, with per-game mean advancement 0.875/0.75 rounds; four were unchanged.
+
+Required judge fixes applied: figure labels now explicitly distinguish **authenticated receipt** and **active authenticated decision** from ordinary message receipt; wrong-peer-signal language stays literal and does not assert semantic endorsement or belief. Keep witness/non-witness separation, independent live trajectories and the truth-plus-authentication bundle caveat.
+
+Decision: stop paid collection at the frozen 40-game extension rather than add adaptive conditions after seeing this signal. The judge found no extra paid control essential for a defensible narrow report. Leave US$9.4543645 unused. Future content-matched unauthenticated capsules, forged attestation testimony, delayed evidence and held-out repeated scenarios could separate mechanisms and probe robustness; none are claimed completed. The direct controls are diagnostic, not a novelty claim. The overall study is exploratory and no p-value/significance/equivalence claim is made.
+
+### Final judge review: reproducibility and scope corrections
+
+Final verdict: **proceed with caveats**, scientific totals and narrow conclusions supported. The reviewer independently confirmed 443 restored files byte-identical, 65 original completed replays plus prior 40 extension replays, all cost/call totals, and the per-game Terra timing means.
+
+Two final corrections accepted: added complete fresh-checkout setup/restoration commands and explicit restored `--root`/`--roots` arguments; the observability checker now rejects missing, empty or non-original-protocol roots instead of emitting a vacuous success. Added three negative regression cases. Clarified that 73 counterfactual replays cover 65 original Sonnet games plus 8 Terra baselines, excluding the fresh Exp 4 no-evidence cells. These corrections do not change collected outcomes.
+
+Final correction check: the independent judge reran all three empty/missing-input regression cases and confirmed **no remaining blocker** for the documented narrow pilot.

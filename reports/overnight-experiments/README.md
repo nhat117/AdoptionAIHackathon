@@ -1,4 +1,6 @@
-# Three bounded swarm pilots
+# Swarm pilots and evidence diagnostics
+
+**Final review:** [SUMMARY.md](SUMMARY.md) covers all five experiments, the Terra comparison, 105/112 completed games, retained failures, independent-judge corrections, and US$25.5456355 reported OpenRouter cost. [DECISIONS.md](DECISIONS.md) is the review log.
 
 This work continues PR #5 on `codex/two-research-proposals`. The scope is the user-approved exploratory pilot, not the full proposed six-model matrix or a submission. The durable goal is tracked in Codex; [GOAL.md](GOAL.md) records the protocol and handoff checklist.
 

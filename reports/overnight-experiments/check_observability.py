@@ -69,9 +69,13 @@ async def check(folder, packs):
 
 
 async def main(args):
+    for root in args.roots:
+        if not root.is_dir():
+            raise ValueError(f"Input root is missing or not a directory: {root}")
     packs = json.loads(Path("data/experiment1/languages.json").read_text())
     rows = []
     for root in args.roots:
+        found = 0
         for p in sorted(root.glob("*/manifest.json")):
             m = json.loads(p.read_text())
             if m["status"] != "completed" or str(m["section"]) not in {
@@ -82,9 +86,20 @@ async def main(args):
             }:
                 continue
             rows.append(await check(p.parent, packs))
+            found += 1
+        if found == 0:
+            raise ValueError(
+                f"No eligible completed original-protocol games in: {root}"
+            )
+    if not rows:
+        raise ValueError("No completed original-protocol trajectories to check")
     out = dict(
         purpose="post_hoc_structural_observability_check",
         checked=len(rows),
+        scope=(
+            "Original sections 1-3 and Terra baselines; "
+            "excludes fresh Experiment 4 no-evidence games"
+        ),
         all_passed=True,
         meaning=(
             "Hidden truth is unidentifiable to recipients in these paired "

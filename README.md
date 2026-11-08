@@ -7,7 +7,7 @@ Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/pyt
 
 The [networked evacuation proposals](projects/README.md) describe language, claimed source identity and network comparisons (A), and a separate recovery study (C). Both adapt an established human network experiment. Earlier A/C calibration and technical verification are recorded separately from the revised protocol.
 
-[Current bounded three-experiment pilot](reports/overnight-experiments/README.md): frozen Sonnet 5.5 / Google / low-reasoning collection, audited raw data, case-specific graphs, and retained failures. This exploratory English/Vietnamese pilot is smaller than the proposed six-model evaluation and uses translations awaiting review.
+[Completed pilot and evidence diagnostics](reports/overnight-experiments/SUMMARY.md): frozen Sonnet 5.5 / Google / low-reasoning collection, audited raw data, case-specific graphs, and retained failures. This exploratory English/Vietnamese pilot is smaller than the proposed six-model evaluation and uses translations awaiting review.
 
 ## Evacuation experiments
 

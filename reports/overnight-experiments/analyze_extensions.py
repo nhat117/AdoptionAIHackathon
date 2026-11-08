@@ -438,6 +438,88 @@ def plots(rows, section, baseline, output):
     plt.close(fig)
 
 
+def timing_plot(rows, output):
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    fig, axes = plt.subplots(2, 2, figsize=(12, 7), sharey=True)
+    measures = [
+        "authenticated receipt",
+        "active authenticated decision",
+        "correct action",
+    ]
+    for ax, (model, disaster) in zip(
+        axes.flat,
+        [("sonnet", False), ("sonnet", True), ("terra", False), ("terra", True)],
+    ):
+        for a, arm in enumerate(["private_text", "private_proof"]):
+            rs = [
+                r
+                for r in rows
+                if r["status"] == "completed"
+                and r["model_tag"] == model
+                and r["scenario"]["disaster"] == disaster
+                and r["arm"] == arm
+            ]
+            values = []
+            if rs:
+                received = [
+                    sum(
+                        t["first_receipt_round"] is not None
+                        for t in r["evidence_timing"]
+                        if not t["witness"]
+                    )
+                    / 8
+                    for r in rs
+                ]
+                active = [
+                    sum(
+                        t["first_active_authenticated_decision"] is not None
+                        for t in r["evidence_timing"]
+                        if not t["witness"]
+                    )
+                    / 8
+                    for r in rs
+                ]
+                correct = [
+                    r["outcome"]["other_recipients_correct_action_rate"] for r in rs
+                ]
+                values = [mean(received), mean(active), mean(correct)]
+            for j, (value, label, color) in enumerate(
+                zip(values, measures, ["#b6cce2", "#527eaa", "#d58e38"])
+            ):
+                ax.bar(
+                    a + (j - 1) * 0.23,
+                    value,
+                    width=0.22,
+                    color=color,
+                    label=label if a == 0 else None,
+                )
+            ax.text(a, 1.06, f"n={len(rs)}", ha="center")
+        ax.set_xticks([0, 1], ["text only", "proof preserving"])
+        ax.set_ylim(-0.02, 1.15)
+        ax.grid(axis="y", alpha=0.2)
+        ax.set_title(f"{model.title()} / {'disaster' if disaster else 'no disaster'}")
+        ax.set_ylabel("Mean whole-game non-witness fraction")
+    axes[0, 0].legend(fontsize=8, loc="lower right")
+    fig.suptitle("Authenticated receipt, decision opportunity and final correctness")
+    fig.text(
+        0.5,
+        0.015,
+        (
+            "Ordinary testimony is separate from authenticated receipt; "
+            "correctness does not establish belief."
+        ),
+        ha="center",
+        fontsize=9,
+    )
+    fig.tight_layout(rect=[0, 0.04, 1, 0.95])
+    fig.savefig(output / "timing.png", dpi=170)
+    plt.close(fig)
+
+
 async def main(args):
     root, section = args.root, args.section
     output = Path("reports/overnight-experiments") / (
@@ -614,6 +696,8 @@ async def main(args):
             + "\n"
         )
     plots(rows, section, baseline, output)
+    if section == "5":
+        timing_plot(rows, output)
     print(
         json.dumps(
             {

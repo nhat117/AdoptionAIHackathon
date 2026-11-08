@@ -18,5 +18,6 @@ User-approved extension: eight matched GPT-6.1 Terra English/Vietnamese baseline
 
 - [x] Terra baseline: 8/8 completed; exact replay, costs, graphs and independent judge review complete.
 - [x] Experiment 4: 16/16 complete; all eight positive controls pass; exact replay and independent judge review complete.
-- [ ] Experiment 5 evidence-forwarding controls, datasets and results.
-- [ ] Complete reflection and decision log; post result images directly in group.
+- [x] Experiment 5: 16/16 complete; exact replay, opportunity/action timing, graphs and independent judge review complete.
+- [x] Complete reflection and independent-judge decision log.
+- [ ] Post final forwarding graphs and completion report to the group.
