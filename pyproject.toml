@@ -37,3 +37,4 @@ testpaths = ["tests"]
 
 "scripts/report_followup.py" = ["E501"]
 "scripts/report_authority600.py" = ["E501"]
+"scripts/run_harness_challenge.py" = ["E501"]

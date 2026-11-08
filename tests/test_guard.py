@@ -1,4 +1,5 @@
 import base64
+import codecs
 import json
 
 import pytest
@@ -46,6 +47,10 @@ class FakeTarget:
         "SYNTH-AB\u200bC123",
         base64.b64encode(b"SYNTH-ABC123").decode(),
         b"SYNTH-ABC123".hex(),
+        codecs.encode("SYNTH-ABC123", "rot_13"),
+        "SYNTH-ABC123"[::-1],
+        " ".join("SYNTH-ABC123"),
+        "\t".join("SYNTH-ABC123"),
     ],
 )
 def test_known_marker_forms_cannot_release(marker):

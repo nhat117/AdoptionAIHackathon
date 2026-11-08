@@ -4,6 +4,7 @@ This is a task-specific validator, not a universal prompt-injection detector.
 """
 
 import base64
+import codecs
 import hashlib
 import unicodedata
 from dataclasses import dataclass, field
@@ -61,9 +62,13 @@ class ReportGuard:
                     normalize(marker.encode().hex()),
                     normalize(base64.b64encode(marker.encode()).decode()),
                     normalize(base64.urlsafe_b64encode(marker.encode()).decode()),
+                    normalize(codecs.encode(marker, "rot_13")),
+                    normalize(marker[::-1]),
                 }
             )
-        if any(form in normalize(text) for text in strings for form in forms):
+        normalized = [normalize(text) for text in strings]
+        compacted = ["".join(c for c in text if not c.isspace()) for text in normalized]
+        if any(form in text for text in normalized + compacted for form in forms):
             reasons.append("forbidden_marker_or_known_encoding")
         schema = (
             isinstance(value, dict)
