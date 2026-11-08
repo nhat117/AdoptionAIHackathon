@@ -16,8 +16,9 @@ from dotenv import load_dotenv
 
 from ..backend import AdaptionBackend
 from ..settings import AgentSettings, Settings
+from .conditions import IDENTITIES, communication_graph, source_label
 from .dataset import load_dataset
-from .engine import Game, InvalidDecision, neighbours, state_hash
+from .engine import Game, InvalidDecision, state_hash
 from .openrouter import OpenRouterBackend
 
 # Anthropic raw schemas omit length/count constraints; validate() enforces them.
@@ -74,16 +75,29 @@ def validate(data, view):
 
 
 class LanguageGame(Game):
-    def __init__(self, scenario, language, pack):
+    def __init__(
+        self,
+        scenario,
+        language,
+        pack,
+        *,
+        identity="ordinary_peer",
+        topology="ring",
+        network_seed=None,
+    ):
         super().__init__(scenario, "A", "language-v1")
         self.language, self.pack = language, pack
+        self.identity, self.topology = identity, topology
+        self.network_seed = scenario.seed if network_seed is None else network_seed
+        self.graph = communication_graph(topology, self.network_seed)
+        self.claimed_source_label = source_label(identity, language, pack["peer_label"])
 
     def view(self, agent):
         # Machine keys are shared across languages; no truth or terminal round leaks.
         return {
             "agent": agent,
             "round": self.state.round + 1,
-            "neighbours": neighbours(agent),
+            "neighbours": self.graph[agent],
             "language": self.language,
             "history": copy.deepcopy(self.state.histories[agent]),
         }
@@ -113,7 +127,9 @@ class LanguageGame(Game):
             messages[agent] = {
                 "id": f"r{r}-a{agent}",
                 "sender": agent,
-                "source_label": self.pack["peer_label"],
+                "source_label": self.claimed_source_label
+                if agent == self.source
+                else self.pack["peer_label"],
                 "signal": data["signal"],
                 "text": data["message"],
                 "parents": data["parents"],
@@ -124,7 +140,7 @@ class LanguageGame(Game):
                 self.state.evacuated[agent] = r
         for agent in decisions:
             delivered = []
-            for sender in neighbours(agent):
+            for sender in self.graph[agent]:
                 if sender in messages:
                     self.state.histories[agent].append(copy.deepcopy(messages[sender]))
                     delivered.append(sender)
@@ -132,8 +148,8 @@ class LanguageGame(Game):
                 {
                     "round": r,
                     "recipient": agent,
-                    "potential": neighbours(agent),
-                    "selected": neighbours(agent),
+                    "potential": self.graph[agent],
+                    "selected": self.graph[agent],
                     "delivered": delivered,
                     "source_available": self.source in messages,
                 }
@@ -156,6 +172,11 @@ class LanguageGame(Game):
             v for k, v in result["payoffs"].items() if k != self.source
         )
         result["language_review_status"] = "pending_manual_review"
+        result["identity"] = self.identity
+        result["claimed_source_label"] = self.claimed_source_label
+        result["topology"] = self.topology
+        result["network_seed"] = self.network_seed
+        result["adjacency"] = self.graph
         return result
 
 
@@ -341,7 +362,14 @@ async def run(args):
                     args.max_calls - manifest["model_calls"],
                     record,
                 )
-                game = LanguageGame(scenario, lang, packs[lang])
+                game = LanguageGame(
+                    scenario,
+                    lang,
+                    packs[lang],
+                    identity=getattr(args, "identity", "ordinary_peer"),
+                    topology=getattr(args, "topology", "ring"),
+                    network_seed=getattr(args, "network_seed", None),
+                )
                 try:
                     while game.state.round < scenario.terminal_round:
                         trace = await game.step(policy)
@@ -395,6 +423,9 @@ def main():
         "--packs", type=Path, default=Path("data/experiment1/languages.json")
     )
     p.add_argument("--languages", nargs="+", default=["en", "vi"])
+    p.add_argument("--identity", choices=IDENTITIES, default="ordinary_peer")
+    p.add_argument("--topology", choices=["ring", "random_regular"], default="ring")
+    p.add_argument("--network-seed", type=int)
     p.add_argument("--mode", choices=["offline", "live"], default="offline")
     p.add_argument("--provider", choices=["adaption", "openrouter"], default="adaption")
     p.add_argument("--model", default="qwen3.8-27b")
