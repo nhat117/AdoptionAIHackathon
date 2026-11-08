@@ -195,6 +195,8 @@ def reasoning_policy(mode, provider, model):
     if provider == "openrouter" and model in {
         "qwen/qwen3.8-27b",
         "qwen/qwen3.8-max-prime",
+        "openai/gpt-6.1-terra",
+        "anthropic/claude-sonnet-5.5",
         "deepseek/deepseek-v4-pro-0813",
     }:
         return {"status": "explicit", "effort": "low"}
@@ -241,7 +243,12 @@ async def run(args):
             ["git", "rev-parse", "HEAD"], text=True
         ).strip(),
         "research_results": False,
-        "generation_settings": {"temperature": 0, "max_output_tokens": output_cap},
+        "generation_settings": {
+            "temperature": None
+            if args.model in {"openai/gpt-6.1-terra", "anthropic/claude-sonnet-5.5"}
+            else 0,
+            "max_output_tokens": output_cap,
+        },
         "reasoning_policy": reasoning,
         "working_tree_dirty": bool(
             subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()

@@ -1,0 +1,80 @@
+{
+  "model": "anthropic/claude-sonnet-5.5",
+  "language": "vi",
+  "requested_reasoning": "low",
+  "temperature": 0,
+  "max_output_tokens": 2048,
+  "attempts": 1,
+  "status": "valid_response",
+  "decision": {
+    "signal": "Unknown",
+    "action": "evacuate",
+    "message": "Mới nhận một tin từ láng giềng 1 báo có thảm họa, chưa được xác minh. Chưa có thêm bằng chứng, nhưng sơ tán đảm bảo 1 điểm và an toàn nên tôi chọn sơ tán. Ai có thêm thông tin xin chia sẻ.",
+    "parents": [
+      "r2-a1"
+    ]
+  },
+  "records": [
+    {
+      "type": "provider_metadata",
+      "provider": "openrouter",
+      "response_id": "gen-1794132628-tNUdljW5trOpvjFBC71l",
+      "model": "anthropic/claude-sonnet-5.5",
+      "upstream_provider": "Claude Platform on AWS",
+      "usage": {
+        "prompt_tokens": 1287,
+        "completion_tokens": 149,
+        "total_tokens": 1436,
+        "cost": 0.004064,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.004064,
+          "upstream_inference_prompt_cost": 0.002574,
+          "upstream_inference_completions_cost": 0.00149
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "requested_reasoning_effort": "low",
+      "requested_temperature": null,
+      "finish_reason": "stop"
+    },
+    {
+      "type": "model_response",
+      "call": 1,
+      "view": {
+        "agent": 0,
+        "round": 3,
+        "neighbours": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "language": "vi",
+        "history": [
+          {
+            "id": "r2-a1",
+            "sender": 1,
+            "source_label": "đồng đội bình thường",
+            "signal": "Danger",
+            "text": "Có thảm họa. Chúng ta nên sơ tán.",
+            "parents": [],
+            "authenticated": false
+          }
+        ]
+      },
+      "raw": "{\"signal\":\"Unknown\",\"action\":\"evacuate\",\"message\":\"Mới nhận một tin từ láng giềng 1 báo có thảm họa, chưa được xác minh. Chưa có thêm bằng chứng, nhưng sơ tán đảm bảo 1 điểm và an toàn nên tôi chọn sơ tán. Ai có thêm thông tin xin chia sẻ.\",\"parents\":[\"r2-a1\"]}",
+      "language_check": "pending_manual_review"
+    }
+  ]
+}

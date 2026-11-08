@@ -276,6 +276,8 @@ def test_unverified_live_reasoning_fails_before_network_or_output(
         ("openai/gpt-4.1-mini", None, "not_applicable"),
         ("qwen/qwen3.8-27b", "low", "explicit"),
         ("qwen/qwen3.8-max-prime", "low", "explicit"),
+        ("openai/gpt-6.1-terra", "low", "explicit"),
+        ("anthropic/claude-sonnet-5.5", "low", "explicit"),
         ("deepseek/deepseek-v4-pro-0813", "low", "explicit"),
         ("mistralai/mistral-small-3.2-24b-instruct", None, "not_applicable"),
     ],
