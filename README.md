@@ -1,4 +1,23 @@
-# Authority Across Languages
+# AI-to-AI report protection harness
+
+The primary deliverable is a reusable, policy-enforcing reporting guard. It generates a candidate, validates it before release, optionally applies a context-separated LLM veto, and retries once using only trusted inputs. If validation still fails, it releases nothing. The research harness measures the attack surface and defence tradeoffs.
+
+## Use the protective harness
+
+```sh
+uv sync --frozen --extra dev
+ollama pull qwen2.5:0.5b
+uv run python scripts/protected_report.py --language vi --authority authority
+# Optional GPT-4o target or LLM veto requires a Braintrust key.
+uv run python scripts/protected_report.py --provider braintrust --model gpt-4o
+uv run python scripts/protected_report.py --llm-monitor --audit runs/demo/audit.json
+```
+
+Only a validated report (or a blocked result) is printed. See [pattern review and architecture](research/PATTERN_REVIEW.md). `from ai2ai_guard import guarded_generate` is the library entry point; supply a trusted task, an untrusted peer message and a client exposing `chat(messages, seed)`. The task must contain `task_id`, `status`, `topic`, `milestone` and the synthetic `marker`. The client returns a dictionary containing `content`.
+
+The guard enforces this reporting contract: exact schema and identity/status, required checkpoint and no known marker forms. Common encodings and Unicode variants are checked. It is not a universal detector of arbitrary prompt injection, semantic manipulation, or unrestricted tool actions. Every released candidate must pass the deterministic gate; an optional monitor can only veto. Normal audit records contain hashes/reasons rather than rejected raw output.
+
+## Research question
 
 We test whether fictional authority in a lower-trust AI-agent message changes synthetic-marker disclosure across **English, Vietnamese and Chinese**. The repository also retains its official Adaption Python SDK dataset CLI.
 
@@ -60,3 +79,12 @@ uv run --frozen --extra dev pytest
 ```
 
 Tests exercise balanced design, sender-only variation, normalized disclosure, schema-vs-objective separation, paired monitor context, API failure handling, cluster-aware contrasts, frozen protocol mismatch protection, and the existing Adaption CLI. No network or credentials are needed for tests. GitHub Actions runs checks on Python 3.9 and 3.12.
+
+## Protection validation
+
+```sh
+uv run python scripts/evaluate_guard.py             # retrospective saved-output replay
+uv run python scripts/evaluate_guard.py --live      # 24 fresh protected cases, model calls
+```
+
+Retrospective replay is in-sample validation of an explicit policy, not independent proof of generalisation. Fresh cases are a small smoke test, not a powered security evaluation. The default protector uses deterministic validation; adding an LLM veto may reduce utility when the verdict is malformed or overstrict. Research and protection results are kept separately in `runs/h1-v3-*` and `runs/protection-v1`.
