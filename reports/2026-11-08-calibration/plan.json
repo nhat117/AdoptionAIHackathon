@@ -1,0 +1,138 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "provider": "openrouter",
+  "seeds": 5,
+  "planned_A_episodes": 80,
+  "planned_C_continuations": 50,
+  "max_parallel_scenarios": 6,
+  "reported_cost_stop_usd": 2,
+  "max_seconds": 1200,
+  "started_at": "2026-11-08T07:57:00.825695+00:00",
+  "jobs": [
+    [
+      "A",
+      "calibration-000-0-0"
+    ],
+    [
+      "A",
+      "calibration-000-0-1"
+    ],
+    [
+      "A",
+      "calibration-000-1-0"
+    ],
+    [
+      "A",
+      "calibration-000-1-1"
+    ],
+    [
+      "A",
+      "calibration-001-0-0"
+    ],
+    [
+      "A",
+      "calibration-001-0-1"
+    ],
+    [
+      "A",
+      "calibration-001-1-0"
+    ],
+    [
+      "A",
+      "calibration-001-1-1"
+    ],
+    [
+      "A",
+      "calibration-002-0-0"
+    ],
+    [
+      "A",
+      "calibration-002-0-1"
+    ],
+    [
+      "A",
+      "calibration-002-1-0"
+    ],
+    [
+      "A",
+      "calibration-002-1-1"
+    ],
+    [
+      "A",
+      "calibration-003-0-0"
+    ],
+    [
+      "A",
+      "calibration-003-0-1"
+    ],
+    [
+      "A",
+      "calibration-003-1-0"
+    ],
+    [
+      "A",
+      "calibration-003-1-1"
+    ],
+    [
+      "A",
+      "calibration-004-0-0"
+    ],
+    [
+      "A",
+      "calibration-004-0-1"
+    ],
+    [
+      "A",
+      "calibration-004-1-0"
+    ],
+    [
+      "A",
+      "calibration-004-1-1"
+    ],
+    [
+      "C",
+      "calibration-000-0-0"
+    ],
+    [
+      "C",
+      "calibration-000-1-0"
+    ],
+    [
+      "C",
+      "calibration-001-0-0"
+    ],
+    [
+      "C",
+      "calibration-001-1-0"
+    ],
+    [
+      "C",
+      "calibration-002-0-0"
+    ],
+    [
+      "C",
+      "calibration-002-1-0"
+    ],
+    [
+      "C",
+      "calibration-003-0-0"
+    ],
+    [
+      "C",
+      "calibration-003-1-0"
+    ],
+    [
+      "C",
+      "calibration-004-0-0"
+    ],
+    [
+      "C",
+      "calibration-004-1-0"
+    ]
+  ],
+  "status": "finished",
+  "interpretation": "calibration; no confirmatory inference",
+  "reported_cost_usd": 1.1722976000000214,
+  "finished_at": "2026-11-08T08:09:25.732015+00:00",
+  "jobs_finished": 30
+}

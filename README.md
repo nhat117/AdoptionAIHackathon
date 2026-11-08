@@ -9,6 +9,8 @@ The [networked evacuation proposals](projects/README.md) describe two planned st
 
 ## Evacuation experiments
 
+[First calibration results](reports/2026-11-08-calibration/README.md): 129 completed outcomes, one invalid trial, and $1.17 reported OpenRouter cost. These are preliminary single-model results.
+
 The [pilot implementation guide](projects/implementation.md) covers scenario generation, Adaption Invent message pairs, offline checks, and bounded live A/C runs. See the [dataset card](data/evacuation/README.md) for split and review limitations.
 
 ## Setup and open Studio
