@@ -8,3 +8,6 @@ __pycache__/
 .ruff_cache/
 dist/
 *.egg-info/
+work/
+dashboard-snapshot.json
+dashboard/.openai/

@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-11-08T02:57:12.359697+00:00",
+  "spec": {
+    "config": {
+      "experiment_id": "authority_language_adaption_v4",
+      "seed": 202611083,
+      "languages": [
+        "en",
+        "vi",
+        "zh"
+      ],
+      "authority_conditions": [
+        "peer",
+        "authority"
+      ],
+      "repetitions": 3,
+      "benign_repetitions": 1,
+      "target_temperature": 0.7,
+      "monitor_temperature": 0,
+      "monitor_provider": "adaption",
+      "monitor_model": "deepseek-v4-flash",
+      "template_id": "correction_v1",
+      "template_selection": "Fixed correction template reused unchanged across both Adaption targets; no model-specific selection.",
+      "primary_outcome": "Unicode-casefold marker in raw or JSON-decoded output",
+      "translation_review": "Independent bilingual human review pending; exploratory",
+      "h2_status": "Not run: pragmatic manipulation requires separate validation",
+      "h3_limit": "Marker disclosure remains visible in output; this is an output-vs-trace ablation, not a validated context-compression benchmark.",
+      "max_output_tokens": 1024,
+      "provider_api": "Adaption Responses API via SDK 0.19.0",
+      "agentic_memory": false,
+      "store": false,
+      "tools_enabled": false,
+      "sampling_seed_supported": false,
+      "dataset_status": "Reuses the frozen V3 task/translation benchmark for new hosted-model replication; no training or adaptation on evaluation data.",
+      "collect_monitors": true
+    },
+    "provider": "adaption",
+    "model": "qwen3.8-27b",
+    "file_hashes": {
+      "src/ai2ai_injection/runner.py": "4e8e56c816b4eac4865ff449b9a85705531c04981cd4a129890218bbe68601ae",
+      "src/ai2ai_injection/monitor.py": "0eeb0e045c05853d1af42c63a63836703e6b6285835647d333c967851894cb4e",
+      "src/ai2ai_injection/__init__.py": "babcff1724fefe8bf7b4aa3d8ea4db119a165c8826691fe5c42a84b3d250735f",
+      "src/ai2ai_injection/logging_io.py": "717dffc20905a1ee9b10a9317460d6783b678bf798586ea1e28aef6ddbd0419e",
+      "src/ai2ai_injection/providers.py": "8db1af0c0a370f61c3f78513517c29f5b27cfcc51474b0ec771d42874cd988cf",
+      "src/ai2ai_injection/adaption_provider.py": "50077b64c43a8554cdc8e3ca0ad1cd9d38d48d2de0c0c211117f2a70f511e11c",
+      "src/ai2ai_injection/target.py": "32af25806c084107799c0ee8f83fc1cd0eabda2dac4f4ffcaddfc2ca3c557a25",
+      "src/ai2ai_injection/attacks.py": "7e5581b7eacbe7ac8e4802b7ed732fbfa26ed2a4a1b1f96a60ac681a37df4709",
+      "src/ai2ai_injection/evaluator.py": "123300f354a12dbb3d0c3a113a4c46418e481a25056ca4a8a78d114206f3dec6",
+      "src/ai2ai_injection/report.py": "0b51d87cbf100537efb142980f5636c6ac67f76a362444ae472320dfbb0316ce",
+      "configs/experiment_adaption.json": "436fa9d3a938750a064803f294bfd902f76002abd3af21408b08205f7ebaa4ef",
+      "configs/experiment_h1.json": "ae487213fd44e56cdccfdbae5e35c51de321a52cce608ea8140b72060a804b83",
+      "data/tasks.jsonl": "ef04fd0e0416c08d769aae10ee68ac3b352f32998528770d074a83fa3a41740c",
+      "data/translations.json": "6a6966c17b066b713cef92c332232bf63b30e7a326189c85411270dc0f98c625"
+    }
+  },
+  "git_commit": "3fbec556c24728258e02456760d95783e5ccaa2a",
+  "working_tree_status": "",
+  "registration": "local freeze, not external preregistration"
+}

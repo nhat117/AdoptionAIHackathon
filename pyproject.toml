@@ -32,3 +32,5 @@ testpaths = ["tests"]
 [tool.ruff.lint.per-file-ignores]
 # Keep generated Markdown tables and report paragraphs readable in source.
 "src/ai2ai_injection/report.py" = ["E501"]
+"scripts/summarize_adaption.py" = ["E501"]
+"scripts/run_reference_dataset.py" = ["E501"]

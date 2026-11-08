@@ -79,3 +79,28 @@ uv run --frozen --extra dev pytest
 ```
 
 Offline tests cover the guard, experimental balance, context ablation, sampling/error handling, source freeze, dataset CLI and actual Adaption SDK HTTP serialization with a mock transport. GitHub CI runs Python 3.9 and 3.12. No live credentials are needed for tests.
+
+## Completed Adaption pilot and public reference test
+
+See [Adaption results](research/ADAPTION_RESULTS.md) for the completed eight-task
+DeepSeek pilot, the incomplete Qwen pilot, and the full public deepset test split.
+The reference evaluation measures **binary injection detection**, not agent attack
+success. Its 116 labels were never included in model input and were not used for
+training or prompt tuning. Revision, license declaration and hashes are recorded
+in `runs/reference-deepset-adaption/SOURCE.json`.
+
+```bash
+# Offline: recompute metrics and the results section from immutable saved calls.
+.venv/bin/python scripts/summarize_adaption.py
+
+# Live: copy the pinned test.jsonl into a new folder before starting another run.
+.venv/bin/python scripts/run_reference_dataset.py --folder runs/reference-new
+```
+
+The research dashboard is served locally at `http://127.0.0.1:49250/` on the
+original machine. Its reviewed snapshot is in `dashboard/src/data.json`;
+`python scripts/build_dashboard_data.py` refreshes it from completed collections.
+Run sets separate historical results, the paced pilot and earlier rate-limited
+attempts. API errors remain visible and are never counted as successful defenses.
+The dashboard source uses the Data app runtime; see `dashboard/AGENTS.md` for
+its build workflow. No remote website has been published.
