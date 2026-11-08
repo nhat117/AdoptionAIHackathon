@@ -1,6 +1,19 @@
 # Dataset locations
 
-## Current submission dataset
+## Current 600-response expansion
+
+[oversight-expansion-v2](../runs/oversight-expansion-v2/) contains 600 actual worker responses from **50 task IDs**, with 200 responses per review-note language. The experiment repeats each task across three note languages, two source conditions and two evidence-access conditions. These are not 600 independent tasks or 50 task families.
+
+| File | Contents | Records |
+|---|---|---:|
+| [Expansion inputs](../runs/oversight-expansion-v2/inputs.jsonl) | Exact prompts, source reports and expected facts | 600 |
+| [Raw expansion trials](../runs/oversight-expansion-v2/trials.jsonl) | Provider output, usage, oracle scoring and paired gate decisions | 600 |
+| [Readable JSON outputs](../submission/expansion-v2/recorded-outputs.json) | Peer inputs, expected facts, raw worker text and release decisions | 600 |
+| [Readable CSV outputs](../submission/expansion-v2/recorded-outputs.csv) | Flat inspection view | 600 |
+
+[Protocol](../runs/oversight-expansion-v2/FROZEN_PROTOCOL.json) · [metrics](../runs/oversight-expansion-v2/metrics.json) · [report](../submission/expansion-v2/README.md). The original 24-response pilot below and the older selected 600-case authority dataset are separate cohorts.
+
+## Preserved 24-response pilot dataset
 
 The controlled follow-up uses **24 saved responses**, from twelve source cases evaluated with and without trusted input. There are eight responses per peer-message language (English, Vietnamese and Chinese), but only two underlying task groups. Language variants and gate checks reuse tasks and candidates.
 
@@ -20,3 +33,7 @@ The [frozen protocol](../runs/oversight-ablation-v1/FROZEN_PROTOCOL.json) record
 Generation and selection records are in [authority500/](authority500/), including the [generation protocol](authority500/GENERATION_PROTOCOL.json), [manifest](authority500/MANIFEST.json) and [quality audit](authority500/QUALITY_AUDIT.json). Other historical experiments are indexed in [ARCHIVE.md](../ARCHIVE.md).
 
 These are synthetic research tasks. Added navigation does not modify any dataset or run record. JSONL contains one JSON object per line. Use the exact relative paths above after cloning the research branch.
+
+## Proposed budget committee specification
+
+[budget-review-v1](budget-review-v1/) contains a design example only. It has not been executed and must not be counted as experiment data.

@@ -1,27 +1,19 @@
 # Submission package
 
-**Title:** When Does Semantic Oversight Add Value? A Controlled Multilingual Agent-Handoff Study
-
 **Track:** 4 — Multi-Agent Oversight and Control
 
-**Filled official Word template:** [Track4_Submission.docx](submission/Track4_Submission.docx) — eleven rendered pages; author names and affiliations remain to be filled.
+**Current expanded study:** [Report](submission/expansion-v2/README.md) · [filled Word template](submission/expansion-v2/Track4_Expanded_600.docx) · [600 response records](runs/oversight-expansion-v2/trials.jsonl) · [dataset index](data/README.md)
 
-**Report:** [OVERSIGHT_ABLATION_RESULTS.md](research/OVERSIGHT_ABLATION_RESULTS.md)
+The 600-response expansion uses 50 unused task IDs and 200 responses per review-note language. All calls completed without errors. Its seven-page Word report includes questions, hypotheses, methods, actual sample inputs and outputs, Matplotlib bar charts/heatmap, APA 7 references and limitations. References start on page five. The 188-word abstract and every rendered page were checked. Author names and affiliations remain explicit placeholders.
 
-**Dataset locations:** [Dataset index](data/README.md) · [current inputs](runs/oversight-ablation-v1/inputs.jsonl) · [recorded outputs](submission/figures/all-recorded-outputs.json)
+**Preserved pilot:** [24-response report](research/OVERSIGHT_ABLATION_RESULTS.md) · [original Word report](submission/Track4_Submission.docx). Pilot data and all earlier results remain unchanged and separate from the expansion.
 
-**Proposal and study scope:** [RESEARCH_PROPOSAL.md](research/RESEARCH_PROPOSAL.md)
-
-The implementation, experiments, controlled analysis and evidence-preservation checks are complete. The report includes a 150–250-word abstract, methods, quantitative baselines, discussion, references and a Limitations and Dual-Use / Ethical Considerations appendix.
+**Separate next study:** [Budget swarm extension](research/BUDGET_SWARM_EXTENSION.md). It is a proposed design and scenario specification, not an implemented live bribery or deliberation experiment.
 
 ## Before uploading
 
-1. Fill in author names and affiliations. Confirm which contributions predate the hackathon; the baseline commit only marks work before this refinement.
-2. Review the filled Word document, created from the supplied official DOCX template, and export a PDF after completing the author fields.
-3. The rendered Word document is eleven pages total, with references starting on page seven. Recheck pagination after author edits and PDF export, then upload through the [official sprint page](https://apartresearch.com/sprints/swarm-alignment-2026).
+1. Complete author names and affiliations and confirm actual contribution dates.
+2. Review the expanded Word document and export the final PDF. Recheck pagination after edits.
+3. Upload through the official hackathon process. Nothing has been submitted or merged automatically.
 
-Nothing has been submitted. The research package is finalized; author fields and the official-template PDF remain required.
-
-## Short demonstration
-
-Run the README's offline reproduction commands. Show the 24 valid-JSON candidates, then compare identical outputs: six wrong budgets pass the structural check and are blocked by the semantic check, while all six clean candidates remain accepted. Show the trusted-input control, where both checks accept twelve correct reports. Finally show archived fenced JSON, where strict checks reject both good and bad content. End with the narrow claim: verified rejection is demonstrated; additional benefit over grounding remains unobserved in this pilot.
+The demonstrated contribution is selective rejection of unsupported budget values. No additional benefit over trusted worker input is observed in this setting. Blocked reports are not repaired tasks, and mixed-language notes do not establish broad multilingual safety.

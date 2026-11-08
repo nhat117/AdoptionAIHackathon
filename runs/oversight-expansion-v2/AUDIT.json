@@ -1,0 +1,8 @@
+{
+  "records_recomputed": 600,
+  "gate_decisions_recomputed": 2400,
+  "independent_oracles_recomputed": 600,
+  "pool_and_exclusion_hashes_verified": true,
+  "old_runs_unchanged": true,
+  "no_new_inference": true
+}

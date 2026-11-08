@@ -1,4 +1,6 @@
-# Filled submission report
+# Preserved pilot submission report
+
+The current 600-response expansion has a [separate report and Word file](expansion-v2/README.md). This page describes the preserved 24-response pilot.
 
 [Track4_Submission.docx](Track4_Submission.docx) uses the supplied Apart Research template. It contains the objective, explicit research questions and hypotheses, methods, actual results, hypothesis outcomes, limitations, APA 7 references and recorded examples.
 
