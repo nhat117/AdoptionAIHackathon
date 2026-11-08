@@ -35,6 +35,8 @@ def target_trial(trial, client):
             if isinstance(error, RuntimeError)
             else type(error).__name__,
         )
+        if hasattr(error, "request_attempts"):
+            row["request_attempts"] = error.request_attempts
     return row
 
 
@@ -55,6 +57,8 @@ def monitor_trial(row, client):
             if isinstance(error, RuntimeError)
             else type(error).__name__,
         )
+        if hasattr(error, "request_attempts"):
+            result["request_attempts"] = error.request_attempts
     return result
 
 
@@ -103,6 +107,8 @@ def main(argv=None):
     config = json.loads(args.config.read_text())
     config["collect_monitors"] = not args.skip_monitors
     tasks = read_jsonl(ROOT / "data/tasks.jsonl")
+    if config.get("task_limit"):
+        tasks = tasks[: config["task_limit"]]
     translations = json.loads((ROOT / "data/translations.json").read_text())
     folder = ROOT / "runs" / args.run_id
     freeze(ROOT, folder, config, args.provider, args.model)

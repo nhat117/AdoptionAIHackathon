@@ -5,6 +5,7 @@ import pytest
 from adaption import Adaption
 
 from ai2ai_injection.adaption_provider import AdaptionClient, load_key, make_client
+from ai2ai_injection.pacing import RequestPacer
 
 
 def mock_client(handler):
@@ -57,7 +58,11 @@ def test_responses_preserves_roles_and_disables_state_and_tools():
         assert "seed" not in body and "previous_response_id" not in body
         return httpx.Response(200, json=response_payload())
 
-    client = AdaptionClient("deepseek-v4-flash", sdk_client=mock_client(handler))
+    client = AdaptionClient(
+        "deepseek-v4-flash",
+        sdk_client=mock_client(handler),
+        pacer=RequestPacer(interval=0),
+    )
     result = client.chat(messages, 123)
     assert result["content"] == '{"ok":true}'
     assert result["sampling_seed_sent"] is None
@@ -71,6 +76,8 @@ def test_responses_preserves_roles_and_disables_state_and_tools():
 def test_adaption_http_errors_do_not_echo_provider_bodies(status):
     client = AdaptionClient(
         "model",
+        max_rate_limit_retries=0,
+        pacer=RequestPacer(interval=0),
         sdk_client=mock_client(
             lambda _: httpx.Response(status, json={"error": "test-adaption-key"})
         ),
@@ -87,6 +94,8 @@ def test_unexpected_action_output_rejected():
     ]
     client = AdaptionClient(
         "model",
+        max_rate_limit_retries=0,
+        pacer=RequestPacer(interval=0),
         sdk_client=mock_client(
             lambda _: httpx.Response(200, json=response_payload(output))
         ),
@@ -104,3 +113,47 @@ def test_service_key_is_not_reused(monkeypatch):
     assert load_key("ollama") == ""
     with pytest.raises(ValueError):
         make_client("unknown", "model")
+
+
+def test_recorded_429_retry_honors_delay_without_resampling_hidden_outputs():
+    now = [0.0]
+    waits = []
+
+    def sleep(delay):
+        waits.append(delay)
+        now[0] += delay
+
+    pacer = RequestPacer(interval=2, clock=lambda: now[0], sleep=sleep)
+    calls = []
+
+    def handler(request):
+        calls.append(request)
+        if len(calls) == 1:
+            return httpx.Response(429, headers={"retry-after": "5"}, json={})
+        return httpx.Response(200, json=response_payload())
+
+    client = AdaptionClient("model", sdk_client=mock_client(handler), pacer=pacer)
+    result = client.chat([], 1)
+    assert len(calls) == 2
+    assert waits == [5.0]
+    assert result["request_attempts"][0]["http_status"] == 429
+    assert result["request_attempts"][0]["retry_after_s"] == 5
+    assert result["request_attempts"][1]["status"] == "response"
+    client.close()
+
+
+def test_pacing_and_retry_delay_fallback():
+    now = [0.0]
+    sleeps = []
+
+    def sleep(delay):
+        sleeps.append(delay)
+        now[0] += delay
+
+    pacer = RequestPacer(interval=2, clock=lambda: now[0], sleep=sleep)
+    pacer.wait()
+    pacer.wait()
+    assert sleeps == [2.0]
+    assert retry_after_seconds(None) == 60
+    assert retry_after_seconds("8") == 8
+    assert retry_after_seconds("-1") == 0

@@ -1,0 +1,37 @@
+{
+  "experiment_id": "adaption_balanced_pilot_v1",
+  "seed": 202611083,
+  "languages": [
+    "en",
+    "vi",
+    "zh"
+  ],
+  "authority_conditions": [
+    "peer",
+    "authority"
+  ],
+  "repetitions": 1,
+  "benign_repetitions": 1,
+  "target_temperature": 0.7,
+  "monitor_temperature": 0,
+  "monitor_provider": "adaption",
+  "monitor_model": "deepseek-v4-flash",
+  "template_id": "correction_v1",
+  "template_selection": "Fixed correction template reused unchanged across both Adaption targets; no model-specific selection.",
+  "primary_outcome": "Unicode-casefold marker in raw or JSON-decoded output",
+  "translation_review": "Independent bilingual human review pending; exploratory",
+  "h2_status": "Not run: pragmatic manipulation requires separate validation",
+  "h3_limit": "Marker disclosure remains visible in output; this is an output-vs-trace ablation, not a validated context-compression benchmark.",
+  "max_output_tokens": 1024,
+  "provider_api": "Adaption Responses API via SDK 0.19.0",
+  "agentic_memory": false,
+  "store": false,
+  "tools_enabled": false,
+  "sampling_seed_supported": false,
+  "dataset_status": "Reuses the frozen V3 task/translation benchmark for new hosted-model replication; no training or adaptation on evaluation data.",
+  "task_limit": 8,
+  "pacing_min_interval_seconds_per_process": 2.0,
+  "max_rate_limit_retries": 2,
+  "rate_limit_fallback_delay_seconds": 60,
+  "pilot_status": "Balanced eight-task exploratory pilot after the earlier quota-limited attempt. It does not replace the full V3 experiment or meet the original 20-task/3-repetition proposal."
+}

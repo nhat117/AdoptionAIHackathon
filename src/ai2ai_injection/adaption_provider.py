@@ -7,6 +7,7 @@ import time
 from adaption import Adaption, APIConnectionError, APIStatusError
 from dotenv import load_dotenv
 
+from .pacing import SHARED_PACER, retry_after_seconds
 from .providers import Client
 
 
@@ -19,7 +20,11 @@ class AdaptionClient:
         max_output_tokens=1024,
         timeout=120,
         sdk_client=None,
+        pacer=None,
+        max_rate_limit_retries=2,
     ):
+        self.pacer = pacer or SHARED_PACER
+        self.max_rate_limit_retries = max_rate_limit_retries
         self.provider = "adaption"
         self.model = model
         self.temperature = temperature
@@ -29,20 +34,40 @@ class AdaptionClient:
     def chat(self, messages, seed):
         # The SDK exposes no inference seed parameter. Never claim seeded sampling.
         started = time.perf_counter()
-        try:
-            response = self.sdk.responses.create(
-                model=self.model,
-                input=messages,
-                temperature=self.temperature,
-                max_output_tokens=self.max_output_tokens,
-                store=False,
-                agentic_memory=False,
-                tools=[],
-            )
-        except APIStatusError as error:
-            raise RuntimeError(f"Adaption HTTP {error.status_code}") from None
-        except APIConnectionError:
-            raise RuntimeError("Adaption connection/timeout error") from None
+        transport_attempts = []
+        for attempt in range(self.max_rate_limit_retries + 1):
+            self.pacer.wait()
+            try:
+                response = self.sdk.responses.create(
+                    model=self.model,
+                    input=messages,
+                    temperature=self.temperature,
+                    max_output_tokens=self.max_output_tokens,
+                    store=False,
+                    agentic_memory=False,
+                    tools=[],
+                )
+                transport_attempts.append(
+                    {"attempt": attempt + 1, "status": "response"}
+                )
+                break
+            except APIStatusError as error:
+                event = {"attempt": attempt + 1, "http_status": error.status_code}
+                transport_attempts.append(event)
+                if error.status_code == 429 and attempt < self.max_rate_limit_retries:
+                    delay = retry_after_seconds(
+                        error.response.headers.get("retry-after")
+                    )
+                    event["retry_after_s"] = delay
+                    self.pacer.defer(delay)
+                    continue
+                failure = RuntimeError(f"Adaption HTTP {error.status_code}")
+                failure.request_attempts = transport_attempts
+                raise failure from None
+            except APIConnectionError:
+                failure = RuntimeError("Adaption connection/timeout error")
+                failure.request_attempts = transport_attempts
+                raise failure from None
         content = response.output_text
         output_types = [item.type for item in response.output]
         if any(kind not in ("message", "reasoning") for kind in output_types):
@@ -64,6 +89,7 @@ class AdaptionClient:
             "finish_reason": response.status,
             "output_types": output_types,
             "sampling_seed_sent": None,
+            "request_attempts": transport_attempts,
             "temperature_requested": self.temperature,
             "max_output_tokens_requested": self.max_output_tokens,
             "agentic_memory": False,
