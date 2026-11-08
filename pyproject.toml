@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "adaption-hackathon-starter"
 version = "0.1.0"
-description = "Adaption dataset CLI and generic LangGraph learning scaffold"
+description = "Generic LangGraph learning scaffold with Adaption and Studio"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["adaption>=0.19,<1", "python-dotenv>=1,<2", "langgraph>=1,<2"]
@@ -14,12 +14,8 @@ dependencies = ["adaption>=0.19,<1", "python-dotenv>=1,<2", "langgraph>=1,<2"]
 studio = ["langgraph-cli[inmem]>=0.4,<1"]
 dev = ["pytest>=8,<9", "ruff>=0.14,<1"]
 
-[project.scripts]
-adaption-starter = "adaption_starter.cli:main"
-swarm-lab = "swarm_lab.cli:main"
-
 [tool.hatch.build.targets.wheel]
-packages = ["src/adaption_starter", "src/swarm_lab"]
+packages = ["src/swarm_lab"]
 
 [tool.ruff]
 target-version = "py311"

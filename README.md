@@ -1,61 +1,75 @@
-# Adaption AI Hackathon starter
+# Adaption AI Hackathon playground
 
-A Python 3.11+ starter using the [official Adaption Python SDK](https://docs.adaptionlabs.ai/api/python). Includes a read-only dataset CLI, local environment configuration, offline tests, and GitHub Actions CI.
+A generic Python 3.11+ LangGraph scaffold, run visually with **LangGraph Studio**.
+Use it to learn nodes, state, parallel branches, and joins before choosing a research
+experiment. No authority roles, monitoring policy, or research scoring are built in.
+Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/python).
 
-## Setup
+## Setup and open Studio
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then run:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:
 
 ```sh
-uv sync --frozen --extra dev
+uv sync --frozen --extra dev --extra studio
+# Only if you do not already have .env:
 cp .env.example .env
 ```
 
-Set `ADAPTION_API_KEY` in `.env` using your Adaption account's API key. Keep the key private; `.env` is ignored by Git. You can instead export the variable in your shell; exported values take precedence.
+Set `LANGSMITH_API_KEY` in the ignored `.env`. This key is separate from the
+`ADAPTION_API_KEY` used for live model requests. The example uses the APAC endpoint
+`https://apac.api.smith.langchain.com`; adjust the endpoint and Studio URL for your
+account's region. `LANGSMITH_TRACING=false` disables trace export by default.
+Never commit keys or put them in prompts, logs, screenshots, or chat.
 
-## Run
-
-```sh
-uv run adaption-starter --help
-uv run adaption-starter list --limit 5
-uv run adaption-starter get YOUR_DATASET_ID
-# Equivalent module entry point:
-uv run python -m adaption_starter list
-```
-
-Commands print JSON to stdout. `list` defaults to at most 20 results and follows SDK pagination only as needed. `get` needs a dataset ID accessible to your account. Errors go to stderr with a nonzero exit code. Requests use a 30-second timeout and up to two SDK retries; total elapsed time can be longer.
-
-These commands read existing datasets; they do not create data or launch training. A real API key and network access are required to run them. Never paste keys into commits, PRs, or logs.
-
-## Development
+Launch the local server from the repository root:
 
 ```sh
-uv run --frozen --extra dev ruff check .
-uv run --frozen --extra dev pytest
+uv run --extra studio langgraph dev --allow-blocking --studio-url https://apac.smith.langchain.com
 ```
 
-Tests use the installed SDK with a mocked HTTP transport and require no credentials or live API calls. CI runs the same checks on Python 3.11 and 3.12. `uv.lock` pins dependencies; after intentional dependency changes, regenerate it with `uv lock`.
+This command starts the official LangGraph server; the project has no custom CLI.
+It listens on localhost port 2024 and hot reloads your Python edits.
+`--allow-blocking` permits the scaffold's short synchronous config/log operations
+in this development server. Keep the default localhost bind address.
 
-The CLI lives in `src/adaption_starter/cli.py`. Use the official guide above to extend the starter with dataset creation, adaptation, asynchronous calls, or inference when your hackathon idea is ready.
+Open the Studio URL printed by the server, select **playground**, expand **Task**,
+and enter a task. Leave intermediate/output fields empty. Alternatively, use
+**View Raw** and submit:
 
-
-## Generic LangGraph playground
-
-This is an editable learning scaffold. It does not encode an experiment, authority
-roles, a monitor, or scoring rules. Python 3.11+ is now required for the graph stack.
-The existing dataset CLI remains available.
-
-```sh
-uv sync --frozen --extra dev
-uv run swarm-lab --config examples/playground.json --task "Explore a workflow"
-# Equivalent:
-uv run python -m swarm_lab --config examples/playground.json
+```json
+{"task": "Help me see how this graph works"}
 ```
 
-Offline mode is the default: it returns the configured placeholder strings without
-credentials or API calls. These strings are fixtures, not model responses or results.
+Inspect the state updates and final output in the right panel. Use a **new thread**
+for independent trials; Studio can retain state within an existing thread.
+Studio is a viewer/debugger, not a drag-and-drop code editor: change the graph in Python.
 
-The example graph demonstrates a sequence, parallel branches, and a join:
+## Offline and live modes
+
+The checked-in environment example defaults to `SWARM_LAB_MODE=offline`. Offline
+branches return fixed strings from `examples/playground.json`. They require no
+Adaption key and are fixtures, not model responses or research results.
+
+For live requests, set these in your local `.env` and restart the server:
+
+```dotenv
+ADAPTION_API_KEY=your-private-key
+SWARM_LAB_MODE=live
+SWARM_LAB_CONFIG=examples/playground.json
+```
+
+Set the model, instructions, temperature, and token limit in the referenced JSON
+file. For a small smoke test, `gemma-4-26b-a4b-it` with `max_output_tokens: 128` has
+been verified through Adaption. Check current model availability/pricing before use.
+You can keep custom JSON settings under ignored `runs/` and point `SWARM_LAB_CONFIG`
+to that file without changing the example.
+
+Each submission makes two model requests, one per branch. Calls use independent
+instructions/input, disable agentic memory and response storage, do not send
+`previous_response_id`, and use a 30-second timeout without automatic SDK retries.
+Live requests consume account credits. Model outputs can vary between runs.
+
+## Understand and change the graph
 
 ```mermaid
 flowchart LR
@@ -68,31 +82,31 @@ flowchart LR
     finish --> END
 ```
 
-All five nodes are placeholders you can replace, rename, remove, or extend.
-`combine` waits for both branches. Branch completion order may vary.
+All five nodes are editable placeholders. The branches run independently;
+`combine` waits for both to finish. Their completion order may vary.
 
-### Read the code in this order
+Read the code in this order:
 
-| File under `src/swarm_lab/` | What to learn or edit |
+| File under `src/swarm_lab/` | Purpose |
 | --- | --- |
-| `state.py` | Fields nodes can read and update; state is not automatically an LLM prompt |
-| `graph.py` | Node registration and edges; change the workflow's shape here |
-| `nodes.py` | Five explicit implementations; see exactly what each reads and returns |
-| `backend.py` | Model boundary: offline fixtures or direct `AsyncAdaption` calls |
-| `settings.py` | Model settings and instructions, optionally loaded from JSON |
-| `events.py` | Append-only JSONL execution records |
-| `cli.py` | CLI options, backend selection, client cleanup, run lifecycle |
+| `state.py` | Fields nodes can read and update |
+| `graph.py` | Explicit node registration and connections |
+| `nodes.py` | Implementations showing selected inputs and returned updates |
+| `backend.py` | Offline fixture or direct `AsyncAdaption` call |
+| `settings.py` | Model and per-agent instructions loaded from JSON |
+| `events.py` | Local JSONL node events |
+| `studio.py` | Server factory, backend selection, and client cleanup |
 
-A node reads state and returns a dictionary of updates. For example, `branch_a`
-reads `prepared_input` and returns `branch_a_output`. LangGraph merges that update
-into state. Parallel branches write different fields so their updates do not conflict.
-The state can contain private application data: send only selected fields to a model.
-There is no process sandbox between Python nodes.
+A node reads state and returns the fields it changes. `branch_a` reads
+`prepared_input` and returns `branch_a_output`. LangGraph merges those updates.
+Parallel branches write different fields to avoid conflicting updates. State is
+not automatically an LLM prompt: each node deliberately selects what to send.
+Python nodes share a process; this is not a security sandbox.
 
-### Add your own placeholder
+### Add a placeholder node
 
-1. Add a field such as `extra_output: str` to `LabState` in `state.py`.
-2. Add a method to `Nodes` in `nodes.py`:
+1. Add `extra_output: str` to `LabState` in `state.py`.
+2. Add this method to `Nodes` in `nodes.py`:
 
 ```python
 def extra(self, state: LabState) -> dict:
@@ -101,108 +115,36 @@ def extra(self, state: LabState) -> dict:
     return {"extra_output": output}
 ```
 
-3. In `graph.py`, register `builder.add_node("extra", nodes.extra)`.
+3. Register `builder.add_node("extra", nodes.extra)` in `graph.py`.
 4. Replace the `combine -> finish` edge with `combine -> extra -> finish`.
-5. Change `finish` to read `extra_output` if that should become the final output.
+5. Change `finish` to read `extra_output` if that should be the final output.
 
-For a model node, copy the async pattern in `branch_a`, give it its own instructions,
-and explicitly choose its input. For a conditional route, use LangGraph's
-[conditional edges](https://docs.langchain.com/oss/python/langgraph/graph-api).
-For loops, decide termination and iteration limits before adding a back edge.
-Add new state fields as needed; avoid a single shared message history unless that
-is deliberately part of your design.
+For a model node, copy the async pattern in `branch_a`, choose its input, and give
+it separate instructions. Use LangGraph's
+[conditional edges](https://docs.langchain.com/oss/python/langgraph/graph-api)
+for routing. Decide termination and iteration limits before adding loops. Avoid
+shared message history unless it is deliberately part of the experiment.
 
-### Live Adaption mode
+## Logs and development
 
-Set `ADAPTION_API_KEY` in `.env` or your environment, then opt in:
-
-```sh
-uv run swarm-lab --live --config examples/playground.json --task "Explore a workflow"
-```
-
-This example makes two model requests, one per branch. They use independent
-instructions/input, disable Adaption agentic memory and response storage, and do not
-chain `previous_response_id`. The SDK uses a 30-second timeout and no automatic
-retries. Model availability depends on your account; edit the config as needed.
-Live calls may incur provider charges. The live path is covered by mocked SDK tests;
-real authentication/model availability requires a live smoke test with your key.
-
-### Logs and testing
-
-Each run writes to a unique `runs/<id>.jsonl` by default; `--log path.jsonl` selects
-a path and appends runs with distinct run IDs. Records include settings, input,
-outputs, timestamps, completion, and error classes. Logs contain task/model content;
-keep credentials out of prompts. `runs/` is ignored by Git. For separate processes,
-use separate log files. Failed runs retain partial events and are never marked complete.
-
-Every invocation starts with fresh graph state. This scaffold has no checkpoint
-recovery or automatic retry: completed logs are execution records, not a resumable
-checkpoint. Provider-internal behavior is outside this runner's control.
+Studio owns run status and thread state history. Local `runs/studio-*.jsonl` files
+contain node events, inputs, outputs, timestamps, and a factory-instance ID. They
+are diagnostic records, not a complete research dataset or checkpoint system.
+Graph/schema inspection may create empty logs. An incomplete factory invocation
+can leave partial node events; inspect Studio's run status to determine success.
+The server may construct multiple factories when inspecting/resuming a thread.
+`runs/`, `.env`, and `.langgraph_api/` server state are ignored by Git.
 
 ```sh
-uv run --frozen --extra dev ruff check .
-uv run --frozen --extra dev pytest
+uv run --frozen --extra dev --extra studio ruff check .
+uv run --frozen --extra dev --extra studio pytest
 ```
 
-Tests cover the offline graph, join order, parallel input isolation, independent runs,
-failure logging, settings validation, and the actual Adaption SDK request boundary
-using mocked HTTP. As the research design develops, add experiment configuration,
-scoring, monitor nodes, and statistical analysis separately.
+Tests run without credentials and cover joining, fresh graph state, parallel input
+isolation, node failure, settings validation, Studio factory setup, and actual SDK
+requests with mocked HTTP. CI checks Python 3.11 and 3.12. `uv.lock` pins dependencies.
 
-## Visual development with LangGraph Studio
-
-Studio displays the same five-node graph, lets you submit tasks, and inspect node
-state/output in your browser. It is a developer viewer, not a drag-and-drop code
-editor: modify `graph.py` and `nodes.py` to change the workflow.
-
-```sh
-uv sync --frozen --extra dev --extra studio
-# Only if you do not already have .env:
-cp .env.example .env
-```
-
-Create a LangSmith API key in your account settings and set `LANGSMITH_API_KEY`
-in the ignored `.env`. This is separate from `ADAPTION_API_KEY`. The example uses
-APAC (`LANGSMITH_ENDPOINT=https://apac.api.smith.langchain.com`); adjust the endpoint
-and Studio URL for your account's region. Tracing is disabled by default with
-`LANGSMITH_TRACING=false`. Keep the key out of chat, commits, screenshots, and logs.
-
-Start the local server from the repository root:
-
-```sh
-uv run --extra studio langgraph dev --allow-blocking --studio-url https://apac.smith.langchain.com
-```
-
-The server listens on localhost port 2024 and hot reloads your Python edits.
-`--allow-blocking` allows the scaffold's small synchronous local JSON/config and
-log-file operations during development. This is a local playground, not a
-production server configuration. Keep the default localhost bind address.
-
-Open the Studio URL printed by the server, select `playground`, and submit:
-
-```json
-{"task": "Help me see how this graph works"}
-```
-
-Use a new Studio thread for independent trials; the server can retain state within
-an existing thread. The CLI still starts fresh on every invocation. Studio owns its
-thread/run status and state history; our `runs/studio-*.jsonl` records contain node
-events only, not the CLI's run-start/run-complete wrapper. Graph/schema inspection
-may create an empty local event log. Server-local state in `.langgraph_api/` is
-ignored by Git. Neither local state nor JSONL is a substitute for a research dataset.
-
-`studio.py` is a thin async factory around the existing `build_graph`: it selects
-an offline backend by default and closes the Adaption client after live use.
-`langgraph.json` registers that factory as `playground`. Set `SWARM_LAB_CONFIG` to
-another JSON settings file to change instructions. Set `SWARM_LAB_MODE=live` only
-when ready to make the two real model requests, with `ADAPTION_API_KEY` configured.
-Restart the server after changing `.env` settings.
-
-If Studio cannot connect, verify `http://127.0.0.1:2024/docs` loads, check that the
-local server is still running, and use Studio's Connection settings with
-`http://127.0.0.1:2024`. Browser localhost restrictions may require using a different
-browser. A tunnel exposes the server externally; it is not enabled by this setup.
-
-Validation note: the local API graph endpoint and an offline server run have been
-verified. The APAC hosted Studio page loaded in the in-app browser, but its Connect
-button remained disabled; end-to-end visual interaction is not yet verified.
+Offline and live execution have also been verified in Studio. If it cannot connect,
+check `http://127.0.0.1:2024/docs`, confirm the server is running, and use Connection
+settings with `http://127.0.0.1:2024`. Browser localhost restrictions may require a
+different browser. This setup does not enable a public tunnel.

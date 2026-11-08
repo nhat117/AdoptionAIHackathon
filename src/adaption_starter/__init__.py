@@ -1,1 +1,0 @@
-"""Adaption hackathon starter."""

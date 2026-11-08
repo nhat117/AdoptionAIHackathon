@@ -1,4 +1,4 @@
-"""Studio entry point: reuse the same visible nodes and edges as the CLI.
+"""Studio entry point: load the editable graph and select its model backend.
 
 The server calls this factory for execution and graph/schema inspection. Backend
 selection is an explicit server setting, never controlled by model output.
