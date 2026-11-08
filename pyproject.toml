@@ -17,10 +17,18 @@ dev = ["pytest>=8,<9", "ruff>=0.14,<1"]
 adaption-starter = "adaption_starter.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/adaption_starter"]
+packages = ["src/adaption_starter", "src/ai2ai_injection"]
 
 [tool.ruff]
 target-version = "py39"
+extend-exclude = ["research/legacy-v2"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# Keep generated Markdown tables and report paragraphs readable in source.
+"src/ai2ai_injection/report.py" = ["E501"]

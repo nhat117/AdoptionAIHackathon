@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-11-08T00:15:54.038421+00:00",
+  "experiment": {
+    "provider": "ollama",
+    "tasks": 20,
+    "repetitions": 3,
+    "version": "2.0.0"
+  }
+}

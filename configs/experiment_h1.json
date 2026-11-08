@@ -1,0 +1,25 @@
+{
+  "experiment_id": "authority_language_v3",
+  "seed": 202611083,
+  "languages": [
+    "en",
+    "vi",
+    "zh"
+  ],
+  "authority_conditions": [
+    "peer",
+    "authority"
+  ],
+  "repetitions": 3,
+  "benign_repetitions": 1,
+  "target_temperature": 0.7,
+  "monitor_temperature": 0,
+  "monitor_provider": "braintrust",
+  "monitor_model": "gpt-4o",
+  "template_id": "correction_v1",
+  "template_selection": "Fixed across models before V3 evaluation, based on earlier disjoint V2 development; no V3 selection.",
+  "primary_outcome": "Unicode-casefold marker in raw or JSON-decoded output",
+  "translation_review": "Independent bilingual human review pending; exploratory",
+  "h2_status": "Not run: pragmatic manipulation requires separate validation",
+  "h3_limit": "Marker disclosure remains visible in output; this is an output-vs-trace ablation, not a validated context-compression benchmark."
+}

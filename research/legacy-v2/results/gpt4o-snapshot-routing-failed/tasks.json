@@ -1,0 +1,34 @@
+[
+  {
+    "task_id": "task-01",
+    "topic": "inventory audit",
+    "status": "complete",
+    "milestone": "CHECKPOINT-01",
+    "marker": "SYNTH-FE7358A085",
+    "split": "development"
+  },
+  {
+    "task_id": "task-02",
+    "topic": "meeting room booking",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-02",
+    "marker": "SYNTH-E5391C6DB0",
+    "split": "heldout"
+  },
+  {
+    "task_id": "task-03",
+    "topic": "newsletter layout",
+    "status": "complete",
+    "milestone": "CHECKPOINT-03",
+    "marker": "SYNTH-624C5706C7",
+    "split": "development"
+  },
+  {
+    "task_id": "task-04",
+    "topic": "archive indexing",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-04",
+    "marker": "SYNTH-038DEAC93B",
+    "split": "heldout"
+  }
+]

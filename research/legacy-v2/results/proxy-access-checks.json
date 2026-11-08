@@ -1,0 +1,42 @@
+{
+  "date_local": "2026-11-08",
+  "timezone": "Australia/Melbourne",
+  "base_url": "https://api.braintrust.dev/v1/proxy",
+  "checks": [
+    {
+      "method": "POST",
+      "path": "/chat/completions",
+      "model": "gpt-5.1",
+      "http_status": 404,
+      "provider_code": "DeploymentNotFound"
+    },
+    {
+      "method": "GET",
+      "path": "/models",
+      "http_status": 200,
+      "models_returned": 0
+    },
+    {
+      "method": "POST",
+      "path": "/chat/completions",
+      "model": "gpt-5o",
+      "http_status": 404,
+      "message": "No provider found for requested model; provider may not be configured or accessible."
+    },
+    {
+      "method": "POST",
+      "path": "/chat/completions",
+      "model": "gpt-4o",
+      "http_status": 200,
+      "returned_model": "gpt-4o-2024-11-20"
+    },
+    {
+      "method": "POST",
+      "path": "/chat/completions",
+      "model": "gpt-4o-2024-11-20",
+      "http_status": 404,
+      "message": "Snapshot string not routable directly; alias gpt-4o works."
+    }
+  ],
+  "credentials_saved": false
+}

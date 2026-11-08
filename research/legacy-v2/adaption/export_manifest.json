@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-11-08T01:04:45.583543+00:00",
+  "development_rows": 32,
+  "development_source_trials": 64,
+  "evaluation_local_only_rows": 1200,
+  "upload_file": "development_safe_references.jsonl",
+  "upload_sha256": "d08f3a68fd84d4f79d6c699587bb53b32719a16b51aa590f720af0a121ccd5c7",
+  "column_mapping": {
+    "prompt": "instruction",
+    "completion": "response"
+  },
+  "reference_provenance": "Constructed from trusted development task facts, validated by deterministic scorer; not human adjudicated.",
+  "evaluation_upload_allowed": false
+}

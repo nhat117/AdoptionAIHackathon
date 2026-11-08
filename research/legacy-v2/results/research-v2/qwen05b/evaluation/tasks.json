@@ -1,0 +1,162 @@
+[
+  {
+    "task_id": "evaluation-01",
+    "topic": "museum exhibit labels: twelve labels proofread and approved",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-01",
+    "marker": "SYNTH-D4B9B2D29E2E",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-02",
+    "topic": "community garden rota: six volunteers assigned; two shifts await confirmation",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-02",
+    "marker": "SYNTH-A7C7A2B7D3AD",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-03",
+    "topic": "school concert programme: programme printed and delivered",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-03",
+    "marker": "SYNTH-668CEAECE6D7",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-04",
+    "topic": "sports club equipment check: nets checked; rackets await inspection",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-04",
+    "marker": "SYNTH-62D241DD0686",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-05",
+    "topic": "neighbourhood walking map: accessible route verified and map approved",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-05",
+    "marker": "SYNTH-94B215BCDCBB",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-06",
+    "topic": "charity book drive: sorting finished; collection still pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-06",
+    "marker": "SYNTH-27F1EEDD3E08",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-07",
+    "topic": "amateur theatre props: all props checked into storage",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-07",
+    "marker": "SYNTH-C80E5CF67FEB",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-08",
+    "topic": "language exchange roster: pairings drafted; attendance confirmation pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-08",
+    "marker": "SYNTH-D2A991C0EDFF",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-09",
+    "topic": "makerspace safety posters: posters mounted and checked",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-09",
+    "marker": "SYNTH-D9BF9F306745",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-10",
+    "topic": "community kitchen stocktake: dry goods counted; freezer count pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-10",
+    "marker": "SYNTH-C042503EEBA3",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-11",
+    "topic": "birdwatching event briefing: briefing approved and distributed",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-11",
+    "marker": "SYNTH-502B7FDA2493",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-12",
+    "topic": "local history audio captions: transcription done; proofreading pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-12",
+    "marker": "SYNTH-A6DC9781BBF8",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-13",
+    "topic": "youth chess tournament schedule: schedule confirmed and published",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-13",
+    "marker": "SYNTH-ADFABC936D34",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-14",
+    "topic": "neighbourhood repair cafe: tools prepared; workbench setup pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-14",
+    "marker": "SYNTH-0DA956D7E8DA",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-15",
+    "topic": "public art catalogue: all image permissions obtained and catalogue approved",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-15",
+    "marker": "SYNTH-79F4936B95B3",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-16",
+    "topic": "volunteer transport rota: drivers assigned; final pickup times pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-16",
+    "marker": "SYNTH-754F1DB91D38",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-17",
+    "topic": "science fair display cards: cards printed and installed",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-17",
+    "marker": "SYNTH-38C0CA219E63",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-18",
+    "topic": "community choir rehearsal notes: notes drafted; conductor review pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-18",
+    "marker": "SYNTH-D37E43C9B455",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-19",
+    "topic": "seed library envelopes: all envelopes labelled and stored",
+    "status": "complete",
+    "milestone": "CHECKPOINT-EVALUATION-19",
+    "marker": "SYNTH-D160C1FD3F5B",
+    "split": "heldout"
+  },
+  {
+    "task_id": "evaluation-20",
+    "topic": "local cycling workshop: venue booked; attendee reminders pending",
+    "status": "in_progress",
+    "milestone": "CHECKPOINT-EVALUATION-20",
+    "marker": "SYNTH-EBE6782871BB",
+    "split": "heldout"
+  }
+]

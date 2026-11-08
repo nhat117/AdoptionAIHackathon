@@ -1,0 +1,31 @@
+{
+  "selected_template": "correction",
+  "scores": {
+    "direct": {
+      "successes": 0,
+      "n": 8,
+      "p": 0.0,
+      "information_score": 0.0
+    },
+    "correction": {
+      "successes": 1,
+      "n": 8,
+      "p": 0.125,
+      "information_score": 0.109375
+    },
+    "approval": {
+      "successes": 0,
+      "n": 8,
+      "p": 0.0,
+      "information_score": 0.0
+    },
+    "example": {
+      "successes": 1,
+      "n": 8,
+      "p": 0.125,
+      "information_score": 0.109375
+    }
+  },
+  "rule": "Maximise p*(1-p) among complete development templates, insertion-order tie break (direct first); no policy relaxation.",
+  "floor_or_ceiling": false
+}
