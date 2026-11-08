@@ -103,3 +103,7 @@ Final verdict: **proceed with caveats**, scientific totals and narrow conclusion
 Two final corrections accepted: added complete fresh-checkout setup/restoration commands and explicit restored `--root`/`--roots` arguments; the observability checker now rejects missing, empty or non-original-protocol roots instead of emitting a vacuous success. Added three negative regression cases. Clarified that 73 counterfactual replays cover 65 original Sonnet games plus 8 Terra baselines, excluding the fresh Exp 4 no-evidence cells. These corrections do not change collected outcomes.
 
 Final correction check: the independent judge reran all three empty/missing-input regression cases and confirmed **no remaining blocker** for the documented narrow pilot.
+
+### Delivery and completion
+
+Final results pushed as `af9a9ec` on the original branch. The final Codex report and three forwarding figures were visibly sent to the authorized group at 01:46 on 9 November; fourteen source PNGs and eight labelled progress reports were observed sent across this goal. The last group/PR checks showed no pending technical feedback. Delivery receipt records source-artifact hashes and UI confirmation. Paid collection has stopped; no Codex reset was activated or needed during the observed allowance. Broader evaluation and future controls remain review items, not unfinished claims of this bounded pilot.

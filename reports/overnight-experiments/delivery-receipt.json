@@ -1,0 +1,27 @@
+{
+  "destination": "user-authorized Messenger research group",
+  "verified_codex_reports_this_goal": 8,
+  "verified_image_attachments_this_goal": 14,
+  "final_send_observed_local": "2026-11-09 01:46",
+  "timezone": "Australia/Melbourne",
+  "verification": "Sent messages and attachment thumbnails observed in browser UI",
+  "source_png_sha256": {
+    "experiment-1/dynamics.png": "8d1691dceefe0d6b840a53ac38fc80c5658c0e4df57ae5e2f29bb48a89be67a2",
+    "experiment-1/outcomes.png": "aa406f630fbf54cbda3cb3338c28227a55df293ff6bbeb4632b2443b6f2daeca",
+    "experiment-2/dynamics.png": "5a02a9456a9ae90ef68bbcb2368d2a4314d52207b870c128bc43d61e27acfbf7",
+    "experiment-2/outcomes.png": "521bff7bb3e0c7ffc111530f927c00370a61da6571c08a6b047d3e79a53a1697",
+    "experiment-3/dynamics.png": "9e51298e244d34ee0d122284aa7556aa93809afc6331be2c991a326de53c055c",
+    "experiment-3/outcomes.png": "e5f8c13d171d8744a2ae502b8ff05ee2a256a8bda721526488c65e4896d8d0e9",
+    "experiment-4/dynamics.png": "05e326b8dd41168bb579fa01f0fbf99ffb80e2af37adc6c705be76e2adada510",
+    "experiment-4/outcomes.png": "7c1f722c34d21631b7ca539db8de005b27aa6f23ca33b3f8e49c9ff0e97e53cb",
+    "experiment-5/dynamics.png": "203d1413da960bcf6bcd661a7f7dc63f978ef9476d7c3eb2804e9055a8be7812",
+    "experiment-5/outcomes.png": "1d224b4d1378665451107673a9a067ebac4c3ff44f6ef8f16d39d969a6b4a36d",
+    "experiment-5/timing.png": "88b1081fa7eb849865daac3f0615aa69907619867db6c90c36e35b4a17072ab7",
+    "propagation.png": "1a0283fc52b4ddadc5f5ccbb0994a0dfa4b0da8cb4cef6da8af1c2ed696d79a0",
+    "terra-comparison/dynamics.png": "13d985af54e6769783c1485916c19033c42f5180160c8a04a505eb3de8adbdc2",
+    "terra-comparison/outcomes.png": "82de088355fb73373aa429f1e368ddcaa2769c6f3abaea0b9e7fe941e2a23700"
+  },
+  "final_report_commit": "af9a9ec",
+  "group_technical_feedback_pending_at_last_check": false,
+  "pr_comments_pending_at_last_check": false
+}

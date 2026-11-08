@@ -8,7 +8,7 @@ Completion means a bounded initial study for each factor, not the full proposed 
 - [x] Experiment 1: 16 attempted, 15 complete, one retained failure; replay audit and graphs complete.
 - [x] Experiment 2: 34/40 new games complete; six retained failures/interruptions; exact replay, graphs and matched analysis complete.
 - [x] Experiment 3: 16/16 random-network games complete; 15 complete shared-baseline contrasts; exact replay and graphs complete.
-- [ ] Update report, verify artifacts, push final progress report.
+- [x] Update report, verify restored artifacts, push final progress report.
 
 Budget: at most $35 of newly reported API costs across this task, with per-call conservative reservations and no automatic retries. Stop if budget, authentication or data integrity prevents valid execution. Do not submit or merge.
 
@@ -20,4 +20,6 @@ User-approved extension: eight matched GPT-6.1 Terra English/Vietnamese baseline
 - [x] Experiment 4: 16/16 complete; all eight positive controls pass; exact replay and independent judge review complete.
 - [x] Experiment 5: 16/16 complete; exact replay, opportunity/action timing, graphs and independent judge review complete.
 - [x] Complete reflection and independent-judge decision log.
-- [ ] Post final forwarding graphs and completion report to the group.
+- [x] Post final forwarding graphs and completion report to the group; all 14 images and eight Codex reports observed sent.
+
+Completion audit: 112 planned attempts accounted for (105 complete, seven retained failures); all 40 extension games complete; all completed raw trajectories replayed; costs reconciled below cap; independent judge confirms no remaining blocker for narrow exploratory reporting; 100 tests and lint pass in a clean temporary environment; original branch preserved; final graphs/report delivered. Broader evaluation, publication novelty and future ablations are not claimed completed.
