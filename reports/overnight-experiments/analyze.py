@@ -121,6 +121,7 @@ async def audit_game(folder, packs):
         topology=manifest["topology"],
         status=manifest["status"],
         calls=manifest["calls"],
+        returned_provider_calls=len(metadata),
         cost_usd=sum(c["usage"]["cost"] for c in metadata),
         error=manifest.get("error"),
         audit_errors=errors,
@@ -341,6 +342,31 @@ async def main(args):
     planned = [j for j in plan["jobs"] if j["section"] == section]
     if set(j["id"] for j in planned) != set(r["id"] for r in selected):
         errors.append("planned_attempted_id_mismatch")
+    ledger = load(root / "budget.jsonl")
+    pending, spent, max_exposure = {}, 0.0, 0.0
+    planned_sections = {j["id"]: j["section"] for j in plan["jobs"]}
+    for event in ledger:
+        if event["type"] in {"reserve", "settle"}:
+            game_id = event["ticket"].rsplit(":", 1)[0]
+            if game_id not in planned_sections:
+                errors.append("unknown_game_in_budget_ledger")
+                continue
+            if planned_sections[game_id] > section:
+                continue
+        if event["type"] == "reserve":
+            if event["ticket"] in pending:
+                errors.append("duplicate_budget_reservation")
+            pending[event["ticket"]] = event["usd"]
+        elif event["type"] == "settle":
+            if event["ticket"] not in pending:
+                errors.append("settlement_without_reservation")
+            pending.pop(event["ticket"], None)
+            spent += event["cost"]
+        max_exposure = max(max_exposure, spent + sum(pending.values()))
+    if pending or max_exposure > plan["budget_usd"]:
+        errors.append("budget_pending_or_exceeded")
+    if abs(spent - sum(r["cost_usd"] for r in rows)) > 1e-8:
+        errors.append("ledger_provider_cost_mismatch")
     pairs = contrasts(rows, section)
     summary = dict(
         section=section,
@@ -348,6 +374,15 @@ async def main(args):
         planned=len(planned),
         statuses=dict(Counter(r["status"] for r in selected)),
         calls=sum(r["calls"] for r in selected),
+        call_count_definition="Decision attempts; includes pre-request guard denials",
+        returned_provider_calls=sum(r["returned_provider_calls"] for r in selected),
+        analysis_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        budget_audit=dict(
+            pending=len(pending),
+            ledger_reported_usd=spent,
+            max_accounted_exposure_usd=max_exposure,
+            cap_usd=plan["budget_usd"],
+        ),
         section_cost_usd=sum(r["cost_usd"] for r in selected),
         cumulative_cost_usd=sum(r["cost_usd"] for r in rows),
         audit_errors=errors,
@@ -375,6 +410,7 @@ async def main(args):
             "missed_evacuation_rate",
             "unnecessary_evacuation_rate",
             "calls",
+            "returned_provider_calls",
             "cost_usd",
         ]
         writer = csv.DictWriter(
