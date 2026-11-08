@@ -1,22 +1,47 @@
-# Networked evacuation proposals
+# Current research plan
 
-Two initial proposals adapt the established [Shirado, Crawford and Christakis (2020) evacuation experiment](https://doi.org/10.1098/rspa.2019.0685). They share a simulator foundation but test separate questions. A calibration simulator is now implemented; no research findings are claimed. See the [implementation guide](implementation.md).
+[Submission-template alignment audit](template-alignment.md): structure aligned; final results, authorship, figure, and submission-length editing remain pending.
 
-| Study | Question | Draft |
+Paper A now contains **three equally important experiments** in one evacuation game:
+
+1. **Language:** change the language; keep the ordinary-peer source and ring network.
+2. **Claimed source identity:** compare teammate, emergency expert, senior Chinese government official, Xi Jinping, Buddhist monk, and Christian pastor. Every selected identity is tested across models and their listed languages.
+3. **Network structure:** ring versus connected random-regular network, keeping ten agents and four neighbours each.
+
+Repetition and chosen listening are no longer treatment variables. The proposed controlled source speaks in rounds one and two; other agents continue live conversation. All active senders deliver to all four neighbours. These are planned changes, not a description of the existing runner.
+
+The six-model roster and language assignments are listed below and in the paper. The full plan has 112 unique model/language/identity/network cells, sharing ordinary-peer ring baselines, before balanced truth/accuracy cases, seeds, and repeats. This is not a launched experiment or budget authorization. Model checks, translations, sample allocation, and updated simulator behavior are still required.
+
+- [Revised paper A PDF](persistent-dissenter/main.pdf) · [LaTeX](persistent-dissenter/main.tex)
+- [Separate recovery paper C PDF](network-recovery/main.pdf) · [LaTeX](network-recovery/main.tex)
+- [Earlier calibration results](../reports/2026-11-08-calibration/README.md) describe the old design, not these three experiments.
+
+The folder name `persistent-dissenter` is retained for existing links. The previously generated repetition/role/name illustration is now outdated. Paper C remains a separate recovery proposal. The implementation guide describes the existing runner, not the revised protocol.
+
+### Named model roster
+
+| Developer location | Model | Exact ID | Status |
+| --- | --- | --- | --- |
+| US | OpenAI GPT-4.1 mini | `openai/gpt-4.1-mini` | Calibration completed |
+| US | Anthropic Claude Haiku 4.5 | `anthropic/claude-haiku-4.5` | Planned |
+| China | Alibaba Qwen3.8 27B | `qwen/qwen3.8-27b` | Planned |
+| China | DeepSeek V4 Flash (0423) | `deepseek/deepseek-v4-flash` | Planned |
+| France | Mistral Small 3.2 24B Instruct | `mistralai/mistral-small-3.2-24b-instruct` | Planned |
+| Switzerland | Swiss AI Apertus 70B Instruct (2509) | `swiss-ai/Apertus-70B-Instruct-2509` | Planned; endpoint pending |
+
+First five IDs checked against the [OpenRouter catalogue](https://openrouter.ai/api/v1/models) on 2026-11-08. Apertus uses its [official checkpoint ID](https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509), not a confirmed OpenRouter route. Run compatibility checks and record resolved versions before evaluation. If Apertus access is unavailable, report five models, with only one European developer; do not silently substitute another Mistral checkpoint.
+
+### Language assigned to each model
+
+| Model | Local-language condition | Shared comparison languages |
 | --- | --- | --- |
-| A — Persistent warning | How does repeated disagreement affect who agents listen to and whether they act correctly? | [PDF](persistent-dissenter/main.pdf) · [LaTeX](persistent-dissenter/main.tex) |
-| C — Network recovery | How does a network recover after incorrect information spreads, and which interventions improve recovery? | [PDF](network-recovery/main.pdf) · [LaTeX](network-recovery/main.tex) |
+| GPT-4.1 mini | English | English (counted once), Vietnamese |
+| Claude Haiku 4.5 | English | English (counted once), Vietnamese |
+| Qwen3.8 27B | Simplified Chinese | English, Vietnamese |
+| DeepSeek V4 Flash | Simplified Chinese | English, Vietnamese |
+| Mistral Small 3.2 | French | English, Vietnamese |
+| Apertus 70B | Standard German | English, Vietnamese |
 
-The original task supplies local signals, an informed participant, costly evacuation, and a hidden disaster state. Synchronous rounds, chosen reception, controlled false claims, and recovery interventions are proposed adaptations. The papers distinguish original procedures from these changes. The removed rule-breaking-leader project remains removed.
+“Local language” is an experimental assignment, not a model's human native language. Switzerland is multilingual; Standard German is the selected condition for Apertus. Translate all agent-facing instructions, evidence, messages, identities, and corrections, while retaining structured action keys and IDs. Check translation meaning and log language-following failures.
 
-The common game engine, payoff and delivery checks, and separate A/C configurations are implemented. Next add the remaining reference conditions and conduct comprehension calibration. Freeze sampling and evaluation choices after calibration before collecting held-out results. Do not expand language, authority, topology, and model factors simultaneously.
-
-Compile each directory with `tectonic main.tex` (or `pdflatex main.tex` twice). Before submission, review the methods, supply actual authorship, conduct experiments, and check the current official template and disclosure requirements.
-
-[Source verification](source-verification.md) records evidence scope. The [earlier research investigation](research-directions.md) is retained as background, not the current experimental specification.
-
-## General question and experimental factors
-
-How do a message’s source, repetition, and supporting evidence affect its spread and influence on collective decisions? Both papers now separate fixed settings, primary interventions, balanced controls, optional extensions, and settings awaiting calibration.
-
-The initial pilot holds the network, incentives, evidence access, language (English), and one selected model constant. A varies repetition and reception policy; C varies recovery policy. Both evaluate correct/incorrect information and disaster/no-disaster outcomes. Claimed source (ordinary peer, emergency expert, political or religious authority), English/Chinese/Vietnamese, and models from different developers are staged extension factors. Specific figures are optional conditions, not the research question. Evidence-quality manipulations and mixed-model networks require separate designs. No full factorial sweep is committed.
+Local-language comparisons change model and language together. The shared English baseline separates these from within-model language comparisons. Vietnamese is tested across all models. The full roster gives 16 distinct model–language combinations, before choosing treatment and identity subsets; no full cross of all factors is committed.

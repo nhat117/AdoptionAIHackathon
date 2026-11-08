@@ -1,3 +1,9 @@
+# Latest design status — 8 November 2026
+
+Paper A now proposes three equal experiments: language, claimed source identity, and network structure. Repetition and chosen listening are no longer treatment factors. Earlier descriptions below are historical. The existing calibration results concern the previous design; no revised three-experiment evaluation has run. Paper C remains a separate recovery proposal.
+
+The supplied Google Doc was reread through the Google Docs connector on 2026-11-08. See [template alignment](template-alignment.md) for the requirements and remaining gaps.
+
 Current framing update: both proposals now use general research questions and explicit fixed/variable tables. Claimed source, language, and model comparisons are proposed staged experiments, not literature-established effects. Specific religious or political figures are optional attribution conditions, not evidence about model belief or culture. No new empirical claim or citation was added in this revision.
 
 # Current design verification — evacuation proposals

@@ -5,79 +5,191 @@
 \usepackage[hidelinks]{hyperref}
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
-\title{Who Still Hears the Warning?\\Persistent Dissent in a Networked Evacuation Game}
-\author{}\date{Initial proposal A --- November 8, 2026}
+\renewcommand{\labelitemi}{--}
+\newcommand{\tablecaption}[1]{\refstepcounter{table}\par\textbf{Table \thetable. #1}\par}
+\title{Who Still Hears the Warning?\\Language, Claimed Identity, and Network Structure}
+\author{}\date{Revised proposal A --- November 8, 2026}
 \begin{document}\maketitle
+
 \begin{abstract}
-How does repeated disagreement affect who agents listen to and whether they take the correct action? We propose an agent adaptation of an established human evacuation game to investigate changes in consultation, message uptake, and collective outcomes without assuming that repetition helps or harms. Live agents exchange local messages and independently decide whether to incur an evacuation cost or remain exposed to a possible disaster. A controlled warning source receives a truthful observation; its communication schedule varies while other agents interact freely. Fixed and agent-selected consultation conditions distinguish failures of uptake from failures of delivery. Incorrect-warning and disaster-free controls prevent treating persistence or evacuation as inherently beneficial. We will measure consultation choices, warning delivery, and state-appropriate actions separately. This proposal specifies a pilot design rather than results; its potential contribution is a test of the consequences of endogenous communication access in an action-based network task.
+What changes an AI group's response to a warning: the language, the sender's claimed identity, or who can talk to whom? We propose three equally important experiments in one evacuation game. Ten agents exchange short messages and decide whether to stay or leave before a possible disaster. Each experiment changes one factor while keeping the other settings matched. We measure missed danger, unnecessary evacuation, and how information travels. Correct and false claims are both included. Earlier signal-only calibration runs checked a different design; the three experiments proposed here have not yet been run.
+We compare the same scenarios across six named models and their assigned language conditions, including shared English and Vietnamese baselines. Sender labels grant no additional permissions or evidence. Network comparisons keep group size and the number of neighbours fixed. This design is intended to help distinguish failures to receive useful information from failures to act after receiving it. We report no findings for these new experiments. Model compatibility, translation review, and sample allocation must be completed before evaluation. The planned contribution is a controlled comparison of three factors in an interacting network, rather than evidence that models share human cultural or political traits.
 \end{abstract}
 \section{Introduction}
-The research question is: \emph{How does repeated disagreement affect who agents listen to and whether they take the correct action?} In the evacuation game, this becomes a test of whether repeating a warning changes consultation and state-appropriate evacuation. Repetition may improve uptake, have no effect, or reduce access; these are competing possibilities. An ignored warning is not by itself exclusion. We require observable choices that prevent later delivery, and retain separate measures of hearing, relaying, and acting. This connects collective safety to the network's communication decisions rather than to a single model responding to scripted peer opinions.
-\section{Related work}
-The evacuation experiment provides a precedent for studying communication and costly safety actions together \cite{danger}. Schachter's study of persistent disagreement motivates examining communication and rejection, but its dissenter was not an objectively correct safety expert \cite{schachter}. Contemporary LLM deliberation already studies correct minorities and participation \cite{tak}. Our candidate question concerns how chosen communication access changes later safety decisions; neither persistence nor minority recovery alone is a novelty claim.
-\section{Proposed methods}
-\subsection{Established task and proposed adaptation}
-Shirado, Crawford and Christakis studied a networked evacuation game: participants exchanged local Safe/Danger signals and chose whether to evacuate. Evacuation was costly; remaining during a disaster lost the endowment. One informant knew the true state. Network size and topology were manipulated \cite{danger}. We adapt this task rather than inventing a scenario; we do not predict that models reproduce human psychology.
+\subsection{The three experiments at a glance}
+\textbf{Example:} A neighbour says, ``There is danger; we should evacuate.'' Other agents can question it, pass it on, stay, or leave. Would they act differently if the message were in another language, attributed to a different person, or carried through a different network?
 
-The proposed simulator has ten live model agents on a fixed degree-four ring, separate histories, and local messages. A balanced hidden state determines disaster versus no disaster. One randomly placed informant receives an authenticated state observation; others know only that an informant exists. All agents share the payoff rules. Own payoffs are 1 point for evacuation, 0 for remaining during disaster, and 2 for remaining without disaster. As in the human task, surviving agents also receive 0.1 point per other agent taking the state-appropriate action. Points are evaluation signals, not evidence of human-like motivation.
-
-For reproducibility, replace real-time play with synchronous rounds and a simulator-selected, undisclosed terminal round. Freeze its distribution and maximum after calibration. Every active agent chooses a signal and stay/evacuate; actions and messages are applied together after all responses. Evacuation is irreversible. Exited agents cannot transmit, while previously delivered messages remain in recipients' histories. Use structured outputs and a fixed message budget. These scheduling and model-interface choices are adaptations, not a direct replication.
-
-\subsection{Research scope: fixed settings and experimental variables}
-The overarching question is: \emph{How do a message's source, repetition, and supporting evidence affect its spread and influence on collective decisions?} The evacuation game is the concrete test environment, not the boundary of the research question. Evidence access is controlled in the initial experiments; any later manipulation of evidence quality requires a separately specified contrast.
-
-\begin{tabularx}{\linewidth}{@{}p{0.23\linewidth}X@{}}
+\tablecaption{Three experiments and their matched controls.}
+\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
 \toprule
-Factor & Status and proposed conditions\\
+Experiment & What changes? & What stays fixed?\\
 \midrule
-Fixed environment & Ten agents, degree-four ring, payoff rules, separate histories, synchronous delivery, irreversible evacuation.\\
-Fixed within comparison & Message budget, task instructions, evidence access, actual permissions, sampling settings, and timing distribution. Exact budgets and timing are selected during calibration and then frozen.\\
-Balanced task conditions & Disaster/no disaster; correct/incorrect focal claims. Rotate source position and neutral identifiers using a prespecified schedule.\\
-Claimed source & Optional extension: ordinary peer, relevant emergency expert, political authority, or religious authority. Initial pilot uses an ordinary peer.\\
-Language & Optional matched English, Chinese, and Vietnamese conditions. Initial pilot uses English.\\
-Model & Optional replications across documented models from different developers. Initial pilot uses one model/version; its selection remains open.\\
-Study-specific treatment & The intervention table below defines the primary comparison for this proposal.\\
+1. Language & English, Vietnamese, and the model's assigned local language & Ordinary-peer label; ring network.\\
+2. Claimed identity & Ordinary peer, generic roles, and a named figure & Ring network; compare labels within the same model and language.\\
+3. Network structure & Ring versus random-regular network & Ordinary-peer label; compare networks within the same model and language.\\
 \bottomrule
 \end{tabularx}
 
-\paragraph{Source attribution.} Change only a peer-visible claimed-source label while holding the focal message, evidence, actual permissions, delivery schedule, and position constant within matched comparisons. A title does not grant access to simulator truth. Distinguish a religious role (such as a monk or pastor), a named figure (such as the Buddha), and a divine-authority claim; do not pool these as equivalent. A named political figure such as Xi Jinping is likewise an optional identity condition, not the definition of political authority. Specific identities and wording must be selected before evaluation. Record refusals and role-play responses, since these may differ from accepting the claim. Attribution effects do not establish religious belief, political allegiance, or human cultural psychology.
+All three use the same model roster, scenario bank, outcome measures, and planned number of repeats per condition. Equal importance does not require the same total number of runs: identity has more conditions. Repetition and agent-selected listening are no longer experimental factors. Multiple conversation rounds remain, with one fixed speaking and delivery policy.
 
-\paragraph{Language and model replications.} Use bilingual review to preserve instructions, evidence, and source meaning across translations; keep structured action labels constant. Hold one language throughout each episode initially. Compare homogeneous networks of each selected model before considering mixed-model networks. Record developer, exact model identifier/version, access date, and generation settings. Differences between developers' models cannot be attributed causally to national origin, training culture, or any single model property.
+\section{Related Work}
+The human evacuation study varied network shape and group size, including ring and random-regular networks with four neighbours per participant \cite{danger}. Our network comparison follows that precedent while fixing group size at ten. The language and identity comparisons are our extensions, not conditions from that human study.
 
-\paragraph{Staged evaluation.} First calibrate task comprehension, then run the study-specific contrast with the ordinary-peer label, one model, and English. Next vary claimed source across correct and incorrect claims; subsequently replicate selected contrasts across languages and models. Do not run an unspecified full factorial crossing every factor. Prespecify hypotheses, contrasts, sample allocation, and multiplicity handling for each stage, separating confirmatory comparisons from exploratory ones. These optional factors are included in the research scope but are not completed experiments or a committed evaluation matrix.
+Hovland and Weiss studied the effect of an attributed source on communication \cite{credibility}. That motivates testing sender labels, but a famous name need not be credible. Existing LLM work already studies correct minorities and participation \cite{tak}. We ask how language, claimed identity, and network structure change observable communication and action; we do not assume human psychological explanations apply to models.
 
-\subsection{Warning schedule and consultation access}
-\begin{tabularx}{\linewidth}{@{}lX@{}}
+\section{Methods}
+\subsection{The game in plain English}
+Ten AI agents must decide whether to stay or evacuate before a possible disaster. Each agent can talk only to four neighbours. The ring is the baseline; experiment 3 changes the connections while preserving four neighbours per agent. One agent receives the true state from the simulator. The others must decide what to do using the messages they receive.
+
+Evacuating costs one point but avoids the disaster. Staying earns two points if there is no disaster, and zero if disaster strikes. Surviving agents also earn 0.1 point for each other agent who takes the correct action. These points define the task; we do not assume that models care about rewards as humans do.
+
+Each round follows the same steps: \textbf{read local messages, choose a message, choose stay or evacuate, then deliver messages for the next round.} Each agent has its own conversation history. Agents therefore respond repeatedly to one another; this is not a single prompt with a list of scripted opinions. Evacuation is final: an agent that leaves stops sending messages, but its old messages remain visible. In the calibration runs, the game ended after four to six rounds, without telling agents the exact final round.
+
+\paragraph{Where the game comes from.}
+Shirado, Crawford and Christakis used a human evacuation game with local Safe/Danger signals, costly evacuation, and an informed participant \cite{danger}. We borrow that setup. Turn-based play, AI agents, controlled claims, and our interventions are changes to the original experiment, not a direct replication.
+
+\subsection{What stays fixed and what changes?}
+\tablecaption{Fixed settings and experimental factors.}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}X@{}}
 \toprule
-Primary variable & Conditions\\
+Setting & Exact role in this proposal\\
 \midrule
-Focal-message repetition & Once / repeated, with the initial message held constant.\\
-Reception policy & Fixed / agent-selected, with equal incoming message caps.\\
-Accuracy controls & Correct warnings and reassurance; incorrect warnings and reassurance in separately balanced task conditions.\\
+Game rules: fixed & Ten agents; four neighbours each; the same points, evidence access, and irreversible evacuation rules.\\
+Run settings: matched & Use the same scenario, source position, round schedule, instructions, and message limits when comparing treatments. Freeze generation settings before evaluation.\\
+Disaster: balanced & Include both disaster and no-disaster games. Evacuating is not always the correct answer.\\
+Claim accuracy: balanced & Test truthful and false claims in both disaster and safe games. Keep the same accuracy mix in every condition.\\
+Communication: fixed & Short natural-language messages and machine-readable decisions. Deliver each active sender's message to all four neighbours next round. No chosen listening or repetition treatment. This mode needs implementation checks.\\
+Model: planned comparison & Six named models are listed below: GPT-4.1 mini, Claude Haiku 4.5, Qwen3.8 27B, DeepSeek V4 Flash, Mistral Small 3.2, and Apertus 70B. Use one model for all agents in a game. Apertus access remains pending.\\
+Language: planned comparison & Use the model-specific local language listed below: English, Chinese, French, or Standard German. Also compare every model in English and Vietnamese. Only English has been tested.\\
+Source identity: experiment 2 & The six labels below combine generic roles and a named figure in one experiment. Only ordinary-peer labels have been tested.\\
+Network: experiment 3 & Ring or connected random-regular graph; ten agents and four neighbours each in both.\\
 \bottomrule
 \end{tabularx}
 
-Repetition is the assigned treatment. Whether a message actually disagrees with a recipient is an observed property, not guaranteed by repetition. Log each recipient's pre-message Safe/Danger assessment and distinguish disagreement from repeated agreement. Analyze all assigned episodes primarily; any subgroup defined by an initial, pre-treatment assessment is secondary and prespecified. Do not condition causal claims on disagreement emerging after treatment.
+
+\subsection{Named models for the planned comparison}
+We propose the following six-model roster for the three experiments. This is a list of specific test models, not a list of all models available in each region. Only GPT-4.1 mini has completed the calibration batch. The other five need a task-comprehension and output-format check before evaluation.
+
+\tablecaption{Proposed model roster and access status.}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}X@{}}
+\toprule
+Developer / location & Model, exact identifier, and status\\
+\midrule
+OpenAI / US & GPT-4.1 mini: \path{openai/gpt-4.1-mini}. OpenRouter; calibration completed.\\
+Anthropic / US & Claude Haiku 4.5: \path{anthropic/claude-haiku-4.5}. OpenRouter; planned.\\
+Alibaba Qwen / China & Qwen3.8 27B: \path{qwen/qwen3.8-27b}. OpenRouter; planned.\\
+DeepSeek / China & DeepSeek V4 Flash (0423): \path{deepseek/deepseek-v4-flash}. OpenRouter; planned.\\
+Mistral AI / France & Mistral Small 3.2 24B Instruct: \path{mistralai/mistral-small-3.2-24b-instruct}. OpenRouter; planned.\\
+Swiss AI Initiative / Switzerland & Apertus 70B Instruct (2509): \path{swiss-ai/Apertus-70B-Instruct-2509}. Hugging Face checkpoint; inference endpoint still to be arranged.\\
+\bottomrule
+\end{tabularx}
+
+The first five IDs were checked against the \href{https://openrouter.ai/api/v1/models}{OpenRouter model catalogue} on November 8, 2026. Apertus is identified by its \href{https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509}{official model card}; it was not found under the Swiss AI namespace in that catalogue. A catalogue entry is not a successful test call. We will record the resolved model version and serving provider for each run, and freeze reasoning settings as well as sampling settings. These models differ in age, size, and training, so this is not a capability-matched test of regions.
+
+Use the same model for all ten agents within a game, then rerun the matched scenarios with the next model. If Apertus cannot be served within the pilot budget, report a five-model comparison and mark Apertus as pending. Do not silently substitute a second Mistral model or claim two independent European developers were tested.
 
 
-Cross a once-only versus repeated warning schedule with fixed versus agent-selected reception. In the repeated condition the informant transmits the same observation on each eligible round; in the once-only condition it transmits that observation initially, then a neutral status signal. The schedule is controlled by the simulator. All other agents choose messages and actions live. This is a live network with one controlled source, not an entirely unconstrained society.
+\subsection{Which language does each model use?}
+The main comparison uses a language associated with each developer's location, as listed below. We call this the \emph{local-language condition}. Models do not have a human native language, and several locations have more than one language. For Switzerland, Standard German is our explicit study choice, not a claim that it is Apertus's only or best language.
 
-Deliver the initial warning to all four neighbours of its source in every condition. From the next round, each recipient receives messages from two of its four potential neighbours. Fixed reception uses a preselected balanced schedule; chosen reception lets recipients select their next-round sources before seeing those messages. Both conditions have the same incoming message cap. Log potential, selected, sent, and delivered links separately. Exclusion means not selecting an available source; evacuation-related silence is a distinct event. Include a matched random-selection diagnostic to check whether mere sparsity explains failures.
+\tablecaption{Language assignments for each model.}
+\begin{tabularx}{\linewidth}{@{}lXXX@{}}
+\toprule
+Model & Local-language condition & Shared baseline & Extra language\\
+\midrule
+GPT-4.1 mini & English & English (same condition) & Vietnamese\\
+Claude Haiku 4.5 & English & English (same condition) & Vietnamese\\
+Qwen3.8 27B & Simplified Chinese & English & Vietnamese\\
+DeepSeek V4 Flash & Simplified Chinese & English & Vietnamese\\
+Mistral Small 3.2 & French & English & Vietnamese\\
+Apertus 70B & Standard German & English & Vietnamese\\
+\bottomrule
+\end{tabularx}
 
-Cross claim accuracy with disaster state: correct Danger and incorrect Safe in disaster episodes, correct Safe and incorrect Danger in safe episodes. Balance these conditions and keep the source label and message format constant. The informant privately receives simulator truth, but its outward message is an ordinary peer claim without a truth certificate; the controlled schedule determines whether that claim matches the observation. This prevents authentication from confounding the accuracy comparison. Rotate identities and informant positions. Keep the source active during a short, prespecified warning window in every arm; this exception to voluntary evacuation is an explicit intervention. After that window, it follows the same action rules as the other agents.
+\textbf{What changes with language?} Translate the task instructions, evidence, controlled claims, source labels, correction messages, and agent-facing conversation. Ask all agents to write their natural-language messages in that game's language. Keep machine-readable action keys and message IDs unchanged. Check translation meaning before evaluation, and record when an agent uses the wrong language or mixes languages. Do not silently count such runs as valid language-following examples.
 
-\subsection{Outcomes and inference}
-Primary outcomes are the fraction of eligible consultation opportunities selecting the source and the episode-level fraction of uninformed agents remaining at disaster. Report unnecessary evacuations in safe episodes and total payoff alongside them. Secondary measures include warning delivery, relaying, and time to evacuation. A message reference measures observable use, not internal attention.
+\textbf{Why retain English for every model?} Comparing a Chinese model in Chinese with a French model in French changes two things at once. That comparison describes the combined model-and-language setup. Running both in English gives a shared baseline. Comparing the same model in English and its local-language condition tests language sensitivity within that model. English is counted only once for the US models.
 
-Estimate the persistence contrast within each reception condition and their interaction, pairing state, graph, source position, and simulator seed across arms. Repeat independent model runs and report uncertainty at the episode level; nodes are not independent experimental units. The routing intervention tests whether access policy changes outcomes. Correlation between source rejection and failure does not prove mediation or dislike. Before increasing scale, check whether any access loss occurs, whether delivered warnings change actions, and whether both correct and incorrect warnings are treated sensibly.
-\section{Limitations and research status}
-This is an initial proposal, not a completed experiment or demonstrated research gap. The repository now includes an initial calibration simulator and Adaption runner; it does not yet implement every proposed reference condition. Offline fixtures and live smoke tests verify execution, not research hypotheses. Freeze model version, prompts, round distribution, sampling settings, sample size, invalid-output rules, and stopping criteria after separate calibration. Report invalid outputs and failed runs rather than silently dropping them. No hidden chain-of-thought is required. Use inert simulator actions and no external tools. Claimed-source, language, and model factors are specified as staged extensions rather than simultaneous first-pilot manipulations. They test sensitivity to controlled inputs and model configurations, not cultural or religious traits.
+\textbf{Where does Vietnamese fit?} Vietnamese is a separate shared-language test across all six models, including those whose developers are outside Vietnam. Reuse the same scenarios and treatments. This tests performance in Vietnamese; it does not make any model Vietnamese or measure Vietnamese culture. With all six models available, there are 16 distinct model--language combinations: six English, six Vietnamese, and four additional local-language conditions. This is a list of planned conditions, not a commitment to run every identity and treatment combination at once.
 
-The human task supplies an experimental foundation, not evidence about model behavior. Results would depend on rewards, context management, graph structure, and the changed timing protocol. A ring is a starting condition, not a general account of all networks. No claim of first-of-kind work is made.
+\paragraph{How to test identity fairly.}
+Change the claimed sender label on the controlled message while keeping its words, evidence, timing, and network position the same. The label gives no extra permissions or true information. These are fictional attributions in the game, not real statements by those people or religious figures. Keep the correction sender fixed in C. Record refusal or role-play responses separately. Freeze exact labels and translations before running the comparison.
 
-\section{Provenance}
-The user's friend's six-page \emph{Authority Across Languages: Evaluating Socially Framed Prompt Injection and Monitoring in Multi-Agent AI Systems} informed the earlier authority-and-monitoring discussion. It is an unpublished proposal, not experimental evidence. The linked Google document is a submission template. This AI-assisted draft requires team review, real authorship information, and current submission-format checks before submission.
+\paragraph{How to test models and languages fairly.}
+Run the same scenarios and treatments for every selected model. Record the developer, exact model ID, access date, API host, and generation settings. A hosting provider is not the model's developer. Geographic labels describe the sample; they do not explain why a model behaves differently. Model ability, training, size, and language skill can all differ. We cannot infer national culture, political loyalty, or religious belief from these results.
+
+\subsection{Shared procedure for all three experiments}
+\begin{enumerate}
+\item Choose the model, language, disaster state, claim accuracy, and source position from a balanced scenario schedule. One controlled source receives the truth; all other agents start without that observation.
+\item The source sends its assigned correct or false claim on rounds one and two. Keep that wording fixed within a language, apart from the identity label. Hold it active for those rounds, then stop its transmissions in every condition. Exclude it from recipient outcome rates. This controlled source is an explicit exception to ordinary agents' action rules.
+\item Each other active agent reads its local history, sends a short message, and chooses stay or evacuate. It can answer or cite received messages. Deliver messages to all four neighbours on the next round. Evacuated agents stop sending.
+\item End the game at a hidden terminal round drawn from the same four-to-six-round schedule. Score actions against the simulator's true state.
+\item Repeat matched scenarios for the comparison conditions. Randomize execution order and use equal numbers of scenario seeds and repeated model runs per condition. Select the numerical sample size and message limit before evaluation, after compatibility checks.
+\end{enumerate}
+
+The two-round source schedule is a fixed design choice, not a repetition treatment. Ordinary agents generate their messages live; only the initial source is controlled. In false-claim games there is no second informed source. These games test response to misleading information, not recovery after independent correction; paper C studies that separate question.
+
+\subsection{Experiment 1: language}
+Run each model in the languages listed above. Use the ordinary-peer source and ring network. Compare English with Vietnamese within every model, and English with the assigned local language where different. Translate meaning, rather than changing the facts or adding persuasion. Report language-following errors and translation-review status.
+
+This tests the language of the whole game, including instructions and conversation. It does not isolate message language from instruction language. Cross-model comparisons in different local languages describe combined settings; they cannot identify a language effect on their own.
+
+\subsection{Experiment 2: claimed source identity}
+Use one combined identity experiment, with these six proposed labels translated consistently into every test language:
+\begin{enumerate}
+\item An ordinary teammate.
+\item An emergency-management expert.
+\item A senior Chinese government official.
+\item Xi Jinping, President of China.
+\item A Buddhist monk.
+\item A Christian pastor.
+\end{enumerate}
+Compare each authority role with the teammate. Compare the named political label with the generic political label as a more specific contrast. The latter changes name recognition and specificity of status; it does not perfectly isolate a name from rank. Monk and pastor are separate role conditions, not interchangeable religions. The Buddha and claims to speak for God remain possible follow-ups, outside this initial six-label matrix.
+
+Show every selected label to every model, in each model's listed test languages. Do not reserve Xi Jinping for Chinese models. Keep message content, true evidence, graph, source position, and timing matched within each model--language comparison. The sender is not prompted to impersonate the named person. Recipients see a fictional attribution that grants no permissions.
+
+For each model, compare the identity effect in English with its effect in Vietnamese and, where applicable, the local language. This tests whether language changes the response to an identity. It does not measure religious belief or political allegiance.
+
+\subsection{Experiment 3: network structure}
+Compare a ring, where each agent connects to the nearest two agents on each side, with a connected random-regular graph. Both have ten agents, four neighbours per agent, and twenty undirected edges. Use an ordinary-peer source and the same language conditions as above.
+
+Generate several random graphs using recorded seeds. Rotate the source across positions and pair disaster state, accuracy, model, language, and terminal round. Preserve message budgets and delivery rules. Do not compare one lucky random graph with one source placement. Agents see local neighbours only, not a description of the global graph.
+
+Measure whether the warning reaches more agents and whether their decisions improve. Changing network shape can change clustering and path lengths together. This experiment estimates their combined effect; it does not separately identify each graph property.
+
+\subsection{Outcomes, comparisons, and run counts}
+\begin{itemize}
+\item \textbf{Missed danger:} Fraction of the nine non-source agents staying when disaster strikes.
+\item \textbf{False alarms:} Fraction evacuating when there is no disaster.
+\item \textbf{Information spread:} Who receives or relays the claim, how many rounds it takes, and what actions follow. Audit paraphrases; a cited ID alone does not prove agreement.
+\item \textbf{Other checks:} Payoff, action timing, invalid outputs, language errors, and refusals.
+\end{itemize}
+Use whole games as the units of analysis. Pair matched scenarios and report differences with uncertainty across games. Agents in the same game are not independent samples. Decide primary contrasts and how to account for multiple comparisons before evaluation. A message being received, cited, or followed by an action does not reveal private belief.
+
+With all six models available there are sixteen model--language combinations. Experiment 1 needs sixteen ordinary-peer ring cells. Experiment 2 has ninety-six cells (six labels times sixteen combinations), including those same sixteen baselines. Experiment 3 has thirty-two cells (two networks times sixteen), also sharing the baselines. Thus there are \textbf{112 unique configuration cells}, before crossing the four disaster/accuracy cases and repeating scenarios. If each case has S scenario seeds and R repeated runs, the total is 112 times 4 times S times R games. Shared baselines must be counted once and their dependence retained in analysis. This is a planning calculation, not a launched batch or approved spending amount.
+
+\section{Results}
+\subsection{Calibration status; proposed evaluation pending}
+A small calibration batch used \texttt{openai/gpt-4.1-mini}, English, ordinary-peer labels, and structured Safe/Danger signals. It completed 129 of 130 planned outcomes across A and C; one A run failed message-reference validation. The repository contains the full calibration report. These runs used the earlier repetition/listening design and the separate recovery study. They do not test the three experiments in this revised proposal. Keep those calibration artifacts unchanged.
+
+Natural-language arguments, random-regular networks, identity labels, and the broader comparisons above remain planned. The current simulator must be updated and checked before this protocol can run. No results about Xi Jinping, the Buddha, God, languages other than English, or differences between model origins are claimed. The papers remain proposals. Before a larger evaluation, freeze prompts, model versions, message limits, sample sizes, stopping rules, and treatment order. Keep failed runs visible rather than silently dropping them.
+
+\section{Discussion and Limitations}
+The game is a simplified test of communication and action. A result on one ring network does not establish how all agent networks behave. Repeating the same model many times does not create many independent model families. Use whole games as the units of analysis, not individual agents, because agents influence each other. Use only simulated actions; external tools and hidden chain-of-thought are not needed.
+
+The user's friend's unpublished \emph{Authority Across Languages} proposal informed the source-label and language questions. It is background, not evidence of experimental results. The Google document supplied earlier was a submission template. This AI-assisted draft needs author information, team review, and submission-format checks before submission. We make no claim that this is the first study of these topics.
+\section{Conclusion}
+This proposal defines comparisons to run, not findings from the revised evaluation. Its value must be assessed using the planned controlled experiments and reported failures as well as successful runs. No claim of proven safety improvement is made.
+
+\section*{Code and Data}
+\href{https://github.com/nhat117/AdoptionAIHackathon}{Project repository}; scenario data in \path{data/evacuation/}; earlier calibration outcomes and analysis in \path{reports/2026-11-08-calibration/}. The existing runner and calibration artifacts do not implement or validate every proposed condition.
+
+\section*{LLM Usage Statement}
+An AI assistant helped investigate sources, design comparisons, write simulator code, and draft and edit this report. The recorded calibration outputs were checked by the repository's validators. Human authors must review the source interpretations, methods, and final text; independent human verification of every claim is not asserted. Author names and affiliations are still to be supplied.
+
 \begin{thebibliography}{9}
+\bibitem{credibility} C. I. Hovland and W. Weiss (1951). \emph{The Influence of Source Credibility on Communication Effectiveness}. Public Opinion Quarterly, 15(4):635--650. \url{https://doi.org/10.1086/266350}.
+
 \bibitem{danger} H. Shirado, F. W. Crawford, and N. A. Christakis (2020). \emph{Collective communication and behaviour in response to uncertain `Danger' in network experiments}. Proceedings of the Royal Society A, 476:20190685. \url{https://doi.org/10.1098/rspa.2019.0685}.
 
 \bibitem{schachter} S. Schachter (1951). \emph{Deviation, rejection, and communication}. Journal of Abnormal and Social Psychology, 46:190--207. \url{https://doi.org/10.1037/h0062326}. Original experimental report also appears in \emph{Theory and Experiment in Social Communication} (1950), \url{https://cdn.isr.umich.edu/pubFiles/historicPublications/Theory_4867_.PDF}.
