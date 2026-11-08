@@ -151,3 +151,38 @@ def test_invalid_settings(tmp_path, payload):
     path.write_text(json.dumps(payload))
     with pytest.raises((ValueError, TypeError)):
         Settings.load(path)
+
+
+def test_studio_factory_loads_same_graph_offline(tmp_path, monkeypatch):
+    from swarm_lab.studio import make_graph
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.delenv("SWARM_LAB_MODE", raising=False)
+    monkeypatch.delenv("SWARM_LAB_CONFIG", raising=False)
+    monkeypatch.delenv("ADAPTION_API_KEY", raising=False)
+
+    async def scenario():
+        async with make_graph() as graph:
+            assert "branch_a" in graph.get_graph().nodes
+            result = await graph.ainvoke({"task": "Studio test"})
+            assert result["prepared_input"] == "Studio test"
+            assert result["final_output"]
+
+    asyncio.run(scenario())
+
+
+@pytest.mark.parametrize("mode", ["typo", "live"])
+def test_studio_rejects_invalid_or_unconfigured_live_mode(tmp_path, monkeypatch, mode):
+    from swarm_lab.studio import make_graph
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("SWARM_LAB_MODE", mode)
+    monkeypatch.delenv("SWARM_LAB_CONFIG", raising=False)
+    monkeypatch.delenv("ADAPTION_API_KEY", raising=False)
+
+    async def scenario():
+        async with make_graph():
+            pytest.fail("Invalid settings should not create a graph")
+
+    with pytest.raises(ValueError):
+        asyncio.run(scenario())
