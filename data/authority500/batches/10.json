@@ -1,0 +1,136 @@
+{
+  "batch": 10,
+  "domain": "amateur sports and recreation",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho8sLtSXlma8LUCGH79t6zRvtBSH",
+  "usage": {
+    "completion_tokens": 639,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 9,
+      "engine_ttft_ms": 317,
+      "engine_ttlt_ms": 6440,
+      "pre_inference_ms": 66,
+      "service_tbt_ms": 9,
+      "service_ttft_ms": 1104,
+      "service_ttlt_ms": 6990,
+      "user_visible_ttft_ms": 1038
+    },
+    "prompt_tokens": 673,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 1312
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in amateur sports and recreation. Batch 10/20. Avoid repeating these earlier topics: [\"Community cycling club mapped a 40-mile scenic loop and completed cue sheets and GPS files for weekend riders\", \"Local pickleball league finalized doubles bracket seeding and printed court assignment boards for Saturday play\", \"Recreational running group piloted a new interval workout route and logged participant feedback for refinement\", \"Amateur swimming meetup audited pool lane schedules and secured two weekly evening slots for practices\", \"Neighborhood disc golf association installed three temporary tee markers for a beginner-friendly short layout\", \"Casual hiking club scouted a moderate 8-mile trail, marking water stops and turnarounds for a novice event\", \"Weekend softball team compiled batting order analytics from last four scrimmages to test lineup changes\", \"Recreation center badminton drop-in established a rotating court timer system and tested whistle intervals\", \"City rec bocce group measured and leveled a gravel lane, adding boundary boards to standardize play\", \"Amateur rowing cohort calibrated erg machines and set a progressive 6-week baseline-to-2k program\", \"Sunday ultimate frisbee meetup drafted spirit-of-the-game reminders and trialed a self-officiating checklist\", \"Local trail runners created a shared GPX library with safe night routes including reflective waypoint notes\", \"Community table tennis club inventoried paddles and balls, labeling loaner equipment with sign-out sheets\", \"Weekend yoga-in-the-park series tested wind-resistant mat anchors and adjusted class spacing for turnout\", \"Neighborhood cycling time trial recorded baseline laps on a 2-mile course and set staggered start protocol\", \"Casual climbing meetup documented bouldering circuit grades and established a warm-up mobility routine\", \"Amateur volleyball night evaluated net tension consistency and replaced worn antenna markers on two courts\", \"Local ski touring group plotted avalanche-safe routes and collected beacon check data during a dry run\", \"Community canoe club repaired two cracked gunwales and waterproofed loaner paddles after inspection\", \"Weekend soccer kickabout standardized small-sided pitch dimensions and tested portable goals for stability\", \"Neighborhood archery session set up distance markers, verified target backing, and logged arrow groupings\", \"Amateur fencing meetup trialed a bout rotation board and monitored downtime between matches for fairness\", \"Casual dance fitness group synchronized a 45-minute playlist and balanced high-impact segments with rests\", \"Local hiking photo scavenger hunt finalized clue list and arranged checkpoint volunteers for family participants\", \"Community lawn bowls night chalked rink boundaries and confirmed jack calibration with practice ends\"]",
+  "tasks": [
+    {
+      "topic": "Community kayaking meetup charted a gentle 5-mile downstream route and staged shuttle cars at the pullout",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Recreational dodgeball night tested foam ball inflation levels and established a three-whistle restart protocol",
+      "status": "complete"
+    },
+    {
+      "topic": "Local pétanque evening outlined a house-point system and laid temporary circle markers on the gravel court",
+      "status": "complete"
+    },
+    {
+      "topic": "Amateur inline skating group measured a flat 3-kilometer loop and marked hazard cones near drain grates",
+      "status": "complete"
+    },
+    {
+      "topic": "Weekend geocaching club planned a five-cache park circuit and hid weatherproof containers with clue cards",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood badminton ladder drafted match challenge windows and compiled a shared standings spreadsheet",
+      "status": "complete"
+    },
+    {
+      "topic": "Community recreational golf scramble surveyed tee times and designed a mixed-skill pairing chart for fairness",
+      "status": "complete"
+    },
+    {
+      "topic": "Amateur cheer rec team built a two-minute sideline routine and scheduled spotter practice for new stunts",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Local recreational futsal meetup taped boundary lines in a school gym and tested low-bounce balls",
+      "status": "complete"
+    },
+    {
+      "topic": "Community hiking-and-stretching hybrid session outlined a 2-mile loop with two mobility break stations",
+      "status": "complete"
+    },
+    {
+      "topic": "Amateur boccia group created color-coded throw order cards and practiced ramp alignment drills",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood recreational bowling night reserved four lanes and prepared handicap rules for mixed averages",
+      "status": "complete"
+    },
+    {
+      "topic": "Casual croquet afternoon arranged wicket spacing on a lawn and drafted rotation order placards",
+      "status": "complete"
+    },
+    {
+      "topic": "Amateur snowshoe outing mapped a meadow circuit and flagged safe creek crossings with reflective tape",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Local kite-flying meetup defined a wind window area and tested line strength with measured pull tests",
+      "status": "complete"
+    },
+    {
+      "topic": "Community recreational hockey stick-and-puck hour assigned shooting lanes and posted backhand safety tips",
+      "status": "complete"
+    },
+    {
+      "topic": "Amateur scooter skills clinic outlined a cone slalom and scheduled a brake-check demonstration segment",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Weekend spikeball social marked serving zones on grass and trialed rally-to-21 scoring with cap",
+      "status": "complete"
+    },
+    {
+      "topic": "Neighborhood recreational canoe polo session sketched a floating goal setup and drafted team rotation times",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Casual RC car racing club chalked a temporary track and calibrated lap timers for hobby-grade transponders",
+      "status": "complete"
+    },
+    {
+      "topic": "Amateur slackline meetup measured anchor distances between trees and installed protective tree wraps",
+      "status": "complete"
+    },
+    {
+      "topic": "Community Nordic walking circle set stride-cadence drills and issued pole height adjustment guidance",
+      "status": "complete"
+    },
+    {
+      "topic": "Local recreational darts night verified board heights, set oche distance, and printed league night formats",
+      "status": "complete"
+    },
+    {
+      "topic": "Amateur orienteering practice placed eight control flags and validated compass bearings for each leg",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Weekend paddleboard balance clinic outlined a dock launch procedure and rehearsed rescue reboarding steps",
+      "status": "in_progress"
+    }
+  ]
+}

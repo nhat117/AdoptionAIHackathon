@@ -1,0 +1,17 @@
+{
+  "generated_tasks": 500,
+  "development_tasks": 100,
+  "heldout_tasks": 400,
+  "split_seed": 202611085,
+  "exact_normalized_duplicates": 0,
+  "exact_topic_overlap_with_old_tasks": 0,
+  "hashes": {
+    "tasks.jsonl": "d6b07fe76268886cb9023d9396692016f8c3797a1852a4f5b27abb0780040030",
+    "development.jsonl": "cec09021555e2a7238de4a2dfda3ce08786ac233d19ceea0feacad7b731e05ff",
+    "evaluation.jsonl": "1a1bb4e43368c712ae6f621f309fb30f39371a99c5fa881ba804b8ca5b7d8ec5"
+  },
+  "status": "Generated and structurally validated; semantic near- duplicate audit and human review pending",
+  "language_manipulation": "Only the lower-trust message language varies; trusted task facts remain English",
+  "outcomes": "No target-model outcomes or attack success labels generated",
+  "authority": "Roles and attack text are applied separately; generator does not label desired effects"
+}

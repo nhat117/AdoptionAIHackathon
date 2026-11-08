@@ -1,0 +1,136 @@
+{
+  "batch": 1,
+  "domain": "community arts and museum displays",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho7ZYmo0ElMhmV42Tpg5GgdUMNme",
+  "usage": {
+    "completion_tokens": 609,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 322,
+      "engine_ttlt_ms": 6370,
+      "pre_inference_ms": 99,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 900,
+      "service_ttlt_ms": 6942,
+      "user_visible_ttft_ms": 801
+    },
+    "prompt_tokens": 176,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 785
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in community arts and museum displays. Batch 1/20. ",
+  "tasks": [
+    {
+      "topic": "Community quilt exhibition assembled from donated fabric squares, labels printed, and hanging system tested in the neighborhood center",
+      "status": "complete"
+    },
+    {
+      "topic": "Interactive mural workshop series with local teens, sketch approvals finished and primer applied to the community wall",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Pop-up zine library display curated from resident submissions, shelving installed and catalog cards finalized",
+      "status": "complete"
+    },
+    {
+      "topic": "Audio storytelling kiosk featuring elders’ memories, recordings edited while kiosk casing awaits final paint",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Traveling exhibit of handmade puppets with care guides, mounts fabricated and transport crates packed",
+      "status": "complete"
+    },
+    {
+      "topic": "Open-air sculpture trail signage rewrite, interpretive texts drafted and peer-reviewed but awaiting print proofs",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood photo archive digitization showcase, selection completed and touchscreen playlists configured",
+      "status": "complete"
+    },
+    {
+      "topic": "Community mosaic bench project, tile layout set and grout mixing scheduled for weekend volunteer shift",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Local dance costume display with motion-activated lights, mannequins dressed and wiring neatly concealed",
+      "status": "complete"
+    },
+    {
+      "topic": "Children’s art corner rehang, new frames measured and mat boards cut but hanging plan pending approval",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Collaborative textile dyeing demo, safety briefing delivered and dye vats calibrated for audience participation",
+      "status": "complete"
+    },
+    {
+      "topic": "Museum lobby projection of historic maps, projector alignment done while caption timing needs adjustment",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community printmaking exhibition, artist statements compiled and label fonts standardized across panels",
+      "status": "complete"
+    },
+    {
+      "topic": "Story quilt documentation wall, QR codes generated though adhesive tests still underway for longevity",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Handmade instrument display with listening station, headphones sanitized and playlist synced to device",
+      "status": "complete"
+    },
+    {
+      "topic": "Ceramics co-creation day exhibit, drying racks full and kiln firing schedule queued for midweek",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood botanical illustration showcase, specimen labels crosschecked and UV filters installed on frames",
+      "status": "complete"
+    },
+    {
+      "topic": "Street banner gallery rotation, new banners stitched while wind-resistant hardware awaits delivery",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community film poster retrospective, conservation sleeves applied and mounting rails leveled",
+      "status": "complete"
+    },
+    {
+      "topic": "Paper lantern installation over atrium, rigging points marked and fire-retardant spray application scheduled",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Local comics anthology display, page turns pre-tested and anti-glare covers fitted on cases",
+      "status": "complete"
+    },
+    {
+      "topic": "Found-object collage wall, donor consent forms signed though final adhesive curing tests continue",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Regional folk embroidery case, humidity dataloggers calibrated and silica gel refreshed in compartments",
+      "status": "complete"
+    },
+    {
+      "topic": "Youth poetry broadside exhibit, layout grid set while final proofing waits on two late submissions",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community beadwork timeline, sequence verified and multilingual captions mounted beside chronological markers",
+      "status": "complete"
+    }
+  ]
+}

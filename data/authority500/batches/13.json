@@ -1,0 +1,136 @@
+{
+  "batch": 13,
+  "domain": "repair cafes and equipment lending",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho9KmxI0DG5NhDuqxoatAf3wkLgH",
+  "usage": {
+    "completion_tokens": 606,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 315,
+      "engine_ttlt_ms": 6369,
+      "pre_inference_ms": 132,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 1571,
+      "service_ttlt_ms": 7620,
+      "user_visible_ttft_ms": 1438
+    },
+    "prompt_tokens": 176,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 782
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in repair cafes and equipment lending. Batch 13/20. ",
+  "tasks": [
+    {
+      "topic": "Community repair cafe refurbished ten sewing machines and documented maintenance logs for future volunteer training sessions",
+      "status": "complete"
+    },
+    {
+      "topic": "Bike repair lending library overhauled wheel truing station and issued twenty calibrated spoke wrenches to members",
+      "status": "complete"
+    },
+    {
+      "topic": "Power tool library initiated quarterly insulation tester checks and updated barcode inventory for corded drills",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Repair cafe hosted soldering clinic to restore donated radios and created reusable troubleshooting flowcharts",
+      "status": "complete"
+    },
+    {
+      "topic": "Garden tool lending shed replaced dull mower blades and introduced sign-out limits during peak weekends",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Kitchen appliance repair meetup revived stand mixers and standardized torque settings for planetary gears",
+      "status": "complete"
+    },
+    {
+      "topic": "Mobile repair clinic piloted appointment slots for screen replacements and collected turnaround time metrics",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Camera equipment library cleaned sensor kits and implemented silica gel rotation schedule for storage cases",
+      "status": "complete"
+    },
+    {
+      "topic": "Repair cafe established spare-part bins for common laptop hinges and trialed donor-matching for rare models",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Makerspace lending program calibrated 3D printer beds and issued safety briefings for PLA-only filament use",
+      "status": "complete"
+    },
+    {
+      "topic": "Tool library updated ladder inspection tags and added QR codes linking to usage guidelines",
+      "status": "complete"
+    },
+    {
+      "topic": "Small engine repair day restored two chainsaws and documented carburetor tuning settings by model",
+      "status": "complete"
+    },
+    {
+      "topic": "Electronics lending locker introduced checkout timers for oscilloscopes and created a queue for probes",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Sewing machine library added needle assortment packs and rolled out a thread tension test protocol",
+      "status": "complete"
+    },
+    {
+      "topic": "Repair cafe compiled a common failures list for toasters and prepared reusable thermal fuse kits",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Audio gear lending program serviced mixers with contact cleaner and labeled channel gain defaults",
+      "status": "complete"
+    },
+    {
+      "topic": "Bicycle repair night installed universal cable housing stations and updated torque specifications posters",
+      "status": "complete"
+    },
+    {
+      "topic": "Community repair van mapped pickup routes for broken vacuums and scheduled test runs for power draw",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Tool library implemented late-fee amnesty week and reconciled missing socket sizes via donations",
+      "status": "complete"
+    },
+    {
+      "topic": "Laptop repair bench replaced thermal paste stock and introduced anti-static mat sign-off checklist",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Repair cafe created lamp rewiring kits and validated strain relief crimping with sample fixtures",
+      "status": "complete"
+    },
+    {
+      "topic": "Photography gear lending program added lens calibration targets and enforced desiccant replacement cycles",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Woodshop tool library aligned table saw fences and published blade change interval guidance",
+      "status": "complete"
+    },
+    {
+      "topic": "Mobile bike repair trailer upgraded modular storage bins and tested on-street pop-up service workflow",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Repair cafe hosted battery reconditioning session and verified internal resistance baselines for cordless packs",
+      "status": "complete"
+    }
+  ]
+}

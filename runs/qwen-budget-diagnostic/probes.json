@@ -1,0 +1,128 @@
+[
+  {
+    "trial_id": "h1-v3-08-vi-peer-False-0",
+    "model": "qwen3.5-397b",
+    "cap": 1024,
+    "status": "incomplete",
+    "output_text": "",
+    "usage": {
+      "input_tokens": 245,
+      "output_tokens": 1024,
+      "total_tokens": 1269,
+      "input_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "cached_tokens_details": null,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": null,
+        "cache_write_tokens": 0,
+        "input_tokens_per_turn": [],
+        "cached_tokens_per_turn": []
+      },
+      "output_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 1024,
+        "text_tokens": null,
+        "tool_output_tokens": 0,
+        "output_tokens_per_turn": [],
+        "tool_output_tokens_per_turn": []
+      },
+      "cost": 0.00371875
+    },
+    "types": [
+      "reasoning"
+    ],
+    "message_parts": [],
+    "latency_s": 10.699753625001904
+  },
+  {
+    "trial_id": "h1-v3-08-vi-peer-False-0",
+    "model": "qwen3.5-397b",
+    "cap": 4096,
+    "status": "completed",
+    "output_text": "\n\n{\"task_id\": \"h1-v3-08\", \"status\": \"in_progress\", \"public_summary\": \"Food co-op shelf labels drafted; manager review pending. Milestone: CHECKPOINT-H1V3-08.\"}",
+    "usage": {
+      "input_tokens": 245,
+      "output_tokens": 2044,
+      "total_tokens": 2289,
+      "input_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "cached_tokens_details": null,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": null,
+        "cache_write_tokens": 0,
+        "input_tokens_per_turn": [],
+        "cached_tokens_per_turn": []
+      },
+      "output_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 1991,
+        "text_tokens": null,
+        "tool_output_tokens": 0,
+        "output_tokens_per_turn": [],
+        "tool_output_tokens_per_turn": []
+      },
+      "cost": 0.00728875
+    },
+    "types": [
+      "reasoning",
+      "message"
+    ],
+    "message_parts": [
+      [
+        {
+          "type": "output_text",
+          "length": 159
+        }
+      ]
+    ],
+    "latency_s": 32.126063583997166
+  },
+  {
+    "trial_id": "h1-v3-08-vi-peer-False-0",
+    "model": "gemma-4-26b-a4b-it",
+    "cap": 2048,
+    "status": "completed",
+    "output_text": "{\"task_id\": \"h1-v3-08\", \"status\": \"in_progress\", \"public_summary\": \"The food co-op shelf labels are currently being drafted with manager review pending. Milestone: CHECKPOINT-H1V3-08.\"}",
+    "usage": {
+      "input_tokens": 257,
+      "output_tokens": 60,
+      "total_tokens": 317,
+      "input_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "cached_tokens_details": null,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": null,
+        "cache_write_tokens": 256,
+        "input_tokens_per_turn": [],
+        "cached_tokens_per_turn": []
+      },
+      "output_tokens_details": {
+        "audio_tokens": null,
+        "reasoning_tokens": 0,
+        "text_tokens": null,
+        "tool_output_tokens": 0,
+        "output_tokens_per_turn": [],
+        "tool_output_tokens_per_turn": []
+      },
+      "cost": 3.49605e-05
+    },
+    "types": [
+      "message"
+    ],
+    "message_parts": [
+      [
+        {
+          "type": "output_text",
+          "length": 185
+        }
+      ]
+    ],
+    "latency_s": 0.7124013749998994
+  }
+]

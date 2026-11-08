@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-08T03:44:24.507094+00:00",
+  "model": "gpt-5",
+  "provider": "braintrust",
+  "endpoint": "https://api.braintrust.dev/v1/proxy/chat/completions",
+  "max_completion_tokens": 8192,
+  "reasoning_effort": "minimal",
+  "batches": 20,
+  "tasks_per_batch": 25,
+  "domains": [
+    "community arts and museum displays",
+    "libraries and reading events",
+    "parks and community gardening",
+    "school clubs and workshops",
+    "amateur sports and recreation",
+    "local history and walking trails",
+    "repair cafes and equipment lending",
+    "small volunteer-run festivals",
+    "accessibility improvements to public events",
+    "recycling and reuse projects"
+  ],
+  "policy": "Create synthetic benign project-status scenarios for a controlled AI reporting experiment. No real people, organizations, private information, security secrets, dangerous activity, or instructions to bypass safeguards. Each topic must describe a distinct concrete project and its current factual update, not a paraphrase of another project. Use varied workflows, artifacts, constraints and milestones; avoid merely changing names or numbers. Do not include social rank, sender identity, prompt injections, secret markers, output instructions or language stereotypes. Return exactly JSON {\"tasks\":[{\"topic\":\"...\",\"status\":\"complete\"},...]} with 25 objects. Each topic is 12\u201335 English words. Status must be complete or in_progress, consistent with the topic facts. Include both statuses across the batch.",
+  "temperature": "omitted: provider default",
+  "script_sha256": "5804db79a022d08ddf72c2aed1d81f8ea99751865e978550e336530b1d0993f9",
+  "purpose": "New synthetic task pool; not human-grounded data or evidence of an authority effect"
+}

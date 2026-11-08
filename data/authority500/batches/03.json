@@ -1,0 +1,136 @@
+{
+  "batch": 3,
+  "domain": "libraries and reading events",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho7qloYzROmLzRSukcnMCQzHCq9Q",
+  "usage": {
+    "completion_tokens": 588,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 325,
+      "engine_ttlt_ms": 6085,
+      "pre_inference_ms": 99,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 954,
+      "service_ttlt_ms": 6710,
+      "user_visible_ttft_ms": 855
+    },
+    "prompt_tokens": 175,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 763
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in libraries and reading events. Batch 3/20. ",
+  "tasks": [
+    {
+      "topic": "Digitizing local history newsletters into a searchable PDF archive with OCR tagging and metadata schemas",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Launching a weekend family storytime series featuring bilingual picture books and interactive rhyme activities",
+      "status": "complete"
+    },
+    {
+      "topic": "Installing self-check kiosks and reconfiguring circulation desk workflow to reduce patron wait times",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Curating a traveling book display on climate resilience with QR-linked reading lists and maps",
+      "status": "complete"
+    },
+    {
+      "topic": "Rolling out a curbside holds pickup pilot with SMS notifications and weatherproof lockers",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Hosting a silent reading club where patrons choose seats, set timers, and share book notes afterward",
+      "status": "complete"
+    },
+    {
+      "topic": "Upgrading the teen room with manga shelves, maker kits, and a rotating zine corner",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Running a poetry open mic night featuring local poets and audience feedback cards",
+      "status": "complete"
+    },
+    {
+      "topic": "Implementing RFID tagging for the entire DVD collection to streamline inventory and security",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Coordinating a community read of a contemporary novel with chapter discussions and author Q&A livestream",
+      "status": "complete"
+    },
+    {
+      "topic": "Launching a literacy tutoring program pairing volunteers with adult learners using leveled readers",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Hosting a board game and book pairing night with strategy titles matched to related nonfiction",
+      "status": "complete"
+    },
+    {
+      "topic": "Migrating the catalog to a cloud ILS with improved search facets and patron recommendation widgets",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Starting a weekly preschool STEM storytime featuring counting tales and hands-on manipulatives",
+      "status": "complete"
+    },
+    {
+      "topic": "Establishing a seed library with labeled envelopes, planting guides, and checkout tracking",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Organizing a banned books read-in with reading stations and informational displays about intellectual freedom",
+      "status": "complete"
+    },
+    {
+      "topic": "Deploying an outdoor Wi-Fi reading garden with shade sails, power outlets, and weatherproof seating",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Curating an oral history listening session with tablets, headphones, and themed annotation prompts",
+      "status": "complete"
+    },
+    {
+      "topic": "Launching a mobile library van route serving senior centers with large-print rotations",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Hosting a mystery book swap night using wrapped books and clue tags to encourage blind picks",
+      "status": "complete"
+    },
+    {
+      "topic": "Creating multilingual signage for shelving areas and service points to improve wayfinding",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Running a cookbook club where participants prepare recipes and discuss culinary histories",
+      "status": "complete"
+    },
+    {
+      "topic": "Implementing a fine-free policy pilot with data dashboards tracking returns and patron satisfaction",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Scheduling a comic reading marathon with artist sketches, panel discussions, and cosplay guidelines",
+      "status": "complete"
+    },
+    {
+      "topic": "Building a local author shelf spotlight program with rotating displays and short reading events",
+      "status": "in_progress"
+    }
+  ]
+}

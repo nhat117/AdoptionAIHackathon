@@ -1,0 +1,52 @@
+{
+  "created_at": "2026-11-08T03:51:32.940413+00:00",
+  "spec": {
+    "config": {
+      "languages": [
+        "en",
+        "vi",
+        "zh"
+      ],
+      "authority_conditions": [
+        "peer",
+        "authority"
+      ],
+      "repetitions": 1,
+      "benign_repetitions": 0,
+      "seed": 202611086,
+      "template_id": "correction_v1",
+      "planned_targets": 500,
+      "planned_attack_targets": 480,
+      "planned_benign_targets": 20,
+      "task_limit": 80,
+      "target_temperature": 0.7,
+      "max_output_tokens": 2048,
+      "collect_monitors": false,
+      "pacing_min_interval_seconds": 1.5,
+      "controls": "20 tasks, 2 per domain; languages en=7, vi=7, zh=6",
+      "selection": "8 heldout tasks per domain, 10 domains; seed 202611086",
+      "purpose": "Fixed 500-case exploratory evaluation; no stopping by effect direction",
+      "translation_review": "Machine audits only; independent bilingual review pending"
+    },
+    "provider": "adaption",
+    "model": "gemma-4-26b-a4b-it",
+    "file_hashes": {
+      "src/ai2ai_injection/runner.py": "25544742322e2edc9c3408327acc5e6e58022e8e8f19491010b1fd9eb22777ee",
+      "src/ai2ai_injection/monitor.py": "0eeb0e045c05853d1af42c63a63836703e6b6285835647d333c967851894cb4e",
+      "src/ai2ai_injection/__init__.py": "babcff1724fefe8bf7b4aa3d8ea4db119a165c8826691fe5c42a84b3d250735f",
+      "src/ai2ai_injection/logging_io.py": "717dffc20905a1ee9b10a9317460d6783b678bf798586ea1e28aef6ddbd0419e",
+      "src/ai2ai_injection/providers.py": "8db1af0c0a370f61c3f78513517c29f5b27cfcc51474b0ec771d42874cd988cf",
+      "src/ai2ai_injection/adaption_provider.py": "2376a2f203a91a599f8b123eeef09bfa58e8ef48670b4cf54b3e022d99f2b9b3",
+      "src/ai2ai_injection/target.py": "32af25806c084107799c0ee8f83fc1cd0eabda2dac4f4ffcaddfc2ca3c557a25",
+      "src/ai2ai_injection/pacing.py": "6050b9113b517d0babc8c7eb920ea1f66217285cfedd23104c11c582738f512b",
+      "src/ai2ai_injection/attacks.py": "7e5581b7eacbe7ac8e4802b7ed732fbfa26ed2a4a1b1f96a60ac681a37df4709",
+      "src/ai2ai_injection/evaluator.py": "123300f354a12dbb3d0c3a113a4c46418e481a25056ca4a8a78d114206f3dec6",
+      "src/ai2ai_injection/report.py": "bacc23ca91cde7c9dd47409a2fdaa2a3179ffad17e9da5d63151fcd237decc3e",
+      "scripts/run_authority500.py": "07f92c57b22d5b6853c2922d461560ea725de3cb7a42d442a0ed9929868b2450",
+      "data/authority500/selected_500_cases.jsonl": "699394fe1c182adb76241e7014b46193a7311000f34368324d85003d057a494a",
+      "data/translations.json": "6a6966c17b066b713cef92c332232bf63b30e7a326189c85411270dc0f98c625"
+    }
+  },
+  "git_commit": "081fb9a0264866aa9f6af7d33c44b534786868cb",
+  "registration": "Local source freeze before calls; not external preregistration"
+}

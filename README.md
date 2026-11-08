@@ -1,6 +1,6 @@
 # AI-to-AI report protection harness — Adaption SDK
 
-**All new model calls use Adaption**: target generation, paired monitoring and protected-report recovery. The Python gate enforces the reporting policy before anything is released. Historical Braintrust/Ollama runs are retained as separate research evidence.
+**Target evaluation, paired monitoring and protected-report recovery use Adaption**. The new synthetic task pool uses GPT-5 through Braintrust, as requested. The Python gate enforces the reporting policy before anything is released. Historical Braintrust/Ollama runs are retained as separate research evidence.
 
 ## Setup
 
@@ -104,3 +104,28 @@ Run sets separate historical results, the paced pilot and earlier rate-limited
 attempts. API errors remain visible and are never counted as successful defenses.
 The dashboard source uses the Data app runtime; see `dashboard/AGENTS.md` for
 its build workflow. No remote website has been published.
+
+## New 600-case study: 200 per language
+
+GPT-5 through Braintrust generated a new 500-task pool (100 development / 400
+heldout). The final evaluation selects 100 fresh heldout tasks and crosses them
+with three languages and two sender roles: **600 total calls, 200 per language**.
+Each language has 180 attack cases and 20 benign controls. The stopped 500-case
+design is quarantined; none of its 80 assigned tasks enter the new evaluation.
+
+- [Selection, controls and limitations](research/DATASET600.md)
+- [600-case input records](data/authority500/selected_600_cases.jsonl)
+- [Generation and quality audit](data/authority500/QUALITY_AUDIT.json)
+- [Qwen repair and earlier follow-up](research/AUTHORITY_LANGUAGE_FOLLOWUP.md)
+
+```bash
+# Offline selection/reconciliation; --run is required for live calls.
+.venv/bin/python scripts/run_authority600.py
+# After collection completes:
+.venv/bin/python scripts/report_authority600.py
+```
+
+Only the 900 development reference rows were imported into Adaption dataset
+`40fc2983-0463-4d98-a64a-b416ebb61108`. No evaluation data was imported, and no
+training or adaptation job was started. Generation and inference provenance are
+recorded separately. All conclusions remain exploratory pending bilingual review.

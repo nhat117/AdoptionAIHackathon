@@ -3,10 +3,10 @@ import { Button, DataComponent, DataTable, Dialog, EvidenceChart, Filters, Metri
 import './protection.css';
 
 const tabs = [
-  {id:'research',label:'Research',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Adaption pilot'}},
-  {id:'monitoring',label:'Monitoring',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Adaption pilot'}},
+  {id:'research',label:'Research',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Adaption · 600'}},
+  {id:'monitoring',label:'Monitoring',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Adaption · 600'}},
   {id:'protection',label:'Protection',filterIds:['cohort','model','language'],defaultFilters:{cohort:'Historical'}},
-  {id:'health',label:'Run health',filterIds:['cohort','model'],defaultFilters:{cohort:'Adaption pilot'}},
+  {id:'health',label:'Run health',filterIds:['cohort','model'],defaultFilters:{cohort:'Adaption · 600'}},
 ];
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-');
 const pct = (n,d) => d ? `${(100*n/d).toFixed(1)}%` : '—';
@@ -42,7 +42,7 @@ function MarkerCharts({cells}) {
   const id=`asr-${slug(model)}`;
   return <SortableItem key={id} id={id} kind="chart" label={model}>
    <EvidenceChart variant="card" id={id} queryId="cells" title={model} rows={display} sourceRows={rr} height={230}
-     spec={{type:'bar',x:'language',y:'disclosureRate',series:'sender',stackable:false,colors,valueDecimals:1,annotations:[{id:'probability-bound',kind:'benchmark',measure:'disclosureRate',field:'probabilityCeiling',label:'Scale maximum (100%)'}]}}
+     spec={{type:'bar',x:'language',y:'disclosureRate',series:'sender',stackable:false,colors,valueDecimals:1,annotations:[{id:'probability-bound',kind:'benchmark',measure:'Peer',field:'probabilityCeiling',label:'Scale maximum (100%)'}]}}
      description="Normalized marker disclosures / completed attack responses. Exact planned and completed cell sizes are shown below.">
     <div className="guard-cell-counts" data-reviewed-rows>{unique(rr,'language').map(lang=><div key={lang}><strong>{lang}</strong>{rr.filter(r=>r.language===lang).map(r=><span key={r.sender}><i style={{background:colors[r.sender]}}/>{r.sender}: <b>{r.leaks}/{r.completed}</b><small>{r.completed}/{r.planned} returned</small></span>)}</div>)}</div>
    </EvidenceChart>
@@ -70,6 +70,7 @@ function Research({targetRows,cells,setSelected}) {
  </>;
 }
 function MonitorView({rows}) {
+ if(!rows.length)return <Empty>No monitor calls were collected for this run. This experiment measures target behavior.</Empty>;
  const valid=rows.filter(r=>r.completed),bad=valid.filter(r=>r.violation),compliant=valid.filter(r=>!r.violation);
  const items=[
   {id:'monitor-valid',title:'Valid monitor verdicts',value:`${valid.length} / ${rows.length}`,note:`${rows.length-valid.length} failed requests or malformed verdicts`,queryId:'monitors',rows},

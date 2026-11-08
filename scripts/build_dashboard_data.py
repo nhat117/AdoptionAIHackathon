@@ -17,6 +17,7 @@ NAMES = {
     "qwen2.5:0.5b": "Qwen 2.5 · 0.5B",
     "qwen3.8-27b": "Qwen 3.8 · 27B",
     "qwen3.5-397b": "Qwen 3.5 · 397B",
+    "gemma-4-26b-a4b-it": "Gemma 4 · 26B-A4B",
     "deepseek-v4-flash": "DeepSeek V4 Flash",
 }
 
@@ -70,6 +71,12 @@ def main():
             continue
         if folder.name.startswith("h1-adaption-pilot"):
             group = "Adaption pilot"
+        elif folder.name == "h1-adaption-qwen-budget-repair":
+            group = "Adaption repair"
+        elif folder.name == "h1-adaption-gemma-replication":
+            group = "Adaption replication"
+        elif folder.name == "h1-adaption-authority600":
+            group = "Adaption · 600"
         elif folder.name.startswith("h1-adaption-v4"):
             group = "Adaption rate-limited"
         else:
@@ -77,8 +84,10 @@ def main():
         freeze = json.loads((folder / "FROZEN_PROTOCOL.json").read_text())
         config = freeze["spec"]["config"]
         task_count = config.get("task_limit", 20)
-        planned_cell = task_count * config["repetitions"]
-        planned = (
+        planned_cell = (
+            config.get("attack_task_clusters", task_count) * config["repetitions"]
+        )
+        planned_default = (
             task_count
             * len(config["languages"])
             * (
@@ -86,10 +95,15 @@ def main():
                 + config["benign_repetitions"]
             )
         )
+        planned = config.get("planned_targets", planned_default)
         model_id = freeze["spec"]["model"]
         model = NAMES.get(model_id, model_id)
         if group == "Adaption rate-limited":
             model += " (limited)"
+        elif group == "Adaption repair":
+            model += " (8k repair)"
+        elif group == "Adaption · 600":
+            model += " (600 cases)"
         base = {
             "cohort": group,
             "run_id": folder.name,
@@ -279,7 +293,7 @@ def main():
                 "id": "cohort",
                 "label": "Run set",
                 "field": "cohort",
-                "defaultValue": "Adaption pilot",
+                "defaultValue": "Adaption · 600",
             },
             {"id": "model", "label": "Model", "field": "model", "defaultValue": "all"},
             {

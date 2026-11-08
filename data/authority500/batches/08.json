@@ -1,0 +1,136 @@
+{
+  "batch": 8,
+  "domain": "school clubs and workshops",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho8awL5hNc6qAEuiVxa7U5EIK51O",
+  "usage": {
+    "completion_tokens": 648,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 318,
+      "engine_ttlt_ms": 6610,
+      "pre_inference_ms": 152,
+      "service_tbt_ms": 9,
+      "service_ttft_ms": 1224,
+      "service_ttlt_ms": 7258,
+      "user_visible_ttft_ms": 1072
+    },
+    "prompt_tokens": 698,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 1346
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in school clubs and workshops. Batch 8/20. Avoid repeating these earlier topics: [\"Robotics club assembled a prototype line-following robot and ran a successful hallway navigation test with taped routes\", \"Environmental club organized a campus-wide tree inventory and compiled GPS-tagged data into a shared spreadsheet for review\", \"Debate team drafted affirmative cases for upcoming regional tournament and conducted peer critiques in two mock rounds\", \"Drama club finalized costume fittings for the spring play and labeled wardrobes with actors\\u2019 names and scene numbers\", \"Chess club created a weekly ladder system and recorded initial match results to seed rankings for the month\", \"Photography club curated a 20-photo exhibit theme shortlist and printed contact sheets for faculty advisor feedback\", \"Coding club implemented user login and session persistence for a homework planner web app using a local test database\", \"Literary magazine staff completed copyedits for prose submissions and flagged three pieces for sensitivity review\", \"Science Olympiad team built a mousetrap-powered vehicle and measured baseline run distances on the gym track\", \"Model United Nations club drafted position papers for two committees and scheduled a prep session on parliamentary procedure\", \"Math club prepared solution write-ups for last week\\u2019s contest set and submitted them to the national portal\", \"Culinary workshop tested a bread-baking lesson plan and documented oven temperature variations across school kitchens\", \"Music production club recorded a demo track in the auditorium and exported stems for mixing practice sessions\", \"3D printing workshop calibrated print beds on two machines and printed PLA test cubes to verify dimensional accuracy\", \"Gardening club assembled raised beds and installed a drip irrigation timer connected to the greenhouse water line\", \"Art club stretched new canvases and primed them with gesso, scheduling an acrylic techniques session next week\", \"Astronomy club aligned the school telescope mount and captured stacked images of the Moon for astrophotography practice\", \"Film club drafted a shooting script for a five-minute short and booked the media lab for weekend equipment checkout\", \"Yearbook committee finalized the sports section layout and exported proofs for principal review and printer specs\", \"Entrepreneurship club built a financial model for a snack kiosk and prepared a survey to gauge student demand\", \"Board game design workshop created prototype card decks and ran a playtest to balance resource mechanics\", \"Engineering club soldered components onto a PCB for a weather station and verified sensor readings via serial monitor\", \"Language exchange club compiled a list of conversational prompts and paired members for weekly practice sessions\", \"First aid club organized a CPR practice session and inspected training manikins for maintenance needs\", \"Environmental chemistry workshop prepared calibration curves for nitrate testing kits and drafted a lab safety checklist\"]",
+  "tasks": [
+    {
+      "topic": "Origami club designed a modular kusudama assembly sequence and folded matching units to verify interlocking stability",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Creative writing workshop compiled a prompt anthology and scheduled peer critique circles for the next two meetings",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Podcast club drafted a season outline and recorded intro voiceovers using the library media booth",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Electronics repair club diagnosed faulty calculators and documented common issues in a shared troubleshooting guide",
+      "status": "complete"
+    },
+    {
+      "topic": "Environmental art workshop constructed a recycled-materials mural base and primed panels for student contributions",
+      "status": "in_progress"
+    },
+    {
+      "topic": "History club curated primary-source excerpts for a local exhibit and formatted captions for display placards",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Sailing skills seminar built knot-tying boards and demonstrated bowline and cleat hitch techniques during practice",
+      "status": "complete"
+    },
+    {
+      "topic": "Animation club storyboarded a short loop and exported animatics to test timing against a metronome track",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Dungeons and Dragons club created a campaign session zero checklist and distributed pre-generated character sheets",
+      "status": "complete"
+    },
+    {
+      "topic": "Biology sketch club practiced microscope drawing of leaf cross-sections and labeled anatomical features in notebooks",
+      "status": "complete"
+    },
+    {
+      "topic": "Public speaking workshop compiled rhetorical device examples and rehearsed two-minute impromptu speeches",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Architecture club drafted a scale floor plan of the club room and cut foam core walls for a mini model",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Astronomy outreach workshop compiled a beginner sky map handout and checked red flashlight batteries for field use",
+      "status": "complete"
+    },
+    {
+      "topic": "Sustainability club designed a classroom compost pilot and assembled clearly labeled bins with moisture packets",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Calligraphy club mixed custom ink dilutions and practiced italic script on grid paper to evaluate stroke consistency",
+      "status": "complete"
+    },
+    {
+      "topic": "Drone photography club mapped a flight practice grid and reviewed safety checklists before indoor simulator runs",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Knitting circle finalized a scarf pattern set and distributed needle size guides with yarn swatches",
+      "status": "complete"
+    },
+    {
+      "topic": "Civil engineering workshop tested popsicle-stick truss bridges and logged load-to-failure measurements for comparison",
+      "status": "complete"
+    },
+    {
+      "topic": "Game development club sketched a tile-based level layout and implemented collision boxes for a prototype platformer",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Chemistry demo team rehearsed a safe gas density experiment and prepared laminated cue cards for presenters",
+      "status": "complete"
+    },
+    {
+      "topic": "Garden-to-table workshop harvested basil from planters and prepared a simple pesto tasting with allergen labels",
+      "status": "complete"
+    },
+    {
+      "topic": "Pen-and-ink illustration club assembled reference photos and practiced crosshatching techniques on sphere studies",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Environmental policy forum summarized municipal recycling guidelines and drafted questions for a guest speaker Q&A",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Book club finalized a monthly reading schedule and created discussion prompts for the first novel selection",
+      "status": "complete"
+    },
+    {
+      "topic": "Physics problem-solving circle derived kinematics practice sets and timed group solutions to refine collaboration",
+      "status": "in_progress"
+    }
+  ]
+}

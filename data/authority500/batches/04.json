@@ -1,0 +1,136 @@
+{
+  "batch": 4,
+  "domain": "libraries and reading events",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho803x3F4Wm4rMU9zwfIyo0Qiu1d",
+  "usage": {
+    "completion_tokens": 607,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 9,
+      "engine_ttft_ms": 316,
+      "engine_ttlt_ms": 6106,
+      "pre_inference_ms": 101,
+      "service_tbt_ms": 9,
+      "service_ttft_ms": 1087,
+      "service_ttlt_ms": 6655,
+      "user_visible_ttft_ms": 986
+    },
+    "prompt_tokens": 616,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 1223
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in libraries and reading events. Batch 4/20. Avoid repeating these earlier topics: [\"Digitizing local history newsletters into a searchable PDF archive with OCR tagging and metadata schemas\", \"Launching a weekend family storytime series featuring bilingual picture books and interactive rhyme activities\", \"Installing self-check kiosks and reconfiguring circulation desk workflow to reduce patron wait times\", \"Curating a traveling book display on climate resilience with QR-linked reading lists and maps\", \"Rolling out a curbside holds pickup pilot with SMS notifications and weatherproof lockers\", \"Hosting a silent reading club where patrons choose seats, set timers, and share book notes afterward\", \"Upgrading the teen room with manga shelves, maker kits, and a rotating zine corner\", \"Running a poetry open mic night featuring local poets and audience feedback cards\", \"Implementing RFID tagging for the entire DVD collection to streamline inventory and security\", \"Coordinating a community read of a contemporary novel with chapter discussions and author Q&A livestream\", \"Launching a literacy tutoring program pairing volunteers with adult learners using leveled readers\", \"Hosting a board game and book pairing night with strategy titles matched to related nonfiction\", \"Migrating the catalog to a cloud ILS with improved search facets and patron recommendation widgets\", \"Starting a weekly preschool STEM storytime featuring counting tales and hands-on manipulatives\", \"Establishing a seed library with labeled envelopes, planting guides, and checkout tracking\", \"Organizing a banned books read-in with reading stations and informational displays about intellectual freedom\", \"Deploying an outdoor Wi-Fi reading garden with shade sails, power outlets, and weatherproof seating\", \"Curating an oral history listening session with tablets, headphones, and themed annotation prompts\", \"Launching a mobile library van route serving senior centers with large-print rotations\", \"Hosting a mystery book swap night using wrapped books and clue tags to encourage blind picks\", \"Creating multilingual signage for shelving areas and service points to improve wayfinding\", \"Running a cookbook club where participants prepare recipes and discuss culinary histories\", \"Implementing a fine-free policy pilot with data dashboards tracking returns and patron satisfaction\", \"Scheduling a comic reading marathon with artist sketches, panel discussions, and cosplay guidelines\", \"Building a local author shelf spotlight program with rotating displays and short reading events\"]",
+  "tasks": [
+    {
+      "topic": "Coordinating a teen audiobook review circle with shared listening logs and rotating discussion leaders",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Developing a themed winter reading challenge with badge stickers, progress charts, and prize drawings",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Hosting a lunchtime brown-bag nonfiction series featuring short excerpts and facilitated note-taking workshops",
+      "status": "complete"
+    },
+    {
+      "topic": "Cataloging a new mini-collection of dyslexia-friendly fonts and high-contrast paperbacks with special labels",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Launching a travel memoir book club with map annotations and passport stamp bookmarks for attendees",
+      "status": "complete"
+    },
+    {
+      "topic": "Organizing a picture book art exhibit with original illustrations and curator talks on visual storytelling",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Piloting a reading buddy bench where patrons pair up for 20-minute aloud sessions using prompt cards",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Implementing a magazine swap rack with rotation schedule and condition-check guidelines for donations",
+      "status": "complete"
+    },
+    {
+      "topic": "Introducing a lunchtime quiet hour policy with decibel monitoring and soft-light reading lamps",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Creating a short-story sampler station with themed bundles and takeaway discussion prompts",
+      "status": "complete"
+    },
+    {
+      "topic": "Hosting a sci-fi worldbuilding readalong featuring author essays and collaborative timeline posters",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Launching a bedtime story dial-in line with weekly refreshed recordings and printable reading logs",
+      "status": "complete"
+    },
+    {
+      "topic": "Establishing a classics remix club pairing original texts with modern retellings and cross-annotated guides",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Rolling out an interlibrary audiobook sharing agreement with standardized packaging and courier routes",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Curating a sports literature month with athlete memoir spotlights and highlight-reel reading guides",
+      "status": "complete"
+    },
+    {
+      "topic": "Deploying a quiet pod reservation system for focused reading and note-taking sessions",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Developing a micro-essay reading salon where patrons perform five-minute readings and receive zine anthologies",
+      "status": "complete"
+    },
+    {
+      "topic": "Building a rotating multilingual story cube display with fold-out summaries and pronunciation notes",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Testing a reading goals kiosk that prints personalized lists based on time availability and genres",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Hosting a nature writing walk-and-read with trail markers linking to passages and field jotting cards",
+      "status": "complete"
+    },
+    {
+      "topic": "Assembling a large-print book club toolkit with facilitator guides, timers, and tactile bookmarks",
+      "status": "complete"
+    },
+    {
+      "topic": "Launching a letters-from-authors display featuring reproduced correspondence and context captions",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Creating a lunchtime flash fiction open reading with strict three-minute slots and bell cues",
+      "status": "complete"
+    },
+    {
+      "topic": "Implementing a rotating pamphlet press for short local essays with binding workshops and ISBN registration",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Organizing a mystery short-story ladder challenge where readers unlock clues by finishing curated sequences",
+      "status": "complete"
+    }
+  ]
+}

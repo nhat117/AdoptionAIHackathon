@@ -1,0 +1,136 @@
+{
+  "batch": 15,
+  "domain": "small volunteer-run festivals",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho9cz2j4NHoqHupiJfuq2vprfTOf",
+  "usage": {
+    "completion_tokens": 610,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 320,
+      "engine_ttlt_ms": 6284,
+      "pre_inference_ms": 90,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 897,
+      "service_ttlt_ms": 6857,
+      "user_visible_ttft_ms": 808
+    },
+    "prompt_tokens": 175,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 785
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in small volunteer-run festivals. Batch 15/20. ",
+  "tasks": [
+    {
+      "topic": "Community cinema festival scheduling finalized with three venues confirmed and projectionist roster assigned for weekend screenings",
+      "status": "complete"
+    },
+    {
+      "topic": "Volunteer training modules drafted and reviewed for front-of-house, ticketing, and usher roles at the neighborhood arts fair",
+      "status": "complete"
+    },
+    {
+      "topic": "Pop-up stage lighting rig tested and labeled; cabling maps created for the folk music courtyard stage",
+      "status": "complete"
+    },
+    {
+      "topic": "Local food vendor coordination ongoing with permits submitted and health inspector walkthrough scheduled for Friday",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Handmade signage painted for children’s craft zone and wayfinding arrows sealed for weather resistance",
+      "status": "complete"
+    },
+    {
+      "topic": "Recycled-materials art exhibition layout measured and pedestal placements taped on community hall floor",
+      "status": "complete"
+    },
+    {
+      "topic": "Accessibility plan drafting underway, including quiet room setup and chair loans arranged with nearby church",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Open-mic performer call finalized; time slots emailed and backup list prepared for late arrivals",
+      "status": "complete"
+    },
+    {
+      "topic": "Rain contingency plan in development with tent rentals shortlisted and cost comparisons documented",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood parade route chalked and steward positions assigned, with whistle and vest kits assembled",
+      "status": "complete"
+    },
+    {
+      "topic": "Acoustic busking permits being gathered from the town council with map of approved corners pending",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Volunteer check-in desk assembled; badge printer tested and lanyards sorted by day and role color",
+      "status": "complete"
+    },
+    {
+      "topic": "Sustainability station signage drafted and compost bin pickups coordinated with local hauler",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Heritage dance showcase rehearsal schedule confirmed and community center keys secured for evening slots",
+      "status": "complete"
+    },
+    {
+      "topic": "Festival app schedule content entry ongoing with stage times, workshop descriptions, and venue addresses",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Portable PA system batteries charged and spare mic cables bundled for the storytelling gazebo",
+      "status": "complete"
+    },
+    {
+      "topic": "First aid corner setup plans drafted; volunteer nurse shifts partially filled and supply checklist started",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Blanket seating area roped and staked; ground protection mats placed by the willow grove",
+      "status": "complete"
+    },
+    {
+      "topic": "Local artisan market booth maps under revision after fire lane adjustments from the city review",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community mural primer applied and chalk grid marked; paint palettes mixed for Saturday session",
+      "status": "complete"
+    },
+    {
+      "topic": "Kite-making workshop materials procurement underway, with dowels and tissue paper orders awaiting pickup",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Bicycle valet corral fencing acquired and rack layout marked; signage arrows printed for main gate",
+      "status": "complete"
+    },
+    {
+      "topic": "Storytime tent sound bleed tests ongoing with soft partitions trialed between adjacent stages",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Volunteer snack station stocked with shelf-stable items and hydration coolers labeled per shift",
+      "status": "complete"
+    },
+    {
+      "topic": "Neighborhood cleanup crew rosters forming; litter grabber delivery pending and route maps drafted",
+      "status": "in_progress"
+    }
+  ]
+}

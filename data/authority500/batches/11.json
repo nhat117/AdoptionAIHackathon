@@ -1,0 +1,136 @@
+{
+  "batch": 11,
+  "domain": "local history and walking trails",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho9284ERdDheDCnkss76TouL4phO",
+  "usage": {
+    "completion_tokens": 593,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 9,
+      "engine_ttft_ms": 318,
+      "engine_ttlt_ms": 5921,
+      "pre_inference_ms": 87,
+      "service_tbt_ms": 9,
+      "service_ttft_ms": 1532,
+      "service_ttlt_ms": 7127,
+      "user_visible_ttft_ms": 1445
+    },
+    "prompt_tokens": 176,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 769
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in local history and walking trails. Batch 11/20. ",
+  "tasks": [
+    {
+      "topic": "Map and grade resurfacing of a 3-mile neighborhood trail loop with drainage fixes and new mile markers",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Install interpretive signage at two creek overlooks featuring local plant species and watershed facts",
+      "status": "complete"
+    },
+    {
+      "topic": "Audit and replace worn wayfinding blazes along the ridge connector between Oakview and Pine Bend",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Construct a small pedestrian footbridge over a seasonal runoff gully on the Meadow Spur",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Compile a digital catalog of historic trailhead kiosks with photos and maintenance notes",
+      "status": "complete"
+    },
+    {
+      "topic": "Trim overgrown brush and remove fallen limbs on the Lakeside Path after winter storms",
+      "status": "complete"
+    },
+    {
+      "topic": "Pilot a counter device to measure weekend foot traffic at the Main Ravine entrance",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Re-route a muddy switchback section with a 200-foot bench cut to reduce erosion",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Add rest-area benches at two scenic points along the Bluff Walk with durable foundations",
+      "status": "complete"
+    },
+    {
+      "topic": "Survey and mark a safe walking route linking the town library to the South Park loop",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Refurbish trailhead bulletin boards with updated maps, QR codes, and emergency contacts",
+      "status": "complete"
+    },
+    {
+      "topic": "Stabilize creek bank adjacent to the Willow Trail using coir logs and native plantings",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Replace broken boardwalk planks along the Marsh Walk with rot-resistant lumber",
+      "status": "complete"
+    },
+    {
+      "topic": "Create a seasonal detour plan for the Prairie Path during nesting season to protect ground birds",
+      "status": "complete"
+    },
+    {
+      "topic": "Install reflective trail markers for improved dusk visibility on the Sunset Ridge segment",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Produce a trail etiquette leaflet emphasizing leash rules and yield protocols for mixed-use paths",
+      "status": "complete"
+    },
+    {
+      "topic": "Evaluate slope grades on the North Hill climb to determine need for additional switchbacks",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Paint crosswalks and add curb ramps connecting the Greenway to downtown sidewalks",
+      "status": "complete"
+    },
+    {
+      "topic": "Compile GPS traces to validate wayfinding accuracy for the Heritage Loop audio tour",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Clean and realign culverts under the Birch Hollow path to restore proper water flow",
+      "status": "complete"
+    },
+    {
+      "topic": "Mark and clear a winter-only route avoiding icy rock slabs on the Cliff Edge Trail",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Install bike racks and a water fountain at the Elm Street trailhead pavilion",
+      "status": "complete"
+    },
+    {
+      "topic": "Test a volunteer reporting app for trail hazards with sample incidents and response workflows",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Replant native grasses along the Old Quarry Walk to replace compacted shoulder areas",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Finalize wayfinding map updates to include the new Riverbend spur and picnic turnout",
+      "status": "complete"
+    }
+  ]
+}
