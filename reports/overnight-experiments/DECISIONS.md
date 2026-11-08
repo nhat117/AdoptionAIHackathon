@@ -30,7 +30,7 @@ Frozen diagnostic dataset: two states × two evidence conditions × two models �
 
 ### Experiment 5 — does verifiable evidence survive forwarding?
 
-Give only one non-source recipient the same authenticated truth observation. Compare text-only transmission with simulator-validated proof capsules automatically attached to local messages. The informed recipient, claim text, scenario, neighbours, timing, budgets and prompts are matched. Capsules cannot be minted by model text; the simulator validates their origin and content. Keep all nine recipient agents live and preserve irreversible evacuation and simultaneous final messages.
+Give only one non-source recipient the same authenticated truth observation. Compare text-only transmission with simulator-validated proof capsules automatically attached to local messages. The informed recipient, controlled-source claim text, initial observations, scenario, neighbours, timing, budgets and prompts are matched. Recipient messages come from independent live trajectories and are not text-matched across runs. Capsules cannot be minted by model text; the simulator validates their origin and content. Keep all nine recipient agents live and preserve irreversible evacuation and simultaneous final messages.
 
 Frozen diagnostic dataset: two states × two forwarding modes × two models × two scenario seeds = sixteen English games. The same before-collection seed-count decision applies here. Measure informed-recipient action, uninformed-recipient correctness, authenticated-evidence reach, rounds-to-exposure, false alarms and missed evacuations. Proof delivery is a transport intervention, not evidence that agents spontaneously learned to preserve provenance. Citation or exposure alone does not establish belief. A positive result should motivate a held-out, larger matched evaluation; it is not proof of general robustness or novelty.
 
@@ -53,3 +53,21 @@ Freeze diagnostic datasets, prompts, schema, hypotheses and stopping criteria be
 The v1 optional max-price filter was added after serialization and was not transmitted; the reservation ledger remained active and returned spend stayed within its ceiling. After original collection ended, the serialization order was corrected and regression-tested on actual request bytes before diagnostic collection. The v2 extension runner transmits the filter; historical v1 sources are verified at revision `4971692`. Preserve the historical v1 source and its hash audit. Unknown billing must stop new calls; a verified local DNS failure can be reconciled without reissuing that game.
 
 Check Messenger and PR feedback at section boundaries; preserve any user composer draft. Send each completed section as a labelled Codex report with directly attached images, as requested. A free Codex reset is authorized by the user, but the exposed usage tool is read-only and desktop control of Codex is blocked; do not claim activation.
+
+## Independent LLM judge checkpoints
+
+The user requested an independent LLM judge outside the implementation loop. A separate read-only reviewer now audits protocol, raw evidence, costs and conclusions at each checkpoint. Record its verdict, concrete findings, responses and unresolved limitations. The judge has no privileged ground truth; its critique must be checked against artifacts. Planned reviews: retrospective original collection/design, Terra comparison, Experiment 4, Experiment 5 and final synthesis. Do not treat a favorable judge verdict as statistical evidence or proof of novelty.
+
+### Judge checkpoint 1: original results/design and Terra
+
+Verdict: **proceed with caveats**, no collection blocker for Experiment 4. The judge independently replayed eight Terra games and reported no transition, outcome, call-count or routing discrepancy. It confirmed US$21.30196725 total spend and warned against ranking models on pooled accuracy.
+
+Required responses before Exp4: (1) analysis now distinguishes first authenticated receipt, first subsequent active decision and action, including terminal/departure-round receipt without an opportunity to act; (2) corrected Exp5 matching language to distinguish fixed source/initial inputs from independent live recipient messages; (3) added explicit model-by-seed-by-state pass/fail/missing positive-control tables. These are analysis/documentation changes; frozen collection inputs are unchanged.
+
+Unresolved interpretation limits retained: proof transport bundles authenticated provenance with access to explicit truthful content; it does not isolate a pure provenance effect. Capsules are simulator-attested metadata, not cryptographic proof. Model/host confounding, small samples, missingness and unestablished novelty remain disclosed. Next judge checkpoint must verify Exp4 replay/costs/cell completeness and the predeclared controls before a transport-benefit interpretation.
+
+### Terra result and structural observability check
+
+Terra completed 8/8, 318 calls, US$0.59907325; cumulative US$21.30196725. Recipients ultimately evacuated for Danger claims and stayed for Safe, unlike Sonnet's stay-only behavior. Both aggregate to50% across the balanced four cases, but their error profiles differ. This is not a safety ranking.
+
+The independent judge then verified a structural limitation: opposite hidden-truth/accuracy worlds sharing a claim produce identical recipient observations and transitions. It reported96 exact coupled full-trajectory checks across seeds, languages, identities and topologies. With equally weighted paired worlds and a fixed policy, expected action correctness is50%; truth is unidentifiable to recipients, while correctness remains measurable by the evaluator. Completion imbalance, sampling or side channels can violate the observed50% average. This concerns correctness, not necessarily payoffs or reliability. Preserve this as a design limitation discovered after the original collection. Authenticated independent observations in Exp4 break the symmetry. Verdict: **proceed**, no additional collection change required.
