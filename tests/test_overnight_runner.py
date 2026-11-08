@@ -73,9 +73,14 @@ def test_backend_pins_endpoint_and_reserves_before_network(monkeypatch):
         assert payload["provider"]["only"] == ["google-vertex/global"]
         assert payload["provider"]["allow_fallbacks"] is False
         assert payload["reasoning"] == {"effort": "low"}
+        payload["provider"]["max_price"] = {"prompt": 2, "completion": 10}
         ordered.append("reserved")
 
     def network(request, timeout):
+        assert json.loads(request.data)["provider"]["max_price"] == {
+            "prompt": 2,
+            "completion": 10,
+        }
         assert ordered == ["reserved"]
         ordered.append("requested")
         return io.BytesIO(

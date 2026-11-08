@@ -17,6 +17,7 @@ class OpenRouterBackend:
         max_prompt_bytes=16000,
         response_schema=None,
         provider_only=None,
+        provider_ignore=None,
         before_request=None,
     ):
         self.api_key, self.settings, self.record = api_key, settings, record
@@ -24,6 +25,7 @@ class OpenRouterBackend:
         self.max_prompt_bytes = max_prompt_bytes
         self.response_schema = response_schema
         self.provider_only = provider_only
+        self.provider_ignore = provider_ignore
         self.before_request = before_request
 
     async def generate(self, agent: AgentSettings, input_text: str) -> str:
@@ -47,6 +49,8 @@ class OpenRouterBackend:
         }
         if self.provider_only:
             payload["provider"]["only"] = [self.provider_only]
+        if self.provider_ignore:
+            payload["provider"]["ignore"] = self.provider_ignore
         # These reasoning endpoints do not expose temperature control.
         if self.settings.model in {
             "openai/gpt-6.1-terra",
@@ -64,6 +68,8 @@ class OpenRouterBackend:
                     "schema": self.response_schema,
                 },
             }
+        if self.before_request:
+            self.before_request(payload)
         request = urllib.request.Request(
             "https://openrouter.ai/api/v1/chat/completions",
             data=json.dumps(payload).encode(),
@@ -72,8 +78,6 @@ class OpenRouterBackend:
                 "Content-Type": "application/json",
             },
         )
-        if self.before_request:
-            self.before_request(payload)
         with urllib.request.urlopen(request, timeout=30) as response:
             result = json.load(response)
         self.record(
@@ -85,6 +89,7 @@ class OpenRouterBackend:
                 "upstream_provider": result.get("provider"),
                 "usage": result.get("usage"),
                 "requested_reasoning_effort": self.reasoning_effort,
+                "requested_provider": payload["provider"],
                 "requested_temperature": payload.get("temperature"),
                 "finish_reason": (result.get("choices") or [{}])[0].get(
                     "finish_reason"

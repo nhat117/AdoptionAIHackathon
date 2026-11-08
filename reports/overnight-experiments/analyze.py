@@ -6,6 +6,7 @@ import csv
 import gzip
 import hashlib
 import json
+import subprocess
 from collections import Counter
 from pathlib import Path
 from statistics import mean
@@ -322,7 +323,12 @@ async def main(args):
     packs = json.loads(Path("data/experiment1/languages.json").read_text())
     errors = []
     for path, expected in plan["sources"].items():
-        if hashlib.sha256(Path(path).read_bytes()).hexdigest() != expected:
+        source = (
+            subprocess.check_output(["git", "show", f"{args.source_revision}:{path}"])
+            if args.source_revision
+            else Path(path).read_bytes()
+        )
+        if hashlib.sha256(source).hexdigest() != expected:
             errors.append(f"frozen_source_changed:{path}")
     if (
         hashlib.sha256(Path("data/experiment1/languages.json").read_bytes()).hexdigest()
@@ -377,6 +383,7 @@ async def main(args):
         call_count_definition="Decision attempts; includes pre-request guard denials",
         returned_provider_calls=sum(r["returned_provider_calls"] for r in selected),
         analysis_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        source_verification_revision=args.source_revision or "working_tree",
         budget_audit=dict(
             pending=len(pending),
             ledger_reported_usd=spent,
@@ -459,4 +466,9 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--root", type=Path, default=Path("runs/overnight-v1"))
     p.add_argument("--section", type=int, choices=[1, 2, 3], required=True)
+    p.add_argument(
+        "--source-revision",
+        default=None,
+        help="Verify frozen v1 files against their preserved Git revision",
+    )
     asyncio.run(main(p.parse_args()))

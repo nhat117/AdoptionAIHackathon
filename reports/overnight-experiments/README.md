@@ -17,7 +17,7 @@ Both graph types have ten nodes, four neighbours per node, and twenty undirected
 
 The maximum newly reported API spend is **US$35**, shared across all sections. Before each request, the runner reserves US$0.20, conservatively above the allowed prompt/output charges. A pending or uncertain request is never replayed. Missing cost metadata, unexpected upstream routing or reasoning metadata, and uncertain billing stop new requests. Invalid decisions remain failed games, with no automatic retries or silent repairs. Game order is deterministically shuffled within sections; sections run sequentially with at most four concurrent games.
 
-Provider routing follows [OpenRouter's official provider selection documentation](https://openrouter.ai/docs/guides/routing/provider-selection). The endpoint was checked before launch: input US$2/million tokens and output US$10/million tokens; the live ledger reserves against these verified prices. A review during collection found that the optional `max_price` field is added by a callback after request serialization, so that server-side price filter is **not transmitted in collection version 1**. The per-call reservation ledger, bounded token sizes, endpoint restriction, returned-cost validation and US$35 total stop remain active. Preserve this collection version; correct and regression-test the serialization order after the frozen batches, with a separate implementation version for future runs. Low is a requested provider-specific setting, not equal computation across model families or proof of a particular hidden reasoning process.
+Provider routing follows [OpenRouter's official provider selection documentation](https://openrouter.ai/docs/guides/routing/provider-selection). The endpoint was checked before launch: input US$2/million tokens and output US$10/million tokens; the live ledger reserves against these verified prices. A review during collection found that the optional `max_price` field is added by a callback after request serialization, so that server-side price filter is **not transmitted in collection version 1**. The per-call reservation ledger, bounded token sizes, endpoint restriction, returned-cost validation and US$35 total stop remain active. The serialization order was corrected and regression-tested after the frozen batches completed; the separately versioned diagnostic runner transmits the filter before any request. Historical v1 evidence remains auditable at revision `4971692`. Low is a requested provider-specific setting, not equal computation across model families or proof of a particular hidden reasoning process.
 
 ## Verification and interpretation
 
@@ -31,7 +31,11 @@ From the repository root, with the local virtual environment and a local `.env`:
 
 ```sh
 PYTHONPATH=src .venv/bin/python reports/overnight-experiments/run.py --section 1
-PYTHONPATH=src .venv/bin/python reports/overnight-experiments/analyze.py --section 1
+PYTHONPATH=src .venv/bin/python reports/overnight-experiments/analyze.py --section 1 --source-revision 4971692
 ```
 
 Repeat for sections 2 and 3 only after auditing, analyzing, committing, pushing and reporting the prior section. An existing attempted game, including a failure, is skipped rather than reissued. Protocol/source changes require a new versioned run root. Analysis uses Matplotlib 3.11.2 and NumPy 2.5.4; these are plotting dependencies, separate from the inference runtime. The optional commands above do not authorize additional paid runs beyond the frozen plan.
+
+## New diagnostic extension
+
+The user approved a second-model check and evidence/control experiments 4–5. [Decision log](DECISIONS.md), [frozen diagnostic plan](extension-plan.json), and [dataset card](../../data/diagnostics-v2/README.md) document forty separately versioned games. Use `extensions.py --section terra`, then `--section 4` and `--section 5`, with analysis and reporting between sections. The original three-factor findings and failures remain unchanged.
