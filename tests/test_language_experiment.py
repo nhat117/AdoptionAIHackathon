@@ -196,7 +196,11 @@ def test_draft_live_packs_rejected_before_network_or_output(
 
 
 @pytest.mark.parametrize("effort", [None, "low"])
-def test_openrouter_reasoning_payload_is_opt_in(monkeypatch, effort):
+@pytest.mark.parametrize(
+    "model",
+    ["openai/gpt-6.1-terra", "anthropic/claude-sonnet-5.5", "qwen/qwen3.8-max-prime"],
+)
+def test_openrouter_reasoning_payload_is_opt_in(monkeypatch, effort, model):
     import io
     import urllib.request
 
@@ -205,6 +209,7 @@ def test_openrouter_reasoning_payload_is_opt_in(monkeypatch, effort):
 
     def fake_open(request, timeout):
         payload = json.loads(request.data)
+        assert ("temperature" in payload) == (model == "qwen/qwen3.8-max-prime")
         if effort is None:
             assert "reasoning" not in payload
         else:
@@ -217,7 +222,7 @@ def test_openrouter_reasoning_payload_is_opt_in(monkeypatch, effort):
 
     monkeypatch.setattr(urllib.request, "urlopen", fake_open)
     backend = OpenRouterBackend(
-        "test-key", Settings(), lambda _: None, reasoning_effort=effort
+        "test-key", Settings(model=model), lambda _: None, reasoning_effort=effort
     )
     assert asyncio.run(backend.generate(AgentSettings(), "test")) == "{}"
 
@@ -270,6 +275,8 @@ def test_unverified_live_reasoning_fails_before_network_or_output(
     [
         ("openai/gpt-4.1-mini", None, "not_applicable"),
         ("qwen/qwen3.8-27b", "low", "explicit"),
+        ("qwen/qwen3.8-max-prime", "low", "explicit"),
+        ("deepseek/deepseek-v4-pro-0813", "low", "explicit"),
         ("mistralai/mistral-small-3.2-24b-instruct", None, "not_applicable"),
     ],
 )

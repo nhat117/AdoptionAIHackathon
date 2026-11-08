@@ -1,0 +1,12 @@
+{
+  "model": "openai/gpt-6.1-terra",
+  "language": "en",
+  "requested_reasoning": "low",
+  "temperature": 0,
+  "max_output_tokens": 2048,
+  "attempts": 1,
+  "status": "failed",
+  "error_type": "HTTPError",
+  "http_status": 404,
+  "records": []
+}

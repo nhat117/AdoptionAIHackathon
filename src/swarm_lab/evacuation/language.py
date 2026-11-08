@@ -194,6 +194,8 @@ def reasoning_policy(mode, provider, model):
         return {"status": "not_applicable", "effort": None}
     if provider == "openrouter" and model in {
         "qwen/qwen3.8-27b",
+        "qwen/qwen3.8-max-prime",
+        "deepseek/deepseek-v4-pro-0813",
     }:
         return {"status": "explicit", "effort": "low"}
     raise ValueError(

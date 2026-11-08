@@ -29,6 +29,12 @@ class OpenRouterBackend:
             "max_tokens": self.settings.max_output_tokens,
             "provider": {"allow_fallbacks": False, "require_parameters": True},
         }
+        # These reasoning endpoints do not expose temperature control.
+        if self.settings.model in {
+            "openai/gpt-6.1-terra",
+            "anthropic/claude-sonnet-5.5",
+        }:
+            payload.pop("temperature")
         if self.reasoning_effort is not None:
             payload["reasoning"] = {"effort": self.reasoning_effort}
         request = urllib.request.Request(
@@ -50,6 +56,7 @@ class OpenRouterBackend:
                 "upstream_provider": result.get("provider"),
                 "usage": result.get("usage"),
                 "requested_reasoning_effort": self.reasoning_effort,
+                "requested_temperature": payload.get("temperature"),
                 "finish_reason": (result.get("choices") or [{}])[0].get(
                     "finish_reason"
                 ),
