@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,booktabs,tabularx,amsmath,xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\title{After False Reassurance Spreads\\Network Recovery in an Evacuation Game}
+\author{}\date{Initial proposal C --- November 8, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Removing a misleading agent may leave its messages circulating among other agents. We propose a controlled recovery study using an established networked evacuation task. Live agents exchange local signals and decide whether to evacuate at a cost before a possible disaster. A controlled peer introduces an incorrect reassurance, after which matched network states receive no intervention, source removal, or source removal plus an authenticated correction. A further comparison tests whether linking the correction to previously relayed claims helps beyond a factual correction alone. Outcomes include missed evacuations, unnecessary evacuations, and the continued forwarding of the corrected claim. The study separates removal of a sender from repair of information already delivered, and compares local correction with direct delivery to all agents. No experiments have been run. The proposed contribution is an action-based evaluation of recovery interventions, with explicit controls for information access, communication disruption, and irreversible decisions.
+\end{abstract}
+\section{Introduction}
+The question is: \emph{Once false reassurance has spread, does removing its source restore appropriate evacuation decisions, or must recipients explicitly receive a correction?} This is a collective process because remaining agents can relay earlier claims after the original sender disappears. Success means state-appropriate action, not merely a corrected final explanation.
+\section{Related work}
+The human evacuation game connects local signals to costly decisions \cite{danger}. ForesightSafety-TIDE already studies false testimony propagating through live agents and persisting after its source exits \cite{tide}. Thus neither persistence after removal nor provenance tracing is a new discovery proposed here. Our candidate extension tests recovery policies against irreversible safety actions in an evacuation task. Its distinctiveness requires further comparison with related methods before publication.
+\section{Proposed methods}
+\subsection{Established task and proposed adaptation}
+Shirado, Crawford and Christakis studied a networked evacuation game: participants exchanged local Safe/Danger signals and chose whether to evacuate. Evacuation was costly; remaining during a disaster lost the endowment. One informant knew the true state. Network size and topology were manipulated \cite{danger}. We adapt this task rather than inventing a scenario; we do not predict that models reproduce human psychology.
+
+The proposed simulator has ten live model agents on a fixed degree-four ring, separate histories, and local messages. A balanced hidden state determines disaster versus no disaster. One randomly placed informant receives an authenticated state observation; others know only that an informant exists. All agents share the payoff rules. Own payoffs are 1 point for evacuation, 0 for remaining during disaster, and 2 for remaining without disaster. As in the human task, surviving agents also receive 0.1 point per other agent taking the state-appropriate action. Points are evaluation signals, not evidence of human-like motivation.
+
+For reproducibility, replace real-time play with synchronous rounds and a simulator-selected, undisclosed terminal round. Freeze its distribution and maximum after calibration. Every active agent chooses a signal and stay/evacuate; actions and messages are applied together after all responses. Evacuation is irreversible. Exited agents cannot transmit, while previously delivered messages remain in recipients' histories. Use structured outputs and a fixed message budget. These scheduling and model-interface choices are adaptations, not a direct replication.
+
+\subsection{Matched exposure and recovery interventions}
+Assign a separate controlled peer to emit a false Safe claim in disaster trials. Preserve the truthful informant and rotate their positions independently. Honest agents remain free to adopt, question, ignore, or relay the claim. Give claims stable identifiers and log explicit parent identifiers for relays; identifiers track declared lineage, not guaranteed semantic ancestry. Audit a sample of paraphrases before relying on this measure.
+
+After a fixed initial exposure period, snapshot every agent history, delivered message, action, and network state. Fork each snapshot into four recovery arms: (1) no intervention; (2) disable further source transmissions; (3) disable the source and deliver an authenticated factual correction to its neighbours; (4) the same correction recipients and facts, plus explicit identifiers of the false claim and logged relays. Keep the source's past messages in all histories. Source removal changes transmission only; the source is excluded from the primary recipient outcome denominator. Agents are informed of the same removal event in arms 2--4. Never interpret a difference from arm 1 as pure information repair, since removal also changes communication capacity.
+
+The simulator supplies the correction at the same round, regardless of whether misinformation has successfully spread. Analyze all randomized episodes rather than only successful attacks. Match correction length approximately, keep authentication constant, and distinguish delivery from acknowledgment. Compare arm 3 against arm 2 for correction benefit, and arm 4 against arm 3 for explicit claim-linking benefit. Add a direct-to-all factual-correction benchmark to separate transport failures from failures to act after receipt; it is an information-access upper benchmark, not a budget-matched competitor.
+
+Use an honest-source reference and sham removal of a comparable honest sender to assess attack effects and communication disruption. Mirror the false-Safe condition with false-Danger claims in safe episodes. Record actions before correction separately: irreversible early evacuation cannot be repaired, and must not be attributed to a later intervention.
+
+\subsection{Outcomes and inference}
+Primary outcome is the fraction of non-source agents remaining when disaster strikes. Report unnecessary evacuation in safe trials, total payoff, correction delivery, and continuing false-claim relays. Define recovery descriptively by the trajectory of these measures, not an invented single score. Report post-correction actions among agents still active at the fork, with whole-episode outcomes alongside them.
+
+Pair recovery arms on each common snapshot, with independent continuation draws and the same simulator schedule. Estimate episode-level paired differences and intervals clustered by the originating episode; forked continuations and agents are not independent samples. Report variation across source positions and retain null and adverse effects. A no-communication baseline and an all-informed baseline help separate network transport from task comprehension. This design does not show that every corrected statement must be removed from context or that agents possess human beliefs.
+\section{Limitations and research status}
+This is an initial proposal, not a completed experiment or demonstrated research gap. The repository currently contains a general agent scaffold, not this simulator. Freeze model version, prompts, round distribution, sampling settings, sample size, invalid-output rules, and stopping criteria after separate calibration. Report invalid outputs and failed runs rather than silently dropping them. No hidden chain-of-thought is required. Use inert simulator actions and no external tools. Language and false-authority factors are deferred to avoid confounding the first pilot; language differences would not establish cultural differences.
+
+The human task supplies an experimental foundation, not evidence about model behavior. Results would depend on rewards, context management, graph structure, and the changed timing protocol. A ring is a starting condition, not a general account of all networks. No claim of first-of-kind work is made.
+
+\section{Provenance}
+The user's friend's six-page \emph{Authority Across Languages: Evaluating Socially Framed Prompt Injection and Monitoring in Multi-Agent AI Systems} informed the earlier authority-and-monitoring discussion. It is an unpublished proposal, not experimental evidence. The linked Google document is a submission template. This AI-assisted draft requires team review, real authorship information, and current submission-format checks before submission.
+\begin{thebibliography}{9}
+\bibitem{danger} H. Shirado, F. W. Crawford, and N. A. Christakis (2020). \emph{Collective communication and behaviour in response to uncertain `Danger' in network experiments}. Proceedings of the Royal Society A, 476:20190685. \url{https://doi.org/10.1098/rspa.2019.0685}.
+
+\bibitem{tide} C. Yan et al. (2026). \emph{When Truth Is Distributed: Misinformation Derails Collective Fact Recovery in LLM-Based Multi-Agent Systems}. arXiv:2608.03421v3. \url{https://arxiv.org/html/2608.03421v3}.
+\end{thebibliography}\end{document}

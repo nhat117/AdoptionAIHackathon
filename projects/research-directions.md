@@ -1,3 +1,5 @@
+> Superseded design note: A and C now use the established networked evacuation game. See [current proposals](README.md). The workflow setting and option B below are historical exploration, not the selected implementation.
+
 # Candidate experiments on collective safety and dissent
 
 Investigation date: 8 November 2026. Decision brief, not a completed study or a claim of novelty. No model experiments were run for this brief.

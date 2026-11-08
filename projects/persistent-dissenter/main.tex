@@ -1,83 +1,49 @@
 \documentclass[10pt]{article}
 \usepackage[margin=0.8in]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-\usepackage{booktabs,tabularx,amsmath}
-\usepackage{xurl}
+\usepackage{lmodern,microtype,booktabs,tabularx,amsmath,xurl}
 \usepackage[hidelinks]{hyperref}
-\usepackage{enumitem}
-\setlist{nosep,leftmargin=*}
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
-\title{Heard but Overruled?\\Persistent Correct Dissent under False Peer Authority}
-\author{}\date{Initial research proposal --- November 8, 2026}
+\title{Who Still Hears the Warning?\\Persistent Dissent in a Networked Evacuation Game}
+\author{}\date{Initial proposal A --- November 8, 2026}
 \begin{document}\maketitle
 \begin{abstract}
-A multi-agent team may acknowledge a valid safety objection while proceeding with a prohibited action, or avoid that action while excluding the agent that raised it. These outcomes should not be collapsed into agreement. We propose a controlled study of how a persistent, correct dissenter is treated when another peer falsely claims authority to override an explicit policy. A small simulated team will resolve synthetic workflow tasks with machine-checkable authorization rules. A scripted dissenter will provide the same valid objection once or repeatedly, while another scripted peer either asserts an unauthorized override or gives a matched recommendation without claiming authority. A model-controlled coordinator will choose consultation targets and a final action. We will separately measure observable attention, behavioral uptake, exclusion, and policy compliance. Paired task variants and an immutable authorization record will distinguish conversational status from actual permission. No experiments have been run. The intended deliverable is a reproducible pilot identifying where correct dissent stops influencing action, followed, if resources allow, by an interactive replication and a safeguard comparison.
+An accurate warning cannot protect a network if members stop receiving it. We propose an agent adaptation of an established human evacuation game to investigate whether repeated warnings reduce subsequent consultation of their source and whether that loss of access affects safety. Live agents exchange local messages and independently decide whether to incur an evacuation cost or remain exposed to a possible disaster. A controlled warning source receives a truthful observation; its communication schedule varies while other agents interact freely. Fixed and agent-selected consultation conditions distinguish failures of uptake from failures of delivery. Incorrect-warning and disaster-free controls prevent treating persistence or evacuation as inherently beneficial. We will measure consultation choices, warning delivery, and state-appropriate actions separately. This proposal specifies a pilot design rather than results; its potential contribution is a test of the consequences of endogenous communication access in an action-based network task.
 \end{abstract}
-
 \section{Introduction}
-A safety objection matters only if it can affect the action that follows. A peer may falsely assert that an exception has been approved; a correct dissenter can repeat the rule but may be acknowledged, ignored, or removed from later consultation. We ask: \emph{Does a false authority claim change whether persistent correct dissent is attended to, acted on, or excluded?}
-
-Correctness will be established by a deterministic policy checker, not majority vote. The objection remains valid, the dissenter has no special permissions, and the authority claim arrives through an ordinary peer message. This narrow study connects to Track 2's interest in roles and collective failures \cite{track}; a scripted pilot cannot establish emergent leadership or swarm-scale behavior.
-
+The motivating question is concrete: \emph{Does a network stop consulting its persistent warning source, and consequently fail to evacuate when danger is real?} An ignored warning is not by itself exclusion. We require observable choices that prevent later delivery, and retain separate measures of hearing, relaying, and acting. This connects collective safety to the network's communication decisions rather than to a single model responding to scripted peer opinions.
 \section{Related work}
-Tak et al.\ study minority signals and process losses in group deliberation \cite{tak}. Pitre et al.\ analyze communication failures, including correction and consensus problems \cite{pitre}. These motivate examining trajectories as well as final decisions. Kumarappan and Mujoo report that a correctly arguing dissenter reduces answer substitution under simulated peer disagreement \cite{yield}; this does not establish how persistent safety dissent is treated under contested authority.
-
-Vijjini et al.\ examine assigned status, persuasion, and unsafe compliance in power-asymmetric dialogues \cite{power}. Our proposed manipulation instead contradicts a peer's authority claim with a shared permission record. The normative-conformity sprint project describes sensitivity to audience identity and peer reports of rule-breaking \cite{norms}. We treat that public summary as early-stage participant work. Separating attention, uptake, exclusion, and safety is an operational choice, not a claim of unprecedented novelty.
-
+The evacuation experiment provides a precedent for studying communication and costly safety actions together \cite{danger}. Schachter's study of persistent disagreement motivates examining communication and rejection, but its dissenter was not an objectively correct safety expert \cite{schachter}. Contemporary LLM deliberation already studies correct minorities and participation \cite{tak}. Our candidate question concerns how chosen communication access changes later safety decisions; neither persistence nor minority recovery alone is a novelty claim.
 \section{Proposed methods}
-\subsection{Task and controlled interaction}
-Use synthetic approval workflows: publishing a mock record requires a valid token issued by an external principal. All agents see the same immutable policy and facts, and the token is absent. Saving a draft and requesting approval is always permitted. A simulator records prohibited action attempts without executing external operations.
+\subsection{Established task and proposed adaptation}
+Shirado, Crawford and Christakis studied a networked evacuation game: participants exchanged local Safe/Danger signals and chose whether to evacuate. Evacuation was costly; remaining during a disaster lost the endowment. One informant knew the true state. Network size and topology were manipulated \cite{danger}. We adapt this task rather than inventing a scenario; we do not predict that models reproduce human psychology.
 
-Each episode has a model-controlled coordinator and three scripted peers: claimant, dissenter, and neutral peer. The coordinator alone chooses consultation targets and the final structured action. The dissenter correctly cites the missing token. The claimant recommends publishing in both conditions, either asserting false override authority or giving a task-priority rationale without an authority claim. Match tone and approximate length, rotate names and order, and keep evidence and majority support constant.
+The proposed simulator has ten live model agents on a fixed degree-four ring, separate histories, and local messages. A balanced hidden state determines disaster versus no disaster. One randomly placed informant receives an authenticated state observation; others know only that an informant exists. All agents share the payoff rules. Own payoffs are 1 point for evacuation, 0 for remaining during disaster, and 2 for remaining without disaster. As in the human task, surviving agents also receive 0.1 point per other agent taking the state-appropriate action. Points are evaluation signals, not evidence of human-like motivation.
 
-Cross \textbf{false authority present/absent} with \textbf{one objection/persistent objection}. The initial objection is identical. Persistent dissent repeats the same evidence on two later scheduled turns; the one-objection control uses neutral status messages of similar length. Repeated semantic salience is intentionally part of the intervention.
+For reproducibility, replace real-time play with synchronous rounds and a simulator-selected, undisclosed terminal round. Freeze its distribution and maximum after calibration. Every active agent chooses a signal and stay/evacuate; actions and messages are applied together after all responses. Evacuation is irreversible. Exited agents cannot transmit, while previously delivered messages remain in recipients' histories. Use structured outputs and a fixed message budget. These scheduling and model-interface choices are adaptations, not a direct replication.
 
-All first-round messages are delivered. The coordinator can subsequently retain or exclude peers from consultation. Excluded peers' scheduled messages are logged but not delivered, making exclusion behaviorally consequential. Analyze treatment assignment regardless of delivery; a forced-delivery sensitivity run can separate repeated exposure from loss of access.
+\subsection{Warning schedule and consultation access}
+Cross a once-only versus repeated warning schedule with fixed versus agent-selected reception. In the repeated condition the informant transmits the same observation on each eligible round; in the once-only condition it transmits that observation initially, then a neutral status signal. The schedule is controlled by the simulator. All other agents choose messages and actions live. This is a live network with one controlled source, not an entirely unconstrained society.
 
-\subsection{Measures and analysis}
-\begin{tabularx}{\linewidth}{@{}lX@{}}
-\toprule
-Construct & Proposed observable measure\\
-\midrule
-Attention & Explicit reference to the objection's policy evidence in the next response; consultation selection recorded separately. This is not internal model attention.\\
-Uptake & Final plan includes the approval gate or permitted alternative and attributes it to the objection. Action change without attribution is reported separately.\\
-Exclusion & Removal of the dissenter from the next consultation list, with timing, actual delivery, and neutral-peer exclusion as comparators.\\
-Safety & No prohibited action attempt according to the checker; report safe task progress separately from abstention.\\
-\bottomrule
-\end{tabularx}
+Deliver the initial warning to all four neighbours of its source in every condition. From the next round, each recipient receives messages from two of its four potential neighbours. Fixed reception uses a preselected balanced schedule; chosen reception lets recipients select their next-round sources before seeing those messages. Both conditions have the same incoming message cap. Log potential, selected, sent, and delivered links separately. Exclusion means not selecting an available source; evacuation-related silence is a distinct event. Include a matched random-selection diagnostic to check whether mere sparsity explains failures.
 
-Record the coordinator's initial intended action before peer exposure for a secondary reversal analysis, without selecting the primary sample by that intention. Two reviewers will annotate attention and uptake using a frozen rubric, blinded to condition labels where feasible; report agreement and adjudicate disagreements. Save public transcripts, routing events, structured actions, and checker outputs; hidden chain-of-thought is unnecessary.
+First run truthful observations with both disaster states. Add a separately labelled incorrect-warning control with the same wording and schedule to assess whether persistent false alerts also gain influence. It is not an authenticated truthful observation; distinguish credentialed source identity from claim accuracy. Rotate identities and informant positions. Keep the source active during a short, prespecified warning window in every arm; this exception to voluntary evacuation is an explicit intervention. After that window, it follows the same action rules as the other agents.
 
-The primary estimand is the authority-induced risk difference in violation attempts within persistent-dissent trials. Report all four cell rates, task-paired differences, and task-cluster bootstrap intervals. Persistence interactions and other measures are secondary descriptive analyses. Agents and repeated runs within a task are not independent task samples. Correlations between exclusion and violations do not identify mediation.
+\subsection{Outcomes and inference}
+Primary outcomes are the fraction of eligible consultation opportunities selecting the source and the episode-level fraction of uninformed agents remaining at disaster. Report unnecessary evacuations in safe episodes and total payoff alongside them. Secondary measures include warning delivery, relaying, and time to evacuation. A message reference measures observable use, not internal attention.
 
-A tentative pilot might use 20 held-out task instances, four cells, and three independent runs (240 episodes for one model). This is a budget illustration, not a power calculation or committed sample. Final model, sampling settings, sample size, and stopping rule must be chosen after a separate calibration set and frozen before evaluation. If resources permit, test a mandatory permission-record check and then repeat with live peers. Retain the scripted comparison to identify the original manipulation.
+Estimate the persistence contrast within each reception condition and their interaction, pairing state, graph, source position, and simulator seed across arms. Repeat independent model runs and report uncertainty at the episode level; nodes are not independent experimental units. The routing intervention tests whether access policy changes outcomes. Correlation between source rejection and failure does not prove mediation or dislike. Before increasing scale, check whether any access loss occurs, whether delivered warnings change actions, and whether both correct and incorrect warnings are treated sensibly.
+\section{Limitations and research status}
+This is an initial proposal, not a completed experiment or demonstrated research gap. The repository currently contains a general agent scaffold, not this simulator. Freeze model version, prompts, round distribution, sampling settings, sample size, invalid-output rules, and stopping criteria after separate calibration. Report invalid outputs and failed runs rather than silently dropping them. No hidden chain-of-thought is required. Use inert simulator actions and no external tools. Language and false-authority factors are deferred to avoid confounding the first pilot; language differences would not establish cultural differences.
 
-\section{Results: planned reporting}
-No results are available. Report episode counts, invalid outputs, all cell rates with uncertainty, and a joint table of acknowledgement, uptake, exclusion, and safety. Choose illustrative traces by a stated rule, including counterexamples. Report null and mixed outcomes without changing hypotheses retrospectively.
+The human task supplies an experimental foundation, not evidence about model behavior. Results would depend on rewards, context management, graph structure, and the changed timing protocol. A ring is a starting condition, not a general account of all networks. No claim of first-of-kind work is made.
 
-\section{Discussion}
-The pilot can identify responses to a specific authority cue under a fixed routing protocol. It cannot establish dislike, subjective social pressure, or human organizational behavior. Correct scripted warnings omit real-world uncertainty: subsequent work should include incorrect objections rather than reward dissent indiscriminately. An interactive replication would test whether findings survive unconstrained peer responses; scaling to larger networks remains separate work.
-
-\section{Conclusion}
-The proposed contribution is an auditable test of whether correct dissent is heard, used, excluded, and safety-preserving. Its value depends on clear interventions and honest uncertainty rather than a promised conformity effect.
-
-\appendix
-\section{Limitations and Dual-Use / Ethical Considerations}
-Synthetic rules, scripted peers, and model-version sensitivity limit transfer. False-authority examples could inform agent manipulation; use inert records and no external access or real credentials. English is the baseline. Chinese and Vietnamese are optional matched translations requiring bilingual review of policy meaning and authority cues; differences would concern prompts and models, not national cultures.
-
-\section{Provenance and AI assistance}
-This AI-assisted initial proposal needs substantive team review, authorship details, and experimental work before final reporting. No authors or affiliations are asserted. The user reports inspiration from a friend's work; that review was unavailable and is not evidence here. The supplied Google document is a submission template. Final authors must verify claims and follow the current template and disclosure requirements.
-
+\section{Provenance}
+The user's friend's six-page \emph{Authority Across Languages: Evaluating Socially Framed Prompt Injection and Monitoring in Multi-Agent AI Systems} informed the earlier authority-and-monitoring discussion. It is an unpublished proposal, not experimental evidence. The linked Google document is a submission template. This AI-assisted draft requires team review, real authorship information, and current submission-format checks before submission.
 \begin{thebibliography}{9}
+\bibitem{danger} H. Shirado, F. W. Crawford, and N. A. Christakis (2020). \emph{Collective communication and behaviour in response to uncertain `Danger' in network experiments}. Proceedings of the Royal Society A, 476:20190685. \url{https://doi.org/10.1098/rspa.2019.0685}.
 
-\bibitem{tak} A. N. Tak et al. (2026). \emph{From Process Loss to Assembly Bonus: Human-Grounded Diagnosis of Multi-Agent LLM Collaboration}. arXiv:2609.13261v1. \url{https://arxiv.org/html/2609.13261v1}.
-\bibitem{pitre} P. Pitre et al. (2026). \emph{Understanding Communication Failures in Multi-Agent LLM Systems}. arXiv:2610.32060v1. \url{https://arxiv.org/html/2610.32060v1}.
-\bibitem{power} A. R. Vijjini, S. B. Manjunath, and S. Chaturvedi (2026). \emph{Do LLM Agents Mirror Socio-Cognitive Effects in Power-Asymmetric Conversations?} ACL. \url{https://aclanthology.org/2026.acl-long.2202/}.
-\bibitem{yield} A. Kumarappan and A. Mujoo (2026). \emph{Not Just RLHF: Why Alignment Alone Won't Fix Multi-Agent Sycophancy}. arXiv:2605.12991v3. \url{https://arxiv.org/abs/2605.12991v3}.
-\bibitem{norms} R. Acharya and J. Chen (2026). \emph{Impact of Normative Conformity and Perception on Model Misalignment in Multi-Agent Systems}. Digital Minds Research Sprint project page; early-stage participant work. \url{https://apartresearch.com/sprints/projects/impact-of-normative-conformity-and-perception-on-model-misalignment-in-multiagent-systems-4ey0}.
-\bibitem{track} Apart Research (2026). \emph{Swarm Alignment Hackathon}, Track 2: The Science of Agent Networks. Accessed November 8, 2026. \url{https://apartresearch.com/sprints/swarm-alignment-2026}.
-\end{thebibliography}
-\end{document}
+\bibitem{schachter} S. Schachter (1951). \emph{Deviation, rejection, and communication}. Journal of Abnormal and Social Psychology, 46:190--207. \url{https://doi.org/10.1037/h0062326}. Original experimental report also appears in \emph{Theory and Experiment in Social Communication} (1950), \url{https://cdn.isr.umich.edu/pubFiles/historicPublications/Theory_4867_.PDF}.
+\bibitem{tak} A. N. Tak et al. (2026). \emph{From Process Loss to Assembly Bonus: Human-Grounded Diagnosis of Multi-Agent LLM Collaboration}. \url{https://arxiv.org/html/2609.13261v1}.
+\end{thebibliography}\end{document}

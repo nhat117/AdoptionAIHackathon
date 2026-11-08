@@ -5,7 +5,7 @@ Use it to learn nodes, state, parallel branches, and joins before choosing a res
 experiment. No authority roles, monitoring policy, or research scoring are built in.
 Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/python).
 
-The [Persistent Dissenter proposal](projects/README.md) describes a planned study of how an agent team responds to a peer who repeatedly raises a correct safety objection.
+The [networked evacuation proposals](projects/README.md) describe two planned studies: persistent warnings and communication access (A), and recovery after false reassurance (C). Both adapt an established human network experiment; neither has been implemented or run.
 
 ## Setup and open Studio
 

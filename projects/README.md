@@ -1,13 +1,16 @@
-# Persistent Dissenter
+# Networked evacuation proposals
 
-[Read the proposal (PDF)](persistent-dissenter/main.pdf) · [LaTeX source](persistent-dissenter/main.tex)
+Two initial proposals adapt the established [Shirado, Crawford and Christakis (2020) evacuation experiment](https://doi.org/10.1098/rspa.2019.0685). They share a simulator foundation but test separate questions. No simulator or experimental results are claimed.
 
-*Heard but Overruled?* asks whether a peer’s false claim of authority changes how a coordinator responds to a teammate who repeatedly raises a correct safety objection. This AI-assisted draft proposes a pilot for [Swarm Alignment Track 2](https://apartresearch.com/sprints/swarm-alignment-2026). The experiment has not been run.
+| Study | Question | Draft |
+| --- | --- | --- |
+| A — Persistent warning | Does repeated warning reduce chosen communication access, with consequences for evacuation? | [PDF](persistent-dissenter/main.pdf) · [LaTeX](persistent-dissenter/main.tex) |
+| C — Network recovery | After false reassurance spreads, which correction policy restores appropriate action? | [PDF](network-recovery/main.pdf) · [LaTeX](network-recovery/main.tex) |
 
-Compile from the proposal directory with `tectonic main.tex` or run `pdflatex main.tex` twice.
+The original task supplies local signals, an informed participant, costly evacuation, and a hidden disaster state. Synchronous rounds, chosen reception, controlled false claims, and recovery interventions are proposed adaptations. The papers distinguish original procedures from these changes. The removed rule-breaking-leader project remains removed.
 
-Before implementation, decide model/provider/version, sampling settings, task bank, calibration split, sample size, stopping rules, annotation rubric, and available budget. The numerical pilot size is a tentative budget illustration, not power analyses. Freeze these choices before evaluation. Optional safeguards, second-model replications, and Chinese/Vietnamese extensions should not displace the core contrasts. Translation requires bilingual validation; no cultural conclusions are proposed.
+Start implementation with the common game engine, deterministic payoff and delivery checks, then an all-informed/no-communication comprehension pilot. Implement A and C as separate experiment configurations. Freeze sampling and evaluation choices after calibration before collecting held-out results. Do not expand language, authority, topology, and model factors simultaneously.
 
-Before submission, the team must substantively review and revise the draft, supply real author details, conduct/report any experiments, and transfer the approved text into the current official template if required. The current event page states an eight-page cap excluding references and appendices, a 150–250-word abstract, and a required limitations/dual-use appendix. The supplied generic Google template's four-page recommendation is not the event's cap. Check the latest Guidelines tab at submission time.
+Compile each directory with `tectonic main.tex` (or `pdflatex main.tex` twice). Before submission, review the methods, supply actual authorship, conduct experiments, and check the current official template and disclosure requirements.
 
-See [source-verification.md](source-verification.md) for evidence scope and unresolved provenance. No work has been submitted to the event.
+[Source verification](source-verification.md) records evidence scope. The [earlier research investigation](research-directions.md) is retained as background, not the current experimental specification.
