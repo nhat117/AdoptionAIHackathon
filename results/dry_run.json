@@ -1,0 +1,13 @@
+{
+  "dry_run": true,
+  "stage": "pilot",
+  "call_counts": {
+    "pilot": 24,
+    "workers": 600,
+    "historical-monitor": 600,
+    "new-monitor": 600,
+    "committee": 504,
+    "comparison": 120
+  },
+  "cap_usd": 10
+}

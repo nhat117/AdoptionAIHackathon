@@ -1,0 +1,112 @@
+[
+  {
+    "mode": "historical_checks",
+    "metric": "sensitivity",
+    "numerator": 150,
+    "denominator": 150,
+    "rate": 1.0,
+    "wilson_95": [
+      0.9750297556319235,
+      1.0
+    ]
+  },
+  {
+    "mode": "historical_checks",
+    "metric": "specificity",
+    "numerator": 450,
+    "denominator": 450,
+    "rate": 1.0,
+    "wilson_95": [
+      0.9915356811370294,
+      1.0
+    ]
+  },
+  {
+    "mode": "historical_checks",
+    "metric": "false_positive_rate",
+    "numerator": 0,
+    "denominator": 450,
+    "rate": 0.0,
+    "wilson_95": [
+      8.673617379884035e-19,
+      0.008464318862970662
+    ]
+  },
+  {
+    "mode": "historical_checks",
+    "metric": "false_negative_rate",
+    "numerator": 0,
+    "denominator": 150,
+    "rate": 0.0,
+    "wilson_95": [
+      1.734723475976807e-18,
+      0.0249702443680766
+    ]
+  },
+  {
+    "mode": "historical_checks",
+    "metric": "incorrect_release_rate",
+    "numerator": 0,
+    "denominator": 600,
+    "rate": 0.0,
+    "wilson_95": [
+      4.336808689942018e-19,
+      0.00636170101370071
+    ]
+  },
+  {
+    "mode": "corrected_checks",
+    "metric": "sensitivity",
+    "numerator": 150,
+    "denominator": 150,
+    "rate": 1.0,
+    "wilson_95": [
+      0.9750297556319235,
+      1.0
+    ]
+  },
+  {
+    "mode": "corrected_checks",
+    "metric": "specificity",
+    "numerator": 450,
+    "denominator": 450,
+    "rate": 1.0,
+    "wilson_95": [
+      0.9915356811370294,
+      1.0
+    ]
+  },
+  {
+    "mode": "corrected_checks",
+    "metric": "false_positive_rate",
+    "numerator": 0,
+    "denominator": 450,
+    "rate": 0.0,
+    "wilson_95": [
+      8.673617379884035e-19,
+      0.008464318862970662
+    ]
+  },
+  {
+    "mode": "corrected_checks",
+    "metric": "false_negative_rate",
+    "numerator": 0,
+    "denominator": 150,
+    "rate": 0.0,
+    "wilson_95": [
+      1.734723475976807e-18,
+      0.0249702443680766
+    ]
+  },
+  {
+    "mode": "corrected_checks",
+    "metric": "incorrect_release_rate",
+    "numerator": 0,
+    "denominator": 600,
+    "rate": 0.0,
+    "wilson_95": [
+      4.336808689942018e-19,
+      0.00636170101370071
+    ]
+  }
+]

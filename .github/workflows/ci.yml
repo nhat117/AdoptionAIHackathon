@@ -12,8 +12,16 @@ jobs:
         python-version: ['3.11', '3.12']
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v6
       - run: uv python install ${{ matrix.python-version }}
       - run: uv sync --frozen --extra dev --extra studio --python ${{ matrix.python-version }}
       - run: uv run --frozen --extra dev --extra studio ruff check .
       - run: uv run --frozen --extra dev --extra studio pytest
+      - name: Verify corrected offline experiments
+        run: |
+          uv run --frozen --extra dev --extra studio python scripts/run_corrected_experiments.py
+          uv run --frozen --extra dev --extra studio python scripts/replay_corrected_budgets.py
+          uv run --frozen --extra dev --extra studio python scripts/report_corrected_budgets.py
+          uv run --frozen --extra dev --extra studio python scripts/verify_corrected_artifacts.py

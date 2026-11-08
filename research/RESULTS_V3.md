@@ -1,3 +1,5 @@
+> Budget oversight corrections and prospective GPT-5 experiments: [generated report](CORRECTED_BUDGET_RESULTS.md). The marker-disclosure results below remain their original historical study.
+
 # Authority, language and monitor visibility: V3 observed results
 
 8 November 2026. Frozen-protocol exploratory experiment.

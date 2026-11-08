@@ -15,3 +15,7 @@ dashboard/.data-app-offline/
 
 runs/
 .langgraph_api/
+
+.venv311/
+
+.venv-ci/

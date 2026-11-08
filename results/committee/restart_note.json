@@ -1,0 +1,1 @@
+{"reason": "restart serial scheduler with four concurrent games after preserving first completed game", "signal": "SIGINT", "possible_inflight_request": "retained in shared budget ledger; no unfinished game treated as an observation"}

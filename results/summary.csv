@@ -1,0 +1,17 @@
+mode,metric,numerator,denominator,rate
+historical_checks,sensitivity,150,150,1.0
+historical_checks,specificity,450,450,1.0
+historical_checks,false_positive_rate,0,450,0.0
+historical_checks,false_negative_rate,0,150,0.0
+historical_checks,incorrect_release_rate,0,600,0.0
+corrected_checks,sensitivity,150,150,1.0
+corrected_checks,specificity,450,450,1.0
+corrected_checks,false_positive_rate,0,450,0.0
+corrected_checks,false_negative_rate,0,150,0.0
+corrected_checks,incorrect_release_rate,0,600,0.0
+blind_historical,strict_block_recall,0,150,0.0
+blind_historical,block_false_positive_rate,115,450,0.25555555555555554
+blind_historical,correct_output_release_rate,34,450,0.07555555555555556
+blind_historical,incorrect_release_rate,6,600,0.01
+committee_guarded_False,final_any_false_cap,0,12,0.0
+committee_guarded_True,final_any_false_cap,0,12,0.0

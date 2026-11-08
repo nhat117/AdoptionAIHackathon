@@ -61,3 +61,7 @@ Response Attack, Internal Safety Collapse and Thought Virus inform the preserved
 ## Existing LangGraph Studio playground
 
 The generic scaffold already on `main` is retained alongside the research modules. See [LANGGRAPH_STUDIO.md](LANGGRAPH_STUDIO.md) for setup and offline fixtures. Its fixture outputs are not research results; the scored experiments above keep their original stateless Adaption path.
+
+## Corrected budget oversight (9 November 2026)
+
+The corrected budget checker, 600-response replay, GPT-5 experiments and current limitations are documented in [the generated results report](research/CORRECTED_BUDGET_RESULTS.md). See [reproduction commands](REPRODUCE_CORRECTED.md). New outputs are separate under `results/`; historical `runs/` remain unchanged.

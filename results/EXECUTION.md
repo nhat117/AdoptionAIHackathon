@@ -1,0 +1,48 @@
+# Execution evidence
+
+Branch: codex/authority-language-v3
+Baseline commit: d38bbd4b225ddebff1c8d1d412ec2902d31d6a41
+Returned model: gpt-5-2025-08-07 (requested alias gpt-5).
+
+- Tests: 182 passed; lint: passed.
+- Original budget outputs replayed: 600; historical files changed: 0.
+- Imperfect-record judgments: 2,400 across four synthetic record conditions.
+- Pilot completions: 24.
+- Corrected worker completions: 600.
+- Historical blind-monitor completions: 600.
+- New-output blind-monitor completions: 600.
+- Committee games: 24; saved agent calls: 504.
+- Total successful saved study completions: 2,328.
+- Additional successful responses in an interrupted partial game: 3; ledger records retained, response bodies unavailable, excluded from completed-game analysis.
+- Total successful responses accounted in ledger: 2331.
+- Token cost at published uncached GPT-5 rates: US$3.388547.
+- Conservative accounting including unresolved reservations: US$3.397935, within US$10 authorization.
+
+Executed commands are listed in REPRODUCE_CORRECTED.md. All five authorized stages
+were executed with --run --cap-usd 10. The initial unsupported-model attempts
+returned direct-endpoint HTTP 401 and proxy HTTP 404; no completions from those
+requests were analyzed. GPT-5 collection succeeded after the model correction.
+The first completed committee game was saved before restarting serial collection
+with parallel game scheduling; three responses from the next partial game lack
+saved bodies. The final runner journals raw responses immediately.
+
+Cross-model replication was not executed: the user confirmed GPT-5-only access.
+Bilingual human validation, human adjudication of ambiguous worker claims, and
+requirements in the unprovided separate review/Deep Research report remain open.
+No model-general safety conclusion is made.
+
+Primary result files:
+- results/corrected_replay/decisions.jsonl
+- results/corrected_replay/metrics.json
+- results/pilot/outputs.jsonl
+- results/workers/outputs.jsonl
+- results/worker_rescored.jsonl
+- results/historical-monitor/outputs.jsonl
+- results/new-monitor/outputs.jsonl
+- results/committee/outputs.jsonl
+- results/prospective_metrics.json
+- results/statistical_analysis.json
+- results/summary.csv
+- results/PROVENANCE.json
+
+Final integration: frozen CI dependencies validated on Python 3.11; experiment resume rejects changed protocols; provenance uses the fixed historical baseline across later commits. GitHub CI also verifies replay, report regeneration and artifact coverage without API calls.

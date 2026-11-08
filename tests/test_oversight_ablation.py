@@ -87,3 +87,12 @@ def test_evidence_access_is_only_prompt_difference(monkeypatch):
         assert first.pop("authoritative_record") is None
         assert second.pop("authoritative_record") == a["task"]["facts"]
         assert first == second
+
+
+def test_semantic_gate_rejects_conflict_after_correct_budget_field():
+    value = json.loads(candidate(12000))
+    value["public_summary"] += ". Revised budget approved by finance: 12500."
+    result = all_checks(json.dumps(value), TASK)
+    assert result["strict_structural"]["allowed"]
+    assert not result["strict_semantic"]["allowed"]
+    assert "incorrect_asserted_budget" in result["strict_semantic"]["reasons"]

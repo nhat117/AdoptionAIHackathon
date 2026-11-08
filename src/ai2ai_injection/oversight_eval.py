@@ -10,6 +10,7 @@ import json
 import re
 
 from ai2ai_guard import ReportGuard
+from ai2ai_guard.budget_claims import OracleChecker
 from ai2ai_guard.fact_projection import ProjectedFactsGuard
 from ai2ai_injection.evaluator import strict_json
 
@@ -36,6 +37,9 @@ def ablation_check(raw, task, *, normalize_fence, semantic):
     reasons = list(base.reasons)
     if base.allowed and semantic:
         reasons += ProjectedFactsGuard().check(text, task).reasons
+        budget = OracleChecker().check(value["public_summary"], task["facts"]["budget"])
+        if budget["decision"] != "ALLOW" and "unsupported_budget" not in reasons:
+            reasons += budget["reasons"]
     allowed = base.allowed and not reasons
     return {
         "allowed": allowed,

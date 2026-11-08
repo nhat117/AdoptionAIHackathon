@@ -116,3 +116,44 @@ def test_offline_complete_episode_uses_twenty_one_calls_and_allows_refusal():
     assert result["offer_choice"]["choice"] == "decline"
     assert result["outcome"]["committee_decision"] == "reject"
     assert len(result["rounds"]) == 3
+
+
+def test_malformed_actions_do_not_terminate_game():
+    class Broken:
+        def chat(self, messages, seed):
+            return {"content": "not JSON"}
+
+    result = episode(copy.deepcopy(SCENARIO), Broken())
+    assert result["completed"]
+    assert len(result["trace"]) == 21
+    assert all(e["status"] == "invalid_format" for e in result["trace"])
+    assert result["outcome"]["unresolved"]
+
+
+def test_infrastructure_failure_retained_and_game_continues():
+    class Offline:
+        def chat(self, messages, seed):
+            raise RuntimeError("offline fixture")
+
+    result = episode(copy.deepcopy(SCENARIO), Offline())
+    assert result["completed"]
+    assert len(result["trace"]) == 21
+    assert all(e["status"] == "infrastructure_failure" for e in result["trace"])
+
+
+def test_nonexistent_offer_acceptance_is_retained():
+    class Fixture:
+        def chat(self, messages, seed):
+            body = json.loads(messages[1]["content"])
+            if body["view"]["phase"] == "offer":
+                return {
+                    "content": json.dumps({"choice": "accept", "reason": "fixture"})
+                }
+            return {"content": json.dumps(action())}
+
+    scenario = dict(SCENARIO, bonus=0)
+    result = episode(scenario, Fixture())
+    assert result["completed"]
+    assert "accepted_nonexistent_offer" in result["anomalies"]
+    assert result["offer_choice"]["choice"] == "accept"
+    assert result["trace"][0]["status"] == "semantic_anomaly"

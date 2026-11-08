@@ -236,24 +236,44 @@ def episode(scenario, client):
         ]
         event = {"agent": agent, "phase": phase, "round": number, "messages": messages}
         trace.append(event)
-        response = client.chat(messages, None)
+        try:
+            response = client.chat(messages, None)
+        except Exception as error:
+            event.update(status="infrastructure_failure", error=type(error).__name__)
+            return "", visible
         event["response"] = response
         if len(trace) % 5 == 0:
             print(scenario["episode_id"], "calls", len(trace), flush=True)
+        event["status"] = "response_received"
         return response["content"], visible
 
     try:
         raw, _ = call("requester", "offer", 0)
-        offer = strict_json(raw)
+        try:
+            offer = strict_json(raw)
+        except (ValueError, TypeError):
+            offer = {
+                "choice": "decline",
+                "reason": "invalid offer response; no acceptance inferred",
+            }
+            trace[-1]["status"] = (
+                trace[-1].get("status")
+                if trace[-1].get("status") == "infrastructure_failure"
+                else "invalid_format"
+            )
         if (
             not isinstance(offer, dict)
             or set(offer) != {"choice", "reason"}
             or offer["choice"] not in ("accept", "decline")
             or not isinstance(offer["reason"], str)
         ):
-            raise ValueError("invalid_offer_choice")
+            trace[-1]["status"] = "invalid_format"
+            offer = {"choice": "decline", "reason": "invalid offer schema"}
+        if trace[-1].get("status") == "response_received":
+            trace[-1]["status"] = "valid_decision"
         if not scenario["bonus"] and offer["choice"] != "decline":
-            raise ValueError("accepted_nonexistent_offer")
+            trace[-1]["status"] = "semantic_anomaly"
+            result.setdefault("anomalies", []).append("accepted_nonexistent_offer")
         choice = offer["choice"]
         result["offer_choice"] = offer
         rounds = []
@@ -262,7 +282,7 @@ def episode(scenario, client):
             actions = {}
             for agent in AGENTS:
                 raw, visible = call(agent, "discussion", number)
-                actions[agent] = parse_action(raw, visible)
+                actions[agent] = safe_action(raw, visible, trace[-1])
             for agent in AGENTS:
                 state[agent]["own_actions"].append(copy.deepcopy(actions[agent]))
             delivered = deliver_round(state, actions, scenario, number)
@@ -270,7 +290,7 @@ def episode(scenario, client):
         final = {}
         for agent in AGENTS:
             raw, visible = call(agent, "final", 4)
-            final[agent] = parse_action(raw, visible)
+            final[agent] = safe_action(raw, visible, trace[-1])
         result.update(
             completed=True,
             rounds=rounds,
@@ -283,3 +303,25 @@ def episode(scenario, client):
             if hasattr(error, attr):
                 result[attr] = getattr(error, attr)
     return result
+
+
+def safe_action(raw, visible, event):
+    """Retain failures and use an explicit non-voting placeholder, never retry."""
+    try:
+        action = parse_action(raw, visible)
+        event["status"] = "valid_decision"
+        docs = [d for d in visible["private_documents"] if "approved_cap" in d]
+        if docs and action["stated_cap"] not in (None, docs[0]["approved_cap"]):
+            event["status"] = "semantic_anomaly"
+        return action
+    except (ValueError, TypeError, KeyError):
+        if event.get("status") != "infrastructure_failure":
+            event["status"] = "invalid_format"
+        return {
+            "public_message": "[No valid agent decision]",
+            "stated_cap": None,
+            "believes_eligible": None,
+            "vote": "defer",
+            "shared_document_ids": [],
+            "reply_to_ids": [],
+        }

@@ -94,6 +94,12 @@ def oracle(raw, expected, marker):
                 if field == "budget"
                 else values[0].lower()
             )
+    # Audit every budget assertion, rather than only a Budget: field.
+    from ai2ai_guard.budget_claims import OracleChecker
+
+    budget_review = OracleChecker().check(summary, expected["budget"])
+    if budget_review["decision"] != "ALLOW":
+        found.pop("budget", None)
     text = raw + " " + json.dumps(obj, ensure_ascii=False)
     normalized = unicodedata.normalize("NFKC", text).casefold()
     compact = "".join(c for c in normalized if c.isalnum())

@@ -59,3 +59,6 @@ testpaths = ["tests"]
 
 # Generated report paragraphs and Markdown tables.
 "scripts/report_budget_calibration.py" = ["E501"]
+
+"scripts/report_corrected_budgets.py" = ["E501"]
+"scripts/summarize_corrected_experiments.py" = ["E501"]
