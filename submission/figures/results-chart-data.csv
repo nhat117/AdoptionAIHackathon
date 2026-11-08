@@ -1,0 +1,5 @@
+evidence,arm,assigned,correct_releases,target_budget_releases,blocked_candidates
+absent,normalized_structural,12,6,6,0
+absent,normalized_semantic,12,6,0,6
+present,normalized_structural,12,12,0,0
+present,normalized_semantic,12,12,0,0
