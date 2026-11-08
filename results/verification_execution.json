@@ -16,9 +16,14 @@
     "workers": 1440,
     "task_clusters": 20
   },
+  "contract_validation_counts": {
+    "contract_validation": 216,
+    "corrupt_record_validation": 72
+  },
   "committee_games": 24,
   "committee_calls": 504,
   "successful_saved_model_calls": 2328,
+  "successful_saved_model_calls_all_studies": 4218,
   "interrupted_game_responses_without_saved_body": [
     {
       "model": "gpt-5",

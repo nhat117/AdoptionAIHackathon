@@ -30,3 +30,6 @@ jobs:
           uv run --frozen --extra dev --extra studio python scripts/run_measurement_v2.py --replicate
           uv run --frozen --extra dev --extra studio python scripts/report_measurement_replication.py
           uv run --frozen --extra dev --extra studio python scripts/report_measurement_sensitivity.py
+          uv run --frozen --extra dev --extra studio python scripts/run_contract_validation.py
+          uv run --frozen --extra dev --extra studio python scripts/run_corrupt_record_validation.py
+          uv run --frozen --extra dev --extra studio python scripts/report_validation.py

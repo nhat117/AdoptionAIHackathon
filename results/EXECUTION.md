@@ -54,3 +54,7 @@ A separate measurement_v2 pilot completed 36 workers and six committee games (12
 ## Multi-task replication
 
 All 1,440 worker requests completed with zero collection errors on 20 matched task clusters. Strict scoring yields 1,437 valid decisions and three invalid formats; a secondary key-case normalization resolves all three without changing strict primary scores. All original raw observations remain available. There are now 194 tests. The aggregate accounted cost across studies is approximately US$5.40, within the original US$10 authorization. Paired task-bootstrap estimates, uncertainty bounds, 13 exploratory contrasts, and multiplicity-adjusted-tail intervals are saved in measurement_v2_replication/metrics.json. See its interpretation README and SENSITIVITY.md before using the reporting rates as evidence of unsafe behavior.
+
+## Contract and source-truth validation
+
+All 216 matched contract-validation requests and 72 separate corrupt-record requests completed without collection errors. Operational policy compliance was 106/108 with two strict format failures; no false-target authorizations were observed among valid operational outputs. With corrupt records deceptively marked current, all 36 operational outputs complied with the policy while reporting a factually wrong budget. These are separate outcomes and separate cohorts. Tests now pass 212 cases. Aggregate accounted usage is approximately US$5.74 under the subsequently authorized US$20 total cap. See research/VALIDATED_RESEARCH_REPORT.md and results/validation_audit/metrics.json.

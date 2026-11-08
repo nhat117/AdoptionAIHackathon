@@ -70,6 +70,7 @@ def main():
     prospective = summarize()
     lines = [
         "# Corrected budget oversight replay\n",
+        "Current consolidated validation and research update: [validated report](VALIDATED_RESEARCH_REPORT.md). This page preserves the separate replay and earlier experimental cohorts.\n",
         "Executed 9 November 2026. This report is generated from saved decisions; prospective GPT-5 results are reported separately below.\n",
         "## Research questions and method\n",
         "Can a full-report budget audit detect contradictory assertions missed by field-only evaluation? How does oversight change when its record is unverified or absent? Does claimed authority interact with language and trusted-record access? Matched GPT-5 results are reported below with conservative label uncertainty.\n",

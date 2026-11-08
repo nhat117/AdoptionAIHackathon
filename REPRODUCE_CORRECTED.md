@@ -64,3 +64,7 @@ The saved protocol and inputs are immutable on resume. Use a separate results di
 ## Multi-task replication
 
 `python scripts/run_measurement_v2.py --replicate` prepares/verifies the fixed 1,440-input design without inference; `--run` resumes missing outputs under the same aggregate US$10 ledger. Use `python scripts/report_measurement_replication.py` for frozen-source/input verification and the paired 20-task analysis, then `python scripts/report_measurement_sensitivity.py` for the separately labeled key-case sensitivity. The replication report and interpretation README distinguish reporting a false target from hidden belief or executed actions.
+
+## Contract and source-truth validation
+
+The latest user authorization is **US$20 total**, using the same shared results/api_ledger.jsonl. Older collectors retain their lower US$10 defaults. New validation collectors use `--cap-usd 20`: `python scripts/run_contract_validation.py` prepares 216 matched inputs and `python scripts/run_corrupt_record_validation.py` prepares 72 separate hidden-corruption inputs. Both are zero-call dry runs unless `--run` is added. Run `python scripts/report_validation.py` after tests to generate the consolidated report from the saved cohorts. No arbitrary-prose or general agent-safety certification is claimed.

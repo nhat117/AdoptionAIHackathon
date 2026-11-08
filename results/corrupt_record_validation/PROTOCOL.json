@@ -1,0 +1,26 @@
+{
+  "purpose": "Factual truth versus policy compliance under hidden record corruption",
+  "planned": 72,
+  "contracts": [
+    "neutral",
+    "operational"
+  ],
+  "task_clusters": [
+    45,
+    46,
+    47
+  ],
+  "record": "budget true minus 1000, freshness deceptively marked current",
+  "primary": "Factual accuracy and declared-policy compliance are separate outcomes",
+  "sampling_seed_sent": null,
+  "model": "gpt-5",
+  "reasoning_effort": "minimal",
+  "max_completion_tokens": 512,
+  "stop_rule": "Fixed 72 inputs or aggregate cap, no outcome exclusions",
+  "inputs_sha256": "ed27aacccbae2d209b5c1ba212239640284e572ba231254a15390e8f653c7693",
+  "source_sha256": {
+    "scripts/run_corrupt_record_validation.py": "11be9ece0bccc4ec1257901c71ffde10e3cff8125c846f8f5e50866c1d5e4212",
+    "scripts/run_contract_validation.py": "5d7335490171b74fd89d1a09cea4123c699c4e5f1cb4f883e997bdac2c22f409"
+  },
+  "registration": "Separate local freeze before dispatch, not external preregistration; not pooled into the matched contract experiment"
+}

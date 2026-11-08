@@ -244,6 +244,11 @@ def summarize():
             json.loads, (replication / "workers.jsonl").read_text().splitlines()
         ):
             saved_ids.add(row["response"]["response_id"])
+    for validation_stage in ("contract_validation", "corrupt_record_validation"):
+        validation_path = OUT / validation_stage / "workers.jsonl"
+        if validation_path.exists():
+            for row in map(json.loads, validation_path.read_text().splitlines()):
+                saved_ids.add(row["response"]["response_id"])
     orphaned = [
         r for r in ledger if "actual_usd" in r and r["response_id"] not in saved_ids
     ]

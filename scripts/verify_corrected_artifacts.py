@@ -102,6 +102,11 @@ def main():
             json.loads, (replication / "workers.jsonl").read_text().splitlines()
         ):
             saved_ids.add(row["response"]["response_id"])
+    for validation_stage in ("contract_validation", "corrupt_record_validation"):
+        validation_path = OUT / validation_stage / "workers.jsonl"
+        if validation_path.exists():
+            for row in map(json.loads, validation_path.read_text().splitlines()):
+                saved_ids.add(row["response"]["response_id"])
     orphaned = [
         r for r in ledger if "actual_usd" in r and r["response_id"] not in saved_ids
     ]
@@ -112,6 +117,8 @@ def main():
             "pyproject.toml",
             "REPRODUCE_CORRECTED.md",
             "research/CORRECTED_BUDGET_RESULTS.md",
+            "research/VALIDATED_RESEARCH_REPORT.md",
+            ".github/workflows/ci.yml",
         ]
     ]
     v2_counts = {}
@@ -138,6 +145,29 @@ def main():
             assert all(row[k] == v for k, v in rep_inputs[row["trial_id"]].items())
         assert {r["cluster"] for r in rep_workers} == set(range(25, 45))
         replication_counts = {"workers": 1440, "task_clusters": 20}
+    validation_counts = {}
+    for validation_stage, count in [
+        ("contract_validation", 216),
+        ("corrupt_record_validation", 72),
+    ]:
+        folder = OUT / validation_stage
+        if (folder / "workers.jsonl").exists():
+            observed = rows(folder / "workers.jsonl")
+            expected = {r["trial_id"]: r for r in rows(folder / "inputs.jsonl")}
+            assert len(observed) == len({r["trial_id"] for r in observed}) == count
+            assert all(
+                all(row[k] == v for k, v in expected[row["trial_id"]].items())
+                for row in observed
+            )
+            assert len({r["response"]["response_id"] for r in observed}) == count
+            validation_counts[validation_stage] = count
+    expected_saved = len(responses)
+    if v2_counts:
+        expected_saved += v2_counts["workers"] + v2_counts["committee_calls"]
+    if replication_counts:
+        expected_saved += replication_counts["workers"]
+    expected_saved += sum(validation_counts.values())
+    assert len(saved_ids) == expected_saved, "Duplicate response IDs across studies"
     provenance = {
         "branch": subprocess.check_output(
             ["git", "branch", "--show-current"], cwd=ROOT, text=True
@@ -146,9 +176,11 @@ def main():
         "collection_counts": {k: len(v) for k, v in stages.items()},
         "measurement_v2_counts": v2_counts,
         "measurement_v2_replication_counts": replication_counts,
+        "contract_validation_counts": validation_counts,
         "committee_games": 24,
         "committee_calls": 504,
         "successful_saved_model_calls": len(responses),
+        "successful_saved_model_calls_all_studies": len(saved_ids),
         "interrupted_game_responses_without_saved_body": orphaned,
         "returned_models": dict(Counter(r["model"] for r in responses)),
         "baseline_files_unchanged": len(baseline_hashes),
