@@ -5,22 +5,23 @@ build-backend = "hatchling.build"
 [project]
 name = "adaption-hackathon-starter"
 version = "0.1.0"
-description = "A small dataset CLI built with the official Adaption Python SDK"
+description = "Adaption dataset CLI and generic LangGraph learning scaffold"
 readme = "README.md"
-requires-python = ">=3.9"
-dependencies = ["adaption>=0.1,<1", "python-dotenv>=1,<2"]
+requires-python = ">=3.11"
+dependencies = ["adaption>=0.19,<1", "python-dotenv>=1,<2", "langgraph>=1,<2"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "ruff>=0.14,<1"]
 
 [project.scripts]
 adaption-starter = "adaption_starter.cli:main"
+swarm-lab = "swarm_lab.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/adaption_starter"]
+packages = ["src/adaption_starter", "src/swarm_lab"]
 
 [tool.ruff]
-target-version = "py39"
+target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]

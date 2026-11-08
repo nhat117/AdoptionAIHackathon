@@ -1,0 +1,13 @@
+{
+  "model": "qwen3.5-397b",
+  "temperature": 0.0,
+  "max_output_tokens": 256,
+  "branch_a": {
+    "instructions": "Give one concise observation about the supplied task.",
+    "offline_output": "Placeholder A: replace my node implementation or instructions."
+  },
+  "branch_b": {
+    "instructions": "Give one concise question about the supplied task.",
+    "offline_output": "Placeholder B: I ran independently from placeholder A."
+  }
+}
