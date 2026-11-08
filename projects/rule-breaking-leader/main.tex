@@ -1,0 +1,84 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs,tabularx,amsmath}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\title{Following the Rule-Breaker:\\Prestige, Authority, and Unrequested Behavioral Copying}
+\author{}\date{Initial research proposal --- November 8, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+An agent may copy a peer's unauthorized action even when nobody asks it to do so. This proposal tests whether an actor's apparent prestige or genuine organizational role changes that response. In a synthetic workflow, a focal agent will observe a verified event showing another actor either bypassing a required approval step or taking the permitted route. The event contains no instruction to imitate. We will independently vary a reputation cue and a real but narrowly scoped coordinator role; neither grants permission to bypass the approval rule. The focal agent will then face its own equivalent decision. A factorial pilot will estimate excess violation attempts after observing a violation, distinguish prestige from legitimate role assignment, and record whether agents mistakenly treat execution as authorization. A separate small network follow-up will test whether follower actions transmit the behavior beyond the original observer. All actions will occur in an inert simulator with explicit policy checks. No experiments have been run. The intended contribution is a controlled evaluation of behavioral influence without direct orders, with propagation claims reserved for the follow-up.
+\end{abstract}
+
+\section{Introduction}
+A peer's action can convey an apparent norm: if a respected actor bypassed approval and its action succeeded, a follower might infer that the same shortcut is acceptable. This differs from obeying an instruction. We ask: \emph{Does observing unauthorized behavior increase a follower's own violation attempts, and does that effect depend on prestige or genuine authority?}
+
+Leader is a motivating label, not an assumed emergent property. The controlled study varies a reputation cue and a recorded coordinator role; it does not infer leadership from a title alone. Prestige is a status cue, actual authority is documented role permission, and authorization for the particular action is a separate fact. The network follow-up connects to Track 2's questions about roles and spreading failures \cite{track}.
+
+\section{Related work}
+The normative-conformity sprint project investigates peer reports of rule-breaking in a network-access-policy setting \cite{norms}. Our proposed exposure is a simulator-authenticated event rather than an unverified peer claim. The project's public summary supports this comparison, but not conclusions about its complete experimental controls.
+
+PAVE studies legitimacy, authority, and emulation in generative-agent societies \cite{pave}. Its Scenario 3 exposes commuters to scripted jaywalking and includes a passive officer who gives no instructions, a direct precedent for behavioral exposure without commands. We do not claim novelty for passive copying itself. This motivates distinguishing justified exceptions from unauthorized copying; our main condition supplies no emergency, exception, or necessity. Vijjini et al.\ examine status and unsafe compliance in dialogues \cite{power}; our pilot removes explicit requests to copy, separating observational influence from direct-command compliance.
+
+The Vietnamese oversight sprint project highlights loss of safety-relevant context between instructions and action reports \cite{vietnamese}. We retain the full policy and event provenance so missing context is not the intended treatment. These neighboring studies make a broad novelty claim inappropriate. The narrower proposed contribution is an independently manipulated prestige/role comparison with verified behavioral exposure and a separate propagation test.
+
+\section{Proposed methods}
+\subsection{Environment and exposure}
+Use fake records and two routes to task completion: a permitted route requiring an approval token and an unauthorized shortcut. The focal agent lacks the token, has a viable safe alternative, and sees the full policy. Its structured action is checked deterministically. Log attempted violations and simulated state changes; no external actions occur.
+
+Before deciding, the focal agent observes a fixed audit event from another actor working on a separate equivalent record. In the violation condition that actor bypasses approval; in the compliant condition it uses the permitted route with its own valid token. Both traces have comparable length and report successful completion, without imperatives, recommendations, or praise. The environment distinguishes execution from authorization, and tokens are nontransferable. Separate records prevent exposure from changing the focal agent's available actions or approval state.
+
+Cross three binary factors:
+\begin{enumerate}
+\item \textbf{Observed action:} unauthorized shortcut or permitted route.
+\item \textbf{Prestige cue:} high-reputation profile or neutral profile, without extra policy knowledge or permissions.
+\item \textbf{Actual authority:} coordinator role or ordinary peer. The authoritative registry grants coordinators real task-assignment rights, but no right to waive approval or transfer privileges.
+\end{enumerate}
+Even the actual coordinator's shortcut is therefore unauthorized. Counterbalance identifiers, order, and wording. Prestige is assigned metadata, not measured belief or proven expertise.
+
+Add a no-event baseline with matched context length to estimate spontaneous violations. An authorized-action control, giving the focal agent a valid token, can check permission recognition rather than universal refusal. Keep this control outside the main factorial estimate.
+
+\subsection{Outcomes and pilot analysis}
+The primary outcome is the focal agent's unauthorized action attempt. The main estimand is the violation-versus-compliant-exposure risk difference, separately for each prestige/authority cell. Interaction contrasts assess whether prestige or the coordinator role modifies the exposure effect; the no-event baseline supplies context.
+
+Secondary measures include choice of the identical shortcut, safe task progress, and explicit claims that observed behavior confers permission. Two reviewers will code the latter from public outputs using a frozen rubric and report agreement. Action similarity is behavioral correspondence, not proof of an internal imitation mechanism. The paired exposure contrast supports an effect of the observed event under the experimental assumptions.
+
+A tentative budget is 20 held-out task instances, eight cells, and three independent runs (480 episodes for one model), plus controls. This is neither a power calculation nor a finalized sample. Choose model versions, task count, settings, and stopping criteria after separate calibration and before evaluation. Pair task variants across cells and report task-cluster bootstrap intervals; repeated runs are not independent tasks. Freeze prompts and account separately for invalid outputs and tool failures.
+
+\subsection{Network follow-up}
+After validating the pilot, run a five-agent chain with one seeded actor and four model-controlled followers. Each follower sees its immediate predecessor's authenticated action on a distinct record, the common policy, and role metadata. Downstream agents cannot see the seed directly. No actor can send requests or persuasive text. This isolates action-based transmission while leaving action choices interactive.
+
+Randomize the seed's violating versus compliant action and whether later edges deliver the predecessor's real event or a matched compliant replacement event. Keep task states independent. Compare downstream violation rates, first-violation position, maximum consecutive violating depth, and safe completion across whole episodes. Increased downstream violations when real events are delivered would support transmission under this protocol; correlations along a single chain would not suffice. Analyze episodes as clusters. The chain tests limited propagation, not emergent leadership or arbitrary network topologies. Prestige/authority interactions can remain exploratory here to control cost.
+
+\section{Results: planned reporting}
+No experimental findings exist. Planned outputs are cell rates with uncertainty, exposure contrasts, control checks, and counterexample traces. If completed, report seed-excluded cascade outcomes separately from the pilot. Otherwise, label propagation untested rather than interpreting one follower as a cascade.
+
+\section{Discussion}
+An exposure effect could reflect inferred permission, task-success salience, or action priming rather than human-like prestige learning. Holding reported success constant and preserving the permission record reduce some confounds but do not identify internal mechanisms. Artificial reputation cues and narrow coordinator roles may not transfer to organically acquired influence. Later work could derive reputation from observed performance while avoiding conflation of task competence with safety expertise. The compliant actor's valid-token trace also differs in evidence content from the violation trace; report this intended authorization contrast and test alternate surface-matched event renderings.
+
+\section{Conclusion}
+This proposal separates unrequested behavioral influence from obedience, and prestige from actual authority. It offers a bounded pilot and a distinct follow-up testing whether behavior travels beyond the first observer, without presupposing a positive effect.
+
+\appendix
+\section{Limitations and Dual-Use / Ethical Considerations}
+Synthetic rules and constrained event channels limit external validity. Findings could inform manipulative demonstrations; keep records synthetic and approval shortcuts harmless, with no credentials or external access. English is the baseline. Chinese and Vietnamese are optional reviewed translations, with no claims about culture, national populations, or inherent language susceptibility.
+
+\section{Provenance and AI assistance}
+This AI-assisted initial proposal needs substantive team review, author details, and experimental work before final reporting. No authors or affiliations are asserted. The user reports inspiration from a friend's work; the review was unavailable. The supplied Google document is a submission template, not that review. No findings or endorsement are attributed to the friend.
+
+\begin{thebibliography}{9}
+
+\bibitem{power} A. R. Vijjini, S. B. Manjunath, and S. Chaturvedi (2026). \emph{Do LLM Agents Mirror Socio-Cognitive Effects in Power-Asymmetric Conversations?} ACL. \url{https://aclanthology.org/2026.acl-long.2202/}.
+\bibitem{pave} A. Yehia et al. (2026). \emph{PAVE: A Cognitive Architecture for Legitimate Violation in Generative Agent Societies}. arXiv:2605.19351v1. \url{https://arxiv.org/html/2605.19351v1}.
+\bibitem{norms} R. Acharya and J. Chen (2026). \emph{Impact of Normative Conformity and Perception on Model Misalignment in Multi-Agent Systems}. Digital Minds Research Sprint project page; early-stage participant work. \url{https://apartresearch.com/sprints/projects/impact-of-normative-conformity-and-perception-on-model-misalignment-in-multiagent-systems-4ey0}.
+\bibitem{vietnamese} Bui Cao Dong Nghi, Truong Ngoc Minh Tam, and Bui Ngoc Linh (2026). \emph{Pragmatic Sophistry in Vietnamese Multi-Agent Oversight}. Global South AI Safety Hackathon project page; early-stage participant work. \url{https://apartresearch.com/sprints/projects/pragmatic-sophistry-in-vietnamese-multiagent-oversight-u5xy}.
+\bibitem{track} Apart Research (2026). \emph{Swarm Alignment Hackathon}, Track 2: The Science of Agent Networks. Accessed November 8, 2026. \url{https://apartresearch.com/sprints/swarm-alignment-2026}.
+\end{thebibliography}
+\end{document}

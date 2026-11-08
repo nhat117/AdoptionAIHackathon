@@ -5,6 +5,10 @@ Use it to learn nodes, state, parallel branches, and joins before choosing a res
 experiment. No authority roles, monitoring policy, or research scoring are built in.
 Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/python).
 
+Two independent initial research proposals are available under [projects/](projects/README.md):
+persistent correct dissent and passive copying of a rule-breaking leader.
+These are LaTeX research plans, not implemented experiments or reported findings.
+
 ## Setup and open Studio
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:
