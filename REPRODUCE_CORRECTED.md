@@ -60,3 +60,7 @@ The saved protocol and inputs are immutable on resume. Use a separate results di
 ## Improved measurement pilot
 
 `python scripts/run_measurement_v2.py` is a zero-call dry run. Add `--run` to collect 36 worker decisions, or `--committee --run` for six record-access games (126 calls). Both share the original US$10 ledger. Run `python scripts/report_measurement_v2.py` for the saved pilot report. This changes the prospective decision contract; it does not re-label the 591 older ambiguous outputs.
+
+## Multi-task replication
+
+`python scripts/run_measurement_v2.py --replicate` prepares/verifies the fixed 1,440-input design without inference; `--run` resumes missing outputs under the same aggregate US$10 ledger. Use `python scripts/report_measurement_replication.py` for frozen-source/input verification and the paired 20-task analysis, then `python scripts/report_measurement_sensitivity.py` for the separately labeled key-case sensitivity. The replication report and interpretation README distinguish reporting a false target from hidden belief or executed actions.

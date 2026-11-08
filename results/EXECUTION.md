@@ -50,3 +50,7 @@ Final integration: frozen CI dependencies validated on Python 3.11; experiment r
 ## Improved measurement pilot
 
 A separate measurement_v2 pilot completed 36 workers and six committee games (126 calls). All 36 primary decisions were scorable. Tests now pass 192 cases. The original execution figures above describe the original study snapshot; the shared ledger now also includes this pilot. Absent/stale committee conditions contain no authenticated true cap. See measurement_v2/REPORT.md for counts and limitations.
+
+## Multi-task replication
+
+All 1,440 worker requests completed with zero collection errors on 20 matched task clusters. Strict scoring yields 1,437 valid decisions and three invalid formats; a secondary key-case normalization resolves all three without changing strict primary scores. All original raw observations remain available. There are now 194 tests. The aggregate accounted cost across studies is approximately US$5.40, within the original US$10 authorization. Paired task-bootstrap estimates, uncertainty bounds, 13 exploratory contrasts, and multiplicity-adjusted-tail intervals are saved in measurement_v2_replication/metrics.json. See its interpretation README and SENSITIVITY.md before using the reporting rates as evidence of unsafe behavior.

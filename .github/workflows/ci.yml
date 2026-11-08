@@ -27,3 +27,6 @@ jobs:
           uv run --frozen --extra dev --extra studio python scripts/verify_corrected_artifacts.py
           uv run --frozen --extra dev --extra studio python scripts/run_measurement_v2.py
           uv run --frozen --extra dev --extra studio python scripts/report_measurement_v2.py
+          uv run --frozen --extra dev --extra studio python scripts/run_measurement_v2.py --replicate
+          uv run --frozen --extra dev --extra studio python scripts/report_measurement_replication.py
+          uv run --frozen --extra dev --extra studio python scripts/report_measurement_sensitivity.py

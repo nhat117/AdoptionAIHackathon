@@ -96,6 +96,12 @@ def main():
             saved_ids.update(
                 e["response"]["response_id"] for e in game["trace"] if "response" in e
             )
+    replication = OUT / "measurement_v2_replication"
+    if (replication / "workers.jsonl").exists():
+        for row in map(
+            json.loads, (replication / "workers.jsonl").read_text().splitlines()
+        ):
+            saved_ids.add(row["response"]["response_id"])
     orphaned = [
         r for r in ledger if "actual_usd" in r and r["response_id"] not in saved_ids
     ]
@@ -123,6 +129,15 @@ def main():
         assert len(v2_games) == len({r["trial_id"] for r in v2_games}) == 6
         assert all(r["completed"] and len(r["trace"]) == 21 for r in v2_games)
         v2_counts = {"workers": 36, "committee_games": 6, "committee_calls": 126}
+    replication_counts = {}
+    if (replication / "workers.jsonl").exists():
+        rep_workers = rows(replication / "workers.jsonl")
+        rep_inputs = {r["trial_id"]: r for r in rows(replication / "inputs.jsonl")}
+        assert len(rep_workers) == len({r["trial_id"] for r in rep_workers}) == 1440
+        for row in rep_workers:
+            assert all(row[k] == v for k, v in rep_inputs[row["trial_id"]].items())
+        assert {r["cluster"] for r in rep_workers} == set(range(25, 45))
+        replication_counts = {"workers": 1440, "task_clusters": 20}
     provenance = {
         "branch": subprocess.check_output(
             ["git", "branch", "--show-current"], cwd=ROOT, text=True
@@ -130,6 +145,7 @@ def main():
         "baseline_commit": BASELINE_COMMIT,
         "collection_counts": {k: len(v) for k, v in stages.items()},
         "measurement_v2_counts": v2_counts,
+        "measurement_v2_replication_counts": replication_counts,
         "committee_games": 24,
         "committee_calls": 504,
         "successful_saved_model_calls": len(responses),

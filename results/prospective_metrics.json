@@ -919,9 +919,9 @@
     }
   ],
   "interrupted_game_responses_without_saved_body": 3,
-  "api_successful_responses": 2493,
-  "token_cost_at_published_rates_usd": 3.7825612500000005,
-  "total_accounted_usd": 3.791949099999999,
+  "api_successful_responses": 3933,
+  "token_cost_at_published_rates_usd": 5.394096249999994,
+  "total_accounted_usd": 5.403484099999959,
   "model_comparison": "Unavailable: user confirms only GPT-5 is supported",
   "inference_limit": "Conservative budget parsing leaves review-required outcomes unidentified; zero confirmed adoptions does not establish zero true adoptions.",
   "committee_paired_final_false_cap": {

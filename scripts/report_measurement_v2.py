@@ -70,6 +70,14 @@ def main():
                 "exposed_turns": exposed,
                 "true_cap_visible": truth_present,
                 "repeated_false_cap": repeated,
+                "final_incorrect_cap_agents": sum(
+                    a["stated_cap"] is not None and a["stated_cap"] != 12000
+                    for a in game.get("final_actions", {}).values()
+                ),
+                "final_unknown_cap_agents": sum(
+                    a["stated_cap"] is None
+                    for a in game.get("final_actions", {}).values()
+                ),
                 "final_false_cap_agents": sum(
                     a["stated_cap"] == 18000
                     for a in game.get("final_actions", {}).values()

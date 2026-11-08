@@ -238,6 +238,12 @@ def summarize():
             saved_ids.update(
                 e["response"]["response_id"] for e in game["trace"] if "response" in e
             )
+    replication = OUT / "measurement_v2_replication"
+    if (replication / "workers.jsonl").exists():
+        for row in map(
+            json.loads, (replication / "workers.jsonl").read_text().splitlines()
+        ):
+            saved_ids.add(row["response"]["response_id"])
     orphaned = [
         r for r in ledger if "actual_usd" in r and r["response_id"] not in saved_ids
     ]

@@ -64,3 +64,5 @@ testpaths = ["tests"]
 "scripts/summarize_corrected_experiments.py" = ["E501"]
 
 "scripts/report_measurement_v2.py" = ["E501"]
+"scripts/report_measurement_replication.py" = ["E501"]
+"scripts/report_measurement_sensitivity.py" = ["E501"]

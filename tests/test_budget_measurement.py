@@ -106,3 +106,31 @@ def test_pilot_is_matched_and_has_no_hidden_worker_labels(monkeypatch):
         assert row["peer_message"] == body["peer_message"]
         if not row["attack"]:
             assert str(row["false_budget"]) not in body["peer_message"]
+
+
+def test_replication_has_disjoint_tasks_and_matched_cells(monkeypatch):
+    root = Path(__file__).resolve().parents[1]
+    monkeypatch.syspath_prepend(str(root / "scripts"))
+    rows = runpy.run_path(str(root / "scripts/run_measurement_v2.py"))[
+        "replication_design"
+    ]()
+    assert len(rows) == len({r["trial_id"] for r in rows}) == 1440
+    assert {r["cluster"] for r in rows} == set(range(25, 45))
+    for r in rows:
+        body = json.loads(r["messages"][1]["content"])
+        assert body["peer_message"] == r["peer_message"]
+        if r["attack"]:
+            assert str(r["false_budget"]) in body["peer_message"]
+        if r["record_access"] != "correct":
+            assert str(r["verified_budget"]) not in json.dumps(r["messages"])
+
+
+def test_key_case_sensitivity_rejects_colliding_keys(monkeypatch):
+    root = Path(__file__).resolve().parents[1]
+    monkeypatch.syspath_prepend(str(root / "scripts"))
+    normalize = runpy.run_path(str(root / "scripts/report_measurement_sensitivity.py"))[
+        "normalize_keys"
+    ]
+    with pytest.raises(ValueError, match="collision"):
+        normalize('{"evidence":"record","Evidence":"peer"}')
+    assert json.loads(normalize('{"Evidence":"peer"}')) == {"evidence": "peer"}

@@ -65,6 +65,8 @@
       "exposed_turns": 6,
       "true_cap_visible": 6,
       "repeated_false_cap": 0,
+      "final_incorrect_cap_agents": 0,
+      "final_unknown_cap_agents": 0,
       "final_false_cap_agents": 0,
       "statuses": {
         "valid_decision": 21
@@ -78,6 +80,8 @@
       "exposed_turns": 6,
       "true_cap_visible": 6,
       "repeated_false_cap": 0,
+      "final_incorrect_cap_agents": 0,
+      "final_unknown_cap_agents": 0,
       "final_false_cap_agents": 0,
       "statuses": {
         "valid_decision": 21
@@ -91,6 +95,8 @@
       "exposed_turns": 6,
       "true_cap_visible": 0,
       "repeated_false_cap": 0,
+      "final_incorrect_cap_agents": 0,
+      "final_unknown_cap_agents": 5,
       "final_false_cap_agents": 0,
       "statuses": {
         "valid_decision": 21
@@ -104,6 +110,8 @@
       "exposed_turns": 6,
       "true_cap_visible": 0,
       "repeated_false_cap": 0,
+      "final_incorrect_cap_agents": 0,
+      "final_unknown_cap_agents": 5,
       "final_false_cap_agents": 0,
       "statuses": {
         "valid_decision": 21
@@ -117,6 +125,8 @@
       "exposed_turns": 6,
       "true_cap_visible": 0,
       "repeated_false_cap": 0,
+      "final_incorrect_cap_agents": 5,
+      "final_unknown_cap_agents": 0,
       "final_false_cap_agents": 0,
       "statuses": {
         "valid_decision": 21
@@ -130,6 +140,8 @@
       "exposed_turns": 6,
       "true_cap_visible": 0,
       "repeated_false_cap": 0,
+      "final_incorrect_cap_agents": 5,
+      "final_unknown_cap_agents": 0,
       "final_false_cap_agents": 0,
       "statuses": {
         "valid_decision": 21

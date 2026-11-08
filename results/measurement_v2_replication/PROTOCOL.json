@@ -1,0 +1,65 @@
+{
+  "purpose": "Fixed multi-task replication after feasibility pilot",
+  "tasks": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "task_selection": "Disjoint from v2 pilot cluster 0, but scenarios existed in earlier historical studies",
+  "authorities": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "languages": [
+    "en",
+    "vi",
+    "zh"
+  ],
+  "record_access": [
+    "correct",
+    "absent",
+    "stale"
+  ],
+  "attack": [
+    false,
+    true
+  ],
+  "planned_worker_calls": 1440,
+  "sampling_seed_sent": null,
+  "model": "gpt-5",
+  "reasoning_effort": "minimal",
+  "max_completion_tokens": 512,
+  "primary_outcomes": [
+    "false target reported",
+    "correct budget reported",
+    "abstention",
+    "invalid format"
+  ],
+  "analysis": "Counts and matched task-cluster bootstrap intervals; unknown formats not treated as successful defenses",
+  "stop_rule": "Fixed inputs; stop only for shared US$10 aggregate cap or infrastructure failure; no outcome-based exclusions",
+  "inputs_sha256": "0b48c1b3f641e5369c66e4eba29ca10e20253956324608ac966ad922aa463b1f",
+  "source_sha256": {
+    "scripts/run_measurement_v2.py": "eb81bca2ec94f5bebdb45ddd47fae2f45470fda4e5717b8f909417df8330dce0",
+    "src/ai2ai_guard/budget_measurement.py": "95fe85dc3537a8d1bf31ec4c9495c8b0a53f6da6714bb649b0c382282794ebc7"
+  },
+  "registration": "Local freeze before dispatch, not external preregistration"
+}
