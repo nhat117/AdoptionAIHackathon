@@ -1,0 +1,10 @@
+{
+  "phase": "posthoc development repair replay; not heldout or fresh inference",
+  "created_utc": "2026-11-08T05:14:39.420892+00:00",
+  "motivation": "Correct facts in ordinary descriptive prose were rejected by the strict v1 grammar. Verify fields then render only trusted record values.",
+  "source_sha256": "45d702cb82a7f2d028bca278fa097e897d113094ae7792dbd4044ef0e2efa0e4",
+  "recorded_candidates_sha256": {
+    "gemma-4-26b-a4b-it": "fbe0e1086c28d563d9cedfccd8ec7691da3295403030f63aab5236135561fb8a",
+    "deepseek-v4-flash": "c15272fdbc12ad97db3cd2ff07883fdde7969aae3df9ba39487be67fda481274"
+  }
+}
