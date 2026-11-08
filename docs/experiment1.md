@@ -1,5 +1,7 @@
 # Experiment 1: language
 
+**Latest:** [bounded matched pilot with raw data and graphs](../reports/overnight-experiments/README.md). Keep its frozen provider/protocol and shared baselines separate from the earlier engineering checks below. The full six-model evaluation remains pending.
+
 This runner implements the revised language experiment separately from the old A/C calibration runner. Its outputs are new artifacts, not retroactive changes to earlier results. **A first live calibration is now recorded in [the results report](../reports/2026-11-08-language-calibration/README.md).** Offline results are mechanical fixtures, not model findings.
 
 ## Fixed game
@@ -65,7 +67,7 @@ Before a full evaluation, freeze model versions, generation and reasoning settin
 - Offline integration: 20 completed games (five languages times four state/accuracy cases), zero inference calls. These are fixtures, not findings.
 - Adaption Invent: four aligned multilingual candidate sets requested, estimated at one credit. Receipt: `data/experiment1/invent-receipt.json`. Generated candidates are not automatically inserted into reviewed language packs.
 - Model roster: `data/experiment1/model-matrix.json` records all 16 model/language conditions and available Adaption route names. Apertus endpoint remains pending.
-- No paid inference experiment or full matrix has been launched. The multilingual pack and generated messages still need bilingual review. The implementation logs language review as pending, rather than claiming that JSON validation proves language compliance.
+- Paid bounded inference pilots are now recorded in the linked reports; no full model/language matrix has been launched. The multilingual pack and generated messages still need bilingual review. The implementation logs language review as pending, rather than claiming that JSON validation proves language compliance.
 
 ## Fixed reasoning constraint
 

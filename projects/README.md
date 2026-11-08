@@ -8,15 +8,17 @@ Paper A now contains **three equally important experiments** in one evacuation g
 2. **Claimed source identity:** compare teammate, emergency expert, senior Chinese government official, Xi Jinping, Buddhist monk, and Christian pastor. Every selected identity is tested across models and their listed languages.
 3. **Network structure:** ring versus connected random-regular network, keeping ten agents and four neighbours each.
 
-Repetition and chosen listening are no longer treatment variables. The proposed controlled source speaks in rounds one and two; other agents continue live conversation. All active senders deliver to all four neighbours. These are planned changes, not a description of the existing runner.
+**Latest execution:** [bounded three-experiment pilot](../reports/overnight-experiments/README.md), with frozen Sonnet 5.5/Google/low controls, English/Vietnamese, raw archives and graphs. This pilot does not implement the full six-model matrix; translation review remains pending. The PDF is the historical proposal snapshot, not the live results report.
 
-The six-model roster and language assignments are listed below and in the paper. The full plan has 112 unique model/language/identity/network cells, sharing ordinary-peer ring baselines, before balanced truth/accuracy cases, seeds, and repeats. This is not a launched experiment or budget authorization. Model checks, translations, sample allocation, and updated simulator behavior are still required.
+Repetition and chosen listening are no longer treatment variables. The proposed controlled source speaks in rounds one and two; other agents continue live conversation. All active senders deliver to all four neighbours. The revised pilot runner implements this delivery policy; older A/C calibration artifacts retain their original protocol.
+
+The six-model roster and language assignments are listed below and in the paper. The full plan has 112 unique model/language/identity/network cells, sharing ordinary-peer ring baselines, before balanced truth/accuracy cases, seeds, and repeats. The full matrix has not launched and is not authorized by the smaller pilot. Broader model checks, translation review and sample allocation remain required.
 
 - [Revised paper A PDF](persistent-dissenter/main.pdf) · [LaTeX](persistent-dissenter/main.tex)
 - [Separate recovery paper C PDF](network-recovery/main.pdf) · [LaTeX](network-recovery/main.tex)
 - [Earlier calibration results](../reports/2026-11-08-calibration/README.md) describe the old design, not these three experiments.
 
-The folder name `persistent-dissenter` is retained for existing links. The approved language/identity/network overview is saved in `persistent-dissenter/figures/experiment-overview.png` and included in paper A. Earlier illustrations are outdated. Paper C remains a separate recovery proposal. The implementation guide describes the existing runner, not the revised protocol.
+The folder name `persistent-dissenter` is retained for existing links. The approved language/identity/network overview is saved in `persistent-dissenter/figures/experiment-overview.png` and included in paper A. Earlier illustrations are outdated. Paper C remains a separate recovery proposal. The implementation guide describes the earlier A/C runner; the bounded pilot report documents the revised protocol and current results.
 
 ### Named model roster
 

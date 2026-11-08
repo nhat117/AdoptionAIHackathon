@@ -5,7 +5,9 @@ Use it to learn nodes, state, parallel branches, and joins before choosing a res
 experiment. No authority roles, monitoring policy, or research scoring are built in.
 Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/python).
 
-The [networked evacuation proposals](projects/README.md) describe two planned studies: persistent warnings and communication access (A), and recovery after false reassurance (C). Both adapt an established human network experiment; neither has been implemented or run.
+The [networked evacuation proposals](projects/README.md) describe language, claimed source identity and network comparisons (A), and a separate recovery study (C). Both adapt an established human network experiment. Earlier A/C calibration and technical verification are recorded separately from the revised protocol.
+
+[Current bounded three-experiment pilot](reports/overnight-experiments/README.md): frozen Sonnet 5.5 / Google / low-reasoning collection, audited raw data, case-specific graphs, and retained failures. This exploratory English/Vietnamese pilot is smaller than the proposed six-model evaluation and uses translations awaiting review.
 
 ## Evacuation experiments
 
