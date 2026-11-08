@@ -12,3 +12,6 @@ work/
 dashboard-snapshot.json
 dashboard/.openai/
 dashboard/.data-app-offline/
+
+runs/
+.langgraph_api/

@@ -34,7 +34,7 @@ uv run pytest -q
 
 The first experiment command checks the frozen plan. Adding `--run` collects only missing trials and consumes Adaption usage. It reads `ADAPTION_API_KEY` or securely prompts without saving it. Existing trials are retained. Never put credentials in code or Git.
 
-**Validation:** 88 tests pass; lint passes; 133 prior run files are verified unchanged.
+**Validation:** the 88-test research suite and 14 existing LangGraph tests pass together (102 total); lint passes; 133 prior run files are verified unchanged. Python 3.11+ matches the existing Studio scaffold.
 
 ## Inspect the evidence
 
@@ -53,3 +53,7 @@ The [research ablation](src/ai2ai_injection/oversight_eval.py) preserves accepte
 An optional synthetic demo is available with `uv run python scripts/protected_fact_report.py --history configs/priming_demo.json --feedback configs/validator_feedback_demo.json`.
 
 Response Attack, Internal Safety Collapse and Thought Virus inform the preserved mechanism tests. Their harmful benchmarks, published success rates and subliminal-bias experiments are not reproduced here. See [ARCHIVE.md](ARCHIVE.md) for the earlier work.
+
+## Existing LangGraph Studio playground
+
+The generic scaffold already on `main` is retained alongside the research modules. See [LANGGRAPH_STUDIO.md](LANGGRAPH_STUDIO.md) for setup and offline fixtures. Its fixture outputs are not research results; the scored experiments above keep their original stateless Adaption path.
