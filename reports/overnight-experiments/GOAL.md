@@ -17,6 +17,6 @@ Frozen pilot: 72 new games: 16 shared ordinary-peer/ring language games (two sce
 User-approved extension: eight matched GPT-6.1 Terra English/Vietnamese baseline games across all four disaster/claim cases, low reasoning fixed. Keep this separately versioned and within the same total US$35 cap; preserve all Sonnet failures.
 
 - [x] Terra baseline: 8/8 completed; exact replay, costs, graphs and independent judge review complete.
-- [ ] Experiment 4 authenticated-evidence controls, datasets and results.
+- [x] Experiment 4: 16/16 complete; all eight positive controls pass; exact replay and independent judge review complete.
 - [ ] Experiment 5 evidence-forwarding controls, datasets and results.
 - [ ] Complete reflection and decision log; post result images directly in group.

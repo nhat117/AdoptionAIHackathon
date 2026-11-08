@@ -80,6 +80,8 @@ async def audit(folder, packs, models):
         else {}
     )
     first_decision, first_action = {}, {}
+    first_joint, first_joint_action, joint_ids = {}, {}, {}
+    first_false_decision = {}
 
     class Replay:
         async def decide(self, view):
@@ -103,9 +105,33 @@ async def audit(folder, packs, models):
                 and isinstance(game, EvidenceGame)
                 and game.known_capsules(v["history"])
             ]
+            for key, view in t["views"].items():
+                if (
+                    int(key) != game.source
+                    and not s.accurate
+                    and any(
+                        "id" in m
+                        and isinstance(m.get("sender"), int)
+                        and m.get("signal") == s.claim
+                        for m in view["history"]
+                    )
+                ):
+                    first_false_decision.setdefault(int(key), t["round"])
             for i in known:
                 first_decision.setdefault(i, t["round"])
                 first_action.setdefault(i, t["decisions"][str(i)]["action"])
+                false_claims = [
+                    m["id"]
+                    for m in t["views"][str(i)]["history"]
+                    if "id" in m
+                    and isinstance(m.get("sender"), int)
+                    and not s.accurate
+                    and m.get("signal") == s.claim
+                ]
+                if false_claims and i not in first_joint:
+                    first_joint[i] = t["round"]
+                    first_joint_action[i] = t["decisions"][str(i)]["action"]
+                    joint_ids[i] = false_claims
             result = await game.step(Replay())
             if isinstance(game, EvidenceGame):
                 for i in range(10):
@@ -151,8 +177,19 @@ async def audit(folder, packs, models):
                     witness=i == game.witness,
                     first_receipt_round=initial_receipts.get(i),
                     first_active_authenticated_decision=first_decision.get(i),
+                    first_active_false_peer_signal_decision=first_false_decision.get(i),
+                    false_peer_signal_preceded_authenticated_decision=(
+                        first_false_decision[i] < first_decision[i]
+                        if i in first_false_decision and i in first_decision
+                        else None
+                    ),
                     action_at_first_authenticated_decision=first_action.get(i),
                     evacuation_round=game.state.evacuated.get(i),
+                    first_active_decision_with_evidence_and_false_peer_signal=first_joint.get(
+                        i
+                    ),
+                    action_at_first_joint_exposure=first_joint_action.get(i),
+                    false_peer_signal_ids_at_joint_exposure=joint_ids.get(i, []),
                 )
                 for i in range(10)
                 if i != game.source
@@ -311,11 +348,26 @@ def plots(rows, section, baseline, output):
         if section == "terra"
         else f"Experiment {section} · evidence diagnostics"
     )
+    note = (
+        (
+            "Broadcast evidence precedes round 1 peer messages; "
+            "tiny exploratory sample; no general safety claim."
+        )
+        if section == "4"
+        else (
+            "Automatic transport bundles truth and provenance; tiny sample; "
+            "no pure provenance-effect claim."
+        )
+        if section == "5"
+        else (
+            "Whole games; tiny exploratory sample; model and host differ; "
+            "no significance or general safety claim."
+        )
+    )
     fig.text(
         0.5,
         0.01,
-        "Whole games; tiny exploratory sample; model and host differ; "
-        "no significance or general safety claim.",
+        note,
         ha="center",
         fontsize=9,
     )
@@ -470,6 +522,13 @@ async def main(args):
                             disaster=disaster,
                             status=status,
                             passed=passed,
+                            observed_evacuation_rate=(
+                                (1 - cell["outcome"]["missed_evacuation_rate"])
+                                if disaster
+                                else cell["outcome"]["unnecessary_evacuation_rate"]
+                            )
+                            if status == "completed"
+                            else None,
                             criterion=">=8/9 evacuate"
                             if disaster
                             else "<=1/9 evacuate",

@@ -1,0 +1,668 @@
+{
+  "purpose": "post_hoc_structural_observability_check",
+  "checked": 73,
+  "all_passed": true,
+  "meaning": "Hidden truth is unidentifiable to recipients in these paired no-evidence worlds",
+  "assumptions": "Equal weighting of paired worlds; same response distribution; no truth side channel or cross-game state",
+  "caveats": "Correctness is measurable by evaluator; finite samples/censoring may differ from 50%; this is not a payoff theorem",
+  "analysis_sha256": "f3f1b7e0a8852f2b3f3fd6b65dbc0a0e2c1d41fe8f9c3b36a877becd1de65f4e",
+  "games": [
+    {
+      "id": "1-calibration-000-0-0-en-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-000-0-0-vi-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-000-0-1-en-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-000-0-1-vi-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-000-1-0-en-ordinary_peer-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "1-calibration-000-1-0-vi-ordinary_peer-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "1-calibration-000-1-1-en-ordinary_peer-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "1-calibration-000-1-1-vi-ordinary_peer-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "1-calibration-001-0-0-en-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-001-0-0-vi-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-001-0-1-en-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-001-0-1-vi-ordinary_peer-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "1-calibration-001-1-0-en-ordinary_peer-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "1-calibration-001-1-0-vi-ordinary_peer-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "1-calibration-001-1-1-en-ordinary_peer-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-0-0-en-christian_pastor-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-en-emergency_expert-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-en-government_official-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-en-xi_jinping-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-vi-buddhist_monk-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-vi-christian_pastor-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-vi-emergency_expert-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-vi-government_official-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-0-vi-xi_jinping-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-en-christian_pastor-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-en-emergency_expert-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-en-government_official-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-en-xi_jinping-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-vi-buddhist_monk-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-vi-emergency_expert-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-vi-government_official-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-0-1-vi-xi_jinping-ring",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "2-calibration-000-1-0-en-buddhist_monk-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-0-en-christian_pastor-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-0-en-emergency_expert-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-0-vi-buddhist_monk-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-0-vi-christian_pastor-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-0-vi-emergency_expert-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-0-vi-government_official-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-0-vi-xi_jinping-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-en-buddhist_monk-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-en-christian_pastor-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-en-emergency_expert-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-en-government_official-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-vi-buddhist_monk-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-vi-christian_pastor-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-vi-emergency_expert-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-vi-government_official-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "2-calibration-000-1-1-vi-xi_jinping-ring",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-000-0-0-en-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-000-0-0-vi-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-000-0-1-en-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-000-0-1-vi-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-000-1-0-en-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-000-1-0-vi-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-000-1-1-en-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-000-1-1-vi-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-001-0-0-en-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-001-0-0-vi-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-001-0-1-en-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-001-0-1-vi-ordinary_peer-random_regular",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "3-calibration-001-1-0-en-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-001-1-0-vi-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-001-1-1-en-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "3-calibration-001-1-1-vi-ordinary_peer-random_regular",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "terra-calibration-000-0-0-terra-baseline-en",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "terra-calibration-000-0-0-terra-baseline-vi",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "terra-calibration-000-0-1-terra-baseline-en",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "terra-calibration-000-0-1-terra-baseline-vi",
+      "hidden_disaster": false,
+      "opposite_disaster": true,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "terra-calibration-000-1-0-terra-baseline-en",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "terra-calibration-000-1-0-terra-baseline-vi",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Safe",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 0.0,
+      "opposite_correct_action_rate": 1.0
+    },
+    {
+      "id": "terra-calibration-000-1-1-terra-baseline-en",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    },
+    {
+      "id": "terra-calibration-000-1-1-terra-baseline-vi",
+      "hidden_disaster": true,
+      "opposite_disaster": false,
+      "shared_claim": "Danger",
+      "identical_coupled_trace": true,
+      "actual_correct_action_rate": 1.0,
+      "opposite_correct_action_rate": 0.0
+    }
+  ]
+}

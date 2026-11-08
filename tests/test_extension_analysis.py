@@ -6,6 +6,8 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+import pytest
+
 from swarm_lab.evacuation.dataset import generate
 from swarm_lab.evacuation.evidence import EvidenceGame
 from swarm_lab.evacuation.language import append
@@ -21,7 +23,10 @@ MODELS = {
 }
 
 
-def test_proof_transport_replays_and_missing_price_filter_is_detected(tmp_path):
+@pytest.mark.parametrize("premature", [False, True])
+def test_proof_transport_replays_and_missing_price_filter_is_detected(
+    tmp_path, premature
+):
     s = next(s for s in generate(1) if s.disaster and not s.accurate)
     pack = {
         "peer_label": "peer",
@@ -38,7 +43,7 @@ def test_proof_transport_replays_and_missing_price_filter_is_detected(tmp_path):
             signal = proof[-1]["capsules"][0]["signal"] if proof else "Unknown"
             d = dict(
                 signal=signal,
-                action="evacuate" if signal == "Danger" else "stay",
+                action="evacuate" if signal == "Danger" or premature else "stay",
                 message=signal,
                 parents=[proof[-1]["id"]] if proof else [],
             )
@@ -88,6 +93,19 @@ def test_proof_transport_replays_and_missing_price_filter_is_detected(tmp_path):
     row = asyncio.run(analysis.audit(tmp_path, {"en": pack}, MODELS))
     assert row["audit_errors"] == []
     assert row["outcome"]["other_recipients_correct_action_rate"] == 1
+    timing = row["evidence_timing"]
+    assert len(timing) == 9
+    if premature:
+        assert any(
+            t["first_receipt_round"] == 1
+            and t["first_active_authenticated_decision"] is None
+            for t in timing
+        )
+    else:
+        assert all(
+            t["first_receipt_round"] < t["first_active_authenticated_decision"]
+            for t in timing
+        )
     lines = analysis.load(tmp_path / "calls.jsonl")
     next(c for c in lines if c["type"] == "provider_metadata")[
         "requested_provider"
