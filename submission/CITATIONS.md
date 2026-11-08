@@ -8,3 +8,7 @@ Checked against the original arXiv records on 8 November 2026. All four are cite
 - Gong et al. (2026), *On Task, Off Track: Benchmarking LLM and Agent Robustness to Near-Target Prompt Injection*, [arXiv:2610.32531v1](https://arxiv.org/abs/2610.32531v1). Supports evaluating answers that remain close to the task but contain incorrect changes.
 
 These papers motivate the study; they do not establish our experiment's outcomes. Figure 2 comes only from [saved run metrics](../runs/oversight-ablation-v1/metrics.json). Its [CSV](figures/results-chart-data.csv) and [provenance](figures/provenance.json) identify the plotted rows. Checks within each evidence condition reuse the same twelve responses. Blocked reports are not repaired tasks. No new inference was performed for this revision.
+
+## APA 7 formatting
+
+Formatting follows APA's official [author–date guidance](https://apastyle.apa.org/style-grammar-guidelines/citations/basic-principles/author-date) and [preprint reference examples](https://apastyle.apa.org/style-grammar-guidelines/references/examples/preprint-article-references). In-text citations include both narrative and parenthetical forms. The reference list is alphabetized and uses sentence case, italicized titles, complete author lists, hanging indents and double spacing. The hackathon template controls the other document formatting.
