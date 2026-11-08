@@ -20,6 +20,27 @@ from .dataset import load_dataset
 from .engine import Game, InvalidDecision, neighbours, state_hash
 from .openrouter import OpenRouterBackend
 
+# Anthropic raw schemas omit length/count constraints; validate() enforces them.
+# https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+DECISION_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["signal", "action", "message", "parents"],
+    "properties": {
+        "signal": {"type": "string", "enum": ["Safe", "Danger", "Unknown"]},
+        "action": {"type": "string", "enum": ["stay", "evacuate"]},
+        "message": {
+            "type": "string",
+            "description": "Nonempty message, at most 400 Unicode characters.",
+        },
+        "parents": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Up to four distinct received IDs supporting signal.",
+        },
+    },
+}
+
 
 def validate(data, view):
     if not isinstance(data, dict) or set(data) != {
@@ -220,6 +241,19 @@ async def run(args):
     output_cap = getattr(args, "max_output_tokens", 512)
     if not 128 <= output_cap <= 4096:
         raise ValueError("Output cap must be between 128 and 4096")
+    structured = getattr(args, "structured_output", False)
+    if (
+        structured
+        and args.mode == "live"
+        and (
+            args.provider != "openrouter" or args.model != "anthropic/claude-sonnet-5.5"
+        )
+    ):
+        raise ValueError(
+            "Structured-output capability verified only for OpenRouter Sonnet 5.5"
+        )
+    schema = DECISION_SCHEMA if structured else None
+    protocol = "language-v2" if structured else "language-v1"
     reasoning = reasoning_policy(args.mode, args.provider, args.model)
     rows = [s for s in load_dataset(args.dataset) if s.split == args.split][
         : args.limit
@@ -228,7 +262,7 @@ async def run(args):
         raise ValueError("No matching scenarios")
     args.output.mkdir(parents=True, exist_ok=False)
     manifest = {
-        "protocol": "language-v1",
+        "protocol": protocol,
         "purpose": "technical_implementation_verification",
         "max_prompt_bytes": 64000,
         "status": "running",
@@ -252,6 +286,12 @@ async def run(args):
             "max_output_tokens": output_cap,
         },
         "reasoning_policy": reasoning,
+        "structured_output": structured,
+        "response_schema_sha256": hashlib.sha256(
+            json.dumps(schema, sort_keys=True).encode()
+        ).hexdigest()
+        if schema is not None
+        else None,
         "working_tree_dirty": bool(
             subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
         ),
@@ -290,6 +330,7 @@ async def run(args):
                     record,
                     reasoning_effort=reasoning["effort"],
                     max_prompt_bytes=64000,
+                    response_schema=schema,
                 )
         for scenario in rows:
             for lang in args.languages:
@@ -315,7 +356,7 @@ async def run(args):
                             "language": lang,
                             "mode": args.mode,
                             "model": args.model,
-                            "protocol": "language-v1",
+                            "protocol": protocol,
                             **game.outcomes(),
                         },
                     )
@@ -364,6 +405,7 @@ def main():
     p.add_argument("--max-calls", type=int, default=100)
     p.add_argument("--max-output-tokens", type=int, default=512)
     p.add_argument("--allow-unreviewed", action="store_true")
+    p.add_argument("--structured-output", action="store_true")
     p.add_argument("--output", type=Path, required=True)
     asyncio.run(run(p.parse_args()))
 

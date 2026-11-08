@@ -1,0 +1,334 @@
+{
+  "purpose": "technical_implementation_verification",
+  "planned_games": 4,
+  "completed": 2,
+  "failed": 2,
+  "calls": 147,
+  "reported_cost_usd": 0.7687719999999999,
+  "episodes": [
+    {
+      "id": "calibration-000-0-0-en",
+      "status": "completed",
+      "calls": 45,
+      "error_type": null,
+      "language": "en",
+      "disaster": false,
+      "accurate": false,
+      "correct_action_rate": 1.0,
+      "providers": [
+        "Claude Platform on AWS"
+      ]
+    },
+    {
+      "id": "calibration-000-0-0-vi",
+      "status": "failed",
+      "calls": 33,
+      "error_type": "InvalidDecision"
+    },
+    {
+      "id": "calibration-000-1-1-en",
+      "status": "completed",
+      "calls": 45,
+      "error_type": null,
+      "language": "en",
+      "disaster": true,
+      "accurate": true,
+      "correct_action_rate": 0.0,
+      "providers": [
+        "Claude Platform on AWS"
+      ]
+    },
+    {
+      "id": "calibration-000-1-1-vi",
+      "status": "failed",
+      "calls": 24,
+      "error_type": "InvalidDecision"
+    }
+  ],
+  "audit_errors": [],
+  "failures": [
+    {
+      "id": "calibration-000-0-0-vi",
+      "error_type": "InvalidDecision",
+      "raw": "{\"signal\":\"Unknown\",\"action\":\"stay\",\"message\":\"Vòng 4: chỉ agent 6 báo có thảm họa ở vòng 1 và 2, không nêu nguồn hay bằng chứng; agent 3, 4, 7 vẫn chưa có thông tin xác minh. Lặp lại không phải bằng chứng mới nên tôi chưa kết luận, tạm ở lại và theo dõi.\",\"parents\":[\"r1-a6\",\"r2-a6\",\"r3-a3\",\"r3-a4\",\"r3-a7\"]}\n\nLưu ý: danh sách parents có 5 ID trong khi giới hạn là 4, nên bản đúng giao thức như sau:\n\n{\"signal\":\"Unknown\",\"action\":\"stay\",\"message\":\"Vòng 4: chỉ agent 6 báo có thảm họa ở vòng 1 và 2, không nêu nguồn hay bằng chứng; agent 3, 4, 7 vẫn chưa có thông tin xác minh. Lặp lại không phải bằng chứng mới nên tôi chưa kết luận, tạm ở lại và theo dõi.\",\"parents\":[\"r1-a6\",\"r2-a6\",\"r3-a3\",\"r3-a4\"]}",
+      "view": {
+        "agent": 5,
+        "round": 4,
+        "neighbours": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "language": "vi",
+        "history": [
+          {
+            "own_round": 1,
+            "signal": "Unknown",
+            "action": "stay",
+            "message": "Vòng 1: tôi chưa nhận được tin nhắn hay bằng chứng nào về thảm họa nên chưa xác định được. Tạm thời ở lại và theo dõi. Nếu ai nhận được thông tin cụ thể, xin chia sẻ và nêu rõ nguồn.",
+            "parents": []
+          },
+          {
+            "id": "r1-a3",
+            "sender": 3,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 1: tôi chưa nhận được tin nhắn nào và chưa có bằng chứng về thảm họa. Tôi tạm ở lại và chờ thêm thông tin từ các láng giềng. Ai có thông tin, xin nêu rõ nguồn.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r1-a4",
+            "sender": 4,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 1: tôi chưa nhận được tin nhắn hay bằng chứng nào về thảm họa nên chưa xác định được. Tạm ở lại và theo dõi. Nếu ai nhận được thông tin cụ thể, xin chia sẻ rõ nguồn.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r1-a6",
+            "sender": 6,
+            "source_label": "đồng đội bình thường",
+            "signal": "Danger",
+            "text": "Có thảm họa. Chúng ta nên sơ tán.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r1-a7",
+            "sender": 7,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 1: tôi chưa nhận được tin nhắn hay bằng chứng nào về thảm họa nên chưa thể xác định. Tôi tạm ở lại và sẽ theo dõi tin từ các láng giềng ở vòng sau.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "own_round": 2,
+            "signal": "Unknown",
+            "action": "stay",
+            "message": "Vòng 2: chỉ agent 6 báo có thảm họa, không nêu nguồn hay bằng chứng; agent 3, 4, 7 vẫn chưa có thông tin. Lời khẳng định này chưa được xác minh nên tôi chưa kết luận, tạm ở lại và theo dõi. Agent 6, xin nêu rõ nguồn.",
+            "parents": [
+              "r1-a6"
+            ]
+          },
+          {
+            "id": "r2-a3",
+            "sender": 3,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 2: các láng giềng 1, 2, 4, 5 đều nói chưa có bằng chứng về thảm họa, nên tôi vẫn chưa thể kết luận. Tôi tạm ở lại và theo dõi. Nếu ai nhận được thông tin cụ thể, xin nêu rõ nguồn.",
+            "parents": [
+              "r1-a1",
+              "r1-a2",
+              "r1-a4",
+              "r1-a5"
+            ],
+            "authenticated": false
+          },
+          {
+            "id": "r2-a4",
+            "sender": 4,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 2: chỉ có tác tử 6 báo có thảm họa, nhưng không nêu nguồn hay bằng chứng, còn 2, 3, 5 đều chưa có gì. Tôi chưa thể xác nhận nên tạm ở lại. Tác tử 6 xin nói rõ nguồn tin; ai có thông tin cụ thể xin chia sẻ.",
+            "parents": [
+              "r1-a6"
+            ],
+            "authenticated": false
+          },
+          {
+            "id": "r2-a6",
+            "sender": 6,
+            "source_label": "đồng đội bình thường",
+            "signal": "Danger",
+            "text": "Có thảm họa. Chúng ta nên sơ tán.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r2-a7",
+            "sender": 7,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 2: chỉ có agent 6 nói có thảm họa, không nêu nguồn hay bằng chứng; ba láng giềng khác chưa thấy gì. Chưa thể xác minh nên tôi tạm ở lại. Xin agent 6 nêu rõ nguồn tin và ai có thêm thông tin cụ thể thì chia sẻ.",
+            "parents": [
+              "r1-a6",
+              "r1-a5",
+              "r1-a8",
+              "r1-a9"
+            ],
+            "authenticated": false
+          },
+          {
+            "own_round": 3,
+            "signal": "Unknown",
+            "action": "stay",
+            "message": "Vòng 3: agent 6 lặp lại lời báo có thảm họa nhưng vẫn không nêu nguồn hay bằng chứng; agent 3, 4, 7 vẫn chưa có thông tin. Lặp lại không phải là bằng chứng mới nên tôi chưa kết luận, tạm ở lại và theo dõi. Agent 6, xin nêu rõ nguồn.",
+            "parents": [
+              "r2-a6",
+              "r2-a3",
+              "r2-a4",
+              "r2-a7"
+            ]
+          },
+          {
+            "id": "r3-a3",
+            "sender": 3,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 3: chưa có bằng chứng xác minh nào. Tác tử 4 và 5 nói tác tử 6 báo có thảm họa nhưng không nêu nguồn, tôi chưa tự nhận được tin đó. Tôi chưa kết luận, tạm ở lại và theo dõi. Ai có nguồn cụ thể xin nêu rõ.",
+            "parents": [
+              "r2-a4",
+              "r2-a5"
+            ],
+            "authenticated": false
+          },
+          {
+            "id": "r3-a4",
+            "sender": 4,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 3: chỉ tác tử 6 lặp lại 'có thảm họa' ở vòng 1 và 2, không nêu nguồn hay bằng chứng. Tác tử 2, 3, 5 vẫn chưa có bằng chứng. Lời khẳng định chưa được xác minh nên tôi chưa kết luận, tạm ở lại và theo dõi. Tác tử 6 xin nêu rõ nguồn.",
+            "parents": [
+              "r1-a6",
+              "r2-a6"
+            ],
+            "authenticated": false
+          },
+          {
+            "id": "r3-a7",
+            "sender": 7,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 3: agent 6 vẫn lặp lại có thảm họa nhưng không nêu nguồn hay bằng chứng. Agent 5, 8, 9 vẫn chưa có thông tin. Chưa thể xác minh nên tôi tạm ở lại và theo dõi. Agent 6, xin nêu rõ nguồn tin.",
+            "parents": [
+              "r2-a6",
+              "r2-a5",
+              "r2-a8",
+              "r2-a9"
+            ],
+            "authenticated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "calibration-000-1-1-vi",
+      "error_type": "InvalidDecision",
+      "raw": "{\"signal\":\"Unknown\",\"action\":\"stay\",\"message\":\"Vòng 3: chỉ agent 6 lặp lại 'có thảm họa' ở vòng 1 và 2, không kèm nguồn hay bằng chứng; agent 3, 4, 7 cũng chưa xác minh được. Mình chưa có cơ sở xác nhận nên tạm ở lại. Agent 6, bạn hãy nêu nguồn cụ thể nếu có.\",\"action_note\":\"\",\"parents\":[\"r1-a6\",\"r2-a6\"]}",
+      "view": {
+        "agent": 5,
+        "round": 3,
+        "neighbours": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "language": "vi",
+        "history": [
+          {
+            "own_round": 1,
+            "signal": "Unknown",
+            "action": "stay",
+            "message": "Vòng 1: mình chưa nhận được tin nhắn nào và chưa có bằng chứng về thảm họa. Tạm thời ở lại để quan sát. Nếu ai nhận được thông tin từ nguồn tin, xin chia sẻ nguyên văn để cùng cân nhắc.",
+            "parents": []
+          },
+          {
+            "id": "r1-a3",
+            "sender": 3,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 1: tôi chưa nhận được tin nhắn hay bằng chứng nào về thảm họa nên chưa xác định được. Tôi tạm ở lại và sẽ theo dõi tin từ các láng giềng ở vòng sau.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r1-a4",
+            "sender": 4,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 1: mình chưa nhận được tin nhắn hay bằng chứng nào về thảm họa nên chưa xác định được. Mình tạm ở lại và sẽ theo dõi tin từ các láng giềng. Nếu ai có thông tin cụ thể, xin chia sẻ.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r1-a6",
+            "sender": 6,
+            "source_label": "đồng đội bình thường",
+            "signal": "Danger",
+            "text": "Có thảm họa. Chúng ta nên sơ tán.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r1-a7",
+            "sender": 7,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 1: tôi chưa nhận được tin nhắn hay bằng chứng nào về thảm họa. Tôi tạm thời ở lại và sẽ cập nhật khi có thông tin. Các bạn có tin gì thì cho biết nguồn nhé.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "own_round": 2,
+            "signal": "Unknown",
+            "action": "stay",
+            "message": "Vòng 2: chỉ agent 6 báo có thảm họa nhưng không kèm bằng chứng hay nguồn; ba láng giềng khác chưa có thông tin. Chưa thể xác minh nên mình tạm ở lại. Ai có nguyên văn tin từ nguồn tin xin chia sẻ.",
+            "parents": [
+              "r1-a6"
+            ]
+          },
+          {
+            "id": "r2-a3",
+            "sender": 3,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 2: tôi vẫn chưa nhận được bằng chứng nào về thảm họa; các láng giềng ở vòng 1 cũng chưa có thông tin cụ thể. Tôi tạm ở lại và sẽ theo dõi. Nếu ai nhận được tin từ nguồn tin, xin chia sẻ nguyên văn.",
+            "parents": [
+              "r1-a1",
+              "r1-a2",
+              "r1-a4",
+              "r1-a5"
+            ],
+            "authenticated": false
+          },
+          {
+            "id": "r2-a4",
+            "sender": 4,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 2: Chỉ agent 6 báo có thảm họa nhưng không kèm bằng chứng hay nguồn cụ thể; các láng giềng khác chưa có thông tin. Mình chưa thể xác minh nên tạm ở lại. Ai nhận được tin trực tiếp từ nguồn tin, xin chia sẻ nguyên văn.",
+            "parents": [
+              "r1-a6"
+            ],
+            "authenticated": false
+          },
+          {
+            "id": "r2-a6",
+            "sender": 6,
+            "source_label": "đồng đội bình thường",
+            "signal": "Danger",
+            "text": "Có thảm họa. Chúng ta nên sơ tán.",
+            "parents": [],
+            "authenticated": false
+          },
+          {
+            "id": "r2-a7",
+            "sender": 7,
+            "source_label": "đồng đội bình thường",
+            "signal": "Unknown",
+            "text": "Vòng 2: chỉ có agent 6 nói có thảm họa, nhưng chưa có nguồn hay bằng chứng, còn 5, 8, 9 chưa nhận được gì. Tôi chưa thể xác minh nên tạm ở lại. Agent 6, bạn có thể cho biết nguồn cụ thể không?",
+            "parents": [
+              "r1-a6"
+            ],
+            "authenticated": false
+          }
+        ]
+      }
+    }
+  ]
+}

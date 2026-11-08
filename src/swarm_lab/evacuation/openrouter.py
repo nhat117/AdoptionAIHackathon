@@ -15,10 +15,12 @@ class OpenRouterBackend:
         record,
         reasoning_effort=None,
         max_prompt_bytes=16000,
+        response_schema=None,
     ):
         self.api_key, self.settings, self.record = api_key, settings, record
         self.reasoning_effort = reasoning_effort
         self.max_prompt_bytes = max_prompt_bytes
+        self.response_schema = response_schema
 
     async def generate(self, agent: AgentSettings, input_text: str) -> str:
         return await asyncio.to_thread(self._generate, agent, input_text)
@@ -47,6 +49,15 @@ class OpenRouterBackend:
             payload.pop("temperature")
         if self.reasoning_effort is not None:
             payload["reasoning"] = {"effort": self.reasoning_effort}
+        if self.response_schema is not None:
+            payload["response_format"] = {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "evacuation_decision",
+                    "strict": True,
+                    "schema": self.response_schema,
+                },
+            }
         request = urllib.request.Request(
             "https://openrouter.ai/api/v1/chat/completions",
             data=json.dumps(payload).encode(),

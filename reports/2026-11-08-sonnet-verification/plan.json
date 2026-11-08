@@ -1,0 +1,17 @@
+{
+  "goal": "Verify the matched four-game protocol on a second model",
+  "purpose": "technical_implementation_verification",
+  "model": "anthropic/claude-sonnet-5.5",
+  "reasoning": "low",
+  "temperature": "provider_controlled",
+  "max_output_tokens": 2048,
+  "games": 4,
+  "max_calls_per_game": 45,
+  "max_total_calls": 180,
+  "languages": [
+    "en",
+    "vi"
+  ],
+  "reported_cost_stop_usd": 3,
+  "note": "Legacy split calibration; purpose technical verification. Draft translations; no language-ranking claims."
+}

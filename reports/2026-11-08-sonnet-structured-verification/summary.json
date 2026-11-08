@@ -1,0 +1,38 @@
+{
+  "purpose": "technical_implementation_verification",
+  "planned_games": 2,
+  "completed": 2,
+  "failed": 0,
+  "calls": 90,
+  "reported_cost_usd": 0.772554,
+  "episodes": [
+    {
+      "id": "calibration-000-0-0-vi",
+      "status": "completed",
+      "calls": 45,
+      "error_type": null,
+      "language": "vi",
+      "disaster": false,
+      "accurate": false,
+      "correct_action_rate": 1.0,
+      "providers": [
+        "Google"
+      ]
+    },
+    {
+      "id": "calibration-000-1-1-vi",
+      "status": "completed",
+      "calls": 45,
+      "error_type": null,
+      "language": "vi",
+      "disaster": true,
+      "accurate": true,
+      "correct_action_rate": 0.0,
+      "providers": [
+        "Google"
+      ]
+    }
+  ],
+  "audit_errors": [],
+  "failures": []
+}

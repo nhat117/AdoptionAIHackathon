@@ -53,3 +53,5 @@ Local-language comparisons change model and language together. The shared Englis
 [First Experiment 1 calibration](../reports/2026-11-08-language-calibration/README.md): six of eight GPT-4.1 mini games completed; two failed provenance validation. Low reasoning is now a fixed constraint for reasoning-capable models; unverified endpoints fail closed.
 
 [Technical implementation verification](../reports/2026-11-08-implementation-verification/README.md): four Terra games completed, no invalid outputs or trace-audit errors, approximately $0.24 reported cost. These are engineering checks, not language-effect estimates.
+
+[Sonnet technical verification](../reports/2026-11-08-sonnet-verification/README.md) found format failures. The optional structured-output protocol completed both versioned retries; original failures remain preserved.

@@ -402,3 +402,121 @@ def test_paired_run_records_actual_language_and_verification_purpose(tmp_path):
     manifest = json.loads((args.output / "manifest.json").read_text())
     assert manifest["purpose"] == "technical_implementation_verification"
     assert manifest["research_results"] is False
+
+
+@pytest.mark.parametrize("structured", [False, True])
+def test_openrouter_strict_response_schema_is_opt_in(monkeypatch, structured):
+    import io
+    import urllib.request
+
+    from swarm_lab.evacuation.openrouter import OpenRouterBackend
+    from swarm_lab.settings import AgentSettings, Settings
+
+    schema = {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["signal", "action", "message", "parents"],
+        "properties": {
+            "signal": {"type": "string", "enum": ["Safe", "Danger", "Unknown"]},
+            "action": {"type": "string", "enum": ["stay", "evacuate"]},
+            "message": {
+                "type": "string",
+                "description": "Nonempty message, at most 400 Unicode characters.",
+            },
+            "parents": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Up to four distinct received IDs supporting signal.",
+            },
+        },
+    }
+
+    def fake_open(request, timeout):
+        payload = json.loads(request.data)
+        if structured:
+            assert payload["response_format"] == {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "evacuation_decision",
+                    "strict": True,
+                    "schema": schema,
+                },
+            }
+        else:
+            assert "response_format" not in payload
+        return io.BytesIO(
+            json.dumps(
+                {"choices": [{"finish_reason": "stop", "message": {"content": "{}"}}]}
+            ).encode()
+        )
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_open)
+    options = {"response_schema": schema} if structured else {}
+    backend = OpenRouterBackend("test-key", Settings(), lambda _: None, **options)
+    assert asyncio.run(backend.generate(AgentSettings(), "local view")) == "{}"
+
+
+@pytest.mark.parametrize(
+    "structured, protocol", [(False, "language-v1"), (True, "language-v2")]
+)
+def test_structured_protocol_is_versioned_without_changing_plain_baseline(
+    tmp_path, structured, protocol
+):
+    from swarm_lab.evacuation.dataset import write_dataset
+
+    packs = tmp_path / "packs.json"
+    packs.write_text(json.dumps({"en": PACK}))
+    dataset = tmp_path / "scenarios.jsonl"
+    write_dataset(dataset, [scenario()])
+    args = Namespace(
+        packs=packs,
+        languages=["en"],
+        limit=1,
+        max_calls=100,
+        mode="offline",
+        split="calibration",
+        allow_unreviewed=False,
+        dataset=dataset,
+        output=tmp_path / "versioned-run",
+        provider="openrouter",
+        model="fixture",
+        structured_output=structured,
+    )
+    asyncio.run(run(args))
+    manifest = json.loads((args.output / "manifest.json").read_text())
+    outcomes = [
+        json.loads(line)
+        for line in (args.output / "outcomes.jsonl").read_text().splitlines()
+    ]
+    assert manifest["protocol"] == protocol
+    assert manifest["structured_output"] is structured
+    assert all(item["protocol"] == protocol for item in outcomes)
+
+
+def test_structured_unverified_model_fails_before_network(tmp_path, monkeypatch):
+    packs = tmp_path / "packs.json"
+    packs.write_text(json.dumps({"en": PACK}))
+    args = Namespace(
+        packs=packs,
+        languages=["en"],
+        limit=1,
+        max_calls=100,
+        mode="live",
+        split="calibration",
+        allow_unreviewed=True,
+        dataset=tmp_path / "not-read.jsonl",
+        output=tmp_path / "not-created",
+        provider="openrouter",
+        model="openai/gpt-4.1-mini",
+        structured_output=True,
+    )
+
+    def forbidden_client(*args, **kwargs):
+        pytest.fail("Must fail before creating a client")
+
+    monkeypatch.setattr(
+        "swarm_lab.evacuation.language.OpenRouterBackend", forbidden_client
+    )
+    with pytest.raises(ValueError, match="Structured-output capability verified only"):
+        asyncio.run(run(args))
+    assert not args.output.exists()
