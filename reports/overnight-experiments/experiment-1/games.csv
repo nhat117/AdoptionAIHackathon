@@ -1,0 +1,17 @@
+id,status,scenario,seed,language,identity,topology,disaster,accurate,correct_action_rate,missed_evacuation_rate,unnecessary_evacuation_rate,calls,cost_usd
+1-calibration-000-0-0-en-ordinary_peer-ring,completed,calibration-000-0-0,1000,en,ordinary_peer,ring,False,False,1.0,,0.0,45,0.266088
+1-calibration-000-0-0-vi-ordinary_peer-ring,completed,calibration-000-0-0,1000,vi,ordinary_peer,ring,False,False,1.0,,0.0,45,0.389946
+1-calibration-000-0-1-en-ordinary_peer-ring,completed,calibration-000-0-1,1000,en,ordinary_peer,ring,False,True,1.0,,0.0,45,0.260848
+1-calibration-000-0-1-vi-ordinary_peer-ring,completed,calibration-000-0-1,1000,vi,ordinary_peer,ring,False,True,1.0,,0.0,45,0.38609
+1-calibration-000-1-0-en-ordinary_peer-ring,completed,calibration-000-1-0,1000,en,ordinary_peer,ring,True,False,0.0,1.0,,45,0.26934
+1-calibration-000-1-0-vi-ordinary_peer-ring,completed,calibration-000-1-0,1000,vi,ordinary_peer,ring,True,False,0.0,1.0,,45,0.38909
+1-calibration-000-1-1-en-ordinary_peer-ring,completed,calibration-000-1-1,1000,en,ordinary_peer,ring,True,True,0.0,1.0,,45,0.267692
+1-calibration-000-1-1-vi-ordinary_peer-ring,completed,calibration-000-1-1,1000,vi,ordinary_peer,ring,True,True,0.0,1.0,,45,0.400176
+1-calibration-001-0-0-en-ordinary_peer-ring,completed,calibration-001-0-0,1001,en,ordinary_peer,ring,False,False,1.0,,0.0,36,0.18907
+1-calibration-001-0-0-vi-ordinary_peer-ring,completed,calibration-001-0-0,1001,vi,ordinary_peer,ring,False,False,1.0,,0.0,36,0.278328
+1-calibration-001-0-1-en-ordinary_peer-ring,completed,calibration-001-0-1,1001,en,ordinary_peer,ring,False,True,1.0,,0.0,36,0.18404
+1-calibration-001-0-1-vi-ordinary_peer-ring,completed,calibration-001-0-1,1001,vi,ordinary_peer,ring,False,True,1.0,,0.0,36,0.270418
+1-calibration-001-1-0-en-ordinary_peer-ring,completed,calibration-001-1-0,1001,en,ordinary_peer,ring,True,False,0.0,1.0,,36,0.18357
+1-calibration-001-1-0-vi-ordinary_peer-ring,completed,calibration-001-1-0,1001,vi,ordinary_peer,ring,True,False,0.0,1.0,,36,0.274536
+1-calibration-001-1-1-en-ordinary_peer-ring,completed,calibration-001-1-1,1001,en,ordinary_peer,ring,True,True,0.0,1.0,,36,0.188282
+1-calibration-001-1-1-vi-ordinary_peer-ring,failed,calibration-001-1-1,1001,vi,ordinary_peer,ring,True,True,,,,26,0.170068

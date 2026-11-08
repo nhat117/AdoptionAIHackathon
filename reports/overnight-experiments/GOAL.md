@@ -5,7 +5,7 @@ Complete small exploratory runs for Experiments 1 (language), 2 (claimed source 
 Completion means a bounded initial study for each factor, not the full proposed factorial matrix or a statistically conclusive paper. Draft translations remain unreviewed. Model and provider comparisons require separate matched runs.
 
 - [x] Freeze protocol and provider, test controls, save run plan.
-- [ ] Experiment 1: English/Vietnamese matched games and analysis.
+- [x] Experiment 1: 16 attempted, 15 complete, one retained failure; replay audit and graphs complete.
 - [ ] Experiment 2: six source labels, same message/evidence, and analysis.
 - [ ] Experiment 3: ring/random regular matched games and analysis.
 - [ ] Update report, verify artifacts, push final progress report.
