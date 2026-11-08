@@ -5,7 +5,7 @@ import pytest
 from adaption import Adaption
 
 from ai2ai_injection.adaption_provider import AdaptionClient, load_key, make_client
-from ai2ai_injection.pacing import RequestPacer
+from ai2ai_injection.pacing import RequestPacer, retry_after_seconds
 
 
 def mock_client(handler):
