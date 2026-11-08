@@ -37,6 +37,8 @@ def target_trial(trial, client):
         )
         if hasattr(error, "request_attempts"):
             row["request_attempts"] = error.request_attempts
+        if hasattr(error, "response_metadata"):
+            row["response_metadata"] = error.response_metadata
     return row
 
 
@@ -59,6 +61,8 @@ def monitor_trial(row, client):
         )
         if hasattr(error, "request_attempts"):
             result["request_attempts"] = error.request_attempts
+        if hasattr(error, "response_metadata"):
+            result["response_metadata"] = error.response_metadata
     return result
 
 
@@ -147,7 +151,9 @@ def main(argv=None):
             config["monitor_model"],
             keys[monitor_provider],
             temperature=config["monitor_temperature"],
-            max_output_tokens=config.get("max_output_tokens", 1024),
+            max_output_tokens=config.get(
+                "monitor_max_output_tokens", config.get("max_output_tokens", 1024)
+            ),
         )
         items = []
         for row in rows:

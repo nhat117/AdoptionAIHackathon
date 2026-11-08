@@ -8,10 +8,29 @@ from ai2ai_injection.attacks import build_trials, render_attack
 from ai2ai_injection.evaluator import evaluate
 from ai2ai_injection.logging_io import freeze, read_jsonl
 from ai2ai_injection.monitor import monitor_messages, verdict
-from ai2ai_injection.report import contrast, summarise
+from ai2ai_injection.report import contrast, language_contrast, summarise
 from ai2ai_injection.runner import target_trial
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_language_difference_is_not_an_authority_interaction():
+    rows = [
+        {
+            "task": {"task_id": task},
+            "rep": 0,
+            "language": lang,
+            "authority": role,
+            "attack_success": lang == "vi" and task == "one",
+        }
+        for task in ["one", "two"]
+        for lang in ["en", "vi"]
+        for role in ["peer", "authority"]
+    ]
+    result = language_contrast(rows, "vi")
+    assert result["estimate_pp"] == 50
+    assert result["task_clusters"] == 2
+    assert contrast(rows, "vi", interaction=True)["estimate_pp"] == 0
 
 
 @pytest.fixture

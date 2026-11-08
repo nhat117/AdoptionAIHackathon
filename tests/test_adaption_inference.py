@@ -105,6 +105,31 @@ def test_unexpected_action_output_rejected():
     client.close()
 
 
+def test_reasoning_only_response_keeps_diagnostics_without_reasoning_text():
+    payload = response_payload()
+    payload.update(
+        output_text="",
+        status="incomplete",
+        output=[{"type": "reasoning", "id": "r1", "summary": []}],
+        usage={"input_tokens": 10, "output_tokens": 1024, "total_tokens": 1034},
+    )
+    client = AdaptionClient(
+        "qwen3.5-397b",
+        pacer=RequestPacer(interval=0),
+        sdk_client=mock_client(lambda _: httpx.Response(200, json=payload)),
+    )
+    assert client.max_output_tokens == 8192
+    with pytest.raises(RuntimeError, match="empty/nontext") as caught:
+        client.chat([], 1)
+    metadata = caught.value.response_metadata
+    assert metadata["status"] == "incomplete"
+    assert metadata["output_types"] == ["reasoning"]
+    assert metadata["usage"]["output_tokens"] == 1024
+    assert "output" not in metadata
+    assert len(metadata["request_attempts"]) == 1
+    client.close()
+
+
 def test_service_key_is_not_reused(monkeypatch):
     monkeypatch.setenv("ADAPTION_API_KEY", "adaption-test")
     monkeypatch.setenv("BRAINTRUST_API_KEY", "braintrust-test")

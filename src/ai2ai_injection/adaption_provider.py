@@ -11,13 +11,22 @@ from .pacing import SHARED_PACER, retry_after_seconds
 from .providers import Client
 
 
+class ResponseOutputError(RuntimeError):
+    """A response without usable final text, retaining non-reasoning diagnostics."""
+
+    def __init__(self, message, metadata):
+        super().__init__(message)
+        self.response_metadata = metadata
+        self.request_attempts = metadata["request_attempts"]
+
+
 class AdaptionClient:
     def __init__(
         self,
         model,
         key="",
         temperature=0.7,
-        max_output_tokens=1024,
+        max_output_tokens=None,
         timeout=120,
         sdk_client=None,
         pacer=None,
@@ -28,7 +37,11 @@ class AdaptionClient:
         self.provider = "adaption"
         self.model = model
         self.temperature = temperature
-        self.max_output_tokens = max_output_tokens
+        self.max_output_tokens = (
+            max_output_tokens
+            if max_output_tokens is not None
+            else (8192 if model.startswith("qwen") else 1024)
+        )
         self.sdk = sdk_client or Adaption(api_key=key, max_retries=0, timeout=timeout)
 
     def chat(self, messages, seed):
@@ -70,11 +83,24 @@ class AdaptionClient:
                 raise failure from None
         content = response.output_text
         output_types = [item.type for item in response.output]
-        if any(kind not in ("message", "reasoning") for kind in output_types):
-            raise RuntimeError("Unexpected tool/action output with tools disabled")
-        if not isinstance(content, str) or not content.strip():
-            raise RuntimeError("Adaption returned empty/nontext output")
         usage = response.usage.model_dump(mode="json") if response.usage else {}
+        metadata = {
+            "response_id": response.id,
+            "model": response.model,
+            "status": response.status,
+            "output_types": output_types,
+            "usage": usage,
+            "max_output_tokens_requested": self.max_output_tokens,
+            "request_attempts": transport_attempts,
+        }
+        if any(kind not in ("message", "reasoning") for kind in output_types):
+            raise ResponseOutputError(
+                "Unexpected tool/action output with tools disabled", metadata
+            )
+        if not isinstance(content, str) or not content.strip():
+            raise ResponseOutputError(
+                "Adaption returned empty/nontext output", metadata
+            )
         return {
             "content": content,
             "model": response.model,
@@ -113,7 +139,7 @@ def load_key(provider):
     )
 
 
-def make_client(provider, model, key="", temperature=0.7, max_output_tokens=1024):
+def make_client(provider, model, key="", temperature=0.7, max_output_tokens=None):
     if provider == "adaption":
         return AdaptionClient(model, key, temperature, max_output_tokens)
     if provider not in ("braintrust", "ollama"):
