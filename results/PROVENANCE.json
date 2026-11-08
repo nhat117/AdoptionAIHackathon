@@ -317,7 +317,7 @@
     "scripts/write_expansion_report.py": "9ed3b22ef0270de6219178feb0ff97bcba511fe7b38b49301a1d666ad45c338e",
     "scripts/report_context_stress.py": "299bc80cbec1656d13f1cc534823997c598675701067523b16368758361a1805",
     "scripts/check_manipulations.py": "622d05fbc00ab47fca77d9aa3b60c9ade5bec66db77626385ac1e426010949ba",
-    "scripts/report_corrected_budgets.py": "929f8876eff19615b42fb7b37edf9303da11de59931611ce694835165cb1f0d7",
+    "scripts/report_corrected_budgets.py": "1dc7823c6013248baa446716bdcdd533905ce3137b3c03a049dd830dab2bd2d9",
     "scripts/run_multilingual_propagation.py": "03db594754ee32eb828f48de6dfddfa61329fed8335d918e5341c3b78529008e",
     "scripts/run_budget_calibration_v2.py": "c622b76503df55b7fe587905719717f12d6cb677810b22cb61b795529c75b99d",
     "scripts/protected_report.py": "93b505138d54dbd1637f0ade6e247eca948acc90d3f9704446c1bbd03ce04e12",
@@ -372,6 +372,7 @@
     "tests/test_development_calibration.py": "6e5e0933fe12871bdd4ec278ff3487dcbfe120b62ab0e73b840d0453b36afda4",
     "results/summary.csv": "88a0e3f943089e4621a36df726d27e6fe305baf2db69d702e3ebc2e65d3538b4",
     "results/historical_monitor_execution.log": "37d814b5416dd6ff51fae54b2253545ed22c676467d3ad8aab10e281b854c9a0",
+    "results/RESULTS_DIAGNOSIS.md": "7a0fed12b7fa79debec7ac507084fa746ad9f22367f585957efe7bc3fe4da592",
     "results/api_responses.jsonl": "84187f26655b2dcce28e0c9a9f7677184e0aa86eefd7afcc34766cab0921adde",
     "results/prospective_metrics.json": "645a1de79f8dff56757cdb84951b00a8681bd9683da1618986200e184df90ef0",
     "results/statistical_analysis.json": "043914b628bf6d1bf901fbd8329accad58d5a0e638bcb0f23f05f25c3f3ca691",
@@ -399,9 +400,9 @@
     "results/corrected_replay/metrics.json": "94e1dd3d4fe64204adaeecbda220c44bd8692ca17d75d6fd88d4f52f63e04a7d",
     "results/corrected_replay/summary.csv": "3fe89a8d226916c1add0653496e2d87164d05edaff8e0648c3a1edd654950cbf",
     "results/corrected_replay/decisions.jsonl": "750e178baf7d8f359b59c6747cba667470e2d345283274c12188abbcfc806004",
-    "README.md": "77893a7349cf3c71db417031b5c7bb04893ac19116c3d5ad7d5eedb62b4a8b81",
+    "README.md": "3a244170447c668fc2c02292d9fa12623cf24a03ab67c93368e84f0792036d99",
     "pyproject.toml": "5a8736d65f7492aa9963da299f507a0f2f5f1a07f19701e5c7cb95bf703066f5",
     "REPRODUCE_CORRECTED.md": "fe6e04c322e9d831dc068dbcc26a93fcb5679d85a026d2bf303f9b43150dc8e9",
-    "research/CORRECTED_BUDGET_RESULTS.md": "19813d5f5d4dfd07dc1467893f7568d43b26e611863644e113cd6b32c5ce6462"
+    "research/CORRECTED_BUDGET_RESULTS.md": "23f2f9c59c36ecf3de497091a07561feba027aa43325e6f4f5fa99e7d2609fdd"
   }
 }

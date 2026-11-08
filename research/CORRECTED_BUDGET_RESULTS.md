@@ -29,7 +29,7 @@ All four synthetic unverified-record conditions (correct, incomplete, stale by 1
 
 ## Uncertainty and paired comparison
 
-Wilson 95% intervals are in results/statistical_analysis.json. They describe response-level proportions under an independence assumption that the repeated-task design does not meet; they must not be presented as task-general confidence bounds. There are zero release-decision discordances between old and corrected gates. A paired task-cluster bootstrap of their difference is identically zero because every task difference is zero; this is not evidence of equivalence. McNemar testing has no discordant pairs and no informative effect estimate. Authority-language regression and model interaction estimates are unavailable because the new design has no completions.
+Wilson 95% intervals are in results/statistical_analysis.json. They describe response-level proportions under an independence assumption that the repeated-task design does not meet; they must not be presented as task-general confidence bounds. There are zero release-decision discordances between old and corrected gates. A paired task-cluster bootstrap of their difference is identically zero because every task difference is zero; this is not evidence of equivalence. McNemar testing has no discordant pairs and no informative effect estimate. Authority-language regression is not informative for the confirmed-adoption indicator because all 600 new workers have zero confirmed adoptions and 591 outputs require review; this is a label-identification problem, not missing collection.
 
 ## Code corrections and prospective protocol
 
@@ -119,7 +119,7 @@ Successful API responses recorded in the ledger: 2331. Token cost at published u
 
 ## Interpretation and remaining work
 
-The historical oracle result remains unchanged and depends on verified facts. Blind monitoring does not reproduce oracle factual detection: its allowances, blocks and abstentions must be evaluated separately. The new worker design has no confirmed asserted false-budget adoption under a conservative parser, with substantial unresolved claim attribution; it does not establish immunity to authority or language effects. The committee results apply only to this planted-claim protocol and its advisory warning. Cross-model generalization, independent bilingual review and human adjudication remain unavailable.
+The historical oracle result remains unchanged and depends on verified facts. Blind monitoring does not reproduce oracle factual detection: its allowances, blocks and abstentions must be evaluated separately. The new worker design has no confirmed asserted false-budget adoption under a conservative parser, with substantial unresolved claim attribution; it does not establish immunity to authority or language effects. The committee results apply only to this planted-claim protocol and its advisory warning. A post-collection trace audit found that all 144 false-claim-exposed agent turns also had the authenticated correct cap. This limits the experiment to a well-evidenced contradiction and does not test propagation under unavailable or unreliable records. The worker prompt explicitly encourages distrust and abstention. The scorer routes qualified claims to review even when the worker rejects them; therefore the 591 review-required outputs cannot establish a model error or attack-adoption rate. Cross-model generalization, independent bilingual review and human adjudication remain unavailable.
 
 ## References
 

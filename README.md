@@ -4,9 +4,24 @@
 
 A reproducible study of incorrect facts passing between AI agents, using English, Vietnamese and Chinese peer messages. A controller checks report facts before authorizing a handoff.
 
-**Start here:** [600-response report](submission/expansion-v2/README.md) · [budget swarm extension](research/BUDGET_SWARM_EXTENSION.md) · [dataset locations](data/README.md) · [questions and hypotheses](research/QUESTIONS_AND_HYPOTHESES.md) · [preserved pilot Word report](submission/Track4_Submission.docx) · [research proposal](research/RESEARCH_PROPOSAL.md) · [research report / submission draft](research/OVERSIGHT_ABLATION_RESULTS.md) · [submission status](SUBMISSION.md) · [historical evidence](ARCHIVE.md)
+**Latest results:** [Corrected GPT-5 report](research/CORRECTED_BUDGET_RESULTS.md) · [Why some numbers stayed unchanged](results/RESULTS_DIAGNOSIS.md) · [Reproduction commands](REPRODUCE_CORRECTED.md)
 
-## Current expanded result
+**Historical study:** [600-response report](submission/expansion-v2/README.md) · [budget swarm extension](research/BUDGET_SWARM_EXTENSION.md) · [dataset locations](data/README.md) · [questions and hypotheses](research/QUESTIONS_AND_HYPOTHESES.md) · [preserved pilot Word report](submission/Track4_Submission.docx) · [research proposal](research/RESEARCH_PROPOSAL.md) · [research report / submission draft](research/OVERSIGHT_ABLATION_RESULTS.md) · [submission status](SUBMISSION.md) · [historical evidence](ARCHIVE.md)
+
+## Latest corrected results — 9 November 2026
+
+The corrected study saved 600 new GPT-5 worker outputs, 1,200 blind-monitor evaluations, 24 committee games (504 calls), and a separate 24-call pilot. These are distinct from the historical 600 outputs below.
+
+| Evaluation | Observed result | Interpretation |
+|---|---|---|
+| Corrected replay of historical outputs | 150 blocked, 450 allowed; unchanged | Oracle still has the correct budget; saved outputs do not exercise the added prose-conflict cases |
+| Blind monitor on historical outputs | 6/150 wrong reports allowed; 115/450 correct reports blocked; 445/600 abstentions | Blind monitoring does not reproduce oracle oversight |
+| New worker scoring | 0 confirmed adoptions; 591/600 require review | Conservative parser labels do not establish zero true adoption or a model error rate |
+| Committee | 0/24 final decisions contained the planted cap | All 144 exposed turns also had the correct authenticated cap; weak evidence for harder propagation settings |
+
+The existing dashboard is a historical static snapshot and has **not** been connected to `results/`; it does not display this corrected study. See the [diagnosis](results/RESULTS_DIAGNOSIS.md) for presentation and methodology limitations.
+
+## Historical expanded result
 
 The [600-response expansion](submission/expansion-v2/README.md) uses **50 previously unused task IDs**, with **200 responses per review-note language**. All 600 requests completed without errors and passed strict structural validation. This is a separate locally frozen replication; the [24-response pilot](research/OVERSIGHT_ABLATION_RESULTS.md) remains unchanged.
 
@@ -17,7 +32,7 @@ The [600-response expansion](submission/expansion-v2/README.md) uses **50 previo
 
 The fact check selectively blocks incorrect budgets beyond structural validation, while preserving correct reports. With trusted input, no added benefit over grounding is observed. Blocking is not repair. The 50 IDs and different fact values still share one reporting contract; only a review note varies across English, Vietnamese and Chinese. This is not a causal language-effect or general swarm-safety result.
 
-**Current report:** [Word template](submission/expansion-v2/Track4_Expanded_600.docx) · [Readable report](submission/expansion-v2/README.md) · [Actual outputs CSV](submission/expansion-v2/recorded-outputs.csv) · [Actual outputs JSON](submission/expansion-v2/recorded-outputs.json)
+**Historical expansion report:** [Word template](submission/expansion-v2/Track4_Expanded_600.docx) · [Readable report](submission/expansion-v2/README.md) · [Actual outputs CSV](submission/expansion-v2/recorded-outputs.csv) · [Actual outputs JSON](submission/expansion-v2/recorded-outputs.json)
 
 ## Budget swarm calibration and next study
 
@@ -29,11 +44,13 @@ The fact check selectively blocks incorrect budgets beyond structural validation
 git clone --branch codex/authority-language-v3 https://github.com/nhat117/AdoptionAIHackathon.git
 cd AdoptionAIHackathon
 uv sync --frozen --extra dev
-uv run python scripts/report_oversight_expansion.py
+uv run python scripts/replay_corrected_budgets.py
+uv run python scripts/report_corrected_budgets.py
+uv run python scripts/verify_corrected_artifacts.py
 uv run pytest -q
 ```
 
-The audit verifies the frozen inputs and source code, all 300 prompt pairs, exact candidate preservation and **140 earlier run files**. The full suite passes **108 tests**, and lint passes. The original pilot can still be audited with `uv run python scripts/report_oversight_ablation.py`.
+The corrected verifier checks all saved prompts and response IDs and preserves the historical baseline. The suite passes **182 tests**, with lint and GitHub CI passing on Python 3.11 and 3.12. Historical audit scripts check source hashes from their original collection and must run against that historical commit; running them against corrected source will deliberately fail. Use the commands above for the updated results.
 
 `uv run python scripts/resume_oversight_expansion.py` checks the saved 600-response inputs without reselecting tasks as new run folders are added. Adding `--run` uses Adaption only for missing assigned trials and retains existing records. The original frozen collector is preserved as historical source. Credentials belong in environment variables, never in Git. The report writer and charts use `scripts/write_expansion_report.py` with the existing Matplotlib requirements.
 
