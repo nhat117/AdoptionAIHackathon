@@ -14,7 +14,7 @@ Source: [supplied Apart Research submission template](https://docs.google.com/do
 | Conclusion | Proposal-level conclusion; final findings must be added after evaluation. |
 | Code and Data | Repository link and local artifact locations provided. |
 | References | Numbered citations with source links; final bibliography needs human review. |
-| Numbered figures/tables and captions | Tables now numbered with descriptive captions. No current figure included; old generated illustrations describe a superseded design and are excluded from this commit. The template strongly encourages a figure, but does not require one. |
+| Numbered figures/tables and captions | Tables now numbered with descriptive captions. The approved current overview is included as Figure 1 in paper A; its caption identifies the networks as schematic. Earlier images remain superseded. The template strongly encourages a figure, but does not require one. |
 | LLM Usage Statement | Explicit statement added; does not claim independent human verification that has not occurred. |
 | Recommended length | Not yet submission-length: A is seven PDF pages total; C is six total. These remain detailed working proposals. Move detailed model/language matrices and protocol specifications to an appendix and shorten the main text before final submission. Main-text-only page count was not separately measured. |
 | Optional author contributions / appendix | Not supplied; contributions require real author information. |

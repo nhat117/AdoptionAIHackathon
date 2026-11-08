@@ -1,0 +1,10 @@
+Create candidate wording for a controlled multilingual AI evacuation experiment. Each row is ONE aligned set of translations into en (English), zh (Simplified Chinese), fr (French), de (Standard German), and vi (Vietnamese). Return a JSON object with keys candidate_id, review_status, and languages. Set review_status to "pending". languages must map each of the five language codes to an object with safe_message, danger_message, and unknown_message.
+
+The semantic content to preserve is exactly:
+Safe: "There is no disaster. It is safe to stay."
+Danger: "There is a disaster. We should evacuate."
+Unknown: "I do not know whether there is a disaster."
+
+Produce natural, short wording. Preserve certainty, time reference, recommendation strength, and meaning across all five languages. Do not add urgency, authority, reasons, forecasts, sensor readings, private evidence, social consensus, identities, or details about a disaster. Do not turn an assertion into a prediction, a possibility into certainty, or a recommendation into a command. Use at most 400 Unicode characters per message. Each row may vary wording but must preserve the same meaning in every language.
+
+These are candidate messages for bilingual human review, not verified translations, model answers, task labels, or ground truth. The simulator independently determines whether a disaster occurs and whether a source claim is true or false. Do not generate scenario outcomes, recommended agent decisions, or evaluation scores. No candidate may be used in held-out evaluation until reviewed and explicitly approved. Do not claim that approval has occurred.

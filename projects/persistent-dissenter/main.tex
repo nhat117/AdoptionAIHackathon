@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,booktabs,tabularx,amsmath,xurl}
 \usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
 \renewcommand{\labelitemi}{--}
@@ -32,6 +33,11 @@ Experiment & What changes? & What stays fixed?\\
 
 All three use the same model roster, scenario bank, outcome measures, and planned number of repeats per condition. Equal importance does not require the same total number of runs: identity has more conditions. Repetition and agent-selected listening are no longer experimental factors. Multiple conversation rounds remain, with one fixed speaking and delivery policy.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/experiment-overview.png}
+\caption{Overview of the three planned experiments. Network drawings are illustrative, not exact adjacency diagrams; the simulator enforces four neighbours per agent. The controlled source supplies the initial claim while other agents converse.}
+\end{figure}
 \section{Related Work}
 The human evacuation study varied network shape and group size, including ring and random-regular networks with four neighbours per participant \cite{danger}. Our network comparison follows that precedent while fixing group size at ten. The language and identity comparisons are our extensions, not conditions from that human study.
 

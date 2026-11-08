@@ -1,0 +1,64 @@
+{
+  "status": "planned_not_executed",
+  "note": "Adaption and OpenRouter routes require compatibility checks and resolved version recording; cross-host equivalence is not established. Apertus is a checkpoint ID with endpoint pending.",
+  "models": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "adaption_route": null,
+      "languages": [
+        "en",
+        "vi"
+      ],
+      "endpoint_pending": false
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "adaption_route": null,
+      "languages": [
+        "en",
+        "vi"
+      ],
+      "endpoint_pending": false
+    },
+    {
+      "model": "qwen/qwen3.8-27b",
+      "adaption_route": "qwen3.8-27b",
+      "languages": [
+        "en",
+        "zh",
+        "vi"
+      ],
+      "endpoint_pending": false
+    },
+    {
+      "model": "deepseek/deepseek-v4-flash",
+      "adaption_route": "deepseek-v4-flash",
+      "languages": [
+        "en",
+        "zh",
+        "vi"
+      ],
+      "endpoint_pending": false
+    },
+    {
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "adaption_route": null,
+      "languages": [
+        "en",
+        "fr",
+        "vi"
+      ],
+      "endpoint_pending": false
+    },
+    {
+      "model": "swiss-ai/Apertus-70B-Instruct-2509",
+      "adaption_route": null,
+      "languages": [
+        "en",
+        "de",
+        "vi"
+      ],
+      "endpoint_pending": true
+    }
+  ]
+}

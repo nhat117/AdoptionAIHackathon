@@ -16,7 +16,7 @@ The six-model roster and language assignments are listed below and in the paper.
 - [Separate recovery paper C PDF](network-recovery/main.pdf) · [LaTeX](network-recovery/main.tex)
 - [Earlier calibration results](../reports/2026-11-08-calibration/README.md) describe the old design, not these three experiments.
 
-The folder name `persistent-dissenter` is retained for existing links. The previously generated repetition/role/name illustration is now outdated. Paper C remains a separate recovery proposal. The implementation guide describes the existing runner, not the revised protocol.
+The folder name `persistent-dissenter` is retained for existing links. The approved language/identity/network overview is saved in `persistent-dissenter/figures/experiment-overview.png` and included in paper A. Earlier illustrations are outdated. Paper C remains a separate recovery proposal. The implementation guide describes the existing runner, not the revised protocol.
 
 ### Named model roster
 
@@ -45,3 +45,7 @@ First five IDs checked against the [OpenRouter catalogue](https://openrouter.ai/
 “Local language” is an experimental assignment, not a model's human native language. Switzerland is multilingual; Standard German is the selected condition for Apertus. Translate all agent-facing instructions, evidence, messages, identities, and corrections, while retaining structured action keys and IDs. Check translation meaning and log language-following failures.
 
 Local-language comparisons change model and language together. The shared English baseline separates these from within-model language comparisons. Vietnamese is tested across all models. The full roster gives 16 distinct model–language combinations, before choosing treatment and identity subsets; no full cross of all factors is committed.
+
+## Experiment 1 implementation
+
+[Runner and Adaption workflow](../docs/experiment1.md) · [Model/language matrix](../data/experiment1/model-matrix.json). The separate `language-v1` runner supports natural-language messages and fixed all-neighbour delivery. Draft translation packs require review before evaluation. Earlier A/C runners remain unchanged.
