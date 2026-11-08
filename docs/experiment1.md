@@ -76,3 +76,11 @@ The current live runner fails closed on unverified reasoning controls. Adaption 
 ## Latest one-call preflight
 
 See [model checks](../reports/2026-11-08-model-preflight/README.md). GPT-4.1 mini and Mistral passed a single API/schema check. Qwen supports low but failed to return a complete answer at 512 tokens. DeepSeek V4 Flash does **not** currently advertise low, so the earlier allowlist and examples were corrected. Claude's request acceptance did not establish enabled low reasoning. Apertus still lacks an endpoint. No blanket readiness claim applies to the full roster. `--max-output-tokens` now permits an explicit bounded ceiling; freeze it per comparison before collecting outcomes.
+
+## Technical implementation verification
+
+The four-game Terra verification completed on 2026-11-08: [report](../reports/2026-11-08-implementation-verification/README.md). Use this name for engineering checks; the historical `calibration` dataset split remains for compatibility and is not a scientific claim.
+
+The language runner now records purpose `technical_implementation_verification`, saves its manifest before network calls, and updates progress after each game. It permits up to 64,000 UTF-8 prompt bytes to accommodate legal multilingual histories; the earlier A/C adapters retain their default 16,000-byte guard. This byte ceiling is an engineering safeguard, not equal language tokenization. Output cap, low reasoning, and call caps remain separate controls. Outcome metadata now carries the actual language in both locations.
+
+Payoffs retain the original 'each other correct agent' bonus, including the controlled source; recipient_payoff excludes the source's own payoff but not source-related bonuses. Primary evacuation rates use nine recipients. Compare provider metadata across languages: disabling fallbacks does not by itself pin the upstream provider.

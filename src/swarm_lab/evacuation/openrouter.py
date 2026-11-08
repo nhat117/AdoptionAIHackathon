@@ -8,17 +8,27 @@ from ..settings import AgentSettings, Settings
 
 
 class OpenRouterBackend:
-    def __init__(self, api_key: str, settings: Settings, record, reasoning_effort=None):
+    def __init__(
+        self,
+        api_key: str,
+        settings: Settings,
+        record,
+        reasoning_effort=None,
+        max_prompt_bytes=16000,
+    ):
         self.api_key, self.settings, self.record = api_key, settings, record
         self.reasoning_effort = reasoning_effort
+        self.max_prompt_bytes = max_prompt_bytes
 
     async def generate(self, agent: AgentSettings, input_text: str) -> str:
         return await asyncio.to_thread(self._generate, agent, input_text)
 
     def _generate(self, agent, input_text):
         # Bound prompt size as well as output tokens and runner call count.
-        if len((agent.instructions + input_text).encode()) > 16000:
-            raise ValueError("OpenRouter pilot prompt exceeds 16000-byte limit")
+        if len((agent.instructions + input_text).encode()) > self.max_prompt_bytes:
+            raise ValueError(
+                f"OpenRouter prompt exceeds {self.max_prompt_bytes}-byte limit"
+            )
         payload = {
             "model": self.settings.model,
             "messages": [

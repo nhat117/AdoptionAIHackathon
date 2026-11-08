@@ -229,6 +229,8 @@ async def run(args):
     args.output.mkdir(parents=True, exist_ok=False)
     manifest = {
         "protocol": "language-v1",
+        "purpose": "technical_implementation_verification",
+        "max_prompt_bytes": 64000,
         "status": "running",
         "mode": args.mode,
         "provider": args.provider,
@@ -257,6 +259,8 @@ async def run(args):
         "model_calls": 0,
         "language_checks": "pending_manual_review",
     }
+    manifest_path = args.output / "manifest.json"
+    manifest_path.write_text(json.dumps(manifest, indent=2, default=str))
     client = None
 
     context = {}
@@ -281,7 +285,11 @@ async def run(args):
                 if not key:
                     raise ValueError("Missing local OPENROUTER_API_KEY")
                 backend = OpenRouterBackend(
-                    key, settings, record, reasoning_effort=reasoning["effort"]
+                    key,
+                    settings,
+                    record,
+                    reasoning_effort=reasoning["effort"],
+                    max_prompt_bytes=64000,
                 )
         for scenario in rows:
             for lang in args.languages:
@@ -303,7 +311,7 @@ async def run(args):
                     append(
                         args.output / "outcomes.jsonl",
                         {
-                            "scenario": asdict(scenario),
+                            "scenario": {**asdict(scenario), "language": lang},
                             "language": lang,
                             "mode": args.mode,
                             "model": args.model,
@@ -314,6 +322,9 @@ async def run(args):
                     manifest["completed_episodes"] += 1
                 finally:
                     manifest["model_calls"] += policy.calls
+                    manifest_path.write_text(
+                        json.dumps(manifest, indent=2, default=str)
+                    )
         manifest["status"] = "completed"
     except asyncio.CancelledError:
         manifest.update(status="cancelled", error_type="CancelledError")

@@ -330,3 +330,75 @@ def test_cancelled_run_keeps_manifest_and_propagates_cancellation(
     assert manifest["finished_at"]
     assert manifest["completed_episodes"] == 0
     assert manifest["reasoning_policy"] == {"status": "offline_fixture", "effort": None}
+
+
+@pytest.mark.parametrize(
+    "prompt_limit, message, allowed",
+    [
+        (None, "字" * 12000, False),
+        (64000, "字" * 12000, True),
+        (64000, "字" * 22000, False),
+    ],
+    ids=["legacy-cap-rejects", "larger-cap-admits", "larger-cap-rejects"],
+)
+def test_multilingual_prompt_byte_budget_before_network(
+    monkeypatch, prompt_limit, message, allowed
+):
+    import io
+    import urllib.request
+
+    from swarm_lab.evacuation.openrouter import OpenRouterBackend
+    from swarm_lab.settings import AgentSettings, Settings
+
+    requests = []
+
+    def fake_open(request, timeout):
+        requests.append(request)
+        return io.BytesIO(
+            json.dumps(
+                {"choices": [{"finish_reason": "stop", "message": {"content": "{}"}}]}
+            ).encode()
+        )
+
+    monkeypatch.setattr(urllib.request, "urlopen", fake_open)
+    options = {} if prompt_limit is None else {"max_prompt_bytes": prompt_limit}
+    backend = OpenRouterBackend("test-key", Settings(), lambda _: None, **options)
+    if allowed:
+        assert asyncio.run(backend.generate(AgentSettings(), message)) == "{}"
+        assert len(requests) == 1
+    else:
+        with pytest.raises(ValueError, match="prompt.*limit"):
+            asyncio.run(backend.generate(AgentSettings(), message))
+        assert requests == []
+
+
+def test_paired_run_records_actual_language_and_verification_purpose(tmp_path):
+    from swarm_lab.evacuation.dataset import write_dataset
+
+    packs = tmp_path / "packs.json"
+    packs.write_text(json.dumps({"en": PACK, "vi": PACK}))
+    dataset = tmp_path / "scenarios.jsonl"
+    write_dataset(dataset, [scenario()])
+    args = Namespace(
+        packs=packs,
+        languages=["en", "vi"],
+        limit=1,
+        max_calls=100,
+        mode="offline",
+        split="calibration",
+        allow_unreviewed=False,
+        dataset=dataset,
+        output=tmp_path / "paired-run",
+        provider="adaption",
+        model="fixture",
+    )
+    asyncio.run(run(args))
+    outcomes = [
+        json.loads(line)
+        for line in (args.output / "outcomes.jsonl").read_text().splitlines()
+    ]
+    assert [item["language"] for item in outcomes] == ["en", "vi"]
+    assert all(item["scenario"]["language"] == item["language"] for item in outcomes)
+    manifest = json.loads((args.output / "manifest.json").read_text())
+    assert manifest["purpose"] == "technical_implementation_verification"
+    assert manifest["research_results"] is False

@@ -1,0 +1,17 @@
+{
+  "goal": "Verify complete multi-round execution before expanding Experiment 1",
+  "purpose": "technical_implementation_verification",
+  "model": "openai/gpt-6.1-terra",
+  "reasoning": "low",
+  "temperature": "provider_controlled",
+  "max_output_tokens": 2048,
+  "games": 4,
+  "max_calls_per_game": 45,
+  "max_total_calls": 180,
+  "languages": [
+    "en",
+    "vi"
+  ],
+  "reported_cost_stop_usd": 3,
+  "note": "Legacy dataset split named calibration; purpose is technical verification. Draft translations. No significance or language-ranking claims."
+}
