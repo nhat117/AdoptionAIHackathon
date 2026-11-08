@@ -41,7 +41,10 @@ def convert(source: Path, target: Path):
     for index, line in enumerate(source.read_text().splitlines()):
         try:
             row = json.loads(line)
-            completion = row["completion"]
+            fields = [k for k in ("completion", "enhanced_completion") if k in row]
+            if len(fields) != 1:
+                raise ValueError("Expected one completion column")
+            completion = row[fields[0]]
             pair = validate_pair(parse_object(completion))
             digest = hashlib.sha256(
                 json.dumps(pair, sort_keys=True).encode()

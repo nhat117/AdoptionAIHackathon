@@ -30,3 +30,5 @@ Invent candidates start with `review_status: pending`. The runner rejects them
 for evaluation and requires an explicit flag even for calibration. English is
 currently supported. Chinese/Vietnamese require bilingual review and a translated
 instruction set; they are not silently treated as equivalent.
+
+Invent v1 completed with 12 rows. See [invent-review.md](invent-review.md) for semantic issues found in preliminary inspection. `stimuli.jsonl` retains all candidates as pending; `invent-raw.jsonl` is the unchanged service export. Structural acceptance does not approve a pair for evaluation.

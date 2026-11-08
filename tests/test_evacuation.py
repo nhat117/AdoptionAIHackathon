@@ -289,3 +289,20 @@ def test_openrouter_request_boundary_and_usage(monkeypatch):
     )
     assert records[0]["usage"]["cost"] == 0.0001
     assert "test-secret" not in json.dumps(records)
+
+
+def test_actual_invent_export_schema(tmp_path):
+    from swarm_lab.evacuation.stimuli import convert
+
+    source = tmp_path / "raw.jsonl"
+    pair = {
+        "safe_message": "No disaster will occur here; I recommend that we stay.",
+        "danger_message": "A disaster will occur; I recommend we evacuate now.",
+    }
+    source.write_text(
+        json.dumps(
+            {"enhanced_prompt": "request", "enhanced_completion": json.dumps(pair)}
+        )
+        + "\n"
+    )
+    assert convert(source, tmp_path / "pairs.jsonl") == (1, 0)
