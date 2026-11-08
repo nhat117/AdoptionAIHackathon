@@ -6,8 +6,7 @@ import httpx
 import pytest
 from adaption import AsyncAdaption
 
-from swarm_lab.backend import AdaptionBackend
-from swarm_lab.cli import run
+from swarm_lab.backend import AdaptionBackend, OfflineBackend
 from swarm_lab.events import EventLog
 from swarm_lab.graph import build_graph
 from swarm_lab.nodes import Nodes
@@ -28,7 +27,8 @@ def test_offline_run_join_logs_and_fresh_state(tmp_path, monkeypatch):
     path = tmp_path / "events.jsonl"
     for task in ("first", "second"):
         events = EventLog(path)
-        state = asyncio.run(run(task, settings, events, live=False))
+        graph = build_graph(Nodes(OfflineBackend(), settings, events))
+        state = asyncio.run(graph.ainvoke({"task": task}))
         assert state["prepared_input"] == task
         assert state["final_output"] == "Branch A:\nA\n\nBranch B:\nB"
     log = records(path)
@@ -40,7 +40,7 @@ def test_offline_run_join_logs_and_fresh_state(tmp_path, monkeypatch):
         ]
         assert completed.index("combine") > completed.index("branch_a")
         assert completed.index("combine") > completed.index("branch_b")
-        assert subset[-1]["event"] == "run_completed"
+        assert completed[-1] == "finish"
 
 
 def test_parallel_branches_receive_only_prepared_input(tmp_path):
@@ -120,25 +120,19 @@ def test_adaption_request_boundary_with_real_sdk(status, text):
     asyncio.run(scenario())
 
 
-def test_missing_live_key_logs_failure(tmp_path, monkeypatch):
-    monkeypatch.delenv("ADAPTION_API_KEY", raising=False)
-    path = tmp_path / "log.jsonl"
-    with pytest.raises(ValueError, match="ADAPTION_API_KEY"):
-        asyncio.run(run("task", Settings(), EventLog(path), live=True))
-    assert records(path)[-1]["event"] == "run_failed"
-    assert not any(entry["event"] == "run_completed" for entry in records(path))
-
-
-def test_failed_response_is_not_a_completed_node(tmp_path, monkeypatch):
+def test_failed_response_is_not_a_completed_node(tmp_path):
     class BrokenBackend:
         async def generate(self, agent, input_text):
             raise RuntimeError("private provider detail")
 
-    monkeypatch.setattr("swarm_lab.cli.OfflineBackend", BrokenBackend)
     path = tmp_path / "log.jsonl"
+    graph = build_graph(Nodes(BrokenBackend(), Settings(), EventLog(path)))
     with pytest.raises(RuntimeError):
-        asyncio.run(run("task", Settings(), EventLog(path), live=False))
-    assert records(path)[-1]["event"] == "run_failed"
+        asyncio.run(graph.ainvoke({"task": "test"}))
+    completed = [
+        entry["node"] for entry in records(path) if entry["event"] == "node_completed"
+    ]
+    assert completed == ["prepare"]
     assert "private provider detail" not in path.read_text()
 
 
