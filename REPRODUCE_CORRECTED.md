@@ -4,6 +4,14 @@
 
 ### Active Braintrust GPT-5 judge
 
+The retired Astra/GPT-5 full profiles use the same byte-identical aligned corpus.
+`results/llm_judge/aligned_prompts.jsonl` is the canonical copy; the corresponding
+paths in `results/llm_judge_gpt5/` and `results/llm_judge_gpt5_v2/` are relative
+symbolic links to it. Use a symlink-aware checkout (the tested macOS/Linux setup)
+and keep the canonical file. The existing corpus SHA-256 checks still apply to
+the resolved bytes; no prompt or rating was removed. The current 96-group sample
+has its own independently frozen selection and corpus.
+
 **Current scope (supersedes full-run instructions below):** the user requested
 random sampling. Run `python scripts/run_sampled_judge.py` for the no-call
 preflight, or add `--workflow --cap-usd 60` for the 96-group/288-judgment sampled
