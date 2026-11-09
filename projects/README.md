@@ -4,7 +4,7 @@
 
 The LaTeX source now reports the completed corrected network evidence controls and the separate five-configuration receiver diagnostic as two studies in one paper. [Diagnostic findings](../reports/authentication-diagnostic-v1/RESULTS.md) and the [independent paper review](../reports/authentication-diagnostic-v1/PAPER_REVIEW.md) document the evidence and limits. The old proposals below are historical context, not additional papers being finalized.
 
-Per the user's source-only instruction, existing PDFs were **not regenerated** and do not reflect the final manuscript. The shared author/template file is unchanged. Publication submission and final author signoff are separate from this source revision.
+At the user's export request, the [current final PDF](persistent-dissenter/main.pdf) was regenerated from the reviewed LaTeX on November 9, 2026. It contains seven main pages, one reference page and four appendix pages. The old proposal PDF remains in Git history; the separate recovery PDF and shared template are unchanged. Actual submission and final author signoff are separate from export.
 
 ## Historical proposal plan
 
@@ -24,7 +24,7 @@ Repetition and chosen listening are no longer treatment variables. The proposed 
 
 The six-model roster and language assignments are listed below and in the paper. The full plan has 112 unique model/language/identity/network cells, sharing ordinary-peer ring baselines, before balanced truth/accuracy cases, seeds, and repeats. The full matrix has not launched and is not authorized by the smaller pilot. Broader model checks, translation review and sample allocation remain required.
 
-- [Historical proposal A PDF (outdated)](persistent-dissenter/main.pdf) · [Current empirical LaTeX](persistent-dissenter/main.tex)
+- [Current empirical PDF](persistent-dissenter/main.pdf) · [Current empirical LaTeX](persistent-dissenter/main.tex)
 - [Separate recovery paper C PDF](network-recovery/main.pdf) · [LaTeX](network-recovery/main.tex)
 - [Earlier calibration results](../reports/2026-11-08-calibration/README.md) describe the old design, not these three experiments.
 

@@ -13,7 +13,7 @@ Development provenance: available repository history begins November 8, 2026, du
 
 ## Current research story
 
-**Current single-paper manuscript:** [Delivered, Recognized, Acted On](projects/persistent-dissenter/main.tex), integrating the completed corrected network study and separate [five-model diagnostic](reports/authentication-diagnostic-v1/RESULTS.md). LaTeX only; existing proposal PDFs are outdated and were not rebuilt.
+**Current single-paper manuscript:** [Delivered, Recognized, Acted On](projects/persistent-dissenter/main.tex), integrating the completed corrected network study and separate [five-model diagnostic](reports/authentication-diagnostic-v1/RESULTS.md). The [final PDF](projects/persistent-dissenter/main.pdf) was exported from the reviewed source on November 9, 2026: seven main pages, references and appendices. Earlier versions remain in Git history.
 
 **Research question:** how do interacting agents use evidence and its authentication metadata? The current results show model-specific action patterns; the flat original comparisons do not establish immunity to authority, language or network effects.
 
