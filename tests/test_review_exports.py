@@ -47,3 +47,83 @@ def test_svg_raster_export_contains_generated_chart():
     image = image_module.open(io.BytesIO(rendered))
     assert image.size == (100, 60)
     assert image.getpixel((15, 15)) == (39, 123, 113)
+
+
+@pytest.mark.parametrize("tamper", [
+    None, "source", "svg", "png", "pdf", "manifest", "word_semantics", "pdf_semantics"
+])
+def test_portable_export_verification_is_source_bound_not_raster_byte_bound(
+    tmp_path, tamper
+):
+    pytest.importorskip("docx")
+    pytest.importorskip("reportlab")
+    pytest.importorskip("PIL")
+    module = runpy.run_path(str(ROOT / "scripts/export_review_report.py"))
+    build, verify = module["build_exports"], module["verify_exports"]
+    build.__globals__["ROOT"] = tmp_path
+    source = tmp_path / "research/VALIDATED_RESEARCH_REPORT.md"
+    source.parent.mkdir()
+    svg = tmp_path / "figure.svg"
+    svg.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="60">'
+                   '<rect width="100%" height="100%" fill="white"/></svg>')
+    source.write_text("# Test\n\n| Count | Value |\n|---|---|\n| n | 7 |\n\n"
+                      "![Test figure](../figure.svg)\n")
+    outputs = build()
+    for path, data in outputs.items():
+        target = tmp_path / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+
+    def no_rasterization(*args):
+        raise AssertionError("Portable checks must not match host rasterizers")
+
+    build.__globals__["png_from_svg"] = no_rasterization
+    if tamper is None:
+        assert verify() == len(outputs)
+        return
+    if tamper == "source":
+        source.write_text(source.read_text() + "\nChanged results.\n")
+    elif tamper == "svg":
+        svg.write_text(svg.read_text() + "\n")
+    elif tamper == "png":
+        svg.with_suffix(".png").write_bytes(b"changed")
+    elif tamper == "pdf":
+        pdf = tmp_path / "submission/final-review/Authority_Language_Final.pdf"
+        pdf.write_bytes(b"changed")
+    elif tamper in ("word_semantics", "pdf_semantics"):
+        import hashlib
+        import json
+
+        manifest = tmp_path / "results/WORD_REPORT_EXPORT.json"
+        metadata = json.loads(manifest.read_text())
+        if tamper == "word_semantics":
+            from docx import Document
+
+            word = tmp_path / "research/VALIDATED_RESEARCH_REPORT.docx"
+            doc = Document(word)
+            doc.paragraphs[0].text = "Invented result"
+            doc.save(word)
+            data = word.read_bytes()
+            copy = tmp_path / "submission/final-review/Authority_Language_Final.docx"
+            copy.write_bytes(data)
+            digest = hashlib.sha256(data).hexdigest()
+            metadata["word_sha256"] = digest
+            for name in ("research/VALIDATED_RESEARCH_REPORT.docx",
+                         "submission/final-review/Authority_Language_Final.docx"):
+                metadata["generated_sha256"][name] = digest
+        else:
+            from reportlab.pdfgen.canvas import Canvas
+
+            pdf = tmp_path / "submission/final-review/Authority_Language_Final.pdf"
+            canvas = Canvas(str(pdf))
+            canvas.drawString(50, 700, "Invented result")
+            canvas.save()
+            digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
+            metadata["pdf_sha256"] = digest
+            name = "submission/final-review/Authority_Language_Final.pdf"
+            metadata["generated_sha256"][name] = digest
+        manifest.write_text(json.dumps(metadata))
+    else:
+        (tmp_path / "results/WORD_REPORT_EXPORT.json").write_text("{}")
+    with pytest.raises(ValueError):
+        verify()

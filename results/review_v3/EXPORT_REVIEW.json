@@ -1,9 +1,9 @@
 {
-  "source_sha256": "a8f5a780473b4cc853620b41a175e67e6be660235e3aeae0d122965494fe42dc",
-  "pdf_sha256": "da934f6f4849496681f2acd8e13d49f2f1a16bacfb5b001d171a77996b57f1ef",
-  "pdf_pages": 9,
-  "reviewer": "AI agent, not a human/native-speaker validator",
-  "scope": "Inspected report tables/charts and pagination; all nine pages parsed. Rechecked final page 6 with embedded Chinese glyphs and checked corrected heading/reference pagination.",
-  "word_review": "Canonical-source and deterministic-byte checks passed; native Word/author review remains pending",
+  "source_sha256": "9efc6b4b77b976737628e8019d86feb32544457a5286bdd3b6a4bb568cbd309b",
+  "pdf_sha256": "e5f707ae5b0525e39c037cccdc7c44ace2cbe3052a50cbe6ad048c98a256b461",
+  "pdf_pages": 10,
+  "reviewer": "AI agent; not a human/native-speaker validator",
+  "scope": "Exact Word/PDF source-content and image bindings verified across the whole report. Visually inspected added follow-up tables/chart and split table headers on pages 6-7; no clipping or missing data observed.",
+  "word_review": "Content/image joins verified; native Word/author review pending",
   "human_native_translation_review": "REQUIRED, not performed"
 }

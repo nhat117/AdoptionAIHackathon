@@ -9,7 +9,7 @@
 - **H3 (historical, exploratory):** Associations with peer language and particular authority messages depend on record availability. Use task-blocked contrasts/interactions, not pooled trial-level tests.
 - **New feasibility questions:** Can counterfeit-record/false-freshness peer claims induce false `record` attribution under an operational contract? Does a decision-boundary committee propagate an incorrect cap? Neither success nor detector benefit is assumed. These pilots are not powered confirmatory tests.
 
-The historical hypotheses and stratification were written after outcomes were known. New collection designs were locally frozen before dispatch, not externally preregistered. No causal language/culture claim or general authority-effect claim is supported by one fixed sentence per original level. Three new wording variants per role/language are versioned separately; their larger replication remains unexecuted.
+The historical hypotheses and stratification were written after outcomes were known. New collection designs were locally frozen before dispatch, not externally preregistered. No causal language/culture claim or general authority-effect claim is supported by one fixed sentence per original level. The separate wording-balanced follow-up has now collected 4320 workers over three fixed variants per role/language and the same 20 historical tasks. Its grouped inference and pointwise wording summaries do not identify a population of authority messages or model-unseen tasks; native validation remains outstanding.
 
 See the [one canonical report](VALIDATED_RESEARCH_REPORT.md) and [issue/implementation ledger](review_resolution/PLAN.md).
 

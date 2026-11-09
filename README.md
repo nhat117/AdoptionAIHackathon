@@ -6,7 +6,7 @@ A reproducible synthetic budget-handoff study. A source-field rule filters peer-
 
 **One canonical report:** [Read](research/VALIDATED_RESEARCH_REPORT.md) · [PDF](submission/final-review/Authority_Language_Final.pdf) · [Word](research/VALIDATED_RESEARCH_REPORT.docx)
 
-The report distinguishes strict primary scoring (90 target reports) from key-case sensitivity (91), identifies **458/480 stale-record uses**, stratifies language and particular authority wordings by record condition, and compares deterministic and model-based oversight with explicit information boundaries. All new model-call coverage and costs come from saved records. Native-speaker review and author confirmation remain required; no security guarantee or official submission is claimed.
+The original replication distinguishes strict primary scoring (90 target reports) from key-case sensitivity (91) and identifies **458/480 stale-record uses**. A separate **4320-response wording-balanced follow-up** now tests three variants per role/language; its results and task-cluster analyses remain separate. All model-call coverage and costs come from saved records. Native-speaker review and author confirmation remain required; no security guarantee or official submission is claimed.
 
 ## Reproduce the final analysis without model calls
 
@@ -23,6 +23,8 @@ uv run ruff check .
 [Machine-readable analysis](results/review_v3/analysis.json) · [Review issue ledger](research/review_resolution/PLAN.md) · [Reproduction details](REPRODUCE_CORRECTED.md) · [Submission status](SUBMISSION.md)
 
 Original data, prompts, configurations and results are preserved. New evidence is under `results/review_v3/`; the old dashboard remains a historical snapshot, not a current-results display. Gemma and GPT-5 studies use different prompts/tasks and are not direct model-performance comparisons.
+
+Portable export verification checks recorded artifact bytes, source/renderer/font/SVG/dependency hashes and exact Word/PDF content against the canonical report. It does not assume identical font rasterization across operating systems. The unfilled [human sign-off packet](research/review_resolution/HUMAN_SIGNOFF.md) is the remaining validation handoff.
 
 <details>
 <summary>Historical studies and implementation notes (not current main reports)</summary>

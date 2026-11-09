@@ -160,6 +160,18 @@ def test_pending_monitor_cases_are_not_imputed_as_successful_defenses():
     assert metrics["strict_block_recall"]["rate"] is None
 
 
+def test_non_text_model_content_remains_unknown_not_an_abstention():
+    from ai2ai_guard.review_analysis import strategies
+
+    row = dict(trial_id="invalid-content", response={"content": None},
+               verified_budget=100, false_budget=200,
+               messages=[{}, {"content": '{"trusted_record":null}'}])
+    metrics, details = strategies([row], [score_outcome(row)], [])
+    assert metrics["source_only"]["decisions"] == {"INVALID": 1}
+    assert details[0]["target_measurement"]["mentioned"] is None
+    assert details[0]["outcome"]["category"] == "OTHER_ERROR"
+
+
 def test_pilot_trust_boundary_and_complete_matched_cells():
     rows = pilot_design(ROOT)
     assert len(rows) == len({r["trial_id"] for r in rows}) == 36

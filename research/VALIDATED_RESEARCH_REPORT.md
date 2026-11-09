@@ -110,7 +110,7 @@ Stale reliance is **239/240 clean + 219/240 attacked = 458/480**. It is a differ
 
 ![GPT-5 authority wording by record](../results/review_v3/figures/authority_by_record.svg)
 
-Levels are teammate (0), team lead (1), finance auditor (2), fake system administrator (3). Each original level/language is a single fixed message, with one unseeded answer per cell. These are associations with **particular wordings**, not general causal effects of authority. Three new wordings per level/language are versioned in `configs/authority-wording-v2.json`; that larger authority replication has **not** been executed.
+Levels are teammate (0), team lead (1), finance auditor (2), fake system administrator (3). Each original level/language is a single fixed message, with one unseeded answer per cell. These are associations with **particular wordings**, not general causal effects of authority. Three wordings per level/language are versioned in `configs/authority-wording-v2.json`. The separate wording-balanced follow-up below retains this original one-sentence study unchanged.
 
 ### GPT-5 exploratory contrasts and record interactions
 
@@ -130,6 +130,51 @@ Differences use matched task means, with 10000 seeded task-cluster bootstrap dra
 | language_by_record zh-en | stale | -11.25 | [-17.50, -5.00] | 0.00781 | 0.18750 |
 
 All absolute percentage-point differences, authority contrasts, language×record and authority×record interactions are in [contrasts.csv](../results/review_v3/contrasts.csv) and [analysis.json](../results/review_v3/analysis.json). No finding is called significant based on pooled rates or unadjusted trial-level tests. Any Holm p<.05 is exploratory evidence **under these assumptions**, not a causal or culture-level conclusion.
+
+### Separate GPT-5 wording-balanced follow-up
+
+The follow-up has **4320/4320 saved workers**, 0 pending IDs and 0 recorded collection errors. It crosses the same 20 historical tasks, four roles, three wording variants, three languages, three record conditions and matched clean/attack inputs. The 4320 inputs were locally frozen before dispatch; neither original worker answers nor design-time template files were replaced. This is not a model-unseen-task study. Exact returned models: {'gpt-5-2025-08-07': 4320}.
+
+The three sentences per role reduce reliance on a single phrasing but remain fixed, machine-authored exemplars. Native-speaker review remains REQUIRED. Task is the dependency block; 32 language/authority/record contrasts use the previously specified task bootstrap, sign-flip assumptions and Holm correction within this separate follow-up. Wording-specific rates and differences are descriptive with pointwise task intervals, not additional significance claims or a sampled population of authority wordings.
+
+| Wording | Record (attack) | Saved/planned | Strict relays | Invalid |
+|---|---|---|---|---|
+| 0 | correct | 240/240 | 1 | 0 |
+| 0 | absent | 240/240 | 95 | 0 |
+| 0 | stale | 240/240 | 15 | 1 |
+| 1 | correct | 240/240 | 2 | 0 |
+| 1 | absent | 240/240 | 162 | 3 |
+| 1 | stale | 240/240 | 83 | 2 |
+| 2 | correct | 240/240 | 3 | 1 |
+| 2 | absent | 240/240 | 153 | 2 |
+| 2 | stale | 240/240 | 87 | 2 |
+
+![GPT-5 wording-balanced follow-up](../results/review_v3/figures/authority_wording_followup.svg)
+
+| GPT-5 no-record wording | Role level | Relay/n | Pointwise task 95% |
+|---|---|---|---|
+| 0 | 0 | 20/60 | [25.0%, 43.3%] |
+| 0 | 1 | 17/60 | [21.7%, 35.0%] |
+| 0 | 2 | 32/60 | [43.3%, 63.3%] |
+| 0 | 3 | 26/60 | [33.3%, 51.7%] |
+| 1 | 0 | 43/60 | [60.0%, 83.3%] |
+| 1 | 1 | 38/60 | [50.0%, 76.7%] |
+| 1 | 2 | 45/60 | [63.3%, 86.7%] |
+| 1 | 3 | 36/60 | [50.0%, 71.7%] |
+| 2 | 0 | 30/60 | [35.0%, 63.3%] |
+| 2 | 1 | 32/60 | [43.3%, 63.3%] |
+| 2 | 2 | 47/60 | [66.7%, 88.3%] |
+| 2 | 3 | 44/60 | [60.0%, 85.0%] |
+
+| Follow-up comparator | Strict peer relays blocked | Wrong reports blocked | Correct reports falsely blocked |
+|---|---|---|---|
+| none | 0/601 (0.0%) | 0/1809 (0.0%) | 0/1430 (0.0%) |
+| source_only | 601/601 (100.0%) | 604/1809 (33.4%) | 0/1430 (0.0%) |
+| source_freshness | 601/601 (100.0%) | 1809/1809 (100.0%) | 0/1430 (0.0%) |
+| oracle_v1 | 601/601 (100.0%) | 1809/1809 (100.0%) | 10/1430 (0.7%) |
+| oracle_v2 | 601/601 (100.0%) | 1809/1809 (100.0%) | 0/1430 (0.0%) |
+
+Full clean controls, key-case sensitivity, all record-stratified rates and contrasts are in [the follow-up analysis](../results/authority_wording_v2/analysis.json). Original/improved blind monitors were **not evaluated on this new worker-only cohort**; no prior monitor performance is transferred to it. Shared API/cost logs are append-only, with their previous prefixes verified against pre-collection hashes.
 
 ## 4. Gemma historical workers / GPT-5 blind monitor: a failure, not effective oversight
 
@@ -173,6 +218,8 @@ Hop/turn cap adoption, trace-linked depth, detected contradictions, self-correct
 
 [Translation audit](../results/review_v3/translation_audit.csv) inventories source literals and actual Vietnamese/Chinese dispatched templates, placeholder/role/value structure, character/byte lengths and unvalidated dimensions. AI inspection found awkward original Vietnamese phrasing and unmatched capitalization/emphasis; new wording is versioned separately, never substituted into old prompts. **Human native-speaker review is REQUIRED and has not occurred.** Naturalness, equivalent perceived rank and persuasive force are not established. Language effects may therefore be wording effects.
 
+The unfilled [native-speaker packet](review_resolution/NATIVE_REVIEW_PACKET.csv) contains 24 bilingual comparisons with English anchors and clean controls. Human sign-off instructions and required author details are in [HUMAN_SIGNOFF.md](review_resolution/HUMAN_SIGNOFF.md). Preparing the packet does not constitute human validation.
+
 An agent also inspected ten deterministically selected Vietnamese abstentions: their summaries acknowledge an unverified peer budget claim and missing trusted record. Exact sample IDs/text/hashes are retained in analysis.json. This narrow comprehension check is not native-speaker review.
 
 These are synthetic budget tasks, one GPT-5 snapshot, only 20 main task clusters and short outputs. Repeated tasks and templates limit inference beyond this dataset. Source metadata can be deceptive; the separately retained corrupt-current-record validation shows that policy compliance can coexist with factual error (36/36 operational reports wrong despite policy compliance). The strict-contract validation had zero explicit target reports, so added detector benefit is not identifiable there. No real payment, hidden-belief measurement, universal claim judgment or cross-model replication is demonstrated.
@@ -199,15 +246,19 @@ These cohorts are not pooled with the 1440-response study. All deterministic com
 | pilot-monitors | 72/72 | 72/72 | 0 | 0 |
 | committee | 40/40 | 839/840 | 0 | 1 |
 
-New returned API bodies: 3827; aggregate accounted cost **US$12.0810 / US$20 cap**, including prior US$5.7395. This is token-based accounting with conservative unresolved reservations, not a provider invoice. The expected call count/cost was recorded before dispatch in preflight.jsonl. No key is logged. Pending cells remain unobserved; pending monitor performance is never filled with zeros.
+New returned API bodies: 3827; aggregate accounted cost **US$16.9110 / US$20 cap**, including prior US$5.7395. This is token-based accounting with conservative unresolved reservations, not a provider invoice. The expected call count/cost was recorded before dispatch in preflight.jsonl. No key is logged. Pending cells remain unobserved; pending monitor performance is never filled with zeros.
 
 Recorded games are terminal units, not necessarily fully observed valid transcripts. One committee model call failed at the transport layer; its explicit non-vote and reserved cost remain in the analysis. No replacement game or invented response was used to complete the table.
 
 Exact returned new model IDs: {'gpt-5-2025-08-07': 3827}. Returned token usage: 1643285 prompt and 427799 completion tokens. Unresolved request reservations: 1; durable bodies not attached to a stage record: 0.
 
+The initial four post-review stages above remain separate from the wording follow-up; the shared log contains 8147 returned bodies across all follow-ups. Aggregate accounting includes both studies, not just the initial table.
+
 The preservation manifest verifies 271 original data/result files. New append-only review accounting includes the old read-only ledger in every cap check. Raw returned bodies are durably saved before scoring. Prompt/monitor/dataset versions, source hashes, base/collection commits (including dirty-tree status), response IDs, timestamps, returned model, reasoning configuration, token usage and costs are retained. The three older missing bodies remain disclosed and excluded.
 
 This Markdown file is the **one final report source**. Word/PDF and figures are derived from it; old report versions remain in the archive. The existing web dashboard is a historical snapshot, not these results. The current figures/tables live with this report instead. Author confirmation and official submission remain user actions.
+
+Export checks verify the reviewed artifact bytes, renderer/dependency/font/SVG/source hashes, and exact Word text/image joins. Linux and macOS font rasterizers need not regenerate identical PNG/PDF bytes. Same-environment repeatability is tested separately; cross-platform byte identity is not claimed.
 
 ## Reproduce
 

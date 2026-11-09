@@ -44,6 +44,18 @@ def build():
                                          decisions=metrics["decisions"],
                                          evaluation_complete=metrics["evaluation_complete"]))
     artifacts[OUT / "supporting_cohort_baselines.csv"] = csv_text(cohort_baselines)
+    followup = data["authority_wording_followup"]
+    if followup is not None:
+        folder = Path("results/authority_wording_v2")
+        followup_decisions = [{"definition": name, **r} for name in ("strict", "key_case_sensitivity")
+                             for r in followup[name].pop("decisions")]
+        artifacts[folder / "decisions.jsonl"] = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in followup_decisions)
+        artifacts[folder / "outcomes.csv"] = csv_text(followup["strict"]["groups"])
+        artifacts[folder / "wording_rates.csv"] = csv_text(followup["strict"]["wording_rates"])
+        if followup["strict"]["statistics"] is not None:
+            artifacts[folder / "contrasts.csv"] = csv_text(followup["strict"]["statistics"]["contrasts"])
+            artifacts[folder / "rates.csv"] = csv_text(followup["strict"]["statistics"]["rates"])
+        artifacts[folder / "analysis.json"] = json.dumps(followup, ensure_ascii=False, indent=2) + "\n"
     decisions = [{"definition": name, **row} for name in ("strict", "key_case_sensitivity")
                  for row in data[name].pop("decisions")]
     artifacts[OUT / "decisions.jsonl"] = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in decisions)

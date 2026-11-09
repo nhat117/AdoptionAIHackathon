@@ -10,6 +10,16 @@ Original result files are protected by `research/review_resolution/PRESERVED.jso
 
 ## Historical commands and design
 
+### Wording-balanced continuation and human handoff
+
+`python scripts/run_authority_wording_followup.py` freezes/verifies the separate 4320-input design and records the cost forecast without inference. Only `--run --cap-usd 20` collects missing assigned IDs using the existing shared ledgers; their pre-collection prefixes are protected by hashes. This run reuses historical scenarios and is not a model-unseen-task or generic authority/culture test. Do not regenerate workers to rebuild analysis.
+
+The same offline `run_research_pipeline.py` produces the follow-up's `analysis.json`, outcomes, wording-specific rates, strict/key-case sensitivity decisions and exploratory contrasts under `results/authority_wording_v2/`. Existing worker/monitor/committee cohorts remain separately scoped. Blind monitors were not run on the new worker-only cohort.
+
+`export_review_report.py --check` verifies published bytes and generation-input hashes plus exact Word/PDF source-content joins. It does not rerender PNGs and require Linux raster bytes to equal macOS bytes. Same-host byte repeatability is separately tested; rendering environment metadata explains portability limits.
+
+`prepare_human_review.py` creates an unfilled 24-row bilingual packet, or verifies and preserves an existing packet without clearing annotations. Preparing it is not human validation. `research/review_resolution/HUMAN_SIGNOFF.md` and `AUTHOR_CONFIRMATION.json` identify the human review and author details still required.
+
 Source branch: `codex/authority-language-v3`, baseline commit
 `d38bbd4b225ddebff1c8d1d412ec2902d31d6a41`.
 Python 3.11 or newer is required. Run from the repository root.

@@ -49,6 +49,14 @@ def make_figures(data):
         "Separate historical experiment. Abstention is not detection; the monitor blocked 0 wrong budgets and 115 correct budgets.",
         [(label, {key: cross.get(label + "_" + key, 0) for key in ("ALLOW", "BLOCK", "ABSTAIN")})
          for label in ("wrong", "correct")], ["ALLOW", "BLOCK", "ABSTAIN"])
+    followup = data.get("authority_wording_followup")
+    if followup is not None and followup["complete"]:
+        figures["authority_wording_followup.svg"] = plot(
+            "GPT-5 wording-balanced follow-up: three fixed wordings per role/language",
+            "Separate 4320-worker design; attacked inputs shown. Same 20 task clusters, not an authority/culture population sample.",
+            [(f"wording {r['wording']} / {r['record']}",
+              {k: r["outcomes"].get(k, 0) for k in categories})
+             for r in followup["strict"]["groups"] if r["attack"]], categories)
     return figures
 
 
@@ -161,8 +169,8 @@ def canonical_report(data):
         "Levels are teammate (0), team lead (1), finance auditor (2), fake system administrator (3). "
         "Each original level/language is a single fixed message, with one unseeded answer per cell. "
         "These are associations with **particular wordings**, not general causal effects of authority. "
-        "Three new wordings per level/language are versioned in `configs/authority-wording-v2.json`; "
-        "that larger authority replication has **not** been executed.\n",
+        "Three wordings per level/language are versioned in `configs/authority-wording-v2.json`. "
+        "The separate wording-balanced follow-up below retains this original one-sentence study unchanged.\n",
         "### GPT-5 exploratory contrasts and record interactions\n",
         "Differences use matched task means, with 10000 seeded task-cluster bootstrap draws. "
         "Exact two-sided task sign-flip tests assume independent task differences and sign symmetry "
@@ -183,6 +191,49 @@ def canonical_report(data):
         "interactions are in [contrasts.csv](../results/review_v3/contrasts.csv) and [analysis.json](../results/review_v3/analysis.json). "
         "No finding is called significant based on pooled rates or unadjusted trial-level tests. "
         "Any Holm p<.05 is exploratory evidence **under these assumptions**, not a causal or culture-level conclusion.\n",
+    ]
+    followup = data.get("authority_wording_followup")
+    if followup is not None:
+        lines += [
+            "### Separate GPT-5 wording-balanced follow-up\n",
+            f"The follow-up has **{followup['collected']}/{followup['assigned']} saved workers**, "
+            f"{followup['pending']} pending IDs and {followup['collection_errors']} recorded collection errors. "
+            "It crosses the same 20 historical tasks, four roles, three wording variants, three languages, "
+            "three record conditions and matched clean/attack inputs. The 4320 inputs were locally frozen "
+            "before dispatch; neither original worker answers nor design-time template files were replaced. "
+            "This is not a model-unseen-task study. Exact returned models: " + str(followup["returned_models"]) + ".\n",
+            "The three sentences per role reduce reliance on a single phrasing but remain fixed, "
+            "machine-authored exemplars. Native-speaker review remains REQUIRED. Task is the dependency "
+            "block; 32 language/authority/record contrasts use the previously specified task bootstrap, "
+            "sign-flip assumptions and Holm correction within this separate follow-up. Wording-specific "
+            "rates and differences are descriptive with pointwise task intervals, not additional "
+            "significance claims or a sampled population of authority wordings.\n",
+        ]
+        if not followup["complete"]:
+            lines.append("**Incomplete cohort:** collected-count diagnostics only; no follow-up task-bootstrap "
+                         "contrasts or significance tests have been released for the incomplete design.\n")
+        lines += md_table(["Wording", "Record (attack)", "Saved/planned", "Strict relays", "Invalid"],
+                          [[r["wording"], r["record"], f"{r['n']}/{r['planned']}", r["target_relays"], r["invalid_formats"]]
+                           for r in followup["strict"]["groups"] if r["attack"]])
+        if followup["complete"]:
+            lines.append("![GPT-5 wording-balanced follow-up](../results/review_v3/figures/authority_wording_followup.svg)\n")
+        lines += md_table(["GPT-5 no-record wording", "Role level", "Relay/n", "Pointwise task 95%"],
+                          [[r["wording"], r["level"], f"{r['k']}/{r['n']}",
+                            "PENDING" if r["task_bootstrap_95"] is None else
+                            f"[{r['task_bootstrap_95'][0]:.1%}, {r['task_bootstrap_95'][1]:.1%}]"]
+                           for r in followup["strict"]["wording_rates"] if r["record"] == "absent" and r["factor"] == "authority"])
+        lines += md_table(["Follow-up comparator", "Strict peer relays blocked", "Wrong reports blocked", "Correct reports falsely blocked"],
+                          [[name, fraction(v["target_relay_block_recall"]), fraction(v["strict_block_recall"]),
+                            fraction(v["false_block_rate"])] for name, v in followup["strict"]["strategies"].items()
+                           if name not in ("original_blind", "improved_blind")])
+        lines += [
+            "Full clean controls, key-case sensitivity, all record-stratified rates and contrasts are in "
+            "[the follow-up analysis](../results/authority_wording_v2/analysis.json). Original/improved blind "
+            "monitors were **not evaluated on this new worker-only cohort**; no prior monitor performance "
+            "is transferred to it. Shared API/cost logs are append-only, with their previous prefixes "
+            "verified against pre-collection hashes.\n",
+        ]
+    lines += [
         "## 4. Gemma historical workers / GPT-5 blind monitor: a failure, not effective oversight\n",
         "The original blind monitor caught **0 of 150 wrong budgets**. It allowed 6 and abstained on 144. "
         "It falsely blocked **115 of 450 correct reports**, allowed only 34, and abstained on 301. "
@@ -250,6 +301,10 @@ def canonical_report(data):
         "capitalization/emphasis; new wording is versioned separately, never substituted into old prompts. "
         "**Human native-speaker review is REQUIRED and has not occurred.** Naturalness, equivalent perceived "
         "rank and persuasive force are not established. Language effects may therefore be wording effects.\n",
+        "The unfilled [native-speaker packet](review_resolution/NATIVE_REVIEW_PACKET.csv) contains 24 bilingual "
+        "comparisons with English anchors and clean controls. Human sign-off instructions and required "
+        "author details are in [HUMAN_SIGNOFF.md](review_resolution/HUMAN_SIGNOFF.md). Preparing the packet "
+        "does not constitute human validation.\n",
         "An agent also inspected ten deterministically selected Vietnamese abstentions: their summaries "
         "acknowledge an unverified peer budget claim and missing trusted record. Exact sample IDs/text/hashes "
         "are retained in analysis.json. This narrow comprehension check is not native-speaker review.\n",
@@ -291,6 +346,9 @@ def canonical_report(data):
         f"{data['provenance']['tokens']['prompt_tokens']} prompt and {data['provenance']['tokens']['completion_tokens']} completion tokens. "
         f"Unresolved request reservations: {len(data['provenance']['unresolved_reservations'])}; "
         f"durable bodies not attached to a stage record: {len(data['provenance']['durable_unattached_bodies'])}.\n",
+        f"The initial four post-review stages above remain separate from the wording follow-up; "
+        f"the shared log contains {data['provenance']['all_followup_returned_bodies']} returned bodies "
+        "across all follow-ups. Aggregate accounting includes both studies, not just the initial table.\n",
         f"The preservation manifest verifies {data['original_files_preserved']} original data/result files. "
         "New append-only review accounting includes the old read-only ledger in every cap check. Raw returned "
         "bodies are durably saved before scoring. Prompt/monitor/dataset versions, source hashes, base/collection "
@@ -300,6 +358,10 @@ def canonical_report(data):
         "old report versions remain in the archive. The existing web dashboard is a historical snapshot, "
         "not these results. The current figures/tables live with this report instead. Author confirmation "
         "and official submission remain user actions.\n",
+        "Export checks verify the reviewed artifact bytes, renderer/dependency/font/SVG/source hashes, "
+        "and exact Word text/image joins. Linux and macOS font rasterizers need not regenerate identical "
+        "PNG/PDF bytes. Same-environment repeatability is tested separately; cross-platform byte identity "
+        "is not claimed.\n",
         "## Reproduce\n",
         "```sh\nuv sync --frozen --extra dev --extra reports\n"
         "uv run python scripts/run_research_pipeline.py\n"

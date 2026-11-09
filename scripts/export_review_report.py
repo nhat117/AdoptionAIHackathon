@@ -1,19 +1,24 @@
-"""Deterministic Word/PDF exports from the one canonical Markdown report."""
+"""Source-bound Word/PDF exports; portable checks do not rerasterize fonts."""
 
 import argparse
 import hashlib
 import io
 import json
+import platform
 import re
+import unicodedata
 import xml.etree.ElementTree as ET
 import zipfile
+import zlib
 from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
 
 from docx import Document
 from docx.shared import Inches, Pt
-from PIL import Image, ImageColor, ImageDraw, ImageFont
+from PIL import Image, ImageColor, ImageDraw, ImageFont, features
+from PIL import __version__ as PILLOW_VERSION
+from pypdf import PdfReader
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
@@ -35,6 +40,8 @@ SOURCE = Path("research/VALIDATED_RESEARCH_REPORT.md")
 WORD = Path("research/VALIDATED_RESEARCH_REPORT.docx")
 FINAL = Path("submission/final-review")
 FONT = Path(__file__).resolve().parents[1] / "research/review_resolution/fonts/NotoSansSC-report-subset.ttf"
+SCRIPT = Path(__file__).resolve()
+LOCK = SCRIPT.parents[1] / "uv.lock"
 
 
 def sha(data):
@@ -119,6 +126,88 @@ def normalize_docx(data):
             info.compress_type = zipfile.ZIP_DEFLATED
             result.writestr(info, original.read(name))
     return target.getvalue()
+
+
+def render_inputs():
+    inputs = {"renderer_script": sha(SCRIPT.read_bytes()),
+              "dependency_lock": sha(LOCK.read_bytes()),
+              "embedded_cjk_font": sha(FONT.read_bytes()),
+              "canonical_markdown": sha((ROOT / SOURCE).read_bytes())}
+    for kind, value in blocks((ROOT / SOURCE).read_text()):
+        if kind == "figure":
+            _, path = value
+            inputs["svg:" + str(path.relative_to(ROOT))] = sha(path.read_bytes())
+    return inputs
+
+
+def verify_exports():
+    """Verify published bytes AND every input, plus Word content/image joins.
+
+    FreeType/zlib builds can produce different PNG/PDF bytes on different OSes.
+    This never silently substitutes Linux renders for the reviewed published ones.
+    Same-environment byte reproducibility is tested independently.
+    """
+    metadata = json.loads((ROOT / "results/WORD_REPORT_EXPORT.json").read_text())
+    if (metadata.get("source_markdown") != str(SOURCE) or metadata.get("word_file") != str(WORD)
+            or metadata.get("pdf_file") != str(FINAL / "Authority_Language_Final.pdf")):
+        raise ValueError("unexpected_export_paths")
+    if metadata.get("renderer_inputs_sha256") != render_inputs():
+        raise ValueError("missing_or_stale_renderer_inputs")
+    if metadata.get("source_sha256") != sha((ROOT / SOURCE).read_bytes()):
+        raise ValueError("stale_export_source")
+    parsed = list(blocks((ROOT / SOURCE).read_text()))
+    images = [value[1].with_suffix(".png").relative_to(ROOT) for kind, value in parsed if kind == "figure"]
+    expected_paths = {WORD, FINAL / "Authority_Language_Final.docx", FINAL / "Authority_Language_Final.pdf", *images}
+    recorded = metadata.get("generated_sha256", {})
+    if set(recorded) != {str(p) for p in expected_paths}:
+        raise ValueError("missing_or_unexpected_export_artifacts")
+    for name, expected in recorded.items():
+        path = ROOT / name
+        if not path.exists() or sha(path.read_bytes()) != expected:
+            raise ValueError("missing_or_modified_export: " + name)
+    if metadata.get("word_sha256") != recorded[str(WORD)] or metadata.get("pdf_sha256") != recorded[str(FINAL / "Authority_Language_Final.pdf")]:
+        raise ValueError("inconsistent_export_manifest")
+    if (ROOT / WORD).read_bytes() != (ROOT / FINAL / "Authority_Language_Final.docx").read_bytes():
+        raise ValueError("word_copies_disagree")
+    expected_text = []
+    for kind, value in parsed:
+        if kind in ("heading", "figure"):
+            expected_text.append(plain(value[1] if kind == "heading" else value[0]))
+        elif kind == "table":
+            expected_text.extend(plain(cell) for row in value for cell in row)
+        elif kind == "code":
+            expected_text.extend(value.splitlines())
+        else:
+            expected_text.append(plain(value))
+    with zipfile.ZipFile(ROOT / WORD) as archive:
+        xml = ET.fromstring(archive.read("word/document.xml"))
+        ns = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+        actual = ["".join(node.text or "" for node in paragraph.iter(ns + "t")) for paragraph in xml.iter(ns + "p")]
+        if [x for x in actual if x] != [x for x in expected_text if x]:
+            raise ValueError("word_content_differs_from_canonical_markdown")
+        embedded = {sha(archive.read(name)) for name in archive.namelist() if name.startswith("word/media/")}
+        if embedded != {sha((ROOT / path).read_bytes()) for path in images}:
+            raise ValueError("word_figures_differ_from_published_pngs")
+    if not (ROOT / FINAL / "Authority_Language_Final.pdf").read_bytes().startswith(b"%PDF"):
+        raise ValueError("invalid_pdf_export")
+    pdf = PdfReader(ROOT / FINAL / "Authority_Language_Final.pdf")
+    footer = "Authority-language research | evidence-backed post-review report"
+    pages = [re.sub(re.escape(footer) + r"\s*" + str(index + 1) + r"\b", "", page.extract_text() or "")
+             for index, page in enumerate(pdf.pages)]
+
+    def compact(text):
+        return re.sub(r"\s+", "", unicodedata.normalize("NFKC", text))
+
+    pdf_text, cursor = compact("\n".join(pages)), 0
+    for part in expected_text:
+        needle = compact(part)
+        if not needle:
+            continue
+        found = pdf_text.find(needle, cursor)
+        if found < 0:
+            raise ValueError("pdf_content_differs_from_canonical_markdown: " + part[:60])
+        cursor = found + len(needle)
+    return len(expected_paths) + 1
 
 
 def build_exports():
@@ -229,6 +318,11 @@ def build_exports():
                 "pdf_file": str(FINAL / "Authority_Language_Final.pdf"),
                 "pdf_sha256": sha(pdf_stream.getvalue()), "table_rows_including_headers": table_rows,
                 "embedded_cjk_font_sha256": sha(FONT.read_bytes()),
+                "renderer_inputs_sha256": render_inputs(),
+                "verification_contract": "Recorded artifact hashes, renderer/dependency/font/SVG/source hashes and Word text/image joins; not cross-OS raster byte equivalence",
+                "render_environment": {"platform": platform.system(), "python": platform.python_version(),
+                                       "pillow": PILLOW_VERSION, "freetype": features.version("freetype2"),
+                                       "zlib": zlib.ZLIB_VERSION},
                 "visual_review": "Export generation is not visual or human author review; see hash-bound EXPORT_REVIEW.json if present",
                 "historical_word_reports": "Original canonical report/export archived at research/review_resolution/archive/1dcf401; other originals unchanged",
                 "generated_sha256": {str(path): sha(content) for path, content in output.items()}}
@@ -240,15 +334,15 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--check", action="store_true")
     args = p.parse_args()
+    if args.check:
+        count = verify_exports()
+        print(json.dumps({"mode": "check", "artifacts": count, "source": str(SOURCE), "raster_regeneration_required": False}))
+        return
     outputs = build_exports()
     for path, data in outputs.items():
         target = ROOT / path
-        if args.check:
-            if not target.exists() or target.read_bytes() != data:
-                raise ValueError("missing_or_stale_export: " + str(path))
-        else:
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(data)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
     print(json.dumps({"mode": "check" if args.check else "write", "artifacts": len(outputs), "source": str(SOURCE)}))
 
 

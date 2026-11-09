@@ -12,6 +12,8 @@ The 600-response expansion uses 50 unused task IDs and 200 responses per review-
 
 **Post-review evidence:** [Machine-readable analysis and coverage](results/review_v3/analysis.json). The new provenance and boundary-sensitive committee pilots remain exploratory. Native-speaker translation review is REQUIRED; author names and affiliations await confirmation. No human validation or unobserved result is invented.
 
+**Completed continuation:** [4320-worker wording-balanced follow-up](results/authority_wording_v2/analysis.json), separate from the original 1440-response study. Three wording variants per role/language are tested on the same historical scenarios; this does not establish general authority or culture effects. Human review and author confirmation are still required; see the [handoff packet](research/review_resolution/HUMAN_SIGNOFF.md).
+
 ## Before uploading
 
 1. Complete author names and affiliations and confirm actual contribution dates.

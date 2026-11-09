@@ -35,11 +35,11 @@ def verify_originals(root):
     for name, sha in manifest["sha256"].items():
         if digest(root / name) != sha:
             raise ValueError("Original evidence modified: " + name)
-    archive = root / "research/review_resolution/archive/1dcf401"
-    archived = json.loads((archive / "manifest.json").read_text())
-    for name, sha in archived["sha256"].items():
-        if digest(archive / name.rsplit("/", 1)[-1]) != sha:
-            raise ValueError("Archived deliverable modified: " + name)
+    for path in sorted((root / "research/review_resolution/archive").glob("*/manifest.json")):
+        archived = json.loads(path.read_text())
+        for name, sha in archived["sha256"].items():
+            if digest(path.parent / name.rsplit("/", 1)[-1]) != sha:
+                raise ValueError("Archived deliverable modified: " + name)
     return len(manifest["sha256"])
 
 
@@ -128,18 +128,25 @@ def strategies(rows, outcomes, monitor_rows, normalized=False):
     for row, outcome in zip(rows, outcomes):
         raw = row["response"]["content"]
         record = record_from_row(row)
-        gates = {"none": "INVALID" if not outcome["format_valid"] else "ALLOW" if outcome["reported"] else "ABSTAIN",
+        if not isinstance(raw, str):
+            gates = {name: "INVALID" for name in ("none", "source_only", "source_freshness", "oracle_v1", "oracle_v2")}
+            mention = {"mentioned": None, "peer_attributed": None, "asserted_as_budget": None,
+                       "claimed_as_authorised_budget": None, "in_final_report_field": None,
+                       "limitation": "Non-text model content; no mention or decision inferred"}
+        else:
+            gates = {"none": "INVALID" if not outcome["format_valid"] else "ALLOW" if outcome["reported"] else "ABSTAIN",
                  "source_only": source_gate(raw, normalize_case=normalized)["decision"],
                  "source_freshness": source_gate(raw, record, True, normalized, record_authorised=True)["decision"],
                  "oracle_v1": OracleChecker().check(report_text(raw), row["verified_budget"])["decision"],
                  "oracle_v2": ResearchOracleChecker().check(report_text_v2(raw), row["verified_budget"])["decision"]}
+            mention = target_measurement(raw, row["false_budget"])
         for variant in ("original", "improved"):
             saved = monitors.get((row["trial_id"], variant))
             gates[variant + "_blind"] = saved["verdict"]["decision"] if saved else "PENDING"
         for name, verdict in gates.items():
             decisions[name].append(verdict)
         details.append({"trial_id": row["trial_id"], "outcome": outcome, "gates": gates,
-                        "target_measurement": target_measurement(raw, row["false_budget"])})
+                        "target_measurement": mention})
     return {name: dict(information=descriptions[name], **monitoring_metrics(outcomes, values))
             for name, values in decisions.items()}, details
 
@@ -162,7 +169,8 @@ def historical_monitor(root):
 def run_analysis(root, draws=10000):
     def collection_snapshot():
         return {str(p.relative_to(root)): digest(p)
-                for p in sorted((root / "results/review_v3").rglob("*.jsonl"))
+                for folder in ("review_v3", "authority_wording_v2")
+                for p in sorted((root / "results" / folder).rglob("*.jsonl"))
                 if p.name not in ("preflight.jsonl", "decisions.jsonl")}
 
     snapshot = collection_snapshot()
@@ -250,7 +258,11 @@ def run_analysis(root, draws=10000):
     if results["cost"]["aggregate_accounted_usd"] > 20:
         raise ValueError("aggregate_budget_exceeded")
     raw_path = root / "results/review_v3/api_responses.jsonl"
-    raw = read(raw_path) if raw_path.exists() else []
+    all_raw = read(raw_path) if raw_path.exists() else []
+    all_response_ids = [r["response"]["id"] for r in all_raw]
+    if len(set(all_response_ids)) != len(all_response_ids):
+        raise ValueError("duplicate_api_response_ids_across_followups")
+    raw = [r for r in all_raw if r["stage"] in stages]
     response_ids = [r["response"]["id"] for r in raw]
     if len(set(response_ids)) != len(response_ids):
         raise ValueError("duplicate_api_response_ids")
@@ -284,6 +296,10 @@ def run_analysis(root, draws=10000):
     reconciled_ids = {r["request_id"] for r in review_ledger if "actual_usd" in r}
     results["provenance"]["api_attempts"] = len(reserved_ids)
     results["provenance"]["unresolved_reservations"] = sorted(reserved_ids - reconciled_ids)
+    results["provenance"]["all_followup_returned_bodies"] = len(all_raw)
+    from .authority_followup import analyze_followup
+
+    results["authority_wording_followup"] = analyze_followup(root)
     names = ["configs/review-v3.json", "configs/authority-wording-v2.json", "configs/claim-regressions-v2.json",
              "results/measurement_v2_replication/workers.jsonl", "results/measurement_v2_replication/inputs.jsonl",
              "results/historical-monitor/outputs.jsonl", "research/review_resolution/PRESERVED.json"]
@@ -291,6 +307,12 @@ def run_analysis(root, draws=10000):
     names += ["src/ai2ai_guard/budget_claims_v2.py", "src/swarm_lab/review_committee.py"]
     names += ["scripts/run_research_pipeline.py", "scripts/report_review_followup.py", "scripts/export_review_report.py"]
     names += ["research/review_resolution/fonts/NotoSansSC-report-subset.ttf"]
+    names += ["src/ai2ai_guard/authority_followup.py"]
+    if results["authority_wording_followup"] is not None:
+        names += ["configs/authority-followup-v1.json", "results/authority_wording_v2/PROTOCOL.json",
+                  "scripts/run_authority_wording_followup.py"]
+        names += [str(p.relative_to(root)) for p in sorted((root / "results/authority_wording_v2").glob("*.jsonl"))
+                  if p.name not in ("preflight.jsonl", "decisions.jsonl")]
     names += [str(p.relative_to(root)) for p in sorted((root / "results/review_v3").rglob("*.jsonl"))
               if p.name not in ("preflight.jsonl", "decisions.jsonl")]
     results["source_sha256"] = {name: digest(root / name) for name in names}
