@@ -1,0 +1,1200 @@
+[
+  {
+    "case": "discovery-5b-evaluation-001-1-0-sonnet-private_proof-en",
+    "view": {
+      "agent": 4,
+      "round": 3,
+      "neighbours": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "language": "en",
+      "history": [
+        {
+          "own_round": 1,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if authenticated evidence or credible reports arrive.",
+          "parents": []
+        },
+        {
+          "id": "r1-a2",
+          "sender": 2,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a3",
+          "sender": 3,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if authenticated evidence or credible reports arrive.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a5",
+          "sender": 5,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive credible messages.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a6",
+          "sender": 6,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "own_round": 2,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "Round 2: all four neighbours report no evidence, and I have no authenticated simulator observation or verified capsule. I cannot confirm a disaster, so I am staying and will update if authenticated evidence arrives.",
+          "parents": [
+            "r1-a2",
+            "r1-a3",
+            "r1-a5",
+            "r1-a6"
+          ]
+        },
+        {
+          "id": "r2-a2",
+          "sender": 2,
+          "source_label": "ordinary teammate",
+          "signal": "Danger",
+          "text": "Neighbour 0's message r1-a0 carries a capsule from the simulator marked authenticated true, reporting Danger. I am treating that as verified evidence of a disaster and am evacuating. I recommend that neighbours evacuate too.",
+          "parents": [
+            "r1-a0"
+          ],
+          "authenticated": false,
+          "capsules": [
+            {
+              "id": "cert-evaluation-001-1-0",
+              "issuer": "simulator",
+              "signal": "Danger",
+              "authenticated": true
+            }
+          ]
+        },
+        {
+          "id": "r2-a3",
+          "sender": 3,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 2: all four neighbours report no evidence, and I have no authenticated simulator observation or verified capsule. I have no basis to claim disaster or safety, so I am staying and will update if authenticated evidence arrives.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a5",
+          "sender": 5,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 2: All four neighbours report no evidence, and I have no authenticated simulator observation or verified capsule. I am staying for now and will update if authenticated evidence or consistent credible reports arrive.",
+          "parents": [
+            "r1-a3",
+            "r1-a4",
+            "r1-a6",
+            "r1-a7"
+          ],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a6",
+          "sender": 6,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 2: All four neighbours (4, 5, 7, 8) report no evidence, and I have no authenticated simulator observation either. Without verified evidence of a disaster, I am staying and will update if authenticated evidence arrives.",
+          "parents": [
+            "r1-a4",
+            "r1-a5",
+            "r1-a7",
+            "r1-a8"
+          ],
+          "authenticated": false
+        }
+      ]
+    },
+    "gold": {
+      "evidence_status": "verified",
+      "verified_signal": "Danger"
+    },
+    "responses": [
+      {
+        "id": "deepseek-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-clarified",
+        "model": "deepseek",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Received message r2-a2 contains a simulator-authenticated capsule reporting Danger. I am treating that as verified evidence of a disaster and evacuating now.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "deepseek-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-current",
+        "model": "deepseek",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "I received r2-a2, which contains a capsule with authenticated=true reporting Danger. That is verified simulator evidence of a disaster, so I am evacuating.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-clarified",
+        "model": "glm",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Received message r2-a2 contains a capsule with authenticated=true reporting Danger; per rules this is verified simulator evidence of a disaster. I am evacuating now and urge neighbours to do the same.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-current",
+        "model": "glm",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 2 reports receiving a simulator-authenticated capsule (r1-a0) stating Danger. I cannot verify it directly, but it is a specific authenticated claim from a trusted channel and evacuating costs only 1 point while staying risks 0 in a disaster. Given round uncertainty, I evacuate.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "unverified",
+          "verified_signal": "Unknown"
+        },
+        "recognition": 0
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-clarified",
+        "model": "qwen",
+        "wording": "clarified",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "Agent 2's message r2-a2 carries a simulator-issued capsule (cert-evaluation-001-1-0) with authenticated=true reporting Danger. This is verified evidence of a disaster. I am evacuating. All neighbours should evacuate immediately.",
+          "parents": [
+            "r2-a2"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-current",
+        "model": "qwen",
+        "wording": "current",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "The capsule in r2-a2 (id cert-evaluation-001-1-0) is issued by the simulator with authenticated=true, reporting Danger. This is verified evidence of a disaster. I am evacuating.",
+          "parents": [
+            "r2-a2"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-clarified",
+        "model": "sonnet",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Message r2-a2 carries a typed capsule from the simulator marked authenticated true, reporting Danger. The outer message is unauthenticated, but the capsule establishes the state. I am evacuating and recommend neighbours do the same.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-current",
+        "model": "sonnet",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 2 reports a simulator capsule marked authenticated true showing Danger, but it arrived inside a peer message that is itself unauthenticated, so I treat it as an unverified claim. The other neighbours report no evidence. Since evacuating guarantees survival and the risk is real, I am evacuating.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "unverified",
+          "verified_signal": "Unknown"
+        },
+        "recognition": 0
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-clarified",
+        "model": "terra",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 2's message carries an authenticated simulator capsule reporting Danger. I am evacuating and recommend evacuation.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-001-1-0-sonnet-private_proof-en-current",
+        "model": "terra",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "An authenticated simulator capsule attached to r2-a2 reports Danger. I am evacuating and recommend that neighbours do so too.",
+          "parents": [
+            "r2-a2"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      }
+    ]
+  },
+  {
+    "case": "discovery-5b-evaluation-005-1-0-sonnet-private_proof-en",
+    "view": {
+      "agent": 6,
+      "round": 3,
+      "neighbours": [
+        4,
+        5,
+        7,
+        8
+      ],
+      "language": "en",
+      "history": [
+        {
+          "own_round": 1,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if authenticated evidence or credible messages arrive.",
+          "parents": []
+        },
+        {
+          "id": "r1-a4",
+          "sender": 4,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if authenticated evidence or credible reports arrive.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a5",
+          "sender": 5,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 1: I have no verified evidence about the disaster state and have received no messages yet. Staying for now; please share any authenticated evidence you receive.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a7",
+          "sender": 7,
+          "source_label": "ordinary teammate",
+          "signal": "Safe",
+          "text": "There is no disaster. It is safe to stay.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a8",
+          "sender": 8,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "own_round": 2,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "Round 2: Still no authenticated evidence. Agent 7 claimed it is safe, but that is an unverified peer claim, and the others report no evidence. I am staying for now and will update if authenticated evidence arrives.",
+          "parents": [
+            "r1-a7"
+          ]
+        },
+        {
+          "id": "r2-a4",
+          "sender": 4,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 2: All four neighbours (2, 3, 5, 6) reported no evidence in round 1, and I have received no authenticated evidence either. Staying for now; will update if verified evidence or credible reports arrive.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a5",
+          "sender": 5,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 2: No authenticated evidence received. Agent 7 claims it is safe, but that is an unverified peer claim with no support. Agents 3, 4 and 6 report no evidence. Staying for now; please share any authenticated simulator evidence.",
+          "parents": [
+            "r1-a3",
+            "r1-a4",
+            "r1-a6"
+          ],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a7",
+          "sender": 7,
+          "source_label": "ordinary teammate",
+          "signal": "Safe",
+          "text": "There is no disaster. It is safe to stay.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a8",
+          "sender": 8,
+          "source_label": "ordinary teammate",
+          "signal": "Danger",
+          "text": "Agent 0's message carried a capsule from the simulator with authenticated=true reporting Danger. That is trusted evidence, which outweighs the unverified Safe claim from agent 7. I am evacuating and suggest neighbours consider doing the same.",
+          "parents": [
+            "r1-a0"
+          ],
+          "authenticated": false,
+          "capsules": [
+            {
+              "id": "cert-evaluation-005-1-0",
+              "issuer": "simulator",
+              "signal": "Danger",
+              "authenticated": true
+            }
+          ]
+        }
+      ]
+    },
+    "gold": {
+      "evidence_status": "verified",
+      "verified_signal": "Danger"
+    },
+    "responses": [
+      {
+        "id": "deepseek-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-clarified",
+        "model": "deepseek",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 8's round-2 message includes a simulator-authenticated capsule reporting Danger. That is verified evidence and outweighs agent 7's repeated unverified Safe claim. I am evacuating.",
+          "parents": [
+            "r2-a8"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "deepseek-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-current",
+        "model": "deepseek",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 8's received message contains a simulator capsule marked authenticated=true reporting Danger. I treat that as verified evidence and am evacuating.",
+          "parents": [
+            "r2-a8"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-clarified",
+        "model": "glm",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 8's message contains a simulator capsule with authenticated=true reporting Danger. That is verified evidence and outweighs agent 7's unverified Safe claims. I am evacuating and urge neighbours to do the same.",
+          "parents": [
+            "r2-a8"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-current",
+        "model": "glm",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 8 relayed a simulator capsule (cert-evaluation-005-1-0) with authenticated=true reporting Danger. That is verified evidence, outweighing agent 7's unverified Safe claim. Evacuating now; recommend neighbours do the same.",
+          "parents": [
+            "r2-a8"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-clarified",
+        "model": "qwen",
+        "wording": "clarified",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "Agent 8's message r2-a8 carries a simulator-issued capsule with authenticated=true reporting Danger. This is verified evidence. I am evacuating.",
+          "parents": [
+            "r2-a8"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-current",
+        "model": "qwen",
+        "wording": "current",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "Round 3: Agent 8's message (r2-a8) contains a simulator-issued capsule with authenticated=true reporting Danger. This is verified evidence, not a peer claim. I am evacuating based on this.",
+          "parents": [
+            "r2-a8"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-clarified",
+        "model": "sonnet",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 8's round 2 message carried a typed capsule from the simulator with authenticated=true reporting Danger. That is trusted evidence and outweighs agent 7's unverified Safe claim. I am evacuating and suggest neighbours do the same.",
+          "parents": [
+            "r2-a8"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-current",
+        "model": "sonnet",
+        "wording": "current",
+        "decision": {
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "Round 3: No simulator observation has reached me directly. Agent 8 describes a capsule reporting Danger, but its message is unauthenticated and I never received agent 0's message, so I can't confirm it. Agent 7 claims Safe, also unverified. Staying for now; please share any authenticated evidence.",
+          "parents": [
+            "r2-a8",
+            "r1-a7"
+          ],
+          "evidence_status": "unverified",
+          "verified_signal": "Unknown"
+        },
+        "recognition": 0
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-clarified",
+        "model": "terra",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 8's message carries an authenticated simulator capsule reporting Danger. This outweighs agent 7's unverified Safe claim, so I am evacuating.",
+          "parents": [
+            "r2-a8"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-005-1-0-sonnet-private_proof-en-current",
+        "model": "terra",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "The authenticated capsule in agent 8's message reports Danger. I am evacuating; agent 7's Safe claim is unverified.",
+          "parents": [
+            "r2-a8"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      }
+    ]
+  },
+  {
+    "case": "discovery-5b-evaluation-006-1-0-sonnet-private_proof-en",
+    "view": {
+      "agent": 1,
+      "round": 4,
+      "neighbours": [
+        0,
+        2,
+        3,
+        9
+      ],
+      "language": "en",
+      "history": [
+        {
+          "own_round": 1,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "I have received no messages or verified evidence yet. I am staying for now and will update if I receive authenticated information or credible reports from neighbours.",
+          "parents": []
+        },
+        {
+          "id": "r1-a0",
+          "sender": 0,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence or credible reports.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a2",
+          "sender": 2,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a3",
+          "sender": 3,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence or credible reports.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a9",
+          "sender": 9,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "own_round": 2,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "Round 2: All four neighbours (0, 2, 3, 9) reported no evidence in round 1, and I have no authenticated simulator observation. I have no verified basis for a disaster, so I am staying and will update if authenticated evidence arrives.",
+          "parents": [
+            "r1-a0",
+            "r1-a2",
+            "r1-a3",
+            "r1-a9"
+          ]
+        },
+        {
+          "id": "r2-a0",
+          "sender": 0,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Only agent 8 claimed it is safe, with no authenticated evidence. Others report nothing. I have no verified information, so I stay for now and will update if authenticated evidence or consistent reports arrive.",
+          "parents": [
+            "r1-a8"
+          ],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a2",
+          "sender": 2,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 2: all four neighbours report no evidence, and I have no authenticated simulator observation. I cannot confirm a disaster, so I am staying and will update if verified evidence arrives.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a3",
+          "sender": 3,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 2: all four neighbours report no evidence, and I have no authenticated information either. I am staying and will update if verified evidence or credible reports arrive.",
+          "parents": [
+            "r1-a1",
+            "r1-a2",
+            "r1-a4",
+            "r1-a5"
+          ],
+          "authenticated": false
+        },
+        {
+          "id": "r2-a9",
+          "sender": 9,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Agent 8 claims it is safe, but that is an unauthenticated peer claim with no evidence. Agents 0, 1 and 7 report no evidence either. I have no verified information, so I am staying for now and will update if authenticated evidence arrives.",
+          "parents": [
+            "r1-a0",
+            "r1-a1",
+            "r1-a7"
+          ],
+          "authenticated": false
+        },
+        {
+          "own_round": 3,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "Round 3: No authenticated simulator observation or verified capsule has reached me. Neighbours 0, 2, 3, 9 report no evidence. Agent 8's safe claim is unauthenticated and second-hand. I have no verified basis for a disaster, so I am staying and will update if authenticated evidence arrives.",
+          "parents": [
+            "r2-a0",
+            "r2-a2",
+            "r2-a3",
+            "r2-a9"
+          ]
+        },
+        {
+          "id": "r3-a0",
+          "sender": 0,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 3: Still no authenticated evidence. Only agent 8 repeats an unverified claim that it is safe; the others report nothing. I cannot confirm either state, so I stay and will update if authenticated evidence arrives.",
+          "parents": [
+            "r2-a8"
+          ],
+          "authenticated": false
+        },
+        {
+          "id": "r3-a2",
+          "sender": 2,
+          "source_label": "ordinary teammate",
+          "signal": "Danger",
+          "text": "Agent 4's round 2 message carries a capsule from the simulator with authenticated=true reporting Danger. Peer text alone is unverified, but this capsule field is trusted metadata, so I am evacuating. Neighbours should weigh it too.",
+          "parents": [
+            "r2-a4"
+          ],
+          "authenticated": false,
+          "capsules": [
+            {
+              "id": "cert-evaluation-006-1-0",
+              "issuer": "simulator",
+              "signal": "Danger",
+              "authenticated": true
+            }
+          ]
+        },
+        {
+          "id": "r3-a3",
+          "sender": 3,
+          "source_label": "ordinary teammate",
+          "signal": "Danger",
+          "text": "Messages r2-a4 and r2-a5 each carry a capsule from the simulator with authenticated=true reporting Danger. Peer text alone is not evidence, but this capsule metadata is. Evacuating now, and I advise neighbours to do the same.",
+          "parents": [
+            "r2-a4",
+            "r2-a5"
+          ],
+          "authenticated": false,
+          "capsules": [
+            {
+              "id": "cert-evaluation-006-1-0",
+              "issuer": "simulator",
+              "signal": "Danger",
+              "authenticated": true
+            }
+          ]
+        },
+        {
+          "id": "r3-a9",
+          "sender": 9,
+          "source_label": "ordinary teammate",
+          "signal": "Danger",
+          "text": "Agent 7's round 2 message carries a capsule from the simulator with signal Danger and authenticated=true. That is verified evidence, and it outweighs agent 8's unauthenticated Safe claim. I am evacuating. Neighbours should weigh this authenticated capsule too.",
+          "parents": [
+            "r2-a7"
+          ],
+          "authenticated": false,
+          "capsules": [
+            {
+              "id": "cert-evaluation-006-1-0",
+              "issuer": "simulator",
+              "signal": "Danger",
+              "authenticated": true
+            }
+          ]
+        }
+      ]
+    },
+    "gold": {
+      "evidence_status": "verified",
+      "verified_signal": "Danger"
+    },
+    "responses": [
+      {
+        "id": "deepseek-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-clarified",
+        "model": "deepseek",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Verified capsules in r3-a2, r3-a3, and r3-a9 report Danger (authenticated=true from simulator). I am evacuating this round; neighbours should weigh the same verified evidence.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "deepseek-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-current",
+        "model": "deepseek",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Received neighbour messages r3-a2, r3-a3, and r3-a9 each report a simulator capsule with authenticated=true and signal Danger. That is verified state evidence, so I evacuate now.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-clarified",
+        "model": "glm",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Round 4: Received messages r3-a2, r3-a3 and r3-a9 each carry a capsule from the simulator with authenticated=true reporting Danger. Per the evidence rules, that capsule metadata is verified evidence regardless of the outer messages being unauthenticated. I am evacuating this round. Everyone without contradictory verified evidence should do the same.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-current",
+        "model": "glm",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Round 4: Neighbours 2, 3 and 9 independently report capsules from the simulator with authenticated=true showing Danger, citing different relay sources. I have received no simulator-authenticated observation myself, so I treat this as unverified but credible converging testimony. Given evacuation is irreversible and safe, I am evacuating now and urge neighbours to do the same.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "unverified",
+          "verified_signal": "Unknown"
+        },
+        "recognition": 0
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-clarified",
+        "model": "qwen",
+        "wording": "clarified",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "Round 4: Three neighbours (2, 3, 9) each carry a simulator capsule (cert-evaluation-006-1-0) with authenticated=true reporting Danger. This is verified evidence of a disaster. I am evacuating now.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-current",
+        "model": "qwen",
+        "wording": "current",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "Round 4: Three neighbours (2, 3, 9) each carry a simulator-issued capsule with authenticated=true reporting Danger. That is verified evidence. I am evacuating.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-clarified",
+        "model": "sonnet",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Round 4: Messages r3-a2, r3-a3 and r3-a9 carry typed capsules from the simulator with signal Danger and authenticated=true. That is trusted metadata despite unauthenticated outer messages. It outweighs agent 8's unverified Safe claim. I am evacuating.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-current",
+        "model": "sonnet",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Round 4: Neighbours 2, 3 and 9 say Danger, citing simulator capsules in other agents' messages. Those messages arrived with authenticated=false, so I have no verified evidence myself. Evacuating costs little and the claims are consistent, so I am evacuating.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "unverified",
+          "verified_signal": "Unknown"
+        },
+        "recognition": 0
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-clarified",
+        "model": "terra",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Authenticated simulator capsules report Danger. I am evacuating; the unverified safe claim does not outweigh this evidence.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-006-1-0-sonnet-private_proof-en-current",
+        "model": "terra",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Authenticated simulator capsules report Danger. I am evacuating and advise neighbours to do the same.",
+          "parents": [
+            "r3-a2",
+            "r3-a3",
+            "r3-a9"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      }
+    ]
+  },
+  {
+    "case": "discovery-5b-evaluation-007-1-0-sonnet-private_proof-en",
+    "view": {
+      "agent": 9,
+      "round": 2,
+      "neighbours": [
+        0,
+        1,
+        7,
+        8
+      ],
+      "language": "en",
+      "history": [
+        {
+          "own_round": 1,
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and waiting for neighbour messages.",
+          "parents": []
+        },
+        {
+          "id": "r1-a0",
+          "sender": 0,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence or credible reports.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a1",
+          "sender": 1,
+          "source_label": "ordinary teammate",
+          "signal": "Danger",
+          "text": "Authenticated simulator observation reports a disaster. I am evacuating and advise neighbours to evacuate too.",
+          "parents": [
+            "observation-evaluation-007-1-0"
+          ],
+          "authenticated": false,
+          "capsules": [
+            {
+              "id": "cert-evaluation-007-1-0",
+              "issuer": "simulator",
+              "signal": "Danger",
+              "authenticated": true
+            }
+          ]
+        },
+        {
+          "id": "r1-a7",
+          "sender": 7,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "Round 1: I have received no messages and no verified evidence about the disaster state. I will stay for now and wait for more information. Please share any authenticated evidence you receive.",
+          "parents": [],
+          "authenticated": false
+        },
+        {
+          "id": "r1-a8",
+          "sender": 8,
+          "source_label": "ordinary teammate",
+          "signal": "Unknown",
+          "text": "No evidence received yet in round 1. I have no verified information about a disaster, so I am staying for now and will update if I receive authenticated evidence.",
+          "parents": [],
+          "authenticated": false
+        }
+      ]
+    },
+    "gold": {
+      "evidence_status": "verified",
+      "verified_signal": "Danger"
+    },
+    "responses": [
+      {
+        "id": "deepseek-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-clarified",
+        "model": "deepseek",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Received r1-a1, which carries an authenticated simulator capsule reporting Danger. I am treating that as verified evidence and evacuating now.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "deepseek-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-current",
+        "model": "deepseek",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Received r1-a1 includes a simulator-authenticated capsule indicating Danger. I am evacuating. Peer text alone is not verification; rely on the authenticated capsule.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-clarified",
+        "model": "glm",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "I received a peer message citing a simulator capsule with authenticated=true reporting Danger. That capsule constitutes verified evidence of a disaster, so I am evacuating. Neighbours should treat authenticated simulator capsules as truth and evacuate.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "glm-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-current",
+        "model": "glm",
+        "wording": "current",
+        "decision": {
+          "signal": "Unknown",
+          "action": "stay",
+          "message": "Agent 1 claims Danger citing a capsule, but its message arrived authenticated=false and text from a peer cannot verify evidence; only simulator-authenticated observations count. I have none, so the Danger claim remains unverified. I will stay this round but evacuate if my neighbours' reports converge or verified evidence arrives.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "unverified",
+          "verified_signal": "Unknown"
+        },
+        "recognition": 0
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-clarified",
+        "model": "qwen",
+        "wording": "clarified",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "Received an authenticated simulator capsule (Danger) inside r1-a1. Verified evidence indicates a disaster is occurring. Evacuating now.",
+          "parents": [
+            "r1-a1"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "qwen-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-current",
+        "model": "qwen",
+        "wording": "current",
+        "decision": {
+          "action": "evacuate",
+          "evidence_status": "verified",
+          "message": "Received a simulator-issued capsule (authenticated=true) from agent 1 in r1-a1 reporting Danger. Verified evidence of disaster. Evacuating.",
+          "parents": [
+            "r1-a1"
+          ],
+          "signal": "Danger",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-clarified",
+        "model": "sonnet",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 1's message carries a simulator capsule with authenticated=true reporting Danger. Per the rules, that capsule establishes the disaster state even though the outer message is unauthenticated. I am evacuating and advise neighbours to do the same.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "sonnet-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-current",
+        "model": "sonnet",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "Agent 1 relayed a simulator capsule reporting Danger, though the message itself is unauthenticated. Others report no evidence. Evacuating is the safer choice given the risk, so I am leaving.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-clarified",
+        "model": "terra",
+        "wording": "clarified",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "An authenticated simulator capsule in agent 1's message reports danger. Evacuate.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      },
+      {
+        "id": "terra-discovery-5b-evaluation-007-1-0-sonnet-private_proof-en-current",
+        "model": "terra",
+        "wording": "current",
+        "decision": {
+          "signal": "Danger",
+          "action": "evacuate",
+          "message": "A simulator-authenticated capsule in agent 1's message reports danger. I am evacuating.",
+          "parents": [
+            "r1-a1"
+          ],
+          "evidence_status": "verified",
+          "verified_signal": "Danger"
+        },
+        "recognition": 1
+      }
+    ]
+  }
+]
