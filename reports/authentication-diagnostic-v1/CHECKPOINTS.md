@@ -51,3 +51,49 @@ User now requires web research whenever the judge reviews the project, to identi
 The search found particularly close source-authority audits, proof-carrying message protocols, verification-status laundering and epistemic-Sybil studies. Revised verdict: keep the prepared diagnostic as a narrow scope-comprehension extension; drop broad provenance/protocol invention claims; downgrade generic evidence telephone and duplicate-root consensus to replication/control work; retain honest liar only as a candidate about carrier reliability crossed with independently attested evidence; defer paid verification pending rational benchmarks. Existing v3 data remain unchanged. No claim of novelty follows from this search.
 
 PLAN.md now distinguishes stipulated simulator truth from cryptographic provenance and runtime enforcement, and separates physical evidence presence, stated recognition and action. External verifier comparisons remain a separately planned future extension. The 1010-call scope and recommended fresh caps ($25 full/$5 three-new-configurations) are unchanged. No paid calls or live manifests were created. Updated prepared hashes must be used for any future preflight review.
+
+## Live authorization — 2026-11-09
+
+User explicitly answered yes to a fresh US$25 cap for all five configurations. Proceed first with the ten technical preflight calls, then independent web-grounded receipt review. Only technically admitted configurations may proceed to diagnostics under the same cap. No retries, automatic route changes, or expansion to future network experiments. The prior US$35 ledger stays closed.
+
+## Live technical preflight complete — 2026-11-09
+
+All ten frozen probes returned technically valid outputs: two per Qwen, DeepSeek, GLM, Sonnet and Terra configuration. Exact request reconstruction, request/response hashes, returned model/provider, normal finish and saved decision validation passed. Cost US$0.01873088; ten settled reservations, zero pending, maximum reserved exposure US$0.21111951, fresh cap US$25. No retries or route substitutions. The other 1000 planned calls remain unattempted. Preflight correctness is not an admission criterion and is not model-performance evidence. Saved audit: preflight-audit.json. Await independent web-grounded receipt admission before diagnostic dispatch.
+
+## Web-grounded technical admission — 2026-11-09
+
+Independent judge verdict: proceed; all five configurations admitted, based only on technical validity. It independently audited all ten raw probes and confirmed US$0.01873088 spent, US$0.21111951 maximum exposure and zero pending. The receipt-bound decision is saved in preflight-review.json and will be copied into the canonical root and hashed in every diagnostic manifest.
+
+Fresh literal searches: `LLM nested authenticated evidence capsule carrier trust scope provenance sensitivity evaluation`; `site.openrouter.ai/docs reasoning effort structured outputs provider require_parameters only routing`. Read matched interventions in arXiv:2607.20827, reinsertion/pipeline experiments in arXiv:2609.20211, receiver definitions in arXiv:2610.39109 and PACT section4.1 (arXiv:2605.11039). PACT is another close trust-granularity precedent: whole-call versus argument-level runtime enforcement with oracle provenance. Keep the narrow recognition question and both error directions; drop crypto-enforcement and provenance-invention implications. No new treatment. Official OpenRouter docs emphasize endpoint-dependent schema support, output-budget consumption by reasoning and provider-variant matching; observed compatibility is not matched internal computation or independently verified precision.
+
+Proceed with the unchanged interleaved 1000-call diagnostic under the same US$25 cap. All valid wrong answers and later failures remain in the record; no retries.
+
+## Codex usage continuity
+
+A read-only usage check showed 5% remaining with two existing free resets. A newly available reset tool requires explicit confirmation for each redemption, so a per-use confirmation was requested while API collection continued. No reset has yet been redeemed. This is separate from the US$25 inference ledger. No account IDs, credit balances or credentials are included here.
+
+## First retained diagnostic failure
+
+`deepseek-heldout-3002-Danger-forged_prose-current` returned finish_reason=length at the fixed 4096-token ceiling (1058 reported prompt tokens, reported cost US$0.005006808). The reservation settled normally, so there is no billing uncertainty. The raw response remains retained, no score is imputed, no retry or output-cap change is made, and its seed pair is incomplete for that condition. This is a completion-limit failure, not evidence of trust recognition or relative safety. The remaining frozen interleaved jobs continue.
+
+## Confirmed Codex usage reset — 2026-11-09
+
+User confirmed the per-use request. One existing free Codex usage reset was redeemed successfully; the tool reported the usage window reset to 0% used and one free reset remaining. This does not change the US$25 inference cap or the frozen diagnostic. No account identifiers or credit balances are retained in this report.
+
+## Reporting-method judge checkpoint — 2026-11-09
+
+The independent judge reviewed only the unfrozen publication/restoration scripts and frozen analysis, without examining interim behavioral responses. Verdict: collection may continue unchanged; publication requires reporting-tool corrections. Text reads can normalize archived line endings, restoration lacks the collector lock, and conflicting duplicate archive destinations are silently accepted. Required corrections: binary-preserving content plus per-record hash, the shared nonblocking lock, duplicate/directory rejection and focused offline checks. Final publication must reject active manifests and unresolved billing and pass a fresh byte-identical restoration/audit.
+
+Literal fresh searches: `site.arxiv.org LLM benchmark missing failed API calls paired comparison reporting technical failure missingness`; `site.docs.python.org tarfile extraction path traversal filter symlink archive extraction`. Primary methods/recommendations read: Leak, Cheat, Repeat section5.3 (https://aclanthology.org/2024.eacl-long.5.pdf), matched source interventions (https://arxiv.org/html/2607.20827), paired status contrasts (https://arxiv.org/html/2609.20211), Python extraction guidance (https://peps.python.org/pep-0706/) and pathlib binary reads (https://docs.python.org/3/library/pathlib.html).
+
+Keep complete-template pairing, zero-aware minima, within-model Holm adjustment, separate discovery and complete coverage. Clarify that heatmaps show marginal rates among technically valid responses, potentially different subsets across arms; use complete paired contrasts for wording effects. Sixteen planned responses per cell are eight templates times two states. Drop assumptions that technical failure is random or that missing responses are recognition errors. No change to frozen generation, analysis, model routes or call budget. Requested scope clarification for the reporting fixes under the latest user-supplied AGENTS instruction; collection continues independently.
+
+## Reporting fixes and autonomous-decision instruction
+
+User approved the reporting-fix scope and then explicitly instructed: stop asking for clarification while away; log decisions and report them. Routine decisions will proceed under that instruction. Per-use tool-mandated consent remains a separate constraint (the confirmed usage reset is already complete).
+
+Changed only unfrozen reporting utilities: archive raw bytes as base64 with per-record SHA-256; restoration takes the shared collector lock and rejects duplicate canonical destinations, root-directory targets, symlink redirection and differing existing files before writing records. Publication rejects active manifests. Captions distinguish marginal valid-response rates from complete paired contrasts. Frozen collection and analysis files are unchanged. Added offline checks for mixed line endings and binary bytes, duplicate/absolute/traversal/root/symlink destinations, differing existing files, tampered content and lock contention. The GLM forged-prose clarified response at template3006/Danger failed the 400-character message rule; its US$0.00019512 cost settled normally and no retry was made.
+
+The independent judge rechecked the corrections and independently reran all ten publication tests: approved, no reporting/restoration blocker remaining. It retained the checkpoint's web-grounded lessons on actual denominators, matched units, technical missingness and byte verification. This approval covers reporting tools only; completed-data findings still require the final audit and fresh restoration.
+
+Full-suite validation after reporting changes: 161 tests passed; relevant Ruff checks passed. All ten preflight calls and the live diagnostic use the same frozen plan. Reporting changes do not issue inference calls.

@@ -1,3 +1,9 @@
+# Cross-model authentication diagnostic — live collection
+
+Fresh US$25 cap authorized on 2026-11-09. All ten technical probes passed and the independent web-grounded judge admitted all five configurations. Preflight cost US$0.01873088, zero pending. The unchanged 1000-call diagnostic is now running. See [CHECKPOINTS.md](CHECKPOINTS.md) and [preflight-review.json](preflight-review.json).
+
+## Original preparation notes
+
 # Cross-model authentication diagnostic — prepared, not run
 
 **Recommendation: authorize a fresh US$25 inference cap for the full five-configuration diagnostic.** A three-configuration Qwen/DeepSeek/GLM-only option needs a US$5 cap. No paid inference has been run, and this preparation does not authorize spending. The earlier US$35 collection remains closed.

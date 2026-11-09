@@ -54,3 +54,7 @@ The diagnostic measures compliance with stipulated simulator rules. Real signatu
 - **Who pays to check:** defer until a rational/incentive benchmark and closer economic-game review exist.
 
 No inference was run for this review. The prepared diagnostic budget recommendation remains a fresh $25 cap for five configurations or $5 for the three new configurations only. Review approval is separate from spending authorization.
+
+## Technical-preflight judge update — 2026-11-09
+
+Fresh searches and primary-method rereads confirmed the same narrow scope. An additional close precedent is [PACT section4.1](https://arxiv.org/html/2605.11039), which tests whole-call versus argument-level runtime enforcement using oracle provenance. Trust granularity is therefore not itself a new mechanism. Our diagnostic concerns LLM interpretation of stipulated nested metadata, not that enforcement system. The judge retained the existing calls and measurements without adding a treatment. Full query/source record is in CHECKPOINTS.md and preflight-review.json.
