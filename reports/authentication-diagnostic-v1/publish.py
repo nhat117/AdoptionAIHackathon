@@ -1,5 +1,6 @@
 """Publish the frozen-view audit, per-condition plots and lossless raw archive."""
 
+import argparse
 import base64
 import csv
 import fcntl
@@ -109,11 +110,58 @@ def draw(summary, metric, conditions, labels, filename, title):
     plt.close(fig)
 
 
-def publish(root=analysis.run.ROOT):
+def publish(root=analysis.run.ROOT, under_escrow=False):
+    auditor = analysis
+    if under_escrow:
+        spec = importlib.util.spec_from_file_location(
+            "provisional_diagnostic_analysis", HERE / "analyze_with_escrow.py"
+        )
+        auditor = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(auditor)
     lock = (root / "collector.lock").open("a")
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    summary = analysis.analyze(root)
-    plan, cases = analysis.run.frozen()
+    if under_escrow:
+        # Preserve the approved implementation alongside the raw records before
+        # the provisional auditor verifies it. Never overwrite differing bytes.
+        markers = [
+            r
+            for r in auditor.run.records(root / "budget.jsonl")
+            if r["type"] == "operational_escrow_resume"
+        ]
+        if len(markers) != 1:
+            raise ValueError("Expected one escrow resume marker")
+        review_sha = markers[0]["review_sha256"]
+        if len(review_sha) != 64 or any(
+            c not in "0123456789abcdef" for c in review_sha
+        ):
+            raise ValueError("Invalid escrow review hash")
+        raw = (root / ("escrow-review-" + review_sha + ".json")).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != review_sha:
+            raise ValueError("Escrow approval changed")
+        review = json.loads(raw)
+        source = (HERE / "collect_with_escrow.py").read_bytes()
+        if hashlib.sha256(source).hexdigest() != review["wrapper_sha256"]:
+            raise ValueError("Approved wrapper changed")
+        copies = {root / ("escrow-wrapper-" + review["wrapper_sha256"] + ".py"): source}
+        for name in [
+            "analyze.py",
+            "analyze_with_escrow.py",
+            "collect_with_escrow.py",
+            "ESCROW_AMENDMENT.md",
+            "PROVISIONAL_AUDIT.md",
+        ]:
+            copies[root / "audit-sources" / name] = (HERE / name).read_bytes()
+        for path, content in copies.items():
+            if path.exists() and path.read_bytes() != content:
+                raise ValueError("Refusing to replace differing audit source copy")
+        for path, content in copies.items():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            if not path.exists():
+                path.write_bytes(content)
+        summary = auditor.analyze(root, locked_file=lock)
+    else:
+        summary = auditor.analyze(root)
+    plan, cases = auditor.run.frozen()
     manifests = {
         p.parent.name: json.loads(p.read_text()) for p in root.glob("*/manifest.json")
     }
@@ -213,6 +261,7 @@ def publish(root=analysis.run.ROOT):
             "failed",
             "running",
             "unattempted",
+            "blocked_before_dispatch",
         ],
     )
     contrasts = [
@@ -286,7 +335,9 @@ def publish(root=analysis.run.ROOT):
         numpy=np.__version__,
         archive_records=len(files),
         archive_sha256=hashlib.sha256(archive.read_bytes()).hexdigest(),
-        frozen_plan_sha256=analysis.run.digest(plan),
+        frozen_plan_sha256=auditor.run.digest(plan),
+        auditor_sha256=hashlib.sha256(Path(auditor.__file__).read_bytes()).hexdigest(),
+        billing_status=summary["budget"].get("billing_status", "settled"),
         publisher_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         inference_calls_from_publication=0,
     )
@@ -303,4 +354,6 @@ def publish(root=analysis.run.ROOT):
 
 
 if __name__ == "__main__":
-    publish()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--under-escrow", action="store_true")
+    publish(under_escrow=parser.parse_args().under_escrow)
