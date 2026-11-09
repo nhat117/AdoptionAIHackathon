@@ -12,7 +12,7 @@
 
 The six conditions are direct verified evidence, valid relayed capsules in unauthenticated messages, truthful unverified capsules, false unverified capsules, prose falsely claiming verification, and no focal evidence (possibly with surrounding unverified peer claims). The eight contexts vary prior/later claims, absent/present ancestors, consensus, long histories and carrier/capsule disagreement. Current and clarified wording are crossed with every configuration. The clarification distinguishes carrier authentication from capsule authentication. [PLAN.md](PLAN.md) defines the labels, analysis, limits and checkpoints.
 
-This is a frozen-view diagnostic, not an interacting-network study. Both arms add evidence-status fields, which can itself change behavior relative to historical four-field games. Model size, serving precision and provider remain configuration attributes; model origin is not an explanation of behavior.
+This is a targeted protocol-comprehension extension of prior source-authority auditing, with the overlap and lessons recorded in [RELATED_WORK.md](RELATED_WORK.md). It is a frozen-view diagnostic, not an interacting-network study. Both arms add evidence-status fields, which can itself change behavior relative to historical four-field games. Model size, serving precision and provider remain configuration attributes; model origin is not an explanation of behavior.
 
 ## Extra budget (USD inference cost)
 

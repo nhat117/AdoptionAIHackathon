@@ -45,3 +45,11 @@ A focused abstract-level scan already finds nearby work:
 - [When Truth Is Distributed: Misinformation Derails Collective Fact Recovery in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2608.03421) studies controlled deception, testimony adoption and lineage propagation. We should not claim discovery of multi-agent misinformation propagation in general.
 
 The candidate contribution is narrower: **separate evidence validity from messenger trust, locate where that distinction fails across relays/model configurations, and test a repair without increasing counterfeit-evidence acceptance**. These papers have not yet received a full methods/experiment overlap review; no claim of novelty or priority is justified by this short scan.
+
+## Superseding methods-level web review
+
+[RELATED_WORK.md](RELATED_WORK.md) supersedes the preliminary abstract-level prioritization above. Generic minority rescue is no longer a lead candidate; duplicate-root versus independent evidence also has a close precedent and is a replication/control candidate. Source-reliability learning, status loss through summaries and proof-carrying protocols are already studied. Keep honest liar only as carrier track record × independent issuer attestation with identical focal evidence; keep evidence telephone only around voluntary preservation choices and intact-proof interpretation, with deterministic preservation/external verification comparators. Defer paid verification until its rational benchmark is derived. None is currently established as novel or added to the diagnostic budget.
+
+### Final prioritization after the closer papers
+
+The second methods-level check substantially downgrades evidence telephone: generic marker loss, compression and reinsertion are replication baselines, not a lead contribution. Voluntary preservation choices remain an unproven secondary candidate. Even duplicate-root consensus has a direct precedent, so it is not an assumed novel alternative. Honest liar remains only a candidate about carrier reliability versus an independent issuer's intact attestation. The immediate justified work is the narrow prepared scope-comprehension diagnostic; originality remains an open question.

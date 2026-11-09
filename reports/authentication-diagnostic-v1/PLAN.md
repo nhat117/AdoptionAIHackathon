@@ -6,6 +6,8 @@ Preparation only. No inference or new spending is authorized by preparing this p
 
 Question: does a served model distinguish capsule authentication from carrier authentication, and does a uniform clarification change recognition without increasing false verification?
 
+Position this as a targeted protocol-comprehension extension of existing source-authority audits, not an invention of provenance sensitivity or proof-carrying messages. [RELATED_WORK.md](RELATED_WORK.md) records the methods-level comparison and lessons. Simulator-authenticated fields stipulate truthful evidence here. Real signatures establish provenance/integrity under issuer assumptions, not truth by themselves. This diagnostic tests neither cryptographic validation nor runtime enforcement. Separate recognition/action reports are jointly elicited and can affect each other; they are not private-belief measurements. Interpret evidence/status presence, reported verification scope and chosen action as separate stages. External claim-bound verification is an established future comparator, outside this fixed call plan.
+
 ## Configurations and capability gate
 
 Qwen3.8 27B, dated DeepSeek V4.1 Flash 1017 and GLM5.3 Flash are proposed on Near AI routes; Sonnet5.5/Google and Terra/OpenAI remain references. The exact models/routes/precision/prices are in `plan.json` with saved public endpoint snapshots. Qwen and GLM list FP8, DeepSeek precision is unknown. Shared hosting reduces one difference but does not isolate model weights or geography. Snapshot advertisements are not successful inference receipts.
