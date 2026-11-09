@@ -102,7 +102,7 @@ def publish(root=Path("runs/evidence-controls-v3")):
         )
     if rows:
         with (HERE / "games.csv").open("w") as f:
-            writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+            writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
     figure(
