@@ -1,9 +1,9 @@
 {
-  "source_sha256": "9efc6b4b77b976737628e8019d86feb32544457a5286bdd3b6a4bb568cbd309b",
-  "pdf_sha256": "e5f707ae5b0525e39c037cccdc7c44ace2cbe3052a50cbe6ad048c98a256b461",
-  "pdf_pages": 10,
-  "reviewer": "AI agent; not a human/native-speaker validator",
-  "scope": "Exact Word/PDF source-content and image bindings verified across the whole report. Visually inspected added follow-up tables/chart and split table headers on pages 6-7; no clipping or missing data observed.",
-  "word_review": "Content/image joins verified; native Word/author review pending",
-  "human_native_translation_review": "REQUIRED, not performed"
+  "source_sha256": "5c9a32a1a993b19a3313bacbb5a6bc0992caceb7804f5cad92d7f6433e37358b",
+  "pdf_sha256": "6ae733189d8bb171ac70d23888155a432d0c7c0b7a6a1639503454e5382e974a",
+  "pdf_pages": 5,
+  "reviewer": "AI agent; not human/native-speaker or official submission sign-off",
+  "scope": "All Word/PDF text/image joins checked; visually inspected main data tables and figures on pages 2-4; references separated onto page 5.",
+  "human_linguistic_validation": false,
+  "official_submission_confirmed": false
 }

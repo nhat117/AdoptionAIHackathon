@@ -16293,3 +16293,364 @@
 {"request_id": "db0ebe8a-6509-4aa2-8e5f-7f4fcff0fbeb", "stage": "authority-wording-v2", "reserved_usd": -0.00539625, "actual_usd": 0.0008275, "response_id": "chatcmpl-EiASLSHjPL8Zc0SW0CR5vSRS5H79o"}
 {"request_id": "f44919ae-a477-4e45-aefe-ca943a7e6ea3", "stage": "authority-wording-v2", "reserved_usd": -0.004935, "actual_usd": 0.00134125, "response_id": "chatcmpl-EiASLz4aHzHoj3WuCYWnrYw3LgI3I"}
 {"request_id": "d4c4688a-e1b8-442b-925d-364430093aa6", "stage": "authority-wording-v2", "reserved_usd": -0.005116249999999999, "actual_usd": 0.00093625, "response_id": "chatcmpl-EiASMSMaSlLL74MkHzFjVZkRYpv7t"}
+{"stage": "llm-judge", "request_id": "d7f054b2-efb5-4896-9d08-8194e111a01f", "request_key": "original:aligned-000df379a42cfb0bee48e09b:0", "model": "gpt-6-astra", "reserved_usd": 0.60335, "time": 1794202606.478702}
+{"request_id": "98ff0032-e980-4afc-a31b-4fc3ba1bcc26", "stage": "round3-neutral", "reserved_usd": 0.0061675, "time": 1794203762.011553}
+{"request_id": "98ff0032-e980-4afc-a31b-4fc3ba1bcc26", "stage": "round3-neutral", "reserved_usd": -0.00505625, "actual_usd": 0.00111125, "response_id": "chatcmpl-EiCeKDOKSrGaBPdA1Afo9GSLXZtTi"}
+{"request_id": "fe6f111a-5de7-448e-9e47-d2eb16f4036e", "stage": "round3-neutral", "reserved_usd": 0.00612875, "time": 1794203766.7139258}
+{"request_id": "6d1547b6-7ca2-444e-8187-3d89a0ede4a0", "stage": "round3-neutral", "reserved_usd": 0.00618125, "time": 1794203766.7609768}
+{"request_id": "1ae1822c-e652-444c-9f53-e27444553c83", "stage": "round3-neutral", "reserved_usd": 0.006075, "time": 1794203766.788739}
+{"request_id": "f4ba1ac8-cd73-488b-a3a5-c9f343350d9c", "stage": "round3-neutral", "reserved_usd": 0.00623625, "time": 1794203766.8154838}
+{"request_id": "f4ba1ac8-cd73-488b-a3a5-c9f343350d9c", "stage": "round3-neutral", "reserved_usd": -0.005308749999999999, "actual_usd": 0.0009275, "response_id": "chatcmpl-EiCeNkQl5B9V6F6m0xzVGph6VZNIR"}
+{"request_id": "55625859-6df5-4a15-9852-9f4d275e6e98", "stage": "round3-neutral", "reserved_usd": 0.006145, "time": 1794203769.221312}
+{"request_id": "6d1547b6-7ca2-444e-8187-3d89a0ede4a0", "stage": "round3-neutral", "reserved_usd": -0.00524125, "actual_usd": 0.00094, "response_id": "chatcmpl-EiCeOwm6qmeWNlmRYl3d5pimz12wN"}
+{"request_id": "a12fbe23-61d9-448d-bdcc-ca3be4f1ef8b", "stage": "round3-neutral", "reserved_usd": 0.0063175, "time": 1794203769.358756}
+{"request_id": "fe6f111a-5de7-448e-9e47-d2eb16f4036e", "stage": "round3-neutral", "reserved_usd": -0.00451125, "actual_usd": 0.0016175, "response_id": "chatcmpl-EiCeOzSBXT9UzSuMQmTKvBszL8cpK"}
+{"request_id": "3eadcabb-596e-40a4-9bc0-848c23ce931b", "stage": "round3-neutral", "reserved_usd": 0.00604875, "time": 1794203770.3049479}
+{"request_id": "1ae1822c-e652-444c-9f53-e27444553c83", "stage": "round3-neutral", "reserved_usd": -0.0049425, "actual_usd": 0.0011325, "response_id": "chatcmpl-EiCeOwOPvb0BKh8tg1mcyGP0XeYMv"}
+{"request_id": "858eb6f3-d0f9-442a-95be-14487deee7aa", "stage": "round3-neutral", "reserved_usd": 0.00617375, "time": 1794203771.261869}
+{"request_id": "a12fbe23-61d9-448d-bdcc-ca3be4f1ef8b", "stage": "round3-neutral", "reserved_usd": -0.00524125, "actual_usd": 0.00107625, "response_id": "chatcmpl-EiCePPk2gIZUtbJemmDhYC7UDj0TK"}
+{"request_id": "992e5840-95d2-4a9a-a093-27a7d6995e35", "stage": "round3-neutral", "reserved_usd": 0.0061925, "time": 1794203771.928389}
+{"request_id": "55625859-6df5-4a15-9852-9f4d275e6e98", "stage": "round3-neutral", "reserved_usd": -0.00496375, "actual_usd": 0.00118125, "response_id": "chatcmpl-EiCePwAg042SQhtjRcdJTOfgEP3Lw"}
+{"request_id": "e62501ca-16af-40ae-b3f8-9a1fda3b1683", "stage": "round3-neutral", "reserved_usd": 0.00604875, "time": 1794203772.0856042}
+{"request_id": "3eadcabb-596e-40a4-9bc0-848c23ce931b", "stage": "round3-neutral", "reserved_usd": -0.00501125, "actual_usd": 0.0010375, "response_id": "chatcmpl-EiCeRbje6VrpwpMd5WEmwuSWldkWK"}
+{"request_id": "a142f218-b2a6-4e0d-b16e-8e6eaef2dade", "stage": "round3-neutral", "reserved_usd": 0.0061975, "time": 1794203772.820538}
+{"request_id": "992e5840-95d2-4a9a-a093-27a7d6995e35", "stage": "round3-neutral", "reserved_usd": -0.0052, "actual_usd": 0.0009925, "response_id": "chatcmpl-EiCeS2tMQQG0Hge8HYOExhmnz1sAm"}
+{"request_id": "c5965414-ff57-41ae-abf3-6526d68151af", "stage": "round3-neutral", "reserved_usd": 0.00619, "time": 1794203773.889674}
+{"request_id": "858eb6f3-d0f9-442a-95be-14487deee7aa", "stage": "round3-neutral", "reserved_usd": -0.00502625, "actual_usd": 0.0011475, "response_id": "chatcmpl-EiCeSjNhFJA1c96EPdrX31Qj9hvxd"}
+{"request_id": "285a946a-7660-4860-b8f8-89f9083b7018", "stage": "round3-neutral", "reserved_usd": 0.006075, "time": 1794203773.921508}
+{"request_id": "e62501ca-16af-40ae-b3f8-9a1fda3b1683", "stage": "round3-neutral", "reserved_usd": -0.00501125, "actual_usd": 0.0010375, "response_id": "chatcmpl-EiCeSnbfG3jr2oqZD23jp4Khv4HUe"}
+{"request_id": "6885b44e-ed99-434a-b762-43280752ecf8", "stage": "round3-neutral", "reserved_usd": 0.00629, "time": 1794203773.9999511}
+{"request_id": "a142f218-b2a6-4e0d-b16e-8e6eaef2dade", "stage": "round3-neutral", "reserved_usd": -0.00512375, "actual_usd": 0.00107375, "response_id": "chatcmpl-EiCeT6IonX8OWZGODcLGkYMd64Caq"}
+{"request_id": "0c598dca-5b43-4be0-9475-37550ad29149", "stage": "round3-neutral", "reserved_usd": 0.00629875, "time": 1794203775.681379}
+{"request_id": "c5965414-ff57-41ae-abf3-6526d68151af", "stage": "round3-neutral", "reserved_usd": -0.0046725000000000004, "actual_usd": 0.0015175, "response_id": "chatcmpl-EiCeURpNCGElk565xLMqq6aXAgDcf"}
+{"request_id": "636976ef-6ca6-492b-824c-f116758d1ac1", "stage": "round3-neutral", "reserved_usd": 0.00612875, "time": 1794203776.614528}
+{"request_id": "285a946a-7660-4860-b8f8-89f9083b7018", "stage": "round3-neutral", "reserved_usd": -0.0050425, "actual_usd": 0.0010325, "response_id": "chatcmpl-EiCeUxiHfjtvznJUwDrR8I5YYKtry"}
+{"request_id": "a205af9b-e58d-4c52-9f04-54fd33b544ec", "stage": "round3-neutral", "reserved_usd": 0.00603625, "time": 1794203776.814977}
+{"request_id": "6885b44e-ed99-434a-b762-43280752ecf8", "stage": "round3-neutral", "reserved_usd": -0.0050774999999999995, "actual_usd": 0.0012125, "response_id": "chatcmpl-EiCeUJjURSp9v8n3mEieiGdVDoqkK"}
+{"request_id": "98286c9f-d31d-40d1-90dd-68c374ee900e", "stage": "round3-neutral", "reserved_usd": 0.0060975, "time": 1794203777.400693}
+{"request_id": "a205af9b-e58d-4c52-9f04-54fd33b544ec", "stage": "round3-neutral", "reserved_usd": -0.0050975, "actual_usd": 0.00093875, "response_id": "chatcmpl-EiCeXSG4ADbGdTWdtNm9b6psqbWdk"}
+{"request_id": "e40cc787-f2c1-4a70-b32f-e31cc84058e0", "stage": "round3-neutral", "reserved_usd": 0.00612125, "time": 1794203778.170339}
+{"request_id": "0c598dca-5b43-4be0-9475-37550ad29149", "stage": "round3-neutral", "reserved_usd": -0.005357499999999999, "actual_usd": 0.00094125, "response_id": "chatcmpl-EiCeWyNAkHkuAJmCknGvqTIduRcQU"}
+{"request_id": "d3121d57-1f69-49a2-ab02-8cb62a4196bc", "stage": "round3-neutral", "reserved_usd": 0.006245, "time": 1794203778.260749}
+{"request_id": "98286c9f-d31d-40d1-90dd-68c374ee900e", "stage": "round3-neutral", "reserved_usd": -0.00499, "actual_usd": 0.0011075, "response_id": "chatcmpl-EiCeXqrsfWnoz7MdsxFagFmDSGClX"}
+{"request_id": "6c7eee86-b8fc-448e-8aab-16e40bb41a85", "stage": "round3-neutral", "reserved_usd": 0.00612125, "time": 1794203779.218786}
+{"request_id": "636976ef-6ca6-492b-824c-f116758d1ac1", "stage": "round3-neutral", "reserved_usd": -0.00437125, "actual_usd": 0.0017575, "response_id": "chatcmpl-EiCeXUjp8QzIE4RXPJFmV5IfLcxXB"}
+{"request_id": "4c9d4a9d-51b3-405d-a2ca-580b9c4676b9", "stage": "round3-neutral", "reserved_usd": 0.00623125, "time": 1794203779.6279838}
+{"request_id": "d3121d57-1f69-49a2-ab02-8cb62a4196bc", "stage": "round3-neutral", "reserved_usd": -0.00511875, "actual_usd": 0.00112625, "response_id": "chatcmpl-EiCeY3Y3H5VRYN9YH0aHXNV0rAwJR"}
+{"request_id": "e40cc787-f2c1-4a70-b32f-e31cc84058e0", "stage": "round3-neutral", "reserved_usd": -0.004795, "actual_usd": 0.00132625, "response_id": "chatcmpl-EiCeYc1XoagkGSi3TZKY4Z0sH2zYU"}
+{"request_id": "5f57eea7-5005-4ac1-9690-9915e15778f9", "stage": "round3-neutral", "reserved_usd": 0.0062175, "time": 1794203780.609558}
+{"request_id": "166c8d0e-9229-4983-9ed3-9fca709363d5", "stage": "round3-neutral", "reserved_usd": 0.0060675, "time": 1794203780.634184}
+{"request_id": "6c7eee86-b8fc-448e-8aab-16e40bb41a85", "stage": "round3-neutral", "reserved_usd": -0.0051525, "actual_usd": 0.00096875, "response_id": "chatcmpl-EiCeZDfK0NBz3lJnmf3HMQIsbmn3M"}
+{"request_id": "16517879-ffb3-4ca8-9875-60c8722ac022", "stage": "round3-neutral", "reserved_usd": 0.00626375, "time": 1794203781.242413}
+{"request_id": "4c9d4a9d-51b3-405d-a2ca-580b9c4676b9", "stage": "round3-neutral", "reserved_usd": -0.005124999999999999, "actual_usd": 0.00110625, "response_id": "chatcmpl-EiCeacIlWmiJYOHwnw7vzPEyQCpDo"}
+{"request_id": "8190d0c6-5d82-4730-b2d6-aaae5fb9c0db", "stage": "round3-neutral", "reserved_usd": 0.00645375, "time": 1794203782.1877918}
+{"request_id": "166c8d0e-9229-4983-9ed3-9fca709363d5", "stage": "round3-neutral", "reserved_usd": -0.00506375, "actual_usd": 0.00100375, "response_id": "chatcmpl-EiCeb9sacqtrmg5SG4edmoWnUpN7O"}
+{"request_id": "07b7f618-2b88-4758-b108-f7df08ad8d3a", "stage": "round3-neutral", "reserved_usd": 0.006375, "time": 1794203782.382228}
+{"request_id": "5f57eea7-5005-4ac1-9690-9915e15778f9", "stage": "round3-neutral", "reserved_usd": -0.005065, "actual_usd": 0.0011525, "response_id": "chatcmpl-EiCea2zNBj5ykx0tF33nslQEMG2hD"}
+{"request_id": "05a835d1-3c98-4125-bb88-eafe25dea55a", "stage": "round3-neutral", "reserved_usd": 0.0060925, "time": 1794203782.40797}
+{"request_id": "16517879-ffb3-4ca8-9875-60c8722ac022", "stage": "round3-neutral", "reserved_usd": -0.0050625, "actual_usd": 0.00120125, "response_id": "chatcmpl-EiCebMlzay4aWeJWejb4f0CHQHQYA"}
+{"request_id": "7baf90c2-1904-409f-8dc1-2c4c71312f67", "stage": "round3-neutral", "reserved_usd": 0.0059575, "time": 1794203783.7481658}
+{"request_id": "8190d0c6-5d82-4730-b2d6-aaae5fb9c0db", "stage": "round3-neutral", "reserved_usd": -0.00504625, "actual_usd": 0.0014075, "response_id": "chatcmpl-EiCecdIg1UPCz6saWh8eKkVebDvi0"}
+{"request_id": "c10f215f-117f-4b39-8cb0-add146415482", "stage": "round3-neutral", "reserved_usd": 0.00597, "time": 1794203784.5329878}
+{"request_id": "07b7f618-2b88-4758-b108-f7df08ad8d3a", "stage": "round3-neutral", "reserved_usd": -0.00538375, "actual_usd": 0.00099125, "response_id": "chatcmpl-EiCecbOLvXsUH8Z4LFf2ySbWUULhO"}
+{"request_id": "45aa3e52-a17e-4589-ae23-93a4faa2edad", "stage": "round3-neutral", "reserved_usd": 0.0062075, "time": 1794203784.5580459}
+{"request_id": "05a835d1-3c98-4125-bb88-eafe25dea55a", "stage": "round3-neutral", "reserved_usd": -0.00518625, "actual_usd": 0.00090625, "response_id": "chatcmpl-EiCecMfHIoYcH37cEjLLo2CvYuIQ3"}
+{"request_id": "f9d1862b-e8c2-4473-a868-4f8325c1c010", "stage": "round3-neutral", "reserved_usd": 0.006135, "time": 1794203784.578967}
+{"request_id": "f9d1862b-e8c2-4473-a868-4f8325c1c010", "stage": "round3-neutral", "reserved_usd": -0.00527875, "actual_usd": 0.00085625, "response_id": "chatcmpl-EiCeeHDjHQeBhBoDgJRne1d2AEUF7"}
+{"request_id": "6bc9a9fa-8327-4992-84d8-e321a1898712", "stage": "round3-neutral", "reserved_usd": 0.00610375, "time": 1794203786.10782}
+{"request_id": "45aa3e52-a17e-4589-ae23-93a4faa2edad", "stage": "round3-neutral", "reserved_usd": -0.00502, "actual_usd": 0.0011875, "response_id": "chatcmpl-EiCeeygmKKdZOXgTURGReBVq9Uw7P"}
+{"request_id": "22a63a98-02f6-4813-abe6-34f1651e824c", "stage": "round3-neutral", "reserved_usd": 0.00597625, "time": 1794203786.217643}
+{"request_id": "7baf90c2-1904-409f-8dc1-2c4c71312f67", "stage": "round3-neutral", "reserved_usd": -0.00495875, "actual_usd": 0.00099875, "response_id": "chatcmpl-EiCeeXOyevhovrxtNvP9jRLesLfTa"}
+{"request_id": "c10f215f-117f-4b39-8cb0-add146415482", "stage": "round3-neutral", "reserved_usd": -0.0049387499999999996, "actual_usd": 0.00103125, "response_id": "chatcmpl-EiCee2LkCDN9uKWoUuiO4GN6dSsIc"}
+{"request_id": "5aaeae63-bd27-406a-b5f2-2b41d7ab5409", "stage": "round3-neutral", "reserved_usd": 0.0060975, "time": 1794203786.361485}
+{"request_id": "8a5a8b39-6475-4e77-9605-274085209731", "stage": "round3-neutral", "reserved_usd": 0.0061975, "time": 1794203786.3854132}
+{"request_id": "6bc9a9fa-8327-4992-84d8-e321a1898712", "stage": "round3-neutral", "reserved_usd": -0.0049074999999999995, "actual_usd": 0.00119625, "response_id": "chatcmpl-EiCegh0YVw5qvEK8daNTthxvrTxw8"}
+{"request_id": "d02e0139-bbbb-463f-abee-aaa0cd5bc06c", "stage": "round3-neutral", "reserved_usd": 0.006295, "time": 1794203788.26667}
+{"request_id": "8a5a8b39-6475-4e77-9605-274085209731", "stage": "round3-neutral", "reserved_usd": -0.005225, "actual_usd": 0.0009725, "response_id": "chatcmpl-EiCegoVgxoDD76gF2bnfaoDY30c3u"}
+{"request_id": "ad3af179-d6dc-44a1-bd2e-035f9dee0afc", "stage": "round3-neutral", "reserved_usd": 0.00617625, "time": 1794203788.3632572}
+{"request_id": "22a63a98-02f6-4813-abe6-34f1651e824c", "stage": "round3-neutral", "reserved_usd": -0.00509875, "actual_usd": 0.0008775, "response_id": "chatcmpl-EiCegxmZjO9KNDNPJCunnjxnztK5r"}
+{"request_id": "769759cd-bfe0-496d-a46c-1bdc42566af6", "stage": "round3-neutral", "reserved_usd": 0.00638125, "time": 1794203788.51575}
+{"request_id": "5aaeae63-bd27-406a-b5f2-2b41d7ab5409", "stage": "round3-neutral", "reserved_usd": -0.004739999999999999, "actual_usd": 0.0013575, "response_id": "chatcmpl-EiCegt0INtA6rXMCqcdF4cVSa9FWx"}
+{"request_id": "04c046d1-d25f-4e6b-a7a2-30ebdeaf2118", "stage": "round3-neutral", "reserved_usd": 0.0060975, "time": 1794203788.993731}
+{"request_id": "d02e0139-bbbb-463f-abee-aaa0cd5bc06c", "stage": "round3-neutral", "reserved_usd": -0.0052225, "actual_usd": 0.0010725, "response_id": "chatcmpl-EiCeiTYAqdRTphVVG6AMvLSAI4hbB"}
+{"request_id": "691719fc-253c-4da6-8d92-8fc52a0e34ee", "stage": "round3-neutral", "reserved_usd": 0.00621, "time": 1794203790.0751748}
+{"request_id": "ad3af179-d6dc-44a1-bd2e-035f9dee0afc", "stage": "round3-neutral", "reserved_usd": -0.00505125, "actual_usd": 0.001125, "response_id": "chatcmpl-EiCeiHgRoJOCuthIOgnzQx18UK23B"}
+{"request_id": "24bafe23-3381-4952-8a2a-0fff0e9c8439", "stage": "round3-neutral", "reserved_usd": 0.00631125, "time": 1794203790.6041331}
+{"request_id": "04c046d1-d25f-4e6b-a7a2-30ebdeaf2118", "stage": "round3-neutral", "reserved_usd": -0.004869999999999999, "actual_usd": 0.0012275, "response_id": "chatcmpl-EiCejcsliLJMuyh6Z3NyyowTrVYjP"}
+{"request_id": "769759cd-bfe0-496d-a46c-1bdc42566af6", "stage": "round3-neutral", "reserved_usd": -0.00542375, "actual_usd": 0.0009575, "response_id": "chatcmpl-EiCeiCSvFNDIZk1GVtEAbcTFffMln"}
+{"request_id": "1e04b4c2-72cf-4bfe-b960-c0cb895fcebf", "stage": "round3-neutral", "reserved_usd": 0.00623625, "time": 1794203791.088226}
+{"request_id": "766a8887-708f-4a67-bcc3-16537b63655a", "stage": "round3-neutral", "reserved_usd": 0.00629, "time": 1794203791.1122382}
+{"request_id": "691719fc-253c-4da6-8d92-8fc52a0e34ee", "stage": "round3-neutral", "reserved_usd": -0.0051925, "actual_usd": 0.0010175, "response_id": "chatcmpl-EiCekiJhgOm89HCrQ9QD1qfriFQyP"}
+{"request_id": "8252bbe0-5091-4c69-b3a1-69440979cd09", "stage": "round3-neutral", "reserved_usd": 0.006075, "time": 1794203791.802855}
+{"request_id": "24bafe23-3381-4952-8a2a-0fff0e9c8439", "stage": "round3-neutral", "reserved_usd": -0.00537625, "actual_usd": 0.000935, "response_id": "chatcmpl-EiCelgfLO1Bs0Qe0J9x2YPQ5HdHKA"}
+{"request_id": "86d800df-638f-42ef-a5c7-bee3026ffb9b", "stage": "round3-neutral", "reserved_usd": 0.006185, "time": 1794203792.663878}
+{"request_id": "766a8887-708f-4a67-bcc3-16537b63655a", "stage": "round3-neutral", "reserved_usd": -0.004977499999999999, "actual_usd": 0.0013125, "response_id": "chatcmpl-EiCel04Wab33hzNmgPiTJhxzC83o9"}
+{"request_id": "dfc6c604-f688-4ca0-b4f2-bd7398779cfb", "stage": "round3-neutral", "reserved_usd": 0.00626375, "time": 1794203793.712429}
+{"request_id": "1e04b4c2-72cf-4bfe-b960-c0cb895fcebf", "stage": "round3-neutral", "reserved_usd": -0.004458749999999999, "actual_usd": 0.0017775, "response_id": "chatcmpl-EiCelczTs1uZdPpDx20TYmhhd1kYS"}
+{"request_id": "7d7ea9d2-975a-43f6-9001-fdcf526c64a1", "stage": "round3-neutral", "reserved_usd": 0.00612, "time": 1794203794.074684}
+{"request_id": "8252bbe0-5091-4c69-b3a1-69440979cd09", "stage": "round3-neutral", "reserved_usd": -0.0049425, "actual_usd": 0.0011325, "response_id": "chatcmpl-EiCemaOPI7BpYqy56hXL9kI5Vy9cy"}
+{"request_id": "5f7a8c04-618b-40e6-8063-40027a4c47bb", "stage": "round3-neutral", "reserved_usd": 0.00626875, "time": 1794203794.225783}
+{"request_id": "86d800df-638f-42ef-a5c7-bee3026ffb9b", "stage": "round3-neutral", "reserved_usd": -0.00494, "actual_usd": 0.001245, "response_id": "chatcmpl-EiCen6hJmEasNcFyLJdv8MkWZA5FX"}
+{"request_id": "b3dda069-b8c7-4739-bece-3780a66db199", "stage": "round3-neutral", "reserved_usd": 0.00622, "time": 1794203794.909017}
+{"request_id": "dfc6c604-f688-4ca0-b4f2-bd7398779cfb", "stage": "round3-neutral", "reserved_usd": -0.0049525, "actual_usd": 0.00131125, "response_id": "chatcmpl-EiCeoY07A8H2uU7ogIRl7wITsDSQh"}
+{"request_id": "4ef8d682-8950-43fd-bede-5fec246d530f", "stage": "round3-neutral", "reserved_usd": 0.00618875, "time": 1794203796.2396789}
+{"request_id": "7d7ea9d2-975a-43f6-9001-fdcf526c64a1", "stage": "round3-neutral", "reserved_usd": -0.0052575, "actual_usd": 0.0008625, "response_id": "chatcmpl-EiCeoj2LFAOJQxuGjRgh4h7a3vzH4"}
+{"request_id": "a05521bf-e2d3-4962-877e-0906084808de", "stage": "round3-neutral", "reserved_usd": 0.006435, "time": 1794203796.41842}
+{"request_id": "5f7a8c04-618b-40e6-8063-40027a4c47bb", "stage": "round3-neutral", "reserved_usd": -0.004975, "actual_usd": 0.00129375, "response_id": "chatcmpl-EiCeoKUmWCG4iQEEkZ2xjCg7JwJon"}
+{"request_id": "adcef5fa-9377-4953-82b0-57bba1a8c906", "stage": "round3-neutral", "reserved_usd": 0.00624125, "time": 1794203796.641825}
+{"request_id": "b3dda069-b8c7-4739-bece-3780a66db199", "stage": "round3-neutral", "reserved_usd": -0.00505125, "actual_usd": 0.00116875, "response_id": "chatcmpl-EiCepqt3DrsdZqOCl4mexWxibsRo2"}
+{"request_id": "f529611d-81bb-494c-8e2d-6b7f60dd762c", "stage": "round3-neutral", "reserved_usd": 0.00626125, "time": 1794203796.951115}
+{"request_id": "4ef8d682-8950-43fd-bede-5fec246d530f", "stage": "round3-neutral", "reserved_usd": -0.0050375, "actual_usd": 0.00115125, "response_id": "chatcmpl-EiCeqWzSSC6JXhptkdfS7EPcZdptF"}
+{"request_id": "758428e0-38b7-43ae-9bc0-ecff7f0fccfb", "stage": "round3-neutral", "reserved_usd": 0.00618875, "time": 1794203798.562423}
+{"request_id": "f529611d-81bb-494c-8e2d-6b7f60dd762c", "stage": "round3-neutral", "reserved_usd": -0.00517875, "actual_usd": 0.0010825, "response_id": "chatcmpl-EiCerDE4t8uuWtYuhToXBwvEnImDX"}
+{"request_id": "00c4509f-2284-4163-b323-e6584989cf6a", "stage": "round3-neutral", "reserved_usd": 0.006405, "time": 1794203798.587253}
+{"request_id": "adcef5fa-9377-4953-82b0-57bba1a8c906", "stage": "round3-neutral", "reserved_usd": -0.00516375, "actual_usd": 0.0010775, "response_id": "chatcmpl-EiCer5269GjrhfXOGYXIIgAJ0p8nl"}
+{"request_id": "ff8702a9-2328-45ce-b8ee-0b0f92a73c57", "stage": "round3-neutral", "reserved_usd": 0.00616375, "time": 1794203798.616887}
+{"request_id": "a05521bf-e2d3-4962-877e-0906084808de", "stage": "round3-neutral", "reserved_usd": -0.0050725, "actual_usd": 0.0013625, "response_id": "chatcmpl-EiCeqta07J2FCQ9crXNUrfTVQa8xq"}
+{"request_id": "ddddbe5a-4053-487d-8e3a-28a5b89c15fe", "stage": "round3-neutral", "reserved_usd": 0.00627375, "time": 1794203800.0000808}
+{"request_id": "758428e0-38b7-43ae-9bc0-ecff7f0fccfb", "stage": "round3-neutral", "reserved_usd": -0.0051675, "actual_usd": 0.00102125, "response_id": "chatcmpl-EiCesuIJ7cvqFanzxxecOQzaEMqmH"}
+{"request_id": "e4a5f31d-20c4-4479-b86e-ff164692b773", "stage": "round3-neutral", "reserved_usd": 0.0062425, "time": 1794203800.555661}
+{"request_id": "00c4509f-2284-4163-b323-e6584989cf6a", "stage": "round3-neutral", "reserved_usd": -0.005072500000000001, "actual_usd": 0.0013325, "response_id": "chatcmpl-EiCet2QAGkahc3bfOHSLYAC9fwtGM"}
+{"request_id": "25c24f10-8371-4355-be1d-d4ca3bb02c11", "stage": "round3-neutral", "reserved_usd": 0.0064, "time": 1794203801.2410932}
+{"request_id": "ff8702a9-2328-45ce-b8ee-0b0f92a73c57", "stage": "round3-neutral", "reserved_usd": -0.00523375, "actual_usd": 0.00093, "response_id": "chatcmpl-EiCesbjUflhXUsv6YTlk0HpWZ3B3d"}
+{"request_id": "d48537d0-985b-41ab-83cd-a0f1f5edc539", "stage": "round3-neutral", "reserved_usd": 0.0061325, "time": 1794203801.266272}
+{"request_id": "e4a5f31d-20c4-4479-b86e-ff164692b773", "stage": "round3-neutral", "reserved_usd": -0.00514625, "actual_usd": 0.00109625, "response_id": "chatcmpl-EiCeu8YoZqoFWOk1vGKTdDc8eaATe"}
+{"request_id": "61ea0829-db51-40ca-a72b-c44dc6b227ec", "stage": "round3-neutral", "reserved_usd": 0.00613875, "time": 1794203802.8100412}
+{"request_id": "ddddbe5a-4053-487d-8e3a-28a5b89c15fe", "stage": "round3-neutral", "reserved_usd": -0.00484, "actual_usd": 0.00143375, "response_id": "chatcmpl-EiCeueL88soiKpFPnSYOAU1uQUSLm"}
+{"request_id": "0ec4dac0-a1fd-4413-99fe-c41e0a89d809", "stage": "round3-neutral", "reserved_usd": 0.00629, "time": 1794203802.902845}
+{"request_id": "25c24f10-8371-4355-be1d-d4ca3bb02c11", "stage": "round3-neutral", "reserved_usd": -0.0055175, "actual_usd": 0.0008825, "response_id": "chatcmpl-EiCevg7c9tAV9qRowspWZuBm8DlSP"}
+{"request_id": "2179fc6e-03c5-4d0c-9cc9-6cf70123cfe7", "stage": "round3-neutral", "reserved_usd": 0.00615125, "time": 1794203803.332747}
+{"request_id": "d48537d0-985b-41ab-83cd-a0f1f5edc539", "stage": "round3-neutral", "reserved_usd": -0.004645, "actual_usd": 0.0014875, "response_id": "chatcmpl-EiCevRvoQ9alO75DYgOic2sXYNaV6"}
+{"request_id": "4c3e7b2a-9c58-4206-82a0-a9f49b22cc5b", "stage": "round3-neutral", "reserved_usd": 0.0060725, "time": 1794203804.199418}
+{"request_id": "61ea0829-db51-40ca-a72b-c44dc6b227ec", "stage": "round3-neutral", "reserved_usd": -0.00503125, "actual_usd": 0.0011075, "response_id": "chatcmpl-EiCexFrCQsdz2DNfJBHdnNh3pJkQj"}
+{"request_id": "2e5493bc-cce5-4c63-a2b2-f099f3bc2846", "stage": "round3-neutral", "reserved_usd": 0.00627125, "time": 1794203804.9707189}
+{"request_id": "2179fc6e-03c5-4d0c-9cc9-6cf70123cfe7", "stage": "round3-neutral", "reserved_usd": -0.005028749999999999, "actual_usd": 0.0011225, "response_id": "chatcmpl-EiCextnDDtVtWXhM90u1tvHJShl8n"}
+{"request_id": "0ad89394-a0b1-4e8e-ae02-f9c14daea5dd", "stage": "round3-neutral", "reserved_usd": 0.0064475, "time": 1794203805.578749}
+{"request_id": "4c3e7b2a-9c58-4206-82a0-a9f49b22cc5b", "stage": "round3-neutral", "reserved_usd": -0.00514625, "actual_usd": 0.00092625, "response_id": "chatcmpl-EiCeydvdRpUEVWQsv85jrDdAmJCfN"}
+{"request_id": "67c6bfc6-9b51-4b56-8f0f-303e45901695", "stage": "round3-neutral", "reserved_usd": 0.00625, "time": 1794203806.139133}
+{"request_id": "0ec4dac0-a1fd-4413-99fe-c41e0a89d809", "stage": "round3-neutral", "reserved_usd": -0.0052675, "actual_usd": 0.0010225, "response_id": "chatcmpl-EiCey6MwzJnLfpXKgdKiPzlyH5PT6"}
+{"request_id": "5ab7c73b-95b0-488e-a3bc-f107bf8942fa", "stage": "round3-neutral", "reserved_usd": 0.0062425, "time": 1794203806.1656802}
+{"request_id": "2e5493bc-cce5-4c63-a2b2-f099f3bc2846", "stage": "round3-neutral", "reserved_usd": -0.00488375, "actual_usd": 0.0013875, "response_id": "chatcmpl-EiCezFdWkbFxmab90VeconeF75BCG"}
+{"request_id": "f74d80fd-7962-4eb6-96c1-f7d09672638b", "stage": "round3-neutral", "reserved_usd": 0.0063225, "time": 1794203807.250806}
+{"request_id": "5ab7c73b-95b0-488e-a3bc-f107bf8942fa", "stage": "round3-neutral", "reserved_usd": -0.00513625, "actual_usd": 0.00110625, "response_id": "chatcmpl-EiCf0kIxuWYTmJ6LSvB0mz3KSlw2S"}
+{"request_id": "f152de42-bc5f-46b8-86e2-7d83c9bd30b2", "stage": "round3-neutral", "reserved_usd": 0.006045, "time": 1794203808.577794}
+{"request_id": "0ad89394-a0b1-4e8e-ae02-f9c14daea5dd", "stage": "round3-neutral", "reserved_usd": -0.00499125, "actual_usd": 0.00145625, "response_id": "chatcmpl-EiCf01DFSk2k0SsFV4xxwKXKtKrX0"}
+{"request_id": "26483645-0331-4535-8f83-43488d4ebe31", "stage": "round3-neutral", "reserved_usd": 0.0062475, "time": 1794203808.943813}
+{"request_id": "f74d80fd-7962-4eb6-96c1-f7d09672638b", "stage": "round3-neutral", "reserved_usd": -0.00527625, "actual_usd": 0.00104625, "response_id": "chatcmpl-EiCf1Yzi8qCwQ0Iv2mdVJ16mnjnpj"}
+{"request_id": "01f51eaf-d92c-4722-a10d-a25acf905f32", "stage": "round3-neutral", "reserved_usd": 0.00611125, "time": 1794203809.0343528}
+{"request_id": "67c6bfc6-9b51-4b56-8f0f-303e45901695", "stage": "round3-neutral", "reserved_usd": -0.004871250000000001, "actual_usd": 0.00137875, "response_id": "chatcmpl-EiCf0BIrhzY8wxwdfoo644rJHHmuv"}
+{"request_id": "96c1c925-8a9b-43e7-ae9e-7cba8bc40c13", "stage": "round3-neutral", "reserved_usd": 0.0062175, "time": 1794203809.5447261}
+{"request_id": "f152de42-bc5f-46b8-86e2-7d83c9bd30b2", "stage": "round3-neutral", "reserved_usd": -0.00496625, "actual_usd": 0.00107875, "response_id": "chatcmpl-EiCf2HbDLyKPRBVNmcQOr08DpPnVw"}
+{"request_id": "b53982f4-8202-4e64-9f02-077804b1e4f1", "stage": "round3-neutral", "reserved_usd": 0.006235, "time": 1794203811.036762}
+{"request_id": "26483645-0331-4535-8f83-43488d4ebe31", "stage": "round3-neutral", "reserved_usd": -0.00538125, "actual_usd": 0.00086625, "response_id": "chatcmpl-EiCf3U61zZx9ht69pzFnpoenP1jmP"}
+{"request_id": "8fecc807-2487-4ab0-9951-4e55d5c908d9", "stage": "round3-neutral", "reserved_usd": 0.0062875, "time": 1794203811.084736}
+{"request_id": "01f51eaf-d92c-4722-a10d-a25acf905f32", "stage": "round3-neutral", "reserved_usd": -0.0050125000000000005, "actual_usd": 0.00109875, "response_id": "chatcmpl-EiCf36vpjGPVgVXkJFxfh61AXyyzm"}
+{"request_id": "51d4e65d-f0e4-473a-83f4-43052be65e2f", "stage": "round3-neutral", "reserved_usd": 0.005995, "time": 1794203811.3454552}
+{"request_id": "96c1c925-8a9b-43e7-ae9e-7cba8bc40c13", "stage": "round3-neutral", "reserved_usd": -0.0050825, "actual_usd": 0.001135, "response_id": "chatcmpl-EiCf3PXh98CoBB5dqXn2b6TRfnet9"}
+{"request_id": "c5ccd127-735e-49d0-a8b5-254ffab1f9aa", "stage": "round3-neutral", "reserved_usd": 0.0062925, "time": 1794203812.765478}
+{"request_id": "b53982f4-8202-4e64-9f02-077804b1e4f1", "stage": "round3-neutral", "reserved_usd": -0.0051400000000000005, "actual_usd": 0.001095, "response_id": "chatcmpl-EiCf5OZnsZeqNLqZpqvynD8r0Tiis"}
+{"request_id": "6b56a22a-d6f0-45d9-9e8a-993dff1f8050", "stage": "round3-neutral", "reserved_usd": 0.00607875, "time": 1794203813.107368}
+{"request_id": "8fecc807-2487-4ab0-9951-4e55d5c908d9", "stage": "round3-neutral", "reserved_usd": -0.004935, "actual_usd": 0.0013525, "response_id": "chatcmpl-EiCf59KIuOTHNwXe1VuPw7YjvVAjK"}
+{"request_id": "0f18fb9c-d7c8-4475-a260-a307530cb338", "stage": "round3-neutral", "reserved_usd": 0.00604125, "time": 1794203813.144205}
+{"request_id": "51d4e65d-f0e4-473a-83f4-43052be65e2f", "stage": "round3-neutral", "reserved_usd": -0.0048325, "actual_usd": 0.0011625, "response_id": "chatcmpl-EiCf5qUzH0OgWm1oP7vrpJB4b1pom"}
+{"request_id": "e6440753-de4b-4816-9f81-3575f084f5b4", "stage": "round3-neutral", "reserved_usd": 0.0060675, "time": 1794203813.6310651}
+{"request_id": "0f18fb9c-d7c8-4475-a260-a307530cb338", "stage": "round3-neutral", "reserved_usd": -0.005045, "actual_usd": 0.00099625, "response_id": "chatcmpl-EiCf7mhWYG2XLBfl8JH7k3FYciJL7"}
+{"request_id": "0849ed12-e7d3-469e-800d-7c9b5986f1e5", "stage": "round3-neutral", "reserved_usd": 0.0061925, "time": 1794203814.962569}
+{"request_id": "c5ccd127-735e-49d0-a8b5-254ffab1f9aa", "stage": "round3-neutral", "reserved_usd": -0.0049975, "actual_usd": 0.001295, "response_id": "chatcmpl-EiCf7Jctwm9U98gNfoUwhGhqL0mLV"}
+{"request_id": "e063361e-565c-4f19-a5f6-6f81a26960e8", "stage": "round3-neutral", "reserved_usd": 0.00613125, "time": 1794203815.266051}
+{"request_id": "6b56a22a-d6f0-45d9-9e8a-993dff1f8050", "stage": "round3-neutral", "reserved_usd": -0.0050862500000000005, "actual_usd": 0.0009925, "response_id": "chatcmpl-EiCf7AjL2v7iwljRVMq9OL8ByML4K"}
+{"request_id": "78893389-6926-48d2-8f83-824a74d59e81", "stage": "round3-neutral", "reserved_usd": 0.006185, "time": 1794203815.308436}
+{"request_id": "e6440753-de4b-4816-9f81-3575f084f5b4", "stage": "round3-neutral", "reserved_usd": -0.00517625, "actual_usd": 0.00089125, "response_id": "chatcmpl-EiCf7xgUR1j0vdzljA5tQ9riAHgxR"}
+{"request_id": "bee1c89d-14a2-4aec-a066-4ca790718599", "stage": "round3-neutral", "reserved_usd": 0.006265, "time": 1794203815.411695}
+{"request_id": "0849ed12-e7d3-469e-800d-7c9b5986f1e5", "stage": "round3-neutral", "reserved_usd": -0.0051, "actual_usd": 0.0010925, "response_id": "chatcmpl-EiCf9p9pOwkxyjqYqdFrqLoPARTcL"}
+{"request_id": "1191dc2d-c948-481c-8982-e17dedb93d40", "stage": "round3-neutral", "reserved_usd": 0.00609875, "time": 1794203816.8410208}
+{"request_id": "78893389-6926-48d2-8f83-824a74d59e81", "stage": "round3-neutral", "reserved_usd": -0.00534375, "actual_usd": 0.00084125, "response_id": "chatcmpl-EiCf9YTZiHVqB0RsyUeiglhfcUSxB"}
+{"request_id": "f4fe91f2-33cc-41b6-9643-e7af4a701dbb", "stage": "round3-neutral", "reserved_usd": 0.00615375, "time": 1794203816.953058}
+{"request_id": "e063361e-565c-4f19-a5f6-6f81a26960e8", "stage": "round3-neutral", "reserved_usd": -0.005175000000000001, "actual_usd": 0.00095625, "response_id": "chatcmpl-EiCf9wQhzet64ENZOAciwizXQ8XJF"}
+{"request_id": "b6e813c0-7dea-4de0-958a-930fc85b950b", "stage": "round3-neutral", "reserved_usd": 0.00615125, "time": 1794203817.302114}
+{"request_id": "bee1c89d-14a2-4aec-a066-4ca790718599", "stage": "round3-neutral", "reserved_usd": -0.00494375, "actual_usd": 0.00132125, "response_id": "chatcmpl-EiCf9TgTgtsHqyb4EJG4DAVvZ5hdi"}
+{"request_id": "0a57f817-78d5-4abe-9a73-1797c002cda9", "stage": "round3-neutral", "reserved_usd": 0.005965, "time": 1794203817.592483}
+{"request_id": "f4fe91f2-33cc-41b6-9643-e7af4a701dbb", "stage": "round3-neutral", "reserved_usd": -0.005145, "actual_usd": 0.00100875, "response_id": "chatcmpl-EiCfB6d6YwjlH7R8NPMVIKGHmem5F"}
+{"request_id": "54833885-7141-4a7f-986f-2a5248a59669", "stage": "round3-neutral", "reserved_usd": 0.00605875, "time": 1794203819.303168}
+{"request_id": "1191dc2d-c948-481c-8982-e17dedb93d40", "stage": "round3-neutral", "reserved_usd": -0.004705, "actual_usd": 0.00139375, "response_id": "chatcmpl-EiCfBrrRiHaPYmlkkoy8JwvElPzeL"}
+{"request_id": "7660d7e1-4e25-4b1a-bab6-6cbdb3b426ef", "stage": "round3-neutral", "reserved_usd": 0.00617, "time": 1794203819.386158}
+{"request_id": "b6e813c0-7dea-4de0-958a-930fc85b950b", "stage": "round3-neutral", "reserved_usd": -0.00488875, "actual_usd": 0.0012625, "response_id": "chatcmpl-EiCfBZ8Y0ypm6dberGc4eClFVD9aI"}
+{"request_id": "0a57f817-78d5-4abe-9a73-1797c002cda9", "stage": "round3-neutral", "reserved_usd": -0.00503625, "actual_usd": 0.00092875, "response_id": "chatcmpl-EiCfCYpG89SlZ5HGDSr6258TUtEoC"}
+{"request_id": "a4cd4396-abe2-4518-8d08-c3d10b6d9f1f", "stage": "round3-neutral", "reserved_usd": 0.00636125, "time": 1794203819.9222379}
+{"request_id": "a1c8fbff-c6e6-4996-82c5-c3ba98f9f353", "stage": "round3-neutral", "reserved_usd": 0.00619625, "time": 1794203819.947377}
+{"request_id": "54833885-7141-4a7f-986f-2a5248a59669", "stage": "round3-neutral", "reserved_usd": -0.004835, "actual_usd": 0.00122375, "response_id": "chatcmpl-EiCfDTeiq1IyJIM3vgDv4HkrOVtOF"}
+{"request_id": "a2223dca-f740-4ee6-8e12-8bad9a9198b5", "stage": "round3-neutral", "reserved_usd": 0.00613875, "time": 1794203821.493123}
+{"request_id": "7660d7e1-4e25-4b1a-bab6-6cbdb3b426ef", "stage": "round3-neutral", "reserved_usd": -0.00503375, "actual_usd": 0.00113625, "response_id": "chatcmpl-EiCfDGVIVTfggO03CUreihEyYUYBg"}
+{"request_id": "a5e0f2ce-e913-4351-9185-550a89653906", "stage": "round3-neutral", "reserved_usd": 0.00644625, "time": 1794203821.709683}
+{"request_id": "a4cd4396-abe2-4518-8d08-c3d10b6d9f1f", "stage": "round3-neutral", "reserved_usd": -0.0052225, "actual_usd": 0.00113875, "response_id": "chatcmpl-EiCfEav1BUJV4qI4Q6KgyGyKHaGfk"}
+{"request_id": "a30e1834-abf2-4ca6-971a-b31ddbb8f2cd", "stage": "round3-neutral", "reserved_usd": 0.00607, "time": 1794203822.076704}
+{"request_id": "a1c8fbff-c6e6-4996-82c5-c3ba98f9f353", "stage": "round3-neutral", "reserved_usd": -0.0046225, "actual_usd": 0.00157375, "response_id": "chatcmpl-EiCfEEc7m3D025uNlwvwtvWqquxj6"}
+{"request_id": "b1952ec5-f83c-4550-b5c5-6c6f26ec598c", "stage": "round3-neutral", "reserved_usd": 0.00615625, "time": 1794203822.543819}
+{"request_id": "a5e0f2ce-e913-4351-9185-550a89653906", "stage": "round3-neutral", "reserved_usd": -0.00537, "actual_usd": 0.00107625, "response_id": "chatcmpl-EiCfGUiWYYWRPNj7X8rEeFFVbi8nL"}
+{"request_id": "4fbdb93b-6092-4553-b7ac-256b4332b5ad", "stage": "round3-neutral", "reserved_usd": 0.00615125, "time": 1794203823.859563}
+{"request_id": "a2223dca-f740-4ee6-8e12-8bad9a9198b5", "stage": "round3-neutral", "reserved_usd": -0.00510125, "actual_usd": 0.0010375, "response_id": "chatcmpl-EiCfF9CjkLH8Ok2uQ8kyxrYQsJHSf"}
+{"request_id": "5bdd0a38-b656-41e5-9982-29014283fa81", "stage": "round3-neutral", "reserved_usd": 0.00641375, "time": 1794203824.2001941}
+{"request_id": "a30e1834-abf2-4ca6-971a-b31ddbb8f2cd", "stage": "round3-neutral", "reserved_usd": -0.00499875, "actual_usd": 0.00107125, "response_id": "chatcmpl-EiCfGNEB18l4cY3fr0HWN4EdkB74U"}
+{"request_id": "e33a4692-d6fb-4792-a057-5376dcee012a", "stage": "round3-neutral", "reserved_usd": 0.00642875, "time": 1794203824.316262}
+{"request_id": "b1952ec5-f83c-4550-b5c5-6c6f26ec598c", "stage": "round3-neutral", "reserved_usd": -0.0050237500000000004, "actual_usd": 0.0011325, "response_id": "chatcmpl-EiCfGkKdVUj1fdXTYTirHIL64EiEz"}
+{"request_id": "82513e44-1c4d-4d6e-9ac1-070d8bc663d1", "stage": "round3-neutral", "reserved_usd": 0.00622875, "time": 1794203824.776591}
+{"request_id": "4fbdb93b-6092-4553-b7ac-256b4332b5ad", "stage": "round3-neutral", "reserved_usd": -0.005183749999999999, "actual_usd": 0.0009675, "response_id": "chatcmpl-EiCfILGPnEnqeuB0ymEqUiQTJTl4V"}
+{"request_id": "e0b557ee-a166-4318-8f25-ea53d1e55596", "stage": "round3-neutral", "reserved_usd": 0.00625625, "time": 1794203826.393323}
+{"request_id": "82513e44-1c4d-4d6e-9ac1-070d8bc663d1", "stage": "round3-neutral", "reserved_usd": -0.00528875, "actual_usd": 0.00094, "response_id": "chatcmpl-EiCfJuEygIbz7EANwpQe3jniN25G8"}
+{"request_id": "5cff1443-4451-4e51-896f-aaeb81a7abeb", "stage": "round3-neutral", "reserved_usd": 0.0064, "time": 1794203826.624504}
+{"request_id": "e33a4692-d6fb-4792-a057-5376dcee012a", "stage": "round3-neutral", "reserved_usd": -0.0050725, "actual_usd": 0.00135625, "response_id": "chatcmpl-EiCfIvWAYKKJqX2406wIgU86tY3dN"}
+{"request_id": "65cc6ddc-d221-42bd-b441-8bc44e07eb99", "stage": "round3-neutral", "reserved_usd": 0.00604875, "time": 1794203826.8236969}
+{"request_id": "5bdd0a38-b656-41e5-9982-29014283fa81", "stage": "round3-neutral", "reserved_usd": -0.0053, "actual_usd": 0.00111375, "response_id": "chatcmpl-EiCfIzgS2yksP0TRrIebHBTtqnplA"}
+{"request_id": "e34c172c-f828-45a4-9611-b2b1aa5ff7ce", "stage": "round3-neutral", "reserved_usd": 0.006, "time": 1794203827.4476109}
+{"request_id": "e0b557ee-a166-4318-8f25-ea53d1e55596", "stage": "round3-neutral", "reserved_usd": -0.00544625, "actual_usd": 0.00081, "response_id": "chatcmpl-EiCfKxlYY3nMEa53NwtDrVsb3V0D3"}
+{"request_id": "8eebf59f-d524-43af-ad2b-6e4e840bec43", "stage": "round3-neutral", "reserved_usd": 0.00608, "time": 1794203828.3101969}
+{"request_id": "65cc6ddc-d221-42bd-b441-8bc44e07eb99", "stage": "round3-neutral", "reserved_usd": -0.00513125, "actual_usd": 0.0009175, "response_id": "chatcmpl-EiCfLgiPishWKdQE9dvfBgs1o37WC"}
+{"request_id": "68415867-9e6d-4d6a-85ab-99bba2d68dc0", "stage": "round3-neutral", "reserved_usd": 0.00622375, "time": 1794203828.8369129}
+{"request_id": "5cff1443-4451-4e51-896f-aaeb81a7abeb", "stage": "round3-neutral", "reserved_usd": -0.0052575, "actual_usd": 0.0011425, "response_id": "chatcmpl-EiCfLxfFkxz3I5DzVuAzXSEfza2mE"}
+{"request_id": "fbfe4f60-b4a0-4d5b-8992-63b6cc5877af", "stage": "round3-neutral", "reserved_usd": 0.0062375, "time": 1794203829.031874}
+{"request_id": "e34c172c-f828-45a4-9611-b2b1aa5ff7ce", "stage": "round3-neutral", "reserved_usd": -0.0049475000000000005, "actual_usd": 0.0010525, "response_id": "chatcmpl-EiCfLHWKIdWUAy1k5L8CEqZUXs6O8"}
+{"request_id": "57f9f2dd-fd2e-4b98-ac25-d5a1e5526f8e", "stage": "round3-neutral", "reserved_usd": 0.00626875, "time": 1794203829.784029}
+{"request_id": "8eebf59f-d524-43af-ad2b-6e4e840bec43", "stage": "round3-neutral", "reserved_usd": -0.0051275, "actual_usd": 0.0009525, "response_id": "chatcmpl-EiCfMoEaC3bMgkAmdKop6FWCBRShj"}
+{"request_id": "9815b111-27fd-4303-88f8-9fb1effdb9eb", "stage": "round3-neutral", "reserved_usd": 0.00605375, "time": 1794203830.449874}
+{"request_id": "68415867-9e6d-4d6a-85ab-99bba2d68dc0", "stage": "round3-neutral", "reserved_usd": -0.0052325, "actual_usd": 0.00099125, "response_id": "chatcmpl-EiCfNYVcENeyVC6RY5JCx0KSFZrM6"}
+{"request_id": "6f5d8ef4-54b8-4f6a-9745-73a69d1a572e", "stage": "round3-neutral", "reserved_usd": 0.00605625, "time": 1794203830.785569}
+{"request_id": "fbfe4f60-b4a0-4d5b-8992-63b6cc5877af", "stage": "round3-neutral", "reserved_usd": -0.0051025, "actual_usd": 0.001135, "response_id": "chatcmpl-EiCfNlsjvOJzS1dSa7ULYCVs5Q1FF"}
+{"request_id": "3c6e9bbf-53d3-4c06-b949-3b28da0afbdf", "stage": "round3-neutral", "reserved_usd": 0.00628375, "time": 1794203830.815312}
+{"request_id": "57f9f2dd-fd2e-4b98-ac25-d5a1e5526f8e", "stage": "round3-neutral", "reserved_usd": -0.0052375, "actual_usd": 0.00103125, "response_id": "chatcmpl-EiCfOOKNiq2dViDNCCX6t5lyZk8lu"}
+{"request_id": "8ad98c71-e786-4db3-aa5a-1cbc99639c73", "stage": "round3-neutral", "reserved_usd": 0.00612875, "time": 1794203831.5069199}
+{"request_id": "6f5d8ef4-54b8-4f6a-9745-73a69d1a572e", "stage": "round3-neutral", "reserved_usd": -0.0051087500000000004, "actual_usd": 0.0009475, "response_id": "chatcmpl-EiCfP56XduvmGo8bNBwjwYvWRwka8"}
+{"request_id": "9815b111-27fd-4303-88f8-9fb1effdb9eb", "stage": "round3-neutral", "reserved_usd": -0.00511625, "actual_usd": 0.0009375, "response_id": "chatcmpl-EiCfOsPqHqusQt1liwieqGzT0AQK0"}
+{"request_id": "9e8001b8-db19-4eb5-a25d-2ecbdc8bb64c", "stage": "round3-neutral", "reserved_usd": 0.006215, "time": 1794203832.510744}
+{"request_id": "35a2f757-a4d1-48eb-9583-696de85c0b14", "stage": "round3-neutral", "reserved_usd": 0.006225, "time": 1794203832.535847}
+{"request_id": "3c6e9bbf-53d3-4c06-b949-3b28da0afbdf", "stage": "round3-neutral", "reserved_usd": -0.0049625, "actual_usd": 0.00132125, "response_id": "chatcmpl-EiCfPmFO0lEGSWyRdW0WZRpEdrdb7"}
+{"request_id": "0732180c-0cb9-4587-8a90-cd6f331e124c", "stage": "round3-neutral", "reserved_usd": 0.00626, "time": 1794203834.269981}
+{"request_id": "8ad98c71-e786-4db3-aa5a-1cbc99639c73", "stage": "round3-neutral", "reserved_usd": -0.00514125, "actual_usd": 0.0009875, "response_id": "chatcmpl-EiCfP3bDSbxkaFbWkIcfCZo6Ra9Gv"}
+{"request_id": "c490bf47-5ee7-4e71-90d7-b86729134c8e", "stage": "round3-neutral", "reserved_usd": 0.00615875, "time": 1794203834.295802}
+{"request_id": "35a2f757-a4d1-48eb-9583-696de85c0b14", "stage": "round3-neutral", "reserved_usd": -0.0051575, "actual_usd": 0.0010675, "response_id": "chatcmpl-EiCfQfUUbGuEzwPy0G0yPE16pM2AZ"}
+{"request_id": "f364db1f-7b7f-44f7-9193-0923f0e454aa", "stage": "round3-neutral", "reserved_usd": 0.00612625, "time": 1794203834.333293}
+{"request_id": "9e8001b8-db19-4eb5-a25d-2ecbdc8bb64c", "stage": "round3-neutral", "reserved_usd": -0.0047262499999999995, "actual_usd": 0.00148875, "response_id": "chatcmpl-EiCfQvnAdLK7ul7uMEOyzzhkkQGba"}
+{"request_id": "60b14cbd-a0ef-4d47-b80a-c915c0238678", "stage": "round3-neutral", "reserved_usd": 0.0063175, "time": 1794203835.2120051}
+{"request_id": "c490bf47-5ee7-4e71-90d7-b86729134c8e", "stage": "round3-neutral", "reserved_usd": -0.00525125, "actual_usd": 0.0009075, "response_id": "chatcmpl-EiCfSlUE9E8f4k3T0XmN5CncorsXd"}
+{"request_id": "6b84989f-9690-40af-9101-998c80c6f71b", "stage": "round3-neutral", "reserved_usd": 0.00605, "time": 1794203836.236489}
+{"request_id": "0732180c-0cb9-4587-8a90-cd6f331e124c", "stage": "round3-neutral", "reserved_usd": -0.00520125, "actual_usd": 0.00105875, "response_id": "chatcmpl-EiCfSM9Ly42fPK8OIAJWGnrlloOwi"}
+{"request_id": "63d54420-d259-44bb-a9a2-8a2d7b7358b8", "stage": "round3-neutral", "reserved_usd": 0.00626375, "time": 1794203836.5559528}
+{"request_id": "f364db1f-7b7f-44f7-9193-0923f0e454aa", "stage": "round3-neutral", "reserved_usd": -0.004775, "actual_usd": 0.00135125, "response_id": "chatcmpl-EiCfS46WSciqq7KdcNkqAUJ0QkK5g"}
+{"request_id": "b39230dc-6205-4472-8c32-202e82d10fcb", "stage": "round3-neutral", "reserved_usd": 0.00626875, "time": 1794203837.119306}
+{"request_id": "60b14cbd-a0ef-4d47-b80a-c915c0238678", "stage": "round3-neutral", "reserved_usd": -0.005211250000000001, "actual_usd": 0.00110625, "response_id": "chatcmpl-EiCfTWmSYXGUD1owyaV2P14WwErdv"}
+{"request_id": "fd231d78-28aa-4eb4-8900-722e1a977016", "stage": "round3-neutral", "reserved_usd": 0.0062825, "time": 1794203837.2110772}
+{"request_id": "6b84989f-9690-40af-9101-998c80c6f71b", "stage": "round3-neutral", "reserved_usd": -0.005048749999999999, "actual_usd": 0.00100125, "response_id": "chatcmpl-EiCfUkENxFlKZcY5YyI11matMzQzl"}
+{"request_id": "3d2c8d6d-2dcf-47d2-82d7-450631fb3d4c", "stage": "round3-neutral", "reserved_usd": 0.0064, "time": 1794203838.039846}
+{"request_id": "63d54420-d259-44bb-a9a2-8a2d7b7358b8", "stage": "round3-neutral", "reserved_usd": -0.0053025, "actual_usd": 0.00096125, "response_id": "chatcmpl-EiCfU0XVqhQW2sS4KSHMmCXbB23O9"}
+{"request_id": "b95afb8f-21b6-4457-b0f9-0b6bfdd852fa", "stage": "round3-neutral", "reserved_usd": 0.00642375, "time": 1794203838.657582}
+{"request_id": "fd231d78-28aa-4eb4-8900-722e1a977016", "stage": "round3-neutral", "reserved_usd": -0.00520125, "actual_usd": 0.00108125, "response_id": "chatcmpl-EiCfVRadfKFmmwBKAIrkccjbC1Jgf"}
+{"request_id": "18d2dbea-dbb4-4e9e-b28c-fe23f18d7710", "stage": "round3-neutral", "reserved_usd": 0.0061875, "time": 1794203839.307154}
+{"request_id": "b39230dc-6205-4472-8c32-202e82d10fcb", "stage": "round3-neutral", "reserved_usd": -0.0045850000000000005, "actual_usd": 0.00168375, "response_id": "chatcmpl-EiCfVTns58ynhZ1SVFlh2EDO93bti"}
+{"request_id": "7a98a8be-1e84-43f6-8cbb-360ddfa40e5f", "stage": "round3-neutral", "reserved_usd": 0.0061625, "time": 1794203840.262274}
+{"request_id": "b95afb8f-21b6-4457-b0f9-0b6bfdd852fa", "stage": "round3-neutral", "reserved_usd": -0.00526, "actual_usd": 0.00116375, "response_id": "chatcmpl-EiCfXWKXUpHfDHdoz11K1lr3z6XbO"}
+{"request_id": "43031872-cbac-45dd-a967-4b43c008c384", "stage": "round3-neutral", "reserved_usd": 0.00637, "time": 1794203840.739712}
+{"request_id": "3d2c8d6d-2dcf-47d2-82d7-450631fb3d4c", "stage": "round3-neutral", "reserved_usd": -0.0053475, "actual_usd": 0.0010525, "response_id": "chatcmpl-EiCfWoaqoNVpdk9IZOUyvEqiOPUoE"}
+{"request_id": "46468c13-99dd-4e76-8f68-b4788365250d", "stage": "round3-neutral", "reserved_usd": 0.00603, "time": 1794203840.891095}
+{"request_id": "18d2dbea-dbb4-4e9e-b28c-fe23f18d7710", "stage": "round3-neutral", "reserved_usd": -0.0054062500000000005, "actual_usd": 0.00078125, "response_id": "chatcmpl-EiCfXKNGC4DsCqTcU0jMOgomLp1R1"}
+{"request_id": "42bd9c73-c311-43fc-afbe-90984f9f19a4", "stage": "round3-neutral", "reserved_usd": 0.00645375, "time": 1794203841.137028}
+{"request_id": "7a98a8be-1e84-43f6-8cbb-360ddfa40e5f", "stage": "round3-neutral", "reserved_usd": -0.00514375, "actual_usd": 0.00101875, "response_id": "chatcmpl-EiCfY8Zpqa5imu0vQIasFkDXe5MhD"}
+{"request_id": "dadc3008-f067-479e-8487-e1eefffa9446", "stage": "round3-neutral", "reserved_usd": 0.00621125, "time": 1794203842.1054778}
+{"request_id": "46468c13-99dd-4e76-8f68-b4788365250d", "stage": "round3-neutral", "reserved_usd": -0.0052274999999999995, "actual_usd": 0.0008025, "response_id": "chatcmpl-EiCfZyHccaQQlxohH9AETekkgWwlW"}
+{"request_id": "5ecff346-30cf-4a28-bfbf-693a8aab026e", "stage": "round3-neutral", "reserved_usd": 0.00625, "time": 1794203842.794345}
+{"request_id": "43031872-cbac-45dd-a967-4b43c008c384", "stage": "round3-neutral", "reserved_usd": -0.0052812499999999995, "actual_usd": 0.00108875, "response_id": "chatcmpl-EiCfZTFsvEurlZhspFvgPfLvbQ4tM"}
+{"request_id": "87deeda5-5a0c-490e-8ecd-5b06d318e51c", "stage": "round3-neutral", "reserved_usd": 0.00623625, "time": 1794203842.888065}
+{"request_id": "42bd9c73-c311-43fc-afbe-90984f9f19a4", "stage": "round3-neutral", "reserved_usd": -0.00511625, "actual_usd": 0.0013375, "response_id": "chatcmpl-EiCfZ6auo77WAHfFuOlMYekw58eou"}
+{"request_id": "adc33921-da66-402b-85b4-65eab16db72e", "stage": "round3-neutral", "reserved_usd": 0.00645375, "time": 1794203843.617495}
+{"request_id": "dadc3008-f067-479e-8487-e1eefffa9446", "stage": "round3-neutral", "reserved_usd": -0.005115, "actual_usd": 0.00109625, "response_id": "chatcmpl-EiCfavludF7DaBCgsdLVLjzIFE719"}
+{"request_id": "611273a0-a2f4-4e54-a8b5-5a8cb6d4366e", "stage": "round3-neutral", "reserved_usd": 0.0059875, "time": 1794203844.3551779}
+{"request_id": "5ecff346-30cf-4a28-bfbf-693a8aab026e", "stage": "round3-neutral", "reserved_usd": -0.00526125, "actual_usd": 0.00098875, "response_id": "chatcmpl-EiCfbqlKzG04hrp051203JybbFgUL"}
+{"request_id": "0a2a3c4a-c986-4971-b18c-86ff83881d38", "stage": "round3-neutral", "reserved_usd": 0.00623875, "time": 1794203844.910162}
+{"request_id": "adc33921-da66-402b-85b4-65eab16db72e", "stage": "round3-neutral", "reserved_usd": -0.005166250000000001, "actual_usd": 0.0012875, "response_id": "chatcmpl-EiCfbPf3a6ouJsK6Trz42obtPY1Lp"}
+{"request_id": "87deeda5-5a0c-490e-8ecd-5b06d318e51c", "stage": "round3-neutral", "reserved_usd": -0.005098749999999999, "actual_usd": 0.0011375, "response_id": "chatcmpl-EiCfbE1QGGXexk67FIuNpA1rCcBn8"}
+{"request_id": "72d3d303-0bcf-4ae9-a96b-c8141f48df7f", "stage": "round3-neutral", "reserved_usd": 0.00625875, "time": 1794203845.863789}
+{"request_id": "19a46330-dc41-46d9-81e6-4fdd9a160dc4", "stage": "round3-neutral", "reserved_usd": 0.00610875, "time": 1794203845.890016}
+{"request_id": "611273a0-a2f4-4e54-a8b5-5a8cb6d4366e", "stage": "round3-neutral", "reserved_usd": -0.00499625, "actual_usd": 0.00099125, "response_id": "chatcmpl-EiCfcXNysaIcANF6LwRrhlsIJCkbx"}
+{"request_id": "28991985-7a69-41e2-9980-cc38d210f4b0", "stage": "round3-neutral", "reserved_usd": 0.00602375, "time": 1794203846.1977348}
+{"request_id": "0a2a3c4a-c986-4971-b18c-86ff83881d38", "stage": "round3-neutral", "reserved_usd": -0.00515875, "actual_usd": 0.00108, "response_id": "chatcmpl-EiCfd93x8SelnTT4bjsj41OFBygFv"}
+{"request_id": "165da84a-f817-4de1-a230-df84fdd92db5", "stage": "round3-neutral", "reserved_usd": 0.00604375, "time": 1794203846.878453}
+{"request_id": "72d3d303-0bcf-4ae9-a96b-c8141f48df7f", "stage": "round3-neutral", "reserved_usd": -0.005138750000000001, "actual_usd": 0.00112, "response_id": "chatcmpl-EiCfezevgxn42iJUaTQJVN4HT5aDL"}
+{"request_id": "91e30d0b-d5c3-4d5b-954e-371d4ac12c97", "stage": "round3-neutral", "reserved_usd": 0.005995, "time": 1794203847.958292}
+{"request_id": "28991985-7a69-41e2-9980-cc38d210f4b0", "stage": "round3-neutral", "reserved_usd": -0.0050675, "actual_usd": 0.00095625, "response_id": "chatcmpl-EiCfeiYVdpOL6tPcgROJxlUg4SISY"}
+{"request_id": "fc86e84e-a940-42e2-9ee6-f11e6e69047e", "stage": "round3-neutral", "reserved_usd": 0.00619375, "time": 1794203848.230109}
+{"request_id": "165da84a-f817-4de1-a230-df84fdd92db5", "stage": "round3-neutral", "reserved_usd": -0.0051275, "actual_usd": 0.00091625, "response_id": "chatcmpl-EiCffBPRJE3E3wL8nh8qr3jIIn57m"}
+{"request_id": "2b3c4b57-9acb-40f1-a769-b9d6b8a863f5", "stage": "round3-neutral", "reserved_usd": 0.006185, "time": 1794203848.360725}
+{"request_id": "19a46330-dc41-46d9-81e6-4fdd9a160dc4", "stage": "round3-neutral", "reserved_usd": -0.0051649999999999995, "actual_usd": 0.00094375, "response_id": "chatcmpl-EiCfetM9uTblLNspKGBJDW0xdLSgQ"}
+{"request_id": "97db1044-6108-4a84-bcf3-8edeba166745", "stage": "round3-neutral", "reserved_usd": 0.00614375, "time": 1794203848.466125}
+{"request_id": "91e30d0b-d5c3-4d5b-954e-371d4ac12c97", "stage": "round3-neutral", "reserved_usd": -0.005112500000000001, "actual_usd": 0.0008825, "response_id": "chatcmpl-EiCfgKbyZeDlgZMJjptbBNcBaGI4E"}
+{"request_id": "f69491c9-a0f5-4fee-a12b-768e29870e9e", "stage": "round3-neutral", "reserved_usd": 0.00623375, "time": 1794203849.989289}
+{"request_id": "2b3c4b57-9acb-40f1-a769-b9d6b8a863f5", "stage": "round3-neutral", "reserved_usd": -0.005275, "actual_usd": 0.00091, "response_id": "chatcmpl-EiCfgAJOemxQN8H7OOMKHNgE3ZiUx"}
+{"request_id": "5cba60ce-4dde-4171-b0b7-aa706d59882c", "stage": "round3-neutral", "reserved_usd": 0.006395, "time": 1794203850.045791}
+{"request_id": "97db1044-6108-4a84-bcf3-8edeba166745", "stage": "round3-neutral", "reserved_usd": -0.0050325, "actual_usd": 0.00111125, "response_id": "chatcmpl-EiCfgV1XGqdw4P0mfWn2utM0P2g1i"}
+{"request_id": "ca164587-50c8-45fd-bc85-cb62e28c821d", "stage": "round3-neutral", "reserved_usd": 0.00624375, "time": 1794203850.3202162}
+{"request_id": "fc86e84e-a940-42e2-9ee6-f11e6e69047e", "stage": "round3-neutral", "reserved_usd": -0.0051624999999999996, "actual_usd": 0.00103125, "response_id": "chatcmpl-EiCfgeKclkdwllZDJKy2FmGLcDvlm"}
+{"request_id": "ce4c1b3d-b071-4e7c-bb55-cd136eab0df7", "stage": "round3-neutral", "reserved_usd": 0.00611, "time": 1794203851.027176}
+{"request_id": "f69491c9-a0f5-4fee-a12b-768e29870e9e", "stage": "round3-neutral", "reserved_usd": -0.005326249999999999, "actual_usd": 0.0009075, "response_id": "chatcmpl-EiCfiHnUlKVdRXpui6PxNQuiw8lQy"}
+{"request_id": "b030bfbb-5f73-458a-960d-24c0dd28eaff", "stage": "round3-neutral", "reserved_usd": 0.00626875, "time": 1794203851.632419}
+{"request_id": "ca164587-50c8-45fd-bc85-cb62e28c821d", "stage": "round3-neutral", "reserved_usd": -0.0051712500000000005, "actual_usd": 0.0010725, "response_id": "chatcmpl-EiCfijDcecsKuCGzfK7oc4NCmVqK2"}
+{"request_id": "7aab9010-77c5-4302-baee-006a0b3047c5", "stage": "round3-neutral", "reserved_usd": 0.00620625, "time": 1794203851.897217}
+{"request_id": "5cba60ce-4dde-4171-b0b7-aa706d59882c", "stage": "round3-neutral", "reserved_usd": -0.0053037499999999994, "actual_usd": 0.00109125, "response_id": "chatcmpl-EiCfi1eeJkg8gpeZcbQbT5NGOgSkr"}
+{"request_id": "170e044e-a5f5-40d3-8e86-75ad62e236b0", "stage": "round3-neutral", "reserved_usd": 0.0062625, "time": 1794203852.400987}
+{"request_id": "ce4c1b3d-b071-4e7c-bb55-cd136eab0df7", "stage": "round3-neutral", "reserved_usd": -0.0046475, "actual_usd": 0.0014625, "response_id": "chatcmpl-EiCfjj95aFT8x2WKVr5yHIeUa10A3"}
+{"request_id": "8b28b57e-9dff-4161-a78c-3ad1bf417c17", "stage": "round3-neutral", "reserved_usd": 0.00609, "time": 1794203853.579641}
+{"request_id": "b030bfbb-5f73-458a-960d-24c0dd28eaff", "stage": "round3-neutral", "reserved_usd": -0.005095, "actual_usd": 0.00117375, "response_id": "chatcmpl-EiCfjs2bsyLFBiYqEjyMB9CaKDTPq"}
+{"request_id": "ea79fb92-eff7-48cd-bad2-57ed69912c0e", "stage": "round3-neutral", "reserved_usd": 0.00601, "time": 1794203853.705817}
+{"request_id": "170e044e-a5f5-40d3-8e86-75ad62e236b0", "stage": "round3-neutral", "reserved_usd": -0.00537, "actual_usd": 0.0008925, "response_id": "chatcmpl-EiCfkG8tC5SZGtWBXJn861DyAGQID"}
+{"request_id": "390140f9-0193-4775-8614-cb5ec41c960f", "stage": "round3-neutral", "reserved_usd": 0.00601875, "time": 1794203854.123789}
+{"request_id": "7aab9010-77c5-4302-baee-006a0b3047c5", "stage": "round3-neutral", "reserved_usd": -0.0050525, "actual_usd": 0.00115375, "response_id": "chatcmpl-EiCfk7fUqTrfZAGCkxkLTv8WcAOz4"}
+{"request_id": "f1c44cb1-06b6-4ca6-84fd-11e584762304", "stage": "round3-neutral", "reserved_usd": 0.0063175, "time": 1794203854.250993}
+{"request_id": "8b28b57e-9dff-4161-a78c-3ad1bf417c17", "stage": "round3-neutral", "reserved_usd": -0.00510375, "actual_usd": 0.00098625, "response_id": "chatcmpl-EiCflHolILjAebxLDVv5gmXg1gzoS"}
+{"request_id": "740aabf0-6c80-4d11-adbb-ec367ce17987", "stage": "round3-neutral", "reserved_usd": 0.0061225, "time": 1794203855.565558}
+{"request_id": "390140f9-0193-4775-8614-cb5ec41c960f", "stage": "round3-neutral", "reserved_usd": -0.005175, "actual_usd": 0.00084375, "response_id": "chatcmpl-EiCfmkeErjvsOY6NbzUpklWmyJ1sk"}
+{"request_id": "b65750bc-bde2-49a8-8b1b-560d54966e5b", "stage": "round3-neutral", "reserved_usd": 0.00645875, "time": 1794203856.032811}
+{"request_id": "ea79fb92-eff7-48cd-bad2-57ed69912c0e", "stage": "round3-neutral", "reserved_usd": -0.00486625, "actual_usd": 0.00114375, "response_id": "chatcmpl-EiCfmRvD1RkP1d2kQLq8vlSEa5Rv3"}
+{"request_id": "2ab1082b-f469-454c-a544-b74892441e76", "stage": "round3-neutral", "reserved_usd": 0.006215, "time": 1794203856.436374}
+{"request_id": "f1c44cb1-06b6-4ca6-84fd-11e584762304", "stage": "round3-neutral", "reserved_usd": -0.00514125, "actual_usd": 0.00117625, "response_id": "chatcmpl-EiCfm9zRx3xO9a2CQdP4Np0l7i6eT"}
+{"request_id": "5775dc69-d26c-45c9-8bf3-a65cdea26e1e", "stage": "round3-neutral", "reserved_usd": 0.00608875, "time": 1794203856.561961}
+{"request_id": "740aabf0-6c80-4d11-adbb-ec367ce17987", "stage": "round3-neutral", "reserved_usd": -0.0049362500000000005, "actual_usd": 0.00118625, "response_id": "chatcmpl-EiCfnci4g1rxxUmpQfbogcTdYLBoG"}
+{"request_id": "b3465bb6-9c25-423a-84fb-63744a3d9ca0", "stage": "round3-neutral", "reserved_usd": 0.00610125, "time": 1794203857.663156}
+{"request_id": "b65750bc-bde2-49a8-8b1b-560d54966e5b", "stage": "round3-neutral", "reserved_usd": -0.00533125, "actual_usd": 0.0011275, "response_id": "chatcmpl-EiCfoMsb12d6bdLrShFu5VYDf3jXl"}
+{"request_id": "42b8ae4a-2be4-4008-97d5-45864b4a1ad4", "stage": "round3-neutral", "reserved_usd": 0.0063925, "time": 1794203857.840492}
+{"request_id": "5775dc69-d26c-45c9-8bf3-a65cdea26e1e", "stage": "round3-neutral", "reserved_usd": -0.004985000000000001, "actual_usd": 0.00110375, "response_id": "chatcmpl-EiCfoTQpsqq7RszulBYv4YKPypyta"}
+{"request_id": "e4d6457d-dbbc-4e0d-93dd-2ea3941d19b5", "stage": "round3-neutral", "reserved_usd": 0.00631, "time": 1794203858.342741}
+{"request_id": "2ab1082b-f469-454c-a544-b74892441e76", "stage": "round3-neutral", "reserved_usd": -0.00501625, "actual_usd": 0.00119875, "response_id": "chatcmpl-EiCfoPZIZoLUvYhzywhMXqEzI77v6"}
+{"request_id": "51d465cf-69d2-497b-bb9a-636fb540ea70", "stage": "round3-neutral", "reserved_usd": 0.0061925, "time": 1794203858.748223}
+{"request_id": "b3465bb6-9c25-423a-84fb-63744a3d9ca0", "stage": "round3-neutral", "reserved_usd": -0.0052875, "actual_usd": 0.00081375, "response_id": "chatcmpl-EiCfpr2koW7wopQKtEvIZrO7wDdUF"}
+{"request_id": "32eda707-f5a9-4ff5-9ead-e372d3d4c0f8", "stage": "round3-neutral", "reserved_usd": 0.00623875, "time": 1794203859.6792152}
+{"request_id": "42b8ae4a-2be4-4008-97d5-45864b4a1ad4", "stage": "round3-neutral", "reserved_usd": -0.00553125, "actual_usd": 0.00086125, "response_id": "chatcmpl-EiCfqiXpjxnXFlBvOQ5caM4j1sAhP"}
+{"request_id": "c3cdc105-cdb9-4de2-9546-ec8164357cf7", "stage": "round3-neutral", "reserved_usd": 0.00622875, "time": 1794203859.898717}
+{"request_id": "e4d6457d-dbbc-4e0d-93dd-2ea3941d19b5", "stage": "round3-neutral", "reserved_usd": -0.0052049999999999996, "actual_usd": 0.001105, "response_id": "chatcmpl-EiCfqZx1qXvHGtUYPoVvTCDvlJD1P"}
+{"request_id": "68c83862-1446-436c-af7f-2f90d2363add", "stage": "round3-neutral", "reserved_usd": 0.00618875, "time": 1794203860.399293}
+{"request_id": "51d465cf-69d2-497b-bb9a-636fb540ea70", "stage": "round3-neutral", "reserved_usd": -0.0051, "actual_usd": 0.0010925, "response_id": "chatcmpl-EiCfrtoWG8bV3QCf5C07PgTxfEY8D"}
+{"request_id": "73ea7750-d6fa-4df9-ac97-d957f58317fe", "stage": "round3-neutral", "reserved_usd": 0.00599125, "time": 1794203861.538774}
+{"request_id": "32eda707-f5a9-4ff5-9ead-e372d3d4c0f8", "stage": "round3-neutral", "reserved_usd": -0.00508875, "actual_usd": 0.00115, "response_id": "chatcmpl-EiCfsBXEEax3mNkGD4oHhmHdds6zx"}
+{"request_id": "f6bfdbd1-c2ef-453e-835c-b9a5c0c8aa46", "stage": "round3-neutral", "reserved_usd": 0.00613375, "time": 1794203862.188417}
+{"request_id": "c3cdc105-cdb9-4de2-9546-ec8164357cf7", "stage": "round3-neutral", "reserved_usd": -0.0051225, "actual_usd": 0.00110625, "response_id": "chatcmpl-EiCfsq890pGhxLilYmNcpF4BL4DY2"}
+{"request_id": "c6d099a2-9396-42ef-b60d-27f444f43b61", "stage": "round3-neutral", "reserved_usd": 0.00620375, "time": 1794203862.252673}
+{"request_id": "68c83862-1446-436c-af7f-2f90d2363add", "stage": "round3-neutral", "reserved_usd": -0.0051075, "actual_usd": 0.00108125, "response_id": "chatcmpl-EiCfsqNp1ikfzB3XoqnML2vKBCze7"}
+{"request_id": "0ce7e947-584a-453d-83ab-a614433715c8", "stage": "round3-neutral", "reserved_usd": 0.0061025, "time": 1794203862.329691}
+{"request_id": "73ea7750-d6fa-4df9-ac97-d957f58317fe", "stage": "round3-neutral", "reserved_usd": -0.00516, "actual_usd": 0.00083125, "response_id": "chatcmpl-EiCftQu312EsRuVrCHl6INqaXzLmC"}
+{"request_id": "f9ece0c5-978c-463e-af24-fb5e4b2cb719", "stage": "round3-neutral", "reserved_usd": 0.0062425, "time": 1794203863.050671}
+{"request_id": "f6bfdbd1-c2ef-453e-835c-b9a5c0c8aa46", "stage": "round3-neutral", "reserved_usd": -0.00502625, "actual_usd": 0.0011075, "response_id": "chatcmpl-EiCfuzic5R51DYHIhrImVRXw6UzmT"}
+{"request_id": "fc0b3d9a-94dd-4aae-98fa-43fc9372212f", "stage": "round3-neutral", "reserved_usd": 0.00615125, "time": 1794203864.2987049}
+{"request_id": "c6d099a2-9396-42ef-b60d-27f444f43b61", "stage": "round3-neutral", "reserved_usd": -0.00506125, "actual_usd": 0.0011425, "response_id": "chatcmpl-EiCfuc61RD1xysjUEn4XAznmDXRwh"}
+{"request_id": "6bcfb13f-589c-4709-94cc-548639c11a5d", "stage": "round3-neutral", "reserved_usd": 0.00611375, "time": 1794203864.5059042}
+{"request_id": "0ce7e947-584a-453d-83ab-a614433715c8", "stage": "round3-neutral", "reserved_usd": -0.0048850000000000005, "actual_usd": 0.0012175, "response_id": "chatcmpl-EiCfuH8tBPiI0Nz81RPUk9OP9ISzn"}
+{"request_id": "ce5b879a-0b5f-44b0-8118-38660fdd0c9d", "stage": "round3-neutral", "reserved_usd": 0.005995, "time": 1794203865.3426838}
+{"request_id": "f9ece0c5-978c-463e-af24-fb5e4b2cb719", "stage": "round3-neutral", "reserved_usd": -0.0053862499999999995, "actual_usd": 0.00085625, "response_id": "chatcmpl-EiCfvDXhfWa8tRxKwYZP4mprKr23p"}
+{"request_id": "9ed698d8-34cc-43af-8f7e-b528814bcc86", "stage": "round3-neutral", "reserved_usd": 0.00614375, "time": 1794203865.5565639}
+{"request_id": "fc0b3d9a-94dd-4aae-98fa-43fc9372212f", "stage": "round3-neutral", "reserved_usd": -0.00524875, "actual_usd": 0.0009025, "response_id": "chatcmpl-EiCfw4j1nfDTMjuxyS6K5wf3JvDcQ"}
+{"request_id": "46c01ce4-126d-4e9b-829e-ab164ecb08a3", "stage": "round3-neutral", "reserved_usd": 0.0062125, "time": 1794203866.188753}
+{"request_id": "6bcfb13f-589c-4709-94cc-548639c11a5d", "stage": "round3-neutral", "reserved_usd": -0.0052575, "actual_usd": 0.00085625, "response_id": "chatcmpl-EiCfwWg53QZ2kac8ir3ybiVJyAair"}
+{"request_id": "4f5674a2-6fe0-4670-abac-bd010c050f9d", "stage": "round3-neutral", "reserved_usd": 0.00613875, "time": 1794203866.345716}
+{"request_id": "ce5b879a-0b5f-44b0-8118-38660fdd0c9d", "stage": "round3-neutral", "reserved_usd": -0.0048225, "actual_usd": 0.0011725, "response_id": "chatcmpl-EiCfxsQvgDtxFv6dW6tNPUv9q55lD"}
+{"request_id": "bc029951-932d-4043-8cca-ec26146b1536", "stage": "round3-neutral", "reserved_usd": 0.0062775, "time": 1794203867.225086}
+{"request_id": "9ed698d8-34cc-43af-8f7e-b528814bcc86", "stage": "round3-neutral", "reserved_usd": -0.00530625, "actual_usd": 0.0008375, "response_id": "chatcmpl-EiCfxKFBUndnEpzN7UQCa9RP0YbOI"}
+{"request_id": "ac571d10-8421-41c7-b764-d40928ad28d5", "stage": "round3-neutral", "reserved_usd": 0.006215, "time": 1794203867.4113011}
+{"request_id": "46c01ce4-126d-4e9b-829e-ab164ecb08a3", "stage": "round3-neutral", "reserved_usd": -0.0053, "actual_usd": 0.0009125, "response_id": "chatcmpl-EiCfyJRh1otuQB2d73bQIjubDt9VL"}
+{"request_id": "bc029951-932d-4043-8cca-ec26146b1536", "stage": "round3-neutral", "reserved_usd": -0.005175, "actual_usd": 0.0011025, "response_id": "chatcmpl-EiCfzhTVkZHbP1U6hKzgX9q2wItvV"}
+{"request_id": "4f5674a2-6fe0-4670-abac-bd010c050f9d", "stage": "round3-neutral", "reserved_usd": -0.00488125, "actual_usd": 0.0012575, "response_id": "chatcmpl-EiCfy4BztkInniZ4FsFwDxvsUta1F"}
+{"request_id": "ac571d10-8421-41c7-b764-d40928ad28d5", "stage": "round3-neutral", "reserved_usd": -0.00513625, "actual_usd": 0.00107875, "response_id": "chatcmpl-EiCfz3uJ5AlOIlv3gEPvkD85rbTaO"}

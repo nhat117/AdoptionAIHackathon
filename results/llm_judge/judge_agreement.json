@@ -1,0 +1,747 @@
+{
+  "original": {
+    "complete_groups": 0,
+    "criteria": {
+      "semantic_equivalence": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "translation_accuracy": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "linguistic_naturalness": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "authority_equivalence": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "persuasive_strength_equivalence": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "cultural_pragmatic_appropriateness": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      }
+    },
+    "all_valid_score_distributions": {
+      "semantic_equivalence": {},
+      "translation_accuracy": {},
+      "linguistic_naturalness": {},
+      "authority_equivalence": {},
+      "persuasive_strength_equivalence": {},
+      "cultural_pragmatic_appropriateness": {}
+    },
+    "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+  },
+  "revised": {
+    "complete_groups": 0,
+    "criteria": {
+      "semantic_equivalence": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "translation_accuracy": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "linguistic_naturalness": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "authority_equivalence": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "persuasive_strength_equivalence": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      },
+      "cultural_pragmatic_appropriateness": {
+        "score_distribution": {},
+        "complete_groups": 0,
+        "exact_agreement_groups": 0,
+        "within_one_point_groups": 0,
+        "substantial_disagreement_groups": 0,
+        "mean_pairwise_absolute_difference": null,
+        "pairwise_quadratic_weighted_kappa": {
+          "0-1": null,
+          "0-2": null,
+          "1-2": null
+        }
+      }
+    },
+    "all_valid_score_distributions": {
+      "semantic_equivalence": {},
+      "translation_accuracy": {},
+      "linguistic_naturalness": {},
+      "authority_equivalence": {},
+      "persuasive_strength_equivalence": {},
+      "cultural_pragmatic_appropriateness": {}
+    },
+    "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+  },
+  "caveat": "Repeated judgments share one model and may share systematic biases. Cultural equivalence requires external validation.",
+  "per_language": {
+    "en": {
+      "original": {
+        "complete_groups": 0,
+        "criteria": {
+          "semantic_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "translation_accuracy": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "linguistic_naturalness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "authority_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "persuasive_strength_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "cultural_pragmatic_appropriateness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          }
+        },
+        "all_valid_score_distributions": {
+          "semantic_equivalence": {},
+          "translation_accuracy": {},
+          "linguistic_naturalness": {},
+          "authority_equivalence": {},
+          "persuasive_strength_equivalence": {},
+          "cultural_pragmatic_appropriateness": {}
+        },
+        "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+      },
+      "revised": {
+        "complete_groups": 0,
+        "criteria": {
+          "semantic_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "translation_accuracy": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "linguistic_naturalness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "authority_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "persuasive_strength_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "cultural_pragmatic_appropriateness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          }
+        },
+        "all_valid_score_distributions": {
+          "semantic_equivalence": {},
+          "translation_accuracy": {},
+          "linguistic_naturalness": {},
+          "authority_equivalence": {},
+          "persuasive_strength_equivalence": {},
+          "cultural_pragmatic_appropriateness": {}
+        },
+        "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+      }
+    },
+    "vi": {
+      "original": {
+        "complete_groups": 0,
+        "criteria": {
+          "semantic_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "translation_accuracy": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "linguistic_naturalness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "authority_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "persuasive_strength_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "cultural_pragmatic_appropriateness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          }
+        },
+        "all_valid_score_distributions": {
+          "semantic_equivalence": {},
+          "translation_accuracy": {},
+          "linguistic_naturalness": {},
+          "authority_equivalence": {},
+          "persuasive_strength_equivalence": {},
+          "cultural_pragmatic_appropriateness": {}
+        },
+        "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+      },
+      "revised": {
+        "complete_groups": 0,
+        "criteria": {
+          "semantic_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "translation_accuracy": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "linguistic_naturalness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "authority_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "persuasive_strength_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "cultural_pragmatic_appropriateness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          }
+        },
+        "all_valid_score_distributions": {
+          "semantic_equivalence": {},
+          "translation_accuracy": {},
+          "linguistic_naturalness": {},
+          "authority_equivalence": {},
+          "persuasive_strength_equivalence": {},
+          "cultural_pragmatic_appropriateness": {}
+        },
+        "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+      }
+    },
+    "zh": {
+      "original": {
+        "complete_groups": 0,
+        "criteria": {
+          "semantic_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "translation_accuracy": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "linguistic_naturalness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "authority_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "persuasive_strength_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "cultural_pragmatic_appropriateness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          }
+        },
+        "all_valid_score_distributions": {
+          "semantic_equivalence": {},
+          "translation_accuracy": {},
+          "linguistic_naturalness": {},
+          "authority_equivalence": {},
+          "persuasive_strength_equivalence": {},
+          "cultural_pragmatic_appropriateness": {}
+        },
+        "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+      },
+      "revised": {
+        "complete_groups": 0,
+        "criteria": {
+          "semantic_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "translation_accuracy": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "linguistic_naturalness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "authority_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "persuasive_strength_equivalence": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          },
+          "cultural_pragmatic_appropriateness": {
+            "score_distribution": {},
+            "complete_groups": 0,
+            "exact_agreement_groups": 0,
+            "within_one_point_groups": 0,
+            "substantial_disagreement_groups": 0,
+            "mean_pairwise_absolute_difference": null,
+            "pairwise_quadratic_weighted_kappa": {
+              "0-1": null,
+              "0-2": null,
+              "1-2": null
+            }
+          }
+        },
+        "all_valid_score_distributions": {
+          "semantic_equivalence": {},
+          "translation_accuracy": {},
+          "linguistic_naturalness": {},
+          "authority_equivalence": {},
+          "persuasive_strength_equivalence": {},
+          "cultural_pragmatic_appropriateness": {}
+        },
+        "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
+      }
+    }
+  }
+}

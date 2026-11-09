@@ -28,6 +28,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import Image as PDFImage
 from reportlab.platypus import (
     KeepTogether,
+    PageBreak,
     Paragraph,
     SimpleDocTemplate,
     Spacer,
@@ -224,7 +225,7 @@ def build_exports():
     section.left_margin = section.right_margin = Inches(.65)
     document.styles["Normal"].font.name = "Calibri"
     document.styles["Normal"].font.size = Pt(9)
-    document.core_properties.title = "Record provenance, stale evidence and budget relay"
+    document.core_properties.title = next(plain(v[1]) for kind, v in parsed if kind == "heading" and v[0] == 1)
     document.core_properties.author = "Author confirmation required"
     document.core_properties.created = document.core_properties.modified = datetime(2026, 11, 9, tzinfo=timezone.utc)
     styles = getSampleStyleSheet()
@@ -256,6 +257,9 @@ def build_exports():
         if kind == "heading":
             level, title = value
             references = title == "References"
+            if references:
+                document.add_page_break()
+                story.append(PageBreak())
             document.add_heading(plain(title), level=min(level, 3))
             story.append(Paragraph(escape(plain(title)), styles[f"Heading{min(level, 3)}"]))
         elif kind == "figure":

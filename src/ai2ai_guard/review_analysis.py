@@ -169,7 +169,7 @@ def historical_monitor(root):
 def run_analysis(root, draws=10000):
     def collection_snapshot():
         return {str(p.relative_to(root)): digest(p)
-                for folder in ("review_v3", "authority_wording_v2")
+                for folder in ("review_v3", "authority_wording_v2", "llm_judge", "round3_neutral")
                 for p in sorted((root / "results" / folder).rglob("*.jsonl"))
                 if p.name not in ("preflight.jsonl", "decisions.jsonl")}
 
@@ -251,11 +251,16 @@ def run_analysis(root, draws=10000):
     results["translations"] = inventory(root, rows)
     original_cost = ledger_total(root / "results/api_ledger.jsonl")
     new_cost = ledger_total(root / "results/review_v3/ledger.jsonl")
+    authorization = json.loads((root / "results/BUDGET_AUTHORIZATION.json").read_text())
+    aggregate_cap = authorization["authorized_total_usd"]
+    grants_path = root / "results/llm_judge/authorizations.jsonl"
+    if grants_path.exists():
+        aggregate_cap = max([aggregate_cap] + [r["aggregate_total_cap_usd"] for r in read(grants_path)])
     results["cost"] = {"original_accounted_usd": round(original_cost, 8),
                        "review_accounted_usd": round(new_cost, 8),
                        "aggregate_accounted_usd": round(math.fsum([original_cost, new_cost]), 8),
-                       "cap_usd": 20, "invoice": False}
-    if results["cost"]["aggregate_accounted_usd"] > 20:
+                       "cap_usd": aggregate_cap, "invoice": False}
+    if results["cost"]["aggregate_accounted_usd"] > aggregate_cap:
         raise ValueError("aggregate_budget_exceeded")
     raw_path = root / "results/review_v3/api_responses.jsonl"
     all_raw = read(raw_path) if raw_path.exists() else []
@@ -293,13 +298,16 @@ def run_analysis(root, draws=10000):
     review_ledger_path = root / "results/review_v3/ledger.jsonl"
     review_ledger = read(review_ledger_path) if review_ledger_path.exists() else []
     reserved_ids = {r["request_id"] for r in review_ledger if "time" in r}
-    reconciled_ids = {r["request_id"] for r in review_ledger if "actual_usd" in r}
+    reconciled_ids = {r["request_id"] for r in review_ledger if "actual_usd" in r or "accounted_usd" in r}
     results["provenance"]["api_attempts"] = len(reserved_ids)
     results["provenance"]["unresolved_reservations"] = sorted(reserved_ids - reconciled_ids)
     results["provenance"]["all_followup_returned_bodies"] = len(all_raw)
     from .authority_followup import analyze_followup
 
     results["authority_wording_followup"] = analyze_followup(root)
+    from .round3_analysis import analyze_round3
+
+    results["round3"] = analyze_round3(root)
     names = ["configs/review-v3.json", "configs/authority-wording-v2.json", "configs/claim-regressions-v2.json",
              "results/measurement_v2_replication/workers.jsonl", "results/measurement_v2_replication/inputs.jsonl",
              "results/historical-monitor/outputs.jsonl", "research/review_resolution/PRESERVED.json"]
@@ -308,6 +316,16 @@ def run_analysis(root, draws=10000):
     names += ["scripts/run_research_pipeline.py", "scripts/report_review_followup.py", "scripts/export_review_report.py"]
     names += ["research/review_resolution/fonts/NotoSansSC-report-subset.ttf"]
     names += ["src/ai2ai_guard/authority_followup.py"]
+    names += ["src/ai2ai_guard/round3_analysis.py", "scripts/report_round3.py"]
+    neutral_folder = root / "results/round3_neutral"
+    if (neutral_folder / "PROTOCOL.json").exists():
+        names += [str(p.relative_to(root)) for p in sorted(neutral_folder.glob("*.jsonl"))
+                  if p.name != "preflight.jsonl"]
+        names += ["results/round3_neutral/PROTOCOL.json", "configs/round3-neutral-v1.json"]
+    judge_folder = root / "results/llm_judge"
+    if (judge_folder / "PROTOCOL.json").exists():
+        names += [str(p.relative_to(root)) for p in sorted(judge_folder.glob("*.jsonl"))]
+        names += ["results/llm_judge/PROTOCOL.json"]
     if results["authority_wording_followup"] is not None:
         names += ["configs/authority-followup-v1.json", "results/authority_wording_v2/PROTOCOL.json",
                   "scripts/run_authority_wording_followup.py"]

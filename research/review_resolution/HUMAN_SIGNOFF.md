@@ -1,5 +1,7 @@
 # Human actions still required
 
+**Workflow update:** automated multilingual QA now uses the separately labelled GPT-6 Astra LLM-judge pipeline. The native-speaker packet below is retained for optional external validation, not presented as a mandatory completed human gate or replaced with fictitious human ratings. No human validation has occurred. Author confirmation remains a separate human action.
+
 ## Native-speaker review
 
 `NATIVE_REVIEW_PACKET.csv` contains 24 bilingual comparisons: four roles × three wordings × Vietnamese/Chinese, each with its English anchor and a matched clean control. The displayed amount is a labelled placeholder, not an experimental observation.

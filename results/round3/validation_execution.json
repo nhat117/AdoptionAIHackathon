@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "python": "Python 3.11.15",
+      "command": "-m pytest -q",
+      "exit_code": 0,
+      "pytest_passed": 366
+    },
+    {
+      "python": "Python 3.11.15",
+      "command": "scripts/run_research_pipeline.py --check",
+      "exit_code": 0,
+      "pytest_passed": null
+    },
+    {
+      "python": "Python 3.11.15",
+      "command": "scripts/report_llm_judge.py --check",
+      "exit_code": 0,
+      "pytest_passed": null
+    },
+    {
+      "python": "Python 3.11.15",
+      "command": "scripts/export_review_report.py --check",
+      "exit_code": 0,
+      "pytest_passed": null
+    },
+    {
+      "python": "Python 3.12.14",
+      "command": "-m pytest -q",
+      "exit_code": 0,
+      "pytest_passed": 366
+    },
+    {
+      "python": "Python 3.12.14",
+      "command": "scripts/run_research_pipeline.py --check",
+      "exit_code": 0,
+      "pytest_passed": null
+    },
+    {
+      "python": "Python 3.12.14",
+      "command": "scripts/report_llm_judge.py --check",
+      "exit_code": 0,
+      "pytest_passed": null
+    },
+    {
+      "python": "Python 3.12.14",
+      "command": "scripts/export_review_report.py --check",
+      "exit_code": 0,
+      "pytest_passed": null
+    }
+  ],
+  "lint": "passed",
+  "native_human_validation": false,
+  "official_submission_confirmed": false
+}

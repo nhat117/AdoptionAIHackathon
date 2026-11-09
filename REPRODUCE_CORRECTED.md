@@ -1,5 +1,48 @@
 # Corrected budget oversight experiments
 
+## Round 3 validity correction
+
+The canonical pipeline now generates the concise eight-section main manuscript,
+`research/ROUND3_APPENDIX.md`, wording×language cells/interactions, raw-field versus
+strict-schema diagnostics and R1–R5 remediation under `results/round3/`.
+The fixed 180-input neutral pilot is under `results/round3_neutral/`; its runner
+`run_round3_neutral.py` is a zero-call preflight by default and requires `--run`
+for missing assigned observations. It uses the exact existing neutral worker
+system/user-task/schema, GPT-5 minimal reasoning and 512 output tokens, with the
+shared aggregate US$20 guard. Do not replace returned malformed answers.
+
+`prepare_round3_review.py` prepares six actual bilingual peer-template anchors or
+checks/preserves existing annotations. It never signs native review. The exported
+submission checklist distinguishes prepared files from human sign-off and official
+submission. Rebuild/check analysis and Word/PDF using the same offline commands;
+no API credentials are required for reproduction.
+
+## GPT-6 Astra LLM-based multilingual QA
+
+Install `uv sync --frozen --extra dev --extra reports --extra judge`.
+`python scripts/run_llm_judge.py` extracts/alines all 5760 dispatched prompt records
+into 1920 trios, freezes provenance and estimates costs without API calls.
+`--verify-model` performs a metadata GET only. With working credentials,
+`--smoke --cap-usd CAP` attempts three independent Responses judgments; only a
+valid model/schema smoke enables `--run --cap-usd CAP --workers 4`.
+`--revisions --cap-usd CAP` drafts one separate correction set per flagged group
+and blindly reevaluates it three times. Historical prompts are never replaced.
+Caps are cumulative; the default aggregate cap remains the previously authorized
+US$20. A separately authorized higher `--aggregate-cap-usd` must be explicit.
+
+The configured proxy's smoke returned HTTP404; direct OpenAI metadata returned
+HTTP401. No Astra assessment or score was obtained. Set a rotated valid key in
+`OPENAI_API_KEY` and a Responses-enabled endpoint (`OPENAI_BASE_URL` unset or
+`https://api.openai.com/v1` for direct OpenAI). Do not hardcode or commit keys.
+The failed request's unresolved cost reservation is retained, not represented as
+verified billed inference. No model substitution or unsupported bulk run occurs.
+
+`python scripts/report_llm_judge.py --check` reproduces the six required artifacts
+offline. The canonical research pipeline also rebuilds/checks these artifacts and
+the report's explicitly **LLM-based, not human** validation section. Missing
+judgments are PENDING, not successful validation. The same model repeated three
+times may share biases; cultural equivalence still needs external validation.
+
 ## Current canonical pipeline (post-review)
 
 Run `uv sync --frozen --extra dev --extra reports`, then `uv run python scripts/run_research_pipeline.py` and `uv run python scripts/export_review_report.py`. Both commands are offline. Their `--check` modes reject stale analysis, tables, figures, Word and PDF exports. `report_measurement_replication.py --review` and `report_validation.py` now route to this pipeline; `report_validation.py --legacy` reconstructs the earlier report separately without replacing the canonical report.

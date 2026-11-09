@@ -1,0 +1,12 @@
+{
+  "git_commit": "2d2a86d",
+  "sha256": {
+    "research/VALIDATED_RESEARCH_REPORT.md": "9efc6b4b77b976737628e8019d86feb32544457a5286bdd3b6a4bb568cbd309b",
+    "research/VALIDATED_RESEARCH_REPORT.docx": "5bc2ae17502b06e4cf809268cd6d264b38263ab45c81efc05eda871b392243df",
+    "submission/final-review/Authority_Language_Final.pdf": "e5f707ae5b0525e39c037cccdc7c44ace2cbe3052a50cbe6ad048c98a256b461",
+    "results/WORD_REPORT_EXPORT.json": "1b5f0a279d502c2b2b56235275ffdfc1fd5acdf0fef59888f3089a402574ca3a",
+    "results/review_v3/EXPORT_REVIEW.json": "1de7005148d1fcbd885b5ca40705b55a23f759081ddf21ad3ec00fa267fb9575",
+    "results/review_v3/analysis.json": "ee23c560a4c51b775a01431078407192f7d997fecf229b42257f43f95c2386ae",
+    "research/review_resolution/STATUS.md": "c1e7469d11e7f1ac3c541bb07f31ccceda440e2b4bb43daf7d895333bd900f71"
+  }
+}

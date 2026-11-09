@@ -1,37 +1,23 @@
 {
   "source_markdown": "research/VALIDATED_RESEARCH_REPORT.md",
-  "source_sha256": "9efc6b4b77b976737628e8019d86feb32544457a5286bdd3b6a4bb568cbd309b",
+  "source_sha256": "5c9a32a1a993b19a3313bacbb5a6bc0992caceb7804f5cad92d7f6433e37358b",
   "word_file": "research/VALIDATED_RESEARCH_REPORT.docx",
-  "word_sha256": "5bc2ae17502b06e4cf809268cd6d264b38263ab45c81efc05eda871b392243df",
+  "word_sha256": "8908faf0e2fc41add32ab1b084b0f087b0271bb95b755ae591a1473e8bddf03d",
   "pdf_file": "submission/final-review/Authority_Language_Final.pdf",
-  "pdf_sha256": "e5f707ae5b0525e39c037cccdc7c44ace2cbe3052a50cbe6ad048c98a256b461",
+  "pdf_sha256": "6ae733189d8bb171ac70d23888155a432d0c7c0b7a6a1639503454e5382e974a",
   "table_rows_including_headers": [
-    8,
-    8,
     7,
-    10,
-    13,
-    11,
-    10,
-    13,
-    6,
-    7,
-    9,
-    7,
-    5
+    4,
+    4
   ],
   "embedded_cjk_font_sha256": "6fe03613582a099aa0f39c830e6fe9eb356fa9e21409b848c6bbd6fe574e82dc",
   "renderer_inputs_sha256": {
-    "renderer_script": "904165c7bbecdf3f150cc213144d9e3eaebf14fd559edaddddb373d860639117",
-    "dependency_lock": "8acc31c3c3a5731852692e3153360db5c67275f46e040fb5c90cc1c4c2ff2f74",
+    "renderer_script": "ea23c8fb85ce448b3d849bebb5725b7538ce6eb680fdd13ab0b081b1c236815a",
+    "dependency_lock": "30e73c5e767eca4053e30258caeff8800d5aa13a7b71a9f22d193a0dbffeb189",
     "embedded_cjk_font": "6fe03613582a099aa0f39c830e6fe9eb356fa9e21409b848c6bbd6fe574e82dc",
-    "canonical_markdown": "9efc6b4b77b976737628e8019d86feb32544457a5286bdd3b6a4bb568cbd309b",
-    "svg:results/review_v3/figures/monitor_comparison.svg": "cc1a9898278178af6a4b28857e9ba1f6cb33c7140be7b5bcc5493b691b62b064",
-    "svg:results/review_v3/figures/outcomes.svg": "d7dc7bfb54606437c3c5113e485525f257bb5395c957901c0bab3539bf96182a",
-    "svg:results/review_v3/figures/language_by_record.svg": "ab698754c6d0d865390a62e0cba033aeb4a2555bd1f61269239217ad5b9daf45",
-    "svg:results/review_v3/figures/authority_by_record.svg": "1bf85d8bb3b2e4bde26d5fd29b2a120365cf0d731e781ca8f9e32d4be553c274",
-    "svg:results/review_v3/figures/authority_wording_followup.svg": "c1143afe553018f54fc5abde82528decd020410c68c8e21be8072e26e9d86969",
-    "svg:results/review_v3/figures/historical_blind_failure.svg": "59f19bb8ebe6e7494376a04c9a889071acc3709d6e1390e66e07167c5299fad1"
+    "canonical_markdown": "5c9a32a1a993b19a3313bacbb5a6bc0992caceb7804f5cad92d7f6433e37358b",
+    "svg:results/round3/figures/neutral_outcomes.svg": "144dd9bd133761a8b1673be307651a63964dee24df65db52c019325e5c3c64a2",
+    "svg:results/round3/figures/wording_language.svg": "d15f403ce31770ba976cab15599adeab496d53f01cf4dbb8440ce0714bea8734"
   },
   "verification_contract": "Recorded artifact hashes, renderer/dependency/font/SVG/source hashes and Word text/image joins; not cross-OS raster byte equivalence",
   "render_environment": {
@@ -44,14 +30,10 @@
   "visual_review": "Export generation is not visual or human author review; see hash-bound EXPORT_REVIEW.json if present",
   "historical_word_reports": "Original canonical report/export archived at research/review_resolution/archive/1dcf401; other originals unchanged",
   "generated_sha256": {
-    "results/review_v3/figures/monitor_comparison.png": "39d7b39cdf4e917bde3f5a906893a566fc1022508cbe928c04adc94230b5792e",
-    "results/review_v3/figures/outcomes.png": "6e6597b1d6a05697b361a4d228e2756dd1c570c4a47361465f4a96035b38973d",
-    "results/review_v3/figures/language_by_record.png": "897d9ed3d76c9974dd93013b8825b62f71a6bfd1c6aeb120f09e686d23504faa",
-    "results/review_v3/figures/authority_by_record.png": "5be8e5ed420ff56f5dc5a689caa36f94cd369a93cf3a0e875efa10609fd61288",
-    "results/review_v3/figures/authority_wording_followup.png": "40e2f8ec4d1205af622e020ed9bf14ee74affb915fc18650389524291a6b3142",
-    "results/review_v3/figures/historical_blind_failure.png": "d1ac93b0f23dd36c0d43813ff071a2b595e4c23cd096022b898a6e90f008e5d6",
-    "research/VALIDATED_RESEARCH_REPORT.docx": "5bc2ae17502b06e4cf809268cd6d264b38263ab45c81efc05eda871b392243df",
-    "submission/final-review/Authority_Language_Final.docx": "5bc2ae17502b06e4cf809268cd6d264b38263ab45c81efc05eda871b392243df",
-    "submission/final-review/Authority_Language_Final.pdf": "e5f707ae5b0525e39c037cccdc7c44ace2cbe3052a50cbe6ad048c98a256b461"
+    "results/round3/figures/neutral_outcomes.png": "920673ee6a65586e9e9dd7164c0759c48d49ec9687435da2abca5d3b842c60fb",
+    "results/round3/figures/wording_language.png": "ee4ba46ffef4dc3fe729a447deafb8b1048f419cab0c47aa84237f9ca8ac5276",
+    "research/VALIDATED_RESEARCH_REPORT.docx": "8908faf0e2fc41add32ab1b084b0f087b0271bb95b755ae591a1473e8bddf03d",
+    "submission/final-review/Authority_Language_Final.docx": "8908faf0e2fc41add32ab1b084b0f087b0271bb95b755ae591a1473e8bddf03d",
+    "submission/final-review/Authority_Language_Final.pdf": "6ae733189d8bb171ac70d23888155a432d0c7c0b7a6a1639503454e5382e974a"
   }
 }

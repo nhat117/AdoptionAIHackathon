@@ -185,6 +185,11 @@ def main():
     assert not set(review_ids) & saved_ids, (
         "Response IDs reused across old and review studies"
     )
+    judge_path = OUT / "llm_judge/raw_responses.jsonl"
+    judge_responses = rows(judge_path) if judge_path.exists() else []
+    judge_ids = [r["raw_response"]["id"] for r in judge_responses]
+    assert len(judge_ids) == len(set(judge_ids))
+    assert not set(judge_ids) & (saved_ids | set(review_ids))
     provenance = {
         "branch": subprocess.check_output(
             ["git", "branch", "--show-current"], cwd=ROOT, text=True
@@ -197,7 +202,10 @@ def main():
         "committee_games": 24,
         "committee_calls": 504,
         "successful_saved_model_calls": len(responses),
-        "successful_saved_model_calls_all_studies": len(saved_ids) + len(review_ids),
+        "successful_saved_model_calls_all_studies": (
+            len(saved_ids) + len(review_ids) + len(judge_ids)
+        ),
+        "llm_judge_returned_calls": len(judge_ids),
         "post_review_saved_calls": len(review_ids),
         "interrupted_game_responses_without_saved_body": orphaned,
         "returned_models": dict(Counter(r["model"] for r in responses)),

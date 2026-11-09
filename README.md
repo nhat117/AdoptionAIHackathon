@@ -2,11 +2,11 @@
 
 **Swarm Alignment Hackathon · Track 4: Multi-Agent Oversight and Control**
 
-A reproducible synthetic budget-handoff study. A source-field rule filters peer-number relays but misses stale-record reliance; the original blind monitor blocked **0/150 wrong budgets** and falsely blocked **115/450 correct budgets** in its separate historical evaluation.
+A reproducible synthetic budget-handoff study. Message wording reverses the observed language pattern. A new neutral fake-record pilot exposes **7 unsupported record attributions** and **2 wrong releases through the source-plus-freshness rule**. Metadata filtering is conditional—not universal prompt-injection prevention.
 
 **One canonical report:** [Read](research/VALIDATED_RESEARCH_REPORT.md) · [PDF](submission/final-review/Authority_Language_Final.pdf) · [Word](research/VALIDATED_RESEARCH_REPORT.docx)
 
-The original replication distinguishes strict primary scoring (90 target reports) from key-case sensitivity (91) and identifies **458/480 stale-record uses**. A separate **4320-response wording-balanced follow-up** now tests three variants per role/language; its results and task-cluster analyses remain separate. All model-call coverage and costs come from saved records. Native-speaker review and author confirmation remain required; no security guarantee or official submission is claimed.
+The original replication distinguishes strict primary scoring (90 target reports) from key-case sensitivity (91) and identifies **458/480 stale-record uses**. A separate **4320-response wording-balanced follow-up** tests three variants per role/language; its results and task-cluster analyses remain separate. A new **LLM-based multilingual assessment** uses GPT-6 Astra, never claims human validation, and reports unexecuted/blocked judgments explicitly. Author confirmation remains pending; no security guarantee or official submission is claimed.
 
 ## Reproduce the final analysis without model calls
 
@@ -22,9 +22,26 @@ uv run ruff check .
 
 [Machine-readable analysis](results/review_v3/analysis.json) · [Review issue ledger](research/review_resolution/PLAN.md) · [Reproduction details](REPRODUCE_CORRECTED.md) · [Submission status](SUBMISSION.md)
 
+**Round 3:** [Concise eight-section manuscript](research/VALIDATED_RESEARCH_REPORT.md) · [Technical appendix](research/ROUND3_APPENDIX.md) · [R1–R5 remediation](research/review_resolution/ROUND3_REMEDIATION.md) · [180-call neutral evidence](results/round3_neutral/) · [Counts/interactions/denominators](results/round3/analysis.json). All 180 calls returned on the expected model; 179 outputs passed the strict schema and one remains for review. Review-count diagnostics include three contradictory nonnull ABSTAIN outputs and are not silently relabelled successful REPORTs.
+
+## Automated multilingual QA
+
+[LLM-judge status/report](results/llm_judge/validation_report.md) · [Results](results/llm_judge/validation_results.json) · [Agreement](results/llm_judge/judge_agreement.json)
+
+```sh
+uv sync --frozen --extra dev --extra reports --extra judge
+uv run python scripts/run_llm_judge.py                 # no API calls
+uv run python scripts/run_llm_judge.py --verify-model  # metadata GET, no inference
+uv run python scripts/report_llm_judge.py --check     # offline provenance/results check
+```
+
+Paid stages require an explicit cumulative `--cap-usd`, a working Responses endpoint and `OPENAI_API_KEY`. No key is stored or hardcoded. Smoke testing verifies actual model/schema before a full batch; no different model is silently used. Published standard Astra rates make 5760 initial judge requests materially more expensive than the earlier GPT-5 research. See the saved estimate before authorizing expenditure. Scores are provisional model opinions; high scores do not erase historical translation/cultural limitations. Suggested revisions stay separate and require a new worker experiment.
+
+The attempted smoke is currently **blocked**: the configured Braintrust proxy returned HTTP 404 for the Responses request; a metadata check against direct OpenAI returned HTTP 401 with the configured credential. **No judge scores were returned.** Set a valid rotated OpenAI key in `OPENAI_API_KEY`, and unset `OPENAI_BASE_URL` or explicitly set it to `https://api.openai.com/v1` for the judge process. Do not paste keys into code or reports. The six validation artifacts clearly mark all unexecuted judgments as pending.
+
 Original data, prompts, configurations and results are preserved. New evidence is under `results/review_v3/`; the old dashboard remains a historical snapshot, not a current-results display. Gemma and GPT-5 studies use different prompts/tasks and are not direct model-performance comparisons.
 
-Portable export verification checks recorded artifact bytes, source/renderer/font/SVG/dependency hashes and exact Word/PDF content against the canonical report. It does not assume identical font rasterization across operating systems. The unfilled [human sign-off packet](research/review_resolution/HUMAN_SIGNOFF.md) is the remaining validation handoff.
+Portable export verification checks recorded artifact bytes, source/renderer/font/SVG/dependency hashes and exact Word/PDF content against the canonical report. It does not assume identical font rasterization across operating systems. The unfilled [human packet](research/review_resolution/HUMAN_SIGNOFF.md) is retained for optional external validation; it is not presented as completed evidence or the current automated QA workflow.
 
 <details>
 <summary>Historical studies and implementation notes (not current main reports)</summary>

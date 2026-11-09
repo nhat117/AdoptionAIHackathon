@@ -1,5 +1,30 @@
 ## Scope
 
+### Round 3 scientific-validity correction
+
+- **R1:** reanalyzed all 4320 answers with task-blocked wording×language interactions (18 Holm-corrected contrasts per scoring definition). Strict no-record counts are 25/6/64, 66/46/50, 51/59/43 (/80 each). The review's 66/48/50 and 51/59/44 are raw numeric-field diagnostics including three contradictory ABSTAIN+nonnull-target outputs. Both definitions and all ambiguous transcripts are retained; no universal language-persuasion claim.
+- **R2:** completed **180/180** neutral-prompt fake-record calls on the expected `gpt-5-2025-08-07`, minimal reasoning/512 tokens. Exact existing neutral system/user framing/schema, no new strict source warning. **71 known wrong reports, 7 unsupported record attributions, 1 invalid-format output**. All outputs retained; strict-pilot results remain separate.
+- **R3:** unchanged source+freshness rule allowed **2/71** known wrong neutral reports, blocking 69/71 and falsely blocking 0/45 known correct reports. Original 549/549 and 0/479 are explicitly conditional; separate corrupt-current inputs pass 72/72 wrong reports. No post-hoc defence patch to improve the headline.
+- **R4:** four plain abstract findings, eight main sections, **three main tables/two figures**. Normalized tables, detailed statistics, denominator checks and source audits moved to `ROUND3_APPENDIX.md` and machine-readable appendices. Valid references retained; OpenAI documentation citation uses APA author/date form.
+- **R5:** actual neutral-template bilingual sheet prepared (6 rows), existing 24-row wording sheet retained, all UNREVIEWED. Author information and official submission remain unconfirmed. Final PDF/Word and a submission checklist are prepared; no fictitious review/sign-off.
+- Remediation statuses: **R1–R4 Fixed; R5 Partially Fixed** (preparation done, external review/author/submission actions pending). Each issue's root cause, changed files, tests, results and limitations are mapped in `ROUND3_REMEDIATION.md` / `results/round3/remediation.json`.
+- Neutral pilot incremental token-based accounting is US$0.1984725. Aggregate conservative accounting including the unresolved Astra reservation is **US$17.71277785 / US$20**, not a provider invoice. Historical data and archive hashes remain checked.
+- Final Round 3 local checks: **366 tests pass on Python 3.11 and 3.12**, lint/data/archive checks pass, all 39 analysis artifacts and six portable export artifacts reproduce/check. The five-page manuscript's three tables/two figures were inspected; native review, authors and official submission are still not claimed complete.
+
+Earlier engineering stages below remain evidence, not competing main manuscripts or a claim that the blocked Astra assessment ran successfully.
+
+### Astra LLM-judge pipeline update — implementation complete, evaluation blocked
+
+- Official OpenAI Python SDK/Responses integration targets exactly `gpt-6-astra`, high reasoning and strict structured JSON. No model substitution.
+- Extracted **1920 aligned groups / 5760 actual dispatched prompt records** with raw text, condition/role/variant IDs and source hashes. Three separate position-balanced randomized evaluations per group; English is not treated as gold.
+- Implemented evidence-bound rubric validation, provisional median/disagreement/critical-change outcomes, intra-model score distributions/agreement/kappa, capped exponential retries, durable responses/accounting, separate versioned revision drafts and blinded reevaluation.
+- All six requested result artifacts are generated reproducibly, but **all 1920 groups remain PENDING**. Zero judge responses/scores were returned.
+- Actual access checks: Braintrust metadata HTTP405, its Responses smoke HTTP404, direct OpenAI metadata HTTP401 with the configured credential. The smoke stopped; no unsupported full batch was issued. The failed request's conservative reservation is retained, not described as verified billed inference.
+- The report adds the exact requested LLM-validation section, explicitly not human validation. Automated assessment replaces the proposed manual QA gate without erasing historical linguistic/cultural caveats or changing a GPT-5 outcome.
+- A working Responses endpoint and a valid rotated environment key are required to resume. Full initial evaluation requires 5760 requests; the saved Standard-rate estimate and explicit cumulative spending caps remain visible.
+
+The completed engineering/data work below remains separately scoped; it is not being presented as completed Astra judging.
+
 ### Continuation update
 
 - **4320/4320** new wording-balanced workers completed without collection errors: 20 reused tasks × 4 roles × 3 variants × 3 languages × 3 records × clean/attack. Original data/templates and shared log prefixes are preserved.
