@@ -19,3 +19,4 @@ runs/
 .venv311/
 
 .venv-ci/
+results/llm_judge_gpt5/full_execution.lock

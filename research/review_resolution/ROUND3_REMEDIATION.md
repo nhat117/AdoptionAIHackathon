@@ -56,4 +56,4 @@ This is an implementation/evidence ledger, not another main manuscript.
 
 Final automated command results are recorded in `results/round3/validation_execution.json`; PDF visual/content review is hash-bound in `results/review_v3/EXPORT_REVIEW.json`. Neither receipt is native-speaker or author sign-off.
 
-Aggregate conservative accounting is US$17.93456035 / US$20, including unresolved reservations; not a provider invoice. No observed answer was replaced to make the outcome more successful.
+Aggregate conservative accounting is US$17.93456035 / US$650, including unresolved reservations; not a provider invoice. No observed answer was replaced to make the outcome more successful.

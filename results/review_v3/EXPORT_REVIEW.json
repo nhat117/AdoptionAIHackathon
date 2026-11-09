@@ -3,7 +3,7 @@
   "pdf_sha256": "48e5c732a3591b382d48575986b39dd0e7d7898ad61aea17cf97a53d6e177fe3",
   "pdf_pages": 5,
   "reviewer": "AI agent, not human/native-speaker or submission sign-off",
-  "scope": "PDF/Word source-content joins checked; reviewed updated judge paragraph, three tables and two figures.",
+  "scope": "Portable PDF/Word content/image joins passed; author-edited final proofreading remains pending author confirmation.",
   "human_linguistic_validation": false,
   "official_submission_confirmed": false
 }

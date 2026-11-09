@@ -54,4 +54,7 @@ This automated workflow replaces the proposed manual review gate but does NOT re
 Dry-run: `python scripts/run_gpt5_judge.py`. Paid smoke: `--smoke --cap-usd CAP`; initial corpus: `--run --cap-usd CAP`; revisions: `--revisions --cap-usd CAP`. Caps are cumulative; the recorded aggregate authorization cannot be exceeded. Offline reports: `python scripts/report_llm_judge.py --profile gpt5 [--check]`.
 
 
-GPT-5 is also the worker model family: correlated errors and self-preference are additional limitations. The legacy rubric identifier denotes the shared rubric only, not Astra execution. Failed Astra provenance remains in `results/llm_judge/`. This smoke covers one group only, not the corpus.
+GPT-5 is also the worker model family: correlated errors and self-preference are additional limitations. The legacy rubric identifier denotes the shared rubric only, not Astra execution. Failed Astra provenance remains in `results/llm_judge/`. The smoke alone covers one group; actual corpus coverage is reported above.
+
+
+Full execution uses `python scripts/run_full_gpt5_judge.py --run --cap-usd 650 --workers 8` under an explicit cumulative US$650 user authorization. Eight concurrent remote requests and append-only evidence shards do not change the frozen judgment instrument. Revisions use `--revisions --cap-usd 650 --workers 8` and the same remaining aggregate budget.

@@ -26,6 +26,8 @@ uv run ruff check .
 
 **Active translation judge:** GPT-5 through Braintrust Chat Completions, in the separate [`results/llm_judge_gpt5/`](results/llm_judge_gpt5/) profile. Offline preflight: `python scripts/run_gpt5_judge.py`; paid stages require an explicit cumulative `--cap-usd`. The failed Astra profile remains preserved. Judging uses the same model family as workers and is **LLM-based, not human validation**; a smoke test does not validate the full corpus.
 
+**Authorized full run:** the user approved a cumulative **US$650** research cap, recorded separately without changing the original US$20 authorization. `python scripts/run_full_gpt5_judge.py` is a no-call preflight; add `--run --cap-usd 650 --workers 8` for initial judging or `--revisions --cap-usd 650 --workers 8` for flagged-group drafting/reassessment. Both stages share the same remaining budget. Evidence is append-only and sharded; actual completion is reported in the validation artifacts, never inferred from a launched process.
+
 ## Automated multilingual QA
 
 [LLM-judge status/report](results/llm_judge/validation_report.md) · [Results](results/llm_judge/validation_results.json) · [Agreement](results/llm_judge/judge_agreement.json)

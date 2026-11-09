@@ -152,6 +152,6 @@ Historical Gemma-worker/GPT-5-monitor evaluation remains separate: wrong ALLOW/B
 
 ## A7. Reproducibility and pending preparation
 
-Protected original data/result files: 271. All archive manifests, raw response/prompt joins, duplicate IDs and source hashes are checked. Original study metrics are not recomputed under a new unpublished definition. Aggregate accounting: US$17.93456035, cap US$20; not an invoice.
+Protected original data/result files: 271. All archive manifests, raw response/prompt joins, duplicate IDs and source hashes are checked. Original study metrics are not recomputed under a new unpublished definition. Aggregate accounting: US$17.93456035, cap US$650; not an invoice.
 
 The blocked Astra attempt has no returned judge scores. Native sheets are unreviewed; author identities/affiliations await confirmation; official submission is unconfirmed. See the machine-readable Round 3 audit/remediation report and submission checklist.

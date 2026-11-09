@@ -1,6 +1,6 @@
 # Human actions still required
 
-**Workflow update:** automated multilingual QA now uses the separately labelled GPT-6 Astra LLM-judge pipeline. The native-speaker packet below is retained for optional external validation, not presented as a mandatory completed human gate or replaced with fictitious human ratings. No human validation has occurred. Author confirmation remains a separate human action.
+**Workflow update:** the active automated multilingual QA uses the separately versioned Braintrust GPT-5 LLM-judge pipeline (`results/llm_judge_gpt5/`). Its three-response smoke test is complete; full-corpus validation is not. The failed Astra attempt remains preserved separately. The native-speaker packet below is retained for optional external validation, not presented as a completed human gate or replaced with fictitious human ratings. No human validation has occurred. Author confirmation remains a separate human action.
 
 ## Native-speaker review
 
@@ -20,4 +20,4 @@ Please supply each author's confirmed display name and affiliation, preferred or
 
 ## Submission
 
-After author confirmation and native review, regenerate and inspect the final PDF/Word. Official submission is a separate user action; a pushed PR is not a hackathon submission.
+After confirmed author edits and any language-review changes, regenerate and inspect the final PDF/Word. If native review has not occurred, retain that limitation rather than marking it complete. Official submission requires the actual destination, required declarations and authorized access; a pushed PR is not a hackathon submission. Retain an actual confirmation if submission succeeds.

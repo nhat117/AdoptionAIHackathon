@@ -28,7 +28,9 @@ OUT = Path("results/llm_judge")
 
 
 def read(path):
-    return [json.loads(x) for x in path.read_text().splitlines()] if path.exists() else []
+    from ai2ai_guard.gpt5_judge_batch import read_records
+
+    return read_records(path)
 
 
 def csv_text(rows, fields):
@@ -71,6 +73,14 @@ def build(root=ROOT, profile="astra"):
     for name, expected in protocol["source_sha256"].items():
         if sha((root / name).read_bytes()) != expected:
             raise ValueError("judge_collection_code_changed: " + name)
+    execution_path = folder / "FULL_EXECUTION_PROTOCOL.json"
+    execution = json.loads(execution_path.read_text()) if execution_path.exists() else None
+    if execution:
+        if execution["instrument_protocol_sha256"] != sha((folder / "PROTOCOL.json").read_bytes()):
+            raise ValueError("full_execution_instrument_changed")
+        for name, expected in execution["source_sha256"].items():
+            if sha((root / name).read_bytes()) != expected:
+                raise ValueError("full_judge_execution_code_changed: " + name)
     raw = read(folder / "raw_responses.jsonl")
     if profile == "gpt5":
         for record in raw:
@@ -79,6 +89,8 @@ def build(root=ROOT, profile="astra"):
                     or record.get("max_output_tokens") != protocol["max_output_tokens"]
                     or record.get("messages_sha256") != sha(record["messages"])):
                 raise ValueError("gpt5_raw_profile_or_request_hash_mismatch")
+            if record.get("execution_version") and (not execution or record.get("execution_protocol_sha256") != sha(execution_path.read_bytes())):
+                raise ValueError("gpt5_raw_full_execution_mismatch")
     raw_by_id = {r["raw_response"]["id"]: r for r in raw}
     if len(raw_by_id) != len(raw):
         raise ValueError("duplicate_raw_judge_response_id")
@@ -250,13 +262,19 @@ def build(root=ROOT, profile="astra"):
     if profile == "gpt5":
         summary["profile"] = protocol["version"]
         summary["same_worker_judge_model_family"] = True
-        lines.append("\nGPT-5 is also the worker model family: correlated errors and self-preference are additional limitations. The legacy rubric identifier denotes the shared rubric only, not Astra execution. Failed Astra provenance remains in `results/llm_judge/`. This smoke covers one group only, not the corpus.\n")
+        summary["full_execution_protocol"] = execution
+        lines.append("\nGPT-5 is also the worker model family: correlated errors and self-preference are additional limitations. The legacy rubric identifier denotes the shared rubric only, not Astra execution. Failed Astra provenance remains in `results/llm_judge/`. The smoke alone covers one group; actual corpus coverage is reported above.\n")
         lines = [line.replace("Raw Responses API bodies", "Raw Chat Completions API bodies")
                  .replace("scripts/run_llm_judge.py", "scripts/run_gpt5_judge.py") for line in lines]
         lines[-2] = ("Dry-run: `python scripts/run_gpt5_judge.py`. Paid smoke: `--smoke --cap-usd CAP`; "
                      "initial corpus: `--run --cap-usd CAP`; revisions: `--revisions --cap-usd CAP`. "
                      "Caps are cumulative; the recorded aggregate authorization cannot be exceeded. "
                      "Offline reports: `python scripts/report_llm_judge.py --profile gpt5 [--check]`.\n")
+        if execution:
+            lines.append("\nFull execution uses `python scripts/run_full_gpt5_judge.py --run --cap-usd 650 --workers 8` "
+                         "under an explicit cumulative US$650 user authorization. Eight concurrent remote requests and "
+                         "append-only evidence shards do not change the frozen judgment instrument. Revisions use "
+                         "`--revisions --cap-usd 650 --workers 8` and the same remaining aggregate budget.\n")
         artifacts[OUT / "validation_results.json"] = json.dumps({"summary": summary, "groups": results}, ensure_ascii=False, indent=2) + "\n"
         artifacts[OUT / "validation_report.md"] = "\n".join(lines).rstrip() + "\n"
         artifacts = {output / path.relative_to(OUT): value for path, value in artifacts.items()}

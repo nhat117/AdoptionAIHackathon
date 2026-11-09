@@ -256,6 +256,9 @@ def run_analysis(root, draws=10000):
     grants_path = root / "results/llm_judge/authorizations.jsonl"
     if grants_path.exists():
         aggregate_cap = max([aggregate_cap] + [r["aggregate_total_cap_usd"] for r in read(grants_path)])
+    explicit_grant = root / "results/LLM_JUDGE_BUDGET_AUTHORIZATION_650.json"
+    if explicit_grant.exists():
+        aggregate_cap = max(aggregate_cap, json.loads(explicit_grant.read_text())["authorized_total_usd"])
     results["cost"] = {"original_accounted_usd": round(original_cost, 8),
                        "review_accounted_usd": round(new_cost, 8),
                        "aggregate_accounted_usd": round(math.fsum([original_cost, new_cost]), 8),
@@ -331,6 +334,10 @@ def run_analysis(root, draws=10000):
         names += [str(p.relative_to(root)) for p in sorted(gpt5_folder.glob("*.jsonl"))]
         names += ["results/llm_judge_gpt5/PROTOCOL.json", "src/ai2ai_guard/gpt5_judge_api.py",
                   "scripts/run_gpt5_judge.py"]
+        execution_path = gpt5_folder / "FULL_EXECUTION_PROTOCOL.json"
+        if execution_path.exists():
+            names += ["results/llm_judge_gpt5/FULL_EXECUTION_PROTOCOL.json", "src/ai2ai_guard/gpt5_judge_batch.py",
+                      "scripts/run_full_gpt5_judge.py", "results/LLM_JUDGE_BUDGET_AUTHORIZATION_650.json"]
     if results["authority_wording_followup"] is not None:
         names += ["configs/authority-followup-v1.json", "results/authority_wording_v2/PROTOCOL.json",
                   "scripts/run_authority_wording_followup.py"]

@@ -34,3 +34,15 @@ The smoke completed with three valid structured responses on the expected
 `gpt-5-2025-08-07` snapshot. `SMOKE_COMPLETE.json` binds all response IDs to the
 frozen GPT-5 protocol. Only one of 1920 aligned trios has received three judgments;
 this does not establish full-corpus linguistic validity.
+
+## Subsequent full-run authorization
+
+The user explicitly selected **US$650 total** in the budget question. This is
+cumulative research spending, not US$650 extra. The approval is recorded in
+`results/LLM_JUDGE_BUDGET_AUTHORIZATION_650.json`, leaving the original authorization
+and smoke instrument untouched. `run_full_gpt5_judge.py` and
+`gpt5_judge_batch.py` extend only execution/accounting/storage: eight remote
+requests, the same frozen GPT-5 instrument, shared atomic reservations and 8 MiB
+append-only evidence shards. `FULL_EXECUTION_PROTOCOL.json` freezes the extension.
+Revisions use the same remaining cap; exhaustion stops rather than authorizing
+more spending. Native review, authors and official submission are not implied.

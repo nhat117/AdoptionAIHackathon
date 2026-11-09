@@ -2,6 +2,20 @@
 
 ### Active judge switched to Braintrust GPT-5
 
+**Subsequent full-run approval:** the user explicitly authorized **US$650 total**
+cumulative research spending. The original US$20 authorization is preserved;
+the separate approval covers prior costs, new judgments, retries and revisions.
+An execution-only extension (`run_full_gpt5_judge.py`) supports eight concurrent
+remote requests, atomically enforced shared spending, safe recovery of saved raw
+answers, and append-only evidence shards below GitHub file-size limits.
+The original model, rubric, prompts, language randomization and inference
+settings remain frozen. Actual coverage/status remains in the generated report;
+launching a full run is not a claim of completed validation. The older smoke
+allocation below documents the earlier stage and is not the new authorization.
+The execution extension passes **390 tests on Python 3.11 and 3.12**, including
+concurrent cap enforcement, sharded evidence preservation and no-paid-call
+recovery/resume tests. Lint and offline report/export checks pass.
+
 The user-requested switch uses a separate `braintrust-gpt5-multilingual-v1`
 profile and the working Braintrust **Chat Completions** route, not the failed
 Astra Responses route. See `GPT5_JUDGE_SWITCH.md` and

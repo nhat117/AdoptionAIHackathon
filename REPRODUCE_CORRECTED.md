@@ -4,14 +4,48 @@
 
 ### Active Braintrust GPT-5 judge
 
+**Full-run authorization update:** the user explicitly approved **US$650 total**
+research spending, including all previous spending, failed reservations, retries
+and revisions. The separate authorization is
+`results/LLM_JUDGE_BUDGET_AUTHORIZATION_650.json`; the historical US$20 record is
+unchanged. Use the new execution-only extension:
+
+```sh
+python scripts/run_full_gpt5_judge.py
+python scripts/run_full_gpt5_judge.py --run --cap-usd 650 --workers 8
+python scripts/run_full_gpt5_judge.py --revisions --cap-usd 650 --workers 8
+```
+
+The first command makes no API calls. The paid stages require the successful
+smoke receipt and share one cumulative aggregate cap. Eight concurrent requests
+keep local load modest. Original instrument/prompts/settings are unchanged;
+`FULL_EXECUTION_PROTOCOL.json` freezes the execution extension and authorization.
+New JSONL evidence is split into append-only 8 MiB shards; report rebuilding
+combines the original smoke file with every shard. Complete raw replies saved
+before interruption are recovered without paying for another answer. A
+model/transport/incomplete-response failure stops dispatch; invalid rubric/quote
+validation remains a recorded instrument failure rather than a fabricated score.
+Completion and any budget/instrument blockers must be checked in the resulting
+reports. The original serial runner described below remains a historical entry
+point using the original cap and must not be used to bypass the full-run ledger.
+
+`python scripts/complete_gpt5_validation.py --run --cap-usd 650` runs initial
+judging, starts flagged-group drafting/reassessment only if all 5760 initial
+judgments are valid, then regenerates truthful manuscript/appendix/PDF/Word
+outputs after collection has stopped. If a stage is blocked or the cap is
+reached, its incomplete status is retained. The wrapper makes no submission,
+does not fill author details and cannot substitute for author-edited final
+proofreading. At high reasoning effort this full run may take many hours; on
+macOS `caffeinate -i` can prevent idle sleep only while the command is running.
+
 `python scripts/run_gpt5_judge.py` freezes/checks the separate GPT-5 profile and
 estimates costs without creating an API client. `--smoke --cap-usd 0.5` requests
 three schema-checked, language-order-balanced judgments on the first fixed group.
 `--run --cap-usd CAP` requires that successful smoke receipt; `--revisions` drafts
 and blindly reassesses flagged groups in a separately versioned suggestion set.
-All caps are cumulative, and all requests share the existing aggregate budget,
-including failed Astra reservations. The full corpus is not affordable within
-the current remainder; do not interpret smoke coverage as completed validation.
+All caps are cumulative, and all requests share aggregate accounting, including
+failed Astra reservations. The smoke itself is not completed corpus validation;
+the new full-run extension above reads the separately recorded US$650 approval.
 
 Configure `OPENAI_API_KEY` and `OPENAI_BASE_URL` for `api.braintrust.dev` without
 putting credentials in the repository. The official SDK sends Chat Completions,

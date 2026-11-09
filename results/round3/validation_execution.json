@@ -4,13 +4,13 @@
       "python": "Python 3.11",
       "command": "-m pytest -q",
       "exit_code": 0,
-      "pytest_passed": 384
+      "pytest_passed": 390
     },
     {
       "python": "Python 3.12",
       "command": "-m pytest -q",
       "exit_code": 0,
-      "pytest_passed": 384
+      "pytest_passed": 390
     }
   ],
   "lint": "passed",
