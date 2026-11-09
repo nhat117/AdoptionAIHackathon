@@ -1,11 +1,12 @@
 """Pre-declared v3 analysis: per-seed paired contrasts and exact sign-flip tests.
 
-Reads saved manifests and outcomes only; makes no inference calls. One game is
+Replays saved raw responses and checks provenance; makes no inference calls. One game is
 one unit; seeds are the replication unit. Failed or missing games break their
 pair and are counted, never imputed.
 """
 
 import argparse
+import importlib.util
 import itertools
 import json
 from pathlib import Path
@@ -34,18 +35,18 @@ def sign_flip_p(diffs):
     return hits / 2 ** len(diffs)
 
 
+def audit_module():
+    spec = importlib.util.spec_from_file_location(
+        "v3audit", Path(__file__).with_name("audit.py")
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def load(root):
-    games, failed = {}, []
-    for manifest in sorted(root.glob("*/manifest.json")):
-        m = json.loads(manifest.read_text())
-        outcome = manifest.parent / "outcome.json"
-        if m["status"] != "completed" or not outcome.exists():
-            failed.append(dict(id=m["id"], status=m["status"]))
-            continue
-        s = m["scenario"]
-        key = m["section"], m["model_tag"], s["disaster"], s["seed"], m["arm"]
-        games[key] = json.loads(outcome.read_text())
-    return games, failed
+    games, missing, _, _, _ = audit_module().collect(root)
+    return games, missing
 
 
 def analyse(games, failed):
@@ -96,9 +97,11 @@ def analyse(games, failed):
             model=k[1],
             disaster=k[2],
             seed=k[3],
-            round1_wrong=o["round1_wrong"],
-            reversals=o["reversals"],
-            irreversible_round1_errors=o["irreversible_round1_errors"],
+            false_source_exposed_before_truth=o["false_source_exposed_before_truth"],
+            exposed_wrong_before_truth=o["exposed_wrong_before_truth"],
+            exposed_wrong_stays_then_evacuated=o["exposed_wrong_stays_then_evacuated"],
+            irreversible_before_truth_errors=o["irreversible_before_truth_errors"],
+            active_at_truth=o["active_at_truth"],
         )
         for k, o in sorted(games.items())
         if k[0] == "6" and k[4] == "delayed"
@@ -116,7 +119,15 @@ if __name__ == "__main__":
     p.add_argument("--root", type=Path, default=Path("runs/evidence-controls-v3"))
     p.add_argument("--out", type=Path, default=Path(__file__).parent / "summary.json")
     args = p.parse_args()
-    summary = analyse(*load(args.root))
+    games, missing, audits, budget, plan = audit_module().collect(args.root)
+    summary = analyse(games, missing)
+    summary.update(
+        audits=audits,
+        budget=budget,
+        planned=len(plan["jobs"]),
+        completed=len(games),
+        replayed_completed=len(audits),
+    )
     args.out.write_text(json.dumps(summary, indent=2))
     for c in summary["contrasts"]:
         print(

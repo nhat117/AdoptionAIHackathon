@@ -59,7 +59,15 @@ def test_pairs_by_seed_and_drops_failed_games(tmp_path):
             0.0,
             "failed" if failed else "completed",
         )
-    out = analyze.analyse(*analyze.load(tmp_path))
+    games, missing = {}, []
+    for path in tmp_path.glob("*/manifest.json"):
+        m = json.loads(path.read_text())
+        if m["status"] != "completed":
+            missing.append(dict(id=m["id"], status=m["status"]))
+            continue
+        key = m["section"], m["model_tag"], True, m["scenario"]["seed"], m["arm"]
+        games[key] = json.loads(path.with_name("outcome.json").read_text())
+    out = analyze.analyse(games, missing)
     by = {(c["treatment"], c["control"]): c for c in out["contrasts"]}
     proof = by["private_proof", "private_unverified"]
     assert proof["complete_pairs"] == 8 and proof["mean_difference"] == 0.75
@@ -74,7 +82,15 @@ def test_too_few_pairs_is_inconclusive(tmp_path):
     for seed in range(2000, 2003):
         write_game(tmp_path, "5b", "private_proof", seed, 1.0)
         write_game(tmp_path, "5b", "private_unverified", seed, 0.0)
-    out = analyze.analyse(*analyze.load(tmp_path))
+    games, missing = {}, []
+    for path in tmp_path.glob("*/manifest.json"):
+        m = json.loads(path.read_text())
+        if m["status"] != "completed":
+            missing.append(dict(id=m["id"], status=m["status"]))
+            continue
+        key = m["section"], m["model_tag"], True, m["scenario"]["seed"], m["arm"]
+        games[key] = json.loads(path.with_name("outcome.json").read_text())
+    out = analyze.analyse(games, missing)
     assert {c["status"] for c in out["contrasts"] if c["complete_pairs"]} == {
         "inconclusive"
     }

@@ -1,15 +1,17 @@
 """Evidence controls v3 (72 games): unverified-capsule and delayed-truth arms.
 
 Section 5b reruns Experiment 5 with a content-matched unverified capsule on
-held-out seeds. Section 6 delivers authenticated truth one round after the
-false claim. Both reuse the v2 budget guard, routes and reservation rules.
+held-out seeds. Section 6 makes truth usable in round 3, after a round-2 opportunity to
+act on the false claim. Both reuse the v2 budget guard, routes and reservation rules.
 """
 
 import argparse
 import asyncio
+import fcntl
 import hashlib
 import importlib.util
 import json
+import math
 import os
 import random
 import socket
@@ -79,7 +81,16 @@ def jobs():
     rows = [json.loads(x) for x in (DATA / "conditions.jsonl").read_text().splitlines()]
     if rows != build_jobs():
         raise ValueError("Committed conditions differ from the balanced design")
-    return rows
+    return sorted(
+        rows,
+        key=lambda j: (
+            ("5b", "6").index(j["section"]),
+            ("sonnet", "terra").index(j["model_tag"]),
+            j["scenario"]["seed"],
+            j["scenario"]["disaster"],
+            list(ARMS[j["section"]]).index(j["arm"]),
+        ),
+    )
 
 
 def ledger_spent(path):
@@ -87,17 +98,38 @@ def ledger_spent(path):
     pending, spent = set(), 0.0
     for e in [json.loads(x) for x in path.read_text().splitlines()]:
         if e["type"] == "reserve":
+            if e["ticket"] in pending:
+                raise ValueError("Duplicate reservation")
             pending.add(e["ticket"])
         elif e["type"] == "settle":
             pending.remove(e["ticket"])
-            spent += e["cost"]
+            cost = e["cost"]
+            if (
+                not isinstance(cost, (int, float))
+                or not math.isfinite(cost)
+                or cost < 0
+            ):
+                raise ValueError("Invalid settled cost")
+            spent += cost
     if pending:
         raise ValueError(f"{path} has unresolved billing")
     return spent
 
 
 def freeze(ledgers):
+    if len({p.resolve() for p in ledgers}) != 2:
+        raise ValueError("Require the two distinct original and extension ledgers")
     prior = {str(p): ledger_spent(p) for p in ledgers}
+    expected = [
+        Path("runs/overnight-v1/budget.jsonl"),
+        Path("runs/evidence-diagnostics-v2/budget.jsonl"),
+    ]
+    if {hashlib.sha256(p.read_bytes()).hexdigest() for p in ledgers} != {
+        hashlib.sha256(p.read_bytes()).hexdigest() for p in expected
+    }:
+        raise ValueError("Prior ledgers differ from original collection records")
+    if abs(sum(prior.values()) - 25.5456355) > 1e-8:
+        raise ValueError("Prior spend differs from audited baseline")
     paths = [
         Path("src/swarm_lab/evacuation") / p
         for p in [
@@ -115,9 +147,15 @@ def freeze(ledgers):
         Path("reports/overnight-experiments/extensions.py"),
         DATA / "scenarios.jsonl",
         DATA / "conditions.jsonl",
+        Path("reports/evidence-controls-v3/ANALYSIS_PLAN.md"),
+        Path("reports/evidence-controls-v3/analyze.py"),
+        Path("reports/evidence-controls-v3/audit.py"),
     ]
     return dict(
-        protocol="evidence-controls-v3",
+        protocol="evidence-controls-v3-corrected",
+        prior_ledger_sha256={
+            str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in ledgers
+        },
         prior_reported_usd=prior,
         global_cap_usd=GLOBAL_CAP,
         v3_cap_usd=GLOBAL_CAP - sum(prior.values()),
@@ -148,8 +186,9 @@ def freeze(ledgers):
                 "content from authentication"
             ),
             section_6=(
-                "Authenticated truth delivered in round two reverses round-one "
-                "stays under Danger and prevents later unnecessary evacuation "
+                "Authenticated truth first usable in round three follows a round-two "
+                "decision exposed to the false source claim for active neighbors; "
+                "measure later action changes under Danger and irreversible exits "
                 "under Safe, relative to the same-prompt no-evidence control"
             ),
             unit="Whole game; seeds are the replication unit",
@@ -183,6 +222,11 @@ async def main(args):
             )
         )
         return
+    # One collector across tranches and roots; alternate roots cannot reset spend.
+    if args.root.resolve() != Path("runs/evidence-controls-v3").resolve():
+        raise ValueError("Paid v3 collection must use the shared canonical root")
+    lock_file = (args.root / "collector.lock").open("w")
+    fcntl.flock(lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
     load_dotenv()
     key = os.environ["OPENROUTER_API_KEY"]
     packs = json.loads(Path("data/experiment1/languages.json").read_text())
@@ -267,6 +311,16 @@ async def main(args):
                 )
                 m["status"] = "completed"
             except Exception as exc:
+                if isinstance(exc, RuntimeError) and str(exc).startswith(
+                    "Budget guard"
+                ):
+                    budget.halted = True
+                    append(
+                        budget.path,
+                        dict(
+                            type="halt", at=v2.now(), reason="budget_limit_or_pending"
+                        ),
+                    )
                 m.update(
                     status="failed", error_type=type(exc).__name__, error=str(exc)[:240]
                 )
@@ -296,7 +350,24 @@ async def main(args):
                 manifest.write_text(json.dumps(m, indent=2))
                 print(j["id"], m["status"], f"v3=${budget.spent:.4f}", flush=True)
 
-    await asyncio.gather(*(job(j) for j in selected))
+    # Finish one matched seed/state cell before starting the next.
+    cells = list(
+        dict.fromkeys(
+            (j["model_tag"], j["scenario"]["seed"], j["scenario"]["disaster"])
+            for j in selected
+        )
+    )
+    for cell in cells:
+        await asyncio.gather(
+            *(
+                job(j)
+                for j in selected
+                if (j["model_tag"], j["scenario"]["seed"], j["scenario"]["disaster"])
+                == cell
+            )
+        )
+        if budget.halted:
+            break
     print(
         "SECTION",
         args.section,
@@ -318,8 +389,8 @@ if __name__ == "__main__":
         type=Path,
         nargs="+",
         default=[
-            Path("runs/restored-review/original/budget.jsonl"),
-            Path("runs/restored-review/extensions/budget.jsonl"),
+            Path("runs/overnight-v1/budget.jsonl"),
+            Path("runs/evidence-diagnostics-v2/budget.jsonl"),
         ],
         help="Every prior budget ledger that counts toward the US$35 cap",
     )

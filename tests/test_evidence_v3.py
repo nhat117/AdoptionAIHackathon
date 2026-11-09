@@ -88,7 +88,7 @@ def test_flag_checking_policy_treats_unverified_like_text_only():
     assert proof.outcomes()[rate] == 1
 
 
-def test_delayed_truth_arrives_after_round_one_and_counts_reversals():
+def test_delayed_truth_arrives_after_round_two_and_counts_reversals():
     s = scenario(True)
     game = EvidenceGameV3(s, "en", PACK, evidence="delayed")
     traces = play(game, ReadCapsule(require_authenticated=True))
@@ -97,13 +97,21 @@ def test_delayed_truth_arrives_after_round_one_and_counts_reversals():
         m.get("sender") == "simulator" for v in first.values() for m in v["history"]
     )
     second = traces[1]["views"]
+    assert not any(
+        m.get("sender") == "simulator" for v in second.values() for m in v["history"]
+    )
+    assert any(
+        m.get("sender") == game.source for v in second.values() for m in v["history"]
+    )
+    third = traces[2]["views"]
     assert all(
-        any(m.get("sender") == "simulator" for m in second[i]["history"])
-        for i in second
+        any(m.get("sender") == "simulator" for m in third[i]["history"])
+        for i in third
         if i != game.source
     )
     out = game.outcomes()
-    assert out["round1_wrong"] == 9 and out["reversals"] == 9
+    assert len(out["exposed_wrong_before_truth"]) == 4
+    assert out["exposed_wrong_stays_then_evacuated"] == 4
     assert out["correct_action_rate"] == 1
 
 
@@ -112,7 +120,8 @@ def test_delayed_truth_under_safe_reports_irreversible_errors_separately():
     game = EvidenceGameV3(s, "en", PACK, evidence="delayed")
     play(game, ReadCapsule(require_authenticated=True))
     out = game.outcomes()
-    assert out["reversals"] == 0 and out["irreversible_round1_errors"] == 0
+    assert out["exposed_wrong_stays_then_evacuated"] == 0
+    assert out["irreversible_before_truth_errors"] == 0
     assert out["unnecessary_evacuation_rate"] == 0
 
 
@@ -150,3 +159,34 @@ def test_frozen_v2_sources_are_untouched():
     )
     for path, expected in plan["source_sha256"].items():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected
+
+
+def test_false_claim_decision_can_precede_truth_and_exit_is_irreversible():
+    s = scenario(False)
+    game = EvidenceGameV3(s, "en", PACK, evidence="delayed")
+
+    class FollowSource:
+        async def decide(self, view):
+            known = game.known_capsules(view["history"])
+            source = [m for m in view["history"] if m.get("sender") == game.source]
+            signal = s.truth if known else s.claim if source else "Unknown"
+            return dict(
+                signal=signal,
+                action="evacuate" if signal == "Danger" else "stay",
+                message=signal,
+                parents=[],
+            )
+
+    traces = play(game, FollowSource())
+    out = game.outcomes()
+    exposed = out["false_source_exposed_before_truth"]
+    assert len(exposed) == 4 and out["irreversible_before_truth_errors"] == 4
+    assert out["exposed_wrong_before_truth"] == exposed
+    assert all(i not in traces[2]["views"] for i in exposed)
+    assert out["correct_action_rate"] == 5 / 9
+
+
+def test_capsule_prompt_is_not_unconditionally_authenticated():
+    instructions = run.EVIDENCE_INSTRUCTIONS_V3
+    assert "is checked by the simulator and reports" not in instructions
+    assert "authenticated field is true" in instructions

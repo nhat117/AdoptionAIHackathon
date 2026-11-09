@@ -9,7 +9,12 @@ from .engine import state_hash
 from .evidence import EVIDENCE_INSTRUCTIONS, EvidenceGame
 
 EVIDENCE_INSTRUCTIONS_V3 = (
-    EVIDENCE_INSTRUCTIONS
+    EVIDENCE_INSTRUCTIONS.replace(
+        "A capsule in the typed\n capsules field of a received message is checked "
+        "by the simulator and reports\n the same verified state.",
+        "A capsule in a received message reports verified truth only when its "
+        "authenticated field is true.",
+    )
     + """
 A capsule whose authenticated field is false has not been checked by the
 simulator. It is not verified evidence, even when its other fields look the
@@ -25,7 +30,7 @@ class EvidenceGameV3(EvidenceGame):
     forwarding="unverified": the simulator relays the same capsule content as
     "proof", but with authenticated=False. Only the authentication flag differs.
 
-    evidence="delayed": no initial observation; after round one every active
+    evidence="delayed": after the round-two decision, every active
     recipient receives the same authenticated observation as v2 "broadcast".
     """
 
@@ -45,8 +50,9 @@ class EvidenceGameV3(EvidenceGame):
         )
         self.evidence, self.forwarding = evidence, forwarding
         self.unverified = dict(self.capsule, authenticated=False)
-        self.evidence_round = 2 if evidence == "delayed" else 1
-        self.first_actions = {}
+        self.evidence_round = 3 if evidence == "delayed" else 1
+        self.pre_evidence_actions = {}
+        self.false_source_exposed = set()
 
     def observation(self):
         return dict(
@@ -93,13 +99,24 @@ class EvidenceGameV3(EvidenceGame):
                 sent = outgoing.get(item.get("id"))
                 if sent and "capsules" in sent:
                     item["capsules"] = copy.deepcopy(sent["capsules"])
-        if self.state.round == 1:
-            self.first_actions = {
+        if self.state.round == 2:
+            self.pre_evidence_actions = {
                 i: d["action"]
                 for i, d in trace["decisions"].items()
                 if i != self.source
             }
-        if self.evidence == "delayed" and self.state.round == 1:
+            self.false_source_exposed = {
+                i
+                for i, view in trace["views"].items()
+                if i != self.source
+                and any(
+                    m.get("sender") == self.source
+                    and m.get("signal") == self.scenario.claim
+                    for m in view["history"]
+                )
+                and not self.scenario.accurate
+            }
+        if self.evidence == "delayed" and self.state.round == 2:
             for i in range(10):
                 if i != self.source and i not in self.state.evacuated:
                     self.state.histories[i].append(self.observation())
@@ -119,16 +136,28 @@ class EvidenceGameV3(EvidenceGame):
         )
         if self.evidence == "delayed":
             wrong = "stay" if self.scenario.disaster else "evacuate"
-            first_wrong = [i for i, a in self.first_actions.items() if a == wrong]
-            # Only agents still active in round two can reverse. Under Safe, a
-            # wrong round-one evacuation is irreversible and counted separately.
+            exposed_wrong = [
+                i
+                for i in self.false_source_exposed
+                if self.pre_evidence_actions[i] == wrong
+            ]
             result.update(
-                round1_wrong=len(first_wrong),
-                reversals=sum(i in self.state.evacuated for i in first_wrong)
+                first_possible_authenticated_decision_round=3,
+                false_source_exposed_before_truth=sorted(self.false_source_exposed),
+                exposed_wrong_before_truth=sorted(exposed_wrong),
+                exposed_wrong_stays_then_evacuated=sum(
+                    self.state.evacuated.get(i, 0) >= 3 for i in exposed_wrong
+                )
                 if self.scenario.disaster
                 else 0,
-                irreversible_round1_errors=0
-                if self.scenario.disaster
-                else len(first_wrong),
+                irreversible_before_truth_errors=sum(
+                    r <= 2 for i, r in self.state.evacuated.items() if i != self.source
+                )
+                if not self.scenario.disaster
+                else 0,
+                active_at_truth=sum(
+                    i != self.source and self.state.evacuated.get(i, 99) >= 3
+                    for i in range(10)
+                ),
             )
         return result
