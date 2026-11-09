@@ -2,7 +2,7 @@
 
 [Submission-template alignment audit](template-alignment.md): structure aligned; final results, authorship, figure, and submission-length editing remain pending.
 
-> **Status update (after the overnight pilot):** the three experiments below produced an explained null result and now motivate the evidence study. See the [current research story](../README.md#current-research-story). Paper C, the six-model roster and the full matrix below are future work. If the identity study is repeated, use a ladder of fictional roles (teammate, team lead, certified emergency officer, official agency) crossed with the "labels carry no authority" warning present or absent, rather than real political or religious figures.
+> **Status update (after the overnight pilot):** the three experiments below produced an explained null result and now motivate the evidence study. See the [current research story](../README.md#current-research-story). Paper C, the six-model roster and the full matrix below are future work. The repeat of the identity study is designed as [influence v4](../reports/influence-v4/README.md): a ladder of fictional roles (teammate, team lead, certified emergency officer, official agency) crossed with the "labels carry no authority" warning present or absent, with a private sensor and 0–100 beliefs. It replaces the real political and religious figures.
 
 Paper A now contains **three equally important experiments** in one evacuation game:
 
