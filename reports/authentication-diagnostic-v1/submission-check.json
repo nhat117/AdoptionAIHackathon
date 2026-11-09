@@ -1,0 +1,39 @@
+{
+  "source_sha256": "0586972dbe7c49e1145eef787df60303a6fe6d55774d343f72b5e10204da1dae",
+  "abstract_whitespace_words": 210,
+  "built_in_compiler": "success",
+  "temporary_render_only": true,
+  "pdf_exported_to_repository": false,
+  "main_pages": 8,
+  "references_start_page": 9,
+  "appendix_pages": "10\u201313",
+  "total_pages": 13,
+  "visual_review": "All pages inspected; final changed pages8,11\u201313 re-inspected after provenance addition",
+  "overfull_boxes": 0,
+  "remaining_warning": "One harmless underfull bibliography line",
+  "primary_analysis_changed": false,
+  "post_collection_supplement": "Descriptive planned-denominator completion counts and missing-outcome bounds; no new tests",
+  "heldout": {
+    "planned": 960,
+    "valid": 944,
+    "correct_valid": 923,
+    "incorrect_valid": 21,
+    "invalid": 16,
+    "proof_valid_correct": 314,
+    "proof_planned": 320
+  },
+  "preexisting_pdfs_recovery_paper_and_shared_layout_unchanged": true,
+  "sha256": {
+    "projects/persistent-dissenter/main.tex": "0586972dbe7c49e1145eef787df60303a6fe6d55774d343f72b5e10204da1dae",
+    "projects/persistent-dissenter/figures/study-overview.png": "cea10d5da8eb03bc7b8a5c16c861f4a1dea433e9c432b638c358d61fce195f20",
+    "projects/persistent-dissenter/figures/evidence-results.png": "cbf7665e8309684383b1885ce14aeb1d7e71e5520a822625878d67800e4da8b5",
+    "reports/evidence-controls-v3/summary.json": "1a3776d152bcb8f7de40652de3bca93b9bdf35228d2f390e790ffa22f2838147",
+    "reports/authentication-diagnostic-v1/summary.json": "b1936bba8cc1024062ef995806bef9ef532078f3988bb0e1103b8b1c83ef9bd9",
+    "reports/authentication-diagnostic-v1/responses.csv": "d0fc8e82590af46cf04c1c873ba0d54000f895598a5fa87188272b3af697aebb",
+    "reports/authentication-diagnostic-v1/coverage.csv": "42a1f0ab1c54b1dc18e180af437e9ebdd12f609bc0a58e387699d70f76dd91a4",
+    "reports/authentication-diagnostic-v1/paper-planned-denominators.csv": "38b17ba1b0eb77e3c07ead3c5dd535f3872a1d26510cbd280e9564c75c08c8ad",
+    "reports/authentication-diagnostic-v1/build_paper_figures.py": "df9c8d77420fcca1fd05666c21c7a6de289897fdae609c564a5fc9fc3bce49d3"
+  },
+  "figure_builder_lint": "ruff check and ruff format passed",
+  "figure_regeneration": "Rerun reproduced the reviewed figure and coverage bytes"
+}

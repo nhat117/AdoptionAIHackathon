@@ -7,6 +7,8 @@ Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/pyt
 
 The [single empirical manuscript](projects/persistent-dissenter/main.tex) combines corrected interacting-network evidence controls and a separate five-configuration receiver diagnostic. It adapts an established human evacuation game. The [project index](projects/README.md) preserves earlier proposals and calibration as historical context.
 
+Development provenance: available repository history begins November 8, 2026, during the sprint; timestamps do not establish that every source line was newly authored. Preexisting components include the cited human experiment, third-party SDKs/libraries and the official report template. No separately identified pre-sprint project implementation is claimed from this history.
+
 [Completed pilot and evidence diagnostics](reports/overnight-experiments/SUMMARY.md): frozen Sonnet 5.5 / Google / low-reasoning collection, audited raw data, case-specific graphs, and retained failures. This exploratory English/Vietnamese pilot is smaller than the proposed six-model evaluation and uses translations awaiting review.
 
 ## Current research story
