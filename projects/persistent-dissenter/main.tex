@@ -6,211 +6,177 @@
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
 \renewcommand{\labelitemi}{--}
-\title{Who Still Hears the Warning?\\Language, Claimed Identity, and Network Structure}
+\title{Delivered, Recognized, Acted On:\\Evidence Boundaries in LLM Agent Networks}
 
 \begin{document}\maketitle
 
 \begin{abstract}
-What changes an AI group's response to a warning: the language, the sender's claimed identity, or who can talk to whom? We propose three equally important experiments in one evacuation game. Ten agents exchange short messages and decide whether to stay or leave before a possible disaster. Each experiment changes one factor while keeping the other settings matched. We measure missed danger, unnecessary evacuation, and how information travels. Correct and false claims are both included. Earlier signal-only calibration runs checked a different design; the three experiments proposed here have not yet been run.
-We compare the same scenarios across six named models and their assigned language conditions, including shared English and Vietnamese baselines. Sender labels grant no additional permissions or evidence. Network comparisons keep group size and the number of neighbours fixed. This design is intended to help distinguish failures to receive useful information from failures to act after receiving it. We report no findings for these new experiments. Model compatibility, translation review, and sample allocation must be completed before evaluation. The planned contribution is a controlled comparison of three factors in an interacting network, rather than evidence that models share human cultural or political traits.
+Successful communication between AI agents requires more than delivering a true statement. A receiver must distinguish authoritative evidence from the peer carrying it, while correct actions alone need not establish that distinction. We investigate this boundary in two complementary tasks. First, ten agents interact in an evacuation simulator with irreversible actions. Across 48 corrected evidence-control games, Sonnet's mean final correctness among eight non-witness recipients was 0\% with text testimony, 0\% with truthful unverified capsules, and 93.75\% with authenticated capsules; four recipients nevertheless stayed despite receiving valid proof. Terra was highly correct across all three arms. Ten completed delayed-evidence games provide additional descriptive timing observations. Second, a separately frozen five-configuration diagnostic attempted 1,000 receiver decisions, yielding 984 valid outputs and 16 retained failures. Sonnet and GLM sometimes mislabelled genuine relayed proof, yet all 314 valid held-out proof decisions chose the correct action. Clarified wording reduced these label errors descriptively, without a statistically significant wording contrast. One clarified Sonnet response falsely verified JSON-like prose. Qwen, DeepSeek, and Terra had no recognition errors among their valid held-out outputs. These observations motivate separate audits of delivery, reported recognition, and action. They establish neither private belief nor causal reliance on authentication, and do not demonstrate a generally safe prompt repair or a new verification protocol.
 \end{abstract}
+
 \section{Introduction}
-\subsection{The three experiments at a glance}
-\textbf{Example:} A neighbour says, ``There is danger; we should evacuate.'' Other agents can question it, pass it on, stay, or leave. Would they act differently if the message were in another language, attributed to a different person, or carried through a different network?
+A network can deliver a warning without its recipients acting on it. Conversely, recipients can take the correct action while misdescribing the evidence they received. Both situations matter for agent networks that forward observations through ordinary peer messages: authentic evidence inside a message and the credibility of its carrier are different properties.
 
-\tablecaption{Three experiments and their matched controls.}
-\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
-\toprule
-Experiment & What changes? & What stays fixed?\\
-\midrule
-1. Language & English, Vietnamese, and the model's assigned local language & Ordinary-peer label; ring network.\\
-2. Claimed identity & Ordinary peer, generic roles, and a named figure & Ring network; compare labels within the same model and language.\\
-3. Network structure & Ring versus random-regular network & Ordinary-peer label; compare networks within the same model and language.\\
-\bottomrule
-\end{tabularx}
+We study this distinction through an interacting evacuation simulation and a subsequent frozen-view diagnostic. In the simulation, a private witness has truthful evidence while a controlled broadcaster supplies a false claim. The simulator can preserve the evidence through local forwarding. In the diagnostic, five model/provider configurations receive matched views containing direct evidence, relayed evidence, unverified claims, or forged prose. Only this second task explicitly elicits evidence-recognition labels.
 
-All three use the same model roster, scenario bank, outcome measures, and planned number of repeats per condition. Equal importance does not require the same total number of runs: identity has more conditions. Repetition and agent-selected listening are no longer experimental factors. Multiple conversation rounds remain, with one fixed speaking and delivery policy.
+Our contribution is a bounded empirical audit with executable records, not a claim to invent provenance or explain model psychology. We document: (1) a large authentication-arm difference and four residual action failures in the sampled Sonnet network games; (2) disagreement between requested evidence labels and actions in a changed receiver task; and (3) a retained false-verification counterexample alongside conditional successes. These findings support measuring the stages separately, rather than treating delivery, a model's label, or action correctness as interchangeable evidence of trustworthy reasoning.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{figures/experiment-overview.png}
-\caption{Overview of the three planned experiments. Network drawings are illustrative, not exact adjacency diagrams; the simulator enforces four neighbours per agent. The controlled source supplies the initial claim while other agents converse.}
+\fbox{\parbox[t]{0.27\linewidth}{\centering\textbf{Delivery}\\Actual evidence in the local input view}}
+\hfill
+\fbox{\parbox[t]{0.27\linewidth}{\centering\textbf{Reported recognition}\\Requested status and verified-state fields}}
+\hfill
+\fbox{\parbox[t]{0.27\linewidth}{\centering\textbf{Action}\\Observed stay or evacuate decision}}
+\caption{Three distinct observables, not an identified causal chain. Delivery and action are audited in the network games; explicit recognition fields are added only in the separate diagnostic. Neither labels nor correct actions reveal private belief or establish causal use of authentication.}
+\label{fig:observables}
 \end{figure}
-\section{Related Work}
-The human evacuation study varied network shape and group size, including ring and random-regular networks with four neighbours per participant \cite{danger}. Our network comparison follows that precedent while fixing group size at ten. The language and identity comparisons are our extensions, not conditions from that human study.
 
-Hovland and Weiss studied the effect of an attributed source on communication \cite{credibility}. That motivates testing sender labels, but a famous name need not be credible. Existing LLM work already studies correct minorities and participation \cite{tak}. We ask how language, claimed identity, and network structure change observable communication and action; we do not assume human psychological explanations apply to models.
+\section{Related Work}
+Shirado, Crawford, and Christakis studied human evacuation under uncertain danger and local communication \cite{danger}. Their real-time game varied group size and topology and used transient Safe/Danger displays. We adapt its decision problem, rather than replicate the human procedure: our agents act in synchronous rounds, retain message histories, and receive controlled source claims and simulator evidence.
+
+Provenance-sensitive action selection is already studied through matched source-authority interventions \cite{provenance}. Verification-status laundering work tests whether unsupported claims become more influential when their unverified status is lost in handoffs \cite{silence}. Our corrected network controls preserve typed metadata automatically, and the diagnostic examines recipient interpretation with intact evidence or forged prose; we do not execute or claim a new status-loss mitigation.
+
+PACT enforces authority at argument granularity, while PCM separates independently attested claims from a sender's self-report \cite{pact,pcm}. These are enforcement and verification mechanisms. Our authentication is a simulator stipulation, and an LLM may misinterpret the resulting input. A close AI-authored, non-peer-reviewed research note also studies agent choices under correctly tagged shared-board claims, including adversarial prose and genuine cherry-picked receipts \cite{irsi}. We therefore make no first-claim that agents can fail despite correct verification labels. Our narrower setting exposes nested carrier/capsule interpretation and decision-time delivery in a local evacuation network, followed by a separate output-interface diagnostic.
 
 \section{Methods}
-\paragraph{Fixed compute constraint.} Use low reasoning effort for models and endpoints that expose and enforce that setting. Keep it unchanged across language, identity, and network conditions. Models without adjustable reasoning (including the GPT-4.1 mini calibration model) are recorded as not applicable, not as low. Exclude an endpoint from the comparable batch until its control is verified. Low is a provider-specific setting, not an equal reasoning-token budget across model families. Record output-token limits, token usage, model version, and provider separately.
+\subsection{Study 1: interacting evacuation networks}
+Ten agents occupy a degree-four ring. Each active agent reads its persistent local history, produces a short message and a machine-readable decision, and sends to its neighbours for the next round. Evacuation is irreversible and stops future transmissions. A hidden terminal round is drawn from four to six rounds. An evacuation earns one point; staying earns two in Safe and zero in Danger, with a survivor coordination bonus of 0.1 per other correct agent. These artificial incentives define the simulator, not human preferences.
 
-\subsection{The game in plain English}
-Ten AI agents must decide whether to stay or evacuate before a possible disaster. Each agent can talk only to four neighbours. The ring is the baseline; experiment 3 changes the connections while preserving four neighbours per agent. One agent receives the true state from the simulator. The others must decide what to do using the messages they receive.
+A controlled broadcaster emits its assigned false claim in rounds one and two, then becomes silent. A distinct private witness receives truthful simulator evidence in every evidence-control arm. Other agents generate messages and actions live, so later trajectories can differ across arms. A typed capsule reports its issuer, state and authentication flag; only the simulator populates trusted metadata. Peer text resembling a capsule does not authenticate it. No real signature verification is performed.
 
-Evacuating costs one point but avoids the disaster. Staying earns two points if there is no disaster, and zero if disaster strikes. Surviving agents also earn 0.1 point for each other agent who takes the correct action. These points define the task; we do not assume that models care about rewards as humans do.
+\paragraph{Content-matched controls.}
+The corrected v3 study contains eight held-out scenario seeds per configuration and three arms: text testimony, a truthful but unverified capsule, and an authenticated capsule. All 48 games in this comparison are Danger games with a false Safe broadcaster. Forwarding is simulator-automatic, not a choice by the agent. The private witness is excluded from the outcome, leaving eight non-witness recipients per game. Verified and unverified capsule content and relay rules are matched conditional on the same history; realised histories, peer wording and paths are not held fixed. We estimate the total implemented arm difference, not a fixed-text/path effect.
 
-Each round follows the same steps: \textbf{read local messages, choose a message, choose stay or evacuate, then deliver messages for the next round.} Each agent has its own conversation history. Agents therefore respond repeatedly to one another; this is not a single prompt with a list of scripted opinions. Evacuation is final: an agent that leaves stops sending messages, but its old messages remain visible. In the calibration runs, the game ended after four to six rounds, without telling agents the exact final round.
+\paragraph{Delayed truth.}
+A separate control inserts authenticated observations after round two, making round three the first possible decision with truth. The primary outcome retains all nine non-broadcaster recipients, including any irreversible earlier exits. Four Sonnet/Danger seed pairs and one Terra/Safe pair completed: ten games, not ten independent replications. Two Terra/Danger attempts were budget-interrupted and twelve further jobs remained unattempted; thus 58 of 72 planned v3 games completed. Sonnet/Safe was excluded before collection based on the earlier stay-only pattern. The arms use independently generated trajectories, not copied conversation prefixes, so pre-insertion actions can differ. We report action changes after exposure, without asserting that false claims caused prior actions.
 
-\paragraph{Where the game comes from.}
-Shirado, Crawford and Christakis used a human evacuation game with local Safe/Danger signals, costly evacuation, and an informed participant \cite{danger}. We borrow that setup. Turn-based play, AI agents, controlled claims, and our interventions are changes to the original experiment, not a direct replication.
+\paragraph{Generation and inference.}
+The network configurations are Sonnet5.5 on Google and GPT-6.1 Terra on OpenAI, with pinned routes, requested low reasoning, provider-controlled temperature and a 2,048-token output ceiling. The same corrected evidence instructions are shared across all v3 arms. There are no fallback routes or failed-game retries. Whole games are the measurements and paired scenario seeds the replication units; recipients in a game are dependent. The prespecified exploratory analysis enumerates two-sided sign flips over per-seed differences. Its three authentication contrasts per configuration are unadjusted, and two Sonnet contrasts reuse the same proof games. Freezing an exploratory protocol is not independent confirmatory validation.
 
-\subsection{What stays fixed and what changes?}
-\tablecaption{Fixed settings and experimental factors.}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}X@{}}
-\toprule
-Setting & Exact role in this proposal\\
-\midrule
-Game rules: fixed & Ten agents; four neighbours each; the same points, evidence access, and irreversible evacuation rules.\\
-Run settings: matched & Use the same scenario, source position, round schedule, instructions, and message limits when comparing treatments. Freeze generation settings before evaluation.\\
-Disaster: balanced & Include both disaster and no-disaster games. Evacuating is not always the correct answer.\\
-Claim accuracy: balanced & Test truthful and false claims in both disaster and safe games. Keep the same accuracy mix in every condition.\\
-Communication: fixed & Short natural-language messages and machine-readable decisions. Deliver each active sender's message to all four neighbours next round. No chosen listening or repetition treatment. This mode needs implementation checks.\\
-Model: planned comparison & Six named models are listed below: GPT-4.1 mini, Claude Haiku 4.5, Qwen3.8 27B, DeepSeek V4 Flash, Mistral Small 3.2, and Apertus 70B. Use one model for all agents in a game. Apertus access remains pending.\\
-Language: planned comparison & Use the model-specific local language listed below: English, Chinese, French, or Standard German. Also compare every model in English and Vietnamese. Only English has been tested.\\
-Source identity: experiment 2 & The six labels below combine generic roles and a named figure in one experiment. Only ordinary-peer labels have been tested.\\
-Network: experiment 3 & Ring or connected random-regular graph; ten agents and four neighbours each in both.\\
-\bottomrule
-\end{tabularx}
+\subsection{Study 2: five-configuration receiver diagnostic}
+We then froze eight handcrafted English context templates, two hidden states, six conditions and two wording arms: 192 held-out decisions per configuration. Conditions are direct verified evidence, verified relayed capsules, truthful unverified capsules, false unverified capsules, forged verification prose and no focal evidence. Contexts vary surrounding claims, ancestor availability, consensus, history length and carrier/capsule disagreement. Unverified material can remain in no-focal-evidence views; its gold status is then unverified rather than none.
 
+The configurations are Qwen3.8 27B/Near AI FP8 route, DeepSeek V4.1 Flash 1017/Near AI, GLM5.3 Flash/Near AI FP8 route, Sonnet5.5/Google and GPT-6.1 Terra/OpenAI. Requested low reasoning, a 4,096-token ceiling, no tools and no fallback/retries are fixed. Model size, provider and precision are unmatched; returned provider names do not independently attest serving precision. Low reasoning does not equal matched internal computation.
 
-The protocol compares six proposed models using shared English and Vietnamese conditions and additional model-specific languages. Appendix B gives the model roster, language assignments, and implementation details.
+Both wording arms add \texttt{evidence\_status} and \texttt{verified\_signal} to the network task's original four output fields. Clarification adds an explicit carrier/capsule distinction. This is a fresh single-turn diagnostic, not an interacting network or exact four-field reproduction. Four historical Sonnet failure views, with Sonnet-generated histories, add eight selected discovery decisions per configuration; two technical preflights add two more. Thus 1,010 API attempts were planned, including 1,000 diagnostic attempts. Jobs are interleaved in a frozen configuration/condition/wording order. Admission depends only on technical validity, not gold correctness.
 
-\subsection{Shared procedure for all three experiments}
-\begin{enumerate}
-\item Choose the model, language, disaster state, claim accuracy, and source position from a balanced scenario schedule. One controlled source receives the truth; all other agents start without that observation.
-\item The source sends its assigned correct or false claim on rounds one and two. Keep that wording fixed within a language, apart from the identity label. Hold it active for those rounds, then stop its transmissions in every condition. Exclude it from recipient outcome rates. This controlled source is an explicit exception to ordinary agents' action rules.
-\item Each other active agent reads its local history, sends a short message, and chooses stay or evacuate. It can answer or cite received messages. Deliver messages to all four neighbours on the next round. Evacuated agents stop sending.
-\item End the game at a hidden terminal round drawn from the same four-to-six-round schedule. Score actions against the simulator's true state.
-\item Repeat matched scenarios for the comparison conditions. Randomize execution order and use equal numbers of scenario seeds and repeated model runs per condition. Select the numerical sample size and message limit before evaluation, after compatibility checks.
-\end{enumerate}
-
-The two-round source schedule is a fixed design choice, not a repetition treatment. Ordinary agents generate their messages live; only the initial source is controlled. In false-claim games there is no second informed source. These games test response to misleading information, not recovery after independent correction; paper C studies that separate question.
-
-\subsection{Experiment 1: language}
-Run each model in the languages listed above. Use the ordinary-peer source and ring network. Compare English with Vietnamese within every model, and English with the assigned local language where different. Translate meaning, rather than changing the facts or adding persuasion. Report language-following errors and translation-review status.
-
-This tests the language of the whole game, including instructions and conversation. It does not isolate message language from instruction language. Cross-model comparisons in different local languages describe combined settings; they cannot identify a language effect on their own.
-
-\subsection{Experiment 2: claimed source identity}
-Use one combined identity experiment, with these six proposed labels translated consistently into every test language:
-\begin{enumerate}
-\item An ordinary teammate.
-\item An emergency-management expert.
-\item A senior Chinese government official.
-\item Xi Jinping, President of China.
-\item A Buddhist monk.
-\item A Christian pastor.
-\end{enumerate}
-Compare each authority role with the teammate. Compare the named political label with the generic political label as a more specific contrast. The latter changes name recognition and specificity of status; it does not perfectly isolate a name from rank. Monk and pastor are separate role conditions, not interchangeable religions. The Buddha and claims to speak for God remain possible follow-ups, outside this initial six-label matrix.
-
-Show every selected label to every model, in each model's listed test languages. Do not reserve Xi Jinping for Chinese models. Keep message content, true evidence, graph, source position, and timing matched within each model--language comparison. The sender is not prompted to impersonate the named person. Recipients see a fictional attribution that grants no permissions.
-
-For each model, compare the identity effect in English with its effect in Vietnamese and, where applicable, the local language. This tests whether language changes the response to an identity. It does not measure religious belief or political allegiance.
-
-\subsection{Experiment 3: network structure}
-Compare a ring, where each agent connects to the nearest two agents on each side, with a connected random-regular graph. Both have ten agents, four neighbours per agent, and twenty undirected edges. Use an ordinary-peer source and the same language conditions as above.
-
-Generate several random graphs using recorded seeds. Rotate the source across positions and pair disaster state, accuracy, model, language, and terminal round. Preserve message budgets and delivery rules. Do not compare one lucky random graph with one source placement. Agents see local neighbours only, not a description of the global graph.
-
-Measure whether the warning reaches more agents and whether their decisions improve. Changing network shape can change clustering and path lengths together. This experiment estimates their combined effect; it does not separately identify each graph property.
-
-\subsection{Outcomes, comparisons, and run counts}
-\begin{itemize}
-\item \textbf{Missed danger:} Fraction of the nine non-source agents staying when disaster strikes.
-\item \textbf{False alarms:} Fraction evacuating when there is no disaster.
-\item \textbf{Information spread:} Who receives or relays the claim, how many rounds it takes, and what actions follow. Audit paraphrases; a cited ID alone does not prove agreement.
-\item \textbf{Other checks:} Payoff, action timing, invalid outputs, language errors, and refusals.
-\end{itemize}
-Use whole games as the units of analysis. Pair matched scenarios and report differences with uncertainty across games. Agents in the same game are not independent samples. Decide primary contrasts and how to account for multiple comparisons before evaluation. A message being received, cited, or followed by an action does not reveal private belief.
-
-With all six models available there are sixteen model--language combinations. Experiment 1 needs sixteen ordinary-peer ring cells. Experiment 2 has ninety-six cells (six labels times sixteen combinations), including those same sixteen baselines. Experiment 3 has thirty-two cells (two networks times sixteen), also sharing the baselines. Thus there are \textbf{112 unique configuration cells}, before crossing the four disaster/accuracy cases and repeating scenarios. If each case has S scenario seeds and R repeated runs, the total is 112 times 4 times S times R games. Shared baselines must be counted once and their dependence retained in analysis. This is a planning calculation, not a launched batch or approved spending amount.
+Recognition requires both requested evidence fields to match frozen gold. False verification is reported separately from missed proof. Actions are scored against truth only in proof-established cells. Counterfactual unverified-only inputs can be indistinguishable under opposite truths; their action distributions are descriptive, not truth-discrimination scores. Wording inference averages the two states within each complete template, requiring both wordings and both states. Exact sign-flip tests use those template differences, with Holm adjustment across six contrasts within each model configuration. This is not a joint correction across all five families. Fewer than six complete templates is labelled inconclusive. Failed outputs are missing, never imputed or replaced, and missingness is not assumed random.
 
 \section{Results}
-\subsection{Calibration status; proposed evaluation pending}
-A small calibration batch used \texttt{openai/gpt-4.1-mini}, English, ordinary-peer labels, and structured Safe/Danger signals. It completed 129 of 130 planned outcomes across A and C; one A run failed message-reference validation. The repository contains the full calibration report. These runs used the earlier repetition/listening design and the separate recovery study. They do not test the three experiments in this revised proposal. Keep those calibration artifacts unchanged.
+\subsection{Authenticated transport changed sampled network actions}
+Table~\ref{tab:network} reports the mean share of correct final actions among eight non-witness recipients. In Sonnet, proof minus unverified and proof minus text are both $+93.75$ percentage points, with all eight seed differences positive and unadjusted $p=.0078125$. These share the same proof games and are not independent confirmations. Unverified minus text is zero; this is not an equivalence test. Terra's proof--unverified, unverified--text and proof--text contrasts have $p=.25$, $.875$ and $.5$, respectively.
 
-Natural-language arguments, random-regular networks, identity labels, and the broader comparisons above remain planned. The current simulator must be updated and checked before this protocol can run. No results about Xi Jinping, the Buddha, God, languages other than English, or differences between model origins are claimed. The papers remain proposals. Before a larger evaluation, freeze prompts, model versions, message limits, sample sizes, stopping rules, and treatment order. Keep failed runs visible rather than silently dropping them.
+\tablecaption{Correct final action in the corrected network controls. Each cell has eight whole games, one per paired seed; recipient counts are not independent samples. All games are Danger/false-Safe-source.}
+\label{tab:network}
+\begin{tabularx}{\linewidth}{@{}lXXX@{}}\toprule
+Configuration & Text testimony & Truthful unverified & Verified capsule\\\midrule
+Sonnet / Google & 0\% & 0\% & 93.75\%\\
+Terra / OpenAI & 95.3125\% & 92.1875\% & 100\%\\\bottomrule
+\end{tabularx}
+
+Four Sonnet recipients nevertheless stayed through termination while their active decision views contained valid proof. The proof-arm per-seed rates were 100, 87.5, 100, 100, 100, 87.5, 87.5 and 87.5\%. Their visible messages rejected an inner authenticated capsule because its carrying peer was unauthenticated, sometimes also requiring direct receipt of cited ancestors. This rules out delivery failure alone for those decisions. The messages are stated explanations, not access to private reasoning (Appendix~\ref{app:misses}).
+
+In delayed-truth controls, all four completed Sonnet/Danger pairs changed from 0\% final correctness without truth to 100\% with truth ($p=.125$, descriptive). In each delayed game, all nine recipients evacuated in round three, including four direct source neighbours that had stayed after false-claim exposure in round two. The one Terra/Safe pair changed from 0\% to 100\% ($p=1$), with no pre-truth false exit in the delayed arm. No complete Terra/Danger pair exists. These observations establish timed action changes, not misinformation-induced beliefs or a general recovery effect.
+
+\subsection{Reported recognition separated from action}
+All 1,000 diagnostic attempts completed as attempts: 984 outputs were technically valid and sixteen failed. All forty discovery outputs and ten preflights were valid; all failures were held-out. Table~\ref{tab:diagnostic} displays actual denominators. There were fourteen held-out relayed-proof recognition errors: seven Sonnet and seven GLM. Nevertheless, all 314 valid direct/relayed-proof actions were correct, including those fourteen. Following truthful claim content alone can also produce correct actions in these cells; this does not establish causal reliance on authentication.
+
+\tablecaption{Held-out diagnostic recognition (correct/valid) and relayed-proof recognition by wording. There are 192 planned held-out decisions/configuration, with sixteen per condition/wording. Rates are conditional on validity and can use different subsets. Discovery and preflight are excluded.}
+\label{tab:diagnostic}
+\begin{tabularx}{\linewidth}{@{}lXXXX@{}}\toprule
+Configuration & All conditions & Relay: current & Relay: clarified & Technical failures\\\midrule
+Qwen & 190/190 & 16/16 & 16/16 & 2\\
+DeepSeek & 187/187 & 16/16 & 16/16 & 5\\
+GLM & 171/184 & 8/15 & 12/12 & 8\\
+Sonnet & 183/191 & 9/16 & 16/16 & 1\\
+Terra & 192/192 & 16/16 & 16/16 & 0\\\bottomrule
+\end{tabularx}
+
+Sonnet's relayed-proof recognition difference is $+0.4375$ across eight complete templates, but only five differences are nonzero: two-sided $p=.0625$, Holm $p=.375$. Its zero-aware minimum attainable $p$ is .0625. GLM has only four complete relayed-proof templates, mean difference $+.375$, $p=.5$ and Holm $p=1$; that contrast is inconclusive. DeepSeek's forged-prose contrast has only five complete templates. No diagnostic wording contrast is significant even before correction. Marginal changes in Table~\ref{tab:diagnostic} must not be read as paired estimates.
+
+Qwen, DeepSeek and Terra had zero observed recognition errors among their valid held-out outputs; this does not establish immunity or equivalence. GLM's six remaining errors confused none with unverified, with no false verification. Sonnet's one additional error is the counterexample below.
+
+\paragraph{Forged prose remained a failure case.}
+One clarified Sonnet response in a Safe view reported \texttt{verified / Danger} and evacuated. The unauthenticated peer's \texttt{text} contained a JSON-looking assertion with \texttt{authenticated: true}; there was no structured capsule. The response described the purported capsule flag as establishing truth. This supports a narrow interpretation of that output's metadata/prose confusion, not a cryptographic break. The observation is one of fifteen valid clarified forged-prose outputs. Its template is excluded from that planned paired contrast because the opposite-state clarified response hit the output ceiling. Consequently, the zero complete-pair contrast does not erase the observed error. A single stochastic counterexample does not establish that clarification causes false verification.
+
+\paragraph{Selected historical views.}
+On the four discovery views, current-wording Sonnet and GLM each recognized one of four and acted correctly on three of four; clarified wording yielded four of four on both measures. Qwen, DeepSeek and Terra were four of four in both arms. The histories were selected for Sonnet's network failures, and the new schema and fresh-call context differ. These are discovery follow-ups, not clean cross-model held-out replication, and cannot replace the original four recorded action failures.
 
 \section{Discussion and Limitations}
-The game is a simplified test of communication and action. A result on one ring network does not establish how all agent networks behave. Repeating the same model many times does not create many independent model families. Use whole games as the units of analysis, not individual agents, because agents influence each other. Use only simulated actions; external tools and hidden chain-of-thought are not needed.
+The network controls show that an instructed authenticated-transport arm can change action strongly in the sampled Sonnet configuration, while residual failures still occur after valid receipt. The separate diagnostic shows that requested recognition labels can disagree with correct actions. Together they motivate layered auditing; they do not identify a three-stage causal mediation model. A prompt-level clarification is not an established safe repair: its descriptive label improvement is not significant, and a forged-prose acceptance remains.
 
-The unpublished \emph{Authority Across Languages} proposal informed the source-label and language questions. It is background, not evidence of experimental results. We make no claim that this is the first study of these topics.
+The initial pilots motivated these controls but used different instructions and evidence access. They are not pooled as corrected-study controls. An observability check found opposite hidden worlds yielding identical recipient views in that earlier protocol; balanced correctness on those paired worlds cannot identify truth-discrimination capability; action and communication effects require separate endpoints (Appendix~\ref{app:history}). Nor does lack of significance imply model capability has eliminated the problem: power, task elicitation, missingness and ceiling effects remain alternatives.
+
+Both corrected studies are small and English-only. Context templates are handcrafted; each diagnostic cell has one stochastic response. Model/provider/precision changes confound general model comparisons. The network metadata is trusted by simulator convention, not a deployed cryptographic system, and capsules always contain truthful state when valid. Actions do not measure private belief, and rewards do not establish human-like motives. The diagnostic does not measure live propagation; the automatic relay does not measure voluntary evidence preservation. Exploratory network tests are unadjusted; diagnostic Holm families are per configuration. Budget censoring particularly limits delayed-truth generalization. Accounting also retains one unresolved diagnostic reservation.
+
+The next controlled test should cross the original four-field interface with the six-field interface and current/clarified wording on fixed views. Compare actions across interfaces and recognition only where elicited; add a deterministic typed-envelope parser. This tests elicitation and wording contributions; context and sampling remain alternatives unless independently varied. A later interacting experiment could cross carrier track record with independent issuer evidence and a cost for preserving it. That is an unproven follow-up, not a novelty claim or part of the completed evaluation.
+
 \section{Conclusion}
-This proposal defines comparisons to run, not findings from the revised evaluation. Its value must be assessed using the planned controlled experiments and reported failures as well as successful runs. No claim of proven safety improvement is made.
+In this bounded simulation, delivery of valid proof did not guarantee correct network action, and in a changed receiver task correct action did not guarantee correct reported recognition. The observed authentication-arm difference, residual proof misses, label/action dissociation and retained prose-forgery error support evaluating these observables separately. They do not establish a general safety ranking, a significant wording repair, or a new verification mechanism.
 
 \section*{Code and Data}
-\href{https://github.com/nhat117/AdoptionAIHackathon}{Project repository}; scenario data in \path{data/evacuation/}; earlier calibration outcomes and analysis in \path{reports/2026-11-08-calibration/}. The existing runner and calibration artifacts do not implement or validate every proposed condition.
+\href{https://github.com/nhat117/AdoptionAIHackathon/tree/a0db95c}{Versioned code and data snapshot}. Corrected network artifacts are in \path{reports/evidence-controls-v3/}; diagnostic inputs/results are in \path{data/authentication-diagnostic-v1/} and \path{reports/authentication-diagnostic-v1/}. Appendix~\ref{app:repro} describes replay, failures, settings and accounting. Earlier proposals and pilots are separately versioned; their records are not overwritten by this paper.
+
+\section*{LLM Usage Statement}
+Codex assisted experimental implementation, analysis, literature search and manuscript drafting. Separate Codex review contexts checked the saved evidence and claims, including primary-source comparisons; they are not independent model-family replications or human peer review. Numerical claims are traceable to retained artifacts. We do not claim access to agents' private reasoning or that automated review establishes novelty. Human authors remain responsible for the submitted manuscript.
 
 \clearpage
 \begin{thebibliography}{9}
-\bibitem{credibility} C. I. Hovland and W. Weiss (1951). \emph{The Influence of Source Credibility on Communication Effectiveness}. Public Opinion Quarterly, 15(4):635--650. \url{https://doi.org/10.1086/266350}.
-
 \bibitem{danger} H. Shirado, F. W. Crawford, and N. A. Christakis (2020). \emph{Collective communication and behaviour in response to uncertain `Danger' in network experiments}. Proceedings of the Royal Society A, 476:20190685. \url{https://doi.org/10.1098/rspa.2019.0685}.
-
-\bibitem{schachter} S. Schachter (1951). \emph{Deviation, rejection, and communication}. Journal of Abnormal and Social Psychology, 46:190--207. \url{https://doi.org/10.1037/h0062326}. Original experimental report also appears in \emph{Theory and Experiment in Social Communication} (1950), \url{https://cdn.isr.umich.edu/pubFiles/historicPublications/Theory_4867_.PDF}.
-\bibitem{tak} A. N. Tak et al. (2026). \emph{From Process Loss to Assembly Bonus: Human-Grounded Diagnosis of Multi-Agent LLM Collaboration}. \url{https://arxiv.org/html/2609.13261v1}.
+\bibitem{provenance} J. Liao et al. (2026). \emph{Auditing Provenance Sensitivity in LLM Agent Action Selection}. arXiv:2607.20827v2. \url{https://arxiv.org/html/2607.20827v2}.
+\bibitem{silence} Y. Hu (2026). \emph{Silence Is Endorsement: Verification-Status Laundering in LLM Agent Pipelines}. arXiv:2609.20211. \url{https://arxiv.org/html/2609.20211}.
+\bibitem{pact} L. Fan et al. (2026). \emph{The Granularity Mismatch in Agent Security: Argument-Level Provenance Solves Enforcement and Isolates the LLM Reasoning Bottleneck}. arXiv:2605.11039. \url{https://arxiv.org/html/2605.11039}.
+\bibitem{pcm} B. Ghosh (2026). \emph{PCM: A Proof-Carrying Message Protocol for Verifiable Multi-Agent Communication}. arXiv:2610.39109. \url{https://arxiv.org/html/2610.39109}.
+\bibitem{irsi} Institute for Recursive Self Improvement (2026). \emph{A correct VERIFIED tag is not enough: LLM agent teams on a common results board under adversarial posts}. AI-authored research note, updated October 14; not peer reviewed. \url{https://irsi.ai/notes/cascades-adversarial/}.
 \end{thebibliography}
-\clearpage
-\appendix
+
+\clearpage\appendix
 \section{Limitations and Dual-Use / Ethical Considerations}
-The completed calibration used structured signals in English. It provides no estimate of how language, claimed identity, or network structure affects evacuation in the proposed experiments. Agents share a model within each game and act under artificial payoffs. Their responses cannot establish how speakers of a language or members of a religious or political community would respond to an emergency.
+\label{app:ethics}
+This is a synthetic evacuation task, not guidance for actual emergency systems. All identities, warnings and decisions remain inside the simulator. We use no human experimental participants, external actions, or real emergency alerts. The human study provides a task inspiration, not evidence that these models share human psychology.
 
-A finding that a false warning travels farther under a particular sender label or network structure could help someone impersonate an authority or target a group with fabricated alerts. In this protocol all attributions are fictional and remain inside the simulator. Report missed evacuations alongside unnecessary evacuations, disclose translation uncertainty, and present group-level outcomes. Avoid presenting an effective false message as a real quotation or publishing a ranking of communities by supposed susceptibility.
+An adversary could misuse information about verification-scope confusion to disguise a claim as authoritative proof, or exploit a cautious receiver's rejection of genuine corrections. Conversely, unconditional acceptance of a misleading but authentic observation could amplify harm. Our simulator makes a valid capsule's state true by construction and therefore does not test genuine-but-unrepresentative measurements, issuer compromise, stale evidence or deployment-grade signatures. The forged-prose case is a controlled synthetic stimulus, not a successful attack on a real verifier. We disclose both missed-proof and false-verification directions and avoid rankings of countries, cultures or religious communities.
 
-\section{Model and Language Protocol}
-\subsection{Named models for the planned comparison}
-We propose the following six-model roster for the three experiments. This is a list of specific test models, not a list of all models available in each region. Only GPT-4.1 mini has completed the calibration batch. The other five need a task-comprehension and output-format check before evaluation.
+Neither free-form explanations nor requested status fields establish belief or intention. Small counts of zero observed errors do not bound deployment risk adequately. Publishing this pack supports reproducible tests and stronger independent-verifier controls; it does not justify deployment of an LLM-only safety gate.
 
-\tablecaption{Proposed model roster and access status.}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}X@{}}
-\toprule
-Developer / location & Model, exact identifier, and status\\
-\midrule
-OpenAI / US & GPT-4.1 mini: \path{openai/gpt-4.1-mini}. OpenRouter; calibration completed.\\
-Anthropic / US & Claude Haiku 4.5: \path{anthropic/claude-haiku-4.5}. OpenRouter; planned.\\
-Alibaba Qwen / China & Qwen3.8 27B: \path{qwen/qwen3.8-27b}. OpenRouter; planned.\\
-DeepSeek / China & DeepSeek V4 Flash (0423): \path{deepseek/deepseek-v4-flash}. OpenRouter; planned.\\
-Mistral AI / France & Mistral Small 3.2 24B Instruct: \path{mistralai/mistral-small-3.2-24b-instruct}. OpenRouter; planned.\\
-Swiss AI Initiative / Switzerland & Apertus 70B Instruct (2509): \path{swiss-ai/Apertus-70B-Instruct-2509}. Hugging Face checkpoint; inference endpoint still to be arranged.\\
-\bottomrule
+\section{Four network proof misses}
+\label{app:misses}
+The four cases below are distinct recipients in four of eight Sonnet proof games, not four independent model replications. Full local inputs, active decision rounds and visible messages are retained in \path{reports/evidence-controls-v3/sonnet-proof-misses.json}.
+
+\tablecaption{Residual Sonnet action failures with valid proof in active local views. All four stayed through the terminal decision.}
+\begin{tabularx}{\linewidth}{@{}lXX@{}}\toprule
+Seed & Recipient & Active proof-containing rounds\\\midrule
+2001 & 4 & 3--5\\
+2005 & 6 & 3--4\\
+2006 & 1 & 4\\
+2007 & 9 & 2--5\\\bottomrule
 \end{tabularx}
 
-The first five IDs were checked against the \href{https://openrouter.ai/api/v1/models}{OpenRouter model catalogue} on November 8, 2026. Apertus is identified by its \href{https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509}{official model card}; it was not found under the Swiss AI namespace in that catalogue. A catalogue entry is not a successful test call. We will record the resolved model version and serving provider for each run, and freeze reasoning settings as well as sampling settings. These models differ in age, size, and training, so this is not a capability-matched test of regions.
+For seed 2001, recipient 4 explicitly described an authenticated capsule but rejected its unauthenticated carrier and stayed. That is an observable conflict with the instructed capsule rule. The recorded message motivates a scope-confusion hypothesis; it is not a verified causal account of internal reasoning. In the diagnostic's selected historical views, Sonnet's remaining current-wording wrong action is view005 and GLM's is view007. Other reruns taking correct actions do not invalidate the preserved network events.
 
-Use the same model for all ten agents within a game, then rerun the matched scenarios with the next model. If Apertus cannot be served within the pilot budget, report a five-model comparison and mark Apertus as pending. Do not silently substitute a second Mistral model or claim two independent European developers were tested.
+\section{Study development and excluded interpretations}
+\label{app:history}
+The first exploratory collection completed 105 of 112 planned games across language, claimed-identity, network and evidence controls plus a Terra comparison; seven failed/interrupted attempts were retained. Sixteen baseline games were reused across comparisons and counted only once. The first three factors did not produce an interpretable general language/identity/topology claim. An audit replayed 73 original-protocol completed trajectories identically under opposite hidden truth while preserving the public claim. Those replays are not extra live games, do not include the later positive controls and are not a 73-game experiment on recognition.
 
+For equally weighted indistinguishable hidden worlds and a fixed response distribution, expected action correctness is 50\%. This is an observability limit on that paired benchmark, not a payoff theorem, reliability guarantee or empirical estimate for every finite cell. Sonnet's staying and Terra's claim-following could both yield 50\% balanced correctness for different reasons. The corrected v3 controls used revised evidence instructions and held-out seeds; early games are not interchangeable controls. Corrected studies were frozen before their respective collections but selected after earlier observations, so the paper is exploratory overall. No unrun six-model/local-language proposal is presented as completed.
 
-\subsection{Which language does each model use?}
-The main comparison uses a language associated with each developer's location, as listed below. We call this the \emph{local-language condition}. Models do not have a human native language, and several locations have more than one language. For Switzerland, Standard German is our explicit study choice, not a claim that it is Apertus's only or best language.
+The human original used 75-second continuous sessions, transient Safe/Danger displays, degree-four networks of varying sizes, an informed participant marked to neighbours, and payoff-comprehension screening. Our ten-agent synchronous ring with persistent text histories, a scripted broadcaster, separate witness and automatic capsules is a substantive adaptation. We do not attribute the original human study's false reassurance mechanism to the models from action patterns alone.
 
-\tablecaption{Language assignments for each model.}
-\begin{tabularx}{\linewidth}{@{}lXXX@{}}
-\toprule
-Model & Local-language condition & Shared baseline & Extra language\\
-\midrule
-GPT-4.1 mini & English & English (same condition) & Vietnamese\\
-Claude Haiku 4.5 & English & English (same condition) & Vietnamese\\
-Qwen3.8 27B & Simplified Chinese & English & Vietnamese\\
-DeepSeek V4 Flash & Simplified Chinese & English & Vietnamese\\
-Mistral Small 3.2 & French & English & Vietnamese\\
-Apertus 70B & Standard German & English & Vietnamese\\
-\bottomrule
-\end{tabularx}
+\section{Reproduction, technical failures and accounting}
+\label{app:repro}
+\paragraph{Exact served configurations.}
+Network routes: \path{anthropic/claude-sonnet-5.5} via \path{google-vertex/global}, and \path{openai/gpt-6.1-terra} via \path{openai}. The diagnostic adds \path{qwen/qwen3.8-27b} via \path{near-ai/fp8}, \path{deepseek/deepseek-v4.1-flash-1017} via \path{near-ai}, and \path{z-ai/glm-5.3-flash} via \path{near-ai/fp8}. Model/provider labels and public endpoint snapshots are recorded; they do not independently verify weights or serving precision. Network calls allow 2,048 output tokens, diagnostic calls 4,096, including billed reasoning. Temperature is provider-controlled; low effort is requested, not compute-matched. State, dataset, prompt/source hashes and route controls are retained in frozen plans.
 
-\textbf{What changes with language?} Translate the task instructions, evidence, controlled claims, source labels, correction messages, and agent-facing conversation. Ask all agents to write their natural-language messages in that game's language. Keep machine-readable action keys and message IDs unchanged. Check translation meaning before evaluation, and record when an agent uses the wrong language or mixes languages. Do not silently count such runs as valid language-following examples.
+\paragraph{Diagnostic failures.}
+Qwen has one HTTP429 with unresolved billing and one message over 400 characters. DeepSeek has five length-limited outputs. GLM has three messages over 400 characters and five responses citing more than four received IDs. Sonnet has one length-limited output; Terra has none. Invalid and length-limited replies remain excluded from behavioral scoring with their raw responses and known costs retained. All failed diagnostic cells are held-out. Technical missingness can alter complete-template coverage; GLM relayed proof has four and DeepSeek forged prose five complete templates. The Sonnet forged-prose error's opposite-state failure removes its template from the planned paired contrast, without removing the valid counterexample from descriptive reporting.
 
-\textbf{Why retain English for every model?} Comparing a Chinese model in Chinese with a French model in French changes two things at once. That comparison describes the combined model-and-language setup. Running both in English gives a shared baseline. Comparing the same model in English and its local-language condition tests language sensitivity within that model. English is counted only once for the US models.
+\paragraph{Replay checks.}
+All 58 completed corrected network games replayed exact local views, transitions and outcomes from saved responses. The diagnostic's 4,034 archive records restored byte-identically in a fresh filesystem with networking forbidden; rows, rates, all 30 contrasts and provisional budget matched. This uses the same runtime, not an independent environment or new provider replication. All 184 offline tests passed; separate judge checks included 33 publication/escrow/provisional tests. The diagnostic raw archive SHA256 is \path{52e89328228f7b7f358cc559c584c7c5de7efba8dbf92b2d35a31cb2e883a3ba}. Both auditor versions, the approved operational wrapper and amendment are retained. Instructions and package versions accompany the repository artifacts.
 
-\textbf{Where does Vietnamese fit?} Vietnamese is a separate shared-language test across all six models, including those whose developers are outside Vietnam. Reuse the same scenarios and treatments. This tests performance in Vietnamese; it does not make any model Vietnamese or measure Vietnamese culture. With all six models available, there are 16 distinct model--language combinations: six English, six Vietnamese, and four additional local-language conditions. This is a list of planned conditions, not a commitment to run every identity and treatment combination at once.
+\paragraph{Costs and disclosed operational amendment.}
+The first collection and corrected network follow-up together settled US\$34.60287825 within their US\$35 cap, with zero pending reservations; the corrected v3 increment was US\$9.05724275. The separate diagnostic settled US\$2.229664068 with one unresolved US\$0.04 reservation, current accounted exposure US\$2.269664068 and maximum historical exposure US\$2.456815220 within a fresh US\$25 cap under recorded reservation assumptions. This is not a finally reconciled provider invoice.
 
-\paragraph{How to test identity fairly.}
-Change the claimed sender label on the controlled message while keeping its words, evidence, timing, and network position the same. The label gives no extra permissions or true information. These are fictional attributions in the game, not real statements by those people or religious figures. Keep the correction sender fixed in C. Record refusal or role-play responses separately. Freeze exact labels and translations before running the comparison.
-
-\paragraph{How to test models and languages fairly.}
-Run the same scenarios and treatments for every selected model. Record the developer, exact model ID, access date, API host, and generation settings. A hosting provider is not the model's developer. Geographic labels describe the sample; they do not explain why a model behaves differently. Model ability, training, size, and language skill can all differ. We cannot infer national culture, political loyalty, or religious belief from these results.
-
-
-\section*{LLM Usage Statement}
-An AI assistant helped investigate sources, design comparisons, write simulator code, and draft and edit this report. The recorded calibration outputs were checked by the repository's validators. Human authors must review the source interpretations, methods, and final text; independent human verification of every claim is not asserted.
+The original diagnostic guard stopped at HTTP429 after 559 attempted diagnostic cells. A separately committed, independently reviewed escrow amendment resumed only the 441 untouched cells, retaining the exact failed request, reservation and historical halt. No zero settlement, fabricated response, retry, prompt/route change or cap increase was made. Any new uncovered uncertainty would stop collection again. The original analyzer still rejects pending billing; a versioned provisional auditor retains the complete ledger and unchanged scientific scoring while accepting only the bound escrow. The reservation is a conservative allowance under pinned price/token assumptions, not a provider guarantee against billing anomalies.
 
 \end{document}

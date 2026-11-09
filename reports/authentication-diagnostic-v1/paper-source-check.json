@@ -1,0 +1,21 @@
+{
+  "paper": "projects/persistent-dissenter/main.tex",
+  "source_sha256": "0dc054dab77d30f950ff06bb10004825d07d81a0ea8dfe47858be22e8da913a3",
+  "base_commit": "4ac8ec627c64e34c1c87d29c1ee2f88c8edacbbf",
+  "abstract_whitespace_words": 210,
+  "validation_mode": "static_source_only",
+  "pdf_created_or_compiled": false,
+  "page_count_or_layout_certified": false,
+  "environments_braces_math_balanced": true,
+  "labels_and_citations_resolved": true,
+  "citation_entries": 6,
+  "assets_present": true,
+  "checked_empirical_tables": true,
+  "unchanged_artifact_sha256": {
+    "projects/persistent-dissenter/main.pdf": "9a901422e219c3eba898e006727ad99089372cd4a269603d25786e140ffe2707",
+    "projects/network-recovery/main.pdf": "6f13eed8a33ba91777c0dc4a53f6336d967d32eda1d4d5ff2e44464bef27f157",
+    "projects/network-recovery/main.tex": "3ea6e285309ab32ef028fa3581fa4b7933bc1ef95d4affdbb7ccadc8d164af35",
+    "projects/template/layout.tex": "438859d0f318092c918a7c47d637c65ea34f4e6ea5f29470be5aa79506e7ce9b"
+  },
+  "scope": "One empirical paper; two distinct studies, no new inference"
+}

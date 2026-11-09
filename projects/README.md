@@ -1,10 +1,18 @@
-# Current research plan
+# Current empirical paper
+
+**One canonical manuscript:** [Delivered, Recognized, Acted On: Evidence Boundaries in LLM Agent Networks](persistent-dissenter/main.tex).
+
+The LaTeX source now reports the completed corrected network evidence controls and the separate five-configuration receiver diagnostic as two studies in one paper. [Diagnostic findings](../reports/authentication-diagnostic-v1/RESULTS.md) and the [independent paper review](../reports/authentication-diagnostic-v1/PAPER_REVIEW.md) document the evidence and limits. The old proposals below are historical context, not additional papers being finalized.
+
+Per the user's source-only instruction, existing PDFs were **not regenerated** and do not reflect the final manuscript. The shared author/template file is unchanged. Publication submission and final author signoff are separate from this source revision.
+
+## Historical proposal plan
 
 [Submission-template alignment audit](template-alignment.md): structure aligned; final results, authorship, figure, and submission-length editing remain pending.
 
 > **Status update (after the overnight pilot):** the three experiments below produced an explained null result and now motivate the evidence study. See the [current research story](../README.md#current-research-story). Paper C, the six-model roster and the full matrix below are future work. The repeat of the identity study is designed as [influence v4](../reports/influence-v4/README.md): a ladder of fictional roles (teammate, team lead, certified emergency officer, official agency) crossed with the "labels carry no authority" warning present or absent, with a private sensor and 0–100 beliefs. It replaces the real political and religious figures.
 
-Paper A now contains **three equally important experiments** in one evacuation game:
+The earlier paper A proposal contained **three equally important experiments** in one evacuation game:
 
 1. **Language:** change the language; keep the ordinary-peer source and ring network.
 2. **Claimed source identity:** compare teammate, emergency expert, senior Chinese government official, Xi Jinping, Buddhist monk, and Christian pastor. Every selected identity is tested across models and their listed languages.
@@ -16,11 +24,11 @@ Repetition and chosen listening are no longer treatment variables. The proposed 
 
 The six-model roster and language assignments are listed below and in the paper. The full plan has 112 unique model/language/identity/network cells, sharing ordinary-peer ring baselines, before balanced truth/accuracy cases, seeds, and repeats. The full matrix has not launched and is not authorized by the smaller pilot. Broader model checks, translation review and sample allocation remain required.
 
-- [Revised paper A PDF](persistent-dissenter/main.pdf) · [LaTeX](persistent-dissenter/main.tex)
+- [Historical proposal A PDF (outdated)](persistent-dissenter/main.pdf) · [Current empirical LaTeX](persistent-dissenter/main.tex)
 - [Separate recovery paper C PDF](network-recovery/main.pdf) · [LaTeX](network-recovery/main.tex)
 - [Earlier calibration results](../reports/2026-11-08-calibration/README.md) describe the old design, not these three experiments.
 
-The folder name `persistent-dissenter` is retained for existing links. The approved language/identity/network overview is saved in `persistent-dissenter/figures/experiment-overview.png` and included in paper A. Earlier illustrations are outdated. Paper C remains a separate recovery proposal. The implementation guide describes the earlier A/C runner; the bounded pilot report documents the revised protocol and current results.
+The folder name `persistent-dissenter` is retained for existing links. The approved language/identity/network overview is saved in `persistent-dissenter/figures/experiment-overview.png` and was included in the earlier proposal. Earlier illustrations are outdated. Paper C remains a separate recovery proposal. The implementation guide describes the earlier A/C runner; the bounded pilot report documents the revised protocol and current results.
 
 ### Named model roster
 
