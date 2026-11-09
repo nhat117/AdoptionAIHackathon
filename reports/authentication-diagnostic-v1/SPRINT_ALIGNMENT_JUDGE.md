@@ -1,0 +1,41 @@
+# Independent Sprint-alignment judge — 2026-11-09
+
+**Verdict: close thematic fit; strongest as Track 2 empirical research with Track 1 reproducibility support. Novelty is the weakest judging dimension.** This is a separate Codex review context, not an official judge or human peer review. No manuscript edits, paid inference or submission were performed. The canonical source reviewed is the final paper identified in SUBMISSION_JUDGE_REVIEW.md.
+
+## Fresh source coverage
+
+Live official-page sections read: Overview, four tracks, resources, all example projects, judging criteria, submission requirements, form fields, FAQ and schedule. Source: [official Swarm Alignment Hackathon page](https://apartresearch.com/sprints/swarm-alignment-2026). Official essentials, paraphrased: choose an anchor track; cross-track work is welcome. Judging uses Impact Potential & Innovation, Execution Quality, Presentation & Clarity, each1–5. Required: official-template PDF, at most8pages before references/appendices,150–250-word abstract, authors/affiliations and ethics/dual-use appendix. Pre-sprint code must be identified. Code/demo are optional; Adaption resources are offered, not mandated. The form limits PDF to25MB and requests title/summary, publishing interest, team name/location and member names/emails. Deadline: November9,11:59UTC, or22:59Melbourne. Confirmation email establishes receipt; a missing public listing does not establish failure. Replacements use the same title before deadline. This is a concise rules summary, not reproduction of the entire page.
+
+Fresh literal search: `LLM agent networks authenticated relayed evidence correct verification tag evacuation proof carrying message provenance sensitivity`. Coverage: focused web search plus primary-method revisits, not a systematic literature review. A failed or sparse search would not establish novelty.
+
+| Primary source and sections actually read | Overlap, difference and actionable lesson |
+|---|---|
+| [Liao et al., provenance sensitivity v2](https://arxiv.org/html/2607.20827v2), Method: fixed interface, source interventions, evidence degradation | Already separates source-sensitive actions from correct actions. Our live network paths vary and our receiver interface changes; retain these caveats. **Keep** layered auditing; **drop** generic source-authority-audit novelty. |
+| [Ghosh, PCM](https://arxiv.org/html/2610.39109), §12.1 ground truth/receivers and §13 proof limits | Real executed tools, independent signers and deterministic verifiers differ from our stipulated simulator truth. **Keep** consumer-side interpretation as our scope; **drop** claims to implement a secure proof protocol or independent deployment verifier. |
+| [IRSI correct-VERIFIED note](https://irsi.ai/notes/cascades-adversarial/), setup, attacks and package-effect caveats | Live teams can fail despite correct board tags; genuine receipts and forged explanatory prose are prior consumer-side tests. Explicitly AI-authored, not peer reviewed. **Keep** narrow nested carrier/capsule and active-decision observations; **drop** first failure-despite-verification claims. |
+| [Authenticated and Offline-Verifiable Agent-to-Agent Messaging](https://ieeexplore.ieee.org/abstract/document/11393740), publisher abstract only | Cryptographic receipts/Merkle logging already have implemented precedents. Abstract-only access cannot establish full methods. **Drop** protocol-invention framing; no manuscript addition is required for a protocol claim the paper already avoids. |
+
+## Track mapping: our assessment
+
+- **Track 2 primary — strong.** The actual paper concerns communicating agents, a controlled false broadcaster, evidence transport and collective final actions. Its completed interacting study is the anchor; the separate single-receiver diagnostic explains a measurement boundary rather than replacing the network contribution. The closest official example concerns testing whether a compromised source steers a team and comparing evidence safeguards. Our work is narrower: a fixed topology, source scripts and small configuration/seed coverage; it does not establish emergent leadership, critical network size or a topology effect.
+- **Track 1 secondary — credible.** The useful deliverable is a reproducible ten-agent task and exact-response replay pack. Its audit archive and failure accounting are strengths. It is not a containment-security assessment, sandbox escape defence or a validated cheap-model proxy.
+- **Track 3 relevance — limited.** Carrier/issuer distinction is pertinent to infrastructure trust, but no real A2A implementation, key lifecycle, cryptographic verifier, reputation mechanism or proven mitigation was tested. Do not select it merely because the word authentication appears; if included, qualify it as an infrastructure-relevant evaluation.
+- **Track 4 relevance — limited.** Offline trace auditing supports oversight, but the paper does not benchmark a runtime monitor against coordinated misconduct or real incident traces. An LLM judge reviewing research is not an evaluated swarm-oversight system.
+
+## Judging vulnerabilities and positioning
+
+These are reviewer judgments, not predicted official scores or winning probabilities.
+
+**Impact/innovation: moderate potential, bounded differentiation.** The portable lesson is that valid delivery, reported recognition and action must be audited separately. However, close provenance and verification-consumer precedents reduce originality. The paper's strongest candidate distinction is the combination of timed proof-containing network action misses with the changed-task label/action dissociation, preserved as exploratory observations. It neither establishes a new causal mechanism nor a significant safe repair. Novelty cannot be rescued by adding model-country labels, extra experiment numbers or treating selected historical cases as fresh replication.
+
+**Execution: stronger than novelty.** Versioned plans, matched controls, game/template units, retained exclusions/costs, raw replay and the forged-prose counterexample make the limited findings reviewable. Scope limits remain substantial: eight network seeds/configuration, one output per handcrafted diagnostic cell, nonrandom missingness, automatic forwarding, trusted-by-convention metadata, unmatched hosts/precision and budget-censored delayed cells. These prevent a top-tier generality/validation claim even when replay passes.
+
+**Presentation: now strong.** The revised source has an easy-scan methods diagram, raw paired-seed result graph, all-planned diagnostic coverage, an exact failure example, readable tables and explicit limitations. Eight main pages and210-word abstract passed the rendered/source checks. Appendix provenance keeps sponsor activity distinct from main evidence. Do not add more decorative figures or an unrelated experiment now.
+
+## Keep/change/drop and readiness
+
+- **Keep:** the single paper, Track2 anchor, Track1 artifact support, narrow exploratory conclusions, valid-only and planned-denominator views, all technical failures and valid counterexamples.
+- **Change:** submission summary should lead with the interacting-network question and three concrete findings, then explain why the diagnostic uses a changed interface. Link the current branch and immutable data snapshot. Ensure the uploaded PDF is freshly rendered from the reviewed source, not the old proposal PDF.
+- **Drop:** broad safety rankings, a demonstrated prompt fix, invented protocol/monitor claims, generic provenance novelty, and any implication that Adaption training or generated stimuli supplied the corrected-study ground truth.
+
+**Separate conclusions:** technical replay/source/layout pass; empirical claims are defensible within stated bounds; close Sprint alignment passes; novelty remains limited/unestablished; spending authorization is unchanged. Final procedural checks still require correct rendered PDF upload, completed official form, the intended team/contact information and receipt confirmation before the deadline. No available review proves these submission steps have occurred. The unresolvedUS$0.04diagnostic reservation stays disclosed; no additional inference is necessary for submission.
