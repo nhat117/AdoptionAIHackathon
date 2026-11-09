@@ -1,15 +1,13 @@
-\documentclass[10pt]{article}
-\usepackage[margin=0.8in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,booktabs,tabularx,amsmath,xurl}
+\documentclass[11pt]{article}
+\input{../template/layout.tex}
+\usepackage{booktabs,tabularx,amsmath,xurl}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
 \renewcommand{\labelitemi}{--}
-\newcommand{\tablecaption}[1]{\refstepcounter{table}\par\textbf{Table \thetable. #1}\par}
 \title{Who Still Hears the Warning?\\Language, Claimed Identity, and Network Structure}
-\author{}\date{Revised proposal A --- November 8, 2026}
+
 \begin{document}\maketitle
 
 \begin{abstract}
@@ -75,56 +73,7 @@ Network: experiment 3 & Ring or connected random-regular graph; ten agents and f
 \end{tabularx}
 
 
-\subsection{Named models for the planned comparison}
-We propose the following six-model roster for the three experiments. This is a list of specific test models, not a list of all models available in each region. Only GPT-4.1 mini has completed the calibration batch. The other five need a task-comprehension and output-format check before evaluation.
-
-\tablecaption{Proposed model roster and access status.}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}X@{}}
-\toprule
-Developer / location & Model, exact identifier, and status\\
-\midrule
-OpenAI / US & GPT-4.1 mini: \path{openai/gpt-4.1-mini}. OpenRouter; calibration completed.\\
-Anthropic / US & Claude Haiku 4.5: \path{anthropic/claude-haiku-4.5}. OpenRouter; planned.\\
-Alibaba Qwen / China & Qwen3.8 27B: \path{qwen/qwen3.8-27b}. OpenRouter; planned.\\
-DeepSeek / China & DeepSeek V4 Flash (0423): \path{deepseek/deepseek-v4-flash}. OpenRouter; planned.\\
-Mistral AI / France & Mistral Small 3.2 24B Instruct: \path{mistralai/mistral-small-3.2-24b-instruct}. OpenRouter; planned.\\
-Swiss AI Initiative / Switzerland & Apertus 70B Instruct (2509): \path{swiss-ai/Apertus-70B-Instruct-2509}. Hugging Face checkpoint; inference endpoint still to be arranged.\\
-\bottomrule
-\end{tabularx}
-
-The first five IDs were checked against the \href{https://openrouter.ai/api/v1/models}{OpenRouter model catalogue} on November 8, 2026. Apertus is identified by its \href{https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509}{official model card}; it was not found under the Swiss AI namespace in that catalogue. A catalogue entry is not a successful test call. We will record the resolved model version and serving provider for each run, and freeze reasoning settings as well as sampling settings. These models differ in age, size, and training, so this is not a capability-matched test of regions.
-
-Use the same model for all ten agents within a game, then rerun the matched scenarios with the next model. If Apertus cannot be served within the pilot budget, report a five-model comparison and mark Apertus as pending. Do not silently substitute a second Mistral model or claim two independent European developers were tested.
-
-
-\subsection{Which language does each model use?}
-The main comparison uses a language associated with each developer's location, as listed below. We call this the \emph{local-language condition}. Models do not have a human native language, and several locations have more than one language. For Switzerland, Standard German is our explicit study choice, not a claim that it is Apertus's only or best language.
-
-\tablecaption{Language assignments for each model.}
-\begin{tabularx}{\linewidth}{@{}lXXX@{}}
-\toprule
-Model & Local-language condition & Shared baseline & Extra language\\
-\midrule
-GPT-4.1 mini & English & English (same condition) & Vietnamese\\
-Claude Haiku 4.5 & English & English (same condition) & Vietnamese\\
-Qwen3.8 27B & Simplified Chinese & English & Vietnamese\\
-DeepSeek V4 Flash & Simplified Chinese & English & Vietnamese\\
-Mistral Small 3.2 & French & English & Vietnamese\\
-Apertus 70B & Standard German & English & Vietnamese\\
-\bottomrule
-\end{tabularx}
-
-\textbf{What changes with language?} Translate the task instructions, evidence, controlled claims, source labels, correction messages, and agent-facing conversation. Ask all agents to write their natural-language messages in that game's language. Keep machine-readable action keys and message IDs unchanged. Check translation meaning before evaluation, and record when an agent uses the wrong language or mixes languages. Do not silently count such runs as valid language-following examples.
-
-\textbf{Why retain English for every model?} Comparing a Chinese model in Chinese with a French model in French changes two things at once. That comparison describes the combined model-and-language setup. Running both in English gives a shared baseline. Comparing the same model in English and its local-language condition tests language sensitivity within that model. English is counted only once for the US models.
-
-\textbf{Where does Vietnamese fit?} Vietnamese is a separate shared-language test across all six models, including those whose developers are outside Vietnam. Reuse the same scenarios and treatments. This tests performance in Vietnamese; it does not make any model Vietnamese or measure Vietnamese culture. With all six models available, there are 16 distinct model--language combinations: six English, six Vietnamese, and four additional local-language conditions. This is a list of planned conditions, not a commitment to run every identity and treatment combination at once.
-
-\paragraph{How to test identity fairly.}
-Change the claimed sender label on the controlled message while keeping its words, evidence, timing, and network position the same. The label gives no extra permissions or true information. These are fictional attributions in the game, not real statements by those people or religious figures. Keep the correction sender fixed in C. Record refusal or role-play responses separately. Freeze exact labels and translations before running the comparison.
-
-\paragraph{How to test models and languages fairly.}
-Run the same scenarios and treatments for every selected model. Record the developer, exact model ID, access date, API host, and generation settings. A hosting provider is not the model's developer. Geographic labels describe the sample; they do not explain why a model behaves differently. Model ability, training, size, and language skill can all differ. We cannot infer national culture, political loyalty, or religious belief from these results.
+The protocol compares six proposed models using shared English and Vietnamese conditions and additional model-specific languages. Appendix B gives the model roster, language assignments, and implementation details.
 
 \subsection{Shared procedure for all three experiments}
 \begin{enumerate}
@@ -185,16 +134,14 @@ Natural-language arguments, random-regular networks, identity labels, and the br
 \section{Discussion and Limitations}
 The game is a simplified test of communication and action. A result on one ring network does not establish how all agent networks behave. Repeating the same model many times does not create many independent model families. Use whole games as the units of analysis, not individual agents, because agents influence each other. Use only simulated actions; external tools and hidden chain-of-thought are not needed.
 
-The user's friend's unpublished \emph{Authority Across Languages} proposal informed the source-label and language questions. It is background, not evidence of experimental results. The Google document supplied earlier was a submission template. This AI-assisted draft needs author information, team review, and submission-format checks before submission. We make no claim that this is the first study of these topics.
+The unpublished \emph{Authority Across Languages} proposal informed the source-label and language questions. It is background, not evidence of experimental results. We make no claim that this is the first study of these topics.
 \section{Conclusion}
 This proposal defines comparisons to run, not findings from the revised evaluation. Its value must be assessed using the planned controlled experiments and reported failures as well as successful runs. No claim of proven safety improvement is made.
 
 \section*{Code and Data}
 \href{https://github.com/nhat117/AdoptionAIHackathon}{Project repository}; scenario data in \path{data/evacuation/}; earlier calibration outcomes and analysis in \path{reports/2026-11-08-calibration/}. The existing runner and calibration artifacts do not implement or validate every proposed condition.
 
-\section*{LLM Usage Statement}
-An AI assistant helped investigate sources, design comparisons, write simulator code, and draft and edit this report. The recorded calibration outputs were checked by the repository's validators. Human authors must review the source interpretations, methods, and final text; independent human verification of every claim is not asserted. Author names and affiliations are still to be supplied.
-
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{credibility} C. I. Hovland and W. Weiss (1951). \emph{The Influence of Source Credibility on Communication Effectiveness}. Public Opinion Quarterly, 15(4):635--650. \url{https://doi.org/10.1086/266350}.
 
@@ -202,4 +149,68 @@ An AI assistant helped investigate sources, design comparisons, write simulator 
 
 \bibitem{schachter} S. Schachter (1951). \emph{Deviation, rejection, and communication}. Journal of Abnormal and Social Psychology, 46:190--207. \url{https://doi.org/10.1037/h0062326}. Original experimental report also appears in \emph{Theory and Experiment in Social Communication} (1950), \url{https://cdn.isr.umich.edu/pubFiles/historicPublications/Theory_4867_.PDF}.
 \bibitem{tak} A. N. Tak et al. (2026). \emph{From Process Loss to Assembly Bonus: Human-Grounded Diagnosis of Multi-Agent LLM Collaboration}. \url{https://arxiv.org/html/2609.13261v1}.
-\end{thebibliography}\end{document}
+\end{thebibliography}
+\clearpage
+\appendix
+\section{Limitations and Dual-Use / Ethical Considerations}
+The completed calibration used structured signals in English. It provides no estimate of how language, claimed identity, or network structure affects evacuation in the proposed experiments. Agents share a model within each game and act under artificial payoffs. Their responses cannot establish how speakers of a language or members of a religious or political community would respond to an emergency.
+
+A finding that a false warning travels farther under a particular sender label or network structure could help someone impersonate an authority or target a group with fabricated alerts. In this protocol all attributions are fictional and remain inside the simulator. Report missed evacuations alongside unnecessary evacuations, disclose translation uncertainty, and present group-level outcomes. Avoid presenting an effective false message as a real quotation or publishing a ranking of communities by supposed susceptibility.
+
+\section{Model and Language Protocol}
+\subsection{Named models for the planned comparison}
+We propose the following six-model roster for the three experiments. This is a list of specific test models, not a list of all models available in each region. Only GPT-4.1 mini has completed the calibration batch. The other five need a task-comprehension and output-format check before evaluation.
+
+\tablecaption{Proposed model roster and access status.}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}X@{}}
+\toprule
+Developer / location & Model, exact identifier, and status\\
+\midrule
+OpenAI / US & GPT-4.1 mini: \path{openai/gpt-4.1-mini}. OpenRouter; calibration completed.\\
+Anthropic / US & Claude Haiku 4.5: \path{anthropic/claude-haiku-4.5}. OpenRouter; planned.\\
+Alibaba Qwen / China & Qwen3.8 27B: \path{qwen/qwen3.8-27b}. OpenRouter; planned.\\
+DeepSeek / China & DeepSeek V4 Flash (0423): \path{deepseek/deepseek-v4-flash}. OpenRouter; planned.\\
+Mistral AI / France & Mistral Small 3.2 24B Instruct: \path{mistralai/mistral-small-3.2-24b-instruct}. OpenRouter; planned.\\
+Swiss AI Initiative / Switzerland & Apertus 70B Instruct (2509): \path{swiss-ai/Apertus-70B-Instruct-2509}. Hugging Face checkpoint; inference endpoint still to be arranged.\\
+\bottomrule
+\end{tabularx}
+
+The first five IDs were checked against the \href{https://openrouter.ai/api/v1/models}{OpenRouter model catalogue} on November 8, 2026. Apertus is identified by its \href{https://huggingface.co/swiss-ai/Apertus-70B-Instruct-2509}{official model card}; it was not found under the Swiss AI namespace in that catalogue. A catalogue entry is not a successful test call. We will record the resolved model version and serving provider for each run, and freeze reasoning settings as well as sampling settings. These models differ in age, size, and training, so this is not a capability-matched test of regions.
+
+Use the same model for all ten agents within a game, then rerun the matched scenarios with the next model. If Apertus cannot be served within the pilot budget, report a five-model comparison and mark Apertus as pending. Do not silently substitute a second Mistral model or claim two independent European developers were tested.
+
+
+\subsection{Which language does each model use?}
+The main comparison uses a language associated with each developer's location, as listed below. We call this the \emph{local-language condition}. Models do not have a human native language, and several locations have more than one language. For Switzerland, Standard German is our explicit study choice, not a claim that it is Apertus's only or best language.
+
+\tablecaption{Language assignments for each model.}
+\begin{tabularx}{\linewidth}{@{}lXXX@{}}
+\toprule
+Model & Local-language condition & Shared baseline & Extra language\\
+\midrule
+GPT-4.1 mini & English & English (same condition) & Vietnamese\\
+Claude Haiku 4.5 & English & English (same condition) & Vietnamese\\
+Qwen3.8 27B & Simplified Chinese & English & Vietnamese\\
+DeepSeek V4 Flash & Simplified Chinese & English & Vietnamese\\
+Mistral Small 3.2 & French & English & Vietnamese\\
+Apertus 70B & Standard German & English & Vietnamese\\
+\bottomrule
+\end{tabularx}
+
+\textbf{What changes with language?} Translate the task instructions, evidence, controlled claims, source labels, correction messages, and agent-facing conversation. Ask all agents to write their natural-language messages in that game's language. Keep machine-readable action keys and message IDs unchanged. Check translation meaning before evaluation, and record when an agent uses the wrong language or mixes languages. Do not silently count such runs as valid language-following examples.
+
+\textbf{Why retain English for every model?} Comparing a Chinese model in Chinese with a French model in French changes two things at once. That comparison describes the combined model-and-language setup. Running both in English gives a shared baseline. Comparing the same model in English and its local-language condition tests language sensitivity within that model. English is counted only once for the US models.
+
+\textbf{Where does Vietnamese fit?} Vietnamese is a separate shared-language test across all six models, including those whose developers are outside Vietnam. Reuse the same scenarios and treatments. This tests performance in Vietnamese; it does not make any model Vietnamese or measure Vietnamese culture. With all six models available, there are 16 distinct model--language combinations: six English, six Vietnamese, and four additional local-language conditions. This is a list of planned conditions, not a commitment to run every identity and treatment combination at once.
+
+\paragraph{How to test identity fairly.}
+Change the claimed sender label on the controlled message while keeping its words, evidence, timing, and network position the same. The label gives no extra permissions or true information. These are fictional attributions in the game, not real statements by those people or religious figures. Keep the correction sender fixed in C. Record refusal or role-play responses separately. Freeze exact labels and translations before running the comparison.
+
+\paragraph{How to test models and languages fairly.}
+Run the same scenarios and treatments for every selected model. Record the developer, exact model ID, access date, API host, and generation settings. A hosting provider is not the model's developer. Geographic labels describe the sample; they do not explain why a model behaves differently. Model ability, training, size, and language skill can all differ. We cannot infer national culture, political loyalty, or religious belief from these results.
+
+
+\section*{LLM Usage Statement}
+An AI assistant helped investigate sources, design comparisons, write simulator code, and draft and edit this report. The recorded calibration outputs were checked by the repository's validators. Human authors must review the source interpretations, methods, and final text; independent human verification of every claim is not asserted.
+
+\end{document}

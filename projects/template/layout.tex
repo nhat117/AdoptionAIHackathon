@@ -1,0 +1,20 @@
+% Shared Apart Research report layout. Build from the paper's directory.
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{OldStandard}[Path=../template/fonts/, Extension=.ttf,
+ UprightFont=*-Regular, ItalicFont=*-Italic, BoldFont=*-Bold]
+\usepackage{titlesec,needspace}
+\setlength{\emergencystretch}{1em}
+\newcommand{\tablecaption}[1]{\Needspace{9\baselineskip}\refstepcounter{table}\par\textbf{Table \thetable. #1}\par\nopagebreak}
+\titleformat{\section}{\bfseries\fontsize{14bp}{17bp}\selectfont}{\thesection.}{0.45em}{}
+\titleformat{\subsection}{\bfseries\fontsize{13bp}{16bp}\selectfont}{\thesubsection}{0.45em}{}
+\AtBeginDocument{\fontsize{11bp}{12.65bp}\selectfont}
+\makeatletter
+\renewcommand{\maketitle}{\noindent\rule{\linewidth}{3bp}\par
+ \begin{center}{\bfseries\fontsize{20bp}{23bp}\selectfont\@title\par}
+ \medskip\@author\par
+ \smallskip Independent researcher (all authors)\par
+ \smallskip With Apart Research\end{center}}
+\makeatother
+\renewenvironment{abstract}{\begin{center}\bfseries\fontsize{14bp}{17bp}\selectfont Abstract\end{center}}{\par\noindent\rule{\linewidth}{1bp}\par}
+\author{Hồ Lê Minh Thạch \quad Bùi Minh Nhật \quad Ngô Trần Bảo Thạch}
