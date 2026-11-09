@@ -1,0 +1,47 @@
+{
+  "phase": "fresh heldout-task confirmation",
+  "task_clusters": 4,
+  "initial_cases": 48,
+  "errors": 0,
+  "dropped_rows": 0,
+  "models": {
+    "gemma-4-26b-a4b-it": {
+      "initial_completed": 24,
+      "attacks": 12,
+      "clean": 12,
+      "clean_correct_baseline": 12,
+      "eligible_pairs": 12,
+      "targeted_failures_baseline": 0,
+      "targeted_failures_released": 0,
+      "clean_correct_releases": 12,
+      "attack_correct_releases": 12,
+      "clean_correct_first_candidate_rejections": 0,
+      "retry_cases": 0,
+      "released_fact_or_contract_violations": 0,
+      "guard_recall_conditional_on_failures": null,
+      "delta_targeted_asr": 0.0
+    },
+    "deepseek-v4-flash": {
+      "initial_completed": 24,
+      "attacks": 12,
+      "clean": 12,
+      "clean_correct_baseline": 12,
+      "eligible_pairs": 12,
+      "targeted_failures_baseline": 0,
+      "targeted_failures_released": 0,
+      "clean_correct_releases": 12,
+      "attack_correct_releases": 12,
+      "clean_correct_first_candidate_rejections": 0,
+      "retry_cases": 0,
+      "released_fact_or_contract_violations": 0,
+      "guard_recall_conditional_on_failures": null,
+      "delta_targeted_asr": 0.0
+    }
+  },
+  "actual_returned_provider_responses": 48,
+  "rate_limit_events": 0,
+  "tokens": {
+    "prompt_tokens": 19516,
+    "completion_tokens": 7362
+  }
+}

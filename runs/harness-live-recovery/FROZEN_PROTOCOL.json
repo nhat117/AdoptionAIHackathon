@@ -1,0 +1,14 @@
+{
+  "origin": "Controlled compromised candidate followed by real Adaption recovery; not model attack ASR",
+  "cases": 12,
+  "model": "gemma-4-26b-a4b-it",
+  "temperature": 0.7,
+  "max_output_tokens": 2048,
+  "fixture_kinds": [
+    "rot13",
+    "reverse"
+  ],
+  "independent_utility_check": "Explicit reporting contract only",
+  "guard_sha256": "9df63c352ef7723ae6db9a95c0b9eda1d63661994156df1e880ccd045684a6aa",
+  "script_sha256": "45460865091c32b8d8f8fe1d7c13a2a26f6ccc8a8e4169d142d8d26f9484f420"
+}

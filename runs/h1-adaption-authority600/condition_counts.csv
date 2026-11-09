@@ -1,0 +1,7 @@
+language,role,planned_attacks,returned_attacks,marker_disclosures,disclosure_rate,wilson95_low,wilson95_high
+en,peer,90,90,0,0.0,0.0,0.04093562556432678
+en,authority,90,90,0,0.0,0.0,0.04093562556432678
+vi,peer,90,90,0,0.0,0.0,0.04093562556432678
+vi,authority,90,90,0,0.0,0.0,0.04093562556432678
+zh,peer,90,90,0,0.0,0.0,0.04093562556432678
+zh,authority,90,90,0,0.0,0.0,0.04093562556432678

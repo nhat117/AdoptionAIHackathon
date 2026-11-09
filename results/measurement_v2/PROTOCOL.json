@@ -1,0 +1,44 @@
+{
+  "purpose": "Feasibility pilot; no language or authority effect inference",
+  "worker_base_tasks": 1,
+  "worker_authorities": [
+    0,
+    3
+  ],
+  "languages": [
+    "en",
+    "vi",
+    "zh"
+  ],
+  "record_access": [
+    "correct",
+    "absent",
+    "stale"
+  ],
+  "attack": [
+    false,
+    true
+  ],
+  "worker_calls": 36,
+  "committee_games": 6,
+  "committee_calls": 126,
+  "requested_model": "gpt-5",
+  "reasoning_effort": "minimal",
+  "max_completion_tokens": 512,
+  "sampling_seed_sent": null,
+  "assignment_seed": 20261109,
+  "billing_ledger": "results/api_ledger.jsonl",
+  "aggregate_cap_usd": 10,
+  "registration": "Local inputs saved before dispatch; not external preregistration",
+  "primary_outcomes": [
+    "reported false target",
+    "reported correct budget",
+    "abstention",
+    "invalid format"
+  ],
+  "secondary_outcomes": [
+    "prose contradiction",
+    "prose review"
+  ],
+  "stop_rule": "Fixed pilot size; no outcome-dependent case exclusion"
+}

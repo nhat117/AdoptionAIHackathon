@@ -1,0 +1,136 @@
+{
+  "batch": 2,
+  "domain": "community arts and museum displays",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho7h3paLWA2FsmKqKrpUZUEtMh2w",
+  "usage": {
+    "completion_tokens": 632,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 316,
+      "engine_ttlt_ms": 6704,
+      "pre_inference_ms": 65,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 1102,
+      "service_ttlt_ms": 7247,
+      "user_visible_ttft_ms": 1037
+    },
+    "prompt_tokens": 644,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 1276
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in community arts and museum displays. Batch 2/20. Avoid repeating these earlier topics: [\"Community quilt exhibition assembled from donated fabric squares, labels printed, and hanging system tested in the neighborhood center\", \"Interactive mural workshop series with local teens, sketch approvals finished and primer applied to the community wall\", \"Pop-up zine library display curated from resident submissions, shelving installed and catalog cards finalized\", \"Audio storytelling kiosk featuring elders\\u2019 memories, recordings edited while kiosk casing awaits final paint\", \"Traveling exhibit of handmade puppets with care guides, mounts fabricated and transport crates packed\", \"Open-air sculpture trail signage rewrite, interpretive texts drafted and peer-reviewed but awaiting print proofs\", \"Neighborhood photo archive digitization showcase, selection completed and touchscreen playlists configured\", \"Community mosaic bench project, tile layout set and grout mixing scheduled for weekend volunteer shift\", \"Local dance costume display with motion-activated lights, mannequins dressed and wiring neatly concealed\", \"Children\\u2019s art corner rehang, new frames measured and mat boards cut but hanging plan pending approval\", \"Collaborative textile dyeing demo, safety briefing delivered and dye vats calibrated for audience participation\", \"Museum lobby projection of historic maps, projector alignment done while caption timing needs adjustment\", \"Community printmaking exhibition, artist statements compiled and label fonts standardized across panels\", \"Story quilt documentation wall, QR codes generated though adhesive tests still underway for longevity\", \"Handmade instrument display with listening station, headphones sanitized and playlist synced to device\", \"Ceramics co-creation day exhibit, drying racks full and kiln firing schedule queued for midweek\", \"Neighborhood botanical illustration showcase, specimen labels crosschecked and UV filters installed on frames\", \"Street banner gallery rotation, new banners stitched while wind-resistant hardware awaits delivery\", \"Community film poster retrospective, conservation sleeves applied and mounting rails leveled\", \"Paper lantern installation over atrium, rigging points marked and fire-retardant spray application scheduled\", \"Local comics anthology display, page turns pre-tested and anti-glare covers fitted on cases\", \"Found-object collage wall, donor consent forms signed though final adhesive curing tests continue\", \"Regional folk embroidery case, humidity dataloggers calibrated and silica gel refreshed in compartments\", \"Youth poetry broadside exhibit, layout grid set while final proofing waits on two late submissions\", \"Community beadwork timeline, sequence verified and multilingual captions mounted beside chronological markers\"]",
+  "tasks": [
+    {
+      "topic": "Community cyanotype banner exhibit, sunlight exposure tests completed and final fabric rinses scheduled for weekend display",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood oral-history lyric wall, transcribed verses typeset and adhesive vinyl cut for foyer installation",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Local ceramic shard mosaic history map, grout sealed and protective edging affixed along gallery pathway",
+      "status": "complete"
+    },
+    {
+      "topic": "Community shadow-puppet lightbox display, dimmers tuned and narrative panels sequenced for evening shows",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Museum foyer seed-paper print showcase, embedded wildflower labels verified and hydration trays fitted",
+      "status": "complete"
+    },
+    {
+      "topic": "Resident-painted birdhouse row, mounting brackets drilled and anti-theft cables threaded through bases",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community weaving loom demo corner, warp threads tensioned and shuttle guides aligned for supervised sessions",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood kite art canopy, reinforced spars attached and ceiling ties tested under simulated airflow",
+      "status": "complete"
+    },
+    {
+      "topic": "Local history board-game table installation, game pieces varnished and rule cards laminated for public use",
+      "status": "complete"
+    },
+    {
+      "topic": "Community chalkboard poetry wall, slate resurfaced and dustless chalk stocked with eraser caddies",
+      "status": "complete"
+    },
+    {
+      "topic": "Museum community herbarium flipbooks, page hinges tightened and magnifiers placed at reading stations",
+      "status": "complete"
+    },
+    {
+      "topic": "Resident stencil print clothesline exhibit, mini clothespins counted and sag prevention line installed",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood quilting bee photo timeline, captions proofread and staggered timeline rails leveled",
+      "status": "complete"
+    },
+    {
+      "topic": "Community papier-mâché mask array, foam supports custom-cut and case ventilation checked for off-gassing",
+      "status": "complete"
+    },
+    {
+      "topic": "Local cyanograph postcard exchange station, postage chart posted and return box anchored to plinth",
+      "status": "complete"
+    },
+    {
+      "topic": "Community bird migration mural with LED pins, wiring harness inspected and battery packs labeled",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood toy theater diorama cases, sliding lids waxed and silica sachets placed under platforms",
+      "status": "complete"
+    },
+    {
+      "topic": "Community block-print textile rack, drying bars spaced and drip trays tested beneath hanging panels",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Museum mezzanine ribbon timeline of festivals, color key finalized and ribbon clamps crimped to anchors",
+      "status": "complete"
+    },
+    {
+      "topic": "Neighborhood recycled-glass sun catcher window, lead-free came solder joints polished and safety glazing added",
+      "status": "complete"
+    },
+    {
+      "topic": "Community lantern-lit poem path indoors, timer relays synchronized and path markers arrowed for flow",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Local bead loom portrait series, backing boards cut and mounting corners cushioned with archival pads",
+      "status": "complete"
+    },
+    {
+      "topic": "Community button badge history kiosk, cranks lubricated and instruction placard fixed beside press",
+      "status": "complete"
+    },
+    {
+      "topic": "Neighborhood embroidery sampler circle display, hoop tension adjusted and hang wires tagged by row",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community paper theater shadow timeline, scene tabs labeled and blackout curtains hemmed for light control",
+      "status": "in_progress"
+    }
+  ]
+}

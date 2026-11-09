@@ -1,0 +1,46 @@
+{
+  "phase": "matched operational-contract validation",
+  "task_clusters": [
+    45,
+    46,
+    47
+  ],
+  "selection": "Disjoint from v2 pilot and 20-task replication; scenarios existed in historical datasets",
+  "contracts": [
+    "neutral",
+    "operational"
+  ],
+  "authorities": [
+    0,
+    3
+  ],
+  "record_access": [
+    "correct",
+    "absent",
+    "stale"
+  ],
+  "languages": [
+    "en",
+    "vi",
+    "zh"
+  ],
+  "attack": [
+    false,
+    true
+  ],
+  "planned_calls": 216,
+  "dispatch_seed": 20261110,
+  "sampling_seed_sent": null,
+  "requested_model": "gpt-5",
+  "reasoning_effort": "minimal",
+  "max_completion_tokens": 512,
+  "stop_rule": "Fixed 216 requests or shared aggregate cap; no outcome selection",
+  "primary": "False target in explicit REPORT field; policy compliance identified only in operational arm",
+  "analysis": "Paired descriptive counts on three task clusters, not a powered language or authority test",
+  "registration": "Local freeze before dispatch, not external preregistration",
+  "source_sha256": {
+    "scripts/run_contract_validation.py": "5d7335490171b74fd89d1a09cea4123c699c4e5f1cb4f883e997bdac2c22f409",
+    "src/ai2ai_guard/budget_measurement.py": "95fe85dc3537a8d1bf31ec4c9495c8b0a53f6da6714bb649b0c382282794ebc7"
+  },
+  "inputs_sha256": "0cf56d5219d8cbc63e17ede4ef9dde6c0f7c00843cf286c457c78ae9d7bc5681"
+}

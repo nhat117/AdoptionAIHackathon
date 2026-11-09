@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="667" viewBox="0 0 1200 667" role="img" aria-label="GPT-5 wording-balanced follow-up: three fixed wordings per role/language">
+<title>GPT-5 wording-balanced follow-up: three fixed wordings per role/language</title><desc>Separate 4320-worker design; attacked inputs shown. Same 20 task clusters, not an authority/culture population sample.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">GPT-5 wording-balanced follow-up: three fixed wordings per role/language</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Separate 4320-worker design; attacked inputs shown. Same 20 task clusters, not an authority/culture population sample.</text><rect x="32" y="90" width="12" height="12" fill="#277b71"/>
+<text x="50" y="101" font-size="13" fill="#253247" text-anchor="start">CURRENT RECORD GROUNDING</text>
+<rect x="262" y="90" width="12" height="12" fill="#c45046"/>
+<text x="280" y="101" font-size="13" fill="#253247" text-anchor="start">ATTACKER NUMBER RELAY</text>
+<rect x="492" y="90" width="12" height="12" fill="#717d96"/>
+<text x="510" y="101" font-size="13" fill="#253247" text-anchor="start">SAFE ABSTENTION</text>
+<rect x="722" y="90" width="12" height="12" fill="#cf9f3e"/>
+<text x="740" y="101" font-size="13" fill="#253247" text-anchor="start">STALE RECORD RELIANCE</text>
+<rect x="952" y="90" width="12" height="12" fill="#ad73a0"/>
+<text x="970" y="101" font-size="13" fill="#253247" text-anchor="start">OTHER ERROR</text>
+<text x="316" y="157" font-size="14" fill="#253247" text-anchor="end">wording 0 / correct</text>
+<rect x="330.000" y="135" width="687.125" height="32" fill="#277b71"><title>wording 0 / correct: CURRENT_RECORD_GROUNDING 239/240</title></rect>
+<text x="673.56" y="157" font-size="13" fill="#ffffff" text-anchor="middle">239</text>
+<rect x="1017.125" y="135" width="2.875" height="32" fill="#c45046"><title>wording 0 / correct: ATTACKER_NUMBER_RELAY 1/240</title></rect>
+<text x="1034" y="157" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="213" font-size="14" fill="#253247" text-anchor="end">wording 0 / absent</text>
+<rect x="330.000" y="191" width="273.125" height="32" fill="#c45046"><title>wording 0 / absent: ATTACKER_NUMBER_RELAY 95/240</title></rect>
+<text x="466.56" y="213" font-size="13" fill="#ffffff" text-anchor="middle">95</text>
+<rect x="603.125" y="191" width="416.875" height="32" fill="#717d96"><title>wording 0 / absent: SAFE_ABSTENTION 145/240</title></rect>
+<text x="811.56" y="213" font-size="13" fill="#ffffff" text-anchor="middle">145</text>
+<text x="1034" y="213" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="269" font-size="14" fill="#253247" text-anchor="end">wording 0 / stale</text>
+<rect x="330.000" y="247" width="43.125" height="32" fill="#c45046"><title>wording 0 / stale: ATTACKER_NUMBER_RELAY 15/240</title></rect>
+<text x="351.56" y="269" font-size="13" fill="#ffffff" text-anchor="middle">15</text>
+<rect x="373.125" y="247" width="17.250" height="32" fill="#717d96"><title>wording 0 / stale: SAFE_ABSTENTION 6/240</title></rect>
+<rect x="390.375" y="247" width="626.750" height="32" fill="#cf9f3e"><title>wording 0 / stale: STALE_RECORD_RELIANCE 218/240</title></rect>
+<text x="703.75" y="269" font-size="13" fill="#ffffff" text-anchor="middle">218</text>
+<rect x="1017.125" y="247" width="2.875" height="32" fill="#ad73a0"><title>wording 0 / stale: OTHER_ERROR 1/240</title></rect>
+<text x="1034" y="269" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="325" font-size="14" fill="#253247" text-anchor="end">wording 1 / correct</text>
+<rect x="330.000" y="303" width="684.250" height="32" fill="#277b71"><title>wording 1 / correct: CURRENT_RECORD_GROUNDING 238/240</title></rect>
+<text x="672.12" y="325" font-size="13" fill="#ffffff" text-anchor="middle">238</text>
+<rect x="1014.250" y="303" width="5.750" height="32" fill="#c45046"><title>wording 1 / correct: ATTACKER_NUMBER_RELAY 2/240</title></rect>
+<text x="1034" y="325" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="381" font-size="14" fill="#253247" text-anchor="end">wording 1 / absent</text>
+<rect x="330.000" y="359" width="465.750" height="32" fill="#c45046"><title>wording 1 / absent: ATTACKER_NUMBER_RELAY 162/240</title></rect>
+<text x="562.88" y="381" font-size="13" fill="#ffffff" text-anchor="middle">162</text>
+<rect x="795.750" y="359" width="215.625" height="32" fill="#717d96"><title>wording 1 / absent: SAFE_ABSTENTION 75/240</title></rect>
+<text x="903.56" y="381" font-size="13" fill="#ffffff" text-anchor="middle">75</text>
+<rect x="1011.375" y="359" width="8.625" height="32" fill="#ad73a0"><title>wording 1 / absent: OTHER_ERROR 3/240</title></rect>
+<text x="1034" y="381" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="437" font-size="14" fill="#253247" text-anchor="end">wording 1 / stale</text>
+<rect x="330.000" y="415" width="238.625" height="32" fill="#c45046"><title>wording 1 / stale: ATTACKER_NUMBER_RELAY 83/240</title></rect>
+<text x="449.31" y="437" font-size="13" fill="#ffffff" text-anchor="middle">83</text>
+<rect x="568.625" y="415" width="2.875" height="32" fill="#717d96"><title>wording 1 / stale: SAFE_ABSTENTION 1/240</title></rect>
+<rect x="571.500" y="415" width="442.750" height="32" fill="#cf9f3e"><title>wording 1 / stale: STALE_RECORD_RELIANCE 154/240</title></rect>
+<text x="792.88" y="437" font-size="13" fill="#ffffff" text-anchor="middle">154</text>
+<rect x="1014.250" y="415" width="5.750" height="32" fill="#ad73a0"><title>wording 1 / stale: OTHER_ERROR 2/240</title></rect>
+<text x="1034" y="437" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="493" font-size="14" fill="#253247" text-anchor="end">wording 2 / correct</text>
+<rect x="330.000" y="471" width="675.625" height="32" fill="#277b71"><title>wording 2 / correct: CURRENT_RECORD_GROUNDING 235/240</title></rect>
+<text x="667.81" y="493" font-size="13" fill="#ffffff" text-anchor="middle">235</text>
+<rect x="1005.625" y="471" width="8.625" height="32" fill="#c45046"><title>wording 2 / correct: ATTACKER_NUMBER_RELAY 3/240</title></rect>
+<rect x="1014.250" y="471" width="2.875" height="32" fill="#717d96"><title>wording 2 / correct: SAFE_ABSTENTION 1/240</title></rect>
+<rect x="1017.125" y="471" width="2.875" height="32" fill="#ad73a0"><title>wording 2 / correct: OTHER_ERROR 1/240</title></rect>
+<text x="1034" y="493" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="549" font-size="14" fill="#253247" text-anchor="end">wording 2 / absent</text>
+<rect x="330.000" y="527" width="439.875" height="32" fill="#c45046"><title>wording 2 / absent: ATTACKER_NUMBER_RELAY 153/240</title></rect>
+<text x="549.94" y="549" font-size="13" fill="#ffffff" text-anchor="middle">153</text>
+<rect x="769.875" y="527" width="244.375" height="32" fill="#717d96"><title>wording 2 / absent: SAFE_ABSTENTION 85/240</title></rect>
+<text x="892.06" y="549" font-size="13" fill="#ffffff" text-anchor="middle">85</text>
+<rect x="1014.250" y="527" width="5.750" height="32" fill="#ad73a0"><title>wording 2 / absent: OTHER_ERROR 2/240</title></rect>
+<text x="1034" y="549" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="605" font-size="14" fill="#253247" text-anchor="end">wording 2 / stale</text>
+<rect x="330.000" y="583" width="250.125" height="32" fill="#c45046"><title>wording 2 / stale: ATTACKER_NUMBER_RELAY 87/240</title></rect>
+<text x="455.06" y="605" font-size="13" fill="#ffffff" text-anchor="middle">87</text>
+<rect x="580.125" y="583" width="46.000" height="32" fill="#717d96"><title>wording 2 / stale: SAFE_ABSTENTION 16/240</title></rect>
+<text x="603.12" y="605" font-size="13" fill="#ffffff" text-anchor="middle">16</text>
+<rect x="626.125" y="583" width="388.125" height="32" fill="#cf9f3e"><title>wording 2 / stale: STALE_RECORD_RELIANCE 135/240</title></rect>
+<text x="820.19" y="605" font-size="13" fill="#ffffff" text-anchor="middle">135</text>
+<rect x="1014.250" y="583" width="5.750" height="32" fill="#ad73a0"><title>wording 2 / stale: OTHER_ERROR 2/240</title></rect>
+<text x="1034" y="605" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="330" y="639" font-size="12" fill="#253247" text-anchor="start">0%</text>
+<text x="1020" y="639" font-size="12" fill="#253247" text-anchor="end">100% of assigned outputs</text></g></svg>

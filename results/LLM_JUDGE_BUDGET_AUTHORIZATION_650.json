@@ -1,0 +1,9 @@
+{
+  "authorized_total_usd": 650,
+  "scope": "Cumulative research spending, including all prior experiments, smoke judgments, failed-request reservations, retries and revisions; not a per-batch allowance",
+  "source": "User explicitly selected 'US$650 total (Recommended)' in the budget authorization question",
+  "question_context": "Remaining initial judgments projected at about US$426; retries/revisions may exhaust the cap and must stop rather than overspend",
+  "original_authorization_preserved": "results/BUDGET_AUTHORIZATION.json",
+  "author_confirmation": false,
+  "official_submission_confirmed": false
+}

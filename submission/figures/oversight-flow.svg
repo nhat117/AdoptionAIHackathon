@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="226.8pt" viewBox="0 0 720 226.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-08T18:58:53.225139</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 226.8 
+L 720 226.8 
+L 720 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 3.6 147.6 
+L 133.2 147.6 
+L 133.2 93.6 
+L 3.6 93.6 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #ffffff; stroke: #333333; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 158.4 147.6 
+L 288 147.6 
+L 288 93.6 
+L 158.4 93.6 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #ffffff; stroke: #333333; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 331.2 79.2 
+L 489.6 79.2 
+L 489.6 25.2 
+L 331.2 25.2 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #ffffff; stroke: #333333; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 331.2 201.6 
+L 489.6 201.6 
+L 489.6 147.6 
+L 331.2 147.6 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #ffffff; stroke: #333333; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 547.2 79.2 
+L 709.2 79.2 
+L 709.2 25.2 
+L 547.2 25.2 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #ffffff; stroke: #333333; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 547.2 201.6 
+L 709.2 201.6 
+L 709.2 147.6 
+L 547.2 147.6 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #ffffff; stroke: #333333; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 135.202588 120.6 
+Q 145.800283 120.6 155.279943 120.6 
+" clip-path="url(#p0008b4d165)" style="fill: none; stroke: #333333; stroke-linecap: round"/>
+    <path d="M 150.079943 118 
+L 155.279943 120.6 
+L 150.079943 123.2 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #333333; stroke: #333333; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 289.067871 118.909204 
+Q 309.600341 86.39946 329.535788 54.835002 
+" clip-path="url(#p0008b4d165)" style="fill: none; stroke: #333333; stroke-linecap: round"/>
+    <path d="M 324.560753 57.843163 
+L 329.535788 54.835002 
+L 328.957296 60.619926 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #333333; stroke: #333333; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 289.247168 122.15896 
+Q 309.600078 147.600098 329.254559 172.168198 
+" clip-path="url(#p0008b4d165)" style="fill: none; stroke: #333333; stroke-linecap: round"/>
+    <path d="M 328.036403 166.483473 
+L 329.254559 172.168198 
+L 323.975885 169.731888 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #333333; stroke: #333333; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 491.600391 52.2 
+Q 518.4008 52.2 544.083176 52.2 
+" clip-path="url(#p0008b4d165)" style="fill: none; stroke: #333333; stroke-linecap: round"/>
+    <path d="M 538.883176 49.6 
+L 544.083176 52.2 
+L 538.883176 54.8 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #333333; stroke: #333333; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 491.600391 174.6 
+Q 518.4008 174.6 544.083176 174.6 
+" clip-path="url(#p0008b4d165)" style="fill: none; stroke: #333333; stroke-linecap: round"/>
+    <path d="M 538.883176 172 
+L 544.083176 174.6 
+L 538.883176 177.2 
+z
+" clip-path="url(#p0008b4d165)" style="fill: #333333; stroke: #333333; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(30.474063 117.476516)">One response</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(28.941797 129.794109)">same raw text</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(181.597656 117.476516)">Shared parsing</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(172.889609 129.794109)">strict or one fence</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(371.435937 49.076516)">Structure only</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(357.221016 61.394109)">identity and format</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(371.699766 171.476516)">Structure plus</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(346.465937 183.794109)">trusted fact agreement</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(587.980391 49.076516)">Original object</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(597.287422 61.394109)">or withhold</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(587.980391 171.476516)">Original object</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(597.287422 183.794109)">or withhold</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="360" y="223.92" transform="rotate(-0 360 223.92)">Both checks have the registry. No repair or rewriting contributes.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p0008b4d165">
+   <rect x="0" y="0" width="720" height="226.8"/>
+  </clipPath>
+ </defs>
+</svg>

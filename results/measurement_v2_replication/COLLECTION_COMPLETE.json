@@ -1,0 +1,9 @@
+{
+  "planned": 1440,
+  "saved": 1440,
+  "unique_task_clusters": 20,
+  "collection_errors": 0,
+  "strict_valid": 1437,
+  "strict_invalid": 3,
+  "stop_reason": "fixed cohort complete; no outcome-based exclusions"
+}

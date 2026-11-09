@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-08T06:06:47.352254+00:00",
+  "registration": "Local freeze, not external preregistration",
+  "spec": {
+    "phase": "integration smoke, not a new heldout statistical study",
+    "cases": 6,
+    "task_clusters": 3,
+    "models": {
+      "peer": "deepseek-v4-flash",
+      "worker": "gemma-4-26b-a4b-it"
+    },
+    "baseline_calls": 24,
+    "temperature": 0.7,
+    "max_output_tokens": 4096,
+    "controls": "Clean/poisoned peer proposal per task. First worker candidate shared by no-output-guard baseline and guard; downstream branches are separate model draws.",
+    "topology": "peer -> worker-a -> worker-b, bounded at two handoffs; local driver provides transport identity",
+    "source": {
+      "thought_virus": "https://github.com/Multi-Agent-Security-Initiative/thought_virus",
+      "commit": "ae2644ed5df1178c0ecdb634f6802d858fac77ce"
+    },
+    "scope": "Factual substitution propagation only; no subliminal token optimization, logprobs, TruthfulQA or full paper reproduction",
+    "stop_rule": "Six cases once, no outcome-based expansion; <=1 trusted-only retry per protected receiver",
+    "inputs_sha256": "fe6c295c9e996f24cf3812367699953862f332360f495b387638a4d7885bb6ca",
+    "source_sha256": {
+      "scripts/run_agent_handoff.py": "15881f7d6ce62d22b956518df35f5873d71d6cfc90c9463048e1f093b8faab90",
+      "src/ai2ai_guard/oversight.py": "b7ecc09b1fbac3aa49d8390235e20ea79a9b6d07b64219da209107b6ff0d531d",
+      "src/ai2ai_guard/context.py": "d4626dfe4b19ec4fc7777f3dbdd37d229a279d14c28b1ab757ef0cf9e35662fc",
+      "src/ai2ai_guard/fact_projection.py": "45d702cb82a7f2d028bca278fa097e897d113094ae7792dbd4044ef0e2efa0e4",
+      "src/ai2ai_guard/facts.py": "d92911aa3790435a127755c13e5f1c5e5016ebf25599c83b7e6915e6e7082986",
+      "src/ai2ai_guard/__init__.py": "9df63c352ef7723ae6db9a95c0b9eda1d63661994156df1e880ccd045684a6aa",
+      "scripts/run_context_stress.py": "dc14818fe2809e12a61d02411373c4b73ec94bf9d73578241fb09a05e42a9e83",
+      "scripts/run_near_target.py": "345eca85025518f06e4b33d3488cc772b176bca5469c4961521c74e3b8d1c1ed"
+    }
+  }
+}

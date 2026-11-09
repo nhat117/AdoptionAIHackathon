@@ -1,0 +1,15 @@
+{
+  "version": "gpt5-full-capped-sharded-v1",
+  "instrument_protocol_sha256": "9d97f52ed928a8a08b11a21caac0b8a1feb174a77cde80f0ad293559ada68c93",
+  "source_sha256": {
+    "scripts/run_full_gpt5_judge.py": "dd2f1f37597f6f44c58ff42f439c46487b06be55dc314968f80daaa42391e6ce",
+    "src/ai2ai_guard/gpt5_judge_batch.py": "550a6b9f6928e88943deb8c144e3af9d1808ea7944a61264f0cae2d748d80777",
+    "results/LLM_JUDGE_BUDGET_AUTHORIZATION_650.json": "e0d6ef4860a923badf371a923bb7c5bc9d053150b909b51af2f3449affed8deb"
+  },
+  "workers": 8,
+  "aggregate_cap_usd": 650,
+  "scheduling": "Fixed corpus order; up to eight remote requests; no result-based exclusions/replacements",
+  "storage": "Append-only 8 MiB JSONL shards; unsharded smoke evidence retained",
+  "same_instrument": "Unchanged GPT-5 model, rubric, prompts, high reasoning, strict schema and 8192 output limit",
+  "recovery": "Recovered complete raw answers are validated without another paid call; incomplete/model-mismatched answers stop for review"
+}

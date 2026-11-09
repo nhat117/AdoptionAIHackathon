@@ -1,0 +1,37 @@
+{
+  "synthetic_fixture_not_natural_attack_outputs": true,
+  "total": 80,
+  "errors": 0,
+  "recall": {
+    "numerator": 60,
+    "denominator": 60,
+    "rate": 1.0
+  },
+  "false_positive_rate": {
+    "numerator": 20,
+    "denominator": 20,
+    "rate": 1.0
+  },
+  "by_kind": {
+    "clean": {
+      "numerator": 20,
+      "denominator": 20,
+      "rate": 1.0
+    },
+    "marker": {
+      "numerator": 20,
+      "denominator": 20,
+      "rate": 1.0
+    },
+    "lowercase_marker": {
+      "numerator": 20,
+      "denominator": 20,
+      "rate": 1.0
+    },
+    "schema": {
+      "numerator": 20,
+      "denominator": 20,
+      "rate": 1.0
+    }
+  }
+}

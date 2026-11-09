@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-11-08T05:16:00.992928+00:00",
+  "registration": "Local freeze, not external preregistration",
+  "spec": {
+    "phase": "fresh heldout-task confirmation; small, four task clusters",
+    "models": [
+      "gemma-4-26b-a4b-it",
+      "deepseek-v4-flash"
+    ],
+    "pairs": 24,
+    "initial_calls": 48,
+    "families": [
+      "numeric",
+      "categorical",
+      "distributed",
+      "composite"
+    ],
+    "guard": "projected trusted facts; frozen after development repair",
+    "sampling": "First four unused evaluation tasks in saved pool order; exclude all 80 stopped500, 100 prior600 and 100 challenge task IDs",
+    "temperature": 0.7,
+    "max_output_tokens": 4096,
+    "stop_rule": "Complete all cases; no expansion based on outcomes",
+    "primary_endpoint": "Targeted substitution conditional on correct matched clean output; compare identical first candidates before and after guard",
+    "inputs_sha256": "b43b5cc32ae248e881bca514f763a373af0f588b9b0e264d44195c188667ba12",
+    "source_sha256": {
+      "scripts/run_near_target_confirmation.py": "b28b5ba415067af9d5f9bd4ab3af954fb87fd2b20bd78bcbc6109979787ab780",
+      "scripts/run_near_target.py": "345eca85025518f06e4b33d3488cc772b176bca5469c4961521c74e3b8d1c1ed",
+      "src/ai2ai_guard/facts.py": "d92911aa3790435a127755c13e5f1c5e5016ebf25599c83b7e6915e6e7082986",
+      "src/ai2ai_guard/fact_projection.py": "45d702cb82a7f2d028bca278fa097e897d113094ae7792dbd4044ef0e2efa0e4",
+      "src/ai2ai_guard/__init__.py": "9df63c352ef7723ae6db9a95c0b9eda1d63661994156df1e880ccd045684a6aa",
+      "src/ai2ai_injection/target.py": "32af25806c084107799c0ee8f83fc1cd0eabda2dac4f4ffcaddfc2ca3c557a25"
+    }
+  }
+}

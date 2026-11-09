@@ -1,0 +1,215 @@
+{
+  "dry_run": false,
+  "stage": "committee",
+  "call_counts": {
+    "pilot": 24,
+    "workers": 600,
+    "historical-monitor": 600,
+    "new-monitor": 600,
+    "committee": 504,
+    "comparison": 120
+  },
+  "cap_usd": 10.0
+}
+committee-0-False calls 5
+committee-0-False calls 10
+committee-0-False calls 15
+committee-0-False calls 20
+game committee-0-False
+Traceback (most recent call last):
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/scripts/run_corrected_experiments.py", line 414, in <module>
+    self.actions.append(
+^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/scripts/run_corrected_experiments.py", line 355, in main
+    propagation = PropagationClient(client, guarded)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/src/swarm_lab/budget_review.py", line 281, in episode
+    raw, visible = call(agent, "discussion", number)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/src/swarm_lab/budget_review.py", line 240, in call
+    response = client.chat(messages, None)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/scripts/run_corrected_experiments.py", line 385, in chat
+    if self.guarded:
+       ^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/scripts/run_corrected_experiments.py", line 55, in chat
+    response = self.http.post(
+               ^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpx/_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/Documents/Codex/2026-11-09/https-github-com-nhat117-adoptionaihackathon-tree/work/repo/.venv311/lib/python3.11/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/ssl.py", line 1307, in recv
+    return self.read(buflen)
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/nhat117/.local/share/uv/python/cpython-3.11.15-macos-aarch64-none/lib/python3.11/ssl.py", line 1180, in read
+    return self._sslobj.read(len)
+           ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+{
+  "dry_run": false,
+  "stage": "committee",
+  "call_counts": {
+    "pilot": 24,
+    "workers": 600,
+    "historical-monitor": 600,
+    "new-monitor": 600,
+    "committee": 504,
+    "comparison": 120
+  },
+  "cap_usd": 10.0
+}
+committee-1-False calls 5
+committee-1-True calls 5
+committee-2-False calls 5
+committee-0-True calls 5
+committee-1-True calls 10
+committee-1-False calls 10
+committee-2-False calls 10
+committee-0-True calls 10
+committee-1-True calls 15
+committee-1-False calls 15
+committee-2-False calls 15
+committee-0-True calls 15
+committee-1-True calls 20
+committee-1-False calls 20
+game committee-1-True
+committee-2-False calls 20
+game committee-1-False
+game committee-2-False
+committee-2-True calls 5
+committee-0-True calls 20
+game committee-0-True
+committee-3-True calls 5
+committee-3-False calls 5
+committee-2-True calls 10
+committee-4-False calls 5
+committee-3-True calls 10
+committee-3-False calls 10
+committee-4-False calls 10
+committee-2-True calls 15
+committee-3-True calls 15
+committee-3-False calls 15
+committee-4-False calls 15
+committee-2-True calls 20
+committee-3-False calls 20
+game committee-2-True
+game committee-3-False
+committee-4-False calls 20
+game committee-4-False
+committee-4-True calls 5
+committee-5-False calls 5
+committee-3-True calls 20
+game committee-3-True
+committee-5-True calls 5
+committee-4-True calls 10
+committee-5-False calls 10
+committee-6-False calls 5
+committee-5-True calls 10
+committee-4-True calls 15
+committee-5-False calls 15
+committee-6-False calls 10
+committee-5-True calls 15
+committee-4-True calls 20
+committee-5-False calls 20
+game committee-4-True
+game committee-5-False
+committee-6-False calls 15
+committee-5-True calls 20
+committee-6-True calls 5
+game committee-5-True
+committee-7-False calls 5
+committee-6-False calls 20
+game committee-6-False
+committee-7-True calls 5
+committee-6-True calls 10
+committee-7-False calls 10
+committee-8-False calls 5
+committee-7-True calls 10
+committee-6-True calls 15
+committee-7-False calls 15
+committee-8-False calls 10
+committee-7-True calls 15
+committee-6-True calls 20
+committee-7-False calls 20
+game committee-6-True
+game committee-7-False
+committee-8-False calls 15
+committee-7-True calls 20
+committee-8-True calls 5
+game committee-7-True
+committee-9-False calls 5
+committee-8-False calls 20
+game committee-8-False
+committee-8-True calls 10
+committee-9-True calls 5
+committee-9-False calls 10
+committee-10-False calls 5
+committee-8-True calls 15
+committee-9-True calls 10
+committee-9-False calls 15
+committee-10-False calls 10
+committee-8-True calls 20
+committee-9-True calls 15
+game committee-8-True
+committee-9-False calls 20
+committee-10-False calls 15
+game committee-9-False
+committee-10-True calls 5
+committee-9-True calls 20
+game committee-9-True
+committee-11-False calls 5
+committee-10-False calls 20
+game committee-10-False
+committee-10-True calls 10
+committee-11-True calls 5
+committee-11-False calls 10
+committee-10-True calls 15
+committee-11-True calls 10
+committee-11-False calls 15
+committee-10-True calls 20
+committee-11-True calls 15
+game committee-10-True
+committee-11-False calls 20
+game committee-11-False
+committee-11-True calls 20
+game committee-11-True

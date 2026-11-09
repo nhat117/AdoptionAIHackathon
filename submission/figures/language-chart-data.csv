@@ -1,0 +1,13 @@
+language,evidence,arm,wrong_releases,responses
+en,absent,normalized_structural,2,4
+en,absent,normalized_semantic,0,4
+en,present,normalized_structural,0,4
+en,present,normalized_semantic,0,4
+vi,absent,normalized_structural,2,4
+vi,absent,normalized_semantic,0,4
+vi,present,normalized_structural,0,4
+vi,present,normalized_semantic,0,4
+zh,absent,normalized_structural,2,4
+zh,absent,normalized_semantic,0,4
+zh,present,normalized_structural,0,4
+zh,present,normalized_semantic,0,4

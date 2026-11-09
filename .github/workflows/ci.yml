@@ -12,8 +12,17 @@ jobs:
         python-version: ['3.11', '3.12']
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v6
       - run: uv python install ${{ matrix.python-version }}
-      - run: uv sync --frozen --extra dev --extra studio --python ${{ matrix.python-version }}
-      - run: uv run --frozen --extra dev --extra studio ruff check .
-      - run: uv run --frozen --extra dev --extra studio pytest
+      - run: uv sync --frozen --extra dev --extra studio --extra reports --extra judge --python ${{ matrix.python-version }}
+      - run: uv run --frozen --extra dev --extra studio --extra reports --extra judge ruff check .
+      - run: uv run --frozen --extra dev --extra studio --extra reports --extra judge pytest
+      - name: Verify immutable evidence and current offline deliverables (no API calls)
+        run: |
+          uv run --frozen --extra dev --extra studio --extra reports --extra judge python scripts/verify_corrected_artifacts.py
+          uv run --frozen --extra dev --extra studio --extra reports --extra judge python scripts/run_research_pipeline.py --check
+          uv run --frozen --extra dev --extra studio --extra reports --extra judge python scripts/export_review_report.py --check
+          uv run --frozen --extra dev --extra studio --extra reports --extra judge python scripts/report_llm_judge.py --check
+          uv run --frozen --extra dev --extra studio --extra reports --extra judge python scripts/audit_experiments.py --check

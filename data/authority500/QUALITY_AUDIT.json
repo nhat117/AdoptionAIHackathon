@@ -1,0 +1,35 @@
+{
+  "tasks": 500,
+  "status_counts": {
+    "complete": 263,
+    "in_progress": 237
+  },
+  "domain_counts": {
+    "community arts and museum displays": 50,
+    "libraries and reading events": 50,
+    "parks and community gardening": 50,
+    "school clubs and workshops": 50,
+    "amateur sports and recreation": 50,
+    "local history and walking trails": 50,
+    "repair cafes and equipment lending": 50,
+    "small volunteer-run festivals": 50,
+    "accessibility improvements to public events": 50,
+    "recycling and reuse projects": 50
+  },
+  "split_counts": {
+    "heldout": 400,
+    "development": 100
+  },
+  "returned_models": [
+    "gpt-5-2025-08-07"
+  ],
+  "exact_normalized_duplicates": 0,
+  "lexical_similarity_threshold": 0.75,
+  "near_duplicate_candidates": [],
+  "cross_split_candidate_count": 0,
+  "audit_method": "Word TF-IDF cosine; candidate detection only, not proof of semantic independence",
+  "human_reviewed": false,
+  "bilingual_review": "Pending",
+  "outcome_leakage": "No model evaluation outcomes used for generation or audit",
+  "task_file_sha256": "d6b07fe76268886cb9023d9396692016f8c3797a1852a4f5b27abb0780040030"
+}

@@ -1,0 +1,13 @@
+{
+  "source_markdown": "research/VALIDATED_RESEARCH_REPORT.md",
+  "source_sha256": "7983eddef3675b93d32d47297c6f0720564a47df1d9ed3bcf5710944ab77e08d",
+  "word_file": "research/VALIDATED_RESEARCH_REPORT.docx",
+  "word_sha256": "148eb4317855dda62bad5814f123346c210b6ee872023271d44a602f8b2cca62",
+  "rendered_pages": 5,
+  "visual_review": "All five rendered pages inspected; no clipped text, broken tables or missing reference text observed",
+  "table_rows_including_headers": [
+    13,
+    5
+  ],
+  "historical_word_reports": "Preserved unchanged"
+}

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-label="Authority and language: observed attacked-cell counts">
+<title>Authority and language: observed attacked-cell counts</title><desc>Same 20 task clusters in every cell; strict primary scoring, not hidden belief or executed action.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">Authority and language: observed attacked-cell counts</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Same 20 task clusters in every cell; strict primary scoring, not hidden belief or executed action.</text><text x="252" y="110" font-size="18" fill="#253247" text-anchor="middle">correct record</text>
+<text x="168" y="145" font-size="13" fill="#253247" text-anchor="middle">A0</text>
+<text x="233" y="145" font-size="13" fill="#253247" text-anchor="middle">A1</text>
+<text x="298" y="145" font-size="13" fill="#253247" text-anchor="middle">A2</text>
+<text x="363" y="145" font-size="13" fill="#253247" text-anchor="middle">A3</text>
+<text x="128" y="193" font-size="14" fill="#253247" text-anchor="end">en</text>
+<rect x="140" y="165" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="169" y="194" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="205" y="165" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="234" y="194" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="270" y="165" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="299" y="194" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="335" y="165" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="364" y="194" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<text x="128" y="253" font-size="14" fill="#253247" text-anchor="end">vi</text>
+<rect x="140" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="169" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="205" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="234" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="270" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="299" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="335" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="364" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<text x="128" y="313" font-size="14" fill="#253247" text-anchor="end">zh</text>
+<rect x="140" y="285" width="58" height="48" rx="3" fill="rgb(238,232,232)"/>
+<text x="169" y="314" font-size="13" fill="#253247" text-anchor="middle">1/20</text>
+<rect x="205" y="285" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="234" y="314" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="270" y="285" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="299" y="314" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="335" y="285" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="364" y="314" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<text x="602" y="110" font-size="18" fill="#253247" text-anchor="middle">absent record</text>
+<text x="518" y="145" font-size="13" fill="#253247" text-anchor="middle">A0</text>
+<text x="583" y="145" font-size="13" fill="#253247" text-anchor="middle">A1</text>
+<text x="648" y="145" font-size="13" fill="#253247" text-anchor="middle">A2</text>
+<text x="713" y="145" font-size="13" fill="#253247" text-anchor="middle">A3</text>
+<text x="478" y="193" font-size="14" fill="#253247" text-anchor="end">en</text>
+<rect x="490" y="165" width="58" height="48" rx="3" fill="rgb(227,203,201)"/>
+<text x="519" y="194" font-size="13" fill="#253247" text-anchor="middle">4/20</text>
+<rect x="555" y="165" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="584" y="194" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="620" y="165" width="58" height="48" rx="3" fill="rgb(200,136,130)"/>
+<text x="649" y="194" font-size="13" fill="#253247" text-anchor="middle">11/20</text>
+<rect x="685" y="165" width="58" height="48" rx="3" fill="rgb(211,165,161)"/>
+<text x="714" y="194" font-size="13" fill="#253247" text-anchor="middle">8/20</text>
+<text x="478" y="253" font-size="14" fill="#253247" text-anchor="end">vi</text>
+<rect x="490" y="225" width="58" height="48" rx="3" fill="rgb(223,194,191)"/>
+<text x="519" y="254" font-size="13" fill="#253247" text-anchor="middle">5/20</text>
+<rect x="555" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="584" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="620" y="225" width="58" height="48" rx="3" fill="rgb(238,232,232)"/>
+<text x="649" y="254" font-size="13" fill="#253247" text-anchor="middle">1/20</text>
+<rect x="685" y="225" width="58" height="48" rx="3" fill="rgb(223,194,191)"/>
+<text x="714" y="254" font-size="13" fill="#253247" text-anchor="middle">5/20</text>
+<text x="478" y="313" font-size="14" fill="#253247" text-anchor="end">zh</text>
+<rect x="490" y="285" width="58" height="48" rx="3" fill="rgb(200,136,130)"/>
+<text x="519" y="314" font-size="13" fill="#253247" text-anchor="middle">11/20</text>
+<rect x="555" y="285" width="58" height="48" rx="3" fill="rgb(207,155,151)"/>
+<text x="584" y="314" font-size="13" fill="#253247" text-anchor="middle">9/20</text>
+<rect x="620" y="285" width="58" height="48" rx="3" fill="rgb(184,97,90)"/>
+<text x="649" y="314" font-size="13" fill="#ffffff" text-anchor="middle">15/20</text>
+<rect x="685" y="285" width="58" height="48" rx="3" fill="rgb(219,184,181)"/>
+<text x="714" y="314" font-size="13" fill="#253247" text-anchor="middle">6/20</text>
+<text x="952" y="110" font-size="18" fill="#253247" text-anchor="middle">stale record</text>
+<text x="868" y="145" font-size="13" fill="#253247" text-anchor="middle">A0</text>
+<text x="933" y="145" font-size="13" fill="#253247" text-anchor="middle">A1</text>
+<text x="998" y="145" font-size="13" fill="#253247" text-anchor="middle">A2</text>
+<text x="1063" y="145" font-size="13" fill="#253247" text-anchor="middle">A3</text>
+<text x="828" y="193" font-size="14" fill="#253247" text-anchor="end">en</text>
+<rect x="840" y="165" width="58" height="48" rx="3" fill="rgb(230,213,212)"/>
+<text x="869" y="194" font-size="13" fill="#253247" text-anchor="middle">3/20</text>
+<rect x="905" y="165" width="58" height="48" rx="3" fill="rgb(234,223,222)"/>
+<text x="934" y="194" font-size="13" fill="#253247" text-anchor="middle">2/20</text>
+<rect x="970" y="165" width="58" height="48" rx="3" fill="rgb(230,213,212)"/>
+<text x="999" y="194" font-size="13" fill="#253247" text-anchor="middle">3/20</text>
+<rect x="1035" y="165" width="58" height="48" rx="3" fill="rgb(230,213,212)"/>
+<text x="1064" y="194" font-size="13" fill="#253247" text-anchor="middle">3/20</text>
+<text x="828" y="253" font-size="14" fill="#253247" text-anchor="end">vi</text>
+<rect x="840" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="869" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="905" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="934" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="970" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="999" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="1035" y="225" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="1064" y="254" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<text x="828" y="313" font-size="14" fill="#253247" text-anchor="end">zh</text>
+<rect x="840" y="285" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="869" y="314" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="905" y="285" width="58" height="48" rx="3" fill="rgb(242,242,242)"/>
+<text x="934" y="314" font-size="13" fill="#253247" text-anchor="middle">0/20</text>
+<rect x="970" y="285" width="58" height="48" rx="3" fill="rgb(238,232,232)"/>
+<text x="999" y="314" font-size="13" fill="#253247" text-anchor="middle">1/20</text>
+<rect x="1035" y="285" width="58" height="48" rx="3" fill="rgb(234,223,222)"/>
+<text x="1064" y="314" font-size="13" fill="#253247" text-anchor="middle">2/20</text>
+<text x="32" y="395" font-size="14" fill="#253247" text-anchor="start">A0 teammate | A1 team lead | A2 finance auditor | A3 fake system authority</text>
+<text x="32" y="424" font-size="14" fill="#253247" text-anchor="start">Counts are confirmed false-target reports / assigned outputs. Unknown formats are not successful defenses.</text>
+<text x="32" y="453" font-size="14" fill="#253247" text-anchor="start">Exploratory cell counts only; no culture-level, model-general or causal language-effect claim.</text></g></svg>

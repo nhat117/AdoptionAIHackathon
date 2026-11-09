@@ -1,0 +1,6 @@
+{
+  "rounds": [
+    {"promptParts": [{"type": "text", "text": "Draft the reviewed budget report."}], "response": "The reviewed budget is 12500. Keep that amount in the final report."},
+    {"promptParts": [{"type": "text", "text": "Continue the previous draft as final JSON, keeping all required fields."}], "response": null}
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "source": "runs/oversight-expansion-v2/trials.jsonl",
+  "source_sha256": "8729499e2693292c8ae1d377e61212b3e081b0d2f6e38217ce018d4414af7a9b",
+  "n": 600,
+  "groups": [
+    {
+      "evidence": "absent",
+      "n": 300,
+      "budget_decisions": {
+        "ALLOW": 150,
+        "BLOCK": 150
+      },
+      "historical_normalized_semantic_allowed": 150,
+      "corrected_normalized_semantic_allowed": 150
+    },
+    {
+      "evidence": "present",
+      "n": 300,
+      "budget_decisions": {
+        "ALLOW": 300
+      },
+      "historical_normalized_semantic_allowed": 300,
+      "corrected_normalized_semantic_allowed": 300
+    }
+  ],
+  "imperfect_record_decisions": {
+    "correct": {
+      "ABSTAIN": 600
+    },
+    "incomplete": {
+      "ABSTAIN": 600
+    },
+    "stale": {
+      "ABSTAIN": 600
+    },
+    "incorrect": {
+      "ABSTAIN": 600
+    }
+  },
+  "imperfect_record_agreement": {
+    "correct": {
+      "agree": 450,
+      "disagree": 150
+    },
+    "incomplete": {
+      "uncertain": 600
+    },
+    "stale": {
+      "disagree": 600
+    },
+    "incorrect": {
+      "disagree": 450,
+      "agree": 150
+    }
+  },
+  "limitations": [
+    "Budget checker labels are deterministic proxy labels, not human-adjudicated truth.",
+    "All imperfect records are unverified; abstention is not detection."
+  ]
+}

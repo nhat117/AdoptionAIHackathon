@@ -1,0 +1,51 @@
+{
+  "branch": "codex/authority-language-v3",
+  "baseline_commit": "d38bbd4b225ddebff1c8d1d412ec2902d31d6a41",
+  "collection_counts": {
+    "workers": 600,
+    "pilot": 24,
+    "historical-monitor": 600,
+    "new-monitor": 600
+  },
+  "measurement_v2_counts": {
+    "workers": 36,
+    "committee_games": 6,
+    "committee_calls": 126
+  },
+  "measurement_v2_replication_counts": {
+    "workers": 1440,
+    "task_clusters": 20
+  },
+  "contract_validation_counts": {
+    "contract_validation": 216,
+    "corrupt_record_validation": 72
+  },
+  "committee_games": 24,
+  "committee_calls": 504,
+  "successful_saved_model_calls": 2328,
+  "successful_saved_model_calls_all_studies": 4218,
+  "interrupted_game_responses_without_saved_body": [
+    {
+      "model": "gpt-5",
+      "reserved_usd": -0.00647625,
+      "actual_usd": 0.0007625,
+      "response_id": "chatcmpl-Ei4b0vPDloFuhlgIz553gZ72Q2eAY"
+    },
+    {
+      "model": "gpt-5",
+      "reserved_usd": -0.00602625,
+      "actual_usd": 0.0014275,
+      "response_id": "chatcmpl-Ei4b1U0ffuAeT81AprTnnrktASCLc"
+    },
+    {
+      "model": "gpt-5",
+      "reserved_usd": -0.005671249999999999,
+      "actual_usd": 0.001545,
+      "response_id": "chatcmpl-Ei4b3CdvoAcF86myssobUsvxAkIPd"
+    }
+  ],
+  "returned_models": {
+    "gpt-5-2025-08-07": 2328
+  },
+  "baseline_files_unchanged": 233
+}

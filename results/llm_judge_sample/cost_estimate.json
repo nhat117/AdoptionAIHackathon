@@ -1,0 +1,18 @@
+{
+  "aligned_groups": 96,
+  "population_aligned_groups": 1920,
+  "initial_judge_requests": 288,
+  "initial_no_retry_conservative_ceiling_usd": 52.83342,
+  "initial_max_retry_conservative_ceiling_usd": 158.50026,
+  "initial_planning_estimate_usd": 28.6875,
+  "planning_output_tokens_per_call_not_observed": 8000,
+  "pricing": {
+    "model": "gpt-5",
+    "input_per_million": 1.25,
+    "output_per_million": 10.0,
+    "source": "Existing GPT-5 worker accounting rates; no cache discount assumed",
+    "mode": "Token-based estimate, not a provider invoice or verified proxy surcharge"
+  },
+  "project_cap_usd": 60,
+  "scope": "288 initial requests including 3 smoke calls; flagged revisions cost extra within the same US$60 project / US$650 aggregate caps"
+}

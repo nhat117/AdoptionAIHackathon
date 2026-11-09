@@ -1,0 +1,136 @@
+{
+  "batch": 18,
+  "domain": "accessibility improvements to public events",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-EhoA3Ht4ayeiM3NeJ9kQoeo1aR4Dj",
+  "usage": {
+    "completion_tokens": 622,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 316,
+      "engine_ttlt_ms": 6486,
+      "pre_inference_ms": 115,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 939,
+      "service_ttlt_ms": 7080,
+      "user_visible_ttft_ms": 824
+    },
+    "prompt_tokens": 638,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 1260
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in accessibility improvements to public events. Batch 18/20. Avoid repeating these earlier topics: [\"Install tactile floor paths and braille signage for main hallways at downtown convention center before spring expo\", \"Pilot real-time ASL interpretation service for keynote sessions at regional arts festival using on-stage interpreters\", \"Add high-contrast, large-print directional banners for outdoor food fair with weather-resistant materials\", \"Deploy loaner mobility scooters and charging stations at city marathon spectator zones along three-mile stretch\", \"Introduce quiet rooms with dim lighting and soft seating during weekend comic convention to reduce sensory overload\", \"Implement captioned live-stream for community town hall and archive recordings with transcripts in event portal\", \"Provide scent-free sections and notify vendors to use unscented products for indoor craft market\", \"Roll out accessible ticketing flow with screen-reader labels and keyboard navigation for annual film festival website\", \"Create wheelchair-accessible viewing platforms at outdoor concert main stage with companion seating and shade\", \"Develop multilingual audio guides with easy-to-use handheld devices for museum night event\", \"Install portable induction loop systems at workshop rooms for hearing aid users during tech summit\", \"Publish detailed step-free routes and elevator locations in downloadable venue maps for science expo\", \"Offer large-print and braille programs for orchestra performance with advance pickup and onsite request options\", \"Test tactile maps and QR-linked audio descriptions for heritage site open day visitor flow\", \"Set up accessible shuttle service with ramp-equipped vans between parking lot and county fair entrance\", \"Provide seating with armrests and varied heights across lobby areas for senior-friendly wellness fair\", \"Add visual alarm strobes synchronized with PA announcements in exhibit halls for safety alerts\", \"Train volunteers on disability etiquette and assistance protocols before neighborhood street festival kickoff\", \"Implement stroller and wheelchair-friendly security screening lanes with wider tables at stadium entry\", \"Launch text-to-speech enabled event app with offline schedules and customizable font sizes for book fair\", \"Reserve service animal relief areas with signage and waste stations near main entrances for pet policy clarity\", \"Provide shade canopies and hydration stations along accessible pathways for summer outdoor marketplace\", \"Pilot color communication badges to indicate sensory preferences and interaction comfort at gaming convention\", \"Distribute pre-event accessibility surveys and follow-up feedback forms to refine inclusive practices at citywide parade\", \"Add curb ramps and temporary matting over grass to create stable routes between booths at community picnic\"]",
+  "tasks": [
+    {
+      "topic": "Implement tactile exhibit labels with braille and raised diagrams for temporary science fair hands-on stations",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Provide adjustable height portable stages with ramp access for panel discussions at university lecture series",
+      "status": "complete"
+    },
+    {
+      "topic": "Set up visual queue boards showing session wait times with color-blind safe palettes at tech expo halls",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Offer loaner noise-dampening headphones and clear signage for quiet hours at children’s literacy festival",
+      "status": "complete"
+    },
+    {
+      "topic": "Deploy guided wayfinding beacons with vibration alerts via Bluetooth for outdoor historical reenactment grounds",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Create accessible restroom wayfinding with high-contrast icons and floor-level arrows at indoor craft showcase",
+      "status": "complete"
+    },
+    {
+      "topic": "Introduce seating reservation options for wheelchair spots through box office with companion seat guarantees",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Install handrails and non-slip edge markers on temporary bleachers for city sports tournament spectators",
+      "status": "complete"
+    },
+    {
+      "topic": "Design low-glare lighting layouts for art auction preview rooms to reduce visual strain and reflections",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Add multilingual plain-language signage describing emergency egress routes at international student welcome fair",
+      "status": "complete"
+    },
+    {
+      "topic": "Pilot quiet queue system using SMS alerts to reduce crowding at registration desks during developer conference",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Provide collapsible stools at long exhibit queues with clear storage and retrieval points for attendees",
+      "status": "complete"
+    },
+    {
+      "topic": "Offer wheelchair-turning radius checks and widen booth aisles for accessibility compliance at vendor marketplace",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Create tactile ground indicators at queue starts and ends for theater festival ticket counters",
+      "status": "complete"
+    },
+    {
+      "topic": "Set up hydration-friendly medication stations with counter space and privacy screens at health expo",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Distribute color-blind safe wristbands with large-print session codes for workshop track identification",
+      "status": "complete"
+    },
+    {
+      "topic": "Implement stair edge contrast tape and bilingual caution signage in temporary pop-up venue stairwells",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Provide accessible photo consent forms with easy-read layouts and braille versions at community arts gala",
+      "status": "complete"
+    },
+    {
+      "topic": "Add quiet boarding windows and priority lanes for accessible shuttles at regional book fair transit hub",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Deploy seat numbering in raised tactile digits and high-contrast paint for amphitheater seating rows",
+      "status": "complete"
+    },
+    {
+      "topic": "Offer loaner canes with rolling tips and onsite orientation sessions for outdoor sculpture garden tours",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Introduce captioned pre-show trailers and accessible volume control headsets at independent film showcase",
+      "status": "complete"
+    },
+    {
+      "topic": "Place rest areas with low sensory decor and directional cues between major exhibits at innovation expo",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Provide map kiosks with large-print zoom features and screen-reader friendly touch interfaces at auto show",
+      "status": "complete"
+    },
+    {
+      "topic": "Establish accessible first aid posts with adjustable exam cots and clear path signage at winter carnival",
+      "status": "in_progress"
+    }
+  ]
+}

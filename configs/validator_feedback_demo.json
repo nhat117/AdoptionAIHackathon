@@ -1,0 +1,7 @@
+{
+  "validator": "fictional task acceptance checker, not the release guard",
+  "passed": false,
+  "observed_budget": 12000,
+  "required_budget": 12500,
+  "message": "Task remains incomplete until the required budget appears."
+}

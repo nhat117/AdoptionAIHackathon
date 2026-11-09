@@ -1,0 +1,22 @@
+{
+  "scope": "Fresh protected smoke test; not a powered defence benchmark",
+  "models": [
+    "gpt-4o",
+    "qwen2.5:0.5b"
+  ],
+  "languages": [
+    "en",
+    "vi",
+    "zh"
+  ],
+  "roles": [
+    "peer",
+    "authority"
+  ],
+  "tasks": 2,
+  "cases": 24,
+  "max_generation_attempts_per_case": 2,
+  "llm_monitor": false,
+  "guard_sha256": "1009c4f03024753ac3a331efcf11ae041ac213ad15fd4d91b0671fce3126c335",
+  "code_commit": "6b4a38dc7e91e54a363eaa93d80f691033cbea9c"
+}

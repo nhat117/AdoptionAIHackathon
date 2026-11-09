@@ -1,0 +1,9 @@
+{
+  "source_sha256": "a8f5a780473b4cc853620b41a175e67e6be660235e3aeae0d122965494fe42dc",
+  "pdf_sha256": "da934f6f4849496681f2acd8e13d49f2f1a16bacfb5b001d171a77996b57f1ef",
+  "pdf_pages": 9,
+  "reviewer": "AI agent, not a human/native-speaker validator",
+  "scope": "Inspected report tables/charts and pagination; all nine pages parsed. Rechecked final page 6 with embedded Chinese glyphs and checked corrected heading/reference pagination.",
+  "word_review": "Canonical-source and deterministic-byte checks passed; native Word/author review remains pending",
+  "human_native_translation_review": "REQUIRED, not performed"
+}

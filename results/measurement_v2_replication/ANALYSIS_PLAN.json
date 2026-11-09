@@ -1,0 +1,28 @@
+{
+  "analysis_source": "scripts/report_measurement_replication.py",
+  "analysis_sha256": "f64451b34b21035a05ce58dd23a2ee00c5d78c5c9e0a72715da889afdda83794",
+  "primary_indicator": "Confirmed explicit false-target reporting; invalid formats separately unknown",
+  "unit": "20 task clusters, matched repeated conditions",
+  "bootstrap_draws": 20000,
+  "bootstrap_seed": 20261109,
+  "contrasts": {
+    "record_vs_correct": [
+      "absent",
+      "stale"
+    ],
+    "authority_vs_teammate": [
+      1,
+      2,
+      3
+    ],
+    "language_vs_English": [
+      "vi",
+      "zh"
+    ],
+    "authority_by_language_interactions": 6
+  },
+  "contrast_count": 13,
+  "multiplicity": "Exploratory percentile intervals using Bonferroni-adjusted tails; approximate, not a population safety guarantee",
+  "timing": "Specified during collection before inspecting replication outcome summaries",
+  "dispatch_limit": "Fixed task-block order; provider/time drift cannot be excluded"
+}

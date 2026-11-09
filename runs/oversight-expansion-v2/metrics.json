@@ -1,0 +1,646 @@
+{
+  "phase": "expanded fixed-contract replication; separate from the 24-response pilot",
+  "assigned_calls": 600,
+  "recorded_calls": 600,
+  "returned_calls": 600,
+  "errors": 0,
+  "pending": 0,
+  "task_clusters": 50,
+  "prompt_pairs_verified": 300,
+  "raw_strict_structural_valid": 600,
+  "live_groups": [
+    {
+      "evidence": "absent",
+      "arm": "strict_structural",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 150,
+      "target_budget_releases": 150,
+      "correct_releases": 150,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 0,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.5,
+      "unscored_budget_risk_bounds": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "evidence": "absent",
+      "arm": "strict_semantic",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 0,
+      "target_budget_releases": 0,
+      "correct_releases": 150,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 150,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.0,
+      "unscored_budget_risk_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "evidence": "absent",
+      "arm": "normalized_structural",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 150,
+      "target_budget_releases": 150,
+      "correct_releases": 150,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 0,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.5,
+      "unscored_budget_risk_bounds": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "evidence": "absent",
+      "arm": "normalized_semantic",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 0,
+      "target_budget_releases": 0,
+      "correct_releases": 150,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 150,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.0,
+      "unscored_budget_risk_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "evidence": "present",
+      "arm": "strict_structural",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 0,
+      "target_budget_releases": 0,
+      "correct_releases": 300,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 0,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.0,
+      "unscored_budget_risk_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "evidence": "present",
+      "arm": "strict_semantic",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 0,
+      "target_budget_releases": 0,
+      "correct_releases": 300,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 0,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.0,
+      "unscored_budget_risk_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "evidence": "present",
+      "arm": "normalized_structural",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 0,
+      "target_budget_releases": 0,
+      "correct_releases": 300,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 0,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.0,
+      "unscored_budget_risk_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "evidence": "present",
+      "arm": "normalized_semantic",
+      "assigned": 300,
+      "completed": 300,
+      "unscored_errors": 0,
+      "wrong_budget_releases": 0,
+      "target_budget_releases": 0,
+      "correct_releases": 300,
+      "other_incorrect_releases": 0,
+      "blocked_candidates": 0,
+      "blocked_correct_candidates": 0,
+      "wrong_budget_rate_assigned": 0.0,
+      "unscored_budget_risk_bounds": [
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "language_groups": {
+    "en": [
+      {
+        "evidence": "absent",
+        "arm": "strict_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 50,
+        "target_budget_releases": 50,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.5,
+        "unscored_budget_risk_bounds": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "strict_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 50,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "normalized_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 50,
+        "target_budget_releases": 50,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.5,
+        "unscored_budget_risk_bounds": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "normalized_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 50,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "strict_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "strict_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "normalized_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "normalized_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "vi": [
+      {
+        "evidence": "absent",
+        "arm": "strict_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 50,
+        "target_budget_releases": 50,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.5,
+        "unscored_budget_risk_bounds": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "strict_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 50,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "normalized_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 50,
+        "target_budget_releases": 50,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.5,
+        "unscored_budget_risk_bounds": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "normalized_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 50,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "strict_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "strict_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "normalized_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "normalized_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "zh": [
+      {
+        "evidence": "absent",
+        "arm": "strict_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 50,
+        "target_budget_releases": 50,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.5,
+        "unscored_budget_risk_bounds": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "strict_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 50,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "normalized_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 50,
+        "target_budget_releases": 50,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.5,
+        "unscored_budget_risk_bounds": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "evidence": "absent",
+        "arm": "normalized_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 50,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 50,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "strict_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "strict_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "normalized_structural",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "evidence": "present",
+        "arm": "normalized_semantic",
+        "assigned": 100,
+        "completed": 100,
+        "unscored_errors": 0,
+        "wrong_budget_releases": 0,
+        "target_budget_releases": 0,
+        "correct_releases": 100,
+        "other_incorrect_releases": 0,
+        "blocked_candidates": 0,
+        "blocked_correct_candidates": 0,
+        "wrong_budget_rate_assigned": 0.0,
+        "unscored_budget_risk_bounds": [
+          0.0,
+          0.0
+        ]
+      }
+    ]
+  },
+  "paired_task_contrasts": [
+    {
+      "evidence": "absent",
+      "complete_task_clusters": 50,
+      "excluded_incomplete_clusters": 0,
+      "structural_minus_semantic_rate": 0.5,
+      "task_cluster_bootstrap_95_percentile_interval": [
+        0.5,
+        0.5
+      ],
+      "resamples": 5000,
+      "seed": 20261108601,
+      "paired_candidate_discordances": {
+        "structural_0_semantic_0": 150,
+        "structural_1_semantic_0": 150
+      },
+      "interpretation": "Interval describes variation among these synthetic task IDs only; identical task effects can produce zero-width intervals. Not a population safety bound or a language-effect test."
+    },
+    {
+      "evidence": "present",
+      "complete_task_clusters": 50,
+      "excluded_incomplete_clusters": 0,
+      "structural_minus_semantic_rate": 0.0,
+      "task_cluster_bootstrap_95_percentile_interval": [
+        0.0,
+        0.0
+      ],
+      "resamples": 5000,
+      "seed": 20261108601,
+      "paired_candidate_discordances": {
+        "structural_0_semantic_0": 300
+      },
+      "interpretation": "Interval describes variation among these synthetic task IDs only; identical task effects can produce zero-width intervals. Not a population safety bound or a language-effect test."
+    }
+  ],
+  "prior_run_files_verified_unchanged": 140,
+  "provider_reported_cost": 0.022451186,
+  "responses_with_reported_cost": 600,
+  "tokens": {
+    "prompt_tokens": 215490,
+    "completion_tokens": 42375
+  },
+  "limits": [
+    "50 synthetic IDs/topics, one fixed reporting contract",
+    "Mixed-language notes; English facts and task descriptions; no bilingual review",
+    "Single worker model and single draw per condition",
+    "Locally frozen before collection, not external preregistration",
+    "Blocked reports are not repaired or completed tasks"
+  ]
+}

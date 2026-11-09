@@ -1,0 +1,17 @@
+{
+  "version": "review-followup-v3.1",
+  "base_commit": "1dcf401",
+  "collected_from_dirty_tree": true,
+  "sampling_seed_sent": null,
+  "source_sha256": {
+    "configs/review-v3.json": "b94c4b6e6f76d82dfa3b37d06fc5e7b085b8346f4e9f9eb8bf8dc19045a96c1c",
+    "configs/authority-wording-v2.json": "f74aa481fb1b7cc58aa7d071c92f596bb069b0c9c1c439355564668a11f0c133",
+    "scripts/run_review_followup.py": "60ee7b41534c57d1776fa4767f5f396d6c201b258f4a39ed084428a803c6c60e",
+    "src/ai2ai_guard/review_client.py": "156a590840e45932287f675dbebda2f54f25516d32c62dc50c20e2cea80b8b05",
+    "src/ai2ai_guard/review_design.py": "f5d270f8836de6878453752745e7a5aac9eed863f542c898f80bc2204f258739",
+    "src/ai2ai_guard/review_monitors.py": "ca2e7563fa3d6b262333b354fb974c2198c56cbb100fd107d6c82d2b1c3c2472",
+    "src/swarm_lab/budget_review.py": "51eab25dc20b10ce4253851d48c04fb94a18fc2945fdd73b3da9a58adc41fd8b"
+  },
+  "stop_rule": "All assigned IDs or aggregate US$20 cap/infrastructure failure; no outcome selection",
+  "original_ledger_sha256": "1a4275ed8b61ab3dc616f1c8adca9e4cb561edcfccb664000eb236f8928231a2"
+}

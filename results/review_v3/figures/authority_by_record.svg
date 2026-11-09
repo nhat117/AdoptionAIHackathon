@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="835" viewBox="0 0 1200 835" role="img" aria-label="GPT-5: authority outcomes stratified by record condition">
+<title>GPT-5: authority outcomes stratified by record condition</title><desc>Attacked inputs only; 20 repeated task clusters. Unknown formats are separate; not-confirmed is NOT a successful-defense claim.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">GPT-5: authority outcomes stratified by record condition</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Attacked inputs only; 20 repeated task clusters. Unknown formats are separate; not-confirmed is NOT a successful-defense claim.</text><rect x="32" y="90" width="12" height="12" fill="#c45046"/>
+<text x="50" y="101" font-size="13" fill="#253247" text-anchor="start">relay</text>
+<rect x="262" y="90" width="12" height="12" fill="#717d96"/>
+<text x="280" y="101" font-size="13" fill="#253247" text-anchor="start">not confirmed</text>
+<rect x="492" y="90" width="12" height="12" fill="#ad73a0"/>
+<text x="510" y="101" font-size="13" fill="#253247" text-anchor="start">invalid</text>
+<text x="316" y="157" font-size="14" fill="#253247" text-anchor="end">absent / 0</text>
+<rect x="330.000" y="135" width="230.000" height="32" fill="#c45046"><title>absent / 0: relay 20/60</title></rect>
+<text x="445.0" y="157" font-size="13" fill="#ffffff" text-anchor="middle">20</text>
+<rect x="560.000" y="135" width="460.000" height="32" fill="#717d96"><title>absent / 0: not_confirmed 40/60</title></rect>
+<text x="790.0" y="157" font-size="13" fill="#ffffff" text-anchor="middle">40</text>
+<text x="1034" y="157" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="213" font-size="14" fill="#253247" text-anchor="end">absent / 1</text>
+<rect x="330.000" y="191" width="103.500" height="32" fill="#c45046"><title>absent / 1: relay 9/60</title></rect>
+<text x="381.75" y="213" font-size="13" fill="#ffffff" text-anchor="middle">9</text>
+<rect x="433.500" y="191" width="586.500" height="32" fill="#717d96"><title>absent / 1: not_confirmed 51/60</title></rect>
+<text x="726.75" y="213" font-size="13" fill="#ffffff" text-anchor="middle">51</text>
+<text x="1034" y="213" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="269" font-size="14" fill="#253247" text-anchor="end">absent / 2</text>
+<rect x="330.000" y="247" width="310.500" height="32" fill="#c45046"><title>absent / 2: relay 27/60</title></rect>
+<text x="485.25" y="269" font-size="13" fill="#ffffff" text-anchor="middle">27</text>
+<rect x="640.500" y="247" width="368.000" height="32" fill="#717d96"><title>absent / 2: not_confirmed 32/60</title></rect>
+<text x="824.5" y="269" font-size="13" fill="#ffffff" text-anchor="middle">32</text>
+<rect x="1008.500" y="247" width="11.500" height="32" fill="#ad73a0"><title>absent / 2: invalid 1/60</title></rect>
+<text x="1034" y="269" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="325" font-size="14" fill="#253247" text-anchor="end">absent / 3</text>
+<rect x="330.000" y="303" width="218.500" height="32" fill="#c45046"><title>absent / 3: relay 19/60</title></rect>
+<text x="439.25" y="325" font-size="13" fill="#ffffff" text-anchor="middle">19</text>
+<rect x="548.500" y="303" width="460.000" height="32" fill="#717d96"><title>absent / 3: not_confirmed 40/60</title></rect>
+<text x="778.5" y="325" font-size="13" fill="#ffffff" text-anchor="middle">40</text>
+<rect x="1008.500" y="303" width="11.500" height="32" fill="#ad73a0"><title>absent / 3: invalid 1/60</title></rect>
+<text x="1034" y="325" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="381" font-size="14" fill="#253247" text-anchor="end">stale / 0</text>
+<rect x="330.000" y="359" width="34.500" height="32" fill="#c45046"><title>stale / 0: relay 3/60</title></rect>
+<text x="347.25" y="381" font-size="13" fill="#ffffff" text-anchor="middle">3</text>
+<rect x="364.500" y="359" width="655.500" height="32" fill="#717d96"><title>stale / 0: not_confirmed 57/60</title></rect>
+<text x="692.25" y="381" font-size="13" fill="#ffffff" text-anchor="middle">57</text>
+<text x="1034" y="381" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="437" font-size="14" fill="#253247" text-anchor="end">stale / 1</text>
+<rect x="330.000" y="415" width="23.000" height="32" fill="#c45046"><title>stale / 1: relay 2/60</title></rect>
+<rect x="353.000" y="415" width="667.000" height="32" fill="#717d96"><title>stale / 1: not_confirmed 58/60</title></rect>
+<text x="686.5" y="437" font-size="13" fill="#ffffff" text-anchor="middle">58</text>
+<text x="1034" y="437" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="493" font-size="14" fill="#253247" text-anchor="end">stale / 2</text>
+<rect x="330.000" y="471" width="46.000" height="32" fill="#c45046"><title>stale / 2: relay 4/60</title></rect>
+<text x="353.0" y="493" font-size="13" fill="#ffffff" text-anchor="middle">4</text>
+<rect x="376.000" y="471" width="644.000" height="32" fill="#717d96"><title>stale / 2: not_confirmed 56/60</title></rect>
+<text x="698.0" y="493" font-size="13" fill="#ffffff" text-anchor="middle">56</text>
+<text x="1034" y="493" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="549" font-size="14" fill="#253247" text-anchor="end">stale / 3</text>
+<rect x="330.000" y="527" width="57.500" height="32" fill="#c45046"><title>stale / 3: relay 5/60</title></rect>
+<text x="358.75" y="549" font-size="13" fill="#ffffff" text-anchor="middle">5</text>
+<rect x="387.500" y="527" width="632.500" height="32" fill="#717d96"><title>stale / 3: not_confirmed 55/60</title></rect>
+<text x="703.75" y="549" font-size="13" fill="#ffffff" text-anchor="middle">55</text>
+<text x="1034" y="549" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="605" font-size="14" fill="#253247" text-anchor="end">correct / 0</text>
+<rect x="330.000" y="583" width="11.500" height="32" fill="#c45046"><title>correct / 0: relay 1/60</title></rect>
+<rect x="341.500" y="583" width="678.500" height="32" fill="#717d96"><title>correct / 0: not_confirmed 59/60</title></rect>
+<text x="680.75" y="605" font-size="13" fill="#ffffff" text-anchor="middle">59</text>
+<text x="1034" y="605" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="661" font-size="14" fill="#253247" text-anchor="end">correct / 1</text>
+<rect x="330.000" y="639" width="690.000" height="32" fill="#717d96"><title>correct / 1: not_confirmed 60/60</title></rect>
+<text x="675.0" y="661" font-size="13" fill="#ffffff" text-anchor="middle">60</text>
+<text x="1034" y="661" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="717" font-size="14" fill="#253247" text-anchor="end">correct / 2</text>
+<rect x="330.000" y="695" width="690.000" height="32" fill="#717d96"><title>correct / 2: not_confirmed 60/60</title></rect>
+<text x="675.0" y="717" font-size="13" fill="#ffffff" text-anchor="middle">60</text>
+<text x="1034" y="717" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="316" y="773" font-size="14" fill="#253247" text-anchor="end">correct / 3</text>
+<rect x="330.000" y="751" width="690.000" height="32" fill="#717d96"><title>correct / 3: not_confirmed 60/60</title></rect>
+<text x="675.0" y="773" font-size="13" fill="#ffffff" text-anchor="middle">60</text>
+<text x="1034" y="773" font-size="14" fill="#253247" text-anchor="start">n=60</text>
+<text x="330" y="807" font-size="12" fill="#253247" text-anchor="start">0%</text>
+<text x="1020" y="807" font-size="12" fill="#253247" text-anchor="end">100% of assigned outputs</text></g></svg>

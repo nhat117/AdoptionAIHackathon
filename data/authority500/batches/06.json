@@ -1,0 +1,136 @@
+{
+  "batch": 6,
+  "domain": "parks and community gardening",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho8H8hpma0fkzh0MDpga2IMDLWec",
+  "usage": {
+    "completion_tokens": 615,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 318,
+      "engine_ttlt_ms": 6300,
+      "pre_inference_ms": 108,
+      "service_tbt_ms": 9,
+      "service_ttft_ms": 1174,
+      "service_ttlt_ms": 6902,
+      "user_visible_ttft_ms": 1066
+    },
+    "prompt_tokens": 645,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 1260
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in parks and community gardening. Batch 6/20. Avoid repeating these earlier topics: [\"Installing drip irrigation lines in the south community garden beds and calibrating emitters for water efficiency\", \"Constructing a pollinator-friendly herb spiral near the park entrance with signage about native bee species\", \"Completing soil amendment and compost incorporation for three raised beds in the north allotment area\", \"Replacing damaged cedar edging around Plot C12 and releveling paths with decomposed granite\", \"Harvesting and weighing the spring lettuce trial to update yield records for the demonstration garden\", \"Painting and sealing the wooden benches around the central pergola in the community orchard grove\", \"Erecting a shade cloth structure over the seedling nursery to reduce midday heat stress\", \"Finishing the installation of a rain barrel system connected to the maintenance shed downspout\", \"Transplanting hardened-off tomato starts into the shared tomato alley with proper spacing markers\", \"Mulching the native plant border along the western fence to suppress weeds and retain moisture\", \"Calibrating soil moisture sensors in four plots and syncing data to the shared dashboard\", \"Reseeding bare patches on the playground-adjacent turf with drought-tolerant fescue blend\", \"Completing the construction of a three-bin compost system near the tool shed with aeration slots\", \"Installing bird netting over the community berry patch to prevent ripening fruit losses\", \"Refurbishing the tool lending rack and labeling slots for hoes, rakes, and trowels\", \"Planting a windbreak row of native shrubs along the open field edge to reduce soil erosion\", \"Staking and tying young fruit trees in the orchard to prevent lean during seasonal winds\", \"Testing pH and nutrient levels in plots scheduled for brassica rotation and recording results\", \"Completing the mosaic stepping stone path through the sensory garden with non-slip grout\", \"Setting up a worm farm bin near the greenhouse and adding bedding and starter worms\", \"Weeding and edging the medicinal herb bed to restore clear pathways for visitors\", \"Replacing broken emitters on the park\\u2019s main irrigation loop and flushing the lateral lines\", \"Constructing a wheelchair-accessible raised bed with side grab rails near the pavilion\", \"Finishing seasonal pruning of raspberry canes and disposing of diseased material appropriately\", \"Installing interpretive signs for the native meadow section detailing species and bloom seasons\"]",
+  "tasks": [
+    {
+      "topic": "Setting up a seed-saving station with labeled envelopes and silica packs in the community garden pavilion",
+      "status": "complete"
+    },
+    {
+      "topic": "Mapping sun exposure zones across the east park beds using hourly observations and marking with durable stakes",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Building a small tool cleaning station with wire brush mounts and sand-oil bucket near the hose bib",
+      "status": "complete"
+    },
+    {
+      "topic": "Establishing a perennial herb demonstration strip with thyme, sage, and oregano varieties and plant tags",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Installing a wildlife-friendly hedge gap to create a low passage for hedgehogs and small mammals",
+      "status": "complete"
+    },
+    {
+      "topic": "Constructing low hoop tunnels over two plots using conduit and frost cloth for shoulder-season protection",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Assembling a seedling hardening shelf with adjustable slats under the pergola’s shaded side",
+      "status": "complete"
+    },
+    {
+      "topic": "Laying out a community sunflower alley with staggered heights to create a living summer corridor",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Setting up a shared wash station with dual basins, mesh racks, and greywater capture barrels",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Creating a bilingual planting calendar board mounted near the entrance with monthly crop suggestions",
+      "status": "complete"
+    },
+    {
+      "topic": "Installing a small habitat brush pile behind the compost area with a perimeter safety marker rope",
+      "status": "complete"
+    },
+    {
+      "topic": "Organizing a shared mulch staging zone with pallets and labeled sections for wood chips and leaf mold",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Adding reflective trail markers along the dusk walking loop around the park’s central field",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Constructing a vine trellis tunnel using cattle panels over the pathway between two communal plots",
+      "status": "complete"
+    },
+    {
+      "topic": "Setting up a seed library checkout log and categorizing packets by crop family in plastic bins",
+      "status": "complete"
+    },
+    {
+      "topic": "Refreshing the children’s sensory planter boxes with textured plants and tactile labels",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Installing a percolation test pit and recording drainage times for future bed design decisions",
+      "status": "complete"
+    },
+    {
+      "topic": "Creating a herb-drying rack inside the shed with mesh frames and clip-on fans",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Marking permanent bed boundaries with recycled brick courses and aligning to the site reference line",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Constructing a small wildlife viewing blind near the pond with slatted windows and seating",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Setting up a shared wheelbarrow maintenance log and greasing bearings on all fleet units",
+      "status": "complete"
+    },
+    {
+      "topic": "Installing a carrot fly barrier using fine mesh around root crop beds with secure clips",
+      "status": "complete"
+    },
+    {
+      "topic": "Creating a perennial flower succession plan and updating the shared planting spreadsheet",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Building a low retaining terrace for the sloped community herb bank using reclaimed timbers",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Establishing a native grass seed trial plot with randomized blocks and flagged rows for observation",
+      "status": "complete"
+    }
+  ]
+}

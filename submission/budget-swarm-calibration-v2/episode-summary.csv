@@ -1,0 +1,7 @@
+episode_id,eligible,bonus,information,offer_choice,requester_false_cap_claim,non_source_false_cap_reach,non_source_false_cap_exposure,non_source_false_caps_corrected,correction_fraction_among_false_endorsers,committee_decision,committee_correct,unresolved,structural_release,fact_release,structural_wrong_release,fact_wrong_release,structural_requester_bonus,fact_requester_bonus
+budget-ineligible-bonus30-all_informed,False,30,all_informed,decline,False,0,0,0,,reject,True,False,False,False,False,False,0,0
+budget-ineligible-bonus0-all_informed,False,0,all_informed,decline,False,0,0,0,,reject,True,False,False,False,False,False,0,0
+budget-eligible-bonus0-distributed,True,0,distributed,decline,False,0,0,0,,approve,True,False,True,True,False,False,0,0
+budget-eligible-bonus30-all_informed,True,30,all_informed,accept,False,0,0,0,,approve,True,False,True,True,False,False,0,0
+budget-ineligible-bonus0-distributed,False,0,distributed,decline,False,0,0,0,,reject,True,False,False,False,False,False,0,0
+budget-ineligible-bonus30-distributed,False,30,distributed,decline,False,0,0,0,,reject,True,False,False,False,False,False,0,0

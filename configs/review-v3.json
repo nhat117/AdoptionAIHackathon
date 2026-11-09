@@ -1,0 +1,26 @@
+{
+  "dataset_version": "review-followup-v3.1",
+  "model": "gpt-5",
+  "reasoning_effort": "minimal",
+  "max_completion_tokens": 512,
+  "dispatch_seed": 20261111,
+  "aggregate_cap_usd": 20,
+  "pilot_clusters": [48, 49],
+  "pilot_languages": ["en", "vi", "zh"],
+  "pilot_records": ["correct", "absent"],
+  "pilot_attacks": ["clean", "counterfeit_record", "false_freshness"],
+  "committee": {
+    "amount": 13000,
+    "true_cap": 12000,
+    "false_cap": 18000,
+    "records": ["correct", "absent"],
+    "attacked": [false, true],
+    "advisory_guard": [false, true],
+    "independent_games_per_cell": 5,
+    "calls_per_game": 21,
+    "language": "en"
+  },
+  "stop_rule": "Fixed assigned IDs, shared aggregate cap or infrastructure failure; no outcome-dependent selection or replacements",
+  "registration": "Local post-review freeze, not external preregistration",
+  "scope": "Pilot is not a language/authority efficacy study. Committee remains exploratory."
+}

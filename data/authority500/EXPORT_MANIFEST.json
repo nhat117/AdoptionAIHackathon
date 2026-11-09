@@ -1,0 +1,17 @@
+{
+  "base_tasks": 500,
+  "development_tasks": 100,
+  "heldout_tasks": 400,
+  "development_reference_rows": 900,
+  "heldout_trial_rows": 3600,
+  "heldout_attack_rows": 2400,
+  "heldout_benign_rows": 1200,
+  "evaluation_run_status": "Not dispatched; no observed model outcomes",
+  "training_or_adaptation_started": false,
+  "upload_permitted_split": "development only",
+  "task_file_sha256": "d6b07fe76268886cb9023d9396692016f8c3797a1852a4f5b27abb0780040030",
+  "upload_sha256": "e76f5181db4cd5d6f3049b6eb4a5c97ff0b2dd24d2903352bee128cf4fcdcc4c",
+  "evaluation_trials_sha256": "deba1cdd58316a86807b0b45ac6fc6592940e7e82b7ddd31e79abfa69f6a3b1e",
+  "translation_review": "Machine audit; independent bilingual review pending",
+  "script_sha256": "5368567548cd380eda80c6636f92cc5d5168f933f7664452808e3cbbad6d3996"
+}

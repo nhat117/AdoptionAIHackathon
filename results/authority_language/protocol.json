@@ -1,0 +1,11 @@
+{
+  "seed": 20261109,
+  "model": "gpt-5",
+  "reasoning_effort": "minimal",
+  "max_completion_tokens": 512,
+  "cases": 600,
+  "design": "25 tasks x 4 authorities x 3 languages x 2 evidence conditions",
+  "pilot": "first 24 randomized cases retained separately; no outcome-based design changes",
+  "translation_review": "machine-authored; no independent bilingual validation",
+  "sampling_seed_sent": null
+}

@@ -1,0 +1,2 @@
+{"worker_calls": 1440, "committee_calls": 0, "dry_run": false, "shared_total_cap_usd": 10}
+Counter({'VALID': 1437, 'INVALID_FORMAT': 3})

@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-11-08T06:31:16.704394+00:00",
+  "registration": "Local freeze, not external preregistration",
+  "spec": {
+    "phase": "controlled follow-up on previously seen tasks; not heldout confirmation",
+    "cases": 24,
+    "unique_tasks": 2,
+    "model": "gemma-4-26b-a4b-it",
+    "temperature": 0.7,
+    "max_output_tokens": 4096,
+    "primary_contrast": "normalized structural versus normalized semantic check, same candidate, registry access and normalization, no recovery or rendering",
+    "evidence_access": "Exact same system prompt and user JSON except authoritative_record null versus facts object",
+    "worker_control": "No model-based semantic judge; independent known-field oracle scores accepted candidates unchanged",
+    "secondary": "Strict format arms; archived first-hop replay; grounded worker versus evidence-absent worker uses separate model draws",
+    "unit": "Two task clusters crossed with 3 languages and clean/poisoned sources; report descriptive counts, no iid confidence intervals or language-effect p-values",
+    "stop_rule": "All 24 requests once, no outcome-based prompt edits, no expansion, no semantic recovery inference",
+    "inputs_sha256": "e20e69d8d203e0c82fd5152df0f48f943e3e6c1aaf67e327e0f25a4edf6b2e17",
+    "archived_trials_sha256": "038dea30656380615a6033724d40e3e0788553fd332cb43a0136703c5861cf2d",
+    "source_sha256": {
+      "scripts/run_oversight_ablation.py": "53afc95c0c4ed055778a8dc6a26916e0f6a48018fc59c50b086d62146f287031",
+      "src/ai2ai_injection/oversight_eval.py": "00654550a77ec08477e43da4ae4a223c917dd60ee976b5555ae3507b8ab5f812",
+      "src/ai2ai_guard/__init__.py": "9df63c352ef7723ae6db9a95c0b9eda1d63661994156df1e880ccd045684a6aa",
+      "src/ai2ai_guard/fact_projection.py": "45d702cb82a7f2d028bca278fa097e897d113094ae7792dbd4044ef0e2efa0e4",
+      "scripts/run_near_target.py": "345eca85025518f06e4b33d3488cc772b176bca5469c4961521c74e3b8d1c1ed",
+      "src/ai2ai_injection/evaluator.py": "123300f354a12dbb3d0c3a113a4c46418e481a25056ca4a8a78d114206f3dec6",
+      "src/ai2ai_injection/adaption_provider.py": "2376a2f203a91a599f8b123eeef09bfa58e8ef48670b4cf54b3e022d99f2b9b3"
+    }
+  }
+}

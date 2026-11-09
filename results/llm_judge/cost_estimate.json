@@ -1,0 +1,24 @@
+{
+  "aligned_groups": 1920,
+  "original_prompt_records": 5760,
+  "initial_judge_requests": 5760,
+  "smoke_requests_included_in_initial": 3,
+  "max_additional_revision_requests": 7680,
+  "initial_no_retry_conservative_ceiling_usd": 3459.6036,
+  "initial_max_retry_conservative_ceiling_usd": 10378.8108,
+  "planning_output_tokens_per_call_not_observed": 4096,
+  "initial_planning_estimate_usd": 2279.9556,
+  "revision_cost": "One draft plus three blinded reevaluations per flagged group, additional; bounded by explicit cap",
+  "pricing": {
+    "model": "gpt-6-astra",
+    "input_per_million": 10.0,
+    "output_per_million": 50.0,
+    "cached_input_per_million": 1.0,
+    "cache_write_per_million": 12.5,
+    "source": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "verified_date": "2026-11-09",
+    "mode": "Standard, short context; not an invoice or verified proxy surcharge"
+  },
+  "invoice": false,
+  "scope": "All aligned actual prompt groups, no unreported template deduplication or budget sampling"
+}

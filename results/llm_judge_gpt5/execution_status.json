@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED_OR_INTERRUPTED",
+  "error_type": "ValueError",
+  "reason": "judge_incomplete_or_multiple_choices_saved_for_audit",
+  "saved_records": 25,
+  "timestamp_utc": "2026-11-09T08:38:18.328040+00:00"
+}

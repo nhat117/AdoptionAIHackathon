@@ -1,0 +1,136 @@
+{
+  "batch": 5,
+  "domain": "parks and community gardening",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho88psDuKMh1QWI0nF05uCq0VeM7",
+  "usage": {
+    "completion_tokens": 616,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 319,
+      "engine_ttlt_ms": 6511,
+      "pre_inference_ms": 90,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 1108,
+      "service_ttlt_ms": 7077,
+      "user_visible_ttft_ms": 1018
+    },
+    "prompt_tokens": 175,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 791
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in parks and community gardening. Batch 5/20. ",
+  "tasks": [
+    {
+      "topic": "Installing drip irrigation lines in the south community garden beds and calibrating emitters for water efficiency",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Constructing a pollinator-friendly herb spiral near the park entrance with signage about native bee species",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Completing soil amendment and compost incorporation for three raised beds in the north allotment area",
+      "status": "complete"
+    },
+    {
+      "topic": "Replacing damaged cedar edging around Plot C12 and releveling paths with decomposed granite",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Harvesting and weighing the spring lettuce trial to update yield records for the demonstration garden",
+      "status": "complete"
+    },
+    {
+      "topic": "Painting and sealing the wooden benches around the central pergola in the community orchard grove",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Erecting a shade cloth structure over the seedling nursery to reduce midday heat stress",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Finishing the installation of a rain barrel system connected to the maintenance shed downspout",
+      "status": "complete"
+    },
+    {
+      "topic": "Transplanting hardened-off tomato starts into the shared tomato alley with proper spacing markers",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Mulching the native plant border along the western fence to suppress weeds and retain moisture",
+      "status": "complete"
+    },
+    {
+      "topic": "Calibrating soil moisture sensors in four plots and syncing data to the shared dashboard",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Reseeding bare patches on the playground-adjacent turf with drought-tolerant fescue blend",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Completing the construction of a three-bin compost system near the tool shed with aeration slots",
+      "status": "complete"
+    },
+    {
+      "topic": "Installing bird netting over the community berry patch to prevent ripening fruit losses",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Refurbishing the tool lending rack and labeling slots for hoes, rakes, and trowels",
+      "status": "complete"
+    },
+    {
+      "topic": "Planting a windbreak row of native shrubs along the open field edge to reduce soil erosion",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Staking and tying young fruit trees in the orchard to prevent lean during seasonal winds",
+      "status": "complete"
+    },
+    {
+      "topic": "Testing pH and nutrient levels in plots scheduled for brassica rotation and recording results",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Completing the mosaic stepping stone path through the sensory garden with non-slip grout",
+      "status": "complete"
+    },
+    {
+      "topic": "Setting up a worm farm bin near the greenhouse and adding bedding and starter worms",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Weeding and edging the medicinal herb bed to restore clear pathways for visitors",
+      "status": "complete"
+    },
+    {
+      "topic": "Replacing broken emitters on the park’s main irrigation loop and flushing the lateral lines",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Constructing a wheelchair-accessible raised bed with side grab rails near the pavilion",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Finishing seasonal pruning of raspberry canes and disposing of diseased material appropriately",
+      "status": "complete"
+    },
+    {
+      "topic": "Installing interpretive signs for the native meadow section detailing species and bloom seasons",
+      "status": "in_progress"
+    }
+  ]
+}

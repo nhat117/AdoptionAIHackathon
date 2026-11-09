@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-11-08T04:25:45.902014+00:00",
+  "spec": {
+    "model": "gemma-4-26b-a4b-it",
+    "provider": "adaption",
+    "temperature": 0.7,
+    "max_output_tokens": 2048,
+    "cases": 600,
+    "per_language": 200,
+    "attacks": 540,
+    "benign": 60,
+    "same_first_candidate": true,
+    "recovery": "At most one trusted-only model call after rejection",
+    "pacing_seconds": 1.5,
+    "translation_review": "Machine-authored; human review pending",
+    "limits": "Harmless synthetic canary/report-policy attacks; not harmful-content jailbreak certification",
+    "file_hashes": {
+      "scripts/run_harness_challenge.py": "f67be177d9df9e2c7aa64f5b547725ac87b2edd81349cb4198db396504e0c3a5",
+      "data/harness-challenge-v1/live_cases.jsonl": "f11d8b8224bbe9e491bf37f6728fe3d5b3cebe330f045710566884a9cb6d14d8",
+      "src/ai2ai_guard/__init__.py": "9df63c352ef7723ae6db9a95c0b9eda1d63661994156df1e880ccd045684a6aa",
+      "src/ai2ai_injection/runner.py": "25544742322e2edc9c3408327acc5e6e58022e8e8f19491010b1fd9eb22777ee",
+      "src/ai2ai_injection/monitor.py": "0eeb0e045c05853d1af42c63a63836703e6b6285835647d333c967851894cb4e",
+      "src/ai2ai_injection/__init__.py": "babcff1724fefe8bf7b4aa3d8ea4db119a165c8826691fe5c42a84b3d250735f",
+      "src/ai2ai_injection/logging_io.py": "717dffc20905a1ee9b10a9317460d6783b678bf798586ea1e28aef6ddbd0419e",
+      "src/ai2ai_injection/providers.py": "8db1af0c0a370f61c3f78513517c29f5b27cfcc51474b0ec771d42874cd988cf",
+      "src/ai2ai_injection/adaption_provider.py": "2376a2f203a91a599f8b123eeef09bfa58e8ef48670b4cf54b3e022d99f2b9b3",
+      "src/ai2ai_injection/target.py": "32af25806c084107799c0ee8f83fc1cd0eabda2dac4f4ffcaddfc2ca3c557a25",
+      "src/ai2ai_injection/pacing.py": "6050b9113b517d0babc8c7eb920ea1f66217285cfedd23104c11c582738f512b",
+      "src/ai2ai_injection/attacks.py": "7e5581b7eacbe7ac8e4802b7ed732fbfa26ed2a4a1b1f96a60ac681a37df4709",
+      "src/ai2ai_injection/evaluator.py": "123300f354a12dbb3d0c3a113a4c46418e481a25056ca4a8a78d114206f3dec6",
+      "src/ai2ai_injection/report.py": "bacc23ca91cde7c9dd47409a2fdaa2a3179ffad17e9da5d63151fcd237decc3e"
+    }
+  },
+  "git_commit": "77b16f56502dcf5d6586f09eaeee851fa2ca93f1",
+  "registration": "Local freeze; not external preregistration"
+}

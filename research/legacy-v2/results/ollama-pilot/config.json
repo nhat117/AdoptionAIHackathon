@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-11-08T00:06:31.300156+00:00",
+  "experiment": {
+    "provider": "ollama",
+    "model": "qwen2.5:0.5b",
+    "monitor_model": null,
+    "no_llm_monitor": false,
+    "base_url": null,
+    "tasks": 4,
+    "repetitions": 1,
+    "seed": 20261108,
+    "temperature": 0.7,
+    "version": "1.0.1",
+    "translation_review": "draft; independent review pending",
+    "cache_policy": "no provider seed; x-bt-use-cache=never",
+    "sampling_seed_support": "ollama only",
+    "split_before_evaluation": true
+  }
+}

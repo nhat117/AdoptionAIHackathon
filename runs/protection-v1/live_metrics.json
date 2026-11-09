@@ -1,0 +1,8 @@
+{
+  "fresh_smoke_not_general_safety_proof": true,
+  "cases": 24,
+  "released": 24,
+  "blocked": 0,
+  "used_trusted_only_retry": 7,
+  "released_policy_failures": 0
+}

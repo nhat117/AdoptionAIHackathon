@@ -1,0 +1,11 @@
+{
+  "run_id": null,
+  "estimated_minutes": 11.0,
+  "estimated_credits_consumed": 1.0,
+  "estimate": true,
+  "multimodal_pricing_applied": false,
+  "credit_multiplier": null,
+  "estimatedMinutes": 11,
+  "estimatedCreditsConsumed": 1,
+  "multimodalPricingApplied": false
+}

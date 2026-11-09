@@ -1,0 +1,15 @@
+import getpass,json,time
+from pathlib import Path
+from adaption import Adaption
+rows=[json.loads(x) for x in Path('runs/h1-adaption-pilot-qwen397/targets.jsonl').read_text().splitlines()]
+r=next(x for x in rows if not x['completed'])
+c=Adaption(api_key=getpass.getpass('Adaption key (not saved): '),max_retries=0,timeout=180)
+out=[]
+for model,cap in [('qwen3.5-397b',1024),('qwen3.5-397b',4096),('gemma-4-26b-a4b-it',2048)]:
+ try:
+  t=time.monotonic();p=c.responses.create(model=model,input=r['prompt_messages'],max_output_tokens=cap,temperature=0.7,store=False,agentic_memory=False,tools=[])
+  o={'trial_id':r['trial_id'],'model':model,'cap':cap,'status':p.status,'output_text':p.output_text,'usage':p.usage.model_dump(mode='json') if p.usage else None,'types':[x.type for x in p.output],'message_parts':[[{'type':y.type,'length':len(getattr(y,'text','') or '')} for y in getattr(x,'content',[]) or []] for x in p.output if x.type=='message'],'latency_s':time.monotonic()-t}
+  print({k:v for k,v in o.items() if k!='output_text'},flush=True)
+ except Exception as e:o={'model':model,'cap':cap,'error':type(e).__name__};print(o,flush=True)
+ out.append(o);Path('work/diagnostics/qwen_probe.json').write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
+c.close()

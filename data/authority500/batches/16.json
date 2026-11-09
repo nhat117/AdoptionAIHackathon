@@ -1,0 +1,136 @@
+{
+  "batch": 16,
+  "domain": "small volunteer-run festivals",
+  "requested_model": "gpt-5",
+  "returned_model": "gpt-5-2025-08-07",
+  "response_id": "chatcmpl-Eho9lCMTq7xbHTF2iG57Exk63fkuw",
+  "usage": {
+    "completion_tokens": 654,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "latency_checkpoint": {
+      "engine_tbt_ms": 10,
+      "engine_ttft_ms": 317,
+      "engine_ttlt_ms": 6985,
+      "pre_inference_ms": 63,
+      "service_tbt_ms": 10,
+      "service_ttft_ms": 1063,
+      "service_ttlt_ms": 7508,
+      "user_visible_ttft_ms": 1000
+    },
+    "prompt_tokens": 643,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 1297
+  },
+  "finish_reason": "stop",
+  "prompt": "Generate 25 distinct tasks in small volunteer-run festivals. Batch 16/20. Avoid repeating these earlier topics: [\"Community cinema festival scheduling finalized with three venues confirmed and projectionist roster assigned for weekend screenings\", \"Volunteer training modules drafted and reviewed for front-of-house, ticketing, and usher roles at the neighborhood arts fair\", \"Pop-up stage lighting rig tested and labeled; cabling maps created for the folk music courtyard stage\", \"Local food vendor coordination ongoing with permits submitted and health inspector walkthrough scheduled for Friday\", \"Handmade signage painted for children\\u2019s craft zone and wayfinding arrows sealed for weather resistance\", \"Recycled-materials art exhibition layout measured and pedestal placements taped on community hall floor\", \"Accessibility plan drafting underway, including quiet room setup and chair loans arranged with nearby church\", \"Open-mic performer call finalized; time slots emailed and backup list prepared for late arrivals\", \"Rain contingency plan in development with tent rentals shortlisted and cost comparisons documented\", \"Neighborhood parade route chalked and steward positions assigned, with whistle and vest kits assembled\", \"Acoustic busking permits being gathered from the town council with map of approved corners pending\", \"Volunteer check-in desk assembled; badge printer tested and lanyards sorted by day and role color\", \"Sustainability station signage drafted and compost bin pickups coordinated with local hauler\", \"Heritage dance showcase rehearsal schedule confirmed and community center keys secured for evening slots\", \"Festival app schedule content entry ongoing with stage times, workshop descriptions, and venue addresses\", \"Portable PA system batteries charged and spare mic cables bundled for the storytelling gazebo\", \"First aid corner setup plans drafted; volunteer nurse shifts partially filled and supply checklist started\", \"Blanket seating area roped and staked; ground protection mats placed by the willow grove\", \"Local artisan market booth maps under revision after fire lane adjustments from the city review\", \"Community mural primer applied and chalk grid marked; paint palettes mixed for Saturday session\", \"Kite-making workshop materials procurement underway, with dowels and tissue paper orders awaiting pickup\", \"Bicycle valet corral fencing acquired and rack layout marked; signage arrows printed for main gate\", \"Storytime tent sound bleed tests ongoing with soft partitions trialed between adjacent stages\", \"Volunteer snack station stocked with shelf-stable items and hydration coolers labeled per shift\", \"Neighborhood cleanup crew rosters forming; litter grabber delivery pending and route maps drafted\"]",
+  "tasks": [
+    {
+      "topic": "Community songbook printing completed for campfire sing-along; lyric sheets collated and stapled with recycled paper covers",
+      "status": "complete"
+    },
+    {
+      "topic": "Solar lantern stringing underway for twilight garden path, with mounting clips measured and trial section installed",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Children’s puppet theater backdrop painted and dried; foldable frame hinges tightened and storage bin labeled",
+      "status": "complete"
+    },
+    {
+      "topic": "Local history storytelling route audio guide edits in progress, with scene markers tested along riverside path",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Volunteer green room tea station assembled and food-safe thermoses sanitized with labeled sugar and dairy-free options",
+      "status": "complete"
+    },
+    {
+      "topic": "Community pottery demo kiln placement under review; fire bricks staged and fire extinguisher checklist being verified",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Town choir risers assembled on gym floor; anti-slip mats placed and safety rails bolted",
+      "status": "complete"
+    },
+    {
+      "topic": "Bike-powered smoothie booth alternator tuning ongoing; pedal resistance calibration logs partially recorded",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Family picnic blanket loan program totes packed and numbered; return log sheets printed and clipped",
+      "status": "complete"
+    },
+    {
+      "topic": "Folk dance caller cue cards digitization underway; laminated copies queued for print at the library kiosk",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Rainwater catchment handwashing station built with foot pump; greywater signage mounted on stand",
+      "status": "complete"
+    },
+    {
+      "topic": "Nature sketch walk kits being bundled with clipboards, graphite sets, and field prompts; pilot group feedback pending",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community zine table folding racks erected and stability tested; cash box counted and float prepared",
+      "status": "complete"
+    },
+    {
+      "topic": "Park lantern parade route leaf blowers tested; debris collection buckets staged at three checkpoints",
+      "status": "complete"
+    },
+    {
+      "topic": "DIY instrument jam session loaner bin inventory ongoing; tambourine repairs and drum head replacements mid-way",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Low-waste dishwashing line plumbed with rinse tubs labeled; drying racks assembled with mesh covers",
+      "status": "complete"
+    },
+    {
+      "topic": "Outdoor chess corner board tiles being affixed to plywood; piece storage crate sanding not yet finished",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Poetry slam scorecards cut and hole-punched; judge clipboards paired with spare pens and timers",
+      "status": "complete"
+    },
+    {
+      "topic": "Community quilting bee raffle quilt basting underway; batting trimmed and backing fabric smoothing scheduled",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Park permit display frames mounted by main gate; laminated approvals inserted and cable ties trimmed",
+      "status": "complete"
+    },
+    {
+      "topic": "Kids’ scavenger hunt clue envelopes sealed; test run on park loop revealing two ambiguous hints to revise",
+      "status": "complete"
+    },
+    {
+      "topic": "Local canoe demo dock safety ropes being retied; throw bags inspected and anchor cleats awaiting replacement",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Neighborhood photo booth backdrop ironed and wrinkle-free; prop baskets sorted and mirror cleaned",
+      "status": "complete"
+    },
+    {
+      "topic": "Festival volunteer bicycle route marshal maps being updated; reflective wristbands distribution plan drafted",
+      "status": "in_progress"
+    },
+    {
+      "topic": "Community bake sale allergen labeling cards printed; display stands sanitized and tablecloths folded by box",
+      "status": "complete"
+    }
+  ]
+}

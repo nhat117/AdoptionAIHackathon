@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "adaption-hackathon-starter"
 version = "0.1.0"
-description = "Generic LangGraph learning scaffold with Adaption and Studio"
+description = "Reproducible multilingual agent-handoff experiments and registry-backed oversight"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["adaption>=0.19,<1", "python-dotenv>=1,<2", "langgraph>=1,<2"]
@@ -13,12 +13,98 @@ dependencies = ["adaption>=0.19,<1", "python-dotenv>=1,<2", "langgraph>=1,<2"]
 [project.optional-dependencies]
 studio = ["langgraph-cli[inmem]>=0.4,<1"]
 dev = ["pytest>=8,<9", "ruff>=0.14,<1"]
+reports = ["python-docx>=1,<2", "reportlab>=4,<5", "pillow>=11,<13", "pypdf>=6,<8"]
+judge = ["openai>=2,<3"]
+
+[project.scripts]
+adaption-starter = "adaption_starter.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/swarm_lab"]
+packages = ["src/adaption_starter", "src/ai2ai_injection", "src/ai2ai_guard", "src/swarm_lab"]
 
 [tool.ruff]
 target-version = "py311"
+extend-exclude = ["research/legacy-v2"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# Keep generated Markdown tables and report paragraphs readable in source.
+"src/ai2ai_injection/report.py" = ["E501"]
+"scripts/summarize_adaption.py" = ["E501"]
+"scripts/run_reference_dataset.py" = ["E501"]
+
+"scripts/report_followup.py" = ["E501"]
+"scripts/report_authority600.py" = ["E501"]
+"scripts/run_harness_challenge.py" = ["E501"]
+"scripts/report_harness_challenge.py" = ["E501"]
+"scripts/run_development_calibration.py" = ["E501"]
+"scripts/report_development_calibration.py" = ["E501"]
+"scripts/run_near_target.py" = ["E501"]
+"scripts/report_near_target.py" = ["E501"]
+"scripts/run_near_target_confirmation.py" = ["E501"]
+"scripts/report_near_target_confirmation.py" = ["E501"]
+"scripts/run_context_stress.py" = ["E501"]
+"scripts/report_context_stress.py" = ["E501"]
+"scripts/run_agent_handoff.py" = ["E501"]
+"scripts/run_multilingual_propagation.py" = ["E501"]
+"scripts/report_multilingual_propagation.py" = ["E501"]
+"scripts/report_agent_handoff.py" = ["E501"]
+"src/ai2ai_guard/context.py" = ["E501"]
+"scripts/run_oversight_ablation.py" = ["E501"]
+"scripts/report_oversight_ablation.py" = ["E501"]
+"src/ai2ai_injection/oversight_eval.py" = ["E501"]
+
+# Generated report paragraphs and Markdown tables.
+"scripts/report_budget_calibration.py" = ["E501"]
+
+"scripts/report_corrected_budgets.py" = ["E501"]
+"scripts/summarize_corrected_experiments.py" = ["E501"]
+
+"scripts/report_measurement_v2.py" = ["E501"]
+"scripts/report_measurement_replication.py" = ["E501"]
+"scripts/report_measurement_sensitivity.py" = ["E501"]
+"scripts/run_corrupt_record_validation.py" = ["E501"]
+"scripts/report_validation.py" = ["E501"]
+"scripts/audit_experiments.py" = ["E501"]
+
+# Review analysis: explicit statistical contracts, prompt/data tables and report prose.
+"src/ai2ai_guard/review_*.py" = ["E501"]
+"src/ai2ai_guard/budget_claims_v2.py" = ["E501"]
+"src/swarm_lab/review_committee.py" = ["E501"]
+"scripts/run_review_followup.py" = ["E501"]
+"scripts/run_research_pipeline.py" = ["E501"]
+"scripts/report_review_followup.py" = ["E501"]
+"tests/test_review_followup.py" = ["E501"]
+"scripts/export_review_report.py" = ["E501"]
+"scripts/run_authority_wording_followup.py" = ["E501"]
+"tests/test_authority_wording_followup.py" = ["E501"]
+"scripts/prepare_human_review.py" = ["E501"]
+"src/ai2ai_guard/authority_followup.py" = ["E501"]
+"src/ai2ai_guard/llm_judge*.py" = ["E501"]
+"scripts/run_llm_judge.py" = ["E501"]
+"scripts/report_llm_judge.py" = ["E501"]
+"tests/test_llm_judge.py" = ["E501"]
+"src/ai2ai_guard/round3_*.py" = ["E501"]
+"scripts/run_round3_neutral.py" = ["E501"]
+"scripts/report_round3.py" = ["E501"]
+"tests/test_round3.py" = ["E501"]
+"scripts/prepare_round3_review.py" = ["E501"]
+"src/ai2ai_guard/gpt5_judge_api.py" = ["E501"]
+"scripts/run_gpt5_judge.py" = ["E501"]
+"tests/test_gpt5_judge.py" = ["E501"]
+"src/ai2ai_guard/gpt5_judge_batch.py" = ["E501"]
+"scripts/run_full_gpt5_judge.py" = ["E501"]
+"tests/test_gpt5_judge_batch.py" = ["E501"]
+"scripts/complete_gpt5_validation.py" = ["E501"]
+"src/ai2ai_guard/gpt5_judge_v2.py" = ["E501"]
+"scripts/run_gpt5_judge_v2.py" = ["E501"]
+"tests/test_gpt5_judge_v2.py" = ["E501"]
+"src/ai2ai_guard/sampled_judge.py" = ["E501"]
+"src/ai2ai_guard/judge_transport.py" = ["E501"]
+"scripts/run_sampled_judge.py" = ["E501"]
+"tests/test_sampled_judge.py" = ["E501"]

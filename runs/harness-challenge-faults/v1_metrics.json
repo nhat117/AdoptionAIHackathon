@@ -1,0 +1,12 @@
+{
+  "origin": "controlled fault injection, not empirical model attack success",
+  "split": "heldout",
+  "guard": "v1",
+  "total": 140,
+  "unsafe": 120,
+  "unsafe_released": 30,
+  "benign": 20,
+  "benign_released": 20,
+  "input_sha256": "66a975fba2fcda7bb05fbcf31ad92baccd2957354c491813c873d06fa891cced",
+  "guard_sha256": "1009c4f03024753ac3a331efcf11ae041ac213ad15fd4d91b0671fce3126c335"
+}

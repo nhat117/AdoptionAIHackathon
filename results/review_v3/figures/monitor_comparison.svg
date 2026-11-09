@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="555" viewBox="0 0 1200 555" role="img" aria-label="GPT-5 saved workers: monitor decisions, not hidden beliefs">
+<title>GPT-5 saved workers: monitor decisions, not hidden beliefs</title><desc>Key-case sensitivity; all 1440 assigned workers per strategy. Different evidence access is identified in the report.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">GPT-5 saved workers: monitor decisions, not hidden beliefs</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Key-case sensitivity; all 1440 assigned workers per strategy. Different evidence access is identified in the report.</text><rect x="32" y="90" width="12" height="12" fill="#277b71"/>
+<text x="50" y="101" font-size="13" fill="#253247" text-anchor="start">ALLOW</text>
+<rect x="262" y="90" width="12" height="12" fill="#c45046"/>
+<text x="280" y="101" font-size="13" fill="#253247" text-anchor="start">BLOCK</text>
+<rect x="492" y="90" width="12" height="12" fill="#717d96"/>
+<text x="510" y="101" font-size="13" fill="#253247" text-anchor="start">ABSTAIN</text>
+<rect x="722" y="90" width="12" height="12" fill="#cf9f3e"/>
+<text x="740" y="101" font-size="13" fill="#253247" text-anchor="start">INVALID</text>
+<rect x="952" y="90" width="12" height="12" fill="#ad73a0"/>
+<text x="970" y="101" font-size="13" fill="#253247" text-anchor="start">PENDING</text>
+<text x="316" y="157" font-size="14" fill="#253247" text-anchor="end">none</text>
+<rect x="330.000" y="135" width="492.583" height="32" fill="#277b71"><title>none: ALLOW 1028/1440</title></rect>
+<text x="576.29" y="157" font-size="13" fill="#ffffff" text-anchor="middle">1028</text>
+<rect x="822.583" y="135" width="197.417" height="32" fill="#717d96"><title>none: ABSTAIN 412/1440</title></rect>
+<text x="921.29" y="157" font-size="13" fill="#ffffff" text-anchor="middle">412</text>
+<text x="1034" y="157" font-size="14" fill="#253247" text-anchor="start">n=1440</text>
+<text x="316" y="213" font-size="14" fill="#253247" text-anchor="end">source_only</text>
+<rect x="330.000" y="191" width="448.979" height="32" fill="#277b71"><title>source_only: ALLOW 937/1440</title></rect>
+<text x="554.49" y="213" font-size="13" fill="#ffffff" text-anchor="middle">937</text>
+<rect x="778.979" y="191" width="43.604" height="32" fill="#c45046"><title>source_only: BLOCK 91/1440</title></rect>
+<text x="800.78" y="213" font-size="13" fill="#ffffff" text-anchor="middle">91</text>
+<rect x="822.583" y="191" width="197.417" height="32" fill="#717d96"><title>source_only: ABSTAIN 412/1440</title></rect>
+<text x="921.29" y="213" font-size="13" fill="#ffffff" text-anchor="middle">412</text>
+<text x="1034" y="213" font-size="14" fill="#253247" text-anchor="start">n=1440</text>
+<text x="316" y="269" font-size="14" fill="#253247" text-anchor="end">source_freshness</text>
+<rect x="330.000" y="247" width="229.521" height="32" fill="#277b71"><title>source_freshness: ALLOW 479/1440</title></rect>
+<text x="444.76" y="269" font-size="13" fill="#ffffff" text-anchor="middle">479</text>
+<rect x="559.521" y="247" width="263.062" height="32" fill="#c45046"><title>source_freshness: BLOCK 549/1440</title></rect>
+<text x="691.05" y="269" font-size="13" fill="#ffffff" text-anchor="middle">549</text>
+<rect x="822.583" y="247" width="197.417" height="32" fill="#717d96"><title>source_freshness: ABSTAIN 412/1440</title></rect>
+<text x="921.29" y="269" font-size="13" fill="#ffffff" text-anchor="middle">412</text>
+<text x="1034" y="269" font-size="14" fill="#253247" text-anchor="start">n=1440</text>
+<text x="316" y="325" font-size="14" fill="#253247" text-anchor="end">oracle_v1</text>
+<rect x="330.000" y="303" width="35.938" height="32" fill="#277b71"><title>oracle_v1: ALLOW 75/1440</title></rect>
+<text x="347.97" y="325" font-size="13" fill="#ffffff" text-anchor="middle">75</text>
+<rect x="365.938" y="303" width="300.917" height="32" fill="#c45046"><title>oracle_v1: BLOCK 628/1440</title></rect>
+<text x="516.4" y="325" font-size="13" fill="#ffffff" text-anchor="middle">628</text>
+<rect x="666.854" y="303" width="353.146" height="32" fill="#717d96"><title>oracle_v1: ABSTAIN 737/1440</title></rect>
+<text x="843.43" y="325" font-size="13" fill="#ffffff" text-anchor="middle">737</text>
+<text x="1034" y="325" font-size="14" fill="#253247" text-anchor="start">n=1440</text>
+<text x="316" y="381" font-size="14" fill="#253247" text-anchor="end">oracle_v2</text>
+<rect x="330.000" y="359" width="229.521" height="32" fill="#277b71"><title>oracle_v2: ALLOW 479/1440</title></rect>
+<text x="444.76" y="381" font-size="13" fill="#ffffff" text-anchor="middle">479</text>
+<rect x="559.521" y="359" width="273.125" height="32" fill="#c45046"><title>oracle_v2: BLOCK 570/1440</title></rect>
+<text x="696.08" y="381" font-size="13" fill="#ffffff" text-anchor="middle">570</text>
+<rect x="832.646" y="359" width="187.354" height="32" fill="#717d96"><title>oracle_v2: ABSTAIN 391/1440</title></rect>
+<text x="926.32" y="381" font-size="13" fill="#ffffff" text-anchor="middle">391</text>
+<text x="1034" y="381" font-size="14" fill="#253247" text-anchor="start">n=1440</text>
+<text x="316" y="437" font-size="14" fill="#253247" text-anchor="end">original_blind</text>
+<rect x="330.000" y="415" width="135.604" height="32" fill="#277b71"><title>original_blind: ALLOW 283/1440</title></rect>
+<text x="397.8" y="437" font-size="13" fill="#ffffff" text-anchor="middle">283</text>
+<rect x="465.604" y="415" width="54.625" height="32" fill="#c45046"><title>original_blind: BLOCK 114/1440</title></rect>
+<text x="492.92" y="437" font-size="13" fill="#ffffff" text-anchor="middle">114</text>
+<rect x="520.229" y="415" width="499.771" height="32" fill="#717d96"><title>original_blind: ABSTAIN 1043/1440</title></rect>
+<text x="770.11" y="437" font-size="13" fill="#ffffff" text-anchor="middle">1043</text>
+<text x="1034" y="437" font-size="14" fill="#253247" text-anchor="start">n=1440</text>
+<text x="316" y="493" font-size="14" fill="#253247" text-anchor="end">improved_blind</text>
+<rect x="330.000" y="471" width="572.604" height="32" fill="#277b71"><title>improved_blind: ALLOW 1195/1440</title></rect>
+<text x="616.3" y="493" font-size="13" fill="#ffffff" text-anchor="middle">1195</text>
+<rect x="902.604" y="471" width="117.396" height="32" fill="#c45046"><title>improved_blind: BLOCK 245/1440</title></rect>
+<text x="961.3" y="493" font-size="13" fill="#ffffff" text-anchor="middle">245</text>
+<text x="1034" y="493" font-size="14" fill="#253247" text-anchor="start">n=1440</text>
+<text x="330" y="527" font-size="12" fill="#253247" text-anchor="start">0%</text>
+<text x="1020" y="527" font-size="12" fill="#253247" text-anchor="end">100% of assigned outputs</text></g></svg>

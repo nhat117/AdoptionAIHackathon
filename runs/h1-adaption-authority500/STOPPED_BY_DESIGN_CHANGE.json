@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T03:53:35.939240+00:00",
+  "reason": "User changed requested study size to 600 cases, 200 per language",
+  "recorded_targets": 72,
+  "outcomes_retained": true,
+  "included_in_new_600_case_study": false,
+  "new_study_excludes_all_80_preselected_task_ids": true
+}

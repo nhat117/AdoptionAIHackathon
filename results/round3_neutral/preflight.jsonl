@@ -1,0 +1,2 @@
+{"planned_calls": 180, "mean_based_estimate_usd": 0.201442, "no_retry_byte_bound_reservation_usd": 1.11487, "accounted_before_usd": 17.51430535, "aggregate_cap_usd": 20, "run_requested": false, "model": "gpt-5", "reasoning_effort": "minimal"}
+{"planned_calls": 180, "mean_based_estimate_usd": 0.201442, "no_retry_byte_bound_reservation_usd": 1.11487, "accounted_before_usd": 17.51430535, "aggregate_cap_usd": 20, "run_requested": true, "model": "gpt-5", "reasoning_effort": "minimal"}

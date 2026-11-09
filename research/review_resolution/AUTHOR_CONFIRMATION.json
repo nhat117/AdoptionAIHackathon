@@ -1,0 +1,6 @@
+{
+  "status": "AWAITING_USER_CONFIRMATION",
+  "authors": [],
+  "required_per_author": ["confirmed_display_name", "affiliation", "preferred_order", "permission_to_publish"],
+  "note": "No identity or affiliation inferred from GitHub handles or commit metadata. Supply confirmed details before final author rendering/submission."
+}

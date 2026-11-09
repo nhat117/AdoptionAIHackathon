@@ -1,0 +1,14 @@
+{
+  "initial_planned_calls": 3828,
+  "stage": "monitors",
+  "stage_assigned_units": 2880,
+  "stage_assigned_calls": 2880,
+  "expected_new_cost_usd": 6.429600000000001,
+  "expected_cost_basis": "Historical mean costs with modest allowance; not a guarantee or invoice",
+  "accounted_before_stage_usd": 5.7395241,
+  "aggregate_cap_usd": 20.0,
+  "remaining_usd": 14.2604759,
+  "worst_case": "Every dispatch reserves byte-bound input + 512 output tokens; unknown billing stays reserved. Batch may stop at cap.",
+  "run_requested": true
+}
+{"stage": "monitors", "saved_units": 2880, "planned_units": 2880}

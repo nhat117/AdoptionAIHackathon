@@ -1,0 +1,2 @@
+# SDK version installed and checked for this integration (8 November 2026).
+adaption==0.19.0

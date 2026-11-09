@@ -1,0 +1,23 @@
+{
+  "stages": [
+    {
+      "stage": "initial",
+      "exit_code": 1
+    },
+    {
+      "stage": "revisions",
+      "status": "NOT_STARTED_INITIAL_VALIDATION_INCOMPLETE"
+    },
+    {
+      "stage": "scripts/run_research_pipeline.py",
+      "exit_code": 0
+    },
+    {
+      "stage": "scripts/export_review_report.py",
+      "exit_code": 0
+    }
+  ],
+  "author_edits_confirmed": false,
+  "human_proofreading_claimed": false,
+  "official_submission_confirmed": false
+}

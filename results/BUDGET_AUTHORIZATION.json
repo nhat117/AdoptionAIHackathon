@@ -1,0 +1,7 @@
+{
+  "date": "2026-11-09",
+  "authorized_total_usd": 20,
+  "source": "User selected US$20 total in response to budget question",
+  "scope": "Aggregate across this research session; not per experiment",
+  "shared_ledger": "results/api_ledger.jsonl"
+}

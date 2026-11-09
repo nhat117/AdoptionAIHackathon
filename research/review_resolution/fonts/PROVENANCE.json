@@ -1,0 +1,7 @@
+{
+  "source_url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/Variable/TTF/Subset/NotoSansSC-VF.ttf",
+  "license_url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/LICENSE",
+  "original_sha256": "d68bafcb48a2707749396aa12bbbd833cb70401f3a9a689fd2902c7e0d295964",
+  "subset": "U+8D39 U+7528, weight 400; ReportLab embeds only the two report glyphs",
+  "subset_sha256": "6fe03613582a099aa0f39c830e6fe9eb356fa9e21409b848c6bbd6fe574e82dc"
+}
