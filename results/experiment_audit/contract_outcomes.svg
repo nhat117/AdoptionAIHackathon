@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="499" viewBox="0 0 1200 499" role="img" aria-label="Neutral versus operational handoff contracts">
+<title>Neutral versus operational handoff contracts</title><desc>Three matched task clusters; clean and attack inputs combined here (36 assigned outputs per row).</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">Neutral versus operational handoff contracts</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Three matched task clusters; clean and attack inputs combined here (36 assigned outputs per row).</text><rect x="32" y="90" width="12" height="12" fill="#277b71"/>
+<text x="50" y="101" font-size="13" fill="#253247" text-anchor="start">correct</text>
+<rect x="262" y="90" width="12" height="12" fill="#c45046"/>
+<text x="280" y="101" font-size="13" fill="#253247" text-anchor="start">false target</text>
+<rect x="492" y="90" width="12" height="12" fill="#717d96"/>
+<text x="510" y="101" font-size="13" fill="#253247" text-anchor="start">abstained</text>
+<rect x="722" y="90" width="12" height="12" fill="#cf9f3e"/>
+<text x="740" y="101" font-size="13" fill="#253247" text-anchor="start">other report</text>
+<rect x="952" y="90" width="12" height="12" fill="#ad73a0"/>
+<text x="970" y="101" font-size="13" fill="#253247" text-anchor="start">invalid</text>
+<text x="316" y="157" font-size="14" fill="#253247" text-anchor="end">neutral / absent</text>
+<rect x="330.000" y="135" width="57.500" height="32" fill="#c45046"><title>neutral / absent: false_target 3/36</title></rect>
+<text x="358.75" y="157" font-size="13" fill="#ffffff" text-anchor="middle">3</text>
+<rect x="387.500" y="135" width="613.333" height="32" fill="#717d96"><title>neutral / absent: abstained 32/36</title></rect>
+<text x="694.17" y="157" font-size="13" fill="#ffffff" text-anchor="middle">32</text>
+<rect x="1000.833" y="135" width="19.167" height="32" fill="#ad73a0"><title>neutral / absent: invalid 1/36</title></rect>
+<text x="1034" y="157" font-size="14" fill="#253247" text-anchor="start">n=36</text>
+<text x="316" y="213" font-size="14" fill="#253247" text-anchor="end">neutral / correct</text>
+<rect x="330.000" y="191" width="690.000" height="32" fill="#277b71"><title>neutral / correct: correct 36/36</title></rect>
+<text x="675.0" y="213" font-size="13" fill="#ffffff" text-anchor="middle">36</text>
+<text x="1034" y="213" font-size="14" fill="#253247" text-anchor="start">n=36</text>
+<text x="316" y="269" font-size="14" fill="#253247" text-anchor="end">neutral / stale</text>
+<rect x="330.000" y="247" width="19.167" height="32" fill="#c45046"><title>neutral / stale: false_target 1/36</title></rect>
+<rect x="349.167" y="247" width="670.833" height="32" fill="#cf9f3e"><title>neutral / stale: other_report 35/36</title></rect>
+<text x="684.58" y="269" font-size="13" fill="#ffffff" text-anchor="middle">35</text>
+<text x="1034" y="269" font-size="14" fill="#253247" text-anchor="start">n=36</text>
+<text x="316" y="325" font-size="14" fill="#253247" text-anchor="end">operational / absent</text>
+<rect x="330.000" y="303" width="690.000" height="32" fill="#717d96"><title>operational / absent: abstained 36/36</title></rect>
+<text x="675.0" y="325" font-size="13" fill="#ffffff" text-anchor="middle">36</text>
+<text x="1034" y="325" font-size="14" fill="#253247" text-anchor="start">n=36</text>
+<text x="316" y="381" font-size="14" fill="#253247" text-anchor="end">operational / correct</text>
+<rect x="330.000" y="359" width="651.667" height="32" fill="#277b71"><title>operational / correct: correct 34/36</title></rect>
+<text x="655.83" y="381" font-size="13" fill="#ffffff" text-anchor="middle">34</text>
+<rect x="981.667" y="359" width="38.333" height="32" fill="#ad73a0"><title>operational / correct: invalid 2/36</title></rect>
+<text x="1000.83" y="381" font-size="13" fill="#ffffff" text-anchor="middle">2</text>
+<text x="1034" y="381" font-size="14" fill="#253247" text-anchor="start">n=36</text>
+<text x="316" y="437" font-size="14" fill="#253247" text-anchor="end">operational / stale</text>
+<rect x="330.000" y="415" width="690.000" height="32" fill="#717d96"><title>operational / stale: abstained 36/36</title></rect>
+<text x="675.0" y="437" font-size="13" fill="#ffffff" text-anchor="middle">36</text>
+<text x="1034" y="437" font-size="14" fill="#253247" text-anchor="start">n=36</text>
+<text x="330" y="471" font-size="12" fill="#253247" text-anchor="start">0%</text>
+<text x="1020" y="471" font-size="12" fill="#253247" text-anchor="end">100% of assigned outputs</text></g></svg>

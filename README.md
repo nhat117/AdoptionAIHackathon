@@ -4,6 +4,8 @@
 
 A reproducible study of incorrect facts passing between AI agents, using English, Vietnamese and Chinese peer messages. A controller checks report facts before authorizing a handoff.
 
+**Experiment audit and illustrated draft:** [Read the evidence-backed draft](research/EXPERIMENT_AUDIT_REPORT.md) · [Machine-readable audit](results/experiment_audit/audit.json). All ten corrected collection stages have their planned saved units (4,218 unique responses). Five reproducible figures cover reporting outcomes, authority/language cells, contract validation, hidden record corruption and blind monitoring. Historical stopped/failed runs and three missing response bodies remain explicitly separate. This audit makes no new inference calls and does not claim every historical experiment succeeded.
+
 **Latest consolidated report:** [Read the report](research/VALIDATED_RESEARCH_REPORT.md) · [Download the Word report](research/VALIDATED_RESEARCH_REPORT.docx). The new matched validation completed 216 calls plus a separate 72-call corrupt-record stress test. Operational policy compliance was 106/108, with two strict format failures; following a corrupt record produced policy-compliant but factually wrong outputs in 36/36 operational cases. The tested code and scoring work within this scope; this is not a general safety guarantee.
 
 **Latest multi-task replication:** [1,440-response report](results/measurement_v2_replication/REPORT.md) · [Scoring sensitivity and interpretation](results/measurement_v2_replication/SENSITIVITY.md) · [Design boundaries](results/measurement_v2_replication/README.md)
@@ -58,7 +60,7 @@ uv run python scripts/verify_corrected_artifacts.py
 uv run pytest -q
 ```
 
-The corrected verifier checks all saved prompts and response IDs and preserves the historical baseline. The suite passes **212 tests**, with lint and GitHub CI passing on Python 3.11 and 3.12. Historical audit scripts check source hashes from their original collection and must run against that historical commit; running them against corrected source will deliberately fail. Use the commands above for the updated results.
+The corrected verifier checks all saved prompts and response IDs and preserves the historical baseline. GitHub CI checks tests, lint and offline reproduction on Python 3.11 and 3.12. Regenerate the illustrated audit with `uv run python scripts/audit_experiments.py`; use `--check` to reject stale report/figure artifacts. Historical audit scripts check source hashes from their original collection and must run against that historical commit; running them against corrected source will deliberately fail. Use the commands above for the updated results.
 
 `uv run python scripts/resume_oversight_expansion.py` checks the saved 600-response inputs without reselecting tasks as new run folders are added. Adding `--run` uses Adaption only for missing assigned trials and retains existing records. The original frozen collector is preserved as historical source. Credentials belong in environment variables, never in Git. The report writer and charts use `scripts/write_expansion_report.py` with the existing Matplotlib requirements.
 

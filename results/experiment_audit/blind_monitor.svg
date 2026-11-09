@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="275" viewBox="0 0 1200 275" role="img" aria-label="Blind monitor decisions on historical budget reports">
+<title>Blind monitor decisions on historical budget reports</title><desc>Saved field labels define wrong/correct; the blind monitor sees no trusted budget. Abstention is not a block.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">Blind monitor decisions on historical budget reports</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Saved field labels define wrong/correct; the blind monitor sees no trusted budget. Abstention is not a block.</text><rect x="32" y="90" width="12" height="12" fill="#277b71"/>
+<text x="50" y="101" font-size="13" fill="#253247" text-anchor="start">ALLOW</text>
+<rect x="262" y="90" width="12" height="12" fill="#c45046"/>
+<text x="280" y="101" font-size="13" fill="#253247" text-anchor="start">BLOCK</text>
+<rect x="492" y="90" width="12" height="12" fill="#717d96"/>
+<text x="510" y="101" font-size="13" fill="#253247" text-anchor="start">ABSTAIN</text>
+<text x="316" y="157" font-size="14" fill="#253247" text-anchor="end">wrong budget</text>
+<rect x="330.000" y="135" width="27.600" height="32" fill="#277b71"><title>wrong budget: ALLOW 6/150</title></rect>
+<rect x="357.600" y="135" width="662.400" height="32" fill="#717d96"><title>wrong budget: ABSTAIN 144/150</title></rect>
+<text x="688.8" y="157" font-size="13" fill="#ffffff" text-anchor="middle">144</text>
+<text x="1034" y="157" font-size="14" fill="#253247" text-anchor="start">n=150</text>
+<text x="316" y="213" font-size="14" fill="#253247" text-anchor="end">correct budget</text>
+<rect x="330.000" y="191" width="52.133" height="32" fill="#277b71"><title>correct budget: ALLOW 34/450</title></rect>
+<text x="356.07" y="213" font-size="13" fill="#ffffff" text-anchor="middle">34</text>
+<rect x="382.133" y="191" width="176.333" height="32" fill="#c45046"><title>correct budget: BLOCK 115/450</title></rect>
+<text x="470.3" y="213" font-size="13" fill="#ffffff" text-anchor="middle">115</text>
+<rect x="558.467" y="191" width="461.533" height="32" fill="#717d96"><title>correct budget: ABSTAIN 301/450</title></rect>
+<text x="789.23" y="213" font-size="13" fill="#ffffff" text-anchor="middle">301</text>
+<text x="1034" y="213" font-size="14" fill="#253247" text-anchor="start">n=450</text>
+<text x="330" y="247" font-size="12" fill="#253247" text-anchor="start">0%</text>
+<text x="1020" y="247" font-size="12" fill="#253247" text-anchor="end">100% of assigned outputs</text></g></svg>

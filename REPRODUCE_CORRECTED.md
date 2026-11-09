@@ -15,7 +15,8 @@ python3.11 -m venv .venv311
 .venv311/bin/python scripts/verify_corrected_artifacts.py
 ```
 
-The last command is a zero-call dry run. Saved historical inputs and outputs
+The collector command (`run_corrected_experiments.py`) is a zero-call dry run;
+the last command verifies saved artifacts without inference. Saved historical inputs and outputs
 under `runs/` are never overwritten by the new runners. The deterministic replay
 uses all 600 rows from `runs/oversight-expansion-v2/trials.jsonl`.
 Results are separate under `results/`.
@@ -68,3 +69,16 @@ The saved protocol and inputs are immutable on resume. Use a separate results di
 ## Contract and source-truth validation
 
 The latest user authorization is **US$20 total**, using the same shared results/api_ledger.jsonl. Older collectors retain their lower US$10 defaults. New validation collectors use `--cap-usd 20`: `python scripts/run_contract_validation.py` prepares 216 matched inputs and `python scripts/run_corrupt_record_validation.py` prepares 72 separate hidden-corruption inputs. Both are zero-call dry runs unless `--run` is added. Run `python scripts/report_validation.py` after tests to generate the consolidated report from the saved cohorts. No arbitrary-prose or general agent-safety certification is claimed.
+
+## Illustrated offline audit
+
+`python scripts/audit_experiments.py` verifies current collection coverage, frozen
+inputs and available source hashes, rescoring the structured worker decisions from
+saved content. It generates `research/EXPERIMENT_AUDIT_REPORT.md`, five SVG figures
+and `results/experiment_audit/audit.json` using only the existing Python dependencies.
+Use `python scripts/audit_experiments.py --check` to fail on missing or stale artifacts.
+Both modes make zero inference calls. The historical inventory is file/explicit
+completion coverage, not a retrospective revalidation of every legacy scoring rule.
+Run `verify_corrected_artifacts.py` separately for baseline integrity and the
+existing Word-export freshness check. Do not replace failed historical runs to
+obtain a more favorable result.

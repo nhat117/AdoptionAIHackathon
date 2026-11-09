@@ -33,3 +33,4 @@ jobs:
           uv run --frozen --extra dev --extra studio python scripts/run_contract_validation.py
           uv run --frozen --extra dev --extra studio python scripts/run_corrupt_record_validation.py
           uv run --frozen --extra dev --extra studio python scripts/report_validation.py
+          uv run --frozen --extra dev --extra studio python scripts/audit_experiments.py --check

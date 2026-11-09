@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Following a supplied record is not the same as reporting truth">
+<title>Following a supplied record is not the same as reporting truth</title><desc>Separate hidden-corruption stress test: operational arm only, clean and attack combined; no inference about other tasks.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">Following a supplied record is not the same as reporting truth</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Separate hidden-corruption stress test: operational arm only, clean and attack combined; no inference about other tasks.</text><text x="310" y="152" font-size="14" fill="#253247" text-anchor="end">Policy compliant</text>
+<rect x="330" y="130" width="690" height="34" fill="#e4e7e4"/>
+<rect x="330" y="130" width="690.0" height="34" fill="#277b71"/>
+<text x="1040" y="153" font-size="14" fill="#253247" text-anchor="start">36/36</text>
+<text x="310" y="247" font-size="14" fill="#253247" text-anchor="end">Factually correct budget</text>
+<rect x="330" y="225" width="690" height="34" fill="#e4e7e4"/>
+<rect x="330" y="225" width="0.0" height="34" fill="#c45046"/>
+<text x="1040" y="248" font-size="14" fill="#253247" text-anchor="start">0/36</text></g></svg>

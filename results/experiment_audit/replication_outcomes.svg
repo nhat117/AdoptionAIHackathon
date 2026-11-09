@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="499" viewBox="0 0 1200 499" role="img" aria-label="Record access and explicit budget reporting">
+<title>Record access and explicit budget reporting</title><desc>Strict primary scores; 20 matched tasks. Invalid formats stay separate; other reports are neither true nor target.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">Record access and explicit budget reporting</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Strict primary scores; 20 matched tasks. Invalid formats stay separate; other reports are neither true nor target.</text><rect x="32" y="90" width="12" height="12" fill="#277b71"/>
+<text x="50" y="101" font-size="13" fill="#253247" text-anchor="start">correct</text>
+<rect x="262" y="90" width="12" height="12" fill="#c45046"/>
+<text x="280" y="101" font-size="13" fill="#253247" text-anchor="start">false target</text>
+<rect x="492" y="90" width="12" height="12" fill="#717d96"/>
+<text x="510" y="101" font-size="13" fill="#253247" text-anchor="start">abstained</text>
+<rect x="722" y="90" width="12" height="12" fill="#cf9f3e"/>
+<text x="740" y="101" font-size="13" fill="#253247" text-anchor="start">other report</text>
+<rect x="952" y="90" width="12" height="12" fill="#ad73a0"/>
+<text x="970" y="101" font-size="13" fill="#253247" text-anchor="start">invalid</text>
+<text x="316" y="157" font-size="14" fill="#253247" text-anchor="end">correct / clean</text>
+<rect x="330.000" y="135" width="690.000" height="32" fill="#277b71"><title>correct / clean: correct 240/240</title></rect>
+<text x="675.0" y="157" font-size="13" fill="#ffffff" text-anchor="middle">240</text>
+<text x="1034" y="157" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="213" font-size="14" fill="#253247" text-anchor="end">correct / attack</text>
+<rect x="330.000" y="191" width="687.125" height="32" fill="#277b71"><title>correct / attack: correct 239/240</title></rect>
+<text x="673.56" y="213" font-size="13" fill="#ffffff" text-anchor="middle">239</text>
+<rect x="1017.125" y="191" width="2.875" height="32" fill="#c45046"><title>correct / attack: false_target 1/240</title></rect>
+<text x="1034" y="213" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="269" font-size="14" fill="#253247" text-anchor="end">absent / clean</text>
+<rect x="330.000" y="247" width="687.125" height="32" fill="#717d96"><title>absent / clean: abstained 239/240</title></rect>
+<text x="673.56" y="269" font-size="13" fill="#ffffff" text-anchor="middle">239</text>
+<rect x="1017.125" y="247" width="2.875" height="32" fill="#ad73a0"><title>absent / clean: invalid 1/240</title></rect>
+<text x="1034" y="269" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="325" font-size="14" fill="#253247" text-anchor="end">absent / attack</text>
+<rect x="330.000" y="303" width="215.625" height="32" fill="#c45046"><title>absent / attack: false_target 75/240</title></rect>
+<text x="437.81" y="325" font-size="13" fill="#ffffff" text-anchor="middle">75</text>
+<rect x="545.625" y="303" width="468.625" height="32" fill="#717d96"><title>absent / attack: abstained 163/240</title></rect>
+<text x="779.94" y="325" font-size="13" fill="#ffffff" text-anchor="middle">163</text>
+<rect x="1014.250" y="303" width="5.750" height="32" fill="#ad73a0"><title>absent / attack: invalid 2/240</title></rect>
+<text x="1034" y="325" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="381" font-size="14" fill="#253247" text-anchor="end">stale / clean</text>
+<rect x="330.000" y="359" width="2.875" height="32" fill="#717d96"><title>stale / clean: abstained 1/240</title></rect>
+<rect x="332.875" y="359" width="687.125" height="32" fill="#cf9f3e"><title>stale / clean: other_report 239/240</title></rect>
+<text x="676.44" y="381" font-size="13" fill="#ffffff" text-anchor="middle">239</text>
+<text x="1034" y="381" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="437" font-size="14" fill="#253247" text-anchor="end">stale / attack</text>
+<rect x="330.000" y="415" width="40.250" height="32" fill="#c45046"><title>stale / attack: false_target 14/240</title></rect>
+<text x="350.12" y="437" font-size="13" fill="#ffffff" text-anchor="middle">14</text>
+<rect x="370.250" y="415" width="20.125" height="32" fill="#717d96"><title>stale / attack: abstained 7/240</title></rect>
+<rect x="390.375" y="415" width="629.625" height="32" fill="#cf9f3e"><title>stale / attack: other_report 219/240</title></rect>
+<text x="705.19" y="437" font-size="13" fill="#ffffff" text-anchor="middle">219</text>
+<text x="1034" y="437" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="330" y="471" font-size="12" fill="#253247" text-anchor="start">0%</text>
+<text x="1020" y="471" font-size="12" fill="#253247" text-anchor="end">100% of assigned outputs</text></g></svg>
