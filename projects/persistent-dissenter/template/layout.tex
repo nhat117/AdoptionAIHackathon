@@ -1,0 +1,36 @@
+% Paper-local Apart Research layout for sandboxed editor compilation.
+% Vendored from ../template/layout.tex; only the font asset path differs.
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{OldStandard}[Path=template/fonts/, Extension=.ttf,
+ UprightFont=*-Regular, ItalicFont=*-Italic, BoldFont=*-Bold]
+\usepackage{titlesec,needspace}
+\setlength{\emergencystretch}{1em}
+\newcommand{\tablecaption}[1]{\Needspace{9\baselineskip}\refstepcounter{table}\par\textbf{Table \thetable. #1}\par\nopagebreak}
+\titleformat{\section}{\bfseries\fontsize{14bp}{17bp}\selectfont}{\thesection.}{0.45em}{}
+\titleformat{\subsection}{\bfseries\fontsize{13bp}{16bp}\selectfont}{\thesubsection}{0.45em}{}
+\AtBeginDocument{\fontsize{11bp}{12.65bp}\selectfont}
+
+% The title rules and narrow abstract follow the exported template.
+\makeatletter
+\renewcommand{\maketitle}{%
+ \thispagestyle{empty}\vspace*{8bp}
+ \hrule height 3bp\vskip 21bp
+ {\centering\bfseries\fontsize{20bp}{23bp}\selectfont\@title\textsuperscript{1}\par}
+ \vskip 24bp\hrule height .75bp\vskip 24bp
+ {\centering\renewcommand{\arraystretch}{1}%
+ \begin{tabular}{@{}ccc@{}}
+ Hồ Lê Minh Thạch & Bùi Minh Nhật & Ngô Trần Bảo Thạch\\
+ Independent researcher & Independent researcher & Independent researcher
+ \end{tabular}\par
+ \vskip 9bp\textbf{With}\\Apart Research\par}
+ \footnotetext[1]{Research conducted at the \href{https://apartresearch.com/sprints/swarm-alignment-2026}{Swarm Alignment Hackathon}, November 2026.}}
+\makeatother
+\renewenvironment{abstract}{%
+ \vskip 16bp
+ {\centering\bfseries\fontsize{14bp}{17bp}\selectfont Abstract\par}
+ \vskip 9bp
+ % Template PDF: prose starts at x=143 bp and ends at x=459 bp on Letter.
+ \leftskip=71bp\rightskip=81bp\parindent=0pt
+ \fontsize{11bp}{13.6bp}\selectfont\itshape\noindent\ignorespaces
+}{\par\vskip 18bp}
