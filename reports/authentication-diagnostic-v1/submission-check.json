@@ -1,14 +1,14 @@
 {
-  "source_sha256": "499f41f2ac36f90194f730fc7b2f206ecbb9c75b166281f08685140e3e9c1175",
-  "abstract_whitespace_words": 209,
+  "source_sha256": "93a15e6644b224f7c972e91854148d863704792cae4c886b870454725a008649",
+  "abstract_whitespace_words": 191,
   "built_in_compiler": "success",
   "temporary_render_only": true,
   "pdf_exported_to_repository": false,
-  "main_pages": 8,
-  "references_start_page": 9,
-  "appendix_pages": "10\u201312",
+  "main_pages": 7,
+  "references_start_page": 8,
+  "appendix_pages": "9\u201312",
   "total_pages": 12,
-  "visual_review": "Editorial cleanup: re-inspected changed pages4\u20137,11\u201312; main pages8, references9, appendices10\u201312; diagrams and counts unchanged",
+  "visual_review": "Reviewed full narrative render, then changed availability/reproducibility pages after clerical relocation; seven main pages and four appendix pages",
   "overfull_boxes": 0,
   "remaining_warning": "One harmless underfull bibliography line",
   "primary_analysis_changed": false,
@@ -24,7 +24,7 @@
   },
   "preexisting_pdfs_recovery_paper_and_shared_layout_unchanged": true,
   "sha256": {
-    "projects/persistent-dissenter/main.tex": "499f41f2ac36f90194f730fc7b2f206ecbb9c75b166281f08685140e3e9c1175",
+    "projects/persistent-dissenter/main.tex": "93a15e6644b224f7c972e91854148d863704792cae4c886b870454725a008649",
     "projects/persistent-dissenter/figures/study-overview.png": "cea10d5da8eb03bc7b8a5c16c861f4a1dea433e9c432b638c358d61fce195f20",
     "projects/persistent-dissenter/figures/evidence-results.png": "cbf7665e8309684383b1885ce14aeb1d7e71e5520a822625878d67800e4da8b5",
     "reports/evidence-controls-v3/summary.json": "1a3776d152bcb8f7de40652de3bca93b9bdf35228d2f390e790ffa22f2838147",
@@ -36,5 +36,7 @@
   },
   "figure_builder_lint": "ruff check and ruff format passed",
   "figure_regeneration": "Rerun reproduced the reviewed figure and coverage bytes",
-  "editorial_cleanup": "Removed billing/escrow/recovery narratives and software audit inventories; preserved output exclusions, denominators, missingness and raw records"
+  "editorial_cleanup": "Focused receiver-boundary narrative; supplementary controls and discovery moved verbatim to appendix; speculative reputation/cost follow-up dropped; primary-source comparisons strengthened; redundant network table removed",
+  "citation_entries": 7,
+  "supplementary_text_preserved_verbatim": true
 }
