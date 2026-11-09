@@ -1,0 +1,1477 @@
+{
+  "protocol": "swarm-exploratory-v1",
+  "purpose": "exploratory_unreviewed_pilot",
+  "model": "anthropic/claude-sonnet-5.5",
+  "provider_only": "google-vertex/global",
+  "reasoning": "low",
+  "max_output_tokens": 2048,
+  "max_calls_per_game": 54,
+  "max_prompt_bytes": 64000,
+  "budget_usd": 35,
+  "per_call_reservation_usd": 0.2,
+  "concurrency": 4,
+  "retries": 0,
+  "independent_scenario_seeds": [
+    1000,
+    1001
+  ],
+  "identity_seeds": [
+    1000
+  ],
+  "language_review": "pending_manual_review",
+  "research_results": false,
+  "shared_baselines": "Experiment 1 ring ordinary-peer games reused by 2 and 3",
+  "graph_seed": "scenario seed; two independently generated graphs",
+  "inference_limits": "One model; draft translations; one draw per cell; descriptive only",
+  "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+  "sources": {
+    "src/swarm_lab/evacuation/language.py": "4294b04a8fe83c1c6f2ab773ced6fb0fef6be5b3dccba774f5702b7f6acfc978",
+    "src/swarm_lab/evacuation/conditions.py": "d652df0adede70b61f72d63d0b301bc6a670751bd3c94ac20df870c099bc213f",
+    "src/swarm_lab/evacuation/engine.py": "6c88d3e39c2301a019a5fe6ea46905b9887064a677ada3ef0012f22acf2e5a24",
+    "src/swarm_lab/evacuation/dataset.py": "b2f68c40779e40b200bfe6cd87a74f47eba0d0252a43a0e34d0d26fa554cab41",
+    "src/swarm_lab/evacuation/openrouter.py": "5084f3acb3c9a70c1a14e16a935063c837547d41eff6e7d60844daa8cdb173b5",
+    "reports/overnight-experiments/run.py": "90a0e2c517e570ad4daa153a757aee5d5b4c2563217cbcecb5ee027131117115"
+  },
+  "jobs": [
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-0-0-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-1-1-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-0-1-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-0-0-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-0-0-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-1-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-1-1-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-1-0-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-1-0-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-1-0-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-1-0-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-1-1-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-0-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-0-1-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-1-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-1-1-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-000-0-1-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-0-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-0-1-en-ordinary_peer-ring"
+    },
+    {
+      "section": 1,
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "id": "1-calibration-001-0-0-vi-ordinary_peer-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-en-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-vi-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-vi-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-vi-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-en-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-en-buddhist_monk-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-en-buddhist_monk-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-en-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-vi-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-en-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-vi-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-en-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-vi-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-en-buddhist_monk-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-en-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-vi-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-vi-buddhist_monk-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-en-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-vi-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-vi-buddhist_monk-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-vi-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-vi-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-en-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-en-buddhist_monk-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-en-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-vi-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-en-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-vi-buddhist_monk-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-1-1-vi-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-vi-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-en-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-en-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "government_official",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-en-government_official-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-0-0-vi-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-en-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "christian_pastor",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-vi-christian_pastor-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "emergency_expert",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-en-emergency_expert-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-en-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "xi_jinping",
+      "topology": "ring",
+      "id": "2-calibration-000-0-1-vi-xi_jinping-ring"
+    },
+    {
+      "section": 2,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "buddhist_monk",
+      "topology": "ring",
+      "id": "2-calibration-000-1-0-vi-buddhist_monk-ring"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-1-0-en-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-0-0-en-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-1-0-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-0-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-0-1-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-1-0-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-0-1-en-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-1-1-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-0-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-0-1-en-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-0-0-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-0-0-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-1-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-1-1-en-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-1-1",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": true,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-1-1-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-0-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-0-1-vi-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-0-0-en-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-001-1-0-en-ordinary_peer-random_regular"
+    },
+    {
+      "section": 3,
+      "scenario": {
+        "id": "calibration-000-1-1",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": true,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "random_regular",
+      "id": "3-calibration-000-1-1-en-ordinary_peer-random_regular"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "restored_records": 242,
+  "byte_identical": true,
+  "replayed_completed": 58,
+  "failed": 2,
+  "unattempted": 12,
+  "inference_calls": 0,
+  "budget": {
+    "prior_usd": 25.545635499999978,
+    "v3_usd": 9.057242749999988,
+    "total_usd": 34.60287824999997,
+    "pending": {},
+    "max_total_exposure_usd": 34.99871224999997,
+    "remaining_usd": 0.3971217500000339
+  },
+  "archive_sha256": "46a2a54fd3a91328b7bafc5f6e5bd8174e8e8513f85510b3e19cbd628baad75a",
+  "python": "3.12.10",
+  "platform": "macOS-27.2-arm64-arm-64bit"
+}

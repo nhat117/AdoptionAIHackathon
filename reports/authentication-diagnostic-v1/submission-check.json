@@ -1,0 +1,52 @@
+{
+  "source_sha256": "93a15e6644b224f7c972e91854148d863704792cae4c886b870454725a008649",
+  "abstract_whitespace_words": 191,
+  "built_in_compiler": "success",
+  "temporary_render_only": false,
+  "pdf_exported_to_repository": true,
+  "main_pages": 7,
+  "references_start_page": 8,
+  "appendix_pages": "9\u201312",
+  "total_pages": 12,
+  "visual_review": "Reviewed full narrative render, then changed availability/reproducibility pages after clerical relocation; seven main pages and four appendix pages",
+  "overfull_boxes": 0,
+  "remaining_warning": "One harmless underfull bibliography line",
+  "primary_analysis_changed": false,
+  "post_collection_supplement": "Descriptive planned-denominator completion counts and missing-outcome bounds; no new tests",
+  "heldout": {
+    "planned": 960,
+    "valid": 944,
+    "correct_valid": 923,
+    "incorrect_valid": 21,
+    "invalid": 16,
+    "proof_valid_correct": 314,
+    "proof_planned": 320
+  },
+  "preexisting_pdfs_recovery_paper_and_shared_layout_unchanged": false,
+  "sha256": {
+    "projects/persistent-dissenter/main.tex": "93a15e6644b224f7c972e91854148d863704792cae4c886b870454725a008649",
+    "projects/persistent-dissenter/figures/study-overview.png": "cea10d5da8eb03bc7b8a5c16c861f4a1dea433e9c432b638c358d61fce195f20",
+    "projects/persistent-dissenter/figures/evidence-results.png": "cbf7665e8309684383b1885ce14aeb1d7e71e5520a822625878d67800e4da8b5",
+    "reports/evidence-controls-v3/summary.json": "1a3776d152bcb8f7de40652de3bca93b9bdf35228d2f390e790ffa22f2838147",
+    "reports/authentication-diagnostic-v1/summary.json": "b1936bba8cc1024062ef995806bef9ef532078f3988bb0e1103b8b1c83ef9bd9",
+    "reports/authentication-diagnostic-v1/responses.csv": "d0fc8e82590af46cf04c1c873ba0d54000f895598a5fa87188272b3af697aebb",
+    "reports/authentication-diagnostic-v1/coverage.csv": "42a1f0ab1c54b1dc18e180af437e9ebdd12f609bc0a58e387699d70f76dd91a4",
+    "reports/authentication-diagnostic-v1/paper-planned-denominators.csv": "28aaf936207c18022b4aeeb89350205c496f9e81e611f9a1fa7adddac82286cc",
+    "reports/authentication-diagnostic-v1/build_paper_figures.py": "3f2f3bd5157da9ea20fab515f94835a7250b193638e294437fd6f5a1514dae27",
+    "projects/persistent-dissenter/main.pdf": "72dd438ee75b37ec2c833116bf842b8041698af01aae8aa5a28cae8b5e863332"
+  },
+  "figure_builder_lint": "ruff check and ruff format passed",
+  "figure_regeneration": "Rerun reproduced the reviewed figure and coverage bytes",
+  "editorial_cleanup": "Focused receiver-boundary narrative; supplementary controls and discovery moved verbatim to appendix; speculative reputation/cost follow-up dropped; primary-source comparisons strengthened; redundant network table removed",
+  "citation_entries": 7,
+  "supplementary_text_preserved_verbatim": true,
+  "exported_pdf": {
+    "path": "projects/persistent-dissenter/main.pdf",
+    "sha256": "72dd438ee75b37ec2c833116bf842b8041698af01aae8aa5a28cae8b5e863332",
+    "bytes": 470691,
+    "pages": 12,
+    "main_pages": 7,
+    "source_sha256": "93a15e6644b224f7c972e91854148d863704792cae4c886b870454725a008649"
+  },
+  "export_scope": "Canonical empirical PDF intentionally replaced the old proposal PDF at user request; separate recovery paper/PDF and shared layout unchanged"
+}

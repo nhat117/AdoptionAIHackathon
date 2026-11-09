@@ -1,0 +1,65 @@
+{
+  "scenario_dataset_id": "8aabe61a-37e9-4bd6-b312-d6707649dcf2",
+  "scenario_ingestion_status": "succeeded",
+  "scenario_rows": 40,
+  "invent_dataset_id": "2f191dfb-4233-468a-875a-024b62c49100",
+  "invent_status_at_last_check": "succeeded",
+  "invent_requested_rows": 12,
+  "invent_estimated_credits": 2.0,
+  "invent_review_status": "pending semantic review; see invent-review.md",
+  "smoke_tests": [
+    {
+      "run": "evacuation-live-a-001",
+      "status": "failed",
+      "provider": "adaption",
+      "model": "gemma-4-26b-a4b-it",
+      "model_calls": 16,
+      "study": "A",
+      "arm": "once_fixed",
+      "scope": "calibration smoke test, not research findings"
+    },
+    {
+      "run": "evacuation-live-a-002",
+      "status": "completed",
+      "provider": "adaption",
+      "model": "gemma-4-26b-a4b-it",
+      "model_calls": 36,
+      "study": "A",
+      "arm": "once_fixed",
+      "scope": "calibration smoke test, not research findings"
+    },
+    {
+      "run": "evacuation-live-c-001",
+      "status": "completed",
+      "provider": "adaption",
+      "model": "gemma-4-26b-a4b-it",
+      "model_calls": 26,
+      "study": "C",
+      "arm": "correction",
+      "scope": "calibration smoke test, not research findings"
+    },
+    {
+      "run": "evacuation-live-c-danger-001",
+      "status": "completed",
+      "provider": "adaption",
+      "model": "gemma-4-26b-a4b-it",
+      "model_calls": 21,
+      "study": "C",
+      "arm": "linked",
+      "scope": "calibration smoke test, not research findings"
+    },
+    {
+      "run": "evacuation-openrouter-a-001",
+      "status": "completed",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "model_calls": 36,
+      "study": "A",
+      "arm": "once_fixed",
+      "scope": "calibration smoke test, not research findings"
+    }
+  ],
+  "openrouter_reported_smoke_cost_usd": 0.009538,
+  "invent_downloaded_rows": 12,
+  "invent_structurally_accepted_rows": 12
+}

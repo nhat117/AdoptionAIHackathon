@@ -1,0 +1,3154 @@
+{
+  "contrasts": [
+    {
+      "section": "5b",
+      "model": "sonnet",
+      "disaster": true,
+      "treatment": "private_proof",
+      "control": "private_unverified",
+      "meaning": "verification beyond content",
+      "complete_pairs": 8,
+      "per_seed": [
+        {
+          "seed": 2000,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2001,
+          "treatment": 0.875,
+          "control": 0.0
+        },
+        {
+          "seed": 2002,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2003,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2004,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2005,
+          "treatment": 0.875,
+          "control": 0.0
+        },
+        {
+          "seed": 2006,
+          "treatment": 0.875,
+          "control": 0.0
+        },
+        {
+          "seed": 2007,
+          "treatment": 0.875,
+          "control": 0.0
+        }
+      ],
+      "mean_difference": 0.9375,
+      "same_direction": 8,
+      "exact_sign_flip_p": 0.0078125,
+      "min_attainable_p": 0.0078125,
+      "status": "tested"
+    },
+    {
+      "section": "5b",
+      "model": "sonnet",
+      "disaster": true,
+      "treatment": "private_unverified",
+      "control": "private_text",
+      "meaning": "content beyond testimony",
+      "complete_pairs": 8,
+      "per_seed": [
+        {
+          "seed": 2000,
+          "treatment": 0.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2001,
+          "treatment": 0.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2002,
+          "treatment": 0.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2003,
+          "treatment": 0.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2004,
+          "treatment": 0.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2005,
+          "treatment": 0.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2006,
+          "treatment": 0.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2007,
+          "treatment": 0.0,
+          "control": 0.0
+        }
+      ],
+      "mean_difference": 0.0,
+      "same_direction": 0,
+      "exact_sign_flip_p": 1.0,
+      "min_attainable_p": 0.0078125,
+      "status": "tested"
+    },
+    {
+      "section": "5b",
+      "model": "sonnet",
+      "disaster": true,
+      "treatment": "private_proof",
+      "control": "private_text",
+      "meaning": "full v2 contrast on held-out seeds",
+      "complete_pairs": 8,
+      "per_seed": [
+        {
+          "seed": 2000,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2001,
+          "treatment": 0.875,
+          "control": 0.0
+        },
+        {
+          "seed": 2002,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2003,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2004,
+          "treatment": 1.0,
+          "control": 0.0
+        },
+        {
+          "seed": 2005,
+          "treatment": 0.875,
+          "control": 0.0
+        },
+        {
+          "seed": 2006,
+          "treatment": 0.875,
+          "control": 0.0
+        },
+        {
+          "seed": 2007,
+          "treatment": 0.875,
+          "control": 0.0
+        }
+      ],
+      "mean_difference": 0.9375,
+      "same_direction": 8,
+      "exact_sign_flip_p": 0.0078125,
+      "min_attainable_p": 0.0078125,
+      "status": "tested"
+    }
+  ],
+  "delayed_truth": [],
+  "failed_or_missing": [
+    {
+      "id": "5b-evaluation-000-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-000-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-000-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-terra-private_text-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-terra-private_unverified-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-terra-private_proof-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-000-1-0-sonnet-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-000-1-0-sonnet-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-001-1-0-sonnet-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-001-1-0-sonnet-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-002-1-0-sonnet-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-002-1-0-sonnet-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-003-1-0-sonnet-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-003-1-0-sonnet-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-000-0-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-000-0-0-terra-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-000-1-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-000-1-0-terra-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-001-0-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-001-0-0-terra-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-001-1-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-001-1-0-terra-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-002-0-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-002-0-0-terra-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-002-1-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-002-1-0-terra-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-003-0-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-003-0-0-terra-delayed-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-003-1-0-terra-none-en",
+      "status": "unattempted"
+    },
+    {
+      "id": "6-evaluation-003-1-0-terra-delayed-en",
+      "status": "unattempted"
+    }
+  ],
+  "unit": "whole game; seeds are replicates",
+  "audits": [
+    {
+      "id": "5b-evaluation-000-1-0-sonnet-private_text-en",
+      "cost_usd": 0.269798,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-000-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.277504,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-000-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.13645,
+      "responses": 25,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-001-1-0-sonnet-private_text-en",
+      "cost_usd": 0.269548,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-001-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.281768,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-001-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.157098,
+      "responses": 27,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 4
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-002-1-0-sonnet-private_text-en",
+      "cost_usd": 0.267222,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-002-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.28334,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-002-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.157214,
+      "responses": 27,
+      "timing": [
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-003-1-0-sonnet-private_text-en",
+      "cost_usd": 0.338388,
+      "responses": 49,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-003-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.367386,
+      "responses": 49,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-003-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.150806,
+      "responses": 26,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-004-1-0-sonnet-private_text-en",
+      "cost_usd": 0.35976,
+      "responses": 49,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-004-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.374446,
+      "responses": 49,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-004-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.19032,
+      "responses": 30,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay",
+            "6": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 6
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 5
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 5
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-005-1-0-sonnet-private_text-en",
+      "cost_usd": 0.19128799999999999,
+      "responses": 33,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-005-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.1957,
+      "responses": 33,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-005-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.131116,
+      "responses": 24,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-006-1-0-sonnet-private_text-en",
+      "cost_usd": 0.189122,
+      "responses": 33,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-006-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.195016,
+      "responses": 33,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-006-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.151438,
+      "responses": 26,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 4,
+          "evacuation_round": null
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 3,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 2
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-007-1-0-sonnet-private_text-en",
+      "cost_usd": 0.265298,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-007-1-0-sonnet-private_unverified-en",
+      "cost_usd": 0.273282,
+      "responses": 41,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": null,
+          "evacuation_round": null
+        }
+      ]
+    },
+    {
+      "id": "5b-evaluation-007-1-0-sonnet-private_proof-en",
+      "cost_usd": 0.23308399999999999,
+      "responses": 36,
+      "timing": [
+        {
+          "agent": 0,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 1,
+          "actions": {
+            "1": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 1,
+          "evacuation_round": 1
+        },
+        {
+          "agent": 2,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 2,
+          "evacuation_round": 5
+        },
+        {
+          "agent": 4,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 3
+        },
+        {
+          "agent": 5,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": 2,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 6,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 4,
+          "evacuation_round": 4
+        },
+        {
+          "agent": 7,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 5
+        },
+        {
+          "agent": 8,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "evacuate"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 3,
+          "evacuation_round": 5
+        },
+        {
+          "agent": 9,
+          "actions": {
+            "1": "stay",
+            "2": "stay",
+            "3": "stay",
+            "4": "stay",
+            "5": "stay"
+          },
+          "first_false_source_decision": null,
+          "first_authenticated_decision": 2,
+          "evacuation_round": null
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "prior_usd": 25.545635499999978,
+    "v3_usd": 5.706391999999993,
+    "total_usd": 31.252027499999972,
+    "pending": {},
+    "max_total_exposure_usd": 31.802085499999972,
+    "remaining_usd": 3.747972500000029
+  },
+  "planned": 72,
+  "completed": 24,
+  "replayed_completed": 24
+}

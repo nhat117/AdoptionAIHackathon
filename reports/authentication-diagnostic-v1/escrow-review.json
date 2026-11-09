@@ -1,0 +1,54 @@
+{
+  "verdict": "proceed_under_escrow",
+  "plan_sha256": "b08e1e7b7ad012d6015eddfdd644b1c3819fbf4c1b1d8208ba076b5b5351b0c9",
+  "wrapper_sha256": "be7fa427a31d8b69c89bd07d676966a2c31f6e3ddf6fe1bbe9f297fa1991ef9f",
+  "cap_usd": 25,
+  "ledger_prefix_bytes": 161360,
+  "ledger_prefix_sha256": "aa244d8e621c8ea65e376bc4614fa60979c22aefa4914349a4143a908681d103",
+  "covered_halt_sha256": [
+    "1ded38152bef0bc38576349c6163fd08d75a334ef5c413654b284b40f491616b"
+  ],
+  "escrow_ticket": "qwen-heldout-3001-Danger-direct_verified-current",
+  "escrow_usd": 0.04,
+  "failed_manifest_sha256": "615a0182d285f9ab3f3875c83e8db7fc9b4b78a96447a2854315edf4b1206416",
+  "failed_request_sha256": "e4158938b41c271c91a4722d7b88c9ff1de9a91bfe44c4f2b0ecfdb20f76ec5a",
+  "admission_review_sha256": "f76eeddedefc5e21e9a86a65a4977b916317d25b955030fceb4a904a6ba2a457",
+  "note": "Proposed operational exception only; no zero settlement or billing reconciliation",
+  "reviewer": "/root/independent_judge",
+  "reviewed_at_utc": "2026-11-09T09:03:34.463577+00:00",
+  "operational_amendment": "escrow-v1",
+  "billing_reconciled": false,
+  "reason": "Approve only the disclosed operational exception for this historical HTTP429 halt. The charge remains unresolved; its original full reservation and failed job remain retained. No zero-cost settlement is approved.",
+  "settled_usd_at_review": 1.2248433320000003,
+  "unresolved_escrow_usd": 0.04,
+  "amendment_sha256": "531231081d33e593120f930e8782b9755b05d348a7860fba156a24f7a3c7e962",
+  "tests_sha256": "138a62c6b5a0c2072d72757fddebaa2d046e6c5e1ca7fec7f3541b0990cced0a",
+  "offline_verification": "Independent read-only live binding checks and 16 escrow tests passed; no behavioral outcomes inspected and no inference calls made.",
+  "constraints": [
+    "Commit wrapper, amendment, tests and this approval before dispatch.",
+    "Keep the original ledger prefix, failed manifest, request and pending USD0.04 reservation unchanged; do not append a zero settlement.",
+    "Retain the unchanged USD25 cap and include all escrow plus new reservations in every original budget guard.",
+    "Only the identified historical halt is covered; new pending tickets, halts, route mismatches or abnormal costs require a new stop and review.",
+    "Use the same canonical root, exclusive collector lock, remaining frozen job order, payloads, validation and original run.main.",
+    "Skip every attempted folder, including the failed HTTP429; no retries or substituted cells.",
+    "Preserve the bound original admission artifact bytes, frozen source hashes and plan.",
+    "Keep the original analyzer pending-billing rejection; any provisional audit or report requires separate review and must distinguish settled cost, unresolved escrow and accounted exposure.",
+    "The escrow allowance is conservative planning under pinned pricing/token assumptions, not an actual-charge reconciliation or provider guarantee."
+  ],
+  "fresh_web_review": {
+    "date": "2026-11-09",
+    "queries": [
+      "site:openrouter.ai/docs max_price provider only routing price limit reasoning max_tokens cost",
+      "site:openrouter.ai/blog 429 credits failed requests activity log"
+    ],
+    "primary_sources": [
+      "https://openrouter.ai/blog/insights/reliability-failover/",
+      "https://openrouter.ai/blog/insights/model-routing/",
+      "https://status.openrouter.ai/history"
+    ],
+    "lessons": "429 failures can consume credits and usage reporting can be delayed. Keep the uncertainty reserved; do not infer zero from an error or currently matching aggregate. Price ceilings control accepted per-token rates and do not make a disputed charge final.",
+    "keep": "Full escrow, frozen inputs, no retries and future halt guards.",
+    "change": "Separately version and disclose this one operational stopping-policy exception.",
+    "drop": "Zero-cost inference, silent settlement, ledger reset or a claim of reconciled billing."
+  }
+}

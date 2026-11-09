@@ -1,0 +1,80 @@
+{
+  "model": "openai/gpt-6.1-terra",
+  "language": "en",
+  "requested_reasoning": "low",
+  "temperature": 0,
+  "max_output_tokens": 2048,
+  "attempts": 1,
+  "status": "valid_response",
+  "decision": {
+    "signal": "Danger",
+    "action": "stay",
+    "message": "Agent 1 reports danger, but the claim is unverified. I am waiting for more information.",
+    "parents": [
+      "r2-a1"
+    ]
+  },
+  "records": [
+    {
+      "type": "provider_metadata",
+      "provider": "openrouter",
+      "response_id": "gen-1794132628-y6pNFHKMPGORrHfjsC2x",
+      "model": "openai/gpt-6.1-terra",
+      "upstream_provider": "OpenAI",
+      "usage": {
+        "prompt_tokens": 518,
+        "completion_tokens": 118,
+        "total_tokens": 636,
+        "cost": 0.001108,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001108,
+          "upstream_inference_prompt_cost": 0.000518,
+          "upstream_inference_completions_cost": 0.00059
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 73,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "requested_reasoning_effort": "low",
+      "requested_temperature": null,
+      "finish_reason": "stop"
+    },
+    {
+      "type": "model_response",
+      "call": 1,
+      "view": {
+        "agent": 0,
+        "round": 3,
+        "neighbours": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "language": "en",
+        "history": [
+          {
+            "id": "r2-a1",
+            "sender": 1,
+            "source_label": "ordinary teammate",
+            "signal": "Danger",
+            "text": "There is a disaster. We should evacuate.",
+            "parents": [],
+            "authenticated": false
+          }
+        ]
+      },
+      "raw": "{\"signal\":\"Danger\",\"action\":\"stay\",\"message\":\"Agent 1 reports danger, but the claim is unverified. I am waiting for more information.\",\"parents\":[\"r2-a1\"]}",
+      "language_check": "pending_manual_review"
+    }
+  ]
+}

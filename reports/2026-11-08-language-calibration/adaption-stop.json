@@ -1,0 +1,8 @@
+{
+  "status": "stopped_after_provider_timeouts",
+  "completed_episodes": 0,
+  "confirmed_timeouts": 3,
+  "cancelled_inflight": 3,
+  "not_started": 6,
+  "note": "Three in-flight manifests retain running due to runner cancellation handling; process was explicitly interrupted. No response or confirmed usage returned. Do not infer zero billing."
+}

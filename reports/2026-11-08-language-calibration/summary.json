@@ -1,0 +1,87 @@
+{
+  "planned": 8,
+  "finished": 8,
+  "completed": 6,
+  "failed": 2,
+  "attempted_calls": 335,
+  "provider_responses": 335,
+  "cells": [
+    {
+      "language": "en",
+      "disaster": false,
+      "accurate": false,
+      "n": 1,
+      "correct_action_rate": 0.8888888888888888
+    },
+    {
+      "language": "en",
+      "disaster": false,
+      "accurate": true,
+      "n": 1,
+      "correct_action_rate": 1.0
+    },
+    {
+      "language": "en",
+      "disaster": true,
+      "accurate": false,
+      "n": 0,
+      "correct_action_rate": null
+    },
+    {
+      "language": "en",
+      "disaster": true,
+      "accurate": true,
+      "n": 0,
+      "correct_action_rate": null
+    },
+    {
+      "language": "vi",
+      "disaster": false,
+      "accurate": false,
+      "n": 1,
+      "correct_action_rate": 1.0
+    },
+    {
+      "language": "vi",
+      "disaster": false,
+      "accurate": true,
+      "n": 1,
+      "correct_action_rate": 1.0
+    },
+    {
+      "language": "vi",
+      "disaster": true,
+      "accurate": false,
+      "n": 1,
+      "correct_action_rate": 0.0
+    },
+    {
+      "language": "vi",
+      "disaster": true,
+      "accurate": true,
+      "n": 1,
+      "correct_action_rate": 0.0
+    }
+  ],
+  "failures": [
+    {
+      "language": "en",
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-0-en",
+      "error_type": "InvalidDecision",
+      "calls": 33
+    },
+    {
+      "language": "en",
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-1-en",
+      "error_type": "InvalidDecision",
+      "calls": 34
+    }
+  ],
+  "reported_cost_usd": 0.20555720000000005,
+  "returned_models": [
+    "openai/gpt-4.1-mini"
+  ],
+  "upstream_providers": [
+    "OpenAI"
+  ]
+}

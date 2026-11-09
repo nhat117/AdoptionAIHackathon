@@ -1,0 +1,324 @@
+[
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "en"
+    ],
+    "started_at": "2026-11-08T09:35:02.496351+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-0-en.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "en"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-0-en"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "e0b93d15d4e50605ddbaebc75e15dcf69d83b66a617924481e1f3fe40c845676",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 43,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T09:35:51.563566+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T09:34:24.078981+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-0-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-0-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "e0b93d15d4e50605ddbaebc75e15dcf69d83b66a617924481e1f3fe40c845676",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 45,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T09:35:36.672273+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "en"
+    ],
+    "started_at": "2026-11-08T09:35:51.564608+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-1-en.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "en"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-1-en"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "f9eeb11c7eeba30ac3c9a03ab5e56ccbacee824d3a9719f0e2351994e8a59ee8",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 45,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T09:36:45.559328+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T09:35:02.597220+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-1-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-0-1-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "f9eeb11c7eeba30ac3c9a03ab5e56ccbacee824d3a9719f0e2351994e8a59ee8",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 45,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T09:36:07.615084+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "failed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "en"
+    ],
+    "started_at": "2026-11-08T09:34:24.124716+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-0-en.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "en"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-0-en"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "1e9a2ed9f29bea166a6ed48ff1ac1a90d36e9d20c90a9250e27849f8f2a0c131",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 0,
+    "model_calls": 33,
+    "language_checks": "pending_manual_review",
+    "error_type": "InvalidDecision",
+    "finished_at": "2026-11-08T09:35:02.596298+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T09:36:07.615856+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-0-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-0-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "1e9a2ed9f29bea166a6ed48ff1ac1a90d36e9d20c90a9250e27849f8f2a0c131",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 45,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T09:37:13.789398+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "failed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "en"
+    ],
+    "started_at": "2026-11-08T09:34:24.023654+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-1-en.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "en"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-1-en"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "51923439951b6cc7f2823d96da56d6844cee6c6161aac17ab77ee5d26b38c43a",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 0,
+    "model_calls": 34,
+    "language_checks": "pending_manual_review",
+    "error_type": "InvalidDecision",
+    "finished_at": "2026-11-08T09:35:02.495435+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-4.1-mini",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T09:35:36.673397+00:00",
+    "args": {
+      "dataset": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-1-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-4.1-mini",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 54,
+      "allow_unreviewed": true,
+      "output": "runs/experiment1-gpt-calibration-20261108/calibration-000-1-1-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "51923439951b6cc7f2823d96da56d6844cee6c6161aac17ab77ee5d26b38c43a",
+    "code_sha256": "4a2b26585c05015a4aad3973808e22e33b2270b8455e77c0a98c164cee2a09f4",
+    "git_commit": "8c8846e556ae10cbf1b1610195868eca922dce7f",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": 0,
+      "max_output_tokens": 512
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 45,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T09:36:44.199549+00:00"
+  }
+]

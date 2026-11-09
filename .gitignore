@@ -11,3 +11,11 @@ dist/
 runs/
 
 .langgraph_api/
+
+# LaTeX intermediates (proposal PDFs are review artifacts)
+projects/**/*.aux
+projects/**/*.log
+projects/**/*.out
+projects/**/*.synctex.gz
+projects/**/*.fls
+projects/**/*.fdb_latexmk

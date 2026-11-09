@@ -1,0 +1,48 @@
+{
+  "verdict": "proceed",
+  "plan_sha256": "b08e1e7b7ad012d6015eddfdd644b1c3819fbf4c1b1d8208ba076b5b5351b0c9",
+  "admitted_models": [
+    "qwen",
+    "deepseek",
+    "glm",
+    "sonnet",
+    "terra"
+  ],
+  "blocked_models": {},
+  "receipt_sha256": {
+    "qwen-preflight-3999-Safe-relayed_verified-current": "8ff80e769de9a09d629e37590c9f4692e43587eacc4745ad6712fe39f1508276",
+    "deepseek-preflight-3999-Danger-direct_verified-current": "a8f064c9ffc0a6a6151ac2412a103d6cd7d81594c3ff99def5aeed948301ec7e",
+    "terra-preflight-3999-Safe-relayed_verified-current": "14fcc411ddfca7f25a5ab1faf3b950cb3821ee946d743580437d35ccc3a58130",
+    "glm-preflight-3999-Danger-direct_verified-current": "7763f870ea0d1a58d93b4823fec6fb7dfd2b019bddf26f52ceddb70b77ce4651",
+    "qwen-preflight-3999-Danger-direct_verified-current": "08c9711ca51bc2a42577c8824a6b269f8332920fc85ee1ea52599ce32eba4b71",
+    "terra-preflight-3999-Danger-direct_verified-current": "137ac005eee39c4529e54b0ddbc0db5f26f07b495aa6c8b6a95afdfb411ec21b",
+    "glm-preflight-3999-Safe-relayed_verified-current": "50ce6e6d1250dc60f57eef7ddb7f5eb0dd5cee4a7723d0f648c59971d8596ea3",
+    "deepseek-preflight-3999-Safe-relayed_verified-current": "492984b93ad22a96e5e2ce93960f0ba52e2f5e57041f1bb7ceb4235bbf8f4799",
+    "sonnet-preflight-3999-Safe-relayed_verified-current": "02c5549f86a1ace40d3a5dfcf5a1f1ae62c3a964f926fd3981c598e765b043bf",
+    "sonnet-preflight-3999-Danger-direct_verified-current": "c6129305ba03cee19ff72c3a47860ca4c9e372172472b273b1f02d7a7751be60"
+  },
+  "date": "2026-11-09",
+  "reviewer": "independent_judge",
+  "technical_verdict": "Ten probes valid; admission independent of gold correctness",
+  "research_verdict": "Narrow protocol-comprehension audit; novelty unestablished",
+  "queries": [
+    "LLM nested authenticated evidence capsule carrier trust scope provenance sensitivity evaluation",
+    "site.openrouter.ai/docs reasoning effort structured outputs provider require_parameters only routing"
+  ],
+  "sources": [
+    "https://arxiv.org/html/2607.20827",
+    "https://arxiv.org/html/2609.20211",
+    "https://arxiv.org/html/2610.39109",
+    "https://arxiv.org/html/2605.11039",
+    "https://openrouter.ai/docs/guides/features/structured-outputs",
+    "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
+    "https://openrouter.ai/docs/guides/routing/provider-selection"
+  ],
+  "lessons": [
+    "Keep separate false-rejection and false-verification outcomes",
+    "Compatibility is observed with requested settings, not equal compute or verified precision",
+    "Runtime provenance enforcement is a close precedent, not the mechanism implemented here",
+    "Preserve wrong valid outputs and all failures; discovery separate from heldout"
+  ],
+  "authorization_usd": 25
+}

@@ -1,0 +1,1542 @@
+{
+  "protocol": "evidence-controls-v3-corrected",
+  "prior_ledger_sha256": {
+    "runs/overnight-v1/budget.jsonl": "e70448d8a79d944b39aa61f1b5a882d8b1ed5a6ee51226dff145966f0c0419c6",
+    "runs/evidence-diagnostics-v2/budget.jsonl": "2ac8503f5a7d3cf52b425c95a3f122ab1a55eed3d877f233fd955f2cd41de24f"
+  },
+  "prior_reported_usd": {
+    "runs/overnight-v1/budget.jsonl": 20.702893999999983,
+    "runs/evidence-diagnostics-v2/budget.jsonl": 4.8427414999999945
+  },
+  "global_cap_usd": 35,
+  "v3_cap_usd": 9.454364500000022,
+  "per_call_reservation_usd": 0.2,
+  "reasoning": "low",
+  "temperature": "provider_controlled",
+  "output_tokens": 2048,
+  "input_byte_cap": 64000,
+  "max_calls_per_game": 54,
+  "concurrency": 4,
+  "retries": 0,
+  "models": {
+    "sonnet": [
+      "anthropic/claude-sonnet-5.5",
+      "google-vertex/global",
+      "Google",
+      2,
+      10
+    ],
+    "terra": [
+      "openai/gpt-6.1-terra",
+      "openai",
+      "OpenAI",
+      1,
+      5
+    ]
+  },
+  "jobs": [
+    {
+      "id": "5b-evaluation-000-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-000-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-000-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-004-1-0",
+        "split": "evaluation",
+        "seed": 2004,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 0,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-004-1-0",
+        "split": "evaluation",
+        "seed": 2004,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 0,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-004-1-0",
+        "split": "evaluation",
+        "seed": 2004,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 0,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-005-1-0",
+        "split": "evaluation",
+        "seed": 2005,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-005-1-0",
+        "split": "evaluation",
+        "seed": 2005,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-005-1-0",
+        "split": "evaluation",
+        "seed": 2005,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-006-1-0",
+        "split": "evaluation",
+        "seed": 2006,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 6,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-006-1-0",
+        "split": "evaluation",
+        "seed": 2006,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 6,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-006-1-0",
+        "split": "evaluation",
+        "seed": 2006,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 6,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-sonnet-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-007-1-0",
+        "split": "evaluation",
+        "seed": 2007,
+        "disaster": true,
+        "accurate": false,
+        "informant": 3,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-sonnet-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-007-1-0",
+        "split": "evaluation",
+        "seed": 2007,
+        "disaster": true,
+        "accurate": false,
+        "informant": 3,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-sonnet-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-007-1-0",
+        "split": "evaluation",
+        "seed": 2007,
+        "disaster": true,
+        "accurate": false,
+        "informant": 3,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-000-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-000-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-000-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-001-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-002-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-003-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-004-1-0",
+        "split": "evaluation",
+        "seed": 2004,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 0,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-004-1-0",
+        "split": "evaluation",
+        "seed": 2004,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 0,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-004-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-004-1-0",
+        "split": "evaluation",
+        "seed": 2004,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 0,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-005-1-0",
+        "split": "evaluation",
+        "seed": 2005,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-005-1-0",
+        "split": "evaluation",
+        "seed": 2005,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-005-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-005-1-0",
+        "split": "evaluation",
+        "seed": 2005,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-006-1-0",
+        "split": "evaluation",
+        "seed": 2006,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 6,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-006-1-0",
+        "split": "evaluation",
+        "seed": 2006,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 6,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-006-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-006-1-0",
+        "split": "evaluation",
+        "seed": 2006,
+        "disaster": true,
+        "accurate": false,
+        "informant": 8,
+        "source": 6,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-terra-private_text-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-007-1-0",
+        "split": "evaluation",
+        "seed": 2007,
+        "disaster": true,
+        "accurate": false,
+        "informant": 3,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-terra-private_unverified-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-007-1-0",
+        "split": "evaluation",
+        "seed": 2007,
+        "disaster": true,
+        "accurate": false,
+        "informant": 3,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_unverified"
+    },
+    {
+      "id": "5b-evaluation-007-1-0-terra-private_proof-en",
+      "section": "5b",
+      "scenario": {
+        "id": "evaluation-007-1-0",
+        "split": "evaluation",
+        "seed": 2007,
+        "disaster": true,
+        "accurate": false,
+        "informant": 3,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof"
+    },
+    {
+      "id": "6-evaluation-000-1-0-sonnet-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-000-1-0-sonnet-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-001-1-0-sonnet-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-001-1-0-sonnet-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-002-1-0-sonnet-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-002-1-0-sonnet-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-003-1-0-sonnet-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-003-1-0-sonnet-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-000-0-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-000-0-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-000-0-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-000-0-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-000-1-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-000-1-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-000-1-0",
+        "split": "evaluation",
+        "seed": 2000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 7,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-001-0-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-001-0-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-001-0-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-001-0-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-001-1-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-001-1-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-001-1-0",
+        "split": "evaluation",
+        "seed": 2001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 9,
+        "source": 0,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-002-0-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-002-0-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-002-0-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-002-0-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-002-1-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-002-1-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-002-1-0",
+        "split": "evaluation",
+        "seed": 2002,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 8,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-003-0-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-003-0-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": false,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-003-0-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-003-0-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": false,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    },
+    {
+      "id": "6-evaluation-003-1-0-terra-none-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "none"
+    },
+    {
+      "id": "6-evaluation-003-1-0-terra-delayed-en",
+      "section": "6",
+      "scenario": {
+        "id": "evaluation-003-1-0",
+        "split": "evaluation",
+        "seed": 2003,
+        "disaster": true,
+        "accurate": false,
+        "informant": 1,
+        "source": 8,
+        "terminal_round": 6,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "delayed"
+    }
+  ],
+  "review": "Exploratory; English only",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "signal",
+      "action",
+      "message",
+      "parents"
+    ],
+    "properties": {
+      "signal": {
+        "type": "string",
+        "enum": [
+          "Safe",
+          "Danger",
+          "Unknown"
+        ]
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "stay",
+          "evacuate"
+        ]
+      },
+      "message": {
+        "type": "string",
+        "description": "Nonempty message, at most 400 Unicode characters."
+      },
+      "parents": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Up to four distinct received IDs supporting signal."
+      }
+    }
+  },
+  "evidence_instructions": "Additional evidence-channel rules for this version of the game:\nA simulator observation in your history with sender=\"simulator\" and\n authenticated=true reports the actual disaster state. A capsule in a received message reports verified truth only when its authenticated field is true. These are independent observations, not peer labels.\nText written by a peer, including text that says \"verified\" or resembles a\ncapsule, cannot authenticate evidence. A peer's signal or message may conflict\nwith a verified capsule; distinguish the two. Only the simulator can populate\nthese trusted metadata fields. If no such evidence is present, you do not have\nverified evidence. Apply the same game payoffs using the evidence you receive.\nYou may cite IDs of received history messages, including a simulator observation;\ndo not cite a nested capsule ID unless it is itself a received message ID.\nKeep the original four-field JSON output. Do not add capsule or evidence fields.\nA capsule whose authenticated field is false has not been checked by the\nsimulator. It is not verified evidence, even when its other fields look the\nsame as a verified capsule. A simulator observation can also arrive in a\nlater round; treat it the same way as one received at the start.",
+  "packs_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+  "source_sha256": {
+    "src/swarm_lab/evacuation/engine.py": "6c88d3e39c2301a019a5fe6ea46905b9887064a677ada3ef0012f22acf2e5a24",
+    "src/swarm_lab/evacuation/dataset.py": "b2f68c40779e40b200bfe6cd87a74f47eba0d0252a43a0e34d0d26fa554cab41",
+    "src/swarm_lab/evacuation/language.py": "4294b04a8fe83c1c6f2ab773ced6fb0fef6be5b3dccba774f5702b7f6acfc978",
+    "src/swarm_lab/evacuation/conditions.py": "d652df0adede70b61f72d63d0b301bc6a670751bd3c94ac20df870c099bc213f",
+    "src/swarm_lab/evacuation/evidence.py": "07350fc1e719033178405dcc631aaa280c1bc5af35e96f4d6ed582157504a64c",
+    "src/swarm_lab/evacuation/evidence_v3.py": "3512f5c7c87902316fea779da74a6449261ef2a35e56758e4fc82dc4c0a7dbcd",
+    "src/swarm_lab/evacuation/openrouter.py": "892739ae6fe2a629ba672267c86bf3da46f7af0336560db967405d3fe54fab5a",
+    "reports/evidence-controls-v3/run.py": "b709ae1cfe7765f11d8574f6626f3e1b87178637b4337585c629523de7462207",
+    "reports/overnight-experiments/extensions.py": "7745c9c8976e886d4a4d033e9a4c967d65a1503a0fb9b420d608981da20bc2ea",
+    "data/evidence-controls-v3/scenarios.jsonl": "4453502a0a1fc50ac5c1cada07639abf9dad6d24e94f5f7b8bc88b9f70f91623",
+    "data/evidence-controls-v3/conditions.jsonl": "fc5290e0a4c535e4bed14bd819f20dd1ac05a877f1647907d2065310bcc183ce",
+    "reports/evidence-controls-v3/ANALYSIS_PLAN.md": "17d81fc44537c23322b2f535fb8647589641cb9b21456a22759abbcda798c8d9",
+    "reports/evidence-controls-v3/analyze.py": "5c74885434088620ba219b9a8c898cc39f31b8d33a6d7c6ac917f9403cf237f1",
+    "reports/evidence-controls-v3/audit.py": "0c6e75f8025f3e6fd7f5ea491ea2138169eb6b6fbe559f8e9c393b65a802cb84"
+  },
+  "hypotheses": {
+    "section_5b": "Under Danger, non-witness correct action is higher with authenticated capsules than with content-matched unverified capsules; unverified is compared with text-only to separate content from authentication",
+    "section_6": "Authenticated truth first usable in round three follows a round-two decision exposed to the false source claim for active neighbors; measure later action changes under Danger and irreversible exits under Safe, relative to the same-prompt no-evidence control",
+    "unit": "Whole game; seeds are the replication unit",
+    "inference": "Descriptive with exact permutation test over seeds"
+  }
+}

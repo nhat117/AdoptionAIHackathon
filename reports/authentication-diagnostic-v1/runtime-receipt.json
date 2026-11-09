@@ -1,0 +1,13 @@
+{
+  "python": "3.12.10",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "archive_records": 4034,
+  "archive_sha256": "52e89328228f7b7f358cc559c584c7c5de7efba8dbf92b2d35a31cb2e883a3ba",
+  "frozen_plan_sha256": "b08e1e7b7ad012d6015eddfdd644b1c3819fbf4c1b1d8208ba076b5b5351b0c9",
+  "auditor_sha256": "6798ab7a70559d53aa31a131c41797a04425b153b0820c286ba59c44436db2db",
+  "billing_status": "unresolved",
+  "publisher_sha256": "e8a5ca3963b11322519294362049deb4b9619710563a375eb0dba4e1ebbb95b8",
+  "inference_calls_from_publication": 0
+}

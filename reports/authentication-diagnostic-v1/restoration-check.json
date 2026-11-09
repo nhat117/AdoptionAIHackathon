@@ -1,0 +1,36 @@
+{
+  "archive_sha256": "52e89328228f7b7f358cc559c584c7c5de7efba8dbf92b2d35a31cb2e883a3ba",
+  "restored_records": 4034,
+  "byte_identical": true,
+  "provisional_audit_identical": true,
+  "compared_fields": [
+    "mode",
+    "planned",
+    "technically_valid",
+    "failed_or_unattempted",
+    "rows",
+    "rates",
+    "paired_wording_contrasts",
+    "budget",
+    "unit"
+  ],
+  "technically_valid": 994,
+  "missing_or_failed": 16,
+  "budget": {
+    "spent_usd": 2.229664067999999,
+    "max_exposure_usd": 2.4568152199999993,
+    "pending": {
+      "qwen-heldout-3001-Danger-direct_verified-current": 0.04
+    },
+    "unresolved_escrow_usd": 0.04,
+    "current_accounted_exposure_usd": 2.269664067999999,
+    "billing_status": "unresolved",
+    "escrow_review_sha256": "0b2b87a5938326e75381be11d5defded5490f1a79facf841685b6f74d1ba74f3",
+    "audit_version": "analyze_with_escrow.py"
+  },
+  "original_analyzer_pending_rejection_reproduced": true,
+  "network_forbidden": true,
+  "inference_calls": 0,
+  "fresh_filesystem_same_runtime": true,
+  "independent_environment_replication": false
+}

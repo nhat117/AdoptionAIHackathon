@@ -1,0 +1,182 @@
+[
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-6.1-terra",
+    "languages": [
+      "en"
+    ],
+    "started_at": "2026-11-08T10:13:09.725656+00:00",
+    "args": {
+      "dataset": "runs/implementation-verification-20261108/calibration-000-0-0-en.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "en"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-6.1-terra",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 45,
+      "max_output_tokens": 2048,
+      "allow_unreviewed": true,
+      "output": "runs/implementation-verification-20261108/calibration-000-0-0-en"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "e0b93d15d4e50605ddbaebc75e15dcf69d83b66a617924481e1f3fe40c845676",
+    "code_sha256": "e9eb5b7c30f14898531e701e159b9e8e866b5eb65fa043c8d1b67ebb62891196",
+    "git_commit": "0e1b0e287960f479d20d0984866e09da4de83530",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": null,
+      "max_output_tokens": 2048
+    },
+    "reasoning_policy": {
+      "status": "explicit",
+      "effort": "low"
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 35,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T10:14:33.646192+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-6.1-terra",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T10:13:09.770571+00:00",
+    "args": {
+      "dataset": "runs/implementation-verification-20261108/calibration-000-0-0-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-6.1-terra",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 45,
+      "max_output_tokens": 2048,
+      "allow_unreviewed": true,
+      "output": "runs/implementation-verification-20261108/calibration-000-0-0-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "e0b93d15d4e50605ddbaebc75e15dcf69d83b66a617924481e1f3fe40c845676",
+    "code_sha256": "e9eb5b7c30f14898531e701e159b9e8e866b5eb65fa043c8d1b67ebb62891196",
+    "git_commit": "0e1b0e287960f479d20d0984866e09da4de83530",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": null,
+      "max_output_tokens": 2048
+    },
+    "reasoning_policy": {
+      "status": "explicit",
+      "effort": "low"
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 36,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T10:14:38.533505+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-6.1-terra",
+    "languages": [
+      "en"
+    ],
+    "started_at": "2026-11-08T10:14:33.649324+00:00",
+    "args": {
+      "dataset": "runs/implementation-verification-20261108/calibration-000-1-1-en.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "en"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-6.1-terra",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 45,
+      "max_output_tokens": 2048,
+      "allow_unreviewed": true,
+      "output": "runs/implementation-verification-20261108/calibration-000-1-1-en"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "51923439951b6cc7f2823d96da56d6844cee6c6161aac17ab77ee5d26b38c43a",
+    "code_sha256": "e9eb5b7c30f14898531e701e159b9e8e866b5eb65fa043c8d1b67ebb62891196",
+    "git_commit": "0e1b0e287960f479d20d0984866e09da4de83530",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": null,
+      "max_output_tokens": 2048
+    },
+    "reasoning_policy": {
+      "status": "explicit",
+      "effort": "low"
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 35,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T10:16:07.153549+00:00"
+  },
+  {
+    "protocol": "language-v1",
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "openai/gpt-6.1-terra",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T10:14:38.537065+00:00",
+    "args": {
+      "dataset": "runs/implementation-verification-20261108/calibration-000-1-1-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "openai/gpt-6.1-terra",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 45,
+      "max_output_tokens": 2048,
+      "allow_unreviewed": true,
+      "output": "runs/implementation-verification-20261108/calibration-000-1-1-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "51923439951b6cc7f2823d96da56d6844cee6c6161aac17ab77ee5d26b38c43a",
+    "code_sha256": "e9eb5b7c30f14898531e701e159b9e8e866b5eb65fa043c8d1b67ebb62891196",
+    "git_commit": "0e1b0e287960f479d20d0984866e09da4de83530",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": null,
+      "max_output_tokens": 2048
+    },
+    "reasoning_policy": {
+      "status": "explicit",
+      "effort": "low"
+    },
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 38,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T10:16:16.599594+00:00"
+  }
+]

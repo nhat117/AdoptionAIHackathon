@@ -1,0 +1,1884 @@
+{
+  "section": 1,
+  "purpose": "exploratory_unreviewed_pilot",
+  "planned": 16,
+  "statuses": {
+    "completed": 15,
+    "failed": 1
+  },
+  "calls": 638,
+  "call_count_definition": "Decision attempts; includes pre-request guard denials",
+  "returned_provider_calls": 638,
+  "analysis_sha256": "a8f0f2e8042571ceabf549adf7da723c162112c63fa6b97c7c5648748f4694d6",
+  "budget_audit": {
+    "pending": 0,
+    "ledger_reported_usd": 4.367582000000001,
+    "max_accounted_exposure_usd": 4.878360000000001,
+    "cap_usd": 35
+  },
+  "section_cost_usd": 4.367582,
+  "cumulative_cost_usd": 4.367582,
+  "audit_errors": [],
+  "paired_contrasts": [
+    {
+      "scenario": "calibration-000-0-0",
+      "contrast": "Vietnamese - English",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-0-1",
+      "contrast": "Vietnamese - English",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-1-0",
+      "contrast": "Vietnamese - English",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-000-1-1",
+      "contrast": "Vietnamese - English",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-0-0",
+      "contrast": "Vietnamese - English",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-0-1",
+      "contrast": "Vietnamese - English",
+      "difference": 0.0
+    },
+    {
+      "scenario": "calibration-001-1-0",
+      "contrast": "Vietnamese - English",
+      "difference": 0.0
+    }
+  ],
+  "games": [
+    {
+      "id": "1-calibration-000-0-0-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-0-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.266088,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-000-0-0-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-0-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.389946,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-000-0-1-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-0-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.260848,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-000-0-1-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-0-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": false,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.38609,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-000-1-0-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-1-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.26934,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-000-1-0-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-1-0",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.38909,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-000-1-1-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-1-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.267692,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-000-1-1-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-000-1-1",
+      "seed": 1000,
+      "source": 6,
+      "disaster": true,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 45,
+      "returned_provider_calls": 45,
+      "cost_usd": 0.400176,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 5,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-0-0-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-0-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.18907,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-0-0-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-0-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.278328,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-0-1-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-0-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.18404,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0.1111111111111111,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0.1111111111111111,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0.2222222222222222,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-0-1-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-0-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": false,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.270418,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "recipient_payoff": 26.099999999999998,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-1-0-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-1-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": false,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.18357,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-1-0-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-1-0",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": false,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.274536,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-1-1-en-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-1-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": true,
+      "language": "en",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "completed",
+      "calls": 36,
+      "returned_provider_calls": 36,
+      "cost_usd": 0.188282,
+      "error": null,
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 3,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 4,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": 0,
+      "evacuation_rounds": {},
+      "adjacency": {
+        "0": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          2,
+          3,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          6
+        ],
+        "5": [
+          3,
+          4,
+          6,
+          7
+        ],
+        "6": [
+          4,
+          5,
+          7,
+          8
+        ],
+        "7": [
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          6,
+          7,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "id": "1-calibration-001-1-1-vi-ordinary_peer-ring",
+      "section": 1,
+      "scenario": "calibration-001-1-1",
+      "seed": 1001,
+      "source": 0,
+      "disaster": true,
+      "accurate": true,
+      "language": "vi",
+      "identity": "ordinary_peer",
+      "topology": "ring",
+      "status": "failed",
+      "calls": 26,
+      "returned_provider_calls": 26,
+      "cost_usd": 0.170068,
+      "error": "Cite at most four distinct received message IDs",
+      "audit_errors": [],
+      "rounds": [
+        {
+          "round": 1,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        },
+        {
+          "round": 2,
+          "active": 9,
+          "claim_signal_rate": 0,
+          "evacuated_fraction": 0.0,
+          "direct_exposure_fraction": 0.4444444444444444
+        }
+      ],
+      "correct_action_rate": null,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": null,
+      "recipient_payoff": null,
+      "evacuation_rounds": null,
+      "adjacency": null
+    }
+  ],
+  "caveats": "One model; draft translations; one draw per cell; descriptive only",
+  "language_review": "pending_manual_review"
+}

@@ -1,0 +1,30 @@
+{
+  "inference_calls": 0,
+  "source": "Public unauthenticated GET metadata only",
+  "files": {
+    "anthropic_claude-sonnet-5.5-endpoints.json": {
+      "sha256": "828cfa0b24e22c37417ab398816bcdc9eb5c747020c23bd8736634ee8c079464",
+      "retrieved_utc": "2026-11-09T06:34:07.833008+00:00"
+    },
+    "openai_gpt-6.1-terra-endpoints.json": {
+      "sha256": "4e18b462f977c3658a99847b3ce90a4843b363aad9b629452d5167a0165355ec",
+      "retrieved_utc": "2026-11-09T06:34:07.828182+00:00"
+    },
+    "qwen_qwen3.8-27b-endpoints.json": {
+      "sha256": "b9824980f61640ee1a6142bdc37fab8c8994b1637155ed8b081f5f7a424cb0ad",
+      "retrieved_utc": "2026-11-09T06:34:07.832281+00:00"
+    },
+    "deepseek_deepseek-v4.1-flash-1017-endpoints.json": {
+      "sha256": "2685e3a228a40ce58e1194945fe2cb4ded2d659d49a1a29d37fbaa9ec25b5af6",
+      "retrieved_utc": "2026-11-09T06:34:07.849521+00:00"
+    },
+    "z-ai_glm-5.3-flash-endpoints.json": {
+      "sha256": "871976d45f7857f69cfa7b6e2f53186ea86d29f52d57bad0f3460b75d091f0de",
+      "retrieved_utc": "2026-11-09T06:34:07.847594+00:00"
+    },
+    "catalog-candidates.json": {
+      "sha256": "bedd42841aa0c9eb0f363a8c77363ccdf579574f883d0c67503bc8ba1bf4c5d8",
+      "retrieved_utc": "2026-11-09T06:33:50.049476+00:00"
+    }
+  }
+}

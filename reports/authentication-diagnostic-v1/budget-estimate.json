@@ -1,0 +1,107 @@
+{
+  "as_of_utc": "2026-11-09T06:57:35.044703+00:00",
+  "models": {
+    "qwen": {
+      "calls": 202,
+      "scenario_2000in_600out_usd": 0.17978000000000027,
+      "conservative_byte_bound_usd": 1.3264125999999996,
+      "max_input_bytes": 11553,
+      "phases": {
+        "heldout": {
+          "calls": 192,
+          "conservative_byte_bound_usd": 1.2597186
+        },
+        "discovery": {
+          "calls": 8,
+          "conservative_byte_bound_usd": 0.053605299999999995
+        },
+        "preflight": {
+          "calls": 2,
+          "conservative_byte_bound_usd": 0.013088700000000002
+        }
+      }
+    },
+    "deepseek": {
+      "calls": 202,
+      "scenario_2000in_600out_usd": 0.2666399999999988,
+      "conservative_byte_bound_usd": 1.8392792999999994,
+      "max_input_bytes": 11566,
+      "phases": {
+        "heldout": {
+          "calls": 192,
+          "conservative_byte_bound_usd": 1.7410157999999991
+        },
+        "discovery": {
+          "calls": 8,
+          "conservative_byte_bound_usd": 0.08036149999999999
+        },
+        "preflight": {
+          "calls": 2,
+          "conservative_byte_bound_usd": 0.017902
+        }
+      }
+    },
+    "glm": {
+      "calls": 202,
+      "scenario_2000in_600out_usd": 0.09292000000000024,
+      "conservative_byte_bound_usd": 0.6671045999999997,
+      "max_input_bytes": 11554,
+      "phases": {
+        "heldout": {
+          "calls": 192,
+          "conservative_byte_bound_usd": 0.6320196
+        },
+        "discovery": {
+          "calls": 8,
+          "conservative_byte_bound_usd": 0.028568199999999995
+        },
+        "preflight": {
+          "calls": 2,
+          "conservative_byte_bound_usd": 0.0065168
+        }
+      }
+    },
+    "sonnet": {
+      "calls": 202,
+      "scenario_2000in_600out_usd": 2.020000000000001,
+      "conservative_byte_bound_usd": 11.693368000000003,
+      "max_input_bytes": 11569,
+      "phases": {
+        "heldout": {
+          "calls": 192,
+          "conservative_byte_bound_usd": 11.073288
+        },
+        "discovery": {
+          "calls": 8,
+          "conservative_byte_bound_usd": 0.5060680000000001
+        },
+        "preflight": {
+          "calls": 2,
+          "conservative_byte_bound_usd": 0.114012
+        }
+      }
+    },
+    "terra": {
+      "calls": 202,
+      "scenario_2000in_600out_usd": 1.0100000000000005,
+      "conservative_byte_bound_usd": 5.847895999999998,
+      "max_input_bytes": 11575,
+      "phases": {
+        "heldout": {
+          "calls": 192,
+          "conservative_byte_bound_usd": 5.5377959999999975
+        },
+        "preflight": {
+          "calls": 2,
+          "conservative_byte_bound_usd": 0.057018
+        },
+        "discovery": {
+          "calls": 8,
+          "conservative_byte_bound_usd": 0.253082
+        }
+      }
+    }
+  },
+  "assumptions": "Illustrative 2000 input / 600 billed output tokens; not a measured forecast. Conservative bound treats each serialized UTF-8 input byte plus 2048 overhead as one input token and uses all 4096 billed output tokens at routing price ceilings.",
+  "inference_calls": 0
+}

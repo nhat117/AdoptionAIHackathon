@@ -1,0 +1,15 @@
+{
+  "restored_files": 443,
+  "byte_identical": true,
+  "inference_calls": 0,
+  "source": "published compressed raw archives and frozen plans",
+  "replayed_completed_games": 105,
+  "replay_errors": [],
+  "clean_environment_setup": true,
+  "clean_environment_python": "3.12.10",
+  "clean_environment_tests_passed": 100,
+  "clean_environment_lint": "passed",
+  "original_restored_audit_errors": [],
+  "extension_restored_audit_errors": [],
+  "counterfactual_replays": 73
+}

@@ -1,0 +1,4707 @@
+{
+  "section": "5",
+  "planned": 16,
+  "statuses": {
+    "completed": 16
+  },
+  "decision_attempts": 540,
+  "returned_provider_calls": 540,
+  "section_cost_usd": 2.1795785,
+  "extension_cumulative_usd": 4.8427414999999945,
+  "original_cost_usd": 20.702893999999983,
+  "total_cost_usd": 25.545635499999978,
+  "pending_reservations": 0,
+  "max_accounted_total_usd": 26.20619799999998,
+  "audit_errors": [],
+  "positive_controls": [],
+  "positive_control_established": null,
+  "paired_contrasts": [
+    {
+      "model_tag": "sonnet",
+      "scenario": "calibration-000-0-0",
+      "disaster": false,
+      "difference": 0.0
+    },
+    {
+      "model_tag": "terra",
+      "scenario": "calibration-000-0-0",
+      "disaster": false,
+      "difference": 0.0
+    },
+    {
+      "model_tag": "sonnet",
+      "scenario": "calibration-000-1-0",
+      "disaster": true,
+      "difference": 1.0
+    },
+    {
+      "model_tag": "terra",
+      "scenario": "calibration-000-1-0",
+      "disaster": true,
+      "difference": 0.0
+    },
+    {
+      "model_tag": "sonnet",
+      "scenario": "calibration-001-0-0",
+      "disaster": false,
+      "difference": 0.0
+    },
+    {
+      "model_tag": "terra",
+      "scenario": "calibration-001-0-0",
+      "disaster": false,
+      "difference": 0.0
+    },
+    {
+      "model_tag": "sonnet",
+      "scenario": "calibration-001-1-0",
+      "disaster": true,
+      "difference": 1.0
+    },
+    {
+      "model_tag": "terra",
+      "scenario": "calibration-001-1-0",
+      "disaster": true,
+      "difference": 0.0
+    }
+  ],
+  "games": [
+    {
+      "id": "5-calibration-000-0-0-sonnet-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:18:40.874085+00:00",
+      "decision_attempts": 45,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:20:15.310154+00:00",
+      "returned_provider_calls": 45,
+      "cost_usd": 0.319,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-000-0-0-sonnet-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:18:40.133560+00:00",
+      "decision_attempts": 45,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:20:14.935786+00:00",
+      "returned_provider_calls": 45,
+      "cost_usd": 0.29909,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 1
+      }
+    },
+    {
+      "id": "5-calibration-000-0-0-terra-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:19:09.551176+00:00",
+      "decision_attempts": 45,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:20:35.349935+00:00",
+      "returned_provider_calls": 45,
+      "cost_usd": 0.09766375,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6",
+            "r2-a7"
+          ]
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6",
+            "r2-a7"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r2-a7"
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-000-0-0-terra-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-0-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": false,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:16:34.536566+00:00",
+      "decision_attempts": 45,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:18:21.459538+00:00",
+      "returned_provider_calls": 45,
+      "cost_usd": 0.09434825,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 1
+      }
+    },
+    {
+      "id": "5-calibration-000-1-0-sonnet-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:16:34.500171+00:00",
+      "decision_attempts": 21,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:17:19.514566+00:00",
+      "returned_provider_calls": 21,
+      "cost_usd": 0.097316,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "evacuated_fraction": 0.5555555555555556
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "evacuated_fraction": 1.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 1.0
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 1.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.0,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {
+          "1": 1,
+          "0": 2,
+          "2": 2,
+          "3": 2,
+          "9": 2,
+          "4": 3,
+          "5": 3,
+          "7": 3,
+          "8": 3
+        },
+        "payoffs": {
+          "0": 1.8,
+          "1": 1.8,
+          "2": 1.8,
+          "3": 1.8,
+          "4": 1.8,
+          "5": 1.8,
+          "6": 0,
+          "7": 1.8,
+          "8": 1.8,
+          "9": 1.8
+        },
+        "total_payoff": 16.2,
+        "recipient_payoff": 16.2,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-000-1-0-sonnet-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:18:35.414489+00:00",
+      "decision_attempts": 41,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:20:00.395243+00:00",
+      "returned_provider_calls": 41,
+      "cost_usd": 0.262072,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.8888888888888888,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 0.1111111111111111,
+        "evacuation_rounds": {
+          "1": 1
+        },
+        "payoffs": {
+          "0": 0,
+          "1": 1.0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0
+        },
+        "total_payoff": 1.0,
+        "recipient_payoff": 1.0,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 0.0,
+        "authenticated_recipients": 1
+      }
+    },
+    {
+      "id": "5-calibration-000-1-0-terra-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:16:34.475616+00:00",
+      "decision_attempts": 21,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:17:17.148962+00:00",
+      "returned_provider_calls": 21,
+      "cost_usd": 0.03006675,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a4",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a6",
+            "r2-a6"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "evacuated_fraction": 0.5555555555555556
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "evacuated_fraction": 1.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 1.0
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 1.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.0,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {
+          "1": 1,
+          "0": 2,
+          "2": 2,
+          "3": 2,
+          "9": 2,
+          "4": 3,
+          "5": 3,
+          "7": 3,
+          "8": 3
+        },
+        "payoffs": {
+          "0": 1.8,
+          "1": 1.8,
+          "2": 1.8,
+          "3": 1.8,
+          "4": 1.8,
+          "5": 1.8,
+          "6": 0,
+          "7": 1.8,
+          "8": 1.8,
+          "9": 1.8
+        },
+        "total_payoff": 16.2,
+        "recipient_payoff": 16.2,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-000-1-0-terra-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-000-1-0",
+        "split": "calibration",
+        "seed": 1000,
+        "disaster": true,
+        "accurate": false,
+        "informant": 6,
+        "source": 1,
+        "terminal_round": 5,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:17:17.149529+00:00",
+      "decision_attempts": 28,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:18:40.132989+00:00",
+      "returned_provider_calls": 28,
+      "cost_usd": 0.04929825,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 0,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 1,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            1
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.2222222222222222
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.5555555555555556
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 1.0
+        },
+        {
+          "round": 5,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 1.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.0,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {
+          "1": 1,
+          "9": 2,
+          "0": 3,
+          "3": 3,
+          "8": 3,
+          "2": 4,
+          "4": 4,
+          "5": 4,
+          "7": 4
+        },
+        "payoffs": {
+          "0": 1.8,
+          "1": 1.8,
+          "2": 1.8,
+          "3": 1.8,
+          "4": 1.8,
+          "5": 1.8,
+          "6": 0,
+          "7": 1.8,
+          "8": 1.8,
+          "9": 1.8
+        },
+        "total_payoff": 16.2,
+        "recipient_payoff": 16.2,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1000,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 1,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 1
+      }
+    },
+    {
+      "id": "5-calibration-001-0-0-sonnet-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:20:15.311096+00:00",
+      "decision_attempts": 36,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:21:27.172217+00:00",
+      "returned_provider_calls": 36,
+      "cost_usd": 0.211748,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 3,
+          "first_active_authenticated_decision": 4,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 4,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0"
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-001-0-0-sonnet-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:17:19.515283+00:00",
+      "decision_attempts": 36,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:18:40.873352+00:00",
+      "returned_provider_calls": 36,
+      "cost_usd": 0.21221,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 1
+      }
+    },
+    {
+      "id": "5-calibration-001-0-0-terra-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:17:20.822729+00:00",
+      "decision_attempts": 36,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:18:35.413598+00:00",
+      "returned_provider_calls": 36,
+      "cost_usd": 0.065608,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r2-a8"
+          ]
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r2-a8",
+            "r2-a9"
+          ]
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 3,
+          "first_active_authenticated_decision": 4,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 4,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0",
+            "r2-a9"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "stay",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0",
+            "r2-a8"
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-001-0-0-terra-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-0-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": false,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:20:14.936677+00:00",
+      "decision_attempts": 36,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:21:38.382338+00:00",
+      "returned_provider_calls": 36,
+      "cost_usd": 0.06643125,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "stay",
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": null,
+        "unnecessary_evacuation_rate": 0.0,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {},
+        "payoffs": {
+          "0": 2.9,
+          "1": 2.9,
+          "2": 2.9,
+          "3": 2.9,
+          "4": 2.9,
+          "5": 2.9,
+          "6": 2.9,
+          "7": 2.9,
+          "8": 2.9,
+          "9": 2.9
+        },
+        "total_payoff": 29.0,
+        "recipient_payoff": 26.099999999999998,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 1
+      }
+    },
+    {
+      "id": "5-calibration-001-1-0-sonnet-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:18:21.459916+00:00",
+      "decision_attempts": 22,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:19:09.550232+00:00",
+      "returned_provider_calls": 22,
+      "cost_usd": 0.109206,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 3,
+          "first_active_authenticated_decision": 4,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": 4,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0"
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "evacuated_fraction": 0.5555555555555556
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            6,
+            7,
+            9
+          ],
+          "evacuated_fraction": 0.8888888888888888
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            8
+          ],
+          "evacuated_fraction": 1.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.0,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {
+          "3": 1,
+          "1": 2,
+          "2": 2,
+          "4": 2,
+          "5": 2,
+          "6": 3,
+          "7": 3,
+          "9": 3,
+          "8": 4
+        },
+        "payoffs": {
+          "0": 0,
+          "1": 1.8,
+          "2": 1.8,
+          "3": 1.8,
+          "4": 1.8,
+          "5": 1.8,
+          "6": 1.8,
+          "7": 1.8,
+          "8": 1.8,
+          "9": 1.8
+        },
+        "total_payoff": 16.2,
+        "recipient_payoff": 16.2,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-001-1-0-sonnet-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "sonnet",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:20:00.396158+00:00",
+      "decision_attempts": 33,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:21:10.755986+00:00",
+      "returned_provider_calls": 33,
+      "cost_usd": 0.185404,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": null,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.8888888888888888,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 0.1111111111111111,
+        "evacuation_rounds": {
+          "3": 1
+        },
+        "payoffs": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 1.0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0,
+          "9": 0
+        },
+        "total_payoff": 1.0,
+        "recipient_payoff": 1.0,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 0.0,
+        "authenticated_recipients": 1
+      }
+    },
+    {
+      "id": "5-calibration-001-1-0-terra-private_proof-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_proof",
+      "status": "completed",
+      "started_at": "2026-11-08T14:16:34.517957+00:00",
+      "decision_attempts": 22,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:17:20.822168+00:00",
+      "returned_provider_calls": 22,
+      "cost_usd": 0.03220375,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": false,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": 2,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0"
+          ]
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": 1,
+          "first_active_authenticated_decision": 2,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 2,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": 3,
+          "first_active_authenticated_decision": 4,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": 4,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0"
+          ]
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": 2,
+          "first_active_authenticated_decision": 3,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": true,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": 3,
+          "action_at_first_joint_exposure": "evacuate",
+          "false_peer_signal_ids_at_joint_exposure": [
+            "r1-a0",
+            "r2-a0"
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "evacuated_fraction": 0.5555555555555556
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [
+            6,
+            7,
+            9
+          ],
+          "evacuated_fraction": 0.8888888888888888
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [
+            8
+          ],
+          "evacuated_fraction": 1.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.0,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {
+          "3": 1,
+          "1": 2,
+          "2": 2,
+          "4": 2,
+          "5": 2,
+          "6": 3,
+          "7": 3,
+          "9": 3,
+          "8": 4
+        },
+        "payoffs": {
+          "0": 0,
+          "1": 1.8,
+          "2": 1.8,
+          "3": 1.8,
+          "4": 1.8,
+          "5": 1.8,
+          "6": 1.8,
+          "7": 1.8,
+          "8": 1.8,
+          "9": 1.8
+        },
+        "total_payoff": 16.2,
+        "recipient_payoff": 16.2,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "proof",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 9
+      }
+    },
+    {
+      "id": "5-calibration-001-1-0-terra-private_text-en",
+      "section": "5",
+      "scenario": {
+        "id": "calibration-001-1-0",
+        "split": "calibration",
+        "seed": 1001,
+        "disaster": true,
+        "accurate": false,
+        "informant": 0,
+        "source": 3,
+        "terminal_round": 4,
+        "size": 10,
+        "language": "en",
+        "source_label": "ordinary peer"
+      },
+      "model_tag": "terra",
+      "language": "en",
+      "arm": "private_text",
+      "status": "completed",
+      "started_at": "2026-11-08T14:20:35.350864+00:00",
+      "decision_attempts": 28,
+      "git_commit": "b8af37c83aca2dd3b808d838dfd48c9bee59d9d2",
+      "protocol": "evidence-diagnostics-v2",
+      "finished_at": "2026-11-08T14:21:46.611389+00:00",
+      "returned_provider_calls": 28,
+      "cost_usd": 0.0479125,
+      "audit_errors": [],
+      "evidence_timing": [
+        {
+          "agent": 1,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 2,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 3,
+          "witness": true,
+          "first_receipt_round": 0,
+          "first_active_authenticated_decision": 1,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": "evacuate",
+          "evacuation_round": 1,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 4,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 5,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": null,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 6,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 3,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 7,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 3,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 8,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        },
+        {
+          "agent": 9,
+          "witness": false,
+          "first_receipt_round": null,
+          "first_active_authenticated_decision": null,
+          "first_active_false_peer_signal_decision": 2,
+          "false_peer_signal_preceded_authenticated_decision": null,
+          "action_at_first_authenticated_decision": null,
+          "evacuation_round": 4,
+          "first_active_decision_with_evidence_and_false_peer_signal": null,
+          "action_at_first_joint_exposure": null,
+          "false_peer_signal_ids_at_joint_exposure": []
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "authenticated_before_decision": [
+            3
+          ],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 2,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.1111111111111111
+        },
+        {
+          "round": 3,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 0.6666666666666666
+        },
+        {
+          "round": 4,
+          "authenticated_before_decision": [],
+          "evacuated_fraction": 1.0
+        }
+      ],
+      "outcome": {
+        "missed_evacuation_rate": 0.0,
+        "unnecessary_evacuation_rate": null,
+        "correct_action_rate": 1.0,
+        "evacuation_rounds": {
+          "3": 1,
+          "1": 3,
+          "2": 3,
+          "4": 3,
+          "5": 3,
+          "6": 3,
+          "7": 4,
+          "8": 4,
+          "9": 4
+        },
+        "payoffs": {
+          "0": 0,
+          "1": 1.8,
+          "2": 1.8,
+          "3": 1.8,
+          "4": 1.8,
+          "5": 1.8,
+          "6": 1.8,
+          "7": 1.8,
+          "8": 1.8,
+          "9": 1.8
+        },
+        "total_payoff": 16.2,
+        "recipient_payoff": 16.2,
+        "language_review_status": "pending_manual_review",
+        "identity": "ordinary_peer",
+        "claimed_source_label": "ordinary teammate",
+        "topology": "ring",
+        "network_seed": 1001,
+        "adjacency": {
+          "0": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "1": [
+            0,
+            2,
+            3,
+            9
+          ],
+          "2": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "3": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "4": [
+            2,
+            3,
+            5,
+            6
+          ],
+          "5": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "6": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "7": [
+            5,
+            6,
+            8,
+            9
+          ],
+          "8": [
+            0,
+            6,
+            7,
+            9
+          ],
+          "9": [
+            0,
+            1,
+            7,
+            8
+          ]
+        },
+        "evidence": "private",
+        "forwarding": "text_only",
+        "witness": 3,
+        "witness_correct": true,
+        "other_recipients_correct_action_rate": 1.0,
+        "authenticated_recipients": 1
+      }
+    }
+  ],
+  "analysis_sha256": "a10ff59dc6bdc97bc3a0952112bd18131fea5fd21fff40c75d59922165539173"
+}

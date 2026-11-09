@@ -1,6 +1,6 @@
 """Only this module needs to know how Adaption model calls work."""
 
-from typing import Protocol
+from typing import Callable, Protocol
 
 from adaption import AsyncAdaption
 
@@ -18,9 +18,15 @@ class OfflineBackend:
 
 
 class AdaptionBackend:
-    def __init__(self, client: AsyncAdaption, settings: Settings):
+    def __init__(
+        self,
+        client: AsyncAdaption,
+        settings: Settings,
+        record: Callable[[dict], None] | None = None,
+    ):
         self.client = client
         self.settings = settings
+        self.record = record
 
     async def generate(self, agent: AgentSettings, input_text: str) -> str:
         response = await self.client.responses.create(
@@ -33,6 +39,19 @@ class AdaptionBackend:
             agentic_memory=False,
             store=False,
         )
+        if self.record is not None:
+            usage = getattr(response, "usage", None)
+            self.record(
+                {
+                    "type": "provider_metadata",
+                    "provider": "adaption",
+                    "response_id": response.id,
+                    "model": response.model,
+                    "usage": usage.model_dump()
+                    if hasattr(usage, "model_dump")
+                    else usage,
+                }
+            )
         if response.status != "completed":
             raise RuntimeError("Adaption response did not complete")
         if not response.output_text:

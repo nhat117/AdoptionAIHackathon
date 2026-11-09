@@ -1,0 +1,77 @@
+{
+  "model": "anthropic/claude-haiku-4.5",
+  "language": "vi",
+  "requested_reasoning": "low",
+  "temperature": 0,
+  "max_output_tokens": 512,
+  "attempts": 1,
+  "status": "valid_response",
+  "decision": {
+    "signal": "Unknown",
+    "action": "stay",
+    "message": "Tin nhắn từ tác tử 1 báo nguy hiểm nhưng chưa được xác minh. Nguồn tin chính đã im lặng từ vòng 2. Thiếu thông tin đáng tin cậy để xác định trạng thái thực. Tiếp tục theo dõi.",
+    "parents": [
+      "r2-a1"
+    ]
+  },
+  "records": [
+    {
+      "type": "provider_metadata",
+      "provider": "openrouter",
+      "response_id": "gen-1794131322-6LcABFqAUI846LvouMuC",
+      "model": "anthropic/claude-haiku-4.5",
+      "upstream_provider": "Amazon Bedrock",
+      "usage": {
+        "prompt_tokens": 1166,
+        "completion_tokens": 136,
+        "total_tokens": 1302,
+        "cost": 0.001846,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001846,
+          "upstream_inference_prompt_cost": 0.001166,
+          "upstream_inference_completions_cost": 0.00068
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    {
+      "type": "model_response",
+      "call": 1,
+      "view": {
+        "agent": 0,
+        "round": 3,
+        "neighbours": [
+          1,
+          2,
+          8,
+          9
+        ],
+        "language": "vi",
+        "history": [
+          {
+            "id": "r2-a1",
+            "sender": 1,
+            "source_label": "đồng đội bình thường",
+            "signal": "Danger",
+            "text": "Có thảm họa. Chúng ta nên sơ tán.",
+            "parents": [],
+            "authenticated": false
+          }
+        ]
+      },
+      "raw": "```json\n{\n  \"signal\": \"Unknown\",\n  \"action\": \"stay\",\n  \"message\": \"Tin nhắn từ tác tử 1 báo nguy hiểm nhưng chưa được xác minh. Nguồn tin chính đã im lặng từ vòng 2. Thiếu thông tin đáng tin cậy để xác định trạng thái thực. Tiếp tục theo dõi.\",\n  \"parents\": [\"r2-a1\"]\n}\n```",
+      "language_check": "pending_manual_review"
+    }
+  ]
+}

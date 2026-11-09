@@ -1,0 +1,102 @@
+[
+  {
+    "protocol": "language-v2",
+    "purpose": "technical_implementation_verification",
+    "max_prompt_bytes": 64000,
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-5.5",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T10:25:18.318157+00:00",
+    "args": {
+      "dataset": "runs/sonnet-structured-verification-20261108/calibration-000-0-0-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-5.5",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 45,
+      "max_output_tokens": 2048,
+      "allow_unreviewed": true,
+      "structured_output": true,
+      "output": "runs/sonnet-structured-verification-20261108/calibration-000-0-0-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "e0b93d15d4e50605ddbaebc75e15dcf69d83b66a617924481e1f3fe40c845676",
+    "code_sha256": "bbfea034459898e9304b683c658fb86950d489961f4628efa0c1556a7145fbfb",
+    "git_commit": "84de4e009d4cb96651550f91eec9b96e8d3e41ca",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": null,
+      "max_output_tokens": 2048
+    },
+    "reasoning_policy": {
+      "status": "explicit",
+      "effort": "low"
+    },
+    "structured_output": true,
+    "response_schema_sha256": "6a5d0f04f9653eae2b0a09bb327f8ecd2046c54d56a2c2d1047fcee09a4ad777",
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 45,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T10:26:50.932831+00:00"
+  },
+  {
+    "protocol": "language-v2",
+    "purpose": "technical_implementation_verification",
+    "max_prompt_bytes": 64000,
+    "status": "completed",
+    "mode": "live",
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-5.5",
+    "languages": [
+      "vi"
+    ],
+    "started_at": "2026-11-08T10:25:18.419147+00:00",
+    "args": {
+      "dataset": "runs/sonnet-structured-verification-20261108/calibration-000-1-1-vi.jsonl",
+      "packs": "data/experiment1/languages.json",
+      "languages": [
+        "vi"
+      ],
+      "mode": "live",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-5.5",
+      "split": "calibration",
+      "limit": 1,
+      "max_calls": 45,
+      "max_output_tokens": 2048,
+      "allow_unreviewed": true,
+      "structured_output": true,
+      "output": "runs/sonnet-structured-verification-20261108/calibration-000-1-1-vi"
+    },
+    "pack_sha256": "3bcbe556ffa599a79906e68f74cbea3bf226ad94b3145ab77e9b9c8f953c907c",
+    "dataset_sha256": "51923439951b6cc7f2823d96da56d6844cee6c6161aac17ab77ee5d26b38c43a",
+    "code_sha256": "bbfea034459898e9304b683c658fb86950d489961f4628efa0c1556a7145fbfb",
+    "git_commit": "84de4e009d4cb96651550f91eec9b96e8d3e41ca",
+    "research_results": false,
+    "generation_settings": {
+      "temperature": null,
+      "max_output_tokens": 2048
+    },
+    "reasoning_policy": {
+      "status": "explicit",
+      "effort": "low"
+    },
+    "structured_output": true,
+    "response_schema_sha256": "6a5d0f04f9653eae2b0a09bb327f8ecd2046c54d56a2c2d1047fcee09a4ad777",
+    "working_tree_dirty": true,
+    "completed_episodes": 1,
+    "model_calls": 45,
+    "language_checks": "pending_manual_review",
+    "finished_at": "2026-11-08T10:26:50.935288+00:00"
+  }
+]

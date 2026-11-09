@@ -1,0 +1,12 @@
+{
+  "plan_sha256": "b08e1e7b7ad012d6015eddfdd644b1c3819fbf4c1b1d8208ba076b5b5351b0c9",
+  "planned_calls": 1010,
+  "views": 102,
+  "full_suite_tests": 151,
+  "targeted_tests": 20,
+  "inference_calls": 0,
+  "live_run_root_exists": false,
+  "judge": "proceed; no remaining preparation blocker; paid inference unauthorized",
+  "recommended_fresh_cap_usd": 25,
+  "asian_only_fresh_cap_usd": 5
+}

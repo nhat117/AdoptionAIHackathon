@@ -5,6 +5,33 @@ Use it to learn nodes, state, parallel branches, and joins before choosing a res
 experiment. No authority roles, monitoring policy, or research scoring are built in.
 Model calls use the [official Adaption SDK](https://docs.adaptionlabs.ai/api/python).
 
+The [single empirical manuscript](projects/persistent-dissenter/main.tex) combines corrected interacting-network evidence controls and a separate five-configuration receiver diagnostic. It adapts an established human evacuation game. The [project index](projects/README.md) preserves earlier proposals and calibration as historical context.
+
+Development provenance: available repository history begins November 8, 2026, during the sprint; timestamps do not establish that every source line was newly authored. Preexisting components include the cited human experiment, third-party SDKs/libraries and the official report template. No separately identified pre-sprint project implementation is claimed from this history.
+
+[Completed pilot and evidence diagnostics](reports/overnight-experiments/SUMMARY.md): frozen Sonnet 5.5 / Google / low-reasoning collection, audited raw data, case-specific graphs, and retained failures. This exploratory English/Vietnamese pilot is smaller than the proposed six-model evaluation and uses translations awaiting review.
+
+## Current research story
+
+**Current single-paper manuscript:** [Delivered, Recognized, Acted On](projects/persistent-dissenter/main.tex), integrating the completed corrected network study and separate [five-model diagnostic](reports/authentication-diagnostic-v1/RESULTS.md). The [final PDF](projects/persistent-dissenter/main.pdf) was exported from the reviewed source on November 9, 2026: seven main pages, references and appendices. Earlier versions remain in Git history.
+
+**Research question:** how do interacting agents use evidence and its authentication metadata? The current results show model-specific action patterns; the flat original comparisons do not establish immunity to authority, language or network effects.
+
+1. **Experiments 1–3 are an explained null.** Opposite hidden worlds can produce identical visible inputs. Sonnet stayed in every completed original game. Replaying 73 saved trajectories with truth flipped gave identical actions; this diagnoses missing truth information, not equal expected payoffs or universal resistance to influence.
+2. **The two models fail in opposite ways.** [Decision rates](reports/overnight-experiments/decision-rates.md): Sonnet followed "Danger" claims in 0 of 33 games and "Safe" in 32 of 32 (it always stays). Terra followed both every time. Pooled accuracy hides this; report miss, false-alarm and claim-following rates instead.
+3. **Verified evidence changes behaviour** (Experiments 4 and 5). In Sonnet disaster games, the 8 non-witness agents went from 0% to 100% correct when proof travelled with messages. That rests on 2 games per cell.
+4. **[Corrected evidence controls v3](reports/evidence-controls-v3/RESULTS.md)** add content-matched unverified capsules and truth first usable after a decision exposed to the false claim. Sonnet non-witness correctness averaged 93.75% with proof and 0% in both controls across eight held-out seeds; four recipients rejected valid nested capsules. Terra was highly correct across all three arms. The [analysis plan](reports/evidence-controls-v3/ANALYSIS_PLAN.md) was frozen before collection, and the [checkpoint log](reports/evidence-controls-v3/CHECKPOINTS.md) records independent reviews, exact replays, costs and the bounded collection outcome.
+
+5. **[Five-configuration receiver diagnostic](reports/authentication-diagnostic-v1/RESULTS.md)** completed 1,000 diagnostic attempts plus ten preflights. Sonnet/GLM relayed-proof labels can be wrong while actions remain correct; no wording contrast is statistically significant, and one clarified Sonnet response falsely verifies forged prose. All 314 valid held-out proof actions are correct, which does not establish causal reliance on authentication. Conditional denominators, selected discovery histories and unresolved US$0.04 escrow remain explicit.
+
+Known limits: the identity prompt told agents that labels carry no authority, so Experiment 2 mainly tests instruction-following (v4 makes that warning a factor); the Vietnamese packs are unreviewed; the evidence tests are English-only; the simulator, not the agents, forwards proof; and Sonnet and Terra differ in both model and host. Paper C, the six-model roster and the 112-cell matrix are future work, not part of this submission. The redesigned identity study, [influence v4](reports/influence-v4/README.md), is frozen but not run. It adds a 70%-accurate private sensor, a 0–100 belief each round, a ladder of fictional authority roles, and the warning sentence as a factor (256 games; it needs new budget authorization). Message stance labels have a [hand check](reports/stance/README.md) that must pass before they are used.
+
+## Evacuation experiments
+
+[First calibration results](reports/2026-11-08-calibration/README.md): 129 completed outcomes, one invalid trial, and $1.17 reported OpenRouter cost. These are preliminary single-model results.
+
+The [pilot implementation guide](projects/implementation.md) covers scenario generation, Adaption Invent message pairs, offline checks, and bounded live A/C runs. See the [dataset card](data/evacuation/README.md) for split and review limitations.
+
 ## Setup and open Studio
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:

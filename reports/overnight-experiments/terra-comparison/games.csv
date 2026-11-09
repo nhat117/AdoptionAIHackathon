@@ -1,0 +1,9 @@
+id,status,model,language,arm,scenario,disaster,correct_action_rate,other_recipients_correct_action_rate,witness_correct,authenticated_recipients,decision_attempts,returned_provider_calls,cost_usd,error
+terra-calibration-000-0-0-terra-baseline-en,completed,terra,en,baseline,calibration-000-0-0,False,0.0,,,,32,32,0.04947375,
+terra-calibration-000-0-0-terra-baseline-vi,completed,terra,vi,baseline,calibration-000-0-0,False,0.0,,,,35,35,0.07012725,
+terra-calibration-000-0-1-terra-baseline-en,completed,terra,en,baseline,calibration-000-0-1,False,1.0,,,,45,45,0.0803785,
+terra-calibration-000-0-1-terra-baseline-vi,completed,terra,vi,baseline,calibration-000-0-1,False,1.0,,,,45,45,0.09685225,
+terra-calibration-000-1-0-terra-baseline-en,completed,terra,en,baseline,calibration-000-1-0,True,0.0,,,,45,45,0.0789155,
+terra-calibration-000-1-0-terra-baseline-vi,completed,terra,vi,baseline,calibration-000-1-0,True,0.0,,,,45,45,0.0956535,
+terra-calibration-000-1-1-terra-baseline-en,completed,terra,en,baseline,calibration-000-1-1,True,1.0,,,,36,36,0.0588015,
+terra-calibration-000-1-1-terra-baseline-vi,completed,terra,vi,baseline,calibration-000-1-1,True,1.0,,,,35,35,0.068871,

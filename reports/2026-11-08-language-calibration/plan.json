@@ -1,0 +1,57 @@
+{
+  "model": "openai/gpt-4.1-mini",
+  "provider": "openrouter",
+  "episodes": 8,
+  "max_calls_per_episode": 54,
+  "max_total_calls": 432,
+  "draft_translations": true,
+  "seed_blocks": 1,
+  "languages": [
+    "en",
+    "vi"
+  ],
+  "generation_settings": {
+    "temperature": 0,
+    "max_output_tokens": 512
+  },
+  "order": [
+    [
+      "calibration-000-1-1",
+      "en"
+    ],
+    [
+      "calibration-000-0-0",
+      "vi"
+    ],
+    [
+      "calibration-000-1-0",
+      "en"
+    ],
+    [
+      "calibration-000-0-0",
+      "en"
+    ],
+    [
+      "calibration-000-0-1",
+      "vi"
+    ],
+    [
+      "calibration-000-1-1",
+      "vi"
+    ],
+    [
+      "calibration-000-0-1",
+      "en"
+    ],
+    [
+      "calibration-000-1-0",
+      "vi"
+    ]
+  ],
+  "reasoning_control": {
+    "model": "openai/gpt-4.1-mini",
+    "setting": "not_applicable",
+    "request_reasoning_field": "omitted",
+    "note": "Non-reasoning model; no configurable thinking level. This metadata clarification does not change requests during batch."
+  }
+}

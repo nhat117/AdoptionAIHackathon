@@ -1,0 +1,69 @@
+<div id="evacuation-performance">
+  <style>
+    #evacuation-performance { display: grid; gap: calc(var(--font-size-base) * 1.2); color: var(--foreground); }
+    #evacuation-performance .title-group { display: grid; gap: calc(var(--font-size-base) * .35); }
+    #evacuation-performance .chart-group { display: grid; gap: calc(var(--font-size-base) * .5); }
+  </style>
+  <div class="title-group">
+    <h2>Evacuation calibration</h2>
+    <span class="text-small text-muted">GPT-4.1 mini · English · 5 scenario seeds · 8 November 2026</span>
+  </div>
+  <div class="viz-grid">
+    <div class="card viz-stat"><span class="text-small text-muted">Completed outcomes</span><div class="viz-stat-value tabular-nums">129 / 130</div><span class="text-small">79 warning trials · 50 recovery trials</span></div>
+    <div class="card viz-stat"><span class="text-small text-muted">Invalid trials</span><div class="viz-stat-value tabular-nums">1</div><span class="text-small">Cited a message not received</span></div>
+    <div class="card viz-stat"><span class="text-small text-muted">Reported cost</span><div class="viz-stat-value tabular-nums">$1.17</div><span class="text-small">4,015 OpenRouter calls</span></div>
+  </div>
+  <section class="chart-group" data-viz-composition aria-label="Study C recovery comparison">
+    <div id="evacuation-c-chart" data-viz-container></div>
+    <span class="text-small text-muted">Five paired scenarios per disaster state. Same exposure history across recovery arms. Lower is better.</span>
+  </section>
+  <section class="chart-group" data-viz-composition aria-label="Study A warning comparison">
+    <div class="viz-controls"><label class="form-label" for="evacuation-accuracy">Peer claim accuracy
+      <select class="form-select" id="evacuation-accuracy" disabled>
+        <option value="accurate">Accurate claims</option>
+        <option value="incorrect">Incorrect claims</option>
+      </select>
+    </label></div>
+    <div id="evacuation-a-chart" data-viz-container></div>
+    <span id="evacuation-a-scope" class="text-small text-muted" aria-live="polite"></span>
+  </section>
+  <span class="text-small text-muted">Rates exclude the controlled source. Calibration only: one model, structured signals, ordinary-peer labels. No statistical significance claim.</span>
+  <script type="application/json" data-viz-chart id="evacuation-c-config">{"id": "evacuation-c", "title": "C · Recovery after incorrect information", "description": "Missed evacuations in disaster trials; unnecessary evacuations in safe trials. Episode means. All correction conditions also remove the source.", "height": 350, "spec": {"type": "horizontalBar", "y": "Condition", "x": ["Missed evacuation", "Unnecessary evacuation"], "xLabel": "Share of non-source agents", "xDomain": [0, 1], "showValues": true, "valueFormat": {"style": "percent", "maximumFractionDigits": 1}, "sortOrder": "original"}, "columns": ["Condition", "Missed evacuation", "Unnecessary evacuation"], "rows": [["No intervention", 0.4222222222222222, 0.5333333333333333], ["Remove source", 0.39999999999999997, 0.5111111111111111], ["Local correction", 0.0, 0.4], ["Linked local correction", 0.0, 0.4], ["Correction to all", 0.0, 0.26666666666666666]]}</script>
+  <script type="application/json" data-viz-chart id="evacuation-a-accurate-config">{"id": "evacuation-a", "title": "A · Repetition and consultation", "description": "Accurate peer claims. Missed evacuations and false alarms use separate disaster-state denominators.", "height": 310, "spec": {"type": "horizontalBar", "y": "Condition", "x": ["Missed evacuation", "Unnecessary evacuation"], "xLabel": "Share of non-source agents", "xDomain": [0, 1], "showValues": true, "valueFormat": {"style": "percent", "maximumFractionDigits": 1}, "sortOrder": "original"}, "columns": ["Condition", "Missed evacuation", "Unnecessary evacuation"], "rows": [["Once / fixed reception", 0.5111111111111111, 0.0], ["Repeated / fixed reception", 0.5333333333333333, 0.0], ["Once / chosen reception", 0.5333333333333333, 0.0], ["Repeated / chosen reception", 0.4666666666666667, 0.0]]}</script>
+  <script type="application/json" data-viz-chart id="evacuation-a-incorrect-config">{"id": "evacuation-a", "title": "A · Repetition and consultation", "description": "Incorrect peer claims. The repeated/chosen disaster cell has four completed scenarios; all others have five.", "height": 310, "spec": {"type": "horizontalBar", "y": "Condition", "x": ["Missed evacuation", "Unnecessary evacuation"], "xLabel": "Share of non-source agents", "xDomain": [0, 1], "showValues": true, "valueFormat": {"style": "percent", "maximumFractionDigits": 1}, "sortOrder": "original"}, "columns": ["Condition", "Missed evacuation", "Unnecessary evacuation"], "rows": [["Once / fixed reception", 1.0, 0.4444444444444444], ["Repeated / fixed reception", 1.0, 0.5333333333333333], ["Once / chosen reception", 1.0, 0.5555555555555556], ["Repeated / chosen reception", 1.0, 0.5111111111111111]]}</script>
+</div>
+<script type="module">
+  import { mountChart } from "https://persistent.oaistatic.com/plugins/visualize/charts/1.1.6/element.js";
+  const root = document.getElementById("evacuation-performance");
+  const control = root.querySelector("#evacuation-accuracy");
+  const note = root.querySelector("#evacuation-a-scope");
+  const read = (id) => JSON.parse(root.querySelector(id).textContent);
+  const configs = {
+    accurate: read("#evacuation-a-accurate-config"),
+    incorrect: read("#evacuation-a-incorrect-config")
+  };
+  const saved = window.openai?.widgetState?.modelContent;
+  let selected = saved?.version === 1 && Object.hasOwn(configs, saved.accuracy) ? saved.accuracy : "accurate";
+  mountChart(root.querySelector("#evacuation-c-chart"), read("#evacuation-c-config"));
+  const chartA = mountChart(root.querySelector("#evacuation-a-chart"), configs[selected]);
+  function renderSelection(next) {
+    if (!Object.hasOwn(configs, next)) return;
+    selected = next;
+    control.value = next;
+    chartA.config = configs[next];
+    note.textContent = next === "accurate"
+      ? "Five scenarios per cell. A warning source holds the only verified observation. Lower is better."
+      : "Five scenarios per cell, except repeated / chosen in disaster trials: n=4 after one invalid response. Lower is better.";
+  }
+  renderSelection(selected);
+  control.disabled = false;
+  control.addEventListener("change", () => {
+    renderSelection(control.value);
+    window.openai?.setWidgetState?.({modelContent: {version: 1, accuracy: selected}, privateContent: null}).catch(() => {});
+  });
+  const restore = (event) => {
+    const state = event.detail?.globals?.widgetState?.modelContent;
+    if (state?.version === 1 && Object.hasOwn(configs, state.accuracy)) renderSelection(state.accuracy);
+  };
+  window.addEventListener("openai:set_globals", restore);
+</script>

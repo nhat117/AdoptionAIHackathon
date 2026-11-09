@@ -1,0 +1,632 @@
+{
+  "completed_outcomes": 129,
+  "manifests": [
+    {
+      "run": "A-calibration-000-0-0",
+      "status": "completed",
+      "model_calls": 144,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-000-0-1",
+      "status": "completed",
+      "model_calls": 192,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-000-1-0",
+      "status": "completed",
+      "model_calls": 184,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-000-1-1",
+      "status": "completed",
+      "model_calls": 136,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-001-0-0",
+      "status": "completed",
+      "model_calls": 115,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-001-0-1",
+      "status": "completed",
+      "model_calls": 152,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-001-1-0",
+      "status": "completed",
+      "model_calls": 148,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-001-1-1",
+      "status": "completed",
+      "model_calls": 111,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-002-0-0",
+      "status": "completed",
+      "model_calls": 142,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-002-0-1",
+      "status": "completed",
+      "model_calls": 152,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-002-1-0",
+      "status": "completed",
+      "model_calls": 148,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-002-1-1",
+      "status": "completed",
+      "model_calls": 136,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-003-0-0",
+      "status": "completed",
+      "model_calls": 152,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-003-0-1",
+      "status": "completed",
+      "model_calls": 192,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-003-1-0",
+      "status": "completed",
+      "model_calls": 184,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-003-1-1",
+      "status": "completed",
+      "model_calls": 144,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-004-0-0",
+      "status": "completed",
+      "model_calls": 168,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-004-0-1",
+      "status": "completed",
+      "model_calls": 232,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "A-calibration-004-1-0",
+      "status": "failed",
+      "model_calls": 200,
+      "error_type": "InvalidDecision",
+      "completed_episodes": null
+    },
+    {
+      "run": "A-calibration-004-1-1",
+      "status": "completed",
+      "model_calls": 156,
+      "error_type": null,
+      "completed_episodes": 4
+    },
+    {
+      "run": "C-calibration-000-0-0",
+      "status": "completed",
+      "model_calls": 91,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-000-1-0",
+      "status": "completed",
+      "model_calls": 61,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-001-0-0",
+      "status": "completed",
+      "model_calls": 85,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-001-1-0",
+      "status": "completed",
+      "model_calls": 47,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-002-0-0",
+      "status": "completed",
+      "model_calls": 72,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-002-1-0",
+      "status": "completed",
+      "model_calls": 68,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-003-0-0",
+      "status": "completed",
+      "model_calls": 149,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-003-1-0",
+      "status": "completed",
+      "model_calls": 79,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-004-0-0",
+      "status": "completed",
+      "model_calls": 110,
+      "error_type": null,
+      "completed_episodes": 5
+    },
+    {
+      "run": "C-calibration-004-1-0",
+      "status": "completed",
+      "model_calls": 65,
+      "error_type": null,
+      "completed_episodes": 5
+    }
+  ],
+  "cost_usd": 1.1722976,
+  "provider_calls": 4015,
+  "upstream_providers": [
+    "OpenAI"
+  ],
+  "cell_summary": [
+    {
+      "study": "A",
+      "arm": "once_chosen",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.4444444444444445,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.5555555555555556,
+      "source_selection_rate": 0.5,
+      "total_payoff": 19.5
+    },
+    {
+      "study": "A",
+      "arm": "once_chosen",
+      "disaster": false,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "source_selection_rate": 0.6833333333333333,
+      "total_payoff": 29.0
+    },
+    {
+      "study": "A",
+      "arm": "once_chosen",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.675,
+      "total_payoff": 1.0
+    },
+    {
+      "study": "A",
+      "arm": "once_chosen",
+      "disaster": true,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 0.4666666666666667,
+      "missed_evacuation_rate": 0.5333333333333333,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.5523809523809524,
+      "total_payoff": 7.6000000000000005
+    },
+    {
+      "study": "A",
+      "arm": "once_fixed",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.5555555555555556,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.4444444444444444,
+      "source_selection_rate": 0.5666666666666667,
+      "total_payoff": 21.4
+    },
+    {
+      "study": "A",
+      "arm": "once_fixed",
+      "disaster": false,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "source_selection_rate": 0.4666666666666667,
+      "total_payoff": 29.0
+    },
+    {
+      "study": "A",
+      "arm": "once_fixed",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.475,
+      "total_payoff": 1.0
+    },
+    {
+      "study": "A",
+      "arm": "once_fixed",
+      "disaster": true,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 0.4888888888888889,
+      "missed_evacuation_rate": 0.5111111111111111,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.47333333333333333,
+      "total_payoff": 7.84
+    },
+    {
+      "study": "A",
+      "arm": "repeated_chosen",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.4888888888888889,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.5111111111111111,
+      "source_selection_rate": 0.5511111111111111,
+      "total_payoff": 20.259999999999998
+    },
+    {
+      "study": "A",
+      "arm": "repeated_chosen",
+      "disaster": false,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "source_selection_rate": 0.7825,
+      "total_payoff": 29.0
+    },
+    {
+      "study": "A",
+      "arm": "repeated_chosen",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 4,
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.65625,
+      "total_payoff": 1.0
+    },
+    {
+      "study": "A",
+      "arm": "repeated_chosen",
+      "disaster": true,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 0.5333333333333333,
+      "missed_evacuation_rate": 0.4666666666666667,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.5523809523809524,
+      "total_payoff": 8.24
+    },
+    {
+      "study": "A",
+      "arm": "repeated_fixed",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.4666666666666667,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.5333333333333333,
+      "source_selection_rate": 0.5555555555555556,
+      "total_payoff": 19.88
+    },
+    {
+      "study": "A",
+      "arm": "repeated_fixed",
+      "disaster": false,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.0,
+      "source_selection_rate": 0.4666666666666667,
+      "total_payoff": 29.0
+    },
+    {
+      "study": "A",
+      "arm": "repeated_fixed",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.0,
+      "missed_evacuation_rate": 1.0,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.475,
+      "total_payoff": 1.0
+    },
+    {
+      "study": "A",
+      "arm": "repeated_fixed",
+      "disaster": true,
+      "accurate": true,
+      "episodes": 5,
+      "correct_action_rate": 0.4666666666666667,
+      "missed_evacuation_rate": 0.5333333333333333,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 0.54,
+      "total_payoff": 7.16
+    },
+    {
+      "study": "C",
+      "arm": "broadcast",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.7333333333333333,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.26666666666666666,
+      "source_selection_rate": 1.0,
+      "total_payoff": 24.44
+    },
+    {
+      "study": "C",
+      "arm": "broadcast",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": 0.0,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 1.0,
+      "total_payoff": 16.2
+    },
+    {
+      "study": "C",
+      "arm": "correction",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.6,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.4,
+      "source_selection_rate": 1.0,
+      "total_payoff": 22.16
+    },
+    {
+      "study": "C",
+      "arm": "correction",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": 0.0,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 1.0,
+      "total_payoff": 16.2
+    },
+    {
+      "study": "C",
+      "arm": "linked",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.6,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.4,
+      "source_selection_rate": 1.0,
+      "total_payoff": 22.16
+    },
+    {
+      "study": "C",
+      "arm": "linked",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 1.0,
+      "missed_evacuation_rate": 0.0,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 1.0,
+      "total_payoff": 16.2
+    },
+    {
+      "study": "C",
+      "arm": "none",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.4666666666666666,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.5333333333333333,
+      "source_selection_rate": 1.0,
+      "total_payoff": 18.36
+    },
+    {
+      "study": "C",
+      "arm": "none",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.5777777777777778,
+      "missed_evacuation_rate": 0.4222222222222222,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 1.0,
+      "total_payoff": 7.48
+    },
+    {
+      "study": "C",
+      "arm": "remove",
+      "disaster": false,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.4888888888888889,
+      "missed_evacuation_rate": null,
+      "unnecessary_evacuation_rate": 0.5111111111111111,
+      "source_selection_rate": 1.0,
+      "total_payoff": 20.259999999999998
+    },
+    {
+      "study": "C",
+      "arm": "remove",
+      "disaster": true,
+      "accurate": false,
+      "episodes": 5,
+      "correct_action_rate": 0.6,
+      "missed_evacuation_rate": 0.39999999999999997,
+      "unnecessary_evacuation_rate": null,
+      "source_selection_rate": 1.0,
+      "total_payoff": 7.96
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "study": "A",
+      "control": "once_fixed",
+      "treatment": "repeated_fixed",
+      "disaster": false,
+      "matched_pairs": 10,
+      "mean_correct_action_difference": -0.04444444444444444
+    },
+    {
+      "study": "A",
+      "control": "once_fixed",
+      "treatment": "repeated_fixed",
+      "disaster": true,
+      "matched_pairs": 10,
+      "mean_correct_action_difference": -0.011111111111111105
+    },
+    {
+      "study": "A",
+      "control": "once_chosen",
+      "treatment": "repeated_chosen",
+      "disaster": false,
+      "matched_pairs": 10,
+      "mean_correct_action_difference": 0.02222222222222222
+    },
+    {
+      "study": "A",
+      "control": "once_chosen",
+      "treatment": "repeated_chosen",
+      "disaster": true,
+      "matched_pairs": 9,
+      "mean_correct_action_difference": 0.03703703703703704
+    },
+    {
+      "study": "C",
+      "control": "none",
+      "treatment": "remove",
+      "disaster": false,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.022222222222222233
+    },
+    {
+      "study": "C",
+      "control": "none",
+      "treatment": "remove",
+      "disaster": true,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.02222222222222221
+    },
+    {
+      "study": "C",
+      "control": "remove",
+      "treatment": "correction",
+      "disaster": false,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.1111111111111111
+    },
+    {
+      "study": "C",
+      "control": "remove",
+      "treatment": "correction",
+      "disaster": true,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.4
+    },
+    {
+      "study": "C",
+      "control": "correction",
+      "treatment": "linked",
+      "disaster": false,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.0
+    },
+    {
+      "study": "C",
+      "control": "correction",
+      "treatment": "linked",
+      "disaster": true,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.0
+    },
+    {
+      "study": "C",
+      "control": "correction",
+      "treatment": "broadcast",
+      "disaster": false,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.13333333333333336
+    },
+    {
+      "study": "C",
+      "control": "correction",
+      "treatment": "broadcast",
+      "disaster": true,
+      "matched_pairs": 5,
+      "mean_correct_action_difference": 0.0
+    }
+  ]
+}

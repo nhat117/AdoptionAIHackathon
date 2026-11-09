@@ -1,0 +1,182 @@
+[
+  {
+    "study": "A",
+    "scenario": "calibration-001-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-000-1-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-000-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-001-0-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-000-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-000-0-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-001-1-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-001-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-002-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-002-0-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-002-1-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-002-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-003-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-003-0-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-003-1-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-003-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-004-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-000-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-000-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-004-0-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-001-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-001-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-004-1-1",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "A",
+    "scenario": "calibration-004-1-0",
+    "returncode": 1,
+    "status": "failed_or_interrupted"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-002-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-002-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-003-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-004-1-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-004-0-0",
+    "returncode": 0,
+    "status": "completed"
+  },
+  {
+    "study": "C",
+    "scenario": "calibration-003-0-0",
+    "returncode": 0,
+    "status": "completed"
+  }
+]

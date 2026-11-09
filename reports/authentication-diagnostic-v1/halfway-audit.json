@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-09T08:45:49.503160+00:00",
+  "plan_sha256": "b08e1e7b7ad012d6015eddfdd644b1c3819fbf4c1b1d8208ba076b5b5351b0c9",
+  "settled_receipts_checked": 519,
+  "spent_usd": 1.105135804000001,
+  "max_exposure_usd": 1.299276644000001,
+  "inflight_reservations": 1,
+  "halt_reasons": [],
+  "diagnostic_status": {
+    "valid": 503,
+    "failed": 7,
+    "running": 1
+  },
+  "technical_failures": [
+    {
+      "id": "deepseek-heldout-3002-Safe-unverified_true-clarified",
+      "model": "deepseek",
+      "error": "No normal completed response"
+    },
+    {
+      "id": "glm-heldout-3006-Danger-forged_prose-clarified",
+      "model": "glm",
+      "error": "Message must contain 1--400 characters"
+    },
+    {
+      "id": "qwen-heldout-3004-Danger-forged_prose-clarified",
+      "model": "qwen",
+      "error": "Message must contain 1--400 characters"
+    },
+    {
+      "id": "deepseek-heldout-3007-Safe-forged_prose-clarified",
+      "model": "deepseek",
+      "error": "No normal completed response"
+    },
+    {
+      "id": "glm-heldout-3006-Safe-relayed_verified-current",
+      "model": "glm",
+      "error": "Message must contain 1--400 characters"
+    },
+    {
+      "id": "deepseek-heldout-3002-Danger-forged_prose-current",
+      "model": "deepseek",
+      "error": "No normal completed response"
+    },
+    {
+      "id": "glm-heldout-3005-Safe-relayed_verified-clarified",
+      "model": "glm",
+      "error": "Cite at most four distinct received message IDs"
+    }
+  ],
+  "scope": "Frozen requests, hashes, routes, admission and billing only; no behavioral outcomes examined",
+  "snapshot_note": "Collection continued during this read-only audit. Ledger snapshot precedes status counts; these are not one atomic snapshot."
+}
