@@ -1,14 +1,14 @@
 {
-  "source_sha256": "0586972dbe7c49e1145eef787df60303a6fe6d55774d343f72b5e10204da1dae",
-  "abstract_whitespace_words": 210,
+  "source_sha256": "499f41f2ac36f90194f730fc7b2f206ecbb9c75b166281f08685140e3e9c1175",
+  "abstract_whitespace_words": 209,
   "built_in_compiler": "success",
   "temporary_render_only": true,
   "pdf_exported_to_repository": false,
   "main_pages": 8,
   "references_start_page": 9,
-  "appendix_pages": "10\u201313",
-  "total_pages": 13,
-  "visual_review": "All pages inspected; final changed pages8,11\u201313 re-inspected after provenance addition",
+  "appendix_pages": "10\u201312",
+  "total_pages": 12,
+  "visual_review": "Editorial cleanup: re-inspected changed pages4\u20137,11\u201312; main pages8, references9, appendices10\u201312; diagrams and counts unchanged",
   "overfull_boxes": 0,
   "remaining_warning": "One harmless underfull bibliography line",
   "primary_analysis_changed": false,
@@ -24,7 +24,7 @@
   },
   "preexisting_pdfs_recovery_paper_and_shared_layout_unchanged": true,
   "sha256": {
-    "projects/persistent-dissenter/main.tex": "0586972dbe7c49e1145eef787df60303a6fe6d55774d343f72b5e10204da1dae",
+    "projects/persistent-dissenter/main.tex": "499f41f2ac36f90194f730fc7b2f206ecbb9c75b166281f08685140e3e9c1175",
     "projects/persistent-dissenter/figures/study-overview.png": "cea10d5da8eb03bc7b8a5c16c861f4a1dea433e9c432b638c358d61fce195f20",
     "projects/persistent-dissenter/figures/evidence-results.png": "cbf7665e8309684383b1885ce14aeb1d7e71e5520a822625878d67800e4da8b5",
     "reports/evidence-controls-v3/summary.json": "1a3776d152bcb8f7de40652de3bca93b9bdf35228d2f390e790ffa22f2838147",
@@ -35,5 +35,6 @@
     "reports/authentication-diagnostic-v1/build_paper_figures.py": "3f2f3bd5157da9ea20fab515f94835a7250b193638e294437fd6f5a1514dae27"
   },
   "figure_builder_lint": "ruff check and ruff format passed",
-  "figure_regeneration": "Rerun reproduced the reviewed figure and coverage bytes"
+  "figure_regeneration": "Rerun reproduced the reviewed figure and coverage bytes",
+  "editorial_cleanup": "Removed billing/escrow/recovery narratives and software audit inventories; preserved output exclusions, denominators, missingness and raw records"
 }
