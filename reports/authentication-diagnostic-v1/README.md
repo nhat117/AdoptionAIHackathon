@@ -1,6 +1,6 @@
 # Cross-model authentication diagnostic — live collection
 
-Fresh US$25 cap authorized on 2026-11-09. All ten technical probes passed and the independent web-grounded judge admitted all five configurations. Preflight cost US$0.01873088, zero pending. The unchanged 1000-call diagnostic is now running. See [CHECKPOINTS.md](CHECKPOINTS.md) and [preflight-review.json](preflight-review.json).
+Fresh US$25 cap authorized on 2026-11-09. All ten technical probes passed and the independent web-grounded judge admitted all five configurations. Preflight cost US$0.01873088, zero pending. Collection stopped at HTTP429 after551valid and eight failed diagnostic responses, with441cells remaining. Settled US$1.224843332 plus unresolved US$0.04 escrow. The independent judge approved a separately versioned operational escrow continuation; it retains the original pending reservation and halt, changes no frozen payload/validator, and retries no attempted cell. See ESCROW_AMENDMENT.md and escrow-review.json. Dispatch follows the required commit; billing remains provisional. See [CHECKPOINTS.md](CHECKPOINTS.md) and [preflight-review.json](preflight-review.json).
 
 ## Original preparation notes
 

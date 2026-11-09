@@ -1,0 +1,17 @@
+{
+  "verdict": "PENDING",
+  "plan_sha256": "b08e1e7b7ad012d6015eddfdd644b1c3819fbf4c1b1d8208ba076b5b5351b0c9",
+  "wrapper_sha256": "be7fa427a31d8b69c89bd07d676966a2c31f6e3ddf6fe1bbe9f297fa1991ef9f",
+  "cap_usd": 25,
+  "ledger_prefix_bytes": 161360,
+  "ledger_prefix_sha256": "aa244d8e621c8ea65e376bc4614fa60979c22aefa4914349a4143a908681d103",
+  "covered_halt_sha256": [
+    "1ded38152bef0bc38576349c6163fd08d75a334ef5c413654b284b40f491616b"
+  ],
+  "escrow_ticket": "qwen-heldout-3001-Danger-direct_verified-current",
+  "escrow_usd": 0.04,
+  "failed_manifest_sha256": "615a0182d285f9ab3f3875c83e8db7fc9b4b78a96447a2854315edf4b1206416",
+  "failed_request_sha256": "e4158938b41c271c91a4722d7b88c9ff1de9a91bfe44c4f2b0ecfdb20f76ec5a",
+  "admission_review_sha256": "f76eeddedefc5e21e9a86a65a4977b916317d25b955030fceb4a904a6ba2a457",
+  "note": "Proposed operational exception only; no zero settlement or billing reconciliation"
+}
