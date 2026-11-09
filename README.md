@@ -9,6 +9,17 @@ The [networked evacuation proposals](projects/README.md) describe language, clai
 
 [Completed pilot and evidence diagnostics](reports/overnight-experiments/SUMMARY.md): frozen Sonnet 5.5 / Google / low-reasoning collection, audited raw data, case-specific graphs, and retained failures. This exploratory English/Vietnamese pilot is smaller than the proposed six-model evaluation and uses translations awaiting review.
 
+## Current research story
+
+**Thesis:** groups of AI agents act on verifiable evidence, not on claimed authority, language or network shape, and models fail in opposite ways without it.
+
+1. **Experiments 1–3 are an explained null.** Agents see the same inputs whether a claim is true or false, and at a 50% prior staying and leaving pay the same. Sonnet always stays, so language, identity and network could not change the score. A replay of 73 games with the truth flipped gave identical actions.
+2. **The two models fail in opposite ways.** [Decision rates](reports/overnight-experiments/decision-rates.md): Sonnet followed "Danger" claims in 0 of 33 games and "Safe" in 32 of 32 (it always stays). Terra followed both every time. Pooled accuracy hides this; report miss, false-alarm and claim-following rates instead.
+3. **Verified evidence changes behaviour** (Experiments 4 and 5). In Sonnet disaster games, the 8 non-witness agents went from 0% to 100% correct when proof travelled with messages. That rests on 2 games per cell.
+4. **Next: [evidence controls v3](reports/evidence-controls-v3/README.md)**, 72 games on held-out seeds. It adds a content-matched unverified note, to separate content from verification, and truth that arrives after the lie, to test reversal. The [analysis plan](reports/evidence-controls-v3/ANALYSIS_PLAN.md) was committed before any paid run.
+
+Known limits: the identity prompt tells agents that labels carry no authority, so Experiment 2 mainly tests instruction-following; the Vietnamese packs are unreviewed; the evidence tests are English-only; the simulator, not the agents, forwards proof; and Sonnet and Terra differ in both model and host. Paper C, the six-model roster and the 112-cell matrix are future work, not part of this submission. A rerun of the language, identity and network questions would need an outcome that can move: a 0–100 disaster-likelihood answer each round, a weak private clue that is right about 70% of the time, and payoffs tuned so a credible claim tips the decision.
+
 ## Evacuation experiments
 
 [First calibration results](reports/2026-11-08-calibration/README.md): 129 completed outcomes, one invalid trial, and $1.17 reported OpenRouter cost. These are preliminary single-model results.

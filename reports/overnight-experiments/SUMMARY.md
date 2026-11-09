@@ -34,6 +34,17 @@ The code checks pass: 100 tests and lint. Each section includes a frozen plan, p
 
 **5. Message reach, authentication and action are different measurements.** Original random graphs reached about 1.07 additional citation-linked recipients by the end of round 2 in fifteen matched pairs, without changing Sonnet's actions. This was post-hoc and reused only two graph seeds; citations can dispute claims. In the forwarding study, ordinary testimony still arrived when authenticated receipt was zero. Incorrect-peer-signal metrics refer literally to machine enums, not semantic agreement or private belief.
 
+## Decision rates: splitting pooled accuracy
+
+Added after this review, from the saved `games.csv` files with no new inference ([table](decision-rates.md), [script](decision_rates.py)). A single correct-action rate hides two different mistakes: missing a real disaster and evacuating for nothing. Each cell therefore also reports the miss rate, the false-alarm rate and the claim-following rate, the share of recipients whose action matched the source's claim. Split by claim direction across the original-protocol games:
+
+| Model | Followed "Danger" claims | Followed "Safe" claims |
+|---|---:|---:|
+| Sonnet 5.5 | 0% (33 games) | 100% (32 games) |
+| GPT-6.1 Terra | 100% (4 games) | 100% (4 games) |
+
+Sonnet ignores warnings it cannot verify and misses real disasters. Terra follows the source and raises false alarms when the source lies. Both average 50%, for opposite reasons. These are descriptive per-game averages, not independent agent samples.
+
 ## Independent judge and decisions
 
 A separate read-only LLM reviewer independently replayed the Terra and evidence checkpoints and reviewed the original design. Its verdict was **proceed with caveats**. Its critiques led to concrete corrections: distinguish receipt from a later active decision, emit explicit control pass/fail/missing cells, avoid claiming Danger controls resolved already-received hearsay, qualify authenticated-receipt labels, and distinguish independently generated messages from matched source inputs. [DECISIONS.md](DECISIONS.md) records the reasoning, review findings, fixes and unresolved limits. The reviewer used a separate read-only Codex agent with no inherited chat history. Independence refers to the review role/context, not an independent model-family replication. A favorable LLM review is not statistical evidence or proof of novelty.
