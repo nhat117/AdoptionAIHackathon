@@ -31,8 +31,8 @@
     "reports/authentication-diagnostic-v1/summary.json": "b1936bba8cc1024062ef995806bef9ef532078f3988bb0e1103b8b1c83ef9bd9",
     "reports/authentication-diagnostic-v1/responses.csv": "d0fc8e82590af46cf04c1c873ba0d54000f895598a5fa87188272b3af697aebb",
     "reports/authentication-diagnostic-v1/coverage.csv": "42a1f0ab1c54b1dc18e180af437e9ebdd12f609bc0a58e387699d70f76dd91a4",
-    "reports/authentication-diagnostic-v1/paper-planned-denominators.csv": "38b17ba1b0eb77e3c07ead3c5dd535f3872a1d26510cbd280e9564c75c08c8ad",
-    "reports/authentication-diagnostic-v1/build_paper_figures.py": "df9c8d77420fcca1fd05666c21c7a6de289897fdae609c564a5fc9fc3bce49d3"
+    "reports/authentication-diagnostic-v1/paper-planned-denominators.csv": "28aaf936207c18022b4aeeb89350205c496f9e81e611f9a1fa7adddac82286cc",
+    "reports/authentication-diagnostic-v1/build_paper_figures.py": "3f2f3bd5157da9ea20fab515f94835a7250b193638e294437fd6f5a1514dae27"
   },
   "figure_builder_lint": "ruff check and ruff format passed",
   "figure_regeneration": "Rerun reproduced the reviewed figure and coverage bytes"

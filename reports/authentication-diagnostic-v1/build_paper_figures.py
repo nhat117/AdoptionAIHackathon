@@ -229,7 +229,7 @@ def results():
     assert sum(t["invalid"] for t in totals) == 16
     assert sum(t["correct_valid"] for t in totals) == 923
     with (Path(__file__).parent / "paper-planned-denominators.csv").open("w") as f:
-        writer = csv.DictWriter(f, fieldnames=list(totals[0]))
+        writer = csv.DictWriter(f, fieldnames=list(totals[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(totals)
 
