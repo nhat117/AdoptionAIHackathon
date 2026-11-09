@@ -45,6 +45,12 @@ Added after this review, from the saved `games.csv` files with no new inference 
 
 Sonnet ignores warnings it cannot verify and misses real disasters. Terra follows the source and raises false alarms when the source lies. Both average 50%, for opposite reasons. These are descriptive per-game averages, not independent agent samples.
 
+## Subsequent corrected v3 controls
+
+The separately frozen [v3 follow-up](../evidence-controls-v3/RESULTS.md) adds a truthful content-matched unverified capsule and correctly delays truth until after a decision exposed to the false claim. It completed 58/72 planned games, retaining 2 budget interruptions and 12 unattempted cells. Combined original/extension/v3 reported cost is US$34.60287825 / US$35 with zero pending. The historical original results above remain unchanged.
+
+Across eight held-out seeds, Sonnet non-witness correctness averaged 93.75% with proof and 0% with either unverified capsules or text testimony; four proof recipients rejected valid nested capsules despite active exposure. Terra's three arm rates were 100%, 92.1875% and 95.3125%, respectively. These are exploratory, model/host-specific observations. The new report includes all raw records, exact completed-game replays, delayed-control results and independent judge checkpoints.
+
 ## Independent judge and decisions
 
 A separate read-only LLM reviewer independently replayed the Terra and evidence checkpoints and reviewed the original design. Its verdict was **proceed with caveats**. Its critiques led to concrete corrections: distinguish receipt from a later active decision, emit explicit control pass/fail/missing cells, avoid claiming Danger controls resolved already-received hearsay, qualify authenticated-receipt labels, and distinguish independently generated messages from matched source inputs. [DECISIONS.md](DECISIONS.md) records the reasoning, review findings, fixes and unresolved limits. The reviewer used a separate read-only Codex agent with no inherited chat history. Independence refers to the review role/context, not an independent model-family replication. A favorable LLM review is not statistical evidence or proof of novelty.
