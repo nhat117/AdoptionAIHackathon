@@ -28191,8 +28191,8 @@
   },
   "cost": {
     "original_accounted_usd": 5.7395241,
-    "review_accounted_usd": 13.996575,
-    "aggregate_accounted_usd": 19.7360991,
+    "review_accounted_usd": 36.1729925,
+    "aggregate_accounted_usd": 41.9125166,
     "cap_usd": 650,
     "invoice": false
   },
@@ -28209,9 +28209,11 @@
       "prompt_tokens": 1643285,
       "completion_tokens": 427799
     },
-    "api_attempts": 8356,
+    "api_attempts": 8646,
     "unresolved_reservations": [
       "2b33810d-3bce-43cf-9837-640ad3ac9f3d",
+      "982d18b2-5b23-491a-b7a6-a0aac79e59dc",
+      "985b2da6-7748-40a7-95e9-16ec8b61e819",
       "c5a4ac76-8699-4ff4-9f61-9c39ec2112df",
       "d7f054b2-efb5-4896-9d08-8194e111a01f"
     ],
@@ -43288,6 +43290,11 @@
     "src/ai2ai_guard/gpt5_judge_v2.py": "37e6c011987ab36029e55132fb686b843e07c951eb7e8e5c2893ca61dcc019aa",
     "scripts/run_gpt5_judge_v2.py": "79fdd3c6f422fbfc23f5a669958edfe974dd4dc1f15da69631577242e684afc8",
     "results/llm_judge_sample/aligned_prompts.jsonl": "e25d698272e85da41d571f6f0d736a6b704c072dc2c6d10f6a91b463a1f0545d",
+    "results/llm_judge_sample/authorizations.jsonl": "0db1eacd2bcf9a120ed11e097c7e5c01f7511fd7d19333232988290969fe734c",
+    "results/llm_judge_sample/cost_ledger.jsonl": "09cee921af0a958f74ade525db2ea9649c36ef59d0883e91a189c452decd0541",
+    "results/llm_judge_sample/errors.jsonl": "1903847744fe8e63b528dd222641d27d45632b819a1538db511c433b1dbcc81d",
+    "results/llm_judge_sample/judgments.part0001.jsonl": "9bd384f4ac4f68f525be6c10ce813a99cd903c50f819f3fa44723bb0872b689a",
+    "results/llm_judge_sample/raw_responses.part0001.jsonl": "8075f3177edbf9a1a74d9643234fcc4b78e12aeae3caf00c1f7acb1e9bfcfb5e",
     "results/llm_judge_sample/PROTOCOL.json": "0a9f3c4002dfa89252e800bc8c505f8e20c6fa960ee3b3d1bf79be6709b75d1c",
     "results/llm_judge_sample/SAMPLE_SELECTION.json": "6285f2e36b42c242d098bcf6b8a265b5c067616ac3bda20eab70b6d0c86d0da0",
     "src/ai2ai_guard/sampled_judge.py": "1cdf4a4fe02cf1d854c76c5c4a8820e6c35d6773f0239c51148f19df7c63daf5",
@@ -43300,7 +43307,7 @@
     "results/authority_wording_v2/workers.jsonl": "4140326afbded3bf138e93894cd772fa374c4aa59e0ba7ffefbcec884824a16c",
     "results/review_v3/api_responses.jsonl": "e60cf6929643c45cdf4d3579ca4fcc4fc622c2aecaf68b2406dad2a9e5d0c0b3",
     "results/review_v3/committee/outputs.jsonl": "fc40780439145db5e41ceac782f1908937d79303a6aad42a2f24ac8e56eb682e",
-    "results/review_v3/ledger.jsonl": "103dc0e94939116100e5c864f0107a731c8966097f5bfdc1e7a0fcbe2800a307",
+    "results/review_v3/ledger.jsonl": "acc751e7351c9f6a067b5c5835aad83e2c232cfca8c06605e569cd432e32b26f",
     "results/review_v3/monitors/outputs.jsonl": "652c94bbb8bea1782b3ec03c54166335722c8287d75e30c7c939e4ac3d10105d",
     "results/review_v3/pilot/outputs.jsonl": "64bbeddf631096a6eb92499d9cb1b56871838d6aaf9c13c9ed44a13208b95194",
     "results/review_v3/pilot-monitors/outputs.jsonl": "f9925cd0119200b3f2b1c771535d1c80ad73ce2cecc35b523065d5a36f38ebe2"
@@ -43319,7 +43326,7 @@
       "PENDING": 1920
     },
     "judge_accounted_usd": 0.60335,
-    "aggregate_research_accounted_usd": 19.7360991,
+    "aggregate_research_accounted_usd": 41.9125166,
     "pricing": {
       "model": "gpt-6-astra",
       "input_per_million": 10.0,
@@ -43419,14 +43426,15 @@
     "source_prompt_records": 5760,
     "aligned_groups": 96,
     "planned_initial_judge_requests": 288,
-    "saved_initial_records": 0,
-    "saved_valid_initial_judgments": 0,
-    "raw_responses": 0,
+    "saved_initial_records": 288,
+    "saved_valid_initial_judgments": 286,
+    "raw_responses": 288,
     "group_outcomes": {
-      "PENDING": 96
+      "PASS": 94,
+      "PENDING": 2
     },
-    "judge_accounted_usd": 0.0,
-    "aggregate_research_accounted_usd": 19.7360991,
+    "judge_accounted_usd": 22.1764175,
+    "aggregate_research_accounted_usd": 41.9125166,
     "pricing": {
       "model": "gpt-5",
       "input_per_million": 1.25,
@@ -43453,7 +43461,11 @@
       "scope": "288 initial requests including 3 smoke calls; flagged revisions cost extra within the same US$60 project / US$650 aggregate caps"
     },
     "availability": {
-      "status": "NOT_CHECKED"
+      "status": "VERIFIED_CHAT_COMPLETIONS_SMOKE",
+      "metadata_check": {
+        "status": "NOT_CHECKED"
+      },
+      "returned_model": "gpt-5-2025-08-07"
     },
     "invoice": false,
     "historical_experimental_outputs_changed": false,
@@ -43468,12 +43480,22 @@
     "revision_sets_saved": 0,
     "fully_reassessed_revision_groups": 0,
     "all_requested_work_complete": false,
-    "raw_returned_model_ids": {},
-    "invalid_saved_judgments": 0,
-    "request_error_events": 0,
-    "request_http_statuses": {},
+    "raw_returned_model_ids": {
+      "gpt-5-2025-08-07": 288
+    },
+    "invalid_saved_judgments": 2,
+    "request_error_events": 2,
+    "request_http_statuses": {
+      "500": 2
+    },
     "execution_status": {
-      "status": "NOT_RUN"
+      "saved_initial_records": 288,
+      "valid_initial_judgments": 286,
+      "planned_initial_judgments": 288,
+      "sample_groups": 96,
+      "population_groups": 1920,
+      "full_corpus_validation_claimed": false,
+      "status": "WORKFLOW_STAGES_FINISHED"
     },
     "endpoint_checks": [],
     "profile": "braintrust-gpt5-stratified-sample-v1",
@@ -44865,7 +44887,7 @@
       "PENDING": 1914
     },
     "judge_accounted_usd": 1.81551875,
-    "aggregate_research_accounted_usd": 19.7360991,
+    "aggregate_research_accounted_usd": 41.9125166,
     "pricing": {
       "model": "gpt-5",
       "input_per_million": 1.25,
@@ -44955,7 +44977,7 @@
       "PENDING": 1920
     },
     "judge_accounted_usd": 0.2078025,
-    "aggregate_research_accounted_usd": 19.7360991,
+    "aggregate_research_accounted_usd": 41.9125166,
     "pricing": {
       "model": "gpt-5",
       "input_per_million": 1.25,
@@ -45018,14 +45040,15 @@
     "source_prompt_records": 5760,
     "aligned_groups": 96,
     "planned_initial_judge_requests": 288,
-    "saved_initial_records": 0,
-    "saved_valid_initial_judgments": 0,
-    "raw_responses": 0,
+    "saved_initial_records": 288,
+    "saved_valid_initial_judgments": 286,
+    "raw_responses": 288,
     "group_outcomes": {
-      "PENDING": 96
+      "PASS": 94,
+      "PENDING": 2
     },
-    "judge_accounted_usd": 0.0,
-    "aggregate_research_accounted_usd": 19.7360991,
+    "judge_accounted_usd": 22.1764175,
+    "aggregate_research_accounted_usd": 41.9125166,
     "pricing": {
       "model": "gpt-5",
       "input_per_million": 1.25,
@@ -45052,7 +45075,11 @@
       "scope": "288 initial requests including 3 smoke calls; flagged revisions cost extra within the same US$60 project / US$650 aggregate caps"
     },
     "availability": {
-      "status": "NOT_CHECKED"
+      "status": "VERIFIED_CHAT_COMPLETIONS_SMOKE",
+      "metadata_check": {
+        "status": "NOT_CHECKED"
+      },
+      "returned_model": "gpt-5-2025-08-07"
     },
     "invoice": false,
     "historical_experimental_outputs_changed": false,
@@ -45067,12 +45094,22 @@
     "revision_sets_saved": 0,
     "fully_reassessed_revision_groups": 0,
     "all_requested_work_complete": false,
-    "raw_returned_model_ids": {},
-    "invalid_saved_judgments": 0,
-    "request_error_events": 0,
-    "request_http_statuses": {},
+    "raw_returned_model_ids": {
+      "gpt-5-2025-08-07": 288
+    },
+    "invalid_saved_judgments": 2,
+    "request_error_events": 2,
+    "request_http_statuses": {
+      "500": 2
+    },
     "execution_status": {
-      "status": "NOT_RUN"
+      "saved_initial_records": 288,
+      "valid_initial_judgments": 286,
+      "planned_initial_judgments": 288,
+      "sample_groups": 96,
+      "population_groups": 1920,
+      "full_corpus_validation_claimed": false,
+      "status": "WORKFLOW_STAGES_FINISHED"
     },
     "endpoint_checks": [],
     "profile": "braintrust-gpt5-stratified-sample-v1",
@@ -46456,34 +46493,34 @@
     "results/review_v3/figures/monitor_comparison.svg": "cc1a9898278178af6a4b28857e9ba1f6cb33c7140be7b5bcc5493b691b62b064",
     "results/review_v3/figures/historical_blind_failure.svg": "59f19bb8ebe6e7494376a04c9a889071acc3709d6e1390e66e07167c5299fad1",
     "results/review_v3/figures/authority_wording_followup.svg": "c1143afe553018f54fc5abde82528decd020410c68c8e21be8072e26e9d86969",
-    "results/llm_judge/validation_results.json": "4758714d6eb957835f805348f60e2f094d33082a71cedd15985df7d80f36d492",
+    "results/llm_judge/validation_results.json": "8385a699d2a14bd872438b7e2dd7fd452533dff8fb462463ff7ff42197fa4c8d",
     "results/llm_judge/validation_scores.csv": "32f8106ee3557f4673cd648413f4197143abd1eb6d8b0edbd92f5130189839e7",
     "results/llm_judge/flagged_prompts.csv": "17788fdea1f644c608d34cd2301890c44511977622e48efab9f5f8359da24a82",
     "results/llm_judge/revised_prompts.json": "de7023e7eeef96e58eeeb0b1f295387d8b4bf97cd945bf06286cbc791b480053",
     "results/llm_judge/judge_agreement.json": "36d5ba62a28c7305bc7dd3388f756fc3a42f08ed0d12fd975f7d498efc2483cf",
-    "results/llm_judge/validation_report.md": "a723f7a64bccac29bf6468903c06123d6a27e150654f0a4745729e9d3397c7a4",
-    "results/llm_judge_gpt5/validation_results.json": "92639b4aefafb77641a7fb1859e7987c41f4bce0c28742c870fb648d3cd8e87a",
+    "results/llm_judge/validation_report.md": "72e8fc193c2933a1859e2304cdb116da4f1c3d883de654dd35b893d920aec6d1",
+    "results/llm_judge_gpt5/validation_results.json": "e926f86c2f85d92635116b898df0b9706fe664aeb8eca8d20d47eba79743c6cc",
     "results/llm_judge_gpt5/validation_scores.csv": "4efa82bd463e8b75ea826db48719b5116fdb44d962403ee44ba687b1248da1a9",
     "results/llm_judge_gpt5/flagged_prompts.csv": "17788fdea1f644c608d34cd2301890c44511977622e48efab9f5f8359da24a82",
     "results/llm_judge_gpt5/revised_prompts.json": "373532f60505635ed08dd0ffea96047067d05b32698f27097a3afec5e62e614f",
     "results/llm_judge_gpt5/judge_agreement.json": "8f3f5b5cedc14f17ba6a886f41e177783c19ccdd832b5e8f5f9dc5461086f549",
-    "results/llm_judge_gpt5/validation_report.md": "2d7aaee093756ae967f36772ff3f0c2d80917b9ea5462c4af1f970d32c758bd8",
-    "results/llm_judge_gpt5_v2/validation_results.json": "73d04daf7de0dc18a404a39de6d2dac85ee2d7332455dd3a362e958e760a6839",
+    "results/llm_judge_gpt5/validation_report.md": "46f6c456debde999352507cdd80c9ea54dfffee0f73fd78d4aabadb732762a65",
+    "results/llm_judge_gpt5_v2/validation_results.json": "b799fb8e01c0a6cc70955902c53aef9037a1fc09321decb79239e94cc9898f3a",
     "results/llm_judge_gpt5_v2/validation_scores.csv": "32f8106ee3557f4673cd648413f4197143abd1eb6d8b0edbd92f5130189839e7",
     "results/llm_judge_gpt5_v2/flagged_prompts.csv": "17788fdea1f644c608d34cd2301890c44511977622e48efab9f5f8359da24a82",
     "results/llm_judge_gpt5_v2/revised_prompts.json": "de7023e7eeef96e58eeeb0b1f295387d8b4bf97cd945bf06286cbc791b480053",
     "results/llm_judge_gpt5_v2/judge_agreement.json": "36d5ba62a28c7305bc7dd3388f756fc3a42f08ed0d12fd975f7d498efc2483cf",
-    "results/llm_judge_gpt5_v2/validation_report.md": "0fd5d076a2ab8b526cf191c255facf9f8420aab2d6e406f9279d6bcf2e329343",
-    "results/llm_judge_sample/validation_results.json": "1fcb142f8c17961929d42c409b45f98bd6e87fda26333c51d1e8c9395f384fed",
-    "results/llm_judge_sample/validation_scores.csv": "32f8106ee3557f4673cd648413f4197143abd1eb6d8b0edbd92f5130189839e7",
+    "results/llm_judge_gpt5_v2/validation_report.md": "77e70d4c23dc6a31a332aff593c3001c37cce9329babf2b06b33392ee9c85dce",
+    "results/llm_judge_sample/validation_results.json": "0186c37058e4563ff1e14ed44d097d28fa21cda59bfcdd1e869d6ed12f3ff10b",
+    "results/llm_judge_sample/validation_scores.csv": "7f8800e82c42fcc8b0e26fe38328d9bbf932a44227f211e5b82f8de2d6075d21",
     "results/llm_judge_sample/flagged_prompts.csv": "17788fdea1f644c608d34cd2301890c44511977622e48efab9f5f8359da24a82",
-    "results/llm_judge_sample/revised_prompts.json": "7e7c069d55afc7b5afefc64fde7e58387adef1c11288c5aa3c302a93e8fa9b3d",
-    "results/llm_judge_sample/judge_agreement.json": "36d5ba62a28c7305bc7dd3388f756fc3a42f08ed0d12fd975f7d498efc2483cf",
-    "results/llm_judge_sample/validation_report.md": "739a0749a3912ddb4397c2e664a82ae22802b226e3183ca965f14c006ea443aa",
+    "results/llm_judge_sample/revised_prompts.json": "32da3d77ef8a0a7738bdc70ae6473fbbc1bf9773b89f20a6b943e1f5782a8210",
+    "results/llm_judge_sample/judge_agreement.json": "89cdc0d0614ddd4a8c4eccdf0245c5e626af86043691b96769eecdd1f67e1fe6",
+    "results/llm_judge_sample/validation_report.md": "7ef6d682767975710a3e88a5ed43226bae7cad3428b807b830a27cb0e510498a",
     "results/round3/figures/wording_language.svg": "d15f403ce31770ba976cab15599adeab496d53f01cf4dbb8440ce0714bea8734",
     "results/round3/figures/neutral_outcomes.svg": "144dd9bd133761a8b1673be307651a63964dee24df65db52c019325e5c3c64a2",
-    "research/VALIDATED_RESEARCH_REPORT.md": "d0a08dc9f32cea2b9728352a67c6f4f07ed7fadd92d667830f121766c75f242c",
-    "research/ROUND3_APPENDIX.md": "5104e074f8bd28a2b0bd0c97020f168d5dff7c14f1de4964dd73377679f2ce9d",
+    "research/VALIDATED_RESEARCH_REPORT.md": "43db26a4f164dd661cf1d08dae302ee318ca110b769cbda8e714946df2600d10",
+    "research/ROUND3_APPENDIX.md": "6629e1c5cbe12f0d9fbded7fd036f340c47cb32f0114b78cd15845a5ab253fe9",
     "results/round3/wording_language.csv": "e07b6f8a25fa2ceec364bdeaa624906b158d13b7f2bf128f0358e3a95741c2f8",
     "results/round3/wording_language_interactions.csv": "a715063c86719de2d3373953999ecdb967fb93b2f2b5770249602e7269700c5b",
     "results/round3/ambiguous_wording_outputs.csv": "c839931ee1a53acc89a7ebefd97a90d696d78ebd0c2eff2512b7a11d0ebdc9d3",
@@ -46491,8 +46528,8 @@
     "results/round3/neutral_decisions.jsonl": "604250da7537eede6ed9bf29d74ad84d39c110a1a9ec007c455f908c7160ba4f",
     "results/round3/neutral_ambiguous_outputs.csv": "b933a416012cf83ec44146e673f57e2505ed33480548b2dfaa6536c7bd8e6476",
     "results/round3/analysis.json": "63a9a4bb12433183353bfdc95c1c440744d451d661711ebc2e55352e00a62c44",
-    "results/round3/remediation.json": "c9a9925fde5b8bd812ffd49dd42d1a55ab63efe0439f98d464d173edf9673ecd",
-    "research/review_resolution/ROUND3_REMEDIATION.md": "0f1f1a76f0ad421a95796c23e4bf687004902a62ef5a8797a3133f99030756f1",
+    "results/round3/remediation.json": "0e3210c8b3c178b07f9c9cd3f011589a601fd6229650e855c7ee71b8d8cc2a61",
+    "research/review_resolution/ROUND3_REMEDIATION.md": "f10cadc78740e4fb09458bb22a3cf346a940bf9274989a0fede39d6a1e6ae695",
     "submission/final-review/SUBMISSION_CHECKLIST.md": "8dc73e4ab7371c0435e592e35ba1e68863f5b15253ca50d394a4572b434cec2a",
     "results/review_v3/contrasts.csv": "e7ef6ba0f29411a430eb8dea25142634c81244791e59b05347b4b714d2ae483f",
     "results/review_v3/stratified_rates.csv": "c80528bd932c1a053af1c9918004d567ea8210327101dea3c236363ec1c5ae99",

@@ -1,10 +1,10 @@
 {
   "source_markdown": "research/VALIDATED_RESEARCH_REPORT.md",
-  "source_sha256": "d0a08dc9f32cea2b9728352a67c6f4f07ed7fadd92d667830f121766c75f242c",
+  "source_sha256": "43db26a4f164dd661cf1d08dae302ee318ca110b769cbda8e714946df2600d10",
   "word_file": "research/VALIDATED_RESEARCH_REPORT.docx",
-  "word_sha256": "764c47e4b39a128936796197e33e8ce0aa67f00a83114c84ea26e543666bd4f5",
+  "word_sha256": "652de446e20521485d5c867ba97ad43a854e149a126106db929322f4a28d61ac",
   "pdf_file": "submission/final-review/Authority_Language_Final.pdf",
-  "pdf_sha256": "2b547bf51ee62231f8eea7e3523a93b9084027fd97b5342c134a33b93ccc6854",
+  "pdf_sha256": "a16644273fff3b91c3ba0eabeb7971f304bbf7d09bef54176a6d857ff53a2ae2",
   "table_rows_including_headers": [
     7,
     4,
@@ -15,7 +15,7 @@
     "renderer_script": "ea23c8fb85ce448b3d849bebb5725b7538ce6eb680fdd13ab0b081b1c236815a",
     "dependency_lock": "30e73c5e767eca4053e30258caeff8800d5aa13a7b71a9f22d193a0dbffeb189",
     "embedded_cjk_font": "6fe03613582a099aa0f39c830e6fe9eb356fa9e21409b848c6bbd6fe574e82dc",
-    "canonical_markdown": "d0a08dc9f32cea2b9728352a67c6f4f07ed7fadd92d667830f121766c75f242c",
+    "canonical_markdown": "43db26a4f164dd661cf1d08dae302ee318ca110b769cbda8e714946df2600d10",
     "svg:results/round3/figures/neutral_outcomes.svg": "144dd9bd133761a8b1673be307651a63964dee24df65db52c019325e5c3c64a2",
     "svg:results/round3/figures/wording_language.svg": "d15f403ce31770ba976cab15599adeab496d53f01cf4dbb8440ce0714bea8734"
   },
@@ -32,8 +32,8 @@
   "generated_sha256": {
     "results/round3/figures/neutral_outcomes.png": "920673ee6a65586e9e9dd7164c0759c48d49ec9687435da2abca5d3b842c60fb",
     "results/round3/figures/wording_language.png": "ee4ba46ffef4dc3fe729a447deafb8b1048f419cab0c47aa84237f9ca8ac5276",
-    "research/VALIDATED_RESEARCH_REPORT.docx": "764c47e4b39a128936796197e33e8ce0aa67f00a83114c84ea26e543666bd4f5",
-    "submission/final-review/Authority_Language_Final.docx": "764c47e4b39a128936796197e33e8ce0aa67f00a83114c84ea26e543666bd4f5",
-    "submission/final-review/Authority_Language_Final.pdf": "2b547bf51ee62231f8eea7e3523a93b9084027fd97b5342c134a33b93ccc6854"
+    "research/VALIDATED_RESEARCH_REPORT.docx": "652de446e20521485d5c867ba97ad43a854e149a126106db929322f4a28d61ac",
+    "submission/final-review/Authority_Language_Final.docx": "652de446e20521485d5c867ba97ad43a854e149a126106db929322f4a28d61ac",
+    "submission/final-review/Authority_Language_Final.pdf": "a16644273fff3b91c3ba0eabeb7971f304bbf7d09bef54176a6d857ff53a2ae2"
   }
 }

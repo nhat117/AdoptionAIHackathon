@@ -13,7 +13,7 @@
       "PENDING": 1920
     },
     "judge_accounted_usd": 0.2078025,
-    "aggregate_research_accounted_usd": 19.7360991,
+    "aggregate_research_accounted_usd": 41.9125166,
     "pricing": {
       "model": "gpt-5",
       "input_per_million": 1.25,

@@ -2,6 +2,15 @@
 
 ### Current user-requested scope: random sampling instead of full judging
 
+**Collection outcome:** all **288 planned initial replies** were saved;
+**286** passed schema/rubric/exact-evidence checks. The sample has **94 provisional
+PASS / 2 PENDING** groups. Two non-exact-quote replies remain instrument failures,
+not translation failures; no case was replaced or rescored. No complete group
+triggered revision drafting. Neither full-sample validation nor full-corpus/human
+validation is claimed. Sample-project conservative accounting is
+**US$22.17641750 / US$60**; aggregate accounting, including earlier costs and
+unresolved error reservations, is **US$41.91251660 / US$650**, not an invoice.
+
 The active profile is a frozen **5% stratified random sample: 96 aligned groups,
 288 initial GPT-5 judgments**. One group is drawn uniformly from each of 96
 20-group cohort/role/wording/record/clean-attack strata. Selection excludes prior

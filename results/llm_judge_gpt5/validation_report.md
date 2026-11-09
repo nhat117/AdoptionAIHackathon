@@ -37,7 +37,7 @@ No representative defect or score is invented when no valid judgments are availa
 
 ## Availability, spending and reproducibility
 
-Configured-endpoint availability: VERIFIED_CHAT_COMPLETIONS_SMOKE. Judge-project conservative accounted cost: US$1.81551875; aggregate research accounted cost: US$19.73609910. Costs include unresolved reservations, use published short-context Standard rates and are not provider invoices or proof of proxy surcharges.
+Configured-endpoint availability: VERIFIED_CHAT_COMPLETIONS_SMOKE. Judge-project conservative accounted cost: US$1.81551875; aggregate research accounted cost: US$41.91251660. Costs include unresolved reservations, use published short-context Standard rates and are not provider invoices or proof of proxy surcharges.
 
 Latest execution status: {'status': 'BLOCKED_OR_INTERRUPTED', 'error_type': 'ValueError', 'reason': 'judge_incomplete_or_multiple_choices_saved_for_audit', 'saved_records': 25, 'timestamp_utc': '2026-11-09T08:38:18.328040+00:00'}. Recorded request errors: 0; HTTP statuses: {}. When no response/usage was returned, the retained cost is a conservative reservation, not a claimed billed inference or a judge result.
 

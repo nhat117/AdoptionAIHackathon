@@ -1,93 +1,129 @@
 {
   "original": {
-    "complete_groups": 0,
+    "complete_groups": 94,
     "criteria": {
       "semantic_equivalence": {
-        "score_distribution": {},
-        "complete_groups": 0,
-        "exact_agreement_groups": 0,
-        "within_one_point_groups": 0,
+        "score_distribution": {
+          "4": 4,
+          "5": 278
+        },
+        "complete_groups": 94,
+        "exact_agreement_groups": 90,
+        "within_one_point_groups": 94,
         "substantial_disagreement_groups": 0,
-        "mean_pairwise_absolute_difference": null,
+        "mean_pairwise_absolute_difference": 0.028368794326241134,
         "pairwise_quadratic_weighted_kappa": {
-          "0-1": null,
-          "0-2": null,
-          "1-2": null
+          "0-1": -0.021739130434782483,
+          "0-2": 0.0,
+          "1-2": 0.0
         }
       },
       "translation_accuracy": {
-        "score_distribution": {},
-        "complete_groups": 0,
-        "exact_agreement_groups": 0,
-        "within_one_point_groups": 0,
+        "score_distribution": {
+          "4": 15,
+          "5": 267
+        },
+        "complete_groups": 94,
+        "exact_agreement_groups": 81,
+        "within_one_point_groups": 94,
         "substantial_disagreement_groups": 0,
-        "mean_pairwise_absolute_difference": null,
+        "mean_pairwise_absolute_difference": 0.09219858156028368,
         "pairwise_quadratic_weighted_kappa": {
-          "0-1": null,
-          "0-2": null,
-          "1-2": null
+          "0-1": -0.07005253940455347,
+          "0-2": 0.2633228840125392,
+          "1-2": 0.17180616740088106
         }
       },
       "linguistic_naturalness": {
-        "score_distribution": {},
-        "complete_groups": 0,
-        "exact_agreement_groups": 0,
-        "within_one_point_groups": 0,
+        "score_distribution": {
+          "4": 153,
+          "5": 129
+        },
+        "complete_groups": 94,
+        "exact_agreement_groups": 40,
+        "within_one_point_groups": 94,
         "substantial_disagreement_groups": 0,
-        "mean_pairwise_absolute_difference": null,
+        "mean_pairwise_absolute_difference": 0.3829787234042553,
         "pairwise_quadratic_weighted_kappa": {
-          "0-1": null,
-          "0-2": null,
-          "1-2": null
+          "0-1": 0.13159080666967093,
+          "0-2": 0.28820559889857733,
+          "1-2": 0.27757685352622063
         }
       },
       "authority_equivalence": {
-        "score_distribution": {},
-        "complete_groups": 0,
-        "exact_agreement_groups": 0,
-        "within_one_point_groups": 0,
+        "score_distribution": {
+          "4": 15,
+          "5": 267
+        },
+        "complete_groups": 94,
+        "exact_agreement_groups": 80,
+        "within_one_point_groups": 94,
         "substantial_disagreement_groups": 0,
-        "mean_pairwise_absolute_difference": null,
+        "mean_pairwise_absolute_difference": 0.09929078014184398,
         "pairwise_quadratic_weighted_kappa": {
-          "0-1": null,
-          "0-2": null,
-          "1-2": null
+          "0-1": -0.061601642710472415,
+          "0-2": 0.15695067264573992,
+          "1-2": -0.04962779156327546
         }
       },
       "persuasive_strength_equivalence": {
-        "score_distribution": {},
-        "complete_groups": 0,
-        "exact_agreement_groups": 0,
-        "within_one_point_groups": 0,
+        "score_distribution": {
+          "4": 57,
+          "5": 225
+        },
+        "complete_groups": 94,
+        "exact_agreement_groups": 47,
+        "within_one_point_groups": 94,
         "substantial_disagreement_groups": 0,
-        "mean_pairwise_absolute_difference": null,
+        "mean_pairwise_absolute_difference": 0.3333333333333333,
         "pairwise_quadratic_weighted_kappa": {
-          "0-1": null,
-          "0-2": null,
-          "1-2": null
+          "0-1": -0.07900067521944631,
+          "0-2": -0.05248425472358287,
+          "1-2": 0.0387143900657414
         }
       },
       "cultural_pragmatic_appropriateness": {
-        "score_distribution": {},
-        "complete_groups": 0,
-        "exact_agreement_groups": 0,
-        "within_one_point_groups": 0,
+        "score_distribution": {
+          "4": 25,
+          "5": 257
+        },
+        "complete_groups": 94,
+        "exact_agreement_groups": 82,
+        "within_one_point_groups": 94,
         "substantial_disagreement_groups": 0,
-        "mean_pairwise_absolute_difference": null,
+        "mean_pairwise_absolute_difference": 0.0851063829787234,
         "pairwise_quadratic_weighted_kappa": {
-          "0-1": null,
-          "0-2": null,
-          "1-2": null
+          "0-1": 0.3856209150326797,
+          "0-2": 0.590711175616836,
+          "1-2": 0.45428156748911463
         }
       }
     },
     "all_valid_score_distributions": {
-      "semantic_equivalence": {},
-      "translation_accuracy": {},
-      "linguistic_naturalness": {},
-      "authority_equivalence": {},
-      "persuasive_strength_equivalence": {},
-      "cultural_pragmatic_appropriateness": {}
+      "semantic_equivalence": {
+        "4": 4,
+        "5": 282
+      },
+      "translation_accuracy": {
+        "4": 15,
+        "5": 271
+      },
+      "linguistic_naturalness": {
+        "4": 155,
+        "5": 131
+      },
+      "authority_equivalence": {
+        "4": 16,
+        "5": 270
+      },
+      "persuasive_strength_equivalence": {
+        "4": 58,
+        "5": 228
+      },
+      "cultural_pragmatic_appropriateness": {
+        "4": 25,
+        "5": 261
+      }
     },
     "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
   },
@@ -187,15 +223,17 @@
   "per_language": {
     "en": {
       "original": {
-        "complete_groups": 0,
+        "complete_groups": 94,
         "criteria": {
           "semantic_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "5": 282
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 94,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0,
             "pairwise_quadratic_weighted_kappa": {
               "0-1": null,
               "0-2": null,
@@ -203,12 +241,14 @@
             }
           },
           "translation_accuracy": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "5": 282
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 94,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0,
             "pairwise_quadratic_weighted_kappa": {
               "0-1": null,
               "0-2": null,
@@ -216,65 +256,93 @@
             }
           },
           "linguistic_naturalness": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 41,
+              "5": 241
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 69,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.1773049645390071,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.12365063788027486,
+              "0-2": 0.4145907473309609,
+              "1-2": 0.3082251082251082
             }
           },
           "authority_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 1,
+              "5": 281
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 93,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.0070921985815602835,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
+              "0-1": 0.0,
+              "0-2": 0.0,
               "1-2": null
             }
           },
           "persuasive_strength_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 2,
+              "5": 280
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 92,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.014184397163120567,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.0,
+              "0-2": -0.010752688172043001,
+              "1-2": 0.0
             }
           },
           "cultural_pragmatic_appropriateness": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 2,
+              "5": 280
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 92,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.014184397163120567,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.0,
+              "0-2": -0.010752688172043001,
+              "1-2": 0.0
             }
           }
         },
         "all_valid_score_distributions": {
-          "semantic_equivalence": {},
-          "translation_accuracy": {},
-          "linguistic_naturalness": {},
-          "authority_equivalence": {},
-          "persuasive_strength_equivalence": {},
-          "cultural_pragmatic_appropriateness": {}
+          "semantic_equivalence": {
+            "5": 286
+          },
+          "translation_accuracy": {
+            "5": 286
+          },
+          "linguistic_naturalness": {
+            "4": 41,
+            "5": 245
+          },
+          "authority_equivalence": {
+            "4": 1,
+            "5": 285
+          },
+          "persuasive_strength_equivalence": {
+            "4": 2,
+            "5": 284
+          },
+          "cultural_pragmatic_appropriateness": {
+            "4": 2,
+            "5": 284
+          }
         },
         "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
       },
@@ -373,94 +441,130 @@
     },
     "vi": {
       "original": {
-        "complete_groups": 0,
+        "complete_groups": 94,
         "criteria": {
           "semantic_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 4,
+              "5": 278
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 90,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.028368794326241134,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": -0.021739130434782483,
+              "0-2": 0.0,
+              "1-2": 0.0
             }
           },
           "translation_accuracy": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 16,
+              "5": 266
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 80,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.09929078014184398,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": -0.0734094616639478,
+              "0-2": 0.2633228840125392,
+              "1-2": 0.15230460921843691
             }
           },
           "linguistic_naturalness": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 120,
+              "5": 162
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 56,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.2695035460992908,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.4816176470588236,
+              "0-2": 0.3985374771480804,
+              "1-2": 0.47091932457786123
             }
           },
           "authority_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 7,
+              "5": 275
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 87,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.04964539007092199,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": -0.0180505415162453,
+              "0-2": -0.0180505415162453,
+              "1-2": -0.010752688172043001
             }
           },
           "persuasive_strength_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 11,
+              "5": 271
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 84,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.07092198581560284,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": -0.04155124653739617,
+              "0-2": -0.03296703296703285,
+              "1-2": 0.21883656509695304
             }
           },
           "cultural_pragmatic_appropriateness": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 25,
+              "5": 257
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 82,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.0851063829787234,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.2908093278463648,
+              "0-2": 0.5091383812010444,
+              "1-2": 0.6379044684129429
             }
           }
         },
         "all_valid_score_distributions": {
-          "semantic_equivalence": {},
-          "translation_accuracy": {},
-          "linguistic_naturalness": {},
-          "authority_equivalence": {},
-          "persuasive_strength_equivalence": {},
-          "cultural_pragmatic_appropriateness": {}
+          "semantic_equivalence": {
+            "4": 4,
+            "5": 282
+          },
+          "translation_accuracy": {
+            "4": 16,
+            "5": 270
+          },
+          "linguistic_naturalness": {
+            "4": 122,
+            "5": 164
+          },
+          "authority_equivalence": {
+            "4": 7,
+            "5": 279
+          },
+          "persuasive_strength_equivalence": {
+            "4": 11,
+            "5": 275
+          },
+          "cultural_pragmatic_appropriateness": {
+            "4": 25,
+            "5": 261
+          }
         },
         "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
       },
@@ -559,94 +663,130 @@
     },
     "zh": {
       "original": {
-        "complete_groups": 0,
+        "complete_groups": 94,
         "criteria": {
           "semantic_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 4,
+              "5": 278
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 90,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.028368794326241134,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": -0.021739130434782483,
+              "0-2": 0.0,
+              "1-2": 0.0
             }
           },
           "translation_accuracy": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 9,
+              "5": 273
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 87,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.04964539007092199,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": -0.03785488958990535,
+              "0-2": 0.3138686131386862,
+              "1-2": 0.38427947598253276
             }
           },
           "linguistic_naturalness": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 79,
+              "5": 203
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 49,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.3191489361702128,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.255598033861278,
+              "0-2": 0.1359331476323119,
+              "1-2": 0.2375434530706837
             }
           },
           "authority_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 12,
+              "5": 270
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 83,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.07801418439716312,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": -0.04962779156327546,
+              "0-2": 0.25867507886435337,
+              "1-2": -0.04155124653739617
             }
           },
           "persuasive_strength_equivalence": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 55,
+              "5": 227
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 51,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.3049645390070922,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.010526315789473606,
+              "0-2": -0.02994886778670569,
+              "1-2": 0.10737764791818838
             }
           },
           "cultural_pragmatic_appropriateness": {
-            "score_distribution": {},
-            "complete_groups": 0,
-            "exact_agreement_groups": 0,
-            "within_one_point_groups": 0,
+            "score_distribution": {
+              "4": 21,
+              "5": 261
+            },
+            "complete_groups": 94,
+            "exact_agreement_groups": 81,
+            "within_one_point_groups": 94,
             "substantial_disagreement_groups": 0,
-            "mean_pairwise_absolute_difference": null,
+            "mean_pairwise_absolute_difference": 0.09219858156028368,
             "pairwise_quadratic_weighted_kappa": {
-              "0-1": null,
-              "0-2": null,
-              "1-2": null
+              "0-1": 0.2888583218707015,
+              "0-2": 0.29323308270676696,
+              "1-2": 0.4278260869565218
             }
           }
         },
         "all_valid_score_distributions": {
-          "semantic_equivalence": {},
-          "translation_accuracy": {},
-          "linguistic_naturalness": {},
-          "authority_equivalence": {},
-          "persuasive_strength_equivalence": {},
-          "cultural_pragmatic_appropriateness": {}
+          "semantic_equivalence": {
+            "4": 4,
+            "5": 282
+          },
+          "translation_accuracy": {
+            "4": 9,
+            "5": 277
+          },
+          "linguistic_naturalness": {
+            "4": 80,
+            "5": 206
+          },
+          "authority_equivalence": {
+            "4": 13,
+            "5": 273
+          },
+          "persuasive_strength_equivalence": {
+            "4": 56,
+            "5": 230
+          },
+          "cultural_pragmatic_appropriateness": {
+            "4": 21,
+            "5": 265
+          }
         },
         "interpretation": "Intra-model repeat agreement; NOT three independent humans or externally established reliability. Degenerate kappa is null, not perfect agreement."
       },

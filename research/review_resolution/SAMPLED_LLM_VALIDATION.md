@@ -1,5 +1,26 @@
 # Sampled LLM-based multilingual validation
 
+## Observed collection outcome
+
+All **288 planned initial replies** were saved. **286 passed** the structured
+rubric and exact-evidence checks; **two failed exact-excerpt validation** and
+remain instrument failures, not translation failures. The group-level outcome
+is **94 provisional PASS and 2 PENDING** out of 96 selected groups. No sampled
+case was replaced or rescored to obtain a preferred rating. Thus collection is
+finished, but complete validation of even this sample is not claimed.
+
+None of the 94 complete groups met the provisional revision-trigger criteria,
+so no revision drafts or revised assessments were produced. This does not
+resolve the two pending groups or establish independent translation quality.
+The 1824 unselected groups remain unvalidated. Agreement and all individual
+ratings are in `results/llm_judge_sample/`.
+
+Sample-project conservative accounting is **US$22.17641750 / US$60**, including
+two HTTP500 transport-error reservations retained as unknown billing. Aggregate
+research accounting is **US$41.91251660 / US$650**. These are estimates, not
+provider invoices. The original US$20 authorization and all earlier spending
+remain preserved in the cumulative ledger.
+
 The user replaced the full-corpus request with random sampling. The new profile
 is `braintrust-gpt5-stratified-sample-v1`, separate from all previous attempts.
 

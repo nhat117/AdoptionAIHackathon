@@ -113,7 +113,7 @@ This is **LLM-based validation, not human validation**: three balanced language-
 
 The documented Astra configuration (OpenAI, n.d.) produced no scores; [failed access evidence](../results/llm_judge/validation_report.md) remains archived.
 
-The active judge is **GPT-5 via Braintrust Chat Completions**. Valid judgments: 0/288; group outcomes: {'PENDING': 96}; model/schema status: NOT_CHECKED. Worker/judge family overlap adds correlated-error and self-preference bias. Historical outputs are unchanged. [GPT-5 validation details](../results/llm_judge_sample/validation_report.md).
+The active judge is **GPT-5 via Braintrust Chat Completions**. Valid judgments: 286/288; group outcomes: {'PASS': 94, 'PENDING': 2}; model/schema status: VERIFIED_CHAT_COMPLETIONS_SMOKE. Worker/judge family overlap adds correlated-error and self-preference bias. Historical outputs are unchanged. [GPT-5 validation details](../results/llm_judge_sample/validation_report.md).
 
 **Sampled, not full validation:** one of 20 task groups was randomly drawn in each of 96 cohort/role/wording/record/attack strata (5% inclusion probability), before judging, without outcomes or prior ratings. The 96 trios receive 288 judgments; 1824 trios remain unvalidated. One group per stratum prevents direct within-stratum variance estimation. Earlier failed attempts remain separate.
 

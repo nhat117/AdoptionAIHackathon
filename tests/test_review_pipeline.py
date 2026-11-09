@@ -52,4 +52,12 @@ def test_final_report_is_bound_to_machine_readable_results():
     assert data["key_case_sensitivity"]["strategies"]["source_freshness"][
         "stale_reliance_block_recall"
     ]["numerator"] == 458
-    assert data["cost"]["aggregate_accounted_usd"] <= 20
+    original = json.loads((ROOT / "results/BUDGET_AUTHORIZATION.json").read_text())
+    approved = original["authorized_total_usd"]
+    additional = ROOT / "results/LLM_JUDGE_BUDGET_AUTHORIZATION_650.json"
+    if additional.exists():
+        approved = max(
+            approved, json.loads(additional.read_text())["authorized_total_usd"]
+        )
+    assert data["cost"]["cap_usd"] == approved
+    assert data["cost"]["aggregate_accounted_usd"] <= approved

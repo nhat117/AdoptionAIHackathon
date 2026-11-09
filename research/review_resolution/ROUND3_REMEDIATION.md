@@ -49,11 +49,11 @@ This is an implementation/evidence ledger, not another main manuscript.
 - **files changed:** research/review_resolution/ROUND3_NATIVE_REVIEW.csv, submission/final-review/SUBMISSION_CHECKLIST.md, research/review_resolution/AUTHOR_CONFIRMATION.json, research/VALIDATED_RESEARCH_REPORT.md
 - **fix:** Prepared actual neutral-template bilingual review rows, retained unfilled wording sheet and author form, explicit package/checklist; no fictitious sign-offs
 - **tests performed:** Unreviewed fields/anchor checks, packet preservation, report explicit pending status; no human/official-submission assertion
-- **results:** Files/preparation completed; native review and author identity still unconfirmed; automated Astra QA has zero returned scores; active Braintrust GPT-5 profile: 0/288 valid initial judgments, NOT_CHECKED; LLM-based, not human validation
+- **results:** Files/preparation completed; native review and author identity still unconfirmed; automated Astra QA has zero returned scores; active Braintrust GPT-5 profile: 286/288 valid initial judgments, VERIFIED_CHAT_COMPLETIONS_SMOKE; LLM-based, not human validation
 - **remaining limitations:** Real external review, confirmed authors/affiliations and official submission receipt require human/access input
 
 ## Validation and spending
 
 Final automated command results are recorded in `results/round3/validation_execution.json`; PDF visual/content review is hash-bound in `results/review_v3/EXPORT_REVIEW.json`. Neither receipt is native-speaker or author sign-off.
 
-Aggregate conservative accounting is US$19.73609910 / US$650, including unresolved reservations; not a provider invoice. No observed answer was replaced to make the outcome more successful.
+Aggregate conservative accounting is US$41.91251660 / US$650, including unresolved reservations; not a provider invoice. No observed answer was replaced to make the outcome more successful.
