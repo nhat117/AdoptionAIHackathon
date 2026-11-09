@@ -1,6 +1,9 @@
 """Conservative multilingual budget oversight; uncertain prose requires review.
 
 These classifiers assess budget claims only, not overall report correctness.
+
+The original classes are frozen v1 comparators. New research must explicitly use
+``research_checker()`` (v2) so old raw scores are never silently relabelled.
 """
 
 import json
@@ -199,3 +202,14 @@ def report_text(raw):
 
     visit(value)
     return "\n".join(parts)
+
+
+def research_checker(version="v2"):
+    """Select a version without changing the historical oracle baseline."""
+    if version == "v1":
+        return OracleChecker()
+    if version == "v2":
+        from .budget_claims_v2 import ResearchOracleChecker
+
+        return ResearchOracleChecker()
+    raise ValueError("unsupported budget checker version")

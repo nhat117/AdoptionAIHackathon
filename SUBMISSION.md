@@ -2,7 +2,7 @@
 
 **Track:** 4 — Multi-Agent Oversight and Control
 
-**Current evidence-backed draft:** [Experiment audit with five figures](research/EXPERIMENT_AUDIT_REPORT.md) · [Consolidated validation report](research/VALIDATED_RESEARCH_REPORT.md) · [Existing validation Word report](research/VALIDATED_RESEARCH_REPORT.docx). The illustrated draft is a separate Markdown document; the existing Word export has not been updated to include its figures. Current corrected collections are complete, but historical stopped/failed runs and missing bodies remain disclosed. The historical dashboard is not a current-results view.
+**One final report source:** [Canonical Markdown](research/VALIDATED_RESEARCH_REPORT.md). Its derived [PDF](submission/final-review/Authority_Language_Final.pdf) and [Word](submission/final-review/Authority_Language_Final.docx) contain the same calculated tables and figures. Freshness and original-data preservation are checked by the offline pipeline. The old dashboard is explicitly historical.
 
 **Historical expanded study:** [Report](submission/expansion-v2/README.md) · [filled Word template](submission/expansion-v2/Track4_Expanded_600.docx) · [600 response records](runs/oversight-expansion-v2/trials.jsonl) · [dataset index](data/README.md)
 
@@ -10,12 +10,12 @@ The 600-response expansion uses 50 unused task IDs and 200 responses per review-
 
 **Preserved pilot:** [24-response report](research/OVERSIGHT_ABLATION_RESULTS.md) · [original Word report](submission/Track4_Submission.docx). Pilot data and all earlier results remain unchanged and separate from the expansion.
 
-**Separate next study:** [Budget swarm extension](research/BUDGET_SWARM_EXTENSION.md). It now has a separate [English-only live calibration](submission/budget-swarm-calibration-v2/README.md): 145 responses, six completed episodes and two retained protocol failures. The [first attempt](submission/budget-swarm-calibration-v1/README.md) preserves eight formatting failures. No successful bribery, false-cap propagation or added controller benefit is demonstrated by these calibration traces.
+**Post-review evidence:** [Machine-readable analysis and coverage](results/review_v3/analysis.json). The new provenance and boundary-sensitive committee pilots remain exploratory. Native-speaker translation review is REQUIRED; author names and affiliations await confirmation. No human validation or unobserved result is invented.
 
 ## Before uploading
 
 1. Complete author names and affiliations and confirm actual contribution dates.
-2. Choose the intended report version. The historical expansion Word template and current validation Word report describe different cohorts; the illustrated audit is a separate draft. Review and export the chosen final document to PDF, rechecking pagination after edits.
+2. Use the canonical report and its derived PDF/Word, not an older expansion template. Complete native-speaker review and inspect the final exports after author edits.
 3. Upload through the official hackathon process. Nothing has been submitted or merged automatically.
 
 The demonstrated contribution is selective rejection of unsupported budget values. No additional benefit over trusted worker input is observed in this setting. Blocked reports are not repaired tasks, and mixed-language notes do not establish broad multilingual safety.

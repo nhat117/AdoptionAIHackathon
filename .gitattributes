@@ -1,0 +1,6 @@
+*.pdf binary
+*.docx binary
+*.png binary
+*.ttf binary
+# Preserve byte-identical archived originals, including their final blank lines.
+research/review_resolution/archive/** whitespace=-blank-at-eof

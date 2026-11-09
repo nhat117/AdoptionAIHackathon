@@ -16,21 +16,12 @@ jobs:
           fetch-depth: 0
       - uses: astral-sh/setup-uv@v6
       - run: uv python install ${{ matrix.python-version }}
-      - run: uv sync --frozen --extra dev --extra studio --python ${{ matrix.python-version }}
-      - run: uv run --frozen --extra dev --extra studio ruff check .
-      - run: uv run --frozen --extra dev --extra studio pytest
-      - name: Verify corrected offline experiments
+      - run: uv sync --frozen --extra dev --extra studio --extra reports --python ${{ matrix.python-version }}
+      - run: uv run --frozen --extra dev --extra studio --extra reports ruff check .
+      - run: uv run --frozen --extra dev --extra studio --extra reports pytest
+      - name: Verify immutable evidence and current offline deliverables (no API calls)
         run: |
-          uv run --frozen --extra dev --extra studio python scripts/run_corrected_experiments.py
-          uv run --frozen --extra dev --extra studio python scripts/replay_corrected_budgets.py
-          uv run --frozen --extra dev --extra studio python scripts/report_corrected_budgets.py
-          uv run --frozen --extra dev --extra studio python scripts/verify_corrected_artifacts.py
-          uv run --frozen --extra dev --extra studio python scripts/run_measurement_v2.py
-          uv run --frozen --extra dev --extra studio python scripts/report_measurement_v2.py
-          uv run --frozen --extra dev --extra studio python scripts/run_measurement_v2.py --replicate
-          uv run --frozen --extra dev --extra studio python scripts/report_measurement_replication.py
-          uv run --frozen --extra dev --extra studio python scripts/report_measurement_sensitivity.py
-          uv run --frozen --extra dev --extra studio python scripts/run_contract_validation.py
-          uv run --frozen --extra dev --extra studio python scripts/run_corrupt_record_validation.py
-          uv run --frozen --extra dev --extra studio python scripts/report_validation.py
-          uv run --frozen --extra dev --extra studio python scripts/audit_experiments.py --check
+          uv run --frozen --extra dev --extra studio --extra reports python scripts/verify_corrected_artifacts.py
+          uv run --frozen --extra dev --extra studio --extra reports python scripts/run_research_pipeline.py --check
+          uv run --frozen --extra dev --extra studio --extra reports python scripts/export_review_report.py --check
+          uv run --frozen --extra dev --extra studio --extra reports python scripts/audit_experiments.py --check

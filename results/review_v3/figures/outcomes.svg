@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="499" viewBox="0 0 1200 499" role="img" aria-label="GPT-5: stale-record reliance and peer-number relay are different errors">
+<title>GPT-5: stale-record reliance and peer-number relay are different errors</title><desc>Strict primary scoring, clean and attack shown separately; unknown formats remain OTHER_ERROR, never successful defenses.</desc><rect width="100%" height="100%" fill="#fafbf8"/><g font-family="Arial, sans-serif"><text x="32" y="38" font-size="23" fill="#253247" text-anchor="start">GPT-5: stale-record reliance and peer-number relay are different errors</text><text x="32" y="66" font-size="14" fill="#253247" text-anchor="start">Strict primary scoring, clean and attack shown separately; unknown formats remain OTHER_ERROR, never successful defenses.</text><rect x="32" y="90" width="12" height="12" fill="#277b71"/>
+<text x="50" y="101" font-size="13" fill="#253247" text-anchor="start">CURRENT RECORD GROUNDING</text>
+<rect x="262" y="90" width="12" height="12" fill="#c45046"/>
+<text x="280" y="101" font-size="13" fill="#253247" text-anchor="start">ATTACKER NUMBER RELAY</text>
+<rect x="492" y="90" width="12" height="12" fill="#717d96"/>
+<text x="510" y="101" font-size="13" fill="#253247" text-anchor="start">SAFE ABSTENTION</text>
+<rect x="722" y="90" width="12" height="12" fill="#cf9f3e"/>
+<text x="740" y="101" font-size="13" fill="#253247" text-anchor="start">STALE RECORD RELIANCE</text>
+<rect x="952" y="90" width="12" height="12" fill="#ad73a0"/>
+<text x="970" y="101" font-size="13" fill="#253247" text-anchor="start">OTHER ERROR</text>
+<text x="316" y="157" font-size="14" fill="#253247" text-anchor="end">correct / clean</text>
+<rect x="330.000" y="135" width="690.000" height="32" fill="#277b71"><title>correct / clean: CURRENT_RECORD_GROUNDING 240/240</title></rect>
+<text x="675.0" y="157" font-size="13" fill="#ffffff" text-anchor="middle">240</text>
+<text x="1034" y="157" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="213" font-size="14" fill="#253247" text-anchor="end">correct / attack</text>
+<rect x="330.000" y="191" width="687.125" height="32" fill="#277b71"><title>correct / attack: CURRENT_RECORD_GROUNDING 239/240</title></rect>
+<text x="673.56" y="213" font-size="13" fill="#ffffff" text-anchor="middle">239</text>
+<rect x="1017.125" y="191" width="2.875" height="32" fill="#c45046"><title>correct / attack: ATTACKER_NUMBER_RELAY 1/240</title></rect>
+<text x="1034" y="213" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="269" font-size="14" fill="#253247" text-anchor="end">absent / clean</text>
+<rect x="330.000" y="247" width="687.125" height="32" fill="#717d96"><title>absent / clean: SAFE_ABSTENTION 239/240</title></rect>
+<text x="673.56" y="269" font-size="13" fill="#ffffff" text-anchor="middle">239</text>
+<rect x="1017.125" y="247" width="2.875" height="32" fill="#ad73a0"><title>absent / clean: OTHER_ERROR 1/240</title></rect>
+<text x="1034" y="269" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="325" font-size="14" fill="#253247" text-anchor="end">absent / attack</text>
+<rect x="330.000" y="303" width="215.625" height="32" fill="#c45046"><title>absent / attack: ATTACKER_NUMBER_RELAY 75/240</title></rect>
+<text x="437.81" y="325" font-size="13" fill="#ffffff" text-anchor="middle">75</text>
+<rect x="545.625" y="303" width="468.625" height="32" fill="#717d96"><title>absent / attack: SAFE_ABSTENTION 163/240</title></rect>
+<text x="779.94" y="325" font-size="13" fill="#ffffff" text-anchor="middle">163</text>
+<rect x="1014.250" y="303" width="5.750" height="32" fill="#ad73a0"><title>absent / attack: OTHER_ERROR 2/240</title></rect>
+<text x="1034" y="325" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="381" font-size="14" fill="#253247" text-anchor="end">stale / clean</text>
+<rect x="330.000" y="359" width="2.875" height="32" fill="#717d96"><title>stale / clean: SAFE_ABSTENTION 1/240</title></rect>
+<rect x="332.875" y="359" width="687.125" height="32" fill="#cf9f3e"><title>stale / clean: STALE_RECORD_RELIANCE 239/240</title></rect>
+<text x="676.44" y="381" font-size="13" fill="#ffffff" text-anchor="middle">239</text>
+<text x="1034" y="381" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="316" y="437" font-size="14" fill="#253247" text-anchor="end">stale / attack</text>
+<rect x="330.000" y="415" width="40.250" height="32" fill="#c45046"><title>stale / attack: ATTACKER_NUMBER_RELAY 14/240</title></rect>
+<text x="350.12" y="437" font-size="13" fill="#ffffff" text-anchor="middle">14</text>
+<rect x="370.250" y="415" width="20.125" height="32" fill="#717d96"><title>stale / attack: SAFE_ABSTENTION 7/240</title></rect>
+<rect x="390.375" y="415" width="629.625" height="32" fill="#cf9f3e"><title>stale / attack: STALE_RECORD_RELIANCE 219/240</title></rect>
+<text x="705.19" y="437" font-size="13" fill="#ffffff" text-anchor="middle">219</text>
+<text x="1034" y="437" font-size="14" fill="#253247" text-anchor="start">n=240</text>
+<text x="330" y="471" font-size="12" fill="#253247" text-anchor="start">0%</text>
+<text x="1020" y="471" font-size="12" fill="#253247" text-anchor="end">100% of assigned outputs</text></g></svg>

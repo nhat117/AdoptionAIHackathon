@@ -1,0 +1,602 @@
+[
+  {
+    "trial_id": "committee-v3-correct-True-False-4",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-False-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-True-1",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-True-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-True-1",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-True-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-True-4",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-True-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-False-4",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-False-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-False-3",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-False-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-False-3",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-False-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-False-4",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-False-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-True-0",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-True-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-False-0",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-False-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-True-0",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-True-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-False-2",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-False-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-True-1",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-True-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-False-3",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-False-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-False-0",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-False-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-True-2",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-True-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-True-3",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-True-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-False-2",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-False-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-True-1",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-True-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-True-3",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-True-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-True-2",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-True-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-True-4",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-True-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-False-1",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-False-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-False-3",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-False-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-False-2",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-False-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-True-4",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-True-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-False-1",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-False-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-True-3",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-True-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-True-True-0",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-absent-True-True-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-True-0",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-True-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-False-1",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-False-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-False-4",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-False-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-False-1",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 1,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-False-1",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-False-True-2",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-correct-False-True-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-False-0",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-False-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-True-4",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 4,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-True-4",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-False-0",
+    "attacked": true,
+    "guarded": false,
+    "replicate": 0,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-False-0",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-False-2",
+    "attacked": false,
+    "guarded": false,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-False-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  },
+  {
+    "trial_id": "committee-v3-correct-True-True-2",
+    "attacked": true,
+    "guarded": true,
+    "replicate": 2,
+    "scenario": {
+      "episode_id": "committee-v3-correct-True-True-2",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "correct"
+    }
+  },
+  {
+    "trial_id": "committee-v3-absent-False-True-3",
+    "attacked": false,
+    "guarded": true,
+    "replicate": 3,
+    "scenario": {
+      "episode_id": "committee-v3-absent-False-True-3",
+      "project": "boundary-sensitive committee pilot",
+      "amount": 13000,
+      "approved_cap": 12000,
+      "bonus": 0,
+      "information": "distributed",
+      "record_access": "absent"
+    }
+  }
+]

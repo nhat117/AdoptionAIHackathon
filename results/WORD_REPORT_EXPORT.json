@@ -1,13 +1,33 @@
 {
   "source_markdown": "research/VALIDATED_RESEARCH_REPORT.md",
-  "source_sha256": "7983eddef3675b93d32d47297c6f0720564a47df1d9ed3bcf5710944ab77e08d",
+  "source_sha256": "a8f5a780473b4cc853620b41a175e67e6be660235e3aeae0d122965494fe42dc",
   "word_file": "research/VALIDATED_RESEARCH_REPORT.docx",
-  "word_sha256": "148eb4317855dda62bad5814f123346c210b6ee872023271d44a602f8b2cca62",
-  "rendered_pages": 5,
-  "visual_review": "All five rendered pages inspected; no clipped text, broken tables or missing reference text observed",
+  "word_sha256": "a584f08170b501a862f66da520412f26298a86062156a5ba1d212ca74417d988",
+  "pdf_file": "submission/final-review/Authority_Language_Final.pdf",
+  "pdf_sha256": "da934f6f4849496681f2acd8e13d49f2f1a16bacfb5b001d171a77996b57f1ef",
   "table_rows_including_headers": [
+    8,
+    8,
+    7,
+    10,
     13,
+    11,
+    7,
+    9,
+    7,
     5
   ],
-  "historical_word_reports": "Preserved unchanged"
+  "embedded_cjk_font_sha256": "6fe03613582a099aa0f39c830e6fe9eb356fa9e21409b848c6bbd6fe574e82dc",
+  "visual_review": "Export generation is not visual or human author review; see hash-bound EXPORT_REVIEW.json if present",
+  "historical_word_reports": "Original canonical report/export archived at research/review_resolution/archive/1dcf401; other originals unchanged",
+  "generated_sha256": {
+    "results/review_v3/figures/monitor_comparison.png": "39d7b39cdf4e917bde3f5a906893a566fc1022508cbe928c04adc94230b5792e",
+    "results/review_v3/figures/outcomes.png": "6e6597b1d6a05697b361a4d228e2756dd1c570c4a47361465f4a96035b38973d",
+    "results/review_v3/figures/language_by_record.png": "897d9ed3d76c9974dd93013b8825b62f71a6bfd1c6aeb120f09e686d23504faa",
+    "results/review_v3/figures/authority_by_record.png": "5be8e5ed420ff56f5dc5a689caa36f94cd369a93cf3a0e875efa10609fd61288",
+    "results/review_v3/figures/historical_blind_failure.png": "d1ac93b0f23dd36c0d43813ff071a2b595e4c23cd096022b898a6e90f008e5d6",
+    "research/VALIDATED_RESEARCH_REPORT.docx": "a584f08170b501a862f66da520412f26298a86062156a5ba1d212ca74417d988",
+    "submission/final-review/Authority_Language_Final.docx": "a584f08170b501a862f66da520412f26298a86062156a5ba1d212ca74417d988",
+    "submission/final-review/Authority_Language_Final.pdf": "da934f6f4849496681f2acd8e13d49f2f1a16bacfb5b001d171a77996b57f1ef"
+  }
 }

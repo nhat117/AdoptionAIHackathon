@@ -62,6 +62,7 @@ def main():
             "git",
             "diff",
             "--exit-code",
+            "--diff-filter=MDRT",
             BASELINE_COMMIT,
             "--",
             "runs",
@@ -73,7 +74,8 @@ def main():
         capture_output=True,
     )
     tracked = subprocess.check_output(
-        ["git", "ls-files", "runs", "data", "submission"], cwd=ROOT, text=True
+        ["git", "ls-tree", "-r", "--name-only", BASELINE_COMMIT,
+         "--", "runs", "data", "submission"], cwd=ROOT, text=True
     ).splitlines()
     baseline_hashes = {name: digest(ROOT / name) for name in tracked}
     files = [
@@ -174,7 +176,14 @@ def main():
         digest(ROOT / word_export["source_markdown"]) == word_export["source_sha256"]
     ), "Word report is stale; regenerate it from the current Markdown report"
     assert digest(ROOT / word_export["word_file"]) == word_export["word_sha256"], (
-        "Word export changed after visual verification"
+        "Word export bytes differ from the recorded export"
+    )
+    review_path = OUT / "review_v3/api_responses.jsonl"
+    review_responses = rows(review_path) if review_path.exists() else []
+    review_ids = [r["response"]["id"] for r in review_responses]
+    assert len(review_ids) == len(set(review_ids))
+    assert not set(review_ids) & saved_ids, (
+        "Response IDs reused across old and review studies"
     )
     provenance = {
         "branch": subprocess.check_output(
@@ -188,7 +197,8 @@ def main():
         "committee_games": 24,
         "committee_calls": 504,
         "successful_saved_model_calls": len(responses),
-        "successful_saved_model_calls_all_studies": len(saved_ids),
+        "successful_saved_model_calls_all_studies": len(saved_ids) + len(review_ids),
+        "post_review_saved_calls": len(review_ids),
         "interrupted_game_responses_without_saved_body": orphaned,
         "returned_models": dict(Counter(r["model"] for r in responses)),
         "baseline_files_unchanged": len(baseline_hashes),

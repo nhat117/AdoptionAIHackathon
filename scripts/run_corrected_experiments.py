@@ -35,6 +35,14 @@ class Client:
             fcntl.flock(f, fcntl.LOCK_EX)
             f.seek(0)
             total = sum(json.loads(line)["reserved_usd"] for line in f)
+            # Include the append-only post-review ledger. Lock order matches the
+            # review client (original first, review second), so legacy collectors
+            # cannot independently spend the same remaining aggregate budget.
+            review_ledger = OUT / "review_v3/ledger.jsonl"
+            if review_ledger.exists():
+                with review_ledger.open() as review:
+                    fcntl.flock(review, fcntl.LOCK_SH)
+                    total += sum(json.loads(line)["reserved_usd"] for line in review)
             if total + reserve > self.cap:
                 raise RuntimeError("budget_cap_reached")
             f.write(

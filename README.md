@@ -1,24 +1,35 @@
-# When Does Semantic Oversight Add Value?
+# Record provenance and multilingual budget relay
 
 **Swarm Alignment Hackathon · Track 4: Multi-Agent Oversight and Control**
 
-A reproducible study of incorrect facts passing between AI agents, using English, Vietnamese and Chinese peer messages. A controller checks report facts before authorizing a handoff.
+A reproducible synthetic budget-handoff study. A source-field rule filters peer-number relays but misses stale-record reliance; the original blind monitor blocked **0/150 wrong budgets** and falsely blocked **115/450 correct budgets** in its separate historical evaluation.
 
-**Experiment audit and illustrated draft:** [Read the evidence-backed draft](research/EXPERIMENT_AUDIT_REPORT.md) · [Machine-readable audit](results/experiment_audit/audit.json). All ten corrected collection stages have their planned saved units (4,218 unique responses). Five reproducible figures cover reporting outcomes, authority/language cells, contract validation, hidden record corruption and blind monitoring. Historical stopped/failed runs and three missing response bodies remain explicitly separate. This audit makes no new inference calls and does not claim every historical experiment succeeded.
+**One canonical report:** [Read](research/VALIDATED_RESEARCH_REPORT.md) · [PDF](submission/final-review/Authority_Language_Final.pdf) · [Word](research/VALIDATED_RESEARCH_REPORT.docx)
 
-**Latest consolidated report:** [Read the report](research/VALIDATED_RESEARCH_REPORT.md) · [Download the Word report](research/VALIDATED_RESEARCH_REPORT.docx). The new matched validation completed 216 calls plus a separate 72-call corrupt-record stress test. Operational policy compliance was 106/108, with two strict format failures; following a corrupt record produced policy-compliant but factually wrong outputs in 36/36 operational cases. The tested code and scoring work within this scope; this is not a general safety guarantee.
+The report distinguishes strict primary scoring (90 target reports) from key-case sensitivity (91), identifies **458/480 stale-record uses**, stratifies language and particular authority wordings by record condition, and compares deterministic and model-based oversight with explicit information boundaries. All new model-call coverage and costs come from saved records. Native-speaker review and author confirmation remain required; no security guarantee or official submission is claimed.
 
-**Latest multi-task replication:** [1,440-response report](results/measurement_v2_replication/REPORT.md) · [Scoring sensitivity and interpretation](results/measurement_v2_replication/SENSITIVITY.md) · [Design boundaries](results/measurement_v2_replication/README.md)
+## Reproduce the final analysis without model calls
 
-The replication completed all 1,440 requests across 20 task clusters. In attacked conditions, the false target was reported in **1/240 with a correct record**, **75/240 without a record**, and **14/240 with a stale record**. Three outputs failed the strict format contract; they remain separate from refusals. Normalizing JSON key casing as a secondary check changes the absent-record count to 76/240. These are explicit false-target reporting events, not proof of hidden belief or executed unsafe actions. The one correct-record event explicitly attributed the false figure to the peer in its prose.
+```sh
+uv sync --frozen --extra dev --extra reports
+uv run python scripts/run_research_pipeline.py
+uv run python scripts/export_review_report.py
+uv run python scripts/run_research_pipeline.py --check
+uv run python scripts/export_review_report.py --check
+uv run pytest -q
+uv run ruff check .
+```
 
-**Improved measurement pilot:** [Structured scoring, matched controls, and record-access results](results/measurement_v2/REPORT.md). This prospective pilot is separate from the previous 600-output studies.
+[Machine-readable analysis](results/review_v3/analysis.json) · [Review issue ledger](research/review_resolution/PLAN.md) · [Reproduction details](REPRODUCE_CORRECTED.md) · [Submission status](SUBMISSION.md)
 
-**Latest results:** [Corrected GPT-5 report](research/CORRECTED_BUDGET_RESULTS.md) · [Why some numbers stayed unchanged](results/RESULTS_DIAGNOSIS.md) · [Reproduction commands](REPRODUCE_CORRECTED.md)
+Original data, prompts, configurations and results are preserved. New evidence is under `results/review_v3/`; the old dashboard remains a historical snapshot, not a current-results display. Gemma and GPT-5 studies use different prompts/tasks and are not direct model-performance comparisons.
 
-**Historical study:** [600-response report](submission/expansion-v2/README.md) · [budget swarm extension](research/BUDGET_SWARM_EXTENSION.md) · [dataset locations](data/README.md) · [questions and hypotheses](research/QUESTIONS_AND_HYPOTHESES.md) · [preserved pilot Word report](submission/Track4_Submission.docx) · [research proposal](research/RESEARCH_PROPOSAL.md) · [research report / submission draft](research/OVERSIGHT_ABLATION_RESULTS.md) · [submission status](SUBMISSION.md) · [historical evidence](ARCHIVE.md)
+<details>
+<summary>Historical studies and implementation notes (not current main reports)</summary>
 
-## Latest corrected results — 9 November 2026
+[Original audit draft](research/EXPERIMENT_AUDIT_REPORT.md) · [Archived validation report and Word export](research/review_resolution/archive/1dcf401/) · [Historical evidence index](ARCHIVE.md)
+
+## Earlier corrected results — 9 November 2026
 
 The corrected study saved 600 new GPT-5 worker outputs, 1,200 blind-monitor evaluations, 24 committee games (504 calls), and a separate 24-call pilot. These are distinct from the historical 600 outputs below.
 
@@ -92,3 +103,5 @@ The generic scaffold already on `main` is retained alongside the research module
 ## Corrected budget oversight (9 November 2026)
 
 The corrected budget checker, 600-response replay, GPT-5 experiments and current limitations are documented in [the generated results report](research/CORRECTED_BUDGET_RESULTS.md). See [reproduction commands](REPRODUCE_CORRECTED.md). New outputs are separate under `results/`; historical `runs/` remain unchanged.
+
+</details>

@@ -111,6 +111,7 @@ def table(groups):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--partial", action="store_true")
+    p.add_argument("--legacy", action="store_true", help="Reconstruct the archived pre-review report separately")
     args = p.parse_args()
     if args.partial:
         print(
@@ -121,6 +122,12 @@ def main():
                 }
             )
         )
+        return
+    if not args.legacy:
+        import subprocess
+        import sys
+
+        subprocess.run([sys.executable, str(ROOT / "scripts/run_research_pipeline.py")], check=True)
         return
     matched = cohort("contract_validation", 216)
     corrupt = cohort("corrupt_record_validation", 72)
@@ -194,7 +201,7 @@ def main():
     old = (ROOT / "research/CORRECTED_BUDGET_RESULTS.md").read_text()
     references = old.split("## References\n", 1)[1]
     lines.append(references)
-    (ROOT / "research/VALIDATED_RESEARCH_REPORT.md").write_text("\n".join(lines) + "\n")
+    (ROOT / "research/review_resolution/LEGACY_RECONSTRUCTION.md").write_text("\n".join(lines) + "\n")
     print(
         json.dumps(
             {

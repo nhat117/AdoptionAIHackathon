@@ -13,6 +13,7 @@ dependencies = ["adaption>=0.19,<1", "python-dotenv>=1,<2", "langgraph>=1,<2"]
 [project.optional-dependencies]
 studio = ["langgraph-cli[inmem]>=0.4,<1"]
 dev = ["pytest>=8,<9", "ruff>=0.14,<1"]
+reports = ["python-docx>=1,<2", "reportlab>=4,<5", "pillow>=11,<13"]
 
 [project.scripts]
 adaption-starter = "adaption_starter.cli:main"
@@ -69,3 +70,13 @@ testpaths = ["tests"]
 "scripts/run_corrupt_record_validation.py" = ["E501"]
 "scripts/report_validation.py" = ["E501"]
 "scripts/audit_experiments.py" = ["E501"]
+
+# Review analysis: explicit statistical contracts, prompt/data tables and report prose.
+"src/ai2ai_guard/review_*.py" = ["E501"]
+"src/ai2ai_guard/budget_claims_v2.py" = ["E501"]
+"src/swarm_lab/review_committee.py" = ["E501"]
+"scripts/run_review_followup.py" = ["E501"]
+"scripts/run_research_pipeline.py" = ["E501"]
+"scripts/report_review_followup.py" = ["E501"]
+"tests/test_review_followup.py" = ["E501"]
+"scripts/export_review_report.py" = ["E501"]

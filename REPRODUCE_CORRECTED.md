@@ -1,5 +1,15 @@
 # Corrected budget oversight experiments
 
+## Current canonical pipeline (post-review)
+
+Run `uv sync --frozen --extra dev --extra reports`, then `uv run python scripts/run_research_pipeline.py` and `uv run python scripts/export_review_report.py`. Both commands are offline. Their `--check` modes reject stale analysis, tables, figures, Word and PDF exports. `report_measurement_replication.py --review` and `report_validation.py` now route to this pipeline; `report_validation.py --legacy` reconstructs the earlier report separately without replacing the canonical report.
+
+New inference uses `scripts/run_review_followup.py --stage monitors|pilot|pilot-monitors|committee --run --cap-usd 20`. Without `--run`, it only freezes inputs and records estimates. Do not run merely to regenerate analysis. It reuses the original 1440 workers, preserves original ledgers/data, and uses a new append-only review ledger whose cap checks include the old ledger. Source hashes and assigned IDs are immutable on resume. Every returned body is saved before scoring; errors, unknown billing and pending IDs remain explicit. No credentials are written to reports. The preflight estimated 3828 calls at about US$6.43; actual totals are calculated in the canonical report.
+
+Original result files are protected by `research/review_resolution/PRESERVED.json`. Historical scripts below reproduce older analyses and may rewrite their derived files; run them at their historical commit or in a separate checkout, not over the preserved final evidence. The earlier validation Markdown/Word/export metadata are archived at `research/review_resolution/archive/1dcf401/`.
+
+## Historical commands and design
+
 Source branch: `codex/authority-language-v3`, baseline commit
 `d38bbd4b225ddebff1c8d1d412ec2902d31d6a41`.
 Python 3.11 or newer is required. Run from the repository root.

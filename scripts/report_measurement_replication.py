@@ -22,7 +22,14 @@ def read(name):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--partial", action="store_true")
+    p.add_argument("--review", action="store_true", help="Run record-stratified post-review analysis without overwriting original results")
     args = p.parse_args()
+    if args.review:
+        import subprocess
+        import sys
+
+        subprocess.run([sys.executable, str(ROOT / "scripts/run_research_pipeline.py")], check=True)
+        return
     inputs = read("inputs.jsonl")
     rows = read("workers.jsonl")
     expected = {r["trial_id"]: r for r in inputs}
