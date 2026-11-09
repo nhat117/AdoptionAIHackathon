@@ -13,7 +13,7 @@
       "PENDING": 1920
     },
     "judge_accounted_usd": 0.60335,
-    "aggregate_research_accounted_usd": 17.71277785,
+    "aggregate_research_accounted_usd": 17.93456035,
     "pricing": {
       "model": "gpt-6-astra",
       "input_per_million": 10.0,

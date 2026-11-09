@@ -2,6 +2,28 @@
 
 ## Round 3 validity correction
 
+### Active Braintrust GPT-5 judge
+
+`python scripts/run_gpt5_judge.py` freezes/checks the separate GPT-5 profile and
+estimates costs without creating an API client. `--smoke --cap-usd 0.5` requests
+three schema-checked, language-order-balanced judgments on the first fixed group.
+`--run --cap-usd CAP` requires that successful smoke receipt; `--revisions` drafts
+and blindly reassesses flagged groups in a separately versioned suggestion set.
+All caps are cumulative, and all requests share the existing aggregate budget,
+including failed Astra reservations. The full corpus is not affordable within
+the current remainder; do not interpret smoke coverage as completed validation.
+
+Configure `OPENAI_API_KEY` and `OPENAI_BASE_URL` for `api.braintrust.dev` without
+putting credentials in the repository. The official SDK sends Chat Completions,
+strict JSON schema, high reasoning effort, 8192 maximum completion tokens, and
+cache-bypass headers. Returned model must be `gpt-5-2025-08-07`. Raw responses,
+tokens, failed attempts and cost events are retained under `results/llm_judge_gpt5/`.
+Offline verification: `python scripts/report_llm_judge.py --profile gpt5 --check`.
+The frozen `run_llm_judge.py` remains the legacy Astra runner, not the active
+entry point. Its rubric/schema identifier is intentionally reused as a rubric
+version only; the new protocol and response metadata identify the GPT-5 model.
+Worker/judge model-family overlap and correlated repeat judgments are limitations.
+
 The canonical pipeline now generates the concise eight-section main manuscript,
 `research/ROUND3_APPENDIX.md`, wording×language cells/interactions, raw-field versus
 strict-schema diagnostics and R1–R5 remediation under `results/round3/`.

@@ -1,5 +1,27 @@
 ## Scope
 
+### Active judge switched to Braintrust GPT-5
+
+The user-requested switch uses a separate `braintrust-gpt5-multilingual-v1`
+profile and the working Braintrust **Chat Completions** route, not the failed
+Astra Responses route. See `GPT5_JUDGE_SWITCH.md` and
+`results/llm_judge_gpt5/validation_report.md` for actual smoke status and coverage.
+Strict structured output, three balanced language-order requests, exact-evidence
+validation, agreement and versioned/blinded reassessment remain supported.
+Raw API bodies and all token/cost events are retained. The old Astra evidence,
+its unresolved reservation and all worker outputs remain unchanged.
+
+The smoke allocation is US$0.50, within the existing shared US$20 cap; full
+5760-request judging is not funded by that remainder and is not claimed complete.
+Using GPT-5 both as worker and judge adds same-model-family bias. This remains
+**LLM-based validation, not human validation**. Native review, author confirmation
+and official submission remain unconfirmed.
+
+The Braintrust smoke completed successfully: **3/3 valid structured judgments**
+from `gpt-5-2025-08-07` on one fixed trio, with a hash-bound smoke receipt.
+This is transport/model/schema verification, not full-corpus linguistic validation.
+**384 tests pass on Python 3.11 and 3.12**; lint and offline report/export checks pass.
+
 ### Round 3 scientific-validity correction
 
 - **R1:** reanalyzed all 4320 answers with task-blocked wording×language interactions (18 Holm-corrected contrasts per scoring definition). Strict no-record counts are 25/6/64, 66/46/50, 51/59/43 (/80 each). The review's 66/48/50 and 51/59/44 are raw numeric-field diagnostics including three contradictory ABSTAIN+nonnull-target outputs. Both definitions and all ambiguous transcripts are retained; no universal language-persuasion claim.

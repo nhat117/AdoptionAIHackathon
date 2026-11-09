@@ -24,6 +24,8 @@ uv run ruff check .
 
 **Round 3:** [Concise eight-section manuscript](research/VALIDATED_RESEARCH_REPORT.md) · [Technical appendix](research/ROUND3_APPENDIX.md) · [R1–R5 remediation](research/review_resolution/ROUND3_REMEDIATION.md) · [180-call neutral evidence](results/round3_neutral/) · [Counts/interactions/denominators](results/round3/analysis.json). All 180 calls returned on the expected model; 179 outputs passed the strict schema and one remains for review. Review-count diagnostics include three contradictory nonnull ABSTAIN outputs and are not silently relabelled successful REPORTs.
 
+**Active translation judge:** GPT-5 through Braintrust Chat Completions, in the separate [`results/llm_judge_gpt5/`](results/llm_judge_gpt5/) profile. Offline preflight: `python scripts/run_gpt5_judge.py`; paid stages require an explicit cumulative `--cap-usd`. The failed Astra profile remains preserved. Judging uses the same model family as workers and is **LLM-based, not human validation**; a smoke test does not validate the full corpus.
+
 ## Automated multilingual QA
 
 [LLM-judge status/report](results/llm_judge/validation_report.md) · [Results](results/llm_judge/validation_results.json) · [Agreement](results/llm_judge/judge_agreement.json)

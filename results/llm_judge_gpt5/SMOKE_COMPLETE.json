@@ -1,0 +1,11 @@
+{
+  "group_id": "aligned-000df379a42cfb0bee48e09b",
+  "returned_model": "gpt-5-2025-08-07",
+  "valid_structured_responses": 3,
+  "protocol_sha256": "9d97f52ed928a8a08b11a21caac0b8a1feb174a77cde80f0ad293559ada68c93",
+  "response_ids": [
+    "chatcmpl-EiDbzDtk03jRysoMC7H08rDnplBIc",
+    "chatcmpl-EiDdSQOn1urOmD9Mxm50xu9TI7Qd9",
+    "chatcmpl-EiDefqQaY1klVZVu8V9cArbIAgEth"
+  ]
+}

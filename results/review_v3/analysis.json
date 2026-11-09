@@ -28191,8 +28191,8 @@
   },
   "cost": {
     "original_accounted_usd": 5.7395241,
-    "review_accounted_usd": 11.97325375,
-    "aggregate_accounted_usd": 17.71277785,
+    "review_accounted_usd": 12.19503625,
+    "aggregate_accounted_usd": 17.93456035,
     "cap_usd": 20,
     "invoice": false
   },
@@ -28209,7 +28209,7 @@
       "prompt_tokens": 1643285,
       "completion_tokens": 427799
     },
-    "api_attempts": 8329,
+    "api_attempts": 8332,
     "unresolved_reservations": [
       "c5a4ac76-8699-4ff4-9f61-9c39ec2112df",
       "d7f054b2-efb5-4896-9d08-8194e111a01f"
@@ -43239,7 +43239,7 @@
     "results/measurement_v2_replication/inputs.jsonl": "0b48c1b3f641e5369c66e4eba29ca10e20253956324608ac966ad922aa463b1f",
     "results/historical-monitor/outputs.jsonl": "3363c8fa4389992ae31d13079afdda5cf2b0629497425194f85d0a509bf457ae",
     "research/review_resolution/PRESERVED.json": "adae38609eafcd890aec68b3f8614f2b0ae06ff4934153f01f541dd5777c5492",
-    "src/ai2ai_guard/review_analysis.py": "2583611962386308e1cfd2007ff0286e9956bf96c651543beb9cf026f29dc0c6",
+    "src/ai2ai_guard/review_analysis.py": "af52e822c0e6d8399cff58ecd345a4df5e6b408adb4b87958f49232b2753169d",
     "src/ai2ai_guard/review_client.py": "156a590840e45932287f675dbebda2f54f25516d32c62dc50c20e2cea80b8b05",
     "src/ai2ai_guard/review_design.py": "f5d270f8836de6878453752745e7a5aac9eed863f542c898f80bc2204f258739",
     "src/ai2ai_guard/review_measurement.py": "4a7bcb909fb09cc5030d2d730a3ba7991e365c1aeeb4b7a0c8dc3f9fd9c024d7",
@@ -43248,13 +43248,13 @@
     "src/ai2ai_guard/review_translations.py": "b445d9b9d095562d34bbe7a52c17d51342c0d2ae339fb8d80e2e0a0682874a83",
     "src/ai2ai_guard/budget_claims_v2.py": "453780a962a3daa1cf54047d3932742fca94dcbfd843ab00d30efb22682e62a1",
     "src/swarm_lab/review_committee.py": "006fa825665c5b48936645abd77b119d50f85ca8c4d1f8e32929b0b8b7f35f22",
-    "scripts/run_research_pipeline.py": "9b1698af7366e0003d66c50f47bf4fa9b0860d0e9ee2195f875f882cec16e2e4",
+    "scripts/run_research_pipeline.py": "17c8d52160233ae23a232be063001530aaf635862439b7eb5b2be009b8393364",
     "scripts/report_review_followup.py": "61c7465d7b1f4552d3bc5530cf66a473e5ca2cf35742bf66a9bc28fea387366a",
     "scripts/export_review_report.py": "ea23c8fb85ce448b3d849bebb5725b7538ce6eb680fdd13ab0b081b1c236815a",
     "research/review_resolution/fonts/NotoSansSC-report-subset.ttf": "6fe03613582a099aa0f39c830e6fe9eb356fa9e21409b848c6bbd6fe574e82dc",
     "src/ai2ai_guard/authority_followup.py": "ff199d1232bce178ec6426e3b63742294befa8e178c5c2d89b5881720d1c1fdc",
     "src/ai2ai_guard/round3_analysis.py": "d3e5e4a0f167a8d0fa71285f47985483b3b0d50cc755b90a66ba830122c91369",
-    "scripts/report_round3.py": "19296e580ea2bae6ff06363d8b97b059f03ab673e65cee351286f436949888d2",
+    "scripts/report_round3.py": "f240f0a802851318618e2e5da9cf90363934922bed86bdacd95c87b697b45612",
     "results/round3_neutral/inputs.jsonl": "19da72458edc7d1fce720aaa6a33534ee251fdb0ebb95235a69fcd4e20fbb7fb",
     "results/round3_neutral/workers.jsonl": "dabc1b3e6f08c9a654b96754f44b02bcc83705a7e8488554d732f8e9a610bfa9",
     "results/round3_neutral/PROTOCOL.json": "6ed6923cc3c19d486ffaf669d18ffc91aca2f9ba6d5309cecda3e0071cf0ac70",
@@ -43265,6 +43265,14 @@
     "results/llm_judge/endpoint_checks.jsonl": "8688f025c50182c1f6581e91f5b797627aba222cf4868a69988b15b26905221a",
     "results/llm_judge/errors.jsonl": "0a8f4f417cb7e97e5ed28fa1574b90dd7feb466bc4b28cd4c2c8c08ffffb6907",
     "results/llm_judge/PROTOCOL.json": "05e0ee724ce74cdf423ceefca0ab7eb581420c4393aa166e471caf56dc90dffc",
+    "results/llm_judge_gpt5/aligned_prompts.jsonl": "c56af990f6995470cc5fe3d4158b44761772e331c1faad379e72101066631e40",
+    "results/llm_judge_gpt5/authorizations.jsonl": "7545b7e5b4e633ff17fe494e3ca76e97f815060409b522a398e05f25b1c26c5d",
+    "results/llm_judge_gpt5/cost_ledger.jsonl": "1d387f37be069023284254dadba4b1ce99966b97d7b1fc18835b942839eef293",
+    "results/llm_judge_gpt5/judgments.jsonl": "30b85b62ee0e086de9bf3300728ba3953c3bf63b8c2e4092434b841347583b19",
+    "results/llm_judge_gpt5/raw_responses.jsonl": "fbc2ac73c7fdd79bd477b21c4327450ecded3ea005c89f53897d43278a1ec329",
+    "results/llm_judge_gpt5/PROTOCOL.json": "9d97f52ed928a8a08b11a21caac0b8a1feb174a77cde80f0ad293559ada68c93",
+    "src/ai2ai_guard/gpt5_judge_api.py": "c3d5f3aeecb1836697ad317f67cd24abfd244496a4079a20ec1e111a27892126",
+    "scripts/run_gpt5_judge.py": "50581975bb44d7661e33ae68a23f6cbf103fe4375fe5b0b66def4f0b2729a04d",
     "configs/authority-followup-v1.json": "c532ef5d94b29fa5b01ebed2c685444142c29120cb6ee3b3dd061bf136999ad8",
     "results/authority_wording_v2/PROTOCOL.json": "e99ccb33dcb76aaca8bb82e43f1d900caa746943c1d92d0279afd9c0bdb4998f",
     "scripts/run_authority_wording_followup.py": "b244da2bbf7cefef8c685a0bb13130f8d92609a54c56ee949eaa344cbe986d1d",
@@ -43272,7 +43280,7 @@
     "results/authority_wording_v2/workers.jsonl": "4140326afbded3bf138e93894cd772fa374c4aa59e0ba7ffefbcec884824a16c",
     "results/review_v3/api_responses.jsonl": "e60cf6929643c45cdf4d3579ca4fcc4fc622c2aecaf68b2406dad2a9e5d0c0b3",
     "results/review_v3/committee/outputs.jsonl": "fc40780439145db5e41ceac782f1908937d79303a6aad42a2f24ac8e56eb682e",
-    "results/review_v3/ledger.jsonl": "741a82ff2ecb11ec809eed801167281e49f73f9f029bd47957942aab8bc565c4",
+    "results/review_v3/ledger.jsonl": "7177a4081a0a1a9884d1047c798a8f5c17d1839e3b49d27ef061bd40ac2f3ccc",
     "results/review_v3/monitors/outputs.jsonl": "652c94bbb8bea1782b3ec03c54166335722c8287d75e30c7c939e4ac3d10105d",
     "results/review_v3/pilot/outputs.jsonl": "64bbeddf631096a6eb92499d9cb1b56871838d6aaf9c13c9ed44a13208b95194",
     "results/review_v3/pilot-monitors/outputs.jsonl": "f9925cd0119200b3f2b1c771535d1c80ad73ce2cecc35b523065d5a36f38ebe2"
@@ -43291,7 +43299,7 @@
       "PENDING": 1920
     },
     "judge_accounted_usd": 0.60335,
-    "aggregate_research_accounted_usd": 17.71277785,
+    "aggregate_research_accounted_usd": 17.93456035,
     "pricing": {
       "model": "gpt-6-astra",
       "input_per_million": 10.0,
@@ -43384,6 +43392,79 @@
       }
     ]
   },
+  "gpt5_judge_summary": {
+    "model": "gpt-5",
+    "reasoning_effort": "high",
+    "validation_type": "LLM_BASED_NOT_HUMAN",
+    "source_prompt_records": 5760,
+    "aligned_groups": 1920,
+    "planned_initial_judge_requests": 5760,
+    "saved_initial_records": 3,
+    "saved_valid_initial_judgments": 3,
+    "raw_responses": 3,
+    "group_outcomes": {
+      "PASS": 1,
+      "PENDING": 1919
+    },
+    "judge_accounted_usd": 0.2217825,
+    "aggregate_research_accounted_usd": 17.93456035,
+    "pricing": {
+      "model": "gpt-5",
+      "input_per_million": 1.25,
+      "output_per_million": 10.0,
+      "source": "Existing GPT-5 worker accounting rates; no cache discount assumed",
+      "mode": "Token-based estimate, not a provider invoice or verified proxy surcharge"
+    },
+    "cost_estimate": {
+      "aligned_groups": 1920,
+      "initial_judge_requests": 5760,
+      "initial_no_retry_conservative_ceiling_usd": 581.91156,
+      "initial_max_retry_conservative_ceiling_usd": 1745.73468,
+      "initial_planning_estimate_usd": 345.98196,
+      "planning_output_tokens_per_call_not_observed": 4096,
+      "pricing": {
+        "model": "gpt-5",
+        "input_per_million": 1.25,
+        "output_per_million": 10.0,
+        "source": "Existing GPT-5 worker accounting rates; no cache discount assumed",
+        "mode": "Token-based estimate, not a provider invoice or verified proxy surcharge"
+      },
+      "scope": "All 1920 aligned groups; no template deduplication; revisions cost extra"
+    },
+    "availability": {
+      "status": "VERIFIED_CHAT_COMPLETIONS_SMOKE",
+      "metadata_check": {
+        "status": "NOT_CHECKED"
+      },
+      "returned_model": "gpt-5-2025-08-07"
+    },
+    "invoice": false,
+    "historical_experimental_outputs_changed": false,
+    "completed_full_validation": false,
+    "source_files_sha256": {
+      "results/measurement_v2_replication/workers.jsonl": "f029b808d6034c71b57ff9e11667090dc0f29a4bb299af24f227a98f681c571b",
+      "results/measurement_v2_replication/inputs.jsonl": "0b48c1b3f641e5369c66e4eba29ca10e20253956324608ac966ad922aa463b1f",
+      "results/authority_wording_v2/workers.jsonl": "4140326afbded3bf138e93894cd772fa374c4aa59e0ba7ffefbcec884824a16c",
+      "results/authority_wording_v2/inputs.jsonl": "3fd14087c50757a7723b368af00bc8f85a23b1dcfcee3ed03c90a0676c7998be"
+    },
+    "revision_groups_required": 0,
+    "revision_sets_saved": 0,
+    "fully_reassessed_revision_groups": 0,
+    "all_requested_work_complete": false,
+    "raw_returned_model_ids": {
+      "gpt-5-2025-08-07": 3
+    },
+    "invalid_saved_judgments": 0,
+    "request_error_events": 0,
+    "request_http_statuses": {},
+    "execution_status": {
+      "status": "SMOKE_COMPLETE_CORPUS_PENDING",
+      "timestamp_utc": "2026-11-09T07:02:11.214949+00:00"
+    },
+    "endpoint_checks": [],
+    "profile": "braintrust-gpt5-multilingual-v1",
+    "same_worker_judge_model_family": true
+  },
   "generated_sha256": {
     "results/review_v3/figures/outcomes.svg": "d7dc7bfb54606437c3c5113e485525f257bb5395c957901c0bab3539bf96182a",
     "results/review_v3/figures/language_by_record.svg": "ab698754c6d0d865390a62e0cba033aeb4a2555bd1f61269239217ad5b9daf45",
@@ -43391,16 +43472,22 @@
     "results/review_v3/figures/monitor_comparison.svg": "cc1a9898278178af6a4b28857e9ba1f6cb33c7140be7b5bcc5493b691b62b064",
     "results/review_v3/figures/historical_blind_failure.svg": "59f19bb8ebe6e7494376a04c9a889071acc3709d6e1390e66e07167c5299fad1",
     "results/review_v3/figures/authority_wording_followup.svg": "c1143afe553018f54fc5abde82528decd020410c68c8e21be8072e26e9d86969",
-    "results/llm_judge/validation_results.json": "bef0197276e1f0faaa5fa23af45ed1292e4b615c7da48241262133322e71573a",
+    "results/llm_judge/validation_results.json": "24bd07fe78e326ee85b27c41b1daac59c2eba6c8cb706cda1c50af635ae01750",
     "results/llm_judge/validation_scores.csv": "32f8106ee3557f4673cd648413f4197143abd1eb6d8b0edbd92f5130189839e7",
     "results/llm_judge/flagged_prompts.csv": "17788fdea1f644c608d34cd2301890c44511977622e48efab9f5f8359da24a82",
     "results/llm_judge/revised_prompts.json": "de7023e7eeef96e58eeeb0b1f295387d8b4bf97cd945bf06286cbc791b480053",
     "results/llm_judge/judge_agreement.json": "36d5ba62a28c7305bc7dd3388f756fc3a42f08ed0d12fd975f7d498efc2483cf",
-    "results/llm_judge/validation_report.md": "ec6837f91a3b154b5bd7f52e38efa938f6aea4e340f593df6de07ee2862324e5",
+    "results/llm_judge/validation_report.md": "559e9486a6ffe2c74a2e70375498313a99d09e398190c6d1bc907031d9e4dada",
+    "results/llm_judge_gpt5/validation_results.json": "2283edc17ebe81ead97aeb1b5649079053f4057d5853e00702862b0fb5b8e661",
+    "results/llm_judge_gpt5/validation_scores.csv": "7bc2f99b2b7d1234ac99533cfec537913aff8b6d7c8e037286b40be68445967f",
+    "results/llm_judge_gpt5/flagged_prompts.csv": "17788fdea1f644c608d34cd2301890c44511977622e48efab9f5f8359da24a82",
+    "results/llm_judge_gpt5/revised_prompts.json": "5d7880e8bf37cf2b8d0df8580c34ae8a1cc985f8099837f83c123817e5868845",
+    "results/llm_judge_gpt5/judge_agreement.json": "3ed04a905d7b76947519cd6f415cf6d4e6396a0d6b2d4f8ba59417ec759f3ae4",
+    "results/llm_judge_gpt5/validation_report.md": "f38e94a837af0c162e0cd093717eeb50a0557aaabc75a387cf09e62cdbfa17bf",
     "results/round3/figures/wording_language.svg": "d15f403ce31770ba976cab15599adeab496d53f01cf4dbb8440ce0714bea8734",
     "results/round3/figures/neutral_outcomes.svg": "144dd9bd133761a8b1673be307651a63964dee24df65db52c019325e5c3c64a2",
-    "research/VALIDATED_RESEARCH_REPORT.md": "5c9a32a1a993b19a3313bacbb5a6bc0992caceb7804f5cad92d7f6433e37358b",
-    "research/ROUND3_APPENDIX.md": "9289d2dc3ae8e24f3a414b56c488dc2b4e7887dd959cb3dbd7e8a6936bfef3de",
+    "research/VALIDATED_RESEARCH_REPORT.md": "65001db39705f10bbe099464e1ad1830c7127f800960b0ae621bc5d5ebd128da",
+    "research/ROUND3_APPENDIX.md": "52d69f7b7bf09edbaf03b317c06dd65ec0b7b2b4c152f0ddd651d845888642e9",
     "results/round3/wording_language.csv": "e07b6f8a25fa2ceec364bdeaa624906b158d13b7f2bf128f0358e3a95741c2f8",
     "results/round3/wording_language_interactions.csv": "a715063c86719de2d3373953999ecdb967fb93b2f2b5770249602e7269700c5b",
     "results/round3/ambiguous_wording_outputs.csv": "c839931ee1a53acc89a7ebefd97a90d696d78ebd0c2eff2512b7a11d0ebdc9d3",
@@ -43408,8 +43495,8 @@
     "results/round3/neutral_decisions.jsonl": "604250da7537eede6ed9bf29d74ad84d39c110a1a9ec007c455f908c7160ba4f",
     "results/round3/neutral_ambiguous_outputs.csv": "b933a416012cf83ec44146e673f57e2505ed33480548b2dfaa6536c7bd8e6476",
     "results/round3/analysis.json": "63a9a4bb12433183353bfdc95c1c440744d451d661711ebc2e55352e00a62c44",
-    "results/round3/remediation.json": "d03484d6dedcc0e01c2cf24570eb9354e27d2a5ce23c219ea4d57e9ddac057d4",
-    "research/review_resolution/ROUND3_REMEDIATION.md": "c549e4a45e5e4ba6e100907410a1516b8b9589bd84fb06d2cde718a19e74ec54",
+    "results/round3/remediation.json": "a9626bdcfb32138aac38f0a454bd3e66fe9037a7c9a87f3f8f72cef3cc3a73c8",
+    "research/review_resolution/ROUND3_REMEDIATION.md": "d5d8b0055274782eb0fa72d83db9edbeef864db667905279b868179920dddb74",
     "submission/final-review/SUBMISSION_CHECKLIST.md": "8dc73e4ab7371c0435e592e35ba1e68863f5b15253ca50d394a4572b434cec2a",
     "results/review_v3/contrasts.csv": "e7ef6ba0f29411a430eb8dea25142634c81244791e59b05347b4b714d2ae483f",
     "results/review_v3/stratified_rates.csv": "c80528bd932c1a053af1c9918004d567ea8210327101dea3c236363ec1c5ae99",

@@ -38,6 +38,10 @@ def build():
     if (ROOT / "results/llm_judge/PROTOCOL.json").exists():
         judge_outputs = build_judge_report(ROOT)
         data["llm_judge_summary"] = json.loads(judge_outputs[Path("results/llm_judge/validation_results.json")])["summary"]
+    if (ROOT / "results/llm_judge_gpt5/PROTOCOL.json").exists():
+        gpt5_outputs = build_judge_report(ROOT, profile="gpt5")
+        judge_outputs.update(gpt5_outputs)
+        data["gpt5_judge_summary"] = json.loads(gpt5_outputs[Path("results/llm_judge_gpt5/validation_results.json")])["summary"]
     artifacts = {OUT / "figures" / name: svg for name, svg in make_figures(data).items()}
     artifacts.update(judge_outputs)
     artifacts.update({Path("results/round3/figures") / name: svg for name, svg in round3_figures(data).items()})

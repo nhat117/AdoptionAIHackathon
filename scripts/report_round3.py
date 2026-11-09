@@ -208,7 +208,7 @@ def report(data):
         "No native-speaker review or independent cultural validation is claimed. Review sheets remain "
         "unfilled; author names/affiliations require confirmation. Final package preparation is not "
         "official submission. Existing valid references are preserved below.\n",
-        "### Multilingual Prompt Validation Using GPT-6 Astra as an LLM Judge\n",
+        "### Multilingual prompt validation using an LLM judge\n",
         "A separate automated pipeline aligns all 5760 historical prompt records into 1920 trios and "
         "supports three randomized, independent requests, exact-evidence rubrics, intra-model agreement "
         "and versioned/blinded revision reassessment. This is **LLM-based validation, not human validation**. "
@@ -219,11 +219,21 @@ def report(data):
     ]
     judge = data.get("llm_judge_summary")
     if judge:
-        lines.append(f"Execution remains **blocked/pending**: {judge['saved_valid_initial_judgments']}/"
+        lines.append(f"The preserved Astra attempt remains **blocked/pending**: {judge['saved_valid_initial_judgments']}/"
                      f"{judge['planned_initial_judge_requests']} valid initial judgments, group outcomes "
                      f"{judge['group_outcomes']}. The proxy smoke returned HTTP404 and direct OpenAI metadata "
                      "authentication returned HTTP401. No judge score or translation improvement is invented; "
-                     "[the separate validation report](../results/llm_judge/validation_report.md) retains the details.\n")
+                      "[the separate validation report](../results/llm_judge/validation_report.md) retains the details.\n")
+    gpt5 = data.get("gpt5_judge_summary")
+    if gpt5:
+        lines.append(f"At the user's request, the active judge is now **GPT-5 via Braintrust Chat Completions**, "
+                     f"in a separately versioned profile. Saved valid judgments: "
+                     f"{gpt5['saved_valid_initial_judgments']}/{gpt5['planned_initial_judge_requests']}; "
+                     f"group outcomes: {gpt5['group_outcomes']}. Endpoint/model/schema status: "
+                     f"{gpt5['availability']['status']}. A smoke test is not full corpus validation. "
+                     "The same model family serves as worker and judge, adding correlated-error and "
+                     "self-preference limitations. Astra evidence and worker outputs are unchanged. "
+                     "[GPT-5 validation details](../results/llm_judge_gpt5/validation_report.md).\n")
     lines += [
         "## 8. Conclusion\n",
         "Wording strongly changes language-specific target reporting within these tested messages; "
@@ -303,6 +313,14 @@ def appendix(data):
                              f"{row['attack_type']}; actual record {row['record_condition']}; "
                              f"selected {row['selected_budget']}; source {row['source_label']}. "
                              "Exact input/response and truth remain in the raw neutral worker file.\n")
+    gpt5 = data.get("gpt5_judge_summary")
+    if gpt5:
+        lines.append("\n### Active GPT-5 judge profile\n")
+        lines.append(f"The separate Braintrust GPT-5 profile has {gpt5['saved_valid_initial_judgments']}/"
+                     f"{gpt5['planned_initial_judge_requests']} valid initial judgments, "
+                     f"outcomes {gpt5['group_outcomes']}, and availability {gpt5['availability']['status']}. "
+                     "The same worker/judge family may share biases. No missing groups receive imputed scores; "
+                     "Astra provenance remains preserved. See `results/llm_judge_gpt5/validation_report.md`.\n")
     lines += ["## A5. Strict pilot and corrupt-record supporting cohorts\n",
               "Strict provenance pilot: 36 saved workers, zero observed strict false-record attributions; "
               "separate tasks/system/user framing. Corrupt-current cohort: 72 actual saved model outputs "
@@ -368,6 +386,11 @@ def remediation(data):
     ]
     for row in records:
         row["status"] = statuses[row["issue"]]
+    if data.get("gpt5_judge_summary"):
+        judge = data["gpt5_judge_summary"]
+        records[-1]["results"] += (f"; active Braintrust GPT-5 profile: {judge['saved_valid_initial_judgments']}/"
+                                   f"{judge['planned_initial_judge_requests']} valid initial judgments, "
+                                   f"{judge['availability']['status']}; LLM-based, not human validation")
     lines = ["# Round 3 remediation report\n", "This is an implementation/evidence ledger, not another main manuscript.\n"]
     for row in records:
         lines.append(f"## {row['issue']} — {row['status']}\n")

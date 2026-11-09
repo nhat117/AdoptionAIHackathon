@@ -107,13 +107,15 @@ The tasks are synthetic, the main budget studies use one GPT-5 snapshot, and the
 
 No native-speaker review or independent cultural validation is claimed. Review sheets remain unfilled; author names/affiliations require confirmation. Final package preparation is not official submission. Existing valid references are preserved below.
 
-### Multilingual Prompt Validation Using GPT-6 Astra as an LLM Judge
+### Multilingual prompt validation using an LLM judge
 
 A separate automated pipeline aligns all 5760 historical prompt records into 1920 trios and supports three randomized, independent requests, exact-evidence rubrics, intra-model agreement and versioned/blinded revision reassessment. This is **LLM-based validation, not human validation**. English is not treated as gold; same-model repeats may share systematic biases; thresholds are provisional, not validated standards. Even high scores could not erase external-validation limits.
 
 Its requested configuration is documented for the Astra model (OpenAI, n.d.); published model documentation is not evidence that this account completed a judge call.
 
-Execution remains **blocked/pending**: 0/5760 valid initial judgments, group outcomes {'PENDING': 1920}. The proxy smoke returned HTTP404 and direct OpenAI metadata authentication returned HTTP401. No judge score or translation improvement is invented; [the separate validation report](../results/llm_judge/validation_report.md) retains the details.
+The preserved Astra attempt remains **blocked/pending**: 0/5760 valid initial judgments, group outcomes {'PENDING': 1920}. The proxy smoke returned HTTP404 and direct OpenAI metadata authentication returned HTTP401. No judge score or translation improvement is invented; [the separate validation report](../results/llm_judge/validation_report.md) retains the details.
+
+At the user's request, the active judge is now **GPT-5 via Braintrust Chat Completions**, in a separately versioned profile. Saved valid judgments: 3/5760; group outcomes: {'PASS': 1, 'PENDING': 1919}. Endpoint/model/schema status: VERIFIED_CHAT_COMPLETIONS_SMOKE. A smoke test is not full corpus validation. The same model family serves as worker and judge, adding correlated-error and self-preference limitations. Astra evidence and worker outputs are unchanged. [GPT-5 validation details](../results/llm_judge_gpt5/validation_report.md).
 
 ## 8. Conclusion
 

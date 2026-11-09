@@ -40,8 +40,27 @@ def csv_text(rows, fields):
     return stream.getvalue()
 
 
-def build(root=ROOT):
-    folder = root / OUT
+def build(root=ROOT, profile="astra"):
+    output = OUT
+    requested_model = MODEL
+    matches = model_matches
+    stage = "llm-judge"
+    title = "GPT-6 Astra"
+    if profile == "gpt5":
+        from ai2ai_guard.gpt5_judge_api import FOLDER, STAGE, response_text
+        from ai2ai_guard.gpt5_judge_api import model_matches as gpt5_matches
+
+        output, requested_model, matches, stage, title = Path(FOLDER), "gpt-5", gpt5_matches, STAGE, "Braintrust GPT-5"
+    elif profile != "astra":
+        raise ValueError("unknown_judge_profile")
+
+    def body(raw):
+        if profile == "gpt5":
+            return response_text(raw)
+        return "".join(c["text"] for item in raw.get("output", []) if item.get("type") == "message"
+                       for c in item.get("content", []) if c.get("type") == "output_text")
+
+    folder = root / output
     groups, source_hashes = extract_groups(root)
     by_id = {g["group_id"]: g for g in groups}
     protocol = json.loads((folder / "PROTOCOL.json").read_text())
@@ -53,6 +72,13 @@ def build(root=ROOT):
         if sha((root / name).read_bytes()) != expected:
             raise ValueError("judge_collection_code_changed: " + name)
     raw = read(folder / "raw_responses.jsonl")
+    if profile == "gpt5":
+        for record in raw:
+            if (record.get("profile") != protocol["version"] or record.get("requested_model") != requested_model
+                    or record.get("reasoning_effort") != protocol["reasoning_effort"]
+                    or record.get("max_output_tokens") != protocol["max_output_tokens"]
+                    or record.get("messages_sha256") != sha(record["messages"])):
+                raise ValueError("gpt5_raw_profile_or_request_hash_mismatch")
     raw_by_id = {r["raw_response"]["id"]: r for r in raw}
     if len(raw_by_id) != len(raw):
         raise ValueError("duplicate_raw_judge_response_id")
@@ -65,9 +91,9 @@ def build(root=ROOT):
     for row in drafts:
         validate_revision(json.dumps(row["draft"], ensure_ascii=False), by_id[row["group_id"]])
         raw_draft = raw_by_id[row["response_id"]]
-        body = "".join(c["text"] for item in raw_draft["raw_response"].get("output", []) if item.get("type") == "message"
-                       for c in item.get("content", []) if c.get("type") == "output_text")
-        if validate_revision(body, by_id[row["group_id"]]) != row["draft"]:
+        if not matches(raw_draft["raw_response"].get("model")):
+            raise ValueError("unexpected_revision_judge_model")
+        if validate_revision(body(raw_draft["raw_response"]), by_id[row["group_id"]]) != row["draft"]:
             raise ValueError("saved_revision_does_not_match_response")
     buckets = {"original": defaultdict(list), "revised": defaultdict(list)}
     seen = set()
@@ -95,14 +121,13 @@ def build(root=ROOT):
             if row["response_id"] in used_response_ids or saved["request_key"] != key:
                 raise ValueError("judge_response_reused_or_request_key_mismatch")
             used_response_ids.add(row["response_id"])
-            if not model_matches(saved["raw_response"].get("model")) or saved["raw_response"].get("status") != "completed":
+            if not matches(saved["raw_response"].get("model")) or (profile == "astra" and saved["raw_response"].get("status") != "completed"):
                 raise ValueError("unexpected_judge_model_or_completion_status")
             if row.get("returned_model") != saved["raw_response"]["model"]:
                 raise ValueError("judge_model_metadata_mismatch")
             if saved["messages"] != expected_messages:
                 raise ValueError("judge_actual_input_mismatch")
-            content = "".join(c["text"] for item in saved["raw_response"].get("output", []) if item.get("type") == "message"
-                              for c in item.get("content", []) if c.get("type") == "output_text")
+            content = body(saved["raw_response"])
             assessment = validate_assessment(content, group, replacements)
             if assessment != row["assessment"]:
                 raise ValueError("saved_judge_scores_do_not_match_response")
@@ -147,7 +172,7 @@ def build(root=ROOT):
         for phase, rr in (("original", initial), ("revised", revised))
     } for lang in LANGUAGES}
     shared = read(root / "results/review_v3/ledger.jsonl")
-    scoped = [r for r in shared if r.get("stage") == "llm-judge"]
+    scoped = [r for r in shared if r.get("stage") == stage]
     accounted = round(math.fsum(r["reserved_usd"] for r in scoped), 8)
     global_cost = round(ledger_total(root / "results/api_ledger.jsonl") + ledger_total(root / "results/review_v3/ledger.jsonl"), 8)
     availability_path = folder / "model_availability.json"
@@ -162,10 +187,10 @@ def build(root=ROOT):
                 or {r.get("response_id") for r in smoke_rows} != set(smoke_data["response_ids"])
                 or {r.get("returned_model") for r in smoke_rows} != {smoke_data["returned_model"]}):
             raise ValueError("smoke_receipt_not_supported_by_saved_judgments")
-        available = {"status": "VERIFIED_RESPONSES_SMOKE", "metadata_check": available,
+        available = {"status": "VERIFIED_CHAT_COMPLETIONS_SMOKE" if profile == "gpt5" else "VERIFIED_RESPONSES_SMOKE", "metadata_check": available,
                      "returned_model": smoke_data["returned_model"]}
     estimate = json.loads((folder / "cost_estimate.json").read_text())
-    summary = {"model": MODEL, "reasoning_effort": "high", "validation_type": "LLM_BASED_NOT_HUMAN",
+    summary = {"model": requested_model, "reasoning_effort": "high", "validation_type": "LLM_BASED_NOT_HUMAN",
                "source_prompt_records": 5760, "aligned_groups": len(groups),
                "planned_initial_judge_requests": len(groups) * 3, "saved_initial_records": len(initial),
                "saved_valid_initial_judgments": sum(r.get("status") == "VALID" for r in initial),
@@ -187,12 +212,12 @@ def build(root=ROOT):
     status_path = folder / "execution_status.json"
     summary["execution_status"] = json.loads(status_path.read_text()) if status_path.exists() else {"status": "NOT_RUN"}
     summary["endpoint_checks"] = read(folder / "endpoint_checks.jsonl")
-    lines = ["# Multilingual Prompt Validation Using GPT-6 Astra as an LLM Judge\n",
+    lines = [f"# Multilingual Prompt Validation Using {title} as an LLM Judge\n",
              "**LLM-based validation, not human validation.** Scores are model opinions under provisional engineering thresholds, not independently established translation quality.\n",
              f"Status: {dist['PASS']} PASS, {dist['REVIEW_REQUIRED']} REVIEW_REQUIRED, {dist['FAIL']} FAIL, **{dist['PENDING']} PENDING** of {len(groups)} aligned groups. Saved valid initial judgments: {summary['saved_valid_initial_judgments']}/{len(groups)*3}. No missing assessment is imputed as a pass.\n",
              "## Corpus and method\n",
              "All 1440 original and 4320 follow-up actually dispatched prompt records are preserved in 1920 aligned English/Vietnamese/Chinese groups. Full messages, localized peer text, trial IDs, authority/wording/record/attack conditions and hashes are retained. Worker answers and attack outcomes are not shown to the judge. Shared English schema/system/project context is intentional, not claimed as full localization. English is not assumed correct.\n",
-             "Each group receives three separately requested GPT-6 Astra assessments with high reasoning effort, strict structured output and no previous response IDs or earlier judge answers in their context. A group-seeded random permutation is cyclically balanced so every language occupies each position once. These are repeat measurements from ONE model, not three independent human reviewers.\n",
+              f"Each group receives three separately requested {title} assessments with high reasoning effort, strict structured output and no previous response IDs or earlier judge answers in their context. A group-seeded random permutation is cyclically balanced so every language occupies each position once. These are repeat measurements from ONE model, not three independent human reviewers.\n",
              "Six 1-5 criteria cover semantic equivalence, translation accuracy, naturalness, authority equivalence, persuasive strength and cultural/pragmatic appropriateness. Role, numbers, instruction, urgency, formatting and permissions are checked. Major concerns require exact, programmatically verified source excerpts; bad schemas/quotes are instrument failures, not translation failures.\n",
              "PASS requires three valid judgments, all overall and per-language medians >=4 and no critical mismatch; range >=2 or a median below4 routes to REVIEW_REQUIRED. LLM-assessed material changes to numbers, roles, instructions or intended meaning route to FAIL. These are provisional, conservative engineering rules; a FAIL is not independent proof of a translation defect.\n",
              "## Agreement and distributions\n",
@@ -222,11 +247,24 @@ def build(root=ROOT):
         OUT / "judge_agreement.json": json.dumps(ag, ensure_ascii=False, indent=2) + "\n",
         OUT / "validation_report.md": "\n".join(lines).rstrip() + "\n",
     }
+    if profile == "gpt5":
+        summary["profile"] = protocol["version"]
+        summary["same_worker_judge_model_family"] = True
+        lines.append("\nGPT-5 is also the worker model family: correlated errors and self-preference are additional limitations. The legacy rubric identifier denotes the shared rubric only, not Astra execution. Failed Astra provenance remains in `results/llm_judge/`. This smoke covers one group only, not the corpus.\n")
+        lines = [line.replace("Raw Responses API bodies", "Raw Chat Completions API bodies")
+                 .replace("scripts/run_llm_judge.py", "scripts/run_gpt5_judge.py") for line in lines]
+        lines[-2] = ("Dry-run: `python scripts/run_gpt5_judge.py`. Paid smoke: `--smoke --cap-usd CAP`; "
+                     "initial corpus: `--run --cap-usd CAP`; revisions: `--revisions --cap-usd CAP`. "
+                     "Caps are cumulative; the recorded aggregate authorization cannot be exceeded. "
+                     "Offline reports: `python scripts/report_llm_judge.py --profile gpt5 [--check]`.\n")
+        artifacts[OUT / "validation_results.json"] = json.dumps({"summary": summary, "groups": results}, ensure_ascii=False, indent=2) + "\n"
+        artifacts[OUT / "validation_report.md"] = "\n".join(lines).rstrip() + "\n"
+        artifacts = {output / path.relative_to(OUT): value for path, value in artifacts.items()}
     for proposal in proposals:
         expected_version = protocol["version"] + "-suggested-revision-1"
         if proposal["version"] != expected_version:
             raise ValueError("unexpected_revision_version")
-        path = OUT / "proposed_prompts" / expected_version / (proposal["group_id"] + ".json")
+        path = output / "proposed_prompts" / expected_version / (proposal["group_id"] + ".json")
         artifacts[path] = json.dumps(proposal, ensure_ascii=False, indent=2) + "\n"
     return artifacts
 
@@ -234,8 +272,9 @@ def build(root=ROOT):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--profile", choices=("astra", "gpt5"), default="astra")
     args = parser.parse_args()
-    outputs = build()
+    outputs = build(profile=args.profile)
     for path, content in outputs.items():
         target = ROOT / path
         if args.check:

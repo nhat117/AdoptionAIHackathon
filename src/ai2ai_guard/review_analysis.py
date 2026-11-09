@@ -169,7 +169,7 @@ def historical_monitor(root):
 def run_analysis(root, draws=10000):
     def collection_snapshot():
         return {str(p.relative_to(root)): digest(p)
-                for folder in ("review_v3", "authority_wording_v2", "llm_judge", "round3_neutral")
+                for folder in ("review_v3", "authority_wording_v2", "llm_judge", "llm_judge_gpt5", "round3_neutral")
                 for p in sorted((root / "results" / folder).rglob("*.jsonl"))
                 if p.name not in ("preflight.jsonl", "decisions.jsonl")}
 
@@ -326,6 +326,11 @@ def run_analysis(root, draws=10000):
     if (judge_folder / "PROTOCOL.json").exists():
         names += [str(p.relative_to(root)) for p in sorted(judge_folder.glob("*.jsonl"))]
         names += ["results/llm_judge/PROTOCOL.json"]
+    gpt5_folder = root / "results/llm_judge_gpt5"
+    if (gpt5_folder / "PROTOCOL.json").exists():
+        names += [str(p.relative_to(root)) for p in sorted(gpt5_folder.glob("*.jsonl"))]
+        names += ["results/llm_judge_gpt5/PROTOCOL.json", "src/ai2ai_guard/gpt5_judge_api.py",
+                  "scripts/run_gpt5_judge.py"]
     if results["authority_wording_followup"] is not None:
         names += ["configs/authority-followup-v1.json", "results/authority_wording_v2/PROTOCOL.json",
                   "scripts/run_authority_wording_followup.py"]
