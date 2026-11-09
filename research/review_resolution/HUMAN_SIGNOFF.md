@@ -10,7 +10,9 @@ Ask a native Vietnamese reviewer to complete the 12 Vietnamese rows and a native
 
 Import the CSV as UTF-8 in a spreadsheet application. Add corrections in the notes column rather than replacing the supplied text. Keep role rank, language naturalness and task-relevant persuasive force as separate judgments; a system administrator is not automatically the most credible authority on a budget.
 
-No human review has been recorded. Running `scripts/prepare_human_review.py` preserves an existing packet rather than clearing annotations. Corrections must produce a new template version and cannot replace already-collected prompts. A post-collection review must not be represented as pre-collection validation.
+No completed native-speaker linguistic review has been recorded. Running `scripts/prepare_human_review.py` preserves an existing packet rather than clearing annotations. Corrections must produce a new template version and cannot replace already-collected prompts. A post-collection review must not be represented as pre-collection validation.
+
+The [technical handoff review of `39368ec`](TECHNICAL_HANDOFF_39368ec.md) is not a native-speaker attestation or Bao Thach's personal sign-off. Do not fill or sign any linguistic-review or author-confirmation fields from that comment; its PDF inspection covered the first page only.
 
 ## Authorship
 

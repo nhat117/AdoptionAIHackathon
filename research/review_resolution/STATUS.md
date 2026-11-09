@@ -4,6 +4,8 @@ This is an implementation/audit appendix. The only main report source is `resear
 
 **Round 3 is now the current manuscript/audit:** see `ROUND3_REMEDIATION.md`. R1–R4 are technically corrected, including 180 actual neutral-prompt cases and two observed wrong releases; R5 remains partially fixed because preparation is not human sign-off or official submission. The previous N/A ledger below is preserved context and must not override these newer failures or completion limits.
 
+**Snapshot-specific technical handoff:** the user supplied a [review of `39368ec`](TECHNICAL_HANDOFF_39368ec.md) supporting the urgent R1/R2 corrections and the conditional R3/R4 claims. It reports 372 passed / 12 optional-dependency skips and first-page-only PDF inspection on that exact snapshot. This is not Bao Thach's personal sign-off, native-speaker validation, full-package proofreading, author approval or official submission. Those historical verification counts must not be substituted for later test results. Subsequent random-sample judging remains separately scoped; full judging is not needed for the narrower supported findings.
+
 | Findings | Implemented and validated | Remaining limitation / status |
 |---|---|---|
 | N1, A1 | Original monitor preserved as an AST-tested baseline; independently reproduced 0/150 historical block recall and 115/450 false blocks. Collected 2880 new monitor judgments on the same 1440 GPT-5 workers; structured original/policy-aware comparisons, coverage, conditional metrics and information boundaries calculated. | Improved monitor still misses wrong reports. Additional visible-record access is not a prompt-only treatment. Oracles explicitly know truth and are not deployment monitors. |
