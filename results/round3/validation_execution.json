@@ -4,18 +4,18 @@
       "python": "Python 3.11",
       "command": "-m pytest -q",
       "exit_code": 0,
-      "pytest_passed": 390
+      "pytest_passed": 404
     },
     {
       "python": "Python 3.12",
       "command": "-m pytest -q",
       "exit_code": 0,
-      "pytest_passed": 390
+      "pytest_passed": 404
     }
   ],
   "lint": "passed",
   "analysis_artifacts": "passed",
-  "gpt5_report": "passed",
+  "sampled_report": "passed",
   "portable_export": "passed",
   "native_human_validation": false,
   "official_submission_confirmed": false

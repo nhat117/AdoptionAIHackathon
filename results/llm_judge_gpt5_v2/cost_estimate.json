@@ -1,0 +1,16 @@
+{
+  "aligned_groups": 1920,
+  "initial_judge_requests": 5760,
+  "initial_no_retry_conservative_ceiling_usd": 1183.60836,
+  "initial_max_retry_conservative_ceiling_usd": 3550.82508,
+  "initial_planning_estimate_usd": 700.68996,
+  "planning_output_tokens_per_call_not_observed": 8000,
+  "pricing": {
+    "model": "gpt-5",
+    "input_per_million": 1.25,
+    "output_per_million": 10.0,
+    "source": "Existing GPT-5 worker accounting rates; no cache discount assumed",
+    "mode": "Token-based estimate, not a provider invoice or verified proxy surcharge"
+  },
+  "scope": "All 1920 groups rerun; v1 responses excluded. Bounded by US$650 aggregate even if full worst-case/revisions exceed the cap."
+}

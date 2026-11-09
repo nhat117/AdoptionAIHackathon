@@ -169,7 +169,7 @@ def historical_monitor(root):
 def run_analysis(root, draws=10000):
     def collection_snapshot():
         return {str(p.relative_to(root)): digest(p)
-                for folder in ("review_v3", "authority_wording_v2", "llm_judge", "llm_judge_gpt5", "round3_neutral")
+                for folder in ("review_v3", "authority_wording_v2", "llm_judge", "llm_judge_gpt5", "llm_judge_gpt5_v2", "llm_judge_sample", "round3_neutral")
                 for p in sorted((root / "results" / folder).rglob("*.jsonl"))
                 if p.name not in ("preflight.jsonl", "decisions.jsonl")}
 
@@ -338,6 +338,16 @@ def run_analysis(root, draws=10000):
         if execution_path.exists():
             names += ["results/llm_judge_gpt5/FULL_EXECUTION_PROTOCOL.json", "src/ai2ai_guard/gpt5_judge_batch.py",
                       "scripts/run_full_gpt5_judge.py", "results/LLM_JUDGE_BUDGET_AUTHORIZATION_650.json"]
+    v2_folder = root / "results/llm_judge_gpt5_v2"
+    if (v2_folder / "PROTOCOL.json").exists():
+        names += [str(p.relative_to(root)) for p in sorted(v2_folder.glob("*.jsonl"))]
+        names += ["results/llm_judge_gpt5_v2/PROTOCOL.json", "src/ai2ai_guard/gpt5_judge_v2.py",
+                  "scripts/run_gpt5_judge_v2.py"]
+    sample_folder = root / "results/llm_judge_sample"
+    if (sample_folder / "PROTOCOL.json").exists():
+        names += [str(p.relative_to(root)) for p in sorted(sample_folder.glob("*.jsonl"))]
+        names += ["results/llm_judge_sample/PROTOCOL.json", "results/llm_judge_sample/SAMPLE_SELECTION.json",
+                  "src/ai2ai_guard/sampled_judge.py", "src/ai2ai_guard/judge_transport.py", "scripts/run_sampled_judge.py"]
     if results["authority_wording_followup"] is not None:
         names += ["configs/authority-followup-v1.json", "results/authority_wording_v2/PROTOCOL.json",
                   "scripts/run_authority_wording_followup.py"]

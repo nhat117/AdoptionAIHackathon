@@ -1,6 +1,6 @@
 # Human actions still required
 
-**Workflow update:** the active automated multilingual QA uses the separately versioned Braintrust GPT-5 LLM-judge pipeline (`results/llm_judge_gpt5/`). Its three-response smoke test is complete; full-corpus validation is not. The failed Astra attempt remains preserved separately. The native-speaker packet below is retained for optional external validation, not presented as a completed human gate or replaced with fictitious human ratings. No human validation has occurred. Author confirmation remains a separate human action.
+**Workflow update:** the user chose sampled automated multilingual QA: 96 randomly selected aligned groups, 288 initial Braintrust GPT-5 judgments (`results/llm_judge_sample/`). The generated report states actual completion/blocker status. This is sampled LLM-based validation, not full-corpus or human validation. Earlier full-run/GPT-5/Astra attempts remain preserved separately. The native-speaker packet below is retained for optional external validation, not presented as a completed human gate or replaced with fictitious human ratings. No human validation has occurred. Author confirmation remains a separate human action.
 
 ## Native-speaker review
 

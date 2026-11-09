@@ -2,7 +2,7 @@
 
 **LLM-based validation, not human validation.** Scores are model opinions under provisional engineering thresholds, not independently established translation quality.
 
-Status: 1 PASS, 0 REVIEW_REQUIRED, 0 FAIL, **1919 PENDING** of 1920 aligned groups. Saved valid initial judgments: 3/5760. No missing assessment is imputed as a pass.
+Status: 6 PASS, 0 REVIEW_REQUIRED, 0 FAIL, **1914 PENDING** of 1920 aligned groups. Saved valid initial judgments: 23/5760. No missing assessment is imputed as a pass.
 
 ## Corpus and method
 
@@ -16,16 +16,16 @@ PASS requires three valid judgments, all overall and per-language medians >=4 an
 
 ## Agreement and distributions
 
-Complete original triads: 1; revised triads: 0. The agreement artifact reports score distributions, exact/within-one-point agreement, pairwise differences and quadratic-weighted kappa. Undefined constant-marginal kappa stays null. These metrics describe intra-model repeatability, not external validity.
+Complete original triads: 6; revised triads: 0. The agreement artifact reports score distributions, exact/within-one-point agreement, pairwise differences and quadratic-weighted kappa. Undefined constant-marginal kappa stays null. These metrics describe intra-model repeatability, not external validity.
 
 | Criterion | All-valid score counts | Exact-agreement triads | Range >=2 triads |
 |---|---|---:|---:|
-| semantic_equivalence | {5: 3} | 1 | 0 |
-| translation_accuracy | {5: 3} | 1 | 0 |
-| linguistic_naturalness | {4: 3} | 1 | 0 |
-| authority_equivalence | {5: 3} | 1 | 0 |
-| persuasive_strength_equivalence | {4: 2, 5: 1} | 0 | 0 |
-| cultural_pragmatic_appropriateness | {5: 3} | 1 | 0 |
+| semantic_equivalence | {5: 23} | 6 | 0 |
+| translation_accuracy | {4: 1, 5: 22} | 5 | 0 |
+| linguistic_naturalness | {4: 12, 5: 11} | 3 | 0 |
+| authority_equivalence | {4: 2, 5: 21} | 5 | 0 |
+| persuasive_strength_equivalence | {4: 7, 5: 16} | 2 | 0 |
+| cultural_pragmatic_appropriateness | {4: 1, 5: 22} | 5 | 0 |
 
 Empty distributions mean no observed ratings, not a score of zero. Per-language agreement and distributions are also retained.
 
@@ -37,9 +37,9 @@ No representative defect or score is invented when no valid judgments are availa
 
 ## Availability, spending and reproducibility
 
-Configured-endpoint availability: VERIFIED_CHAT_COMPLETIONS_SMOKE. Judge-project conservative accounted cost: US$0.22178250; aggregate research accounted cost: US$17.93456035. Costs include unresolved reservations, use published short-context Standard rates and are not provider invoices or proof of proxy surcharges.
+Configured-endpoint availability: VERIFIED_CHAT_COMPLETIONS_SMOKE. Judge-project conservative accounted cost: US$1.81551875; aggregate research accounted cost: US$19.73609910. Costs include unresolved reservations, use published short-context Standard rates and are not provider invoices or proof of proxy surcharges.
 
-Latest execution status: {'status': 'SMOKE_COMPLETE_CORPUS_PENDING', 'timestamp_utc': '2026-11-09T07:02:11.214949+00:00'}. Recorded request errors: 0; HTTP statuses: {}. When no response/usage was returned, the retained cost is a conservative reservation, not a claimed billed inference or a judge result.
+Latest execution status: {'status': 'BLOCKED_OR_INTERRUPTED', 'error_type': 'ValueError', 'reason': 'judge_incomplete_or_multiple_choices_saved_for_audit', 'saved_records': 25, 'timestamp_utc': '2026-11-09T08:38:18.328040+00:00'}. Recorded request errors: 0; HTTP statuses: {}. When no response/usage was returned, the retained cost is a conservative reservation, not a claimed billed inference or a judge result.
 
 Recorded metadata endpoint checks: []. Endpoint-specific authentication/routing failures do not prove that the published Astra model is globally unavailable.
 

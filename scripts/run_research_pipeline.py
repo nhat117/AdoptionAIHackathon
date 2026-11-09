@@ -42,6 +42,17 @@ def build():
         gpt5_outputs = build_judge_report(ROOT, profile="gpt5")
         judge_outputs.update(gpt5_outputs)
         data["gpt5_judge_summary"] = json.loads(gpt5_outputs[Path("results/llm_judge_gpt5/validation_results.json")])["summary"]
+    if (ROOT / "results/llm_judge_gpt5_v2/PROTOCOL.json").exists():
+        v2_outputs = build_judge_report(ROOT, profile="gpt5-v2")
+        judge_outputs.update(v2_outputs)
+        data["gpt5_v1_judge_summary"] = data.get("gpt5_judge_summary")
+        data["gpt5_judge_summary"] = json.loads(v2_outputs[Path("results/llm_judge_gpt5_v2/validation_results.json")])["summary"]
+    if (ROOT / "results/llm_judge_sample/PROTOCOL.json").exists():
+        sample_outputs = build_judge_report(ROOT, profile="gpt5-sample")
+        judge_outputs.update(sample_outputs)
+        data["gpt5_v2_judge_summary"] = data.get("gpt5_judge_summary")
+        data["gpt5_judge_summary"] = json.loads(sample_outputs[Path("results/llm_judge_sample/validation_results.json")])["summary"]
+        data["sampled_judge_summary"] = data["gpt5_judge_summary"]
     artifacts = {OUT / "figures" / name: svg for name, svg in make_figures(data).items()}
     artifacts.update(judge_outputs)
     artifacts.update({Path("results/round3/figures") / name: svg for name, svg in round3_figures(data).items()})

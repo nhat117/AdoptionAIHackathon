@@ -4,6 +4,17 @@
 
 ### Active Braintrust GPT-5 judge
 
+**Current scope (supersedes full-run instructions below):** the user requested
+random sampling. Run `python scripts/run_sampled_judge.py` for the no-call
+preflight, or add `--workflow --cap-usd 60` for the 96-group/288-judgment sampled
+workflow. The frozen design selects one of 20 groups in each of 96 strata, without
+using prior scores or worker outcomes. The new sample is not pooled with old
+ratings. See `research/review_resolution/SAMPLED_LLM_VALIDATION.md` for exact
+selection, execution, budget and interpretation. Verify saved sample reports with
+`python scripts/report_llm_judge.py --profile gpt5-sample --check`. The US$60
+sample cap includes smoke/revisions and remains within the user's cumulative
+US$650 approval. The older full-run/v2 attempts below are historical, not active.
+
 **Full-run authorization update:** the user explicitly approved **US$650 total**
 research spending, including all previous spending, failed reservations, retries
 and revisions. The separate authorization is

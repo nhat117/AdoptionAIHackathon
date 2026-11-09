@@ -76,7 +76,7 @@
       ],
       "fix": "Prepared actual neutral-template bilingual review rows, retained unfilled wording sheet and author form, explicit package/checklist; no fictitious sign-offs",
       "tests_performed": "Unreviewed fields/anchor checks, packet preservation, report explicit pending status; no human/official-submission assertion",
-      "results": "Files/preparation completed; native review and author identity still unconfirmed; automated Astra QA has zero returned scores; active Braintrust GPT-5 profile: 3/5760 valid initial judgments, VERIFIED_CHAT_COMPLETIONS_SMOKE; LLM-based, not human validation",
+      "results": "Files/preparation completed; native review and author identity still unconfirmed; automated Astra QA has zero returned scores; active Braintrust GPT-5 profile: 0/288 valid initial judgments, NOT_CHECKED; LLM-based, not human validation",
       "remaining_limitations": "Real external review, confirmed authors/affiliations and official submission receipt require human/access input",
       "status": "Partially Fixed"
     }

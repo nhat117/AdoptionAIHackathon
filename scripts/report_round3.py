@@ -209,31 +209,35 @@ def report(data):
         "unfilled; author names/affiliations require confirmation. Final package preparation is not "
         "official submission. Existing valid references are preserved below.\n",
         "### Multilingual prompt validation using an LLM judge\n",
-        "A separate automated pipeline aligns all 5760 historical prompt records into 1920 trios and "
-        "supports three randomized, independent requests, exact-evidence rubrics, intra-model agreement "
-        "and versioned/blinded revision reassessment. This is **LLM-based validation, not human validation**. "
-        "English is not treated as gold; same-model repeats may share systematic biases; thresholds "
-        "are provisional, not validated standards. Even high scores could not erase external-validation limits.\n",
-        "Its requested configuration is documented for the Astra model (OpenAI, n.d.); published model "
-        "documentation is not evidence that this account completed a judge call.\n",
+        "This is **LLM-based validation, not human validation**: three balanced language-order requests, "
+        "exact-evidence checks, intra-model agreement and blinded revision reassessment. English is not "
+        "gold; thresholds are provisional and high scores cannot establish external validity.\n",
     ]
     judge = data.get("llm_judge_summary")
     if judge:
-        lines.append(f"The preserved Astra attempt remains **blocked/pending**: {judge['saved_valid_initial_judgments']}/"
-                     f"{judge['planned_initial_judge_requests']} valid initial judgments, group outcomes "
-                     f"{judge['group_outcomes']}. The proxy smoke returned HTTP404 and direct OpenAI metadata "
-                     "authentication returned HTTP401. No judge score or translation improvement is invented; "
-                      "[the separate validation report](../results/llm_judge/validation_report.md) retains the details.\n")
+        lines.append("The documented Astra configuration (OpenAI, n.d.) produced no scores; "
+                     "[failed access evidence](../results/llm_judge/validation_report.md) remains archived.\n")
     gpt5 = data.get("gpt5_judge_summary")
     if gpt5:
-        lines.append(f"At the user's request, the active judge is now **GPT-5 via Braintrust Chat Completions**, "
-                     f"in a separately versioned profile. Saved valid judgments: "
+        sampled = data.get("sampled_judge_summary")
+        active_folder = "llm_judge_sample" if sampled else "llm_judge_gpt5_v2" if "v2" in gpt5.get("profile", "") else "llm_judge_gpt5"
+        lines.append(f"The active judge is **GPT-5 via Braintrust Chat Completions**. Valid judgments: "
                      f"{gpt5['saved_valid_initial_judgments']}/{gpt5['planned_initial_judge_requests']}; "
-                     f"group outcomes: {gpt5['group_outcomes']}. Endpoint/model/schema status: "
-                     f"{gpt5['availability']['status']}. A smoke test is not full corpus validation. "
-                     "The same model family serves as worker and judge, adding correlated-error and "
-                     "self-preference limitations. Astra evidence and worker outputs are unchanged. "
-                     "[GPT-5 validation details](../results/llm_judge_gpt5/validation_report.md).\n")
+                     f"group outcomes: {gpt5['group_outcomes']}; model/schema status: "
+                     f"{gpt5['availability']['status']}. Worker/judge family overlap adds correlated-error "
+                     "and self-preference bias. Historical outputs are unchanged. "
+                     f"[GPT-5 validation details](../results/{active_folder}/validation_report.md).\n")
+        if sampled:
+            lines.append("**Sampled, not full validation:** one of 20 task groups was randomly drawn in "
+                         "each of 96 cohort/role/wording/record/attack strata (5% inclusion probability), "
+                         "before judging, without outcomes or prior ratings. The 96 trios receive 288 "
+                         "judgments; 1824 trios remain unvalidated. One group per stratum prevents direct "
+                         "within-stratum variance estimation. Earlier failed attempts remain separate.\n")
+        elif data.get("gpt5_v1_judge_summary"):
+            lines.append("The separate v2 prospectively increases the output/reasoning limit to 16384 and "
+                         "constrains exact evidence to complete source fields. It restarts every trio rather "
+                         "than pooling v1 ratings. The preserved v1 attempt stopped on a reasoning-only "
+                         "8192-token truncation; two other replies failed exact-excerpt checks.\n")
     lines += [
         "## 8. Conclusion\n",
         "Wording strongly changes language-specific target reporting within these tested messages; "
@@ -316,11 +320,12 @@ def appendix(data):
     gpt5 = data.get("gpt5_judge_summary")
     if gpt5:
         lines.append("\n### Active GPT-5 judge profile\n")
+        active_folder = "llm_judge_sample" if data.get("sampled_judge_summary") else "llm_judge_gpt5_v2" if "v2" in gpt5.get("profile", "") else "llm_judge_gpt5"
         lines.append(f"The separate Braintrust GPT-5 profile has {gpt5['saved_valid_initial_judgments']}/"
                      f"{gpt5['planned_initial_judge_requests']} valid initial judgments, "
                      f"outcomes {gpt5['group_outcomes']}, and availability {gpt5['availability']['status']}. "
                      "The same worker/judge family may share biases. No missing groups receive imputed scores; "
-                     "Astra provenance remains preserved. See `results/llm_judge_gpt5/validation_report.md`.\n")
+                     f"Astra provenance remains preserved. See `results/{active_folder}/validation_report.md`.\n")
     lines += ["## A5. Strict pilot and corrupt-record supporting cohorts\n",
               "Strict provenance pilot: 36 saved workers, zero observed strict false-record attributions; "
               "separate tasks/system/user framing. Corrupt-current cohort: 72 actual saved model outputs "

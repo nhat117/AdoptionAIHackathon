@@ -1,5 +1,28 @@
 ## Scope
 
+### Current user-requested scope: random sampling instead of full judging
+
+The active profile is a frozen **5% stratified random sample: 96 aligned groups,
+288 initial GPT-5 judgments**. One group is drawn uniformly from each of 96
+20-group cohort/role/wording/record/clean-attack strata. Selection excludes prior
+judge ratings and worker outcomes; every group has 5% inclusion probability.
+Unselected groups are labelled NOT SAMPLED rather than passed or failed.
+
+The new workflow keeps three balanced language-order requests, strict base JSON
+schema, exact-evidence validation, agreement and separately versioned/blinded
+revision reassessment. It uses high reasoning with a 16384-token bound and a
+US$60 sampled-project allocation within the existing US$650 aggregate approval.
+Earlier truncation, quote-check and HTTP400 evidence/costs remain preserved; no
+ratings are pooled across attempts. See `SAMPLED_LLM_VALIDATION.md` and the actual
+coverage/status in `results/llm_judge_sample/validation_report.md`. This is sampled
+LLM-based validation, not full-corpus/human validation or official submission.
+The prepared sampled workflow passes **404 tests on Python 3.11 and 3.12**,
+lint, all 57 offline analysis artifacts and six portable export checks. The
+current manuscript remains five pages. The initial planning estimate is US$28.6875
+(8000 completion/reasoning tokens per call, not observed usage); the US$60 sample
+cap also bounds retries and flagged-group revisions. These preparation checks
+are not a claim that the sampled judgments have already completed.
+
 ### Active judge switched to Braintrust GPT-5
 
 **Subsequent full-run approval:** the user explicitly authorized **US$650 total**

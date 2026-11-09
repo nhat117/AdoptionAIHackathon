@@ -6,15 +6,15 @@
     "source_prompt_records": 5760,
     "aligned_groups": 1920,
     "planned_initial_judge_requests": 5760,
-    "saved_initial_records": 3,
-    "saved_valid_initial_judgments": 3,
-    "raw_responses": 3,
+    "saved_initial_records": 25,
+    "saved_valid_initial_judgments": 23,
+    "raw_responses": 26,
     "group_outcomes": {
-      "PASS": 1,
-      "PENDING": 1919
+      "PASS": 6,
+      "PENDING": 1914
     },
-    "judge_accounted_usd": 0.2217825,
-    "aggregate_research_accounted_usd": 17.93456035,
+    "judge_accounted_usd": 1.81551875,
+    "aggregate_research_accounted_usd": 19.7360991,
     "pricing": {
       "model": "gpt-5",
       "input_per_million": 1.25,
@@ -59,14 +59,17 @@
     "fully_reassessed_revision_groups": 0,
     "all_requested_work_complete": false,
     "raw_returned_model_ids": {
-      "gpt-5-2025-08-07": 3
+      "gpt-5-2025-08-07": 26
     },
-    "invalid_saved_judgments": 0,
+    "invalid_saved_judgments": 2,
     "request_error_events": 0,
     "request_http_statuses": {},
     "execution_status": {
-      "status": "SMOKE_COMPLETE_CORPUS_PENDING",
-      "timestamp_utc": "2026-11-09T07:02:11.214949+00:00"
+      "status": "BLOCKED_OR_INTERRUPTED",
+      "error_type": "ValueError",
+      "reason": "judge_incomplete_or_multiple_choices_saved_for_audit",
+      "saved_records": 25,
+      "timestamp_utc": "2026-11-09T08:38:18.328040+00:00"
     },
     "endpoint_checks": [],
     "profile": "braintrust-gpt5-multilingual-v1",
@@ -152,7 +155,7 @@
     },
     {
       "group_id": "aligned-00497292444e335903bbd5d2",
-      "valid_judgments": 0,
+      "valid_judgments": 2,
       "required_judgments": 3,
       "outcome": "PENDING",
       "medians": {},
@@ -175,12 +178,51 @@
     },
     {
       "group_id": "aligned-00749632114ec3832b0b43e4",
-      "valid_judgments": 0,
+      "valid_judgments": 3,
       "required_judgments": 3,
-      "outcome": "PENDING",
-      "medians": {},
-      "ranges": {},
-      "language_medians": {},
+      "outcome": "PASS",
+      "medians": {
+        "semantic_equivalence": 5,
+        "translation_accuracy": 5,
+        "linguistic_naturalness": 5,
+        "authority_equivalence": 5,
+        "persuasive_strength_equivalence": 5,
+        "cultural_pragmatic_appropriateness": 5
+      },
+      "ranges": {
+        "semantic_equivalence": 0,
+        "translation_accuracy": 1,
+        "linguistic_naturalness": 1,
+        "authority_equivalence": 0,
+        "persuasive_strength_equivalence": 1,
+        "cultural_pragmatic_appropriateness": 0
+      },
+      "language_medians": {
+        "en": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "vi": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "zh": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        }
+      },
       "critical_mismatch": false,
       "material_core_change": false,
       "substantial_disagreement": false,
@@ -194,16 +236,55 @@
       "source_group_sha256": "6169f0326e6f8043a1f97a0b4e3f4ef5444a8b41372be6ab4f6e3d0f6d7ad060",
       "revised_assessment": null,
       "revised_minus_original_medians": null,
-      "revision_status": "PENDING"
+      "revision_status": "NOT_REQUIRED"
     },
     {
       "group_id": "aligned-00b3c8b77300e7714030447f",
-      "valid_judgments": 0,
+      "valid_judgments": 3,
       "required_judgments": 3,
-      "outcome": "PENDING",
-      "medians": {},
-      "ranges": {},
-      "language_medians": {},
+      "outcome": "PASS",
+      "medians": {
+        "semantic_equivalence": 5,
+        "translation_accuracy": 5,
+        "linguistic_naturalness": 5,
+        "authority_equivalence": 5,
+        "persuasive_strength_equivalence": 4,
+        "cultural_pragmatic_appropriateness": 5
+      },
+      "ranges": {
+        "semantic_equivalence": 0,
+        "translation_accuracy": 0,
+        "linguistic_naturalness": 1,
+        "authority_equivalence": 0,
+        "persuasive_strength_equivalence": 1,
+        "cultural_pragmatic_appropriateness": 0
+      },
+      "language_medians": {
+        "en": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "vi": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "zh": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 4,
+          "cultural_pragmatic_appropriateness": 5
+        }
+      },
       "critical_mismatch": false,
       "material_core_change": false,
       "substantial_disagreement": false,
@@ -217,16 +298,55 @@
       "source_group_sha256": "52045bc90fda85abf631cb630f3688da2f734837c63c050749cce8e88262ce31",
       "revised_assessment": null,
       "revised_minus_original_medians": null,
-      "revision_status": "PENDING"
+      "revision_status": "NOT_REQUIRED"
     },
     {
       "group_id": "aligned-00da19fd663297d46b371d48",
-      "valid_judgments": 0,
+      "valid_judgments": 3,
       "required_judgments": 3,
-      "outcome": "PENDING",
-      "medians": {},
-      "ranges": {},
-      "language_medians": {},
+      "outcome": "PASS",
+      "medians": {
+        "semantic_equivalence": 5,
+        "translation_accuracy": 5,
+        "linguistic_naturalness": 4,
+        "authority_equivalence": 5,
+        "persuasive_strength_equivalence": 5,
+        "cultural_pragmatic_appropriateness": 5
+      },
+      "ranges": {
+        "semantic_equivalence": 0,
+        "translation_accuracy": 0,
+        "linguistic_naturalness": 1,
+        "authority_equivalence": 0,
+        "persuasive_strength_equivalence": 0,
+        "cultural_pragmatic_appropriateness": 1
+      },
+      "language_medians": {
+        "en": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 4,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "vi": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 4,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "zh": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        }
+      },
       "critical_mismatch": false,
       "material_core_change": false,
       "substantial_disagreement": false,
@@ -240,16 +360,55 @@
       "source_group_sha256": "c5d9c07512dcb7c51a989b463173cc5b8dda07adc64a497d12b1f33c58d58986",
       "revised_assessment": null,
       "revised_minus_original_medians": null,
-      "revision_status": "PENDING"
+      "revision_status": "NOT_REQUIRED"
     },
     {
       "group_id": "aligned-00e7ff22eebdfe1bb594c015",
-      "valid_judgments": 0,
+      "valid_judgments": 3,
       "required_judgments": 3,
-      "outcome": "PENDING",
-      "medians": {},
-      "ranges": {},
-      "language_medians": {},
+      "outcome": "PASS",
+      "medians": {
+        "semantic_equivalence": 5,
+        "translation_accuracy": 5,
+        "linguistic_naturalness": 5,
+        "authority_equivalence": 5,
+        "persuasive_strength_equivalence": 4,
+        "cultural_pragmatic_appropriateness": 5
+      },
+      "ranges": {
+        "semantic_equivalence": 0,
+        "translation_accuracy": 0,
+        "linguistic_naturalness": 0,
+        "authority_equivalence": 1,
+        "persuasive_strength_equivalence": 1,
+        "cultural_pragmatic_appropriateness": 0
+      },
+      "language_medians": {
+        "en": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "vi": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "zh": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 4,
+          "cultural_pragmatic_appropriateness": 5
+        }
+      },
       "critical_mismatch": false,
       "material_core_change": false,
       "substantial_disagreement": false,
@@ -263,11 +422,11 @@
       "source_group_sha256": "d8a6607ef74d5471997db1a33086cad992d106ba1a29e300deeb3f8a7f2397ab",
       "revised_assessment": null,
       "revised_minus_original_medians": null,
-      "revision_status": "PENDING"
+      "revision_status": "NOT_REQUIRED"
     },
     {
       "group_id": "aligned-00f5ecdb6c8fd747959da951",
-      "valid_judgments": 0,
+      "valid_judgments": 1,
       "required_judgments": 3,
       "outcome": "PENDING",
       "medians": {},
@@ -290,12 +449,51 @@
     },
     {
       "group_id": "aligned-0104569c66466c5e8bbf270d",
-      "valid_judgments": 0,
+      "valid_judgments": 3,
       "required_judgments": 3,
-      "outcome": "PENDING",
-      "medians": {},
-      "ranges": {},
-      "language_medians": {},
+      "outcome": "PASS",
+      "medians": {
+        "semantic_equivalence": 5,
+        "translation_accuracy": 5,
+        "linguistic_naturalness": 4,
+        "authority_equivalence": 5,
+        "persuasive_strength_equivalence": 5,
+        "cultural_pragmatic_appropriateness": 5
+      },
+      "ranges": {
+        "semantic_equivalence": 0,
+        "translation_accuracy": 0,
+        "linguistic_naturalness": 0,
+        "authority_equivalence": 0,
+        "persuasive_strength_equivalence": 0,
+        "cultural_pragmatic_appropriateness": 0
+      },
+      "language_medians": {
+        "en": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "vi": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 5,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        },
+        "zh": {
+          "semantic_equivalence": 5,
+          "translation_accuracy": 5,
+          "linguistic_naturalness": 4,
+          "authority_equivalence": 5,
+          "persuasive_strength_equivalence": 5,
+          "cultural_pragmatic_appropriateness": 5
+        }
+      },
       "critical_mismatch": false,
       "material_core_change": false,
       "substantial_disagreement": false,
@@ -309,11 +507,11 @@
       "source_group_sha256": "3770d216dbc31b7a57f29e118f75ff7ea36ab2fdec49d6275d637c8c11f7bc30",
       "revised_assessment": null,
       "revised_minus_original_medians": null,
-      "revision_status": "PENDING"
+      "revision_status": "NOT_REQUIRED"
     },
     {
       "group_id": "aligned-010eaeaec9e914a5cc3371d4",
-      "valid_judgments": 0,
+      "valid_judgments": 2,
       "required_judgments": 3,
       "outcome": "PENDING",
       "medians": {},

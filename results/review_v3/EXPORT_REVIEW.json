@@ -1,9 +1,9 @@
 {
-  "source_sha256": "65001db39705f10bbe099464e1ad1830c7127f800960b0ae621bc5d5ebd128da",
-  "pdf_sha256": "48e5c732a3591b382d48575986b39dd0e7d7898ad61aea17cf97a53d6e177fe3",
+  "source_sha256": "d0a08dc9f32cea2b9728352a67c6f4f07ed7fadd92d667830f121766c75f242c",
+  "pdf_sha256": "2b547bf51ee62231f8eea7e3523a93b9084027fd97b5342c134a33b93ccc6854",
   "pdf_pages": 5,
-  "reviewer": "AI agent, not human/native-speaker or submission sign-off",
-  "scope": "Portable PDF/Word content/image joins passed; author-edited final proofreading remains pending author confirmation.",
+  "reviewer": "AI agent; not human/native-speaker or submission sign-off",
+  "scope": "Portable PDF/Word source-content and image joins checked; final author-edited proofreading awaits author confirmation.",
   "human_linguistic_validation": false,
   "official_submission_confirmed": false
 }

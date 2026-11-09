@@ -140,7 +140,7 @@ Assigned-case risks retain missing/invalid bounds. Conditional wrong-block/relea
 
 ### Active GPT-5 judge profile
 
-The separate Braintrust GPT-5 profile has 3/5760 valid initial judgments, outcomes {'PASS': 1, 'PENDING': 1919}, and availability VERIFIED_CHAT_COMPLETIONS_SMOKE. The same worker/judge family may share biases. No missing groups receive imputed scores; Astra provenance remains preserved. See `results/llm_judge_gpt5/validation_report.md`.
+The separate Braintrust GPT-5 profile has 0/288 valid initial judgments, outcomes {'PENDING': 96}, and availability NOT_CHECKED. The same worker/judge family may share biases. No missing groups receive imputed scores; Astra provenance remains preserved. See `results/llm_judge_sample/validation_report.md`.
 
 ## A5. Strict pilot and corrupt-record supporting cohorts
 
@@ -152,6 +152,6 @@ Historical Gemma-worker/GPT-5-monitor evaluation remains separate: wrong ALLOW/B
 
 ## A7. Reproducibility and pending preparation
 
-Protected original data/result files: 271. All archive manifests, raw response/prompt joins, duplicate IDs and source hashes are checked. Original study metrics are not recomputed under a new unpublished definition. Aggregate accounting: US$17.93456035, cap US$650; not an invoice.
+Protected original data/result files: 271. All archive manifests, raw response/prompt joins, duplicate IDs and source hashes are checked. Original study metrics are not recomputed under a new unpublished definition. Aggregate accounting: US$19.73609910, cap US$650; not an invoice.
 
 The blocked Astra attempt has no returned judge scores. Native sheets are unreviewed; author identities/affiliations await confirmation; official submission is unconfirmed. See the machine-readable Round 3 audit/remediation report and submission checklist.

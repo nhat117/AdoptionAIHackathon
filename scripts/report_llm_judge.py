@@ -43,29 +43,55 @@ def csv_text(rows, fields):
 
 
 def build(root=ROOT, profile="astra"):
+    is_gpt5 = profile in ("gpt5", "gpt5-v2", "gpt5-sample")
+    request_builder = request_messages
     output = OUT
     requested_model = MODEL
     matches = model_matches
     stage = "llm-judge"
     title = "GPT-6 Astra"
-    if profile == "gpt5":
+    if is_gpt5:
         from ai2ai_guard.gpt5_judge_api import FOLDER, STAGE, response_text
         from ai2ai_guard.gpt5_judge_api import model_matches as gpt5_matches
 
         output, requested_model, matches, stage, title = Path(FOLDER), "gpt-5", gpt5_matches, STAGE, "Braintrust GPT-5"
+        if profile == "gpt5-v2":
+            from ai2ai_guard.gpt5_judge_v2 import FOLDER as V2_FOLDER
+            from ai2ai_guard.gpt5_judge_v2 import STAGE as V2_STAGE
+            from ai2ai_guard.gpt5_judge_v2 import assessment_messages
+
+            output, stage, title = Path(V2_FOLDER), V2_STAGE, "Braintrust GPT-5 v2 (16k, exact-field excerpts)"
+            request_builder = assessment_messages
+        elif profile == "gpt5-sample":
+            from ai2ai_guard.sampled_judge import FOLDER as SAMPLE_FOLDER
+            from ai2ai_guard.sampled_judge import STAGE as SAMPLE_STAGE
+            from ai2ai_guard.sampled_judge import sample_messages
+
+            output, stage, title = Path(SAMPLE_FOLDER), SAMPLE_STAGE, "Braintrust GPT-5 (5% stratified random sample)"
+            request_builder = sample_messages
     elif profile != "astra":
         raise ValueError("unknown_judge_profile")
 
     def body(raw):
-        if profile == "gpt5":
+        if is_gpt5:
             return response_text(raw)
         return "".join(c["text"] for item in raw.get("output", []) if item.get("type") == "message"
                        for c in item.get("content", []) if c.get("type") == "output_text")
 
     folder = root / output
     groups, source_hashes = extract_groups(root)
+    population_n = len(groups)
+    sample_manifest = None
+    if profile == "gpt5-sample":
+        from ai2ai_guard.sampled_judge import sample_groups
+
+        groups, sample_manifest = sample_groups(groups)
+        if json.loads((folder / "SAMPLE_SELECTION.json").read_text()) != sample_manifest:
+            raise ValueError("sample_selection_or_sampling_frame_changed")
     by_id = {g["group_id"]: g for g in groups}
     protocol = json.loads((folder / "PROTOCOL.json").read_text())
+    if sample_manifest and protocol.get("selection_sha256") != sha(sample_manifest):
+        raise ValueError("sample_manifest_protocol_mismatch")
     if protocol["source_files_sha256"] != source_hashes:
         raise ValueError("judge_source_evidence_changed")
     if sha((folder / "aligned_prompts.jsonl").read_bytes()) != protocol["corpus_sha256"]:
@@ -82,7 +108,7 @@ def build(root=ROOT, profile="astra"):
             if sha((root / name).read_bytes()) != expected:
                 raise ValueError("full_judge_execution_code_changed: " + name)
     raw = read(folder / "raw_responses.jsonl")
-    if profile == "gpt5":
+    if is_gpt5:
         for record in raw:
             if (record.get("profile") != protocol["version"] or record.get("requested_model") != requested_model
                     or record.get("reasoning_effort") != protocol["reasoning_effort"]
@@ -124,7 +150,7 @@ def build(root=ROOT, profile="astra"):
         replacements = None
         if phase == "revised":
             replacements = {p["language"]: p["suggested_text"] for p in draft_by_group[group["group_id"]]["draft"]["proposals"]}
-        expected_messages = request_messages(group, row["repeat"], replacements)
+        expected_messages = request_builder(group, row["repeat"], replacements)
         expected_order = [p["language"] for p in json.loads(expected_messages[1]["content"])["prompts_in_randomized_order"]]
         if row["language_order"] != expected_order:
             raise ValueError("recorded_language_order_mismatch")
@@ -140,6 +166,19 @@ def build(root=ROOT, profile="astra"):
             if saved["messages"] != expected_messages:
                 raise ValueError("judge_actual_input_mismatch")
             content = body(saved["raw_response"])
+            if profile == "gpt5-sample":
+                from ai2ai_guard.sampled_judge import sample_schema
+
+                if saved.get("schema_sha256") != sha(sample_schema()):
+                    raise ValueError("sample_raw_schema_mismatch")
+            if profile == "gpt5-v2":
+                from ai2ai_guard.gpt5_judge_v2 import constrained_schema
+                from ai2ai_guard.llm_judge import schema_validate
+
+                schema = constrained_schema(group, replacements)
+                if saved.get("schema_sha256") != sha(schema):
+                    raise ValueError("v2_raw_schema_mismatch")
+                schema_validate(json.loads(content), schema)
             assessment = validate_assessment(content, group, replacements)
             if assessment != row["assessment"]:
                 raise ValueError("saved_judge_scores_do_not_match_response")
@@ -199,7 +238,7 @@ def build(root=ROOT, profile="astra"):
                 or {r.get("response_id") for r in smoke_rows} != set(smoke_data["response_ids"])
                 or {r.get("returned_model") for r in smoke_rows} != {smoke_data["returned_model"]}):
             raise ValueError("smoke_receipt_not_supported_by_saved_judgments")
-        available = {"status": "VERIFIED_CHAT_COMPLETIONS_SMOKE" if profile == "gpt5" else "VERIFIED_RESPONSES_SMOKE", "metadata_check": available,
+        available = {"status": "VERIFIED_CHAT_COMPLETIONS_SMOKE" if is_gpt5 else "VERIFIED_RESPONSES_SMOKE", "metadata_check": available,
                      "returned_model": smoke_data["returned_model"]}
     estimate = json.loads((folder / "cost_estimate.json").read_text())
     summary = {"model": requested_model, "reasoning_effort": "high", "validation_type": "LLM_BASED_NOT_HUMAN",
@@ -246,7 +285,7 @@ def build(root=ROOT, profile="astra"):
              f"Configured-endpoint availability: {available['status']}. Judge-project conservative accounted cost: US${accounted:.8f}; aggregate research accounted cost: US${global_cost:.8f}. Costs include unresolved reservations, use published short-context Standard rates and are not provider invoices or proof of proxy surcharges.\n",
              f"Latest execution status: {summary['execution_status']}. Recorded request errors: {summary['request_error_events']}; HTTP statuses: {summary['request_http_statuses']}. When no response/usage was returned, the retained cost is a conservative reservation, not a claimed billed inference or a judge result.\n",
              f"Recorded metadata endpoint checks: {summary['endpoint_checks']}. Endpoint-specific authentication/routing failures do not prove that the published Astra model is globally unavailable.\n",
-             f"Planned initial requests: {estimate['initial_judge_requests']}; initial no-retry conservative ceiling: US${estimate['initial_no_retry_conservative_ceiling_usd']:.2f}. Initial planning scenario (4096 output/reasoning tokens per call, NOT observed usage): US${estimate['initial_planning_estimate_usd']:.2f}. Each flagged group may require four extra requests for drafting and reevaluation. Explicit project and aggregate spending caps apply before dispatch.\n",
+              f"Planned initial requests: {estimate['initial_judge_requests']}; initial no-retry conservative ceiling: US${estimate['initial_no_retry_conservative_ceiling_usd']:.2f}. Initial planning scenario ({estimate.get('planning_output_tokens_per_call_not_observed', 4096)} output/reasoning tokens per call, NOT observed usage): US${estimate['initial_planning_estimate_usd']:.2f}. Each flagged group may require four extra requests for drafting and reevaluation. Explicit project and aggregate spending caps apply before dispatch.\n",
              "Raw Responses API bodies, response IDs, timestamps, token usage (including reasoning/cached details when returned), retries, language order, prompt/protocol versions and cost events are saved. Metadata model access is not paid inference; a full batch additionally requires a valid three-response smoke test with the actual returned model ID and schema. No model is silently substituted.\n",
              "## Limitations and workflow\n",
              "This automated workflow replaces the proposed manual review gate but does NOT retroactively create human validation. Same-model judgments may share linguistic, cultural, English-centering and self-preference biases. Cultural equivalence and real translation quality remain unestablished without external validation. Historical caveats, all GPT-5 attack outcomes, original prompts and datasets remain unchanged even if the judge assigns high scores. Modified prompts require a NEW experiment.\n",
@@ -259,7 +298,7 @@ def build(root=ROOT, profile="astra"):
         OUT / "judge_agreement.json": json.dumps(ag, ensure_ascii=False, indent=2) + "\n",
         OUT / "validation_report.md": "\n".join(lines).rstrip() + "\n",
     }
-    if profile == "gpt5":
+    if is_gpt5:
         summary["profile"] = protocol["version"]
         summary["same_worker_judge_model_family"] = True
         summary["full_execution_protocol"] = execution
@@ -275,6 +314,33 @@ def build(root=ROOT, profile="astra"):
                          "under an explicit cumulative US$650 user authorization. Eight concurrent remote requests and "
                          "append-only evidence shards do not change the frozen judgment instrument. Revisions use "
                          "`--revisions --cap-usd 650 --workers 8` and the same remaining aggregate budget.\n")
+        if profile == "gpt5-v2":
+            lines.append("\nThis prospective v2 restarts all 1920 groups: no v1 ratings are pooled. "
+                         "The output/reasoning envelope is 16384 tokens and evidence texts must be complete exact "
+                         "source fields from a request-specific schema enum. The semantic rubric and thresholds "
+                         "are unchanged. Prior 8192-token truncation and non-exact-excerpt failures remain in v1. "
+                         "Active runner: `scripts/run_gpt5_judge_v2.py`; use `--smoke`, `--run` or `--revisions` "
+                         "with an explicit `--cap-usd` within the cumulative US$650 authorization.\n")
+        if profile == "gpt5-sample":
+            summary["completed_sample_validation"] = summary["completed_full_validation"]
+            summary["completed_full_validation"] = False
+            summary["population_aligned_groups"] = population_n
+            summary["unsampled_groups_not_validated"] = population_n - len(groups)
+            summary["sample_prompt_records"] = len(groups) * 3
+            summary["sampling"] = sample_manifest
+            summary["scope"] = "STRATIFIED_RANDOM_SAMPLE_LLM_BASED_NOT_HUMAN"
+            lines = [line.replace("All 1440 original and 4320 follow-up actually dispatched prompt records are preserved in 1920 aligned English/Vietnamese/Chinese groups.",
+                                  "The sampling frame preserves all 1920 aligned trios from 5760 original/follow-up prompt records; this report judges only the 96 prospectively selected trios (288 localized prompts).") for line in lines]
+            lines.insert(2, "**Sampling, not full validation:** one group was uniformly drawn from each of 96 equally sized strata (20 groups each), giving every group inclusion probability 5%. Strata are cohort × authority × wording × record × clean/attack. All three languages remain aligned; each selected group gets three separate judgments. Prior ratings and worker outcomes were not used for selection. All 1824 unselected groups are NOT SAMPLED, not passed or failed.\n")
+            lines.append("\nThe fixed seed, selected IDs, stratum sizes, inclusion probabilities and full-frame hash are in `SAMPLE_SELECTION.json`. "
+                         "Findings are descriptive of this sample. With one selected group per stratum, within-stratum sampling variance "
+                         "cannot be directly estimated; no precise population-quality or safety guarantee is claimed. "
+                         "The same fixed sample is retained even if it contains difficult or invalid cases. "
+                         "Prior full-run/v2 attempts and costs are preserved separately, not pooled with sample ratings.\n")
+            lines.append("\nActive commands: `python scripts/run_sampled_judge.py` (zero calls), "
+                         "or `--workflow --cap-usd 60` (smoke, remaining sample, flagged revisions). "
+                         "The sample allocation is US$60 within the user-approved US$650 cumulative research cap. "
+                         "Report verification: `python scripts/report_llm_judge.py --profile gpt5-sample --check`.\n")
         artifacts[OUT / "validation_results.json"] = json.dumps({"summary": summary, "groups": results}, ensure_ascii=False, indent=2) + "\n"
         artifacts[OUT / "validation_report.md"] = "\n".join(lines).rstrip() + "\n"
         artifacts = {output / path.relative_to(OUT): value for path, value in artifacts.items()}
@@ -290,7 +356,7 @@ def build(root=ROOT, profile="astra"):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
-    parser.add_argument("--profile", choices=("astra", "gpt5"), default="astra")
+    parser.add_argument("--profile", choices=("astra", "gpt5", "gpt5-v2", "gpt5-sample"), default="astra")
     args = parser.parse_args()
     outputs = build(profile=args.profile)
     for path, content in outputs.items():
